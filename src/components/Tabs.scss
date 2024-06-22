@@ -1,0 +1,67 @@
+.container-tabs {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh; 
+    position: relative;
+    background: rbga(0,0,0,0);
+    //z-index: -1;
+
+}
+
+.content {
+    display: none;
+    width: 100%;
+    height: 100%;
+     
+}
+
+.active-content {
+    display: block;
+    
+}
+
+.sine-wave {
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    bottom: 150px;
+    left: 0;
+    right: 0;
+    fill: url(#wavePattern);
+    pointer-events: none;
+}
+
+.bloc-tabs {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 40px;
+    //background-color: rgba(0, 0, 0, 0); 
+}
+
+.tabs {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    color: var(--secondary_color); 
+    height: 100px;
+    font-size: 18pt;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.active-tabs {
+    font-weight: bold;
+    font-size: 22pt;
+    color: var(--primary_color); 
+}

@@ -5,6 +5,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --background_color: #272df0;
+  --primary_color: #fffcf6;
+  --secondary_color: #fff9d9;
+
 }
 
 code {
