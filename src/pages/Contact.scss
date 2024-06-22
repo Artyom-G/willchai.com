@@ -1,0 +1,39 @@
+.container-contact {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: center; /* Center vertically */
+    height: 100vh; /* Set height to full viewport height */
+}
+
+.business-card {
+    width: 500px;
+    height: 160px;
+    background-color: var(--primary_color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; 
+    align-items: center;
+    transform: rotate(-2deg); 
+    transition: transform 0.3s; 
+    cursor: pointer;
+
+    &:hover {
+        transform: rotate(-4deg);
+        scale: 1.01;
+    }
+}
+
+h1 {
+    margin: 0;
+    padding-top: 30px;
+    font-size: 22pt;
+}
+
+h2 {
+    margin: 0;
+    padding-bottom: 20px;
+    font-size: 12pt;
+    font-weight: 500;
+}

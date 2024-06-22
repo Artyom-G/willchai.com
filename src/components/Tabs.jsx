@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import './Tabs.scss';
 import { Home } from "../pages/Home";
 import { Resume } from "../pages/Resume";
+import { CoolStuff } from "../pages/CoolStuff";
+import { Contact } from "../pages/Contact";
+import { Photography } from "../pages/Photography";
 
 export const Tabs = () => {
 
@@ -18,16 +21,16 @@ export const Tabs = () => {
                 <Home/>
             </div>
             <div className={toggleState === 2 ? "content active-content" : "content"}>
-                <p>Cool Stuff Content</p>
+                <CoolStuff/>
             </div>
             <div className={toggleState === 3 ? "content active-content" : "content"}>
                 <Resume />
             </div>
             <div className={toggleState === 4 ? "content active-content" : "content"}>
-                <p>Contact Content</p>
+                <Contact/>
             </div>
             <div className={toggleState === 5 ? "content active-content" : "content"}>
-                <p>Photography Content</p>
+                <Photography/>
             </div>
 
             <svg className="sine-wave" width="1440" height="56" viewBox="0 0 1440 56" fill="none" xmlns="http://www.w3.org/2000/svg">
