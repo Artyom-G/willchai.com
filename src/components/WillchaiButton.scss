@@ -1,0 +1,21 @@
+.container-willchaibutton {
+    position: absolute;
+    top: 10px;
+    left: 60px;
+    z-index: 1000; // Ensure it overlays on top of other elements
+
+    a {
+        text-decoration: none;
+
+        p {
+            font-size: 18pt;
+            font-weight: 600;
+            color: var(--primary_color);
+            cursor: pointer;
+
+            &:hover {
+                color: var(--secondary_color); // Change color on hover if desired
+            }
+        }
+    }
+}

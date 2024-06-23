@@ -1,0 +1,19 @@
+.container-socialsbuttons {
+    position: absolute;
+    bottom: 10px;
+    left: 60px;
+    z-index: 1000; 
+
+    svg{
+        width: 30px;
+        height: 30px;
+        path{
+            color: var(--primary_color);
+            cursor: pointer;
+
+            &:hover {
+                color: var(--secondary_color); // Change color on hover if desired
+            }
+        }
+    }
+}
