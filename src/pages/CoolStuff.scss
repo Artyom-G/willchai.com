@@ -25,6 +25,8 @@
         object-fit: cover;
         margin: 0;
         //border: 6px solid var(--primary_color);
+        pointer-events: none;
+        user-select: none; 
 
     }
 
@@ -33,15 +35,18 @@
         margin: 0;
         color: var(--primary_color);
         font-family: var(--font_default);
+        pointer-events: none;
+        user-select: none; 
     }
 
     p {
         font-size: 14px;
-        color: #666;
         color: var(--primary_color);
         padding-left: 10px;
         padding-right: 10px;
         font-family: var(--font_default);
+        pointer-events: none;
+        user-select: none; 
     }
     .read-more{
         font-size: 15pt;
@@ -49,5 +54,6 @@
         margin: 0;
         padding-bottom: 20px;
         font-family: var(--font_default);
+        
     }
 }

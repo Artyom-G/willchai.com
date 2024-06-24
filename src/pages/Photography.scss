@@ -61,6 +61,8 @@
                 font-size: 20pt;
                 margin: 0;
                 font-family: var(--font_default);
+                pointer-events: none;
+                user-select: none; 
             }
 
             p {
@@ -72,6 +74,8 @@
                 padding-left: 30px;
                 padding-right: 30px;
                 font-family: var(--font_default);
+                pointer-events: none;
+                user-select: none; 
             }
         }
     }
