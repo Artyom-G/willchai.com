@@ -1,12 +1,13 @@
 .container-socialsbuttons {
     position: absolute;
-    bottom: 10px;
+    bottom: 60px;
     left: 60px;
     z-index: 1000; 
 
     svg{
         width: 30px;
         height: 30px;
+        padding-left: 20px;
         path{
             color: var(--primary_color);
             cursor: pointer;

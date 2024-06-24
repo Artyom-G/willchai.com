@@ -27,8 +27,9 @@
 
 h1 {
     margin: 0;
-    padding-top: 30px;
-    font-size: 22pt;
+    padding-top: 40px;
+    font-size: 24pt;
+    font-family: var(--font_default);
 }
 
 h2 {
@@ -36,4 +37,5 @@ h2 {
     padding-bottom: 20px;
     font-size: 12pt;
     font-weight: 500;
+    font-family: var(--font_default);
 }

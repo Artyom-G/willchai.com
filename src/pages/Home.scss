@@ -9,9 +9,9 @@
     padding-top: 50px; 
 
     img {
-        width: 220px;
-        height: 220px;
-        border-radius: 1000px;
+        width: 238px;
+        height: 225px;
+        border-radius: 115px;
         border: 6px solid var(--primary_color); 
         z-index: 1; 
     }
@@ -22,6 +22,7 @@
         z-index: 1;
         padding-bottom: 10px;
         margin: 0;
+        font-family: var(--font_default);
     }
 
     h2 {
@@ -31,5 +32,6 @@
         z-index: 1; 
         padding-top: 0;
         margin: 0;
+        font-family: var(--font_default);
     }
 }

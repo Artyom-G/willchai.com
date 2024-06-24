@@ -12,7 +12,7 @@ export const Contact = () => {
     return (  
         <div className="container-contact">
             <div className="business-card" onClick={copyToClipboard}>
-                <h1>me@willchai.com</h1>
+                <h1>me<i>@</i>willchai.com</h1>
                 <h2>don't be a stranger</h2>
             </div>
         </div>
