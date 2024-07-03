@@ -5,21 +5,51 @@
     position: relative;
     height: 80vh;
     width: 100%;
+}
 
-    &__resumePdf {
-        height: 550px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-left: 25%;
-        padding-right: 25%;
+.page__resumePdf {
+    height: 665px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-top: 100px;
+}
+
+.page__resumePdf embed {
+    width: 100%;
+    height: 100%;
+    border-radius: 0 0 50px 50px;
+    border: solid 6px var(--primary_color);
+}
+
+/* Tablet view */
+@media (max-width: 1024px) {
+    .page__resumePdf {
+        height: 700px;
+        padding-left: 15%;
+        padding-right: 15%;
         padding-top: 100px;
+    }
 
-        embed {
-            width: 100%;
-            height: 100%;
-            border-radius: 0 0 50px 50px;
-            border: solid 6px var(--primary_color);
-        }
+    .page__resumePdf embed {
+        border-radius: 0 0 40px 40px;
+        border-width: 4px;
+    }
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+    .page__resumePdf {
+        height: 700px;
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 80px;
+    }
+
+    .page__resumePdf embed {
+        border-radius: 0 0 30px 30px;
+        border-width: 3px;
     }
 }

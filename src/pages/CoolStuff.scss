@@ -1,13 +1,38 @@
+/* Add keyframes for the jiggle animation */
+@keyframes jiggle {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-6px);
+    }
+    50% {
+        transform: translateX(3px);
+    }
+    75% {
+        transform: translateX(-2px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Apply the jiggle animation to the container when the page loads */
 .container-coolstuff {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 0px;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-    height: 80vh;
-    padding-left: 15%;
-    padding-right: 15%;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 50px;  /* Increased gap between cards */
+    padding: 180px 15% 20px 15%;
+    justify-content: left;  /* left align the cards */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+    box-sizing: border-box; /* Ensure padding is included in the total width */
+    animation: jiggle 0.5s ease-in-out;
+}
+
+.container-coolstuff::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Webkit browsers */
 }
 
 .data {
@@ -17,43 +42,59 @@
     justify-content: space-between;
     border: 6px solid var(--primary_color);
     border-radius: 0px 0px 50px 50px;
-    min-width: 50px; 
-    max-width: 300px; 
+    width: 250px; 
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    transition: width 0.3s ease-in-out; /* Smooth transition for width change */
+}
 
-    img {
-        width: 100%;
-        object-fit: cover;
-        margin: 0;
-        //border: 6px solid var(--primary_color);
-        pointer-events: none;
-        user-select: none; 
+.data img {
+    width: 100%;
+    object-fit: cover;
+    margin: 0;
+    pointer-events: none;
+    user-select: none; 
+}
 
+.data h1 {
+    margin: 0 0 5px 0;
+    color: var(--primary_color);
+    font-family: var(--font_default);
+    pointer-events: none;
+    user-select: none; 
+}
+
+.data p {
+    font-size: 20px;
+    color: var(--primary_color);
+    padding: 0 10px;
+    font-family: var(--font_default);
+    pointer-events: none;
+    user-select: none; 
+}
+
+.data .read-more {
+    font-size: 15pt;
+    opacity: 0.7;
+    margin: 0;
+    padding-bottom: 20px;
+    font-family: var(--font_default);
+}
+
+/* Add a specific margin-left for the first card to create space from the screen edge */
+.container-coolstuff .data:first-child {
+    margin-left: 15px; /* Adjust this value to control the space between the edge and the first card */
+}
+
+/* Media query for wider screens */ // "normal view"
+@media (min-width: 1150px) {
+    .container-coolstuff {
+        justify-content:center; /* Center the cards */
+        gap: 60px;  /* Increased gap between cards */
+        padding: 180px 10% 20px 10%; /* Adjust padding for wider screens */
     }
-
-    h1 {
-        margin-bottom: 5px;
-        margin: 0;
-        color: var(--primary_color);
-        font-family: var(--font_default);
-        pointer-events: none;
-        user-select: none; 
-    }
-
-    p {
-        font-size: 14px;
-        color: var(--primary_color);
-        padding-left: 10px;
-        padding-right: 10px;
-        font-family: var(--font_default);
-        pointer-events: none;
-        user-select: none; 
-    }
-    .read-more{
-        font-size: 15pt;
-        opacity: 0.7;
-        margin: 0;
-        padding-bottom: 20px;
-        font-family: var(--font_default);
-        
+    
+    .data {
+        width: 300px;  /* Increase the card width */
     }
 }
