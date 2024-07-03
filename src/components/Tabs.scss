@@ -40,7 +40,7 @@
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
-    width: 45%;
+    width: 50%;
     position: absolute;
     bottom: 0;
     margin-bottom: 40px;
@@ -64,8 +64,8 @@
 
 .active-tabs {
     //font-weight: bold;
-    font-weight: 700;
-    font-size: 22pt;
+    font-weight: 500;
+    font-size: 18pt;
     color: var(--primary_color); 
     opacity: 1;
 }
