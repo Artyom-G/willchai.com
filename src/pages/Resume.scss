@@ -67,7 +67,7 @@
     }
     
     .page__resumePdf {
-        height: 80vh;
+        height: 75vh;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -78,7 +78,7 @@
     
     .page__resumePdf embed {
         width: 100%;
-        height: calc(100vh - 240px);
+        height: calc(100vh - 260px);
         justify-content: center;
         border-radius: 0 0 50px 50px;
         border: solid 3px var(--primary_color);

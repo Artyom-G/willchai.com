@@ -18,8 +18,8 @@ const data = {
             link: ""
         },
         {
-            name: "LockedIn",
-            description: "I created a LinkedIn profile optimizer with custom GPT-4o integration. Using proven techniques to help users improve outreach.",
+            name: "Coming soon!",
+            description: "Zyblex gorfnix klipnard snarfle dingleberry. Wombat quaffle blibble zoomba florp snorkel.",
             image: lockedInImage,
             link: ""
         }
