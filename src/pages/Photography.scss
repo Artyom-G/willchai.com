@@ -160,3 +160,98 @@ body {
   padding-bottom: 25px;
 }
 }
+
+          @media (max-width: 335px) { //tiny view
+            .container-photography {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: calc(100vh - 180px); /* Viewport height minus 300px */
+              padding-top: 0px;
+              padding-right: 0;
+              margin-top: 50px;
+              margin-left: 10px;
+              margin-right: 0px;
+              box-sizing: border-box;
+overflow: auto;
+            }
+            
+            .container-photography__sections { //gap between images and container
+              display: flex;
+              gap: 20px;
+              justify-content: space-between;
+            }
+            
+            .container-photography__sections__section1 { //vertical gap between images
+              display: flex;
+              flex-direction: column;
+              gap: 4px;
+            }
+            
+            .container-photography__sections__section1 div { //horiz. gap between images
+              display: flex;
+              gap: 4px;
+            }
+            
+            .container-photography__sections__section1 img {
+              object-fit: cover;
+            }
+            
+            .container-photography__sections__section1 img.horizontal { //horiz. images size
+              width: 160px;
+              height: 120px;
+            }
+            
+            .container-photography__sections__section2 {
+              width: 0px;
+            }
+
+            .container-photography__sections__section1 img.vertical { //vert. images size
+              width: 120px;
+              height: 120px;
+            }
+            
+            .container-photography__sections__section1 p { //"interested in more?"
+              opacity: 0.7;
+              text-align: left;
+              font-size: 0pt;
+              margin: 0px;
+            }
+            
+            .container-photography__sections__section2 { //photography experience card
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-start;
+              padding-left: 5px;
+              padding-right: 0px;
+              border: 0px solid white;
+              border-radius: 0px 0px 50px 50px;
+              width: auto;
+              
+            }
+            
+            .container-photography__sections__section2 h1 { //photography experience header
+              margin-bottom: 6px;
+              color: white;
+              font-size: 14pt;
+              text-align: left;
+              margin: 0;
+              margin-top: -10px;
+              
+            }
+            
+            .container-photography__sections__section2 p { //photography experience paragraph
+              font-size: 11px;
+              color: white;
+              line-height: 1.15;
+              white-space: pre-wrap;
+              text-align: left;
+              padding-left: 8px;
+              padding-right: 0px;
+              font-family: var(--font_default);
+              pointer-events: none;
+              user-select: none;
+              margin-right: -100px
+            }
+        
+}

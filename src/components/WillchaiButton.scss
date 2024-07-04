@@ -52,3 +52,14 @@
         }
     }
 }
+
+@media (max-width: 335px) { //tiny view
+    .container-willchaibutton {
+        top: 8px;
+        left: 16px;
+
+        a p {
+            font-size: 12pt;
+        }
+    }
+}

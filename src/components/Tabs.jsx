@@ -7,8 +7,11 @@ import { Contact } from "../pages/Contact";
 import { Photography } from "../pages/Photography";
 
 const SineWave = () => {
+  const isTinyMobile = window.innerWidth <= 320; // Check if the screen width is 320px or less
   const width = 3440; // Adjust this to match your ultrawide screen width
-  const height = 100;
+  const height = isTinyMobile ? 80 : 100; // Thinner wave for tiny mobile view
+  const bottomPosition = isTinyMobile ? 92 : 140; // Lower down for tiny mobile view
+  const strokeWidth = isTinyMobile ? 3 : 4; // Thinner stroke for tiny mobile view
   const pathData = [];
 
   for (let x = 0; x < width; x++) {
@@ -21,12 +24,12 @@ const SineWave = () => {
       width={width}
       height={height}
       viewBox={`0 0 ${width} ${height}`}
-      style={{ position: 'fixed', bottom: 140, left: 0 }}
+      style={{ position: 'fixed', bottom: bottomPosition, left: 0 }}
     >
       <polyline
         fill="none"
         stroke="white"
-        strokeWidth="4"
+        strokeWidth={strokeWidth}
         points={pathData.join(' ')}
       />
     </svg>

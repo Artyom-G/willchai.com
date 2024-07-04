@@ -5,7 +5,7 @@
     position: relative;
     align-items: center;
     justify-content: center; /* Center vertically */
-    height: calc(100vh - 200px); /* Full viewport height minus 150px */
+    height: calc(100vh - 200px); /* Full viewport height minus 200px */
 }
 
 .business-card {
@@ -80,13 +80,38 @@ h2 {
     }
 }
 
-.container-contact {
-    position: relative;
+/* Tiny mobile view */
+@media (max-width: 320px) {
+    .container-contact {
+        height: calc(100vh - 150px); /* Adjusted height for tiny mobile view */
+    }
+
+    .business-card {
+        width: 200px;
+        height: 80px;
+        clip-path: path("M 10,0 A 10,10 0 0 1 0,10 V 70 A 10,10 0 0 1 10,80 H 190 A 10,10 0 0 1 200,70 V 10 A 10,10 0 0 1 190,0 Z");
+    }
+
+    h1 {
+        font-size: 16pt; /* Smaller font size for h1 */
+        padding-top: 20px;
+    }
+
+    h2 {
+        font-size: 10pt; /* Smaller font size for h2 */
+        padding-bottom: 10px;
+    }
+
+    .notification {
+        top: 220px; /* Higher up for tiny mobile view */
+        font-size: 8pt; /* Smaller font size for notification */
+        padding: 5px 10px; /* Smaller padding for notification */
+    }
 }
 
 .notification {
     position: fixed;
-    top: 300px;
+    top: 260px;
     left: 50%;
     transform: translateX(-50%);
     background-color: #fff;
