@@ -130,7 +130,7 @@
         -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
         box-sizing: border-box; /* Ensure padding is included in the total width */
         animation: jiggle 0.5s ease-in-out;
-        height: calc(100vh - 140px); /* Adjust height to fill the viewport minus 60px */
+        height: calc(100vh - 25%); /* Adjust height to fill the viewport minus 60px */
     }
     
     .wrapper {

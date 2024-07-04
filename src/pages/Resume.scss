@@ -59,15 +59,15 @@
 @media (max-width: 480px) { //tiny view
     .page {
         margin: 0;
-        padding: 0;
+        padding: 62;
         top: 0;
         position: relative;
-        height: 100vh;
+        height: 200px;
         width: 100%;
     }
     
     .page__resumePdf {
-        height: 100vh;
+        height: 80vh;
         display: flex;
         flex-direction: column;
         align-items: center;
