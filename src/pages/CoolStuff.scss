@@ -110,22 +110,36 @@
 }
 
 @media (max-width: 480px) { //tiny mobile view
+    body, html {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    
     .container-coolstuff {
         display: flex;
         align-items: center;
+        justify-content: left;
         flex-wrap: nowrap;
         overflow-x: auto;
         overflow-y: auto; /* Add vertical scrollbar for overflow */
         gap: 20px;
         margin-top: 30px;
         padding: 20px;
-        justify-content: left;
         scrollbar-width: none; /* Hide scrollbar for Firefox */
-        -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+        -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
         box-sizing: border-box; /* Ensure padding is included in the total width */
         animation: jiggle 0.5s ease-in-out;
-        height: 330px; /* Adjust height to never intersect the bottom 300px */
+        height: calc(100vh - 140px); /* Adjust height to fill the viewport minus 60px */
     }
+    
+    .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: calc(100vh - 140px); /* Full viewport height minus 60px gap at the bottom */
+    }
+    
     
     .data {
         display: flex;
@@ -133,9 +147,9 @@
         align-items: center;
         justify-content: space-between;
         border: 3px solid var(--primary_color);
-        border-radius: 0px 0px 20px 20px;
+        border-radius: 0px 0px 40px 40px;
         width: 220px;
-        height: 230px; /* Decrease the default height proportionally */
+        height: 270px; /* Decrease the default height proportionally */
         flex: 0 0 auto;
         scroll-snap-align: start;
         transition: width 0.3s ease-in-out, height 0.3s ease-in-out; /* Smooth transition for width and height change */

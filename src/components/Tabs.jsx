@@ -7,7 +7,7 @@ import { Contact } from "../pages/Contact";
 import { Photography } from "../pages/Photography";
 
 const SineWave = () => {
-  const isTinyMobile = window.innerWidth <= 320; // Check if the screen width is 320px or less
+  const isTinyMobile = window.innerWidth <= 480; // Check if the screen width is 480px or less
   const width = 3440; // Adjust this to match your ultrawide screen width
   const height = isTinyMobile ? 80 : 100; // Thinner wave for tiny mobile view
   const bottomPosition = isTinyMobile ? 92 : 140; // Lower down for tiny mobile view
