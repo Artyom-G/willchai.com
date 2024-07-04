@@ -1,14 +1,15 @@
+/* Base styles */
 .container-contact {
     display: flex;
     flex-direction: column;
     position: relative;
     align-items: center;
     justify-content: center; /* Center vertically */
-    height: 80vh; /* Set height to full viewport height */
+    height: calc(100vh - 200px); /* Full viewport height minus 150px */
 }
 
 .business-card {
-    margin-top:100px;
+    margin-top: 6.5%;
     width: 500px;
     height: 160px;
     background-color: var(--primary_color);
@@ -19,11 +20,12 @@
     transform: rotate(-2deg); 
     transition: transform 0.3s; 
     cursor: pointer;
+    clip-path: path("M 25,0 A 25,25 0 0 1 0,25 V 135 A 25,25 0 0 1 25,160 H 475 A 25,25 0 0 1 500,135 V 25 A 25,25 0 0 1 475,0 Z");
+}
 
-    &:hover {
-        transform: rotate(-4deg);
-        scale: 1.01;
-    }
+.business-card:hover {
+    transform: rotate(-4deg);
+    scale: 1.01;
 }
 
 h1 {
@@ -40,4 +42,81 @@ h2 {
     font-size: 12pt;
     font-weight: 500;
     font-family: var(--font_default);
+}
+
+/* Tablet view */
+@media (max-width: 768px) {
+    .business-card {
+        width: 400px;
+        height: 140px;
+        clip-path: path("M 20,0 A 20,20 0 0 1 0,20 V 120 A 20,20 0 0 1 20,140 H 380 A 20,20 0 0 1 400,120 V 20 A 20,20 0 0 1 380,0 Z");
+    }
+
+    h1 {
+        font-size: 24pt;
+    }
+
+    h2 {
+        font-size: 10pt;
+    }
+}
+
+/* Mobile view */
+@media (max-width: 480px) {
+    .business-card {
+        width: 300px;
+        height: 120px;
+        clip-path: path("M 15,0 A 15,15 0 0 1 0,15 V 105 A 15,15 0 0 1 15,120 H 285 A 15,15 0 0 1 300,105 V 15 A 15,15 0 0 1 285,0 Z");
+    }
+
+    h1 {
+        font-size: 20pt;
+        padding-top: 30px;
+    }
+
+    h2 {
+        font-size: 8pt;
+        padding-bottom: 15px;
+    }
+}
+
+.container-contact {
+    position: relative;
+}
+
+.notification {
+    position: fixed;
+    top: 300px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 0px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeInOut 1s forwards;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+    10% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    90% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+}
+
+.business-card {
+    cursor: pointer;
+    /* Additional styling for the business card if needed */
 }

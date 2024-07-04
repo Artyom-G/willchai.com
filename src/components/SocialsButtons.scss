@@ -4,17 +4,57 @@
     left: 60px;
     z-index: 1000; 
 
-    svg{
-        width: 30px;
-        height: 30px;
-        padding-left: 20px;
-        path{
+    svg {
+        width: 25px;  // Reduce the width
+        height: 25px;  // Reduce the height
+        padding-left: 15px;  // Reduce the padding
+
+        path {
             color: var(--primary_color);
             cursor: pointer;
 
             &:hover {
                 color: var(--secondary_color); // Change color on hover if desired
             }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .container-socialsbuttons {
+        bottom: 50px;
+        left: 50px;
+
+        svg {
+            width: 25px;  // Reduce the width
+            height: 25px;  // Reduce the height
+            padding-left: 15px;  // Reduce the padding
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .container-socialsbuttons {
+        bottom: 40px;
+        left: 40px;
+
+        svg {
+            width: 25px;  // Reduce the width
+            height: 25px;  // Reduce the height
+            padding-left: 12px;  // Reduce the padding
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .container-socialsbuttons {
+        bottom: 30px;
+        left: 30px;
+
+        svg {
+            width: 25px;  // Reduce the width
+            height: 25px;  // Reduce the height
+            padding-left: 12px;  // Reduce the padding
         }
     }
 }

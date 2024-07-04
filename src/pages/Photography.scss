@@ -1,82 +1,162 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .container-photography {
-    display: flex;
-    padding-top: 150px;
-    padding-left: 20%;
-    padding-right: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 230px); /* Viewport height minus 300px */
+  padding-top: 100px;
+  margin-left: 100px;
+  margin-right: 100px;
+  box-sizing: border-box;
+}
 
-    &__sections {
-        display: flex;
-        gap: 50px;
-        width: 100%;
-        justify-content: space-between;
+.container-photography__sections { //gap between images and container
+  display: flex;
+  gap: 50px;
+  width: 100%;
+  justify-content: space-between;
+}
 
-        &__section1 {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+.container-photography__sections__section1 { //vertical gap between images
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
-            div {
-                display: flex;
-                gap: 10px;
+.container-photography__sections__section1 div { //horiz. gap between images
+  display: flex;
+  gap: 10px;
+}
 
-                img {
-                    object-fit: cover;
-                    //border: 6px solid var(--primary_color);
+.container-photography__sections__section1 img {
+  object-fit: cover;
+}
 
-                    &.horizontal {
-                        width: 400px;
-                        height: 220px;
-                    }
+.container-photography__sections__section1 img.horizontal { //horiz. images size
+  width: 400px;
+  height: 226px;
+}
 
-                    &.vertical {
-                        width: 200px;
-                        height: 220px;
-                    }
-                }
-            }
-            p {
-                color: var(--secondary_color);
-                opacity: 0.7;
-                text-align: left;
-                font-size: 14pt;
-                margin: 10px;
-                font-family: var(--font_default);
-            }
-        }
+.container-photography__sections__section1 img.vertical { //vert. images size
+  width: 200px;
+  height: 226px;
+}
 
-        &__section2 {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start; // Align items to start from the top
-            //align-items: center;
-            padding-left: 20px;
-            padding-right: 20px;
-            border: 6px solid var(--primary_color);
-            border-radius: 0px 0px 50px 50px;
-            width: 50%; // Ensure it takes up the intended width
+.container-photography__sections__section1 p { //"interested in more?"
+  color: var(--secondary_color);
+  opacity: 1;
+  text-align: left;
+  font-size: 14pt;
+  margin: 10px;
+  font-family: var(--font_default);
+}
 
-            h1 {
-                margin-bottom: 10px;
-                color: var(--primary_color);
-                font-size: 20pt;
-                margin: 0;
-                font-family: var(--font_default);
-                pointer-events: none;
-                user-select: none; 
-            }
+.container-photography__sections__section2 { //photography experience card
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 6px solid var(--primary_color);
+  border-radius: 0px 0px 50px 50px;
+  width: 480px;
+}
 
-            p {
-                font-size: 16px;
-                color: var(--primary_color);
-                line-height: 1.45; 
-                white-space: pre-wrap;
-                text-align: left;
-                padding-left: 30px;
-                padding-right: 30px;
-                font-family: var(--font_default);
-                pointer-events: none;
-                user-select: none; 
-            }
-        }
-    }
+.container-photography__sections__section2 h1 { //photography experience header
+  margin-bottom: 10px;
+  color: var(--primary_color);
+  font-size: 20pt;
+  margin: 0;
+  font-family: var(--font_default);
+  pointer-events: none;
+  user-select: none;
+}
+
+.container-photography__sections__section2 p { //photography experience paragraph
+  font-size: 16px;
+  color: var(--primary_color);
+  line-height: 1.45;
+  white-space: pre-wrap;
+  text-align: left;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-family: var(--font_default);
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (max-width: 1200px) {
+  .container-photography {
+    margin-left: 35px;
+    margin-right: 35px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .container-photography::-webkit-scrollbar {
+    display: none;
+  }
+
+  .container-photography__sections {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    animation: jiggle 0.5s ease-in-out;
+  }
+
+  .container-photography__sections__section1 {
+    flex-shrink: 0;
+  }
+
+  .container-photography__sections__section2 {
+    flex-shrink: 0;
+    width: 350px; /* Constant width for the card in mobile view */
+  }
+}
+
+@media (min-width: 1201px) {
+  .container-photography__sections {
+    justify-content: center;
+  }
+}
+
+@media (max-height: 850px) {
+  .container-photography {
+      padding-top: 80px; /* Adjust padding for shorter screens */
+  }
+
+  .container-photography__sections__section1 img.horizontal {
+      width: 250px; /* Further reduced size */
+      height: 140px; /* Proportional adjustment */
+  }
+
+  .container-photography__sections__section1 img.vertical {
+      width: 125px; /* Further reduced size */
+      height: 140px; /* Proportional adjustment */
+  }
+
+  .container-photography__sections__section2 {
+      width: 600px;
+      max-height: calc(100vh - 360px);
+  }
+
+  .container-photography__sections__section2 h1 { //photography experience header
+    font-size: 20pt;
+    margin: 0;
+  }
+
+.container-photography__sections__section2 p {
+  width: 600px; 
+  font-size: 14px;
+  color: var(--primary_color);
+  line-height: 1.25;
+  white-space: pre-wrap;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 25px;
+}
 }

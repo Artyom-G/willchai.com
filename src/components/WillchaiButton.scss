@@ -19,3 +19,36 @@
         }
     }
 }
+
+@media (max-width: 1024px) {
+    .container-willchaibutton {
+        top: 20px;
+        left: 40px;
+
+        a p {
+            font-size: 16pt;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .container-willchaibutton {
+        top: 15px;
+        left: 30px;
+
+        a p {
+            font-size: 14pt;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .container-willchaibutton {
+        top: 10px;
+        left: 20px;
+
+        a p {
+            font-size: 14pt;
+        }
+    }
+}

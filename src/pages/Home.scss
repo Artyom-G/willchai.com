@@ -4,41 +4,86 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 80%;
+    height: calc(100vh - 150px); /* Full viewport height minus 150px */
     position: relative;
-    padding-top: 50px; 
+    padding-top: 0; /* Remove top padding */
+    padding-bottom: 0; /* Remove bottom padding */
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
 
-    img {
-        width: 238px;
-        height: 225px;
-        border-radius: 115px;
-        border: 6px solid var(--primary_color); 
-        z-index: 1; 
-        pointer-events: none;
-        
-    }
-    
-    h1{
-        font-size: 48pt;
-        color: var(--primary_color);
-        z-index: 1;
-        padding-bottom: 10px;
-        margin: 0;
-        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        font-weight: 400;
-        pointer-events: none;
-        user-select: none; 
+.container-home img {
+    width: 238px;
+    height: 225px;
+    border-radius: 115px;
+    border: 6px solid var(--primary_color);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.container-home h1 {
+    font-size: 48pt;
+    color: var(--primary_color);
+    z-index: 1;
+    padding-bottom: 10px;
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /* WC - move font to index.css */
+    font-weight: 400;
+    pointer-events: none;
+    user-select: none;
+}
+
+.container-home h2 {
+    font-size: 20pt;
+    font-weight: 500;
+    color: var(--primary_color);
+    z-index: 1;
+    padding-top: 0;
+    margin: 0;
+    font-family: var(--font_default);
+    pointer-events: none;
+    user-select: none;
+}
+
+@media (max-width: 600px) {
+    .container-home {
+        padding-top: 30px;
     }
 
-    h2 {
-        font-size: 20pt;
-        font-weight: 500;
-        color: var(--primary_color);
-        z-index: 1; 
-        padding-top: 0;
-        margin: 0;
-        font-family: var(--font_default);
-        pointer-events: none;
-        user-select: none; 
+    .container-home img {
+        width: 180px; /* Increased image size */
+        height: 180px;
+        border-radius: 90px;
+        border: 4px solid var(--primary_color);
     }
+
+    .container-home h1 {
+        font-size: 36pt; /* Increased font size by 12pt */
+        padding-bottom: 5px;
+    }
+
+    .container-home h2 {
+        font-size: 18pt; /* Increased font size by 12pt */
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+}
+
+/* Optional: Styling for navigation links (if any) */
+.nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 16pt;
+}
+
+.nav a {
+    color: var(--primary_color);
+    margin: 0 10px;
+    text-decoration: none;
+    font-family: var(--font_default);
+}
+
+.nav a:hover {
+    text-decoration: underline;
 }
