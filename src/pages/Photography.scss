@@ -161,7 +161,7 @@ body {
 }
 }
 
-          @media (max-width: 335px) { //tiny view
+          @media (max-width: 480px) { //tiny view
             .container-photography {
               display: flex;
               align-items: center;
@@ -251,7 +251,6 @@ overflow: auto;
               font-family: var(--font_default);
               pointer-events: none;
               user-select: none;
-              margin-right: -100px
             }
         
 }

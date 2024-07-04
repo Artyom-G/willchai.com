@@ -59,14 +59,14 @@
     }
 }
 
-@media (max-width: 335px) { //tiny mobile view
+@media (max-width: 480px) { //tiny mobile view
     .container-socialsbuttons {
         bottom: 0;
         left: 0;
 
         svg {
-            width: 0;  // Reduce the width
-            height: 0;  // Reduce the height
+            width: 0;  // disabled
+            height: 0;  //
         }
     }
 
