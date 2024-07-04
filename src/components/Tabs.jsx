@@ -12,7 +12,7 @@ const SineWave = () => {
   const pathData = [];
 
   for (let x = 0; x < width; x++) {
-    const y = ((Math.sin((x + 2) * 0.1) + 1) / 11) * height + 50;
+    const y = ((Math.sin((x + 2) * 0.1) + 1) / 12.5) * height + 50;
     pathData.push(`${x},${y}`);
   }
 
@@ -21,7 +21,7 @@ const SineWave = () => {
       width={width}
       height={height}
       viewBox={`0 0 ${width} ${height}`}
-      style={{ position: 'fixed', bottom: 160, left: 0 }}
+      style={{ position: 'fixed', bottom: 140, left: 0 }}
     >
       <polyline
         fill="none"

@@ -19,10 +19,11 @@
 
 .page__resumePdf embed {
     width: 100%;
-    height: 100%;
+    height: calc(100vh - 360px); /* Calculate the height based on viewport height minus tab area */
     border-radius: 0 0 50px 50px;
     border: solid 6px var(--primary_color);
 }
+
 
 /* Tablet view */
 @media (max-width: 1024px) {

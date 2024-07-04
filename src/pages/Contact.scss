@@ -5,11 +5,11 @@
     position: relative;
     align-items: center;
     justify-content: center; /* Center vertically */
-    height: 80vh; /* Set height to full viewport height */
+    height: calc(100vh - 200px); /* Full viewport height minus 150px */
 }
 
 .business-card {
-    margin-top: 100px;
+    margin-top: 6.5%;
     width: 500px;
     height: 160px;
     background-color: var(--primary_color);
