@@ -40,8 +40,8 @@ Agents and contributors should begin with `AGENTS.md`, then read:
 The rendered reference library is available at `/system/`. Keep these sources
 synchronized when a durable design, content, or interaction decision changes.
 
-## Legacy application
+## Archived legacy application
 
-The existing Create React App implementation remains in `src/` and `public/`
-for reference while the new site is built out. The prototype has not yet
-replaced that production application.
+The former Create React App implementation was removed from the active branch
+after the rebuild prototypes were established. Its final state remains
+available in Git history under the `legacy-react-final-2026-09-08` tag.
