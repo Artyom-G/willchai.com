@@ -79,12 +79,12 @@ displays, and missing WebGL leave navigation direct and omit the enhancement.
 The restrained light trace must not grow into a colourful portal, galaxy,
 general-purpose glow, or bright uniform outline.
 
-## Archive row
+## Project chooser row
 
-An archive row keeps a project findable without giving it homepage prominence.
-It requires a title, year or durable time label, primary form, and destination.
-A role, collaborator, small preview, or external-site marker may be added when
-it provides useful context.
+A project chooser row gives a useful older work a compact place on `/projects/`.
+It requires a title, year or durable time label, primary form, and suitable
+destination. A role, collaborator, small preview, or external site marker may
+be added when it provides useful context.
 
 The row remains one semantic link with a visible focus state. Its title and
 essential context are present without hover. Narrow layouts may hide secondary
@@ -132,15 +132,16 @@ identified without interrupting the project narrative.
 ## Photography service information
 
 Photography service information presents Portraits, Events, and Creative as
-clear professional routes while retaining the site's personal voice. It
-requires representative commissioned work, a plain description of the type of
-engagement, and a photography-specific inquiry action. Pricing, availability,
-location, or delivery information appears only when it is current and useful.
+chapters within one substantial page while retaining the site's personal
+voice. It requires representative commissioned work, a plain description of
+the type of engagement, and a photography-specific inquiry action. Pricing,
+availability, location, or delivery information appears when it is current and
+useful.
 
-The category order and featured photographs may change. The pattern must not
-read like a generic agency services grid or conceal the inquiry route behind a
-portfolio lightbox. Photographs remain the primary visual material, and client
-privacy or publication permission must be confirmed before use.
+The chapter order and featured photographs may change. Editorial transitions
+keep the sequence continuous. Photographs remain the primary visual material,
+the inquiry action stays outside any lightbox, and client privacy or
+publication permission must be confirmed before use.
 
 ## External project handoff
 
@@ -159,14 +160,16 @@ outgoing links still resolve.
 The general invitation uses “Let's go do something.” and welcomes
 multidisciplinary collaboration. On the homepage it pairs the heading directly
 with one specific contact action; no supporting paragraph is required.
+Other pages may use a compact version as their ending. Contact stays within
+existing page contexts.
 
 ## Photography inquiry
 
-The photography inquiry appears within photography pages and gives prospective
-clients a direct route for Portraits, Events, or Creative work. It asks only
-for the details required to understand and respond to a shoot. If a form is
-introduced, every field must earn its place, expose a real label, describe
-errors clearly, and document how submitted information is retained.
+The photography inquiry appears within the Photography page and gives
+prospective clients a direct route for Portraits, Events, or Creative work. It
+asks only for the details required to understand and respond to a shoot. If a
+form is introduced, every field must earn its place, expose a real label,
+describe errors clearly, and document how submitted information is retained.
 
 ## Holographic contact ticket
 

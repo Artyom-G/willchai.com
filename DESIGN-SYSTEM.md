@@ -88,7 +88,7 @@ The opening viewport should contain:
 
 1. **Identity module:** changeable portrait, name, one-line premise, and a
    small invitation to reveal another side.
-2. **Navigation module:** Photography, Sharing Stories, About, and Contact.
+2. **Navigation module:** Photography, Films, Projects, Résumé, and Contact.
 3. **Project stream:** two or three short panels visible at once, establishing
    immediately that the page is meant to be browsed rather than presenting one
    dominant hero.
@@ -103,6 +103,13 @@ aspect ratio rather than a viewport-relative height.
 Films share one homepage panel and lead to a dedicated Films index. On mobile,
 the identity rail becomes a compact opening/header and the same panels continue
 as one vertical sequence.
+
+The public structure contains one Photography page, one Films chooser with two
+film pages, one Projects chooser with four project pages, and one Résumé page
+with PDF and HTML formats. The homepage carries the main contact invitation.
+Photography carries its own inquiry area, while other pages may close with a
+compact contact invitation. `/hey/` remains a branded utility page outside the
+primary navigation.
 
 ## Module grammar
 
@@ -296,8 +303,9 @@ mode removes tilt and bounce but preserves the colour change and confirmation.
 ## Photography
 
 Photography is the professional service and should own the strongest visual
-module. The Photography landing page begins with an introduction and then
-routes into Portraits, Events, and Creative.
+module. Its single page begins with an introduction, then moves through
+Portraits, Events, performances, and Creative work as one editorial sequence.
+Service context and the inquiry area stay within the same page.
 
 On the homepage, Photography uses the largest Unbounded project-title scale
 and a proportionally enlarged descriptor while remaining within the shared
@@ -307,12 +315,18 @@ Use real image dimensions and intentional crops. A visitor should never need to
 wait for an oversized gallery before understanding the offer or reaching the
 photography inquiry path.
 
-## Sharing Stories
+## Films and Projects
 
-Film, writing, games, watchmaking, and other projects share the same interface
-system. Their homepage panels use the common exterior size but may change crop,
-media sequence, title placement, and internal composition to reflect the work.
-They do not invent separate navigation or brand typography systems.
+Films and Projects are the two chooser destinations. Their individual work
+pages share the interface system while allowing crop, media sequence, title
+placement, and internal composition to respond to each work. Shared
+navigation, typography, and contact endings keep the pages related.
+
+The Résumé uses the same reading system with restrained formatting suited to a
+professional record. The PDF appears first through view and download actions,
+and the HTML version follows with matching facts. The `/hey/` utility page may
+compress the brand into a small link collection while preserving type, colour,
+focus, and spacing rules.
 
 ## Explicitly avoid
 

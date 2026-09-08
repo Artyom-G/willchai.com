@@ -62,15 +62,52 @@ In order:
 
 ## Information architecture
 
-- The homepage is a **curated index**, not an exhaustive feed. It prioritizes
-  selected work across disciplines and points to deeper archive pages.
-- **Photography** is the professional service. Its landing page introduces the
-  practice, availability, and approach, then routes visitors to selected types
-  of work: portraits, events, and creative work.
-- **Sharing Stories** is the umbrella for the personal creative practice:
-  films, screenplays/writing, games, watchmaking, and future story-led work.
-  Individual works live within the relevant archive and also may be featured on
-  the homepage.
+The launch site is shallow and substantial. It contains twelve public pages.
+The homepage is a curated introduction to Will and selected work. `/hey/` is a
+utility destination for quick links and QR codes. Photography occupies one
+continuous page with an editorial sequence, practical service context, and its
+own inquiry area.
+
+Films and Projects provide the two branch points. `/films/` introduces the film
+practice and leads to the Wattleseed and Murder of Minus pages. `/projects/`
+helps visitors choose among Medical Terminology Games, Tachyboard, Searing
+Stories, and ConspiraSea. Each film and project page is the canonical home for
+its work.
+
+The résumé page presents the current PDF first, with view and download actions,
+followed by an accessible HTML record carrying the same facts. Its content
+stays aligned with LinkedIn. Contact lives within the homepage, Photography,
+and compact endings on other pages. `/hey/` stays outside primary navigation.
+
+Sharing Stories remains the organising idea connecting the creative practice.
+Its expression lives in page copy and project context. Older work receives a
+public mention when curation supports it. A small item on `/projects/` can carry
+a useful older project in compact form.
+
+The launch page map is:
+
+1. `/`
+2. `/hey/`
+3. `/photography/`
+4. `/films/`
+5. `/films/wattleseed/`
+6. `/films/murder-of-minus/`
+7. `/projects/`
+8. `/projects/medterms/`
+9. `/projects/tachyboard/`
+10. `/projects/searing-stories/`
+11. `/projects/conspirasea/`
+12. `/resume/`
+
+Published resources include `/resume.pdf`, sitemap output, `robots.txt`, a
+useful 404 page, and permanent redirects for meaningful legacy URLs. Future
+growth may add dedicated Photography services, publicly ready films, or
+substantial projects while preserving the same page logic.
+
+Possible later routes include `/photography/weddings/`,
+`/photography/real-estate/`, `/films/level-55/`, and
+`/projects/[future-project]/`. Each route is created when the work and visitor
+journey support a dedicated destination.
 - The desktop homepage uses a persistent left identity/navigation rail beside a
   naturally scrolling right-hand sequence of project panels. The page has one
   document scroll; do not create a nested scroll area for the panels. The rail
@@ -107,7 +144,7 @@ In order:
   portrait cycler, contact ticket, and footer do not need preambles, counters,
   instructions, or back-to-top copy merely to fill space.
 - The site-wide contact invitation is broad and collaborative—“Let’s do
-  something together.” Photography pages additionally offer a distinct
+  something together.” Photography additionally offers a distinct
   photography-inquiries path for clients.
 
 ## Migration, discoverability, and privacy
@@ -203,7 +240,6 @@ choices that affect the site's direction, structure, or long-term maintenance.
 ## Decisions still to make
 
 - Choose a deployment provider and a privacy-respecting analytics approach.
-- Decide which existing projects are featured at launch and which are archived.
 - Define the first release's photography inquiry experience: direct email only
   or email plus a hosted inquiry form.
 - Decide whether the identity portrait is best as a click-to-cycle image or a
@@ -279,3 +315,4 @@ choices that affect the site's direction, structure, or long-term maintenance.
 | 2026-09-08 | Remove Waterbear as a standalone homepage card and represent it as “Watchmaking” inside a triangular-grid Projects panel. | Watchmaking belongs within the broader project archive, reducing homepage duplication while making the Projects destination more representative. |
 | 2026-09-08 | Standardise sidebar capitalization as Photography, Films, Projects, Objects & experiments, LinkedIn, and Contact. | Correct brand and destination casing makes the navigation feel finished and consistent. |
 | 2026-09-08 | Render the Projects triangular grid as the panel's sampled image layer rather than a CSS background. | The black-hole shader can now gravitationally distort the grid with the rest of the card instead of leaving it visually detached above the effect. |
+| 2026-09-08 | Launch with twelve public pages, one substantial Photography page, and all branching within Films and Projects. | The structure gives selected work enough context while keeping maintenance and primary navigation manageable. |

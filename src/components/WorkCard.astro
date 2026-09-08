@@ -1,0 +1,26 @@
+---
+interface Props {
+  href: string;
+  title: string;
+  meta: string;
+  description: string;
+  image: string;
+  imageAlt: string;
+  imageClass?: string;
+  actionLabel?: string;
+}
+
+const { href, title, meta, description, image, imageAlt, imageClass = "", actionLabel = "Open project" } = Astro.props;
+---
+
+<a class="workCard" href={href}>
+  <div class="workCardMedia">
+    <img class={imageClass} src={image} alt={imageAlt} width="1200" height="800" loading="lazy" decoding="async" />
+  </div>
+  <div class="workCardCopy">
+    <p class="workMeta">{meta}</p>
+    <h3>{title}</h3>
+    <p>{description}</p>
+    <span class="textLink">{actionLabel} <span aria-hidden="true">↗</span></span>
+  </div>
+</a>

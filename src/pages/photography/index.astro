@@ -1,0 +1,180 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import ContactEnding from "../../components/ContactEnding.astro";
+
+const photographs = [
+  {
+    src: "/photography/concert-nessa.avif",
+    alt: "Singer Nessa Barrett performing beneath warm stage lights",
+    caption: "Live performance · 2026",
+    width: 1920,
+    height: 2559,
+  },
+  {
+    src: "/photography/portrait-lakeshore.webp",
+    alt: "Editorial portrait of a person sitting beside the water",
+    caption: "Editorial portrait",
+    width: 1707,
+    height: 2560,
+  },
+  {
+    src: "/photography/concert-mcmaster.avif",
+    alt: "A vocalist performing in a McMaster hoodie",
+    caption: "Campus concert · 2025",
+    width: 1920,
+    height: 2400,
+  },
+  {
+    src: "/photography/portrait-formal.webp",
+    alt: "Formal editorial portrait against a dark background",
+    caption: "Studio portrait",
+    width: 1707,
+    height: 2560,
+  },
+  {
+    src: "/photography/concert-purple.avif",
+    alt: "A concert performer lit by purple stage light",
+    caption: "Live performance · 2025",
+    width: 1920,
+    height: 2400,
+  },
+  {
+    src: "/photography/event-nightlife.webp",
+    alt: "Nightlife event portrait beneath blue and purple light",
+    caption: "Event portrait",
+    width: 1920,
+    height: 2879,
+  },
+  {
+    src: "/photography/portrait-couple.webp",
+    alt: "A monochrome portrait of a couple outdoors",
+    caption: "Couple portrait",
+    width: 1722,
+    height: 2560,
+  },
+  {
+    src: "/photography/portrait-graduation.webp",
+    alt: "Graduation portrait made outdoors",
+    caption: "Graduation portrait",
+    width: 1920,
+    height: 2688,
+  },
+  {
+    src: "/photography/portrait-group.webp",
+    alt: "A group portrait made outdoors in warm evening light",
+    caption: "Group portrait",
+    width: 1920,
+    height: 1536,
+  },
+  {
+    src: "/photography/property-aerial.webp",
+    alt: "A winter aerial photograph of a residential property",
+    caption: "Property aerial",
+    width: 1920,
+    height: 1920,
+  },
+  {
+    src: "/photography/product-beverage.webp",
+    alt: "A beverage product photograph with a bright studio composition",
+    caption: "Product study",
+    width: 1920,
+    height: 2560,
+  },
+  {
+    src: "/photography/product-eyewear.webp",
+    alt: "An eyewear product photograph with a clean studio arrangement",
+    caption: "Product study",
+    width: 1920,
+    height: 2333,
+  },
+];
+---
+
+<BaseLayout
+  title="Photography | Will Chai"
+  description="Portrait, event, performance, product, property, and film photography by Will Chai."
+  path="/photography/"
+  pageClass="photographyPage"
+>
+  <div class="pageShell">
+    <SiteHeader current="photography" />
+    <main id="main" class="pageMain">
+      <section class="photographyHero" aria-labelledby="photographyTitle">
+        <div class="photographyHeroCopy">
+          <div>
+            <p class="sectionMarker">Will Chai Photography</p>
+            <h1 id="photographyTitle" class="pageTitle">People, places, and the energy between them.</h1>
+          </div>
+          <div>
+            <p class="pageLead">
+              Portraits, events, performances, products, property, and film made with a direct, observant approach.
+            </p>
+            <div class="actionRow">
+              <a class="primaryAction" href="mailto:me@willchai.com?subject=Photography%20inquiry">
+                Start an inquiry <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <figure class="photographyHeroMedia">
+          <img
+            src="/assets/photography-banner.avif"
+            alt="A contact sheet of portraits, live performances, events, and creative photography"
+            width="1280"
+            height="720"
+          />
+        </figure>
+      </section>
+
+      <section class="section" aria-labelledby="photographyWorkTitle">
+        <div class="sectionHeader">
+          <h2 id="photographyWorkTitle">Selected photographs</h2>
+          <p>A single editorial sequence moving across portraiture, live work, and commercial studies.</p>
+        </div>
+        <div class="photoMosaic">
+          {
+            photographs.map((photograph) => (
+              <figure>
+                <img
+                  src={photograph.src}
+                  alt={photograph.alt}
+                  width={photograph.width}
+                  height={photograph.height}
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption class="photoCaption">{photograph.caption}</figcaption>
+              </figure>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="photographyServicesTitle">
+        <div class="sectionHeader">
+          <h2 id="photographyServicesTitle">Ways to work together</h2>
+          <p>Based in Hamilton and available for work across Ontario.</p>
+        </div>
+        <div class="serviceNotes">
+          <article class="serviceNote">
+            <h3>Portraits and events</h3>
+            <p>Individual portraits, groups, graduation, celebrations, and gathering coverage with room for candid moments.</p>
+          </article>
+          <article class="serviceNote">
+            <h3>Performances and film</h3>
+            <p>Concerts, musicals, rehearsals, production stills, and cinematography shaped around the pace of a live room.</p>
+          </article>
+          <article class="serviceNote">
+            <h3>Products and property</h3>
+            <p>Promotional images, product studies, interiors, property photographs, aerials, and spatial media.</p>
+          </article>
+        </div>
+      </section>
+
+      <ContactEnding photography />
+    </main>
+    <SiteFooter />
+  </div>
+</BaseLayout>

@@ -37,11 +37,18 @@ has been selected with care. The experience should create curiosity before it
 tries to explain everything. It can reward exploration, but the paths into the
 work and the route to contact should remain immediate and legible.
 
-Photography is the professional service and receives its own client-facing
-inquiry path. Portraits, Events, and Creative are the initial ways into that
-work. Film, writing, games, watchmaking, and other personal projects live under
-Sharing Stories. The whole site uses the broad invitation “Let’s do something
-together,” while photography pages provide a more specific inquiry route.
+Photography is the professional service and receives one substantial page with
+its own client inquiry path. Portraits, Events, performances, and Creative work
+flow together through an editorial sequence. Films and Projects are separate
+destinations. Individual work pages belong within those two areas. Sharing
+Stories continues as the idea connecting the practice. The whole site uses the
+broad invitation “Let’s do something together,” while Photography provides a
+more specific inquiry route.
+
+The Résumé is a professional record with matching PDF and HTML versions. It may
+link to a film or project when the connection is useful. `/hey/` is a compact
+utility page for quick links and QR codes. Contact appears within existing
+pages through relevant invitations and compact endings.
 
 ## Voice and writing
 

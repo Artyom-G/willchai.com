@@ -1,0 +1,59 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import ContactEnding from "../../components/ContactEnding.astro";
+import WorkCard from "../../components/WorkCard.astro";
+import { films } from "../../data/films";
+---
+
+<BaseLayout
+  title="Films | Will Chai"
+  description="Short films directed and made by Will Chai with friends and collaborators."
+  path="/films/"
+  pageClass="filmsPage"
+>
+  <div class="pageShell">
+    <SiteHeader current="films" />
+    <main id="main" class="pageMain">
+      <section class="indexHero" aria-labelledby="filmsTitle">
+        <div class="indexHeroCopy">
+          <p class="sectionMarker">Moving pictures</p>
+          <h1 id="filmsTitle" class="indexTitle">Films made together.</h1>
+          <p class="indexLead">
+            Two independent shorts about ambition, technology, and the choices people make under pressure.
+          </p>
+        </div>
+        <aside class="indexAside">
+          <p>Each film page holds its story, principal credits, festival record, and current viewing links.</p>
+        </aside>
+      </section>
+
+      <section class="section" aria-labelledby="filmCollectionTitle">
+        <div class="sectionHeader">
+          <h2 id="filmCollectionTitle">The films</h2>
+          <p>Wattleseed and Murder of Minus are the current public collection.</p>
+        </div>
+        <div class="collectionGrid">
+          {
+            films.map((film) => (
+              <WorkCard
+                href={`/films/${film.slug}/`}
+                title={film.title}
+                meta={`${film.year} · ${film.runtime}`}
+                description={film.summary}
+                image={film.poster}
+                imageAlt={film.posterAlt}
+                imageClass="posterImage"
+                actionLabel="Open film"
+              />
+            ))
+          }
+        </div>
+      </section>
+
+      <ContactEnding />
+    </main>
+    <SiteFooter />
+  </div>
+</BaseLayout>

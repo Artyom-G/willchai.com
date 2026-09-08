@@ -1,38 +1,55 @@
 # Content Guide
 
-This guide makes it easy to add, revise, and archive work without diluting the
+This guide makes it easy to add, revise, and retire work while preserving the
 site's voice or structure. The voice principles and canonical AI writing
 instruction in `BRAND-GUIDELINES.md` apply to every published draft.
 
 ## What belongs on the site
 
-Publish work that is finished, representative, and worth someone spending time
-with. The archive may be broader; the homepage should remain selective.
+Publish work which is finished, representative, and worth someone spending
+time with. The homepage, Films, and Projects remain selective. Older work can
+receive a compact mention on Projects when it adds useful context. Public
+detail pages are reserved for work with enough substance to support them.
 
-Photography is the professional service. Films, writing/screenplays, games,
-watchmaking, and future story-led work belong to **Sharing Stories**. Every
-item has one primary home even when it intersects several disciplines.
+Photography is the professional service. Films and Projects are separate
+chooser destinations. **Sharing Stories** remains the idea connecting film,
+writing, games, watchmaking, photography, and future forms. Every published
+item has one canonical home when it intersects several disciplines.
 
 ## Photography service
 
-The photography landing page is an introduction to the practice before it is a
-gallery. It should state a short point of view, make the current availability
-or inquiry route clear, and then let visitors enter selected bodies of work.
+The Photography page introduces the practice, states a short point of view,
+makes the current inquiry route clear, and presents a considered sequence of
+work. Portraits, Events, performances, and Creative commissions may create
+editorial chapters within the page. Each chapter remains part of the same
+continuous experience.
 
-Start with three intentional categories: **Portraits**, **Events**, and
-**Creative**. Do not expose every folder or shoot. Categories can be merged,
-renamed, or removed if the visual work does not earn a distinct home.
+Publish a small selection of strong photographs with useful captions. A future
+service such as weddings or real estate may receive its own page once the
+business and visitor journey support a dedicated destination.
 
 The general site contact invitation should feel open and collaborative (“Let’s
 do something together”). Within photography, provide a specific inquiry route
 with only the information required to understand the shoot and respond.
 
-## Sharing Stories
+## Films and Projects
 
-Use this umbrella when work is primarily a creative project rather than a
-client service. A story may take the form of a film, screenplay, game, object,
-or something new; the introduction should explain the work itself rather than
-forcing it into the wrong medium label.
+Films remain separate from Projects. Each film uses its `/films/` page as its
+canonical home. Projects uses its chooser to introduce Medical Terminology
+Games, Tachyboard, Searing Stories, and ConspiraSea. A creative work can carry
+the Sharing Stories idea while its medium determines its public route.
+
+## Résumé and utility content
+
+The Résumé is a professional record with a current PDF at the top and a
+scrollable HTML version below. View and download actions stay easy to find, and
+both formats carry the same verified facts. Links to Films and Projects may
+help a reader inspect relevant work. Their case studies remain on the canonical
+Film and Project pages.
+
+`/hey/` is a branded quick links page for QR codes and profile contexts. It
+stays outside the primary navigation architecture. Contact appears within the
+homepage, the Photography inquiry area, and compact endings on other pages.
 
 ## Project entry checklist
 
@@ -89,8 +106,9 @@ Feature work that is visually strong, current, and varied. Rotate entries only
 when there is a better story to tell; the homepage does not need to change for
 its own sake.
 
-## Archive and removal policy
+## Removal policy
 
-Do not delete a public work casually. First decide whether it should remain in
-the archive, be unfeatured, be redirected to a replacement, or be removed with
-a redirect. Preserve credit and project history where possible.
+Review older work individually. A useful project may remain as a compact item
+on Projects, move to a stronger replacement, or leave the public site with an
+appropriate redirect. Preserve accurate credit and project history wherever
+the selected destination benefits from it.

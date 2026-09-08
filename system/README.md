@@ -36,12 +36,17 @@ input, and with reduced motion.
 
 The current patterns are the identity rail, portrait control, project media
 panel, black-hole project entry, project detail opener, media and caption, role and credits, photography
-service information, archive row, external handoff, general contact invitation,
+service information, project chooser row, external handoff, general contact invitation,
 photography inquiry, and the holographic contact ticket. Homepage project
 panels share one exterior size while
 their internal art direction comes from authentic project media, crop,
 sequencing, title placement, and interaction. The Vermilion dashed boundary is
 a selective signature, not the default border around every module.
+
+The launch architecture contains twelve pages. Photography remains one
+substantial page. Films and Projects are the two chooser destinations with
+individual work pages. The Résumé pairs PDF and HTML formats, `/hey/` serves
+quick link contexts, and contact invitations live within relevant pages.
 
 The system also records the need for an authentic exception layer so the final
 site does not inherit the corporate evenness of a conventional component

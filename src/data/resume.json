@@ -1,0 +1,63 @@
+{
+  "profile": {
+    "name": "William Chai",
+    "headline": "Honours Health Sciences student, photographer, filmmaker, and independent project maker.",
+    "location": "Hamilton, Ontario, Canada",
+    "email": "me@willchai.com",
+    "website": "willchai.com",
+    "linkedin": "linkedin.com/in/willchai",
+    "checked": "September 2026"
+  },
+  "sections": [
+    {
+      "title": "Experience",
+      "items": [
+        { "title": "McMaster Bachelor of Health Sciences Program", "role": "Director of Photography", "date": "September 2026 to present" },
+        { "title": "McMaster Bachelor of Health Sciences Program", "role": "Vice President, Media and Promotion External Committee", "date": "September 2023 to present" },
+        { "title": "McMaster Bachelor of Health Sciences Program", "role": "Photographer", "date": "January 2024 to August 2026" },
+        { "title": "McMaster Bachelor of Health Sciences Program", "role": "Elections Committee Member", "date": "December 2024 to June 2025" },
+        { "title": "WillChai.com", "role": "Founder and Lead Photographer", "date": "April 2021 to present" },
+        { "title": "WillChai.com", "role": "Watchmaker", "date": "August 2025 to present" },
+        { "title": "McMaster Film Production Club", "role": "Co President", "date": "April 2025 to present" },
+        { "title": "McMaster Film Production Club", "role": "Vice President of Cinematography", "date": "April 2024 to present" },
+        { "title": "McMaster Film Production Club", "role": "Cinematography Member", "date": "September 2023 to April 2024" },
+        { "title": "Health Sciences Musical", "role": "Videographer", "date": "March 2024 to present" },
+        { "title": "Health Sciences Musical", "role": "Head of Videography", "date": "June 2024 to August 2025" },
+        { "title": "McMaster AI Society", "role": "Photographer", "date": "September 2025 to present" },
+        { "title": "Ticket Stub Talks, 93.3 CFMU", "role": "Radio Host", "date": "October 2025 to April 2026" },
+        { "title": "Murder of Minus, WillChai Productions", "role": "Director and Lead Actor", "date": "November 2021 to January 2025", "href": "/films/murder-of-minus/" },
+        { "title": "Foxwood Homes", "role": "Warranty Coordinator", "date": "May 2024 to August 2024" }
+      ]
+    },
+    {
+      "title": "Education",
+      "items": [
+        { "title": "McMaster University", "role": "Honours Health Sciences, Bachelor of Health Sciences, Level 4", "date": "2023 to 2027", "detail": "Dean’s Honour List, 2023 to present." },
+        { "title": "St. John’s Kilmarnock School", "role": "International Baccalaureate Diploma Programme", "date": "2019 to 2023", "detail": "Student Council, 2020 to 2023. Alumni representative." }
+      ]
+    },
+    {
+      "title": "Selected projects",
+      "items": [
+        { "title": "ConspiraSea Online", "role": "Creator, artist, and developer", "date": "March 2024 to present", "href": "/projects/conspirasea/" },
+        { "title": "Wattleseed", "role": "Short film", "date": "October 2025 to March 2026", "href": "/films/wattleseed/" },
+        { "title": "Inqling", "role": "Project", "date": "November 2023 to January 2026" },
+        { "title": "Murder of Minus", "role": "Short film", "date": "November 2021 to August 2025", "href": "/films/murder-of-minus/" }
+      ]
+    },
+    {
+      "title": "Credentials",
+      "items": [
+        { "title": "Transport Canada", "role": "Pilot Certificate, Small Remotely Piloted Aircraft System, Visual Line of Sight", "date": "Issued October 2024", "detail": "Credential 2429560517." },
+        { "title": "Pfizer UK through Forage", "role": "Molecule to Market Job Simulation", "date": "Issued June 2024", "detail": "Credential aKcvJ4LfSj82s6Pei." }
+      ]
+    },
+    {
+      "title": "Volunteering",
+      "items": [
+        { "title": "Be My Eyes", "role": "Virtual Support Assistant Volunteer", "date": "November 2025 to present" },
+        { "title": "Perplexity", "role": "Campus Partner", "date": "September 2025 to January 2026" }
+      ]
+    }
+  ]
+}

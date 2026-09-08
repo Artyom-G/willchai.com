@@ -1,0 +1,120 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import ContactEnding from "../../components/ContactEnding.astro";
+import { films, type Film } from "../../data/films";
+
+export function getStaticPaths() {
+  return films.map((film) => ({
+    params: { slug: film.slug },
+    props: { film },
+  }));
+}
+
+interface Props {
+  film: Film;
+}
+
+const { film } = Astro.props;
+const otherFilm = films.find((item) => item.slug !== film.slug);
+---
+
+<BaseLayout
+  title={`${film.title} | Will Chai`}
+  description={film.summary}
+  path={`/films/${film.slug}/`}
+  pageClass="filmDetailPage"
+>
+  <div class="pageShell">
+    <SiteHeader current="films" />
+    <main id="main" class="pageMain">
+      <section class="detailHero" aria-labelledby="filmTitle">
+        <div class="detailHeroCopy">
+          <p class="sectionMarker">Film · {film.year}</p>
+          <h1 id="filmTitle" class="detailTitle">{film.title}</h1>
+          <p class="detailIntro">{film.introduction}</p>
+          <dl class="detailMeta">
+            <div>
+              <dt>Runtime</dt>
+              <dd>{film.runtime}</dd>
+            </div>
+            <div>
+              <dt>Genre</dt>
+              <dd>{film.genre}</dd>
+            </div>
+          </dl>
+        </div>
+        <figure class="detailHeroMedia">
+          <img class="detailPoster" src={film.poster} alt={film.posterAlt} width="1200" height="1600" />
+        </figure>
+      </section>
+
+      <div class="detailBody">
+        <aside class="detailRail">
+          <p class="detailMetaLabel">Also in films</p>
+          {otherFilm && <nav aria-label="Other films"><a href={`/films/${otherFilm.slug}/`}>{otherFilm.title}</a></nav>}
+        </aside>
+
+        <article class="detailStory">
+          <section class="storyBlock" aria-labelledby="filmStoryTitle">
+            <h2 id="filmStoryTitle">The film</h2>
+            <div class="storyCopy">
+              {film.story.map((paragraph) => <p>{paragraph}</p>)}
+            </div>
+          </section>
+
+          <figure class="mediaFigure">
+            <img
+              src={film.still}
+              alt={film.stillAlt}
+              width={film.stillWidth}
+              height={film.stillHeight}
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+
+          <section class="storyBlock" aria-labelledby="filmFactsTitle">
+            <h2 id="filmFactsTitle">At a glance</h2>
+            <dl class="factList">
+              {film.facts.map((fact) => <div><dt>{fact.label}</dt><dd>{fact.value}</dd></div>)}
+            </dl>
+          </section>
+
+          <section class="storyBlock" aria-labelledby="filmCreditsTitle">
+            <h2 id="filmCreditsTitle">Principal credits</h2>
+            <dl class="creditList">
+              {film.credits.map((credit) => <div><dt>{credit.label}</dt><dd>{credit.value}</dd></div>)}
+            </dl>
+          </section>
+
+          <section class="storyBlock" aria-labelledby="filmRecognitionTitle">
+            <h2 id="filmRecognitionTitle">Festival record</h2>
+            <ul class="recognitionList">
+              {film.recognition.map((item) => <li>{item}</li>)}
+            </ul>
+          </section>
+
+          <div class="actionRow" aria-label="Film links">
+            {
+              film.links.map((link, index) => (
+                <a
+                  class={index === 0 ? "primaryAction" : "secondaryAction"}
+                  href={link.href}
+                  target={link.href.startsWith("http") ? "_blank" : undefined}
+                  rel={link.href.startsWith("http") ? "noreferrer" : undefined}
+                >
+                  {link.label} <span aria-hidden="true">↗</span>
+                </a>
+              ))
+            }
+          </div>
+        </article>
+      </div>
+
+      <ContactEnding />
+    </main>
+    <SiteFooter />
+  </div>
+</BaseLayout>

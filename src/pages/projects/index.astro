@@ -1,0 +1,58 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import ContactEnding from "../../components/ContactEnding.astro";
+import WorkCard from "../../components/WorkCard.astro";
+import { projects } from "../../data/projects";
+---
+
+<BaseLayout
+  title="Projects | Will Chai"
+  description="Selected games, tools, and editorial projects by Will Chai."
+  path="/projects/"
+  pageClass="projectsPage"
+>
+  <div class="pageShell">
+    <SiteHeader current="projects" />
+    <main id="main" class="pageMain">
+      <section class="indexHero" aria-labelledby="projectsTitle">
+        <div class="indexHeroCopy">
+          <p class="sectionMarker">Selected projects</p>
+          <h1 id="projectsTitle" class="indexTitle">Ideas made tangible.</h1>
+          <p class="indexLead">
+            Games, tools, and editorial work shaped through code, images, and careful production.
+          </p>
+        </div>
+        <aside class="indexAside">
+          <p>Four current projects, each with a concise record of its purpose, form, and people.</p>
+        </aside>
+      </section>
+
+      <section class="section" aria-labelledby="projectCollectionTitle">
+        <div class="sectionHeader">
+          <h2 id="projectCollectionTitle">Choose a project</h2>
+          <p>The collection stays small so each project has useful space.</p>
+        </div>
+        <div class="collectionGrid">
+          {
+            projects.map((project) => (
+              <WorkCard
+                href={`/projects/${project.slug}/`}
+                title={project.title}
+                meta={`${project.form} · ${project.period}`}
+                description={project.summary}
+                image={project.image}
+                imageAlt={project.imageAlt}
+                imageClass={project.imageClass}
+              />
+            ))
+          }
+        </div>
+      </section>
+
+      <ContactEnding />
+    </main>
+    <SiteFooter />
+  </div>
+</BaseLayout>
