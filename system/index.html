@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="The living visual system and reusable pattern library for willchai.com."
+    />
+    <title>Will Chai System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="./system.css" />
+    <script src="./system.js" defer></script>
+  </head>
+  <body>
+    <div class="system-shell">
+      <aside class="system-nav">
+        <div>
+          <div class="system-brand">
+            <img src="./assets/willchai-mark.png" alt="Will Chai W mark" width="150" height="150" />
+            <p class="eyebrow">willchai.com</p>
+          </div>
+          <h2 class="system-nav__title">The Will Chai System</h2>
+          <p class="system-nav__meta">
+            A living visual reference for one personal, image-led website.
+          </p>
+        </div>
+        <nav class="system-nav__links" aria-label="System sections">
+          <a href="#foundation">Foundation</a>
+          <a href="#panels">Project panels</a>
+          <a href="#signature-object">Contact ticket</a>
+          <a href="#patterns">Patterns</a>
+          <a href="#media">Media rules</a>
+          <a href="#voice">Voice</a>
+          <a href="#assets">Assets</a>
+        </nav>
+      </aside>
+
+      <main class="system-main">
+        <header class="system-intro system-section">
+          <div>
+            <p class="eyebrow">System 0.3 · September 2026</p>
+            <h1>Sharing Stories</h1>
+          </div>
+          <p class="system-intro__copy">
+            This system gives a future physician with an unusual creative
+            practice one coherent home. The exterior remains calm and
+            recognisable while photography, films, writing, objects, and
+            experiments retain their own identities inside it.
+          </p>
+        </header>
+
+        <section class="system-section" id="foundation">
+          <header class="section-header">
+            <div>
+              <span class="section-number">01</span>
+              <h2 class="section-heading">Foundation</h2>
+            </div>
+            <p>
+              A small palette and two live-text families provide continuity.
+              Project imagery supplies most of the atmosphere, so the system
+              does not need decorative colour or a different font for every
+              body of work.
+            </p>
+          </header>
+
+          <div class="foundation-grid">
+            <article class="foundation-panel">
+              <h3>Colour</h3>
+              <div class="colour-list">
+                <div class="colour-row colour-row--cloud">
+                  <strong>Cloud</strong><span>#EEF0F2</span>
+                </div>
+                <div class="colour-row colour-row--white">
+                  <strong>White</strong><span>#FFFFFF</span>
+                </div>
+                <div class="colour-row colour-row--ink">
+                  <strong>Ink</strong><span>#111317</span>
+                </div>
+                <div class="colour-row colour-row--slate">
+                  <strong>Slate</strong><span>#5F6670</span>
+                </div>
+                <div class="colour-row colour-row--blue">
+                  <strong>Brand Blue</strong><span>#2D29F4</span>
+                </div>
+                <div class="colour-row colour-row--vermilion">
+                  <strong>Vermilion</strong><span>#D9362B</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="foundation-panel">
+              <h3>Spacing</h3>
+              <div aria-label="Spacing scale from four to ninety-six pixels">
+                <div class="spacing-line"><span>04</span><i style="width:4px"></i></div>
+                <div class="spacing-line"><span>08</span><i style="width:8px"></i></div>
+                <div class="spacing-line"><span>12</span><i style="width:12px"></i></div>
+                <div class="spacing-line"><span>16</span><i style="width:16px"></i></div>
+                <div class="spacing-line"><span>24</span><i style="width:24px"></i></div>
+                <div class="spacing-line"><span>32</span><i style="width:32px"></i></div>
+                <div class="spacing-line"><span>48</span><i style="width:48px"></i></div>
+                <div class="spacing-line"><span>64</span><i style="width:64px"></i></div>
+                <div class="spacing-line"><span>96</span><i style="width:96px"></i></div>
+              </div>
+            </article>
+
+            <article class="foundation-panel foundation-panel--wide">
+              <h3>Typography</h3>
+              <p class="display-specimen">Will Chai makes things.</p>
+              <p class="body-specimen">
+                Funnel Sans carries the reading experience. It should feel
+                precise without becoming clinical and conversational without
+                becoming casual. Unbounded appears only when a title benefits
+                from its unusual silhouette. Plantagenet Cherokee belongs to
+                the existing logo artwork rather than to live website text.
+              </p>
+              <div class="type-notes">
+                <div class="type-note">
+                  <strong>Unbounded Regular</strong>
+                  <span>Major titles and short project names</span>
+                </div>
+                <div class="type-note">
+                  <strong>Funnel Sans 400–600</strong>
+                  <span>Prose, navigation, metadata, and controls</span>
+                </div>
+                <div class="type-note">
+                  <strong>Plantagenet Cherokee</strong>
+                  <span>Outlined logo artwork only; master asset required</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="foundation-panel">
+              <h3>Signature boundary</h3>
+              <div class="signature-sample">
+                <div>
+                  <strong>One moment, not every module.</strong>
+                  <span>
+                    Use the Vermilion dash for a meaningful active or
+                    editorial region, normally no more than once per viewport.
+                  </span>
+                </div>
+              </div>
+            </article>
+
+            <article class="foundation-panel">
+              <h3>Motion</h3>
+              <p class="body-specimen">
+                Interface responses take 160 milliseconds and image changes
+                take 360 milliseconds. Movement stays within eight pixels and
+                never delays reading. Reduced-motion preferences remove
+                translations and animated delays.
+              </p>
+            </article>
+
+            <article class="foundation-panel foundation-panel--wide">
+              <h3>Marks and minimum type</h3>
+              <div class="mark-demo">
+                <div class="mark-demo__icon">
+                  <img src="./assets/willchai-mark.png" alt="Will Chai W mark" width="150" height="150" loading="lazy" decoding="async" />
+                </div>
+                <div class="mark-demo__copy">
+                  <strong>Compact W</strong>
+                  <p>
+                    This rounded blue mark is official and may appear in site
+                    identity, metadata, favicons, and the contact ticket.
+                  </p>
+                </div>
+                <div class="wordmark-demo">
+                  <strong>willchai.com</strong>
+                  <span>The official website name. The outlined Plantagenet Cherokee wordmark remains a separate production asset.</span>
+                </div>
+                <div class="minimum-type-demo">
+                  <span>14px absolute minimum</span>
+                  <strong>15px preferred for recurring interface text.</strong>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="system-section" id="panels">
+          <header class="section-header">
+            <div>
+              <span class="section-number">02</span>
+              <h2 class="section-heading">Project panels</h2>
+            </div>
+            <p>
+              Every homepage panel has the same exterior rhythm: 36% of the
+              desktop viewport height, never more than 40%, with a 4:3 mobile
+              form. Their identities come from the work rather than from solid
+              category colours.
+            </p>
+          </header>
+
+          <div class="project-stack">
+            <a class="project-panel project-panel--direct" href="#patterns">
+              <img src="../src/assets/photo4.jpg" alt="Two people laughing together at a formal event" width="2250" height="1500" loading="lazy" decoding="async" />
+              <h3 class="project-panel__title">Events</h3>
+              <p class="project-panel__meta">Photography · Direct title</p>
+            </a>
+
+            <a class="project-panel project-panel--label" href="#patterns">
+              <img src="../src/assets/LockedIn.jpg" alt="Hand-painted blue and black Locked In project lettering" width="480" height="480" loading="lazy" decoding="async" />
+              <div class="project-panel__label">
+                <h3 class="project-panel__title">Locked In</h3>
+                <p class="project-panel__meta">Project artwork · Attached label</p>
+              </div>
+            </a>
+
+            <a class="project-panel project-panel--side" href="#patterns">
+              <img src="../src/assets/MitosisML.jpg" alt="Soft-focus purple chromosome forms on a pink background" width="999" height="998" loading="lazy" decoding="async" />
+              <div class="project-panel__sidecopy">
+                <p class="project-panel__meta">Experiment · Side title</p>
+                <h3 class="project-panel__title">Mitosis ML</h3>
+              </div>
+            </a>
+          </div>
+
+          <article class="panel-interaction-note">
+            <div>
+              <p class="eyebrow">Shared entry behaviour</p>
+              <h3>Black-hole entry</h3>
+            </div>
+            <p>
+              A full-panel rendering layer bends the project image around a
+              restrained event horizon while every live title stays above it.
+              The heavy spring follows the pointer, the thin accretion trace
+              turns from −20° to +20°, and the other panels dim by 20%. There is
+              no photon ring, and the renderer sleeps when it settles. Touch gets
+              one short transition; reduced motion keeps the link direct.
+            </p>
+            <a href="../prototype/">Open the working interaction</a>
+          </article>
+        </section>
+
+        <section class="system-section" id="signature-object">
+          <header class="section-header">
+            <div>
+              <span class="section-number">03</span>
+              <h2 class="section-heading">A confirmed exception</h2>
+            </div>
+            <p>
+              The contact ticket already belongs to willchai.com. It gives us
+              a genuine piece of visual character to preserve while the wider
+              organic and playful language remains open for better exploration.
+            </p>
+          </header>
+
+          <div class="ticket-study">
+            <div class="ticket-study__copy">
+              <p class="eyebrow">Existing signature object</p>
+              <h3>The contact ticket</h3>
+              <p>
+                Its irregular edge, large hover scale, slow pointer-responsive
+                tilt, periodic jiggle, and click bounce make it feel handleable.
+                Spectral light follows the cursor while the repeated W layer
+                rotates deep beneath the face. This is the original live-site
+                treatment, kept specific to the ticket.
+              </p>
+            </div>
+            <div class="ticket-study__object">
+              <button
+                class="contact-ticket"
+                type="button"
+                data-contact-ticket
+                aria-label="Copy me@willchai.com to the clipboard"
+              >
+                <span class="contact-ticket__email">me<span aria-hidden="true">@</span>willchai.com</span>
+                <span class="contact-ticket__status" data-ticket-status aria-live="polite">don’t be a stranger</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="system-section" id="patterns">
+          <header class="section-header">
+            <div>
+              <span class="section-number">04</span>
+              <h2 class="section-heading">Patterns</h2>
+            </div>
+            <p>
+              Patterns solve recurring communication problems. Each one has a
+              content contract and permitted variation so future pages can
+              remain related without becoming identical.
+            </p>
+          </header>
+
+          <div class="pattern-list">
+            <article class="pattern-entry">
+              <div class="pattern-copy">
+                <h3>Identity rail and portrait control</h3>
+                <p>
+                  Establish the person behind the work and offer a small,
+                  optional moment of discovery without making the biography a
+                  résumé.
+                </p>
+                <dl class="pattern-contract">
+                  <div><dt>Required</dt><dd>Portrait, name, durable premise, primary navigation, general contact route.</dd></div>
+                  <div><dt>May vary</dt><dd>Portrait crop and image sequence; short contextual line.</dd></div>
+                  <div><dt>Must hold</dt><dd>Keyboard activation, visible cue, useful first image, reduced-motion support.</dd></div>
+                </dl>
+              </div>
+              <div class="pattern-demo">
+                <div class="identity-demo">
+                  <button class="portrait-control" type="button" data-portrait-control aria-label="Show another crop of Will's portrait">
+                    <img src="../src/assets/profile.jpg" alt="Portrait of Will Chai" width="827" height="827" loading="lazy" decoding="async" />
+                    <span class="portrait-control__cue" data-portrait-count>Crop 1 of 2</span>
+                  </button>
+                  <div class="identity-demo__text">
+                    <h4>Will Chai</h4>
+                    <p>A future physician with an unusual creative practice.</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="pattern-entry">
+              <div class="pattern-copy">
+                <h3>Project detail opener</h3>
+                <p>
+                  Establish what the work is, what Will contributed, and why it
+                  matters before asking a visitor to follow a longer story.
+                </p>
+                <dl class="pattern-contract">
+                  <div><dt>Required</dt><dd>Title, primary form, date, leading media, concise premise, role, and essential credits.</dd></div>
+                  <div><dt>May vary</dt><dd>Title placement, media proportion, sequence, and amount of introductory context.</dd></div>
+                  <div><dt>Must hold</dt><dd>Verified authorship, reserved media dimensions, useful alt text, and a deliberate mobile crop.</dd></div>
+                </dl>
+              </div>
+              <div class="pattern-demo">
+                <div class="detail-demo">
+                  <figure class="detail-demo__media">
+                    <img src="../src/assets/MitosisML.jpg" alt="Soft-focus purple chromosome forms on a pink background" width="999" height="998" loading="lazy" decoding="async" />
+                    <figcaption>Leading media establishes the project before the long-form narrative begins.</figcaption>
+                  </figure>
+                  <div class="detail-demo__copy">
+                    <p class="eyebrow">Interactive experiment · 2025</p>
+                    <h4>Mitosis ML</h4>
+                    <p>
+                      A short premise belongs here. The production record
+                      follows in readable text rather than being baked into the
+                      artwork.
+                    </p>
+                    <dl class="credit-demo">
+                      <div><dt>Contribution</dt><dd>Name the specific work</dd></div>
+                      <div><dt>With</dt><dd>Credit collaborators accurately</dd></div>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="pattern-entry">
+              <div class="pattern-copy">
+                <h3>Archive row</h3>
+                <p>
+                  Keep finished and unusual projects findable without forcing
+                  all of them to compete for homepage attention.
+                </p>
+                <dl class="pattern-contract">
+                  <div><dt>Required</dt><dd>Title, year, primary form, and destination.</dd></div>
+                  <div><dt>May vary</dt><dd>Role, collaborator, small image preview, or external-site marker.</dd></div>
+                  <div><dt>Must hold</dt><dd>One semantic link per row, visible focus, and a useful title without hover.</dd></div>
+                </dl>
+              </div>
+              <div class="pattern-demo">
+                <div class="archive-demo">
+                  <a class="archive-row" href="#assets"><strong>Locked In</strong><span>Game</span><span>2024</span></a>
+                  <a class="archive-row" href="#assets"><strong>Mitosis ML</strong><span>Experiment</span><span>2025</span></a>
+                  <a class="archive-row" href="#assets"><strong>Selected portraits</strong><span>Photography</span><span>Ongoing</span></a>
+                  <a class="archive-row" href="#assets"><strong>Watchmaking notes</strong><span>Objects</span><span>Archive</span></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="pattern-entry">
+              <div class="pattern-copy">
+                <h3>Photography service information</h3>
+                <p>
+                  Present photography as the professional service without
+                  making the rest of the site feel like an agency brochure.
+                </p>
+                <dl class="pattern-contract">
+                  <div><dt>Required</dt><dd>Portraits, Events, and Creative; representative work; a specific inquiry route.</dd></div>
+                  <div><dt>May vary</dt><dd>Featured image, category order, current availability, and useful location context.</dd></div>
+                  <div><dt>Must hold</dt><dd>Image-led presentation, publication permission, and an inquiry action outside any lightbox.</dd></div>
+                </dl>
+              </div>
+              <div class="pattern-demo">
+                <div class="service-demo">
+                  <img src="../src/assets/photo4.jpg" alt="Two people laughing together at a formal event" width="2250" height="1500" loading="lazy" decoding="async" />
+                  <div class="service-demo__copy">
+                    <p class="eyebrow">Photography</p>
+                    <h4>Portraits, events, and creative commissions.</h4>
+                    <p>
+                      Photographs should introduce the service before process
+                      or logistics. The invitation stays direct and personal.
+                    </p>
+                    <a class="text-link" href="mailto:me@willchai.com?subject=Photography%20inquiry">Ask about photography <span aria-hidden="true">↗</span></a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="pattern-entry">
+              <div class="pattern-copy">
+                <h3>Contact paths</h3>
+                <p>
+                  Keep the site-wide invitation broad while giving prospective
+                  photography clients a more specific route when context calls
+                  for it.
+                </p>
+                <dl class="pattern-contract">
+                  <div><dt>Required</dt><dd>Clear action, working destination, and enough context to set expectations.</dd></div>
+                  <div><dt>May vary</dt><dd>General collaboration language or photography-specific inquiry language.</dd></div>
+                  <div><dt>Must hold</dt><dd>No unnecessary form fields, hidden contact route, or vague button label.</dd></div>
+                </dl>
+              </div>
+              <div class="pattern-demo">
+                <div class="contact-demo">
+                  <div class="contact-invitation">
+                    <h4>Let’s do something together.</h4>
+                    <p>Bring a story, a question, or an idea that does not fit neatly anywhere else.</p>
+                    <a class="text-link" href="mailto:me@willchai.com">Start a conversation <span aria-hidden="true">↗</span></a>
+                  </div>
+                  <div class="photo-inquiry">
+                    <h4>Planning a shoot?</h4>
+                    <p>Tell me what you are making, who it is for, and roughly when it needs to happen.</p>
+                    <a class="text-link" href="mailto:me@willchai.com?subject=Photography%20inquiry">Photography inquiries <span aria-hidden="true">↗</span></a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="pattern-entry">
+              <div class="pattern-copy">
+                <h3>External project handoff</h3>
+                <p>
+                  Give an independent project enough context on this site and
+                  make the moment of leaving it obvious without becoming loud.
+                </p>
+                <dl class="pattern-contract">
+                  <div><dt>Required</dt><dd>Project name, destination type, short description, and visible external indicator.</dd></div>
+                  <div><dt>May vary</dt><dd>Small preview, current status, repository, publication, or independent site.</dd></div>
+                  <div><dt>Must hold</dt><dd>Core context on willchai.com, current-tab navigation by default, and periodic link checks.</dd></div>
+                </dl>
+              </div>
+              <div class="pattern-demo">
+                <a class="handoff-demo" href="#assets">
+                  <span class="eyebrow">Independent project site</span>
+                  <strong>Continue into the work</strong>
+                  <span>The arrow announces the handoff; the surrounding page preserves the project’s story.</span>
+                  <i aria-hidden="true">↗</i>
+                </a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="system-section" id="media">
+          <header class="section-header">
+            <div>
+              <span class="section-number">05</span>
+              <h2 class="section-heading">Media rules</h2>
+            </div>
+            <p>
+              The site keeps one frame while each form presents the evidence
+              people actually need to understand it. These are content rules,
+              not new visual themes.
+            </p>
+          </header>
+          <div class="media-rules">
+            <article><h3>Photography</h3><p>Lead with a considered sequence, honest crops, and captions that add context. Avoid automatic slideshows and confirm publication permission.</p></article>
+            <article><h3>Film</h3><p>Begin with a poster or deliberate still, then record year, runtime, role, credits, and whether captions or a transcript are available.</p></article>
+            <article><h3>Writing</h3><p>Use a title, form, and concise premise before the text. Long work needs a comfortable reading surface rather than an image of words.</p></article>
+            <article><h3>Games and software</h3><p>Name platform, status, and contribution, then give a clear way to experience the work. Do not imply features that are not present.</p></article>
+            <article><h3>Objects</h3><p>Record material, scale, process, and provenance when they change how the object is understood. Detail photographs should retain physical context.</p></article>
+            <article><h3>Research</h3><p>Include it when it explains the practice, with appropriate sources and collaborators. Keep it in project context or the archive, not the identity rail.</p></article>
+          </div>
+        </section>
+
+        <section class="system-section" id="voice">
+          <header class="section-header">
+            <div>
+              <span class="section-number">06</span>
+              <h2 class="section-heading">Voice</h2>
+            </div>
+            <p>
+              The website sounds like a thoughtful person describing work he
+              cares about. It does not perform cleverness, imitate a magazine,
+              or divide every idea into a slogan.
+            </p>
+          </header>
+          <div class="voice-sample">
+            <p>
+              I work across photography, film, writing, games, and objects, but
+              the medium is usually where a project ends rather than where it
+              begins. I am interested in people, attention, and the details that
+              make a story worth sharing. This site is a changing selection of
+              that work and an invitation to make something together.
+            </p>
+          </div>
+        </section>
+
+        <section class="system-section" id="assets">
+          <header class="section-header">
+            <div>
+              <span class="section-number">07</span>
+              <h2 class="section-heading">Asset register</h2>
+            </div>
+            <p>
+              A visible status prevents placeholders and historical files from
+              quietly becoming permanent brand assets during implementation.
+            </p>
+          </header>
+          <table class="asset-table">
+            <caption>Current reusable sources</caption>
+            <thead>
+              <tr><th>Asset</th><th>Source</th><th>Use</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Plantagenet wordmark</td><td>Original design source</td><td>Logo artwork only</td><td class="status status--needed">Vector needed</td></tr>
+              <tr><td>Current W mark</td><td>system/assets/willchai-mark.avif</td><td>Identity, metadata, and ticket texture</td><td class="status status--ready">Official</td></tr>
+              <tr><td>Legacy W icon</td><td>public/logo512.png</td><td>Previous application icon</td><td>Do not reuse</td></tr>
+              <tr><td>Fine noise</td><td>src/assets/noise.png</td><td>Contact ticket interference layer only</td><td class="status status--ready">Available</td></tr>
+              <tr><td>Portrait</td><td>src/assets/profile.jpg</td><td>Identity-pattern reference</td><td class="status status--ready">Available</td></tr>
+              <tr><td>Event photograph</td><td>src/assets/photo4.jpg</td><td>Media-panel reference</td><td class="status status--ready">Available</td></tr>
+              <tr><td>Locked In artwork</td><td>src/assets/LockedIn.jpg</td><td>Project-panel reference</td><td class="status status--ready">Available</td></tr>
+              <tr><td>Mitosis ML artwork</td><td>src/assets/MitosisML.jpg</td><td>Project-panel reference</td><td class="status status--ready">Available</td></tr>
+              <tr><td>Funnel Sans and Unbounded</td><td>Official OFL sources</td><td>Live website typography</td><td class="status status--needed">Self-host files</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <footer class="system-footer">
+          <span>Living system · update alongside production components</span>
+          <span>Source of truth: DECISIONS.md</span>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

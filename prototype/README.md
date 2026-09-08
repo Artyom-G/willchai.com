@@ -1,0 +1,23 @@
+# Homepage prototype
+
+This directory is the first coherent homepage study for the rebuilt willchai.com. It is intentionally separate from `system/`: the system remains a reference library, while this page tests whether the chosen ingredients can form a personal, editorial, and eccentric experience in context.
+
+The page is a static, dependency-free slice. Its left rail holds Will's identity and navigation and stays fixed on desktop while the document moves through a rhythmic stream of project panels. Photography is 25% taller than the shared card height, and the gaps between cards are twice the base gutter. On mobile, the rail becomes an introduction, the standard panels become 4:3 frames, and Photography retains the same 25% height emphasis.
+
+Project links share a restrained black-hole entry transition. A fine pointer sets the destination of a damped spring, so the event horizon follows with visible weight instead of acting like a large cursor. One full-panel WebGL layer samples and radially deflects the panel's actual media; it has no circular clipping container and always sits behind the live title and description. The black hole has no circular photon ring, while its thin warm accretion trace tilts by as much as 20 degrees in either direction according to the pointer's horizontal distance from the panel centre. Bold, tightly spaced Unbounded “ENTER” is drawn into the same rendering and receives one coherent optical curve. While one panel is hovered with a fine pointer, every other panel receives a 20% Black veil. A coarse pointer plays a short version at the tapped position before following the link, while reduced-motion preferences preserve a direct link.
+
+The interaction is deliberately dependency-free. One low-power WebGL context and canvas are created only after a panel is engaged and reused between panels. Device pixel ratio is capped, antialiasing and unused buffers are disabled, geometry is refreshed after scroll and resize, and the animation loop stops completely once the spring settles. Slow-update displays, unavailable WebGL, and reduced-motion preferences skip the rendering layer.
+
+The homepage panel system and black-hole entry treatment are approved as the final visual direction. The contact section uses a dedicated `#D5DBE2` field around a lighter `#E9EDF0` irregular six-sided stage and White ticket. The ticket receives a subtle shadow only while hovered or keyboard-focused. The portrait pointer is reduced by 20%, while Photography uses the largest Unbounded project-title scale and an enlarged descriptor.
+
+The ticket implementation is transplanted from the live willchai.com footer. It retains the original 0.075 easing, ±20-degree pointer tilt, 1.1× hover scale, three-second idle jiggle, click bounce, cursor-positioned radial light, paired conic gradients, embedded noise, and repeated-W layer translated −120px into the card. Only the selectors, local W asset path, semantic button hookup, clipboard fallback, and reduced-motion handling are adapted for the prototype.
+
+The outer animated button is intentionally unclipped and the perforated mask is applied to a nested foil surface, preventing the rotating 1.1× ticket from being cropped by its own bounds. The larger ticket stage retains its irregular polygon clip with generous clearance around the card. Animation frames now run only while motion is converging; the idle jiggle is timer-driven and the compositor hint exists only during movement, preserving the original visual result with less idle work.
+
+The portrait control keeps the circular `will-portrait.avif` as its default and cycles through three square-cornered user-provided additions at their native aspect ratios: the CFMU radio studio, a transit portrait, and an OFFA portrait. The former `will-portrait-alt.jpg` is no longer referenced. Display copies are stored as appropriately sized WebP assets while the original JPEG files remain untouched.
+
+The sidebar now exposes Photography, Films, the full Projects archive, Objects & experiments, LinkedIn, and Contact. A dedicated typographic Projects panel follows Films and links to `https://willchai.com/projects/`; its triangular grid and labels introduce Tachyboard, MedTerms, ConspiraSea, and watchmaking without substituting invented imagery for those projects. The grid is a real panel image rather than a CSS overlay, allowing the shared black-hole renderer to sample and distort it. Waterbear is no longer a standalone homepage card and is represented by watchmaking within Projects.
+
+## Preview
+
+Serve the repository root and open `/prototype/`. The existing local preview uses `http://127.0.0.1:4173/prototype/`.

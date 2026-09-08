@@ -1,0 +1,48 @@
+/*
+ * willchai.com brand tokens
+ * Keep these values synchronized with BRAND-GUIDELINES.md and DESIGN-SYSTEM.md.
+ * Font files are temporarily loaded by the system page from Google Fonts;
+ * production must self-host licensed, subsetted WOFF2 files.
+ */
+
+:root {
+  --wc-cloud: #eef0f2;
+  --wc-white: #ffffff;
+  --wc-ink: #111317;
+  --wc-slate: #5f6670;
+  --wc-hairline: #c9ced4;
+  --wc-blue: #2d29f4;
+  --wc-vermilion: #d9362b;
+
+  --wc-font-display: "Unbounded", "Arial Black", sans-serif;
+  --wc-font-sans: "Funnel Sans", Arial, sans-serif;
+  --wc-font-min: 0.875rem;
+  --wc-font-small: 0.9375rem;
+
+  --wc-space-1: 0.25rem;
+  --wc-space-2: 0.5rem;
+  --wc-space-3: 0.75rem;
+  --wc-space-4: 1rem;
+  --wc-space-6: 1.5rem;
+  --wc-space-8: 2rem;
+  --wc-space-12: 3rem;
+  --wc-space-16: 4rem;
+  --wc-space-24: 6rem;
+
+  --wc-gutter-desktop: 1rem;
+  --wc-gutter-mobile: 0.75rem;
+  --wc-panel-height: 36vh;
+  --wc-panel-radius: 0.875rem;
+  --wc-signature-border: 3px dashed var(--wc-vermilion);
+
+  --wc-duration-interface: 160ms;
+  --wc-duration-image: 360ms;
+  --wc-ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --wc-duration-interface: 0ms;
+    --wc-duration-image: 0ms;
+  }
+}
