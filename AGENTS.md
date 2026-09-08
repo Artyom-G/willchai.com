@@ -1,5 +1,10 @@
 # Project instructions
 
+Use `WORKFLOW.md` to identify the active implementation surface and keep file
+searches, status checks, staging, and builds path-scoped. Do not scan or rebuild
+the legacy application, generated output, dependency tree, or original media
+archive unless the user's request explicitly includes them.
+
 Before changing the website's interface, identity, content structure, or copy,
 read `DECISIONS.md`, `BRAND-GUIDELINES.md`, `DESIGN-SYSTEM.md`,
 `CONTENT-GUIDE.md`, `system/README.md`, and `system/PATTERNS.md`. Use
