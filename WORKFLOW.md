@@ -18,4 +18,9 @@ The repository contains the active rebuild alongside the legacy React site, gene
 4. Stage only the relevant active path and any documentation changed with it.
 5. Commit on the current branch and push that branch to `origin`.
 
+The saved `origin` uses HTTPS, while this machine's GitHub CLI token may be
+expired. If an HTTPS push asks for credentials, push the same branch through
+`git@github.com:Artyom-G/willchai.com.git` instead; the configured SSH key is
+the working non-interactive path. Do not spend time retrying the expired token.
+
 Do not scaffold a temporary framework or install another dependency tree in the repository root for a static page. Use an isolated temporary directory for experiments, then port the finished HTML, CSS, and optimized assets into the appropriate active path.
