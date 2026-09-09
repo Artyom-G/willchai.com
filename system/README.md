@@ -50,9 +50,10 @@ quick link contexts, and contact invitations live within relevant pages.
 
 The system also records the need for an authentic exception layer so the final
 site does not inherit the corporate evenness of a conventional component
-library. The contact ticket is an approved example. Will also selected a
-personal pixel photographer direction on 9 September 2026. The four frame
-artwork and entrance are available for review in `photographer-pixel.html`.
+library. The contact ticket is an approved example. Will also approved the
+personal pixel photographer on 9 September 2026. It appears beside the
+Photography title. The four frame artwork and entrance can be replayed in
+`photographer-pixel.html`.
 Each drawing is 32 × 32 pixels and the sequence lasts four seconds. The
 broader visual language continues to develop from Will's real source material.
 The implementation was adapted from the live WordPress ticket's perforated

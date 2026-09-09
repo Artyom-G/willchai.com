@@ -213,16 +213,19 @@ completely when the ticket returns to the stage.
 
 ## Authentic exception
 
-The Photography character is a personal illustration direction selected by
-Will on 9 September 2026. Its review study uses four 32 × 32 pixel frames:
+The Photography character is a personal illustration approved by Will on
+9 September 2026. It uses four 32 × 32 pixel frames:
 arrive, get ready, take a photograph, and settle. Each drawing occupies one
 second. The first two poses move into place and the fourth remains visible.
 All frames share six colours, transparent padding, proportions, and a foot
 baseline. Enlargement uses integer multiples and crisp pixels. The study
 provides a keyboard accessible replay control. Reduced motion presents the
-resting pose, and leaving the page stops pending animation work. Its final
-placement in Photography remains a design decision. Open
-`photographer-pixel.html` to review the artwork and timing.
+resting pose, and leaving the study stops pending animation work. The page
+places the character beside the Photography title with a reserved area for
+its entrance. Its CSS animation plays once per page entry, holds the fourth
+pose, and uses the same four seconds and artwork as the approved study.
+Desktop displays each frame at 64px and narrow screens use 32px. Open
+`photographer-pixel.html` to replay the artwork and timing.
 
 An authentic exception gives a major composition one purposeful interruption
 to the standard grid. It must begin with a real source from Will's objects,

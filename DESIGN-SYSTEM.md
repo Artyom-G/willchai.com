@@ -300,16 +300,19 @@ tap, or keyboard activation reveals
 the foil briefly and confirms that `me@willchai.com` was copied. Reduced-motion
 mode removes tilt and bounce but preserves the colour change and confirmation.
 
-### Photography character study
+### Photography character
 
-The user selected a personal pixel character as a direction for Photography.
+Will approved the personal pixel character for Photography on 9 September 2026.
 `system/photographer-pixel.html` presents four actual 32 × 32 RGBA frames,
 a four second entrance, and a stationary final pose. The source artwork,
 six colour palette, generation prompts, and frame atlas live in
 `system/assets/photographer-pixel/`. Integer enlargement preserves square
 pixels. The study includes replay and an original size comparison. Reduced
-motion presents the resting pose. Final artwork and page placement remain
-part of the design review.
+motion presents the resting pose. `PhotographyCharacter.astro` uses the approved
+atlas from `public/photography/pixel-photographer.png` beside the page title.
+The four second CSS sequence plays once and holds the fourth pose. Frames
+appear at 64px on desktop and 32px on narrow screens. The character reserves
+its space within the identity line and remains a decorative element.
 
 ## Photography
 

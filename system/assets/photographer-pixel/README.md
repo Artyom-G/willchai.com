@@ -1,6 +1,6 @@
 # Pixel photographer artwork
 
-The user requested four simple 32 × 32 pixel frames depicting Will with a camera. The entrance lasts four seconds and ends in a resting pose. This study is for review. Placement within Photography belongs to the continuing page design discussion.
+The user approved these four simple 32 × 32 pixel frames depicting Will with a camera on 9 September 2026. The entrance lasts four seconds and ends in a resting pose. The character appears beside the Photography title through `src/components/PhotographyCharacter.astro`. Its public atlas is an identical copy at `public/photography/pixel-photographer.png`. The wider page composition continues through design review.
 
 Identity comes from the existing homepage radio portrait at `public/assets/will-portrait-radio.webp`. The built in image generation tool produced the artwork. The accepted simple sheet is preserved as `generated-master.png`. The sheet was exported to four 32 × 32 RGBA frames with nearest neighbour sampling, a shared baseline, six solid colours, and transparent padding. The frame atlas is `frames.png`, arranged left to right. `frames-preview.png` enlarges it six times for inspection.
 
@@ -21,4 +21,3 @@ Edit this four pose sprite sheet. Redraw the same man and same four poses with e
 ### Pass 3
 
 Keep the four tiny simple pixel characters and their four poses exactly as drawn. Replace the entire checkerboard background with completely uniform pure white, RGB 255 255 255. Keep a clean white canvas with the same 2 by 2 arrangement. Preserve the flat pixel silhouettes, camera poses, hair, glasses, clothing and proportions. The background must be solid pure white everywhere around and between the sprites, including gaps between legs and arms. Produce the four sprites on white with completely flat colours and crisp pixel edges. Treat this as a sprite atlas ready to export as four 32 by 32 pixel game frames.
-

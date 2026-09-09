@@ -49,6 +49,13 @@ html:has(.photographyPage) {
   text-decoration: none;
 }
 
+.photographyIdentity {
+  display: flex;
+  align-items: center;
+  gap: var(--wc-space-2);
+  min-width: 0;
+}
+
 .photographyIdentityBar h1 {
   color: var(--wc-vermilion);
 }
@@ -650,6 +657,7 @@ html:has(.photographyPage) {
 
   .photographyIdentityBar {
     min-height: 3.5rem;
+    gap: var(--wc-space-3);
     padding-inline: var(--wc-space-3);
   }
 

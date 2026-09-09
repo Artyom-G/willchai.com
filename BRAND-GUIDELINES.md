@@ -291,11 +291,12 @@ as a memorable contact invitation at the end of a page and may inspire a small
 number of related tactile objects, but the full holographic treatment remains
 specific to contact.
 
-Photography may use a small pixel character of Will as a personal illustrated
-element. The agreed format is four simple 32 × 32 drawings over four seconds,
-ending in a resting pose. Its appearance comes from Will's existing portrait.
-The initial artwork is available for review in `system/photographer-pixel.html`.
-Placement belongs to the continuing Photography design discussion.
+Photography uses the approved pixel character of Will beside its compact title.
+Four simple 32 × 32 drawings play once over four seconds and end in a resting
+pose. Its six colour appearance comes from Will's existing portrait. The
+character appears at twice its native size on desktop and at native size on
+phones. Reduced motion presents the resting pose. The approved artwork and
+replay study are available in `system/photographer-pixel.html`.
 
 The current blue W in `system/assets/willchai-mark.avif` is the official compact mark and
 should appear in the system library, site metadata, and suitable identity or

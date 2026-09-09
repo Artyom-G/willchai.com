@@ -3,6 +3,7 @@ import "../../styles/photography.css";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import PhotographyFooter from "../../components/PhotographyFooter.astro";
+import PhotographyCharacter from "../../components/PhotographyCharacter.astro";
 import shuffleManifest from "../../data/photographyShuffle.json";
 
 const photographs = [
@@ -140,12 +141,16 @@ const shuffleBatches = Array.from(
   path="/photography/"
   pageClass="photographyPage"
 >
+  <link slot="head" rel="preload" as="image" href="/photography/pixel-photographer.png" />
   <script slot="head" is:inline src="/scripts/photography.js" defer></script>
   <div class="pageShell">
     <SiteHeader current="photography" />
     <main id="main" class="pageMain">
       <div class="photographyIdentityBar">
-        <h1 id="photographyTitle">Will Chai Photography</h1>
+        <div class="photographyIdentity">
+          <PhotographyCharacter />
+          <h1 id="photographyTitle">Will Chai Photography</h1>
+        </div>
         <a href="#pricing">Pricing</a>
       </div>
       <section class="photographyOpening" aria-labelledby="photographyTitle">
