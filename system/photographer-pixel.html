@@ -1,91 +1,19 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="noindex, nofollow" />
-    <title>Pixel photographer · Will Chai</title>
-    <link rel="stylesheet" href="tokens.css" />
-    <style>
-      @font-face { font-family: "Funnel Sans"; src: url("../public/assets/funnel-sans-latin.woff2") format("woff2"); font-display: swap; }
-      @font-face { font-family: "Unbounded"; src: url("../public/assets/unbounded-latin.woff2") format("woff2"); font-display: swap; }
-      * { box-sizing: border-box; }
-      body { margin: 0; background: var(--wc-white); color: var(--wc-ink); font-family: var(--wc-font-sans); font-size: 17px; line-height: 1.5; }
-      main { width: min(100% - 3rem, 46rem); margin: var(--wc-space-16) auto; }
-      h1 { margin: 0 0 var(--wc-space-2); font-family: var(--wc-font-display); font-size: clamp(1.25rem, 4vw, 1.75rem); font-weight: 400; }
-      p { margin: 0; color: var(--wc-slate); }
-      .stage { display: flex; align-items: end; justify-content: center; height: 16rem; padding-bottom: var(--wc-space-8); }
-      .actor { width: 128px; height: 128px; image-rendering: pixelated; transform: translateX(0); }
-      .controls { display: flex; justify-content: center; align-items: center; gap: var(--wc-space-4); min-height: 3rem; }
-      button { border: 1px solid var(--wc-hairline); border-radius: var(--wc-space-2); padding: var(--wc-space-2) var(--wc-space-4); min-height: 44px; background: var(--wc-white); color: var(--wc-ink); font: 500 15px var(--wc-font-sans); cursor: pointer; }
-      button:hover { border-color: var(--wc-blue); color: var(--wc-blue); }
-      button:focus-visible, a:focus-visible { outline: 2px solid var(--wc-blue); outline-offset: 3px; }
-      button:disabled { cursor: default; color: var(--wc-slate); }
-      .status { font-size: var(--wc-font-small); }
-      .poses { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--wc-space-4); margin: var(--wc-space-12) 0; padding-top: var(--wc-space-8); border-top: 1px solid var(--wc-hairline); }
-      figure { margin: 0; text-align: center; }
-      .poses img { width: 96px; height: 96px; max-width: 100%; object-fit: contain; image-rendering: pixelated; }
-      figcaption { margin-top: var(--wc-space-3); font-size: var(--wc-font-small); }
-      .native { display: flex; flex-wrap: wrap; align-items: center; gap: var(--wc-space-6); }
-      .native p { font-size: var(--wc-font-small); }
-      .native img { width: 128px; height: 32px; image-rendering: pixelated; }
-      .download { margin-top: var(--wc-space-8); font-size: var(--wc-font-small); }
-      a { color: var(--wc-blue); text-underline-offset: 0.2em; }
-      @media (max-width: 30rem) { main { margin-block: var(--wc-space-8); } .poses { gap: var(--wc-space-2); } .poses img { width: 64px; height: 64px; } figcaption { font-size: var(--wc-font-min); } }
-    </style>
-  </head>
-  <body>
-    <main>
-      <h1>Pixel photographer</h1>
-      <p>Four 32 × 32 drawings. A four second entrance.</p>
-      <div class="stage">
-        <img class="actor" src="assets/photographer-pixel/04-rest.png" width="32" height="32" alt="A pixel character of Will holding a camera" />
-      </div>
-      <div class="controls">
-        <button type="button" id="replay">Replay entrance</button>
-        <p class="status" aria-live="polite" id="status">Resting pose</p>
-      </div>
-      <div class="poses">
-        <figure><img src="assets/photographer-pixel/01-arrive.png" width="32" height="32" alt="Will walking with a camera at his side" /><figcaption>Arrive</figcaption></figure>
-        <figure><img src="assets/photographer-pixel/02-ready.png" width="32" height="32" alt="Will standing with his camera ready" /><figcaption>Get ready</figcaption></figure>
-        <figure><img src="assets/photographer-pixel/03-photograph.png" width="32" height="32" alt="Will raising the camera to his face" /><figcaption>Take a photo</figcaption></figure>
-        <figure><img src="assets/photographer-pixel/04-rest.png" width="32" height="32" alt="Will relaxing with the camera lowered" /><figcaption>Settle</figcaption></figure>
-      </div>
-      <div class="native"><p>At the original size</p><img src="assets/photographer-pixel/frames.png" width="128" height="32" alt="The same four poses at 32 pixels each" /></div>
-      <p class="download"><a href="assets/photographer-pixel/frames.png" download>Download the four frames</a></p>
-    </main>
-    <script type="module">
-      const actor = document.querySelector('.actor');
-      const replay = document.querySelector('#replay');
-      const status = document.querySelector('#status');
-      const motion = matchMedia('(prefers-reduced-motion: reduce)');
-      const names = ['01-arrive', '02-ready', '03-photograph', '04-rest'];
-      const frames = names.map(name => `assets/photographer-pixel/${name}.png`);
-      const offsets = [-96, -48, 0, 0];
-      let timers = [];
-      const clear = () => { timers.forEach(clearTimeout); timers = []; };
-      const draw = (index) => {
-        actor.src = frames[index];
-        actor.dataset.pose = String(index + 1);
-        actor.style.transform = `translateX(${motion.matches ? 0 : offsets[index]}px)`;
-      };
-      const rest = () => { clear(); draw(3); status.textContent = 'Resting pose'; };
-      const play = () => {
-        rest();
-        if (motion.matches) return;
-        status.textContent = 'Playing';
-        draw(0);
-        for (let index = 1; index < 4; index++) timers.push(setTimeout(() => draw(index), index * 1000));
-        timers.push(setTimeout(() => { status.textContent = 'Resting pose'; timers = []; }, 4000));
-      };
-      replay.addEventListener('click', play);
-      motion.addEventListener('change', () => { rest(); replay.disabled = motion.matches; });
-      document.addEventListener('visibilitychange', () => { if (document.hidden) rest(); });
-      window.addEventListener('pagehide', clear);
-      replay.disabled = motion.matches;
-      Promise.all(frames.map(src => new Promise(resolve => {
-        const image = new Image(); image.onload = resolve; image.onerror = resolve; image.src = src;
-      }))).then(() => { if (!document.hidden) play(); });
-    </script>
-  </body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Pixel photographer | Will Chai</title><link rel="stylesheet" href="tokens.css"><link rel="stylesheet" href="../src/styles/photography.css"><style>
+@font-face{font-family:"Funnel Sans";src:url("../public/assets/funnel-sans-latin.woff2") format("woff2");font-display:swap}@font-face{font-family:"Unbounded";src:url("../public/assets/unbounded-latin.woff2") format("woff2");font-display:swap}
+*{box-sizing:border-box}body{margin:0;color:var(--wc-ink);background:var(--wc-white);font:17px/1.5 var(--wc-font-sans)}main{width:min(calc(100% - 32px),76rem);margin:32px auto}a{color:var(--wc-blue)}button{min-height:44px;padding:8px 16px;font:500 15px var(--wc-font-sans);color:var(--wc-blue);background:var(--wc-white);border:1px solid var(--wc-blue);cursor:pointer}button:focus-visible,a:focus-visible{outline:2px solid var(--wc-blue);outline-offset:4px}.controls{margin:24px 0}.poseGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));gap:16px;padding:24px 0}.poseGrid figure{margin:0}.pose{width:128px;height:128px;background-size:400% 100%;image-rendering:pixelated}.poseGrid figcaption{font-size:15px}h2{font:500 24px var(--wc-font-sans);margin-top:32px}p{max-width:56ch}.photographyMasthead{justify-content:start}
+
+  .photographyCharacter { --character-frame:256px; position:relative; display:block; flex:0 0 128px; width:128px; height:176px; pointer-events:none; overflow:hidden; }
+  .photographyCharacterSprite { position:absolute; left:-64px; bottom:-32px; width:var(--character-frame); height:var(--character-frame); background:url("../public/photography/pixel-photographer.png") 0 0 / 400% 100% no-repeat; image-rendering:pixelated; opacity:0; }
+  @media(max-width:62rem) {
+    .photographyCharacter { --character-frame:192px; flex-basis:96px; width:96px; height:132px; }
+    .photographyCharacterSprite { left:-48px; bottom:-24px; }
+  }
+  @media(max-width:46rem) {
+    .photographyCharacter { --character-frame:160px; flex-basis:80px; width:80px; height:110px; }
+    .photographyCharacterSprite { left:-40px; bottom:-20px; }
+  }
+  @media(prefers-reduced-motion:reduce) { .photographyCharacterSprite { display:none; } }
+</style></head><body class="photographyPage"><main><a href="index.html">Back to the system</a><div class="photographyMasthead"><div class="photographyTitleRow"><div class="photographyTitle"><p>Will Chai</p><h1>Photography.</h1></div><span class="photographyCharacter" data-photographer-hello data-atlas="../public/photography/pixel-photographer.png" aria-hidden="true">
+  <span class="photographyCharacterSprite"></span>
+</span>
+</div></div><div class="controls"><button type="button" data-replay-hello>Replay the entrance</button> <label>Playback <select data-motion-speed><option value="1">Normal</option><option value="0.25">Slow</option></select></label></div><p>The four second greeting appears beside the title. Will returns later to push the standard package from its ledge.</p><h2>The greeting</h2><div class="poseGrid"><figure><div class="pose" role="img" aria-label="Arrive" style="background-image:url(assets/photographer-pixel/frames.png);background-position:0.0% 0"></div><figcaption>Arrive</figcaption></figure><figure><div class="pose" role="img" aria-label="Prepare" style="background-image:url(assets/photographer-pixel/frames.png);background-position:33.333333333333336% 0"></div><figcaption>Prepare</figcaption></figure><figure><div class="pose" role="img" aria-label="Photograph" style="background-image:url(assets/photographer-pixel/frames.png);background-position:66.66666666666667% 0"></div><figcaption>Photograph</figcaption></figure><figure><div class="pose" role="img" aria-label="Rest" style="background-image:url(assets/photographer-pixel/frames.png);background-position:100.0% 0"></div><figcaption>Rest</figcaption></figure></div><h2>The push</h2><div class="poseGrid"><figure><div class="pose" role="img" aria-label="Walk" style="background-image:url(assets/photographer-pixel/pushing-frames.png);background-position:0.0% 0"></div><figcaption>Walk</figcaption></figure><figure><div class="pose" role="img" aria-label="Brace" style="background-image:url(assets/photographer-pixel/pushing-frames.png);background-position:33.333333333333336% 0"></div><figcaption>Brace</figcaption></figure><figure><div class="pose" role="img" aria-label="Push" style="background-image:url(assets/photographer-pixel/pushing-frames.png);background-position:66.66666666666667% 0"></div><figcaption>Push</figcaption></figure><figure><div class="pose" role="img" aria-label="Recover" style="background-image:url(assets/photographer-pixel/pushing-frames.png);background-position:100.0% 0"></div><figcaption>Recover</figcaption></figure></div><p><a href="photography-stack.html#pricing">Open the pricing scene and shoot card</a></p></main><script src="../public/scripts/photography-opening.js" defer></script></body></html>

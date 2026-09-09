@@ -5,6 +5,7 @@ import PhotographyFooter from "../../components/PhotographyFooter.astro";
 import PhotographyCollection from "../../components/PhotographyCollection.astro";
 import PhotographyLightbox from "../../components/PhotographyLightbox.astro";
 import PhotographyArcade from "../../components/PhotographyArcade.astro";
+import PhotographyCharacter from "../../components/PhotographyCharacter.astro";
 import shuffleManifest from "../../data/photographyShuffle.json";
 
 const photographs = [
@@ -114,16 +115,16 @@ const featuredPhotographs = [
 ].map((key) => photographByKey[key]);
 
 const clients = [
-  { name: "Luxetints", logo: "/photography/clients/luxetints.avif" },
-  { name: "Health Sciences Musical", logo: "/photography/clients/health-sciences-musical.avif" },
-  { name: "McMaster Film Production Club", logo: "/photography/clients/mcmaster-film-production-club.avif" },
-  { name: "Matt", logo: "/photography/clients/matt.avif" },
-  { name: "McMaster A Cappella", logo: "/photography/clients/mcmaster-a-cappella.avif" },
-  { name: "McMaster University", logo: "/photography/clients/mcmaster.avif" },
-  { name: "SJK School", logo: "/photography/clients/sjk-school.avif" },
-  { name: "McMaster BHSS", logo: "/photography/clients/mcmaster-bhss.avif" },
-  { name: "Platinum Moon", logo: "/photography/clients/platinum-moon.avif" },
-  { name: "Snazzy Labs", logo: "/photography/clients/snazzy-labs.avif" },
+  { name: "Luxetints", logo: "/photography/clients/luxetints.avif", artwork: "--mark-size:147.54px;--mark-x:-0.59px;--mark-y:0.00px" },
+  { name: "Health Sciences Musical", logo: "/photography/clients/health-sciences-musical.avif", artwork: "--mark-size:72.00px;--mark-x:0.00px;--mark-y:0.00px" },
+  { name: "McMaster Film Production Club", logo: "/photography/clients/mcmaster-film-production-club.avif", artwork: "--mark-size:72.00px;--mark-x:0.00px;--mark-y:0.00px" },
+  { name: "Matt", logo: "/photography/clients/matt.avif", artwork: "--mark-size:72.00px;--mark-x:0.00px;--mark-y:0.00px" },
+  { name: "McMaster A Cappella", logo: "/photography/clients/mcmaster-a-cappella.avif", artwork: "--mark-size:72.00px;--mark-x:0.00px;--mark-y:0.00px" },
+  { name: "McMaster University", logo: "/photography/clients/mcmaster.avif", artwork: "--mark-size:201.18px;--mark-x:0.00px;--mark-y:0.40px" },
+  { name: "SJK School", logo: "/photography/clients/sjk-school.avif", artwork: "--mark-size:148.80px;--mark-x:0.15px;--mark-y:-0.74px" },
+  { name: "McMaster BHSS", logo: "/photography/clients/mcmaster-bhss.avif", artwork: "--mark-size:79.65px;--mark-x:-0.08px;--mark-y:-0.32px" },
+  { name: "Platinum Moon", logo: "/photography/clients/platinum-moon.avif", artwork: "--mark-size:72.43px;--mark-x:0.07px;--mark-y:-0.07px" },
+  { name: "Snazzy Labs", logo: "/photography/clients/snazzy-labs.avif", artwork: "--mark-size:115.38px;--mark-x:0.12px;--mark-y:0.00px" },
 ];
 
 const shufflePhotographs = shuffleManifest.images;
@@ -132,19 +133,20 @@ const shuffleBatchSize = 36;
 
 <BaseLayout
   title="Photography | Will Chai"
-  description="Portrait, event, performance, product, property, and film photography by Will Chai."
+  description="Portrait and event photography by Will Chai in Hamilton and across Ontario. Explore featured photographs and plan a shoot together."
   path="/photography/"
   pageClass="photographyPage"
 >
   <link slot="head" rel="preload" as="image" href="/photography/pixel-photographer.png" />
   <script slot="head" is:inline src="/scripts/photography.js" defer></script>
+  <script slot="head" is:inline src="/scripts/photography-opening.js" defer></script>
   <script slot="head" is:inline src="/scripts/photography-collection.js" defer></script>
   <script slot="head" is:inline src="/scripts/photography-arcade.js" defer></script>
   <div class="pageShell">
     <main id="main" class="pageMain">
       <header class="photographyOpening">
         <a class="photographyHome" href="/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7-7-7 7 7 7" /></svg>Back to willchai.com</a>
-        <div class="photographyMasthead"><div><p>Will Chai</p><h1>Photography.</h1></div><a class="openingBooking" href="#pricing">Build your shoot<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-7-7 7 7-7 7" /></svg></a></div>
+        <div class="photographyMasthead"><div class="photographyTitleRow"><div class="photographyTitle"><p>Will Chai</p><h1>Photography.</h1></div><PhotographyCharacter /></div><a class="openingBooking" href="#pricing">Build your shoot<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-7-7 7 7-7 7" /></svg></a></div>
         <p class="photographyLocation">Portraits and events, in Hamilton and across Ontario.</p>
       </header>
       <PhotographyCollection photographs={featuredPhotographs} />
@@ -156,14 +158,14 @@ const shuffleBatchSize = 36;
           {
             clients.map((client) => (
               <figure class="clientLogo" data-reveal>
-                <img
+                <span class="clientLogoArtwork" style={client.artwork}><img
                   src={client.logo}
                   alt=""
-                  width="280"
-                  height="140"
+                  width="500"
+                  height="500"
                   loading="lazy"
                   decoding="async"
-                />
+                /></span>
                 <figcaption>{client.name}</figcaption>
               </figure>
             ))

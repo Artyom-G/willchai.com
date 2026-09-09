@@ -41,10 +41,13 @@ and ease of contacting Will. Final image selection, identifying details,
 professional relationships, and exact rates can follow the visual review.
 
 The functional labels are View together, Play sequence, Previous, Next and
-Close. Build your shoot collects the visitor's type of shoot, duration,
-location, date and idea. The action opens an email with those details.
-Actual rates await Will's pricing rules. The decorative Gold tier card and
-its $600 per event amount belong solely to the approved animated scene.
+Close. The shoot card asks for a category, an optional shoot name and an
+optional photography budget in CAD. Budget guidance is an available choice.
+The supplied amount is labelled Your budget. Will quotes each assignment
+personally and keeps his pricing rules private. Dates, duration, location and
+further details belong in the visitor's email. Open email and Copy inquiry
+use the same message, with a separate address copy action and an optional
+inquiry preview. The decorative Gold tier card reads Standard event package.
 
 ## Films and Projects
 

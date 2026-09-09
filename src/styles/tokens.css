@@ -17,6 +17,9 @@
   --wc-vermilion: #d9362b;
   --wc-pricing-prop-gold: #9a762b;
   --wc-duration-scene: 4000ms;
+  --wc-duration-reveal: 640ms;
+  --wc-duration-fold: 560ms;
+  --wc-ease-settle: cubic-bezier(0.22, 1, 0.36, 1);
 
   --wc-font-display: "Unbounded", "Arial Black", sans-serif;
   --wc-font-sans: "Funnel Sans", Arial, sans-serif;
@@ -50,5 +53,7 @@
     --wc-duration-interface: 0ms;
     --wc-duration-image: 0ms;
     --wc-duration-layout: 0ms;
+    --wc-duration-reveal: 0ms;
+    --wc-duration-fold: 0ms;
   }
 }

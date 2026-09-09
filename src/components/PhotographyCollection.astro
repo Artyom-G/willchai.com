@@ -1,5 +1,4 @@
 ---
-import PhotographyCharacter from "./PhotographyCharacter.astro";
 interface Photograph {
   key: string;
   src: string;
@@ -31,7 +30,6 @@ const sequence = photographs.slice(4);
               <img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} fetchpriority={index === 0 ? "high" : "auto"} decoding="async" />
             </a>
             <figcaption>{photo.caption}</figcaption>
-            {index === 0 && <PhotographyCharacter />}
           </figure>
         ))}
       </div></div></div>

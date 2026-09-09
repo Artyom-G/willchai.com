@@ -10,9 +10,18 @@
   const cards = [...collection.querySelectorAll('[data-collection-photo]')];
   const reveals = [...document.querySelectorAll('[data-reveal]')];
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
+  const desktop = matchMedia('(min-width: 62rem) and (hover: hover) and (pointer: fine)');
   const duration = name => parseFloat(getComputedStyle(document.documentElement).getPropertyValue(name)) || 0;
-  const ease = 'cubic-bezier(0.2, 0.8, 0.2, 1)';
+  const ease = getComputedStyle(document.documentElement).getPropertyValue('--wc-ease-settle').trim();
   const clamp = n => Math.max(0, Math.min(1, n));
+  const smooth = n => { const x = clamp(n); return x * x * x * (x * (x * 6 - 15) + 10); };
+  const travelAt = progress => {
+    if (progress < 0.12) return 0;
+    if (progress < 0.44) return smooth((progress - 0.12) / 0.32) * 0.5;
+    if (progress < 0.56) return 0.5;
+    if (progress < 0.9) return 0.5 + smooth((progress - 0.56) / 0.34) * 0.5;
+    return 1;
+  };
   let frame = 0;
   let travel = 0;
   let scrollDistance = 0;
@@ -20,26 +29,20 @@
   let restoringViewerFocus = false;
   const render = () => {
     frame = 0;
-    if (document.hidden || motion.matches) return;
-    if (collection.dataset.layout === 'sequence' && track && passage) {
-      const progress = clamp((16 - passage.getBoundingClientRect().top) / Math.max(1, scrollDistance));
-      track.style.transform = `translate3d(${-progress * travel}px,0,0)`;
-    }
-    reveals.forEach(el => {
-      const top = el.getBoundingClientRect().top;
-      const progress = clamp((innerHeight * 0.99 - top) / Math.min(280, innerHeight * 0.38));
-      el.style.setProperty('--reveal', String(progress));
-    });
+    if (document.hidden || motion.matches || !collection.classList.contains('hasScrollPassage')) return;
+    const progress = clamp((16 - passage.getBoundingClientRect().top) / Math.max(1, scrollDistance));
+    track.style.transform = 'translate3d(' + (-travelAt(progress) * travel) + 'px,0,0)';
   };
-  function schedule() { if (!frame && !document.hidden) frame = requestAnimationFrame(render); }
+  const schedule = () => { if (!frame && !document.hidden) frame = requestAnimationFrame(render); };
   const measure = () => {
     if (!passage || !pin || !track) return;
     track.style.transform = '';
-    const enabled = !motion.matches && collection.dataset.layout === 'sequence' && innerHeight > 480;
+    const enabled = !motion.matches && desktop.matches && innerHeight > 600 && collection.dataset.layout === 'sequence';
     collection.classList.toggle('hasScrollPassage', enabled);
     travel = enabled ? Math.max(0, track.scrollWidth - passage.clientWidth) : 0;
-    scrollDistance = Math.min(travel * 0.55, innerHeight * 0.85);
-    passage.style.height = enabled ? `${pin.offsetHeight + scrollDistance}px` : '';
+    scrollDistance = travel ? Math.min(Math.max(travel * 0.95, innerHeight), innerHeight * 1.6) : 0;
+    passage.style.height = enabled && travel ? (pin.offsetHeight + scrollDistance) + 'px' : '';
+    if (!travel) collection.classList.remove('hasScrollPassage');
     schedule();
   };
   const setLayout = (layout, animate = true) => {
@@ -47,15 +50,44 @@
     const before = cards.map(el => el.getBoundingClientRect());
     collection.dataset.layout = layout;
     label.textContent = layout === 'sheet' ? 'Play sequence' : 'View together';
-    status.textContent = layout === 'sheet' ? `${cards.length} featured photographs arranged together.` : 'Featured photograph sequence.';
+    status.textContent = layout === 'sheet' ? cards.length + ' featured photographs arranged together.' : 'Featured photograph sequence.';
     measure();
-    if (frame) cancelAnimationFrame(frame); render();
-    if (animate && !motion.matches) cards.forEach((el, i) => {
-      const a = before[i], b = el.getBoundingClientRect();
-      if (!a.width || !b.width || (a.top > innerHeight && b.top > innerHeight)) return;
-      animations.push(el.animate([{ transform: `translate(${a.left-b.left}px,${a.top-b.top}px) scale(${a.width/b.width},${a.height/b.height})`, transformOrigin:'0 0' }, { transform:'none', transformOrigin:'0 0' }], { duration: duration('--wc-duration-layout'), easing:ease }));
+    if (frame) cancelAnimationFrame(frame);
+    render();
+    if (animate && !motion.matches) cards.forEach((el, index) => {
+      const a = before[index], b = el.getBoundingClientRect();
+      if (!a.width || !b.width || (a.top > innerHeight && b.top > innerHeight) || (a.bottom < 0 && b.bottom < 0)) return;
+      animations.push(el.animate([
+        { transform:'translate(' + (a.left-b.left) + 'px,' + (a.top-b.top) + 'px) scale(' + (a.width/b.width) + ',' + (a.height/b.height) + ')', transformOrigin:'0 0' },
+        { transform:'none', transformOrigin:'0 0' }
+      ], { duration:duration('--wc-duration-layout'), easing:ease }));
     });
   };
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(async entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      revealObserver.unobserve(el);
+      if (motion.matches || (el.closest('.photoCollection') && collection.dataset.layout === 'sheet')) return;
+      const image = el.querySelector('img');
+      if (image) { try { await image.decode(); } catch { return; } }
+      const bounds = el.getBoundingClientRect();
+      if (bounds.bottom <= 0 || bounds.top >= innerHeight || motion.matches) return;
+      if (el.classList.contains('collectionPhoto')) {
+        const photograph = el.querySelector('a');
+        photograph.animate([
+          { clipPath:'inset(0 0 12% 0)', transform:'translateY(8px)' },
+          { clipPath:'inset(0)', transform:'none' }
+        ], { duration:duration('--wc-duration-reveal'), easing:ease });
+        el.querySelector('figcaption')?.animate([
+          { opacity:0, transform:'translateY(4px)' }, { opacity:1, transform:'none' }
+        ], { duration:duration('--wc-duration-image'), delay:100, easing:ease, fill:'backwards' });
+      } else {
+        el.animate([{ opacity:0.45, transform:'translateY(8px)' }, { opacity:1, transform:'none' }], { duration:duration('--wc-duration-reveal'), easing:ease });
+      }
+    });
+  }, { rootMargin:'0px 0px -4% 0px', threshold:0.04 });
+  reveals.forEach(el => revealObserver.observe(el));
   toggle.hidden = false;
   setLayout(motion.matches ? 'sheet' : 'sequence', false);
   toggle.addEventListener('click', () => setLayout(collection.dataset.layout === 'sheet' ? 'sequence' : 'sheet'));
@@ -63,17 +95,24 @@
   addEventListener('resize', measure, { passive:true });
   document.fonts?.ready.then(measure);
   new ResizeObserver(measure).observe(pin);
+  desktop.addEventListener('change', measure);
   track?.addEventListener('focusin', event => {
     if (restoringViewerFocus || !collection.classList.contains('hasScrollPassage')) return;
     const card = event.target.closest('.passagePhoto');
-    if (card) scrollTo({ top:scrollY + passage.getBoundingClientRect().top - 16 + (Math.min(travel, card.offsetLeft) / Math.max(1, travel)) * scrollDistance, behavior:'instant' });
+    if (!card) return;
+    const target = clamp(card.offsetLeft / Math.max(1, travel));
+    let lo = 0, hi = 1;
+    for (let index = 0; index < 20; index++) { const mid = (lo + hi) / 2; if (travelAt(mid) < target) lo = mid; else hi = mid; }
+    scrollTo({ top:scrollY + passage.getBoundingClientRect().top - 16 + (lo + hi) / 2 * scrollDistance, behavior:'instant' });
   });
   motion.addEventListener('change', () => {
-    animations.forEach(a=>a.cancel());
-    if (motion.matches) { setLayout('sheet', false); reveals.forEach(el => el.style.setProperty('--reveal','1')); }
-    else measure();
+    animations.forEach(a => a.cancel());
+    reveals.forEach(el => el.getAnimations({ subtree:true }).forEach(animation => animation.cancel()));
+    if (motion.matches) setLayout('sheet', false); else measure();
   });
-  document.addEventListener('visibilitychange', () => { if (document.hidden) { cancelAnimationFrame(frame); frame=0; } else measure(); });
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) { cancelAnimationFrame(frame); frame = 0; } else measure();
+  });
   const viewer = document.querySelector('[data-photo-viewer]');
   if (!viewer || typeof viewer.showModal !== 'function') return;
   const image = viewer.querySelector('[data-viewer-image]');

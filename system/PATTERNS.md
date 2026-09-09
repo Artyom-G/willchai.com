@@ -144,29 +144,37 @@ service footer. Photographs remain the primary visual material, the inquiry
 action stays outside any lightbox, and client privacy or publication
 permission must be confirmed before use.
 
-Photography opens with a direct return to willchai.com and an explicitly named
-featured selection. Four photographs travel sideways during a short section of
-ordinary document scrolling. A compact gallery follows with scroll driven edge
-reveals. View together arranges all twelve images in a contact sheet, and Play
-sequence restores their passage. Native image proportions and the expanded
-viewer remain available. The opening character appears at 128px, plays four
-poses over four seconds, and leaves.
+Photography opens with a direct homepage link, the Photography title, and an
+explicitly named featured selection. On desktop, the sideways passage pauses
+at three composed positions during ordinary document scrolling. Transitions
+between these positions ease at both ends. Phones use a directly swipeable
+strip and natural vertical scrolling. Gallery photographs reveal once as they
+enter view, then remain settled. Native image proportions, View together and
+the expanded viewer remain available.
 
-The pricing scene uses Will's personal pixel character, the homepage pointer,
-and an irregular Brand Blue enclosure. A decorative Gold tier card reading
-$600 per event is pushed across a ledge and tips away. This amount belongs to
-the animated prop. The shoot builder collects the type, duration, location,
-date and idea, then opens an email draft containing the visitor's selections.
-Actual pricing remains a personal quote until Will supplies calculation rules.
-The page stores none of these entries. Replay is available, interaction clears
-the prop immediately, and reduced motion presents the builder directly.
+Will appears beside the title in four simple poses over four seconds, then
+leaves. Integer enlargement gives the drawn body a height of 176 pixels on
+desktop and 110 pixels on phones. A session flag limits the greeting to one
+appearance per visit. The pricing scene uses four dedicated pushing poses
+with aligned palms and feet. The Gold tier prop reads Standard event package.
+It pauses at the edge of its ledge, tips away, and reveals the personal shoot
+card. Interaction gives the visitor immediate access, and replay is available.
 
-Organization marks accompany a photograph with existing McMaster context.
+The shoot card holds the category, an optional shoot name, and an optional
+budget amount or range in CAD. Visitors can request budget guidance. Their
+name becomes the inquiry subject, and a supplied budget is labelled Your
+budget. Actual fees are quoted personally. Date, location, duration and other
+details can be added in the email. Open email and Copy inquiry share the same
+generated message. An optional review control unfolds the message within the
+card. The address is separately copyable. Clipboard failure selects the
+relevant text for manual copying. Inquiry contents stay in the current page.
+
+Organization marks use measured artwork bounds for consistent visual sizing.
 The shuffle places incoming photographs into the shortest continuous column,
-using intrinsic dimensions to reserve space. Earlier images retain their
-positions as more arrive. The complete contact footer retains the authentic
-ticket, policy and rights information, with a direct return to the homepage.
-Photograph selection, captions and organization selection remain provisional.
+reserving space from intrinsic dimensions and preserving earlier positions.
+The complete footer retains the original contact ticket, policy, rights and
+homepage return. Reduced motion presents the contact sheet and usable builder
+immediately. Photograph selection, captions and organizations remain provisional.
 
 Open `photography-stack.html` for the production interaction study.
 

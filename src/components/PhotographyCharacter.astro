@@ -1,11 +1,16 @@
-<span class="photographyCharacter" aria-hidden="true">
+<span class="photographyCharacter" data-photographer-hello aria-hidden="true">
   <span class="photographyCharacterSprite"></span>
 </span>
-
 <style>
-  .photographyCharacter { position:absolute; right:var(--wc-space-2); bottom:var(--wc-space-8); z-index:2; width:128px; height:128px; pointer-events:none; overflow:visible; }
-  .photographyCharacterSprite { display:block; width:100%; height:100%; background:url("/photography/pixel-photographer.png") 100% 0 / 400% 100% no-repeat; image-rendering:pixelated; animation:photographerHello 4s steps(1,end) both; }
-  @keyframes photographerHello { 0%{background-position-x:0%;transform:translateY(24px) scale(0.6);opacity:0} 8%{opacity:1} 25%{background-position-x:33.333333%;transform:translateY(0) scale(1)} 50%{background-position-x:66.666667%;transform:translateY(0) scale(1)} 75%{background-position-x:100%;transform:translateY(0) scale(1)} 95%,100%{transform:translateY(32px) scale(0.7);opacity:0} }
-
-  @media(prefers-reduced-motion:reduce){.photographyCharacter{display:none}}
+  .photographyCharacter { --character-frame:256px; position:relative; display:block; flex:0 0 128px; width:128px; height:176px; pointer-events:none; overflow:hidden; }
+  .photographyCharacterSprite { position:absolute; left:-64px; bottom:-32px; width:var(--character-frame); height:var(--character-frame); background:url("/photography/pixel-photographer.png") 0 0 / 400% 100% no-repeat; image-rendering:pixelated; opacity:0; }
+  @media(max-width:62rem) {
+    .photographyCharacter { --character-frame:192px; flex-basis:96px; width:96px; height:132px; }
+    .photographyCharacterSprite { left:-48px; bottom:-24px; }
+  }
+  @media(max-width:46rem) {
+    .photographyCharacter { --character-frame:160px; flex-basis:80px; width:80px; height:110px; }
+    .photographyCharacterSprite { left:-40px; bottom:-20px; }
+  }
+  @media(prefers-reduced-motion:reduce) { .photographyCharacterSprite { display:none; } }
 </style>
