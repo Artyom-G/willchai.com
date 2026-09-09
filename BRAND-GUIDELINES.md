@@ -291,12 +291,11 @@ as a memorable contact invitation at the end of a page and may inspire a small
 number of related tactile objects, but the full holographic treatment remains
 specific to contact.
 
-Photography uses the approved pixel character of Will beside its compact title.
-Four simple 32 × 32 drawings play once over four seconds and end in a resting
-pose. Its six colour appearance comes from Will's existing portrait. The
-character appears at twice its native size on desktop and at native size on
-phones. Reduced motion presents the resting pose. The approved artwork and
-replay study are available in `system/photographer-pixel.html`.
+Photography uses Will's approved 32 × 32 pixel artwork for brief appearances.
+The opening displays it at 128px and lets the character leave after four
+seconds. The pricing scene gives the character a physical action by pushing
+a decorative Gold tier card away to reveal the shoot builder. The homepage
+pointer and irregular blue shape connect this scene to Will's existing work.
 
 The current blue W in `system/assets/willchai-mark.avif` is the official compact mark and
 should appear in the system library, site metadata, and suitable identity or
@@ -309,16 +308,29 @@ image changes use 360 milliseconds. Movement is normally limited to opacity,
 crop, colour, or a translation of no more than eight pixels. Reduced-motion
 mode removes translations and changes content without an animated delay.
 
-Photography now has an approved photographic stacking direction. Three real
-photographs overlap at the opening and gather during ordinary document
-scrolling. A reversible “Spread out” control arranges the featured photographs
-as a contact sheet. Selecting an image opens a large view and closing it
-preserves the browsing position. A photograph extends into the booking section
-and lifts to reveal the existing contact ticket. These movements form a
-bounded exception to the usual eight pixel limit. Layout transitions use the
-shared 700 millisecond duration. Reduced motion opens the contact sheet and
-keeps every action available with immediate state changes. The detailed
-composition and provisional curation continue through visual review.
+Photography opens with a direct return to willchai.com and an explicitly named
+featured selection. Four photographs travel sideways during a short section of
+ordinary document scrolling. A compact gallery follows with scroll driven edge
+reveals. View together arranges all twelve images in a contact sheet, and Play
+sequence restores their passage. Native image proportions and the expanded
+viewer remain available. The opening character appears at 128px, plays four
+poses over four seconds, and leaves.
+
+The pricing scene uses Will's personal pixel character, the homepage pointer,
+and an irregular Brand Blue enclosure. A decorative Gold tier card reading
+$600 per event is pushed across a ledge and tips away. This amount belongs to
+the animated prop. The shoot builder collects the type, duration, location,
+date and idea, then opens an email draft containing the visitor's selections.
+Actual pricing remains a personal quote until Will supplies calculation rules.
+The page stores none of these entries. Replay is available, interaction clears
+the prop immediately, and reduced motion presents the builder directly.
+
+Organization marks accompany a photograph with existing McMaster context.
+The shuffle places incoming photographs into the shortest continuous column,
+using intrinsic dimensions to reserve space. Earlier images retain their
+positions as more arrive. The complete contact footer retains the authentic
+ticket, policy and rights information, with a direct return to the homepage.
+Photograph selection, captions and organization selection remain provisional.
 
 ## Stewardship
 

@@ -18,8 +18,8 @@ item has one canonical home when it intersects several disciplines.
 
 ## Photography service
 
-The Photography page introduces the practice through a compact identity line
-and an opening group of overlapping photographs. Publish ten to fifteen featured photographs as one
+The Photography page introduces Will directly and names the opening selection
+Featured photographs. Publish ten to fifteen featured photographs as one
 uncategorized sequence. Each featured caption names the person, occasion,
 place, or commission when the information is confirmed. Pricing, selected
 professional relationships, and the inquiry route follow the feature sequence.
@@ -40,12 +40,11 @@ page to assess beauty, comfortable browsing, access to practical information,
 and ease of contacting Will. Final image selection, identifying details,
 professional relationships, and exact rates can follow the visual review.
 
-The approved interaction direction includes stacking and a contact sheet view
-of the same featured selection. Functional labels are “Spread out,” “Stack,”
-“Previous,” “Next,” and “Close.” The booking invitation is “What are you
-planning?” A direct email action supplies prompts for date, location, and the
-visitor's idea. Portfolio image choices and captions retain their provisional
-status throughout this visual review.
+The functional labels are View together, Play sequence, Previous, Next and
+Close. Build your shoot collects the visitor's type of shoot, duration,
+location, date and idea. The action opens an email with those details.
+Actual rates await Will's pricing rules. The decorative Gold tier card and
+its $600 per event amount belong solely to the approved animated scene.
 
 ## Films and Projects
 

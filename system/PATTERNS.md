@@ -144,30 +144,31 @@ service footer. Photographs remain the primary visual material, the inquiry
 action stays outside any lightbox, and client privacy or publication
 permission must be confirmed before use.
 
-The approved direction uses three overlapping photographs at the opening,
-followed by a varied sequence on White. The opening gathers as the document
-scrolls, then continues upward with the page. The compact identity keeps
-Pricing within reach. “Spread out” rearranges the same featured photographs
-into a contact sheet, and “Stack” restores the sequence. Four desktop columns
-become two on phones. Both layouts preserve native image proportions.
+Photography opens with a direct return to willchai.com and an explicitly named
+featured selection. Four photographs travel sideways during a short section of
+ordinary document scrolling. A compact gallery follows with scroll driven edge
+reveals. View together arranges all twelve images in a contact sheet, and Play
+sequence restores their passage. Native image proportions and the expanded
+viewer remain available. The opening character appears at 128px, plays four
+poses over four seconds, and leaves.
 
-The implementation uses a 700 millisecond layout transition and the shared
-360 millisecond image transition for the expanded viewer. A native dialog
-provides modal focus, previous and next buttons, arrow keys, Escape dismissal,
-and touch swiping. Closing restores scrolling position and keyboard focus.
-Modified image clicks retain ordinary link behaviour. JavaScript disabled
-presents a static gallery with direct image links. Reduced motion starts with
-the contact sheet and uses immediate layout changes. Scroll work is scheduled
-only in response to events and stops while the document is hidden.
+The pricing scene uses Will's personal pixel character, the homepage pointer,
+and an irregular Brand Blue enclosure. A decorative Gold tier card reading
+$600 per event is pushed across a ledge and tips away. This amount belongs to
+the animated prop. The shoot builder collects the type, duration, location,
+date and idea, then opens an email draft containing the visitor's selections.
+Actual pricing remains a personal quote until Will supplies calculation rules.
+The page stores none of these entries. Replay is available, interaction clears
+the prop immediately, and reduced motion presents the builder directly.
 
-The booking image crosses into the Cloud service section and lifts to reveal
-the approved ticket. Its inquiry text, direct email action, and ticket remain
-accessible. The Pricing anchor targets the quote copy itself. The full footer
-retains contact, policy, rights, and navigation. Shuffle batches preserve prior
-image positions and contact jumps pause automatic loading. The viewer includes
-only loaded shuffle batches. Photograph selection and captions are provisional.
+Organization marks accompany a photograph with existing McMaster context.
+The shuffle places incoming photographs into the shortest continuous column,
+using intrinsic dimensions to reserve space. Earlier images retain their
+positions as more arrive. The complete contact footer retains the authentic
+ticket, policy and rights information, with a direct return to the homepage.
+Photograph selection, captions and organization selection remain provisional.
 
-Open `photography-stack.html` for a study using the production CSS and script.
+Open `photography-stack.html` for the production interaction study.
 
 ## External project handoff
 
@@ -230,19 +231,13 @@ completely when the ticket returns to the stage.
 
 ## Authentic exception
 
-The Photography character is a personal illustration approved by Will on
-9 September 2026. It uses four 32 × 32 pixel frames:
-arrive, get ready, take a photograph, and settle. Each drawing occupies one
-second. The first two poses move into place and the fourth remains visible.
-All frames share six colours, transparent padding, proportions, and a foot
-baseline. Enlargement uses integer multiples and crisp pixels. The study
-provides a keyboard accessible replay control. Reduced motion presents the
-resting pose, and leaving the study stops pending animation work. The page
-places the character beside the Photography title with a reserved area for
-its entrance. Its CSS animation plays once per page entry, holds the fourth
-pose, and uses the same four seconds and artwork as the approved study.
-Desktop displays each frame at 64px and narrow screens use 32px. Open
-`photographer-pixel.html` to replay the artwork and timing.
+The Photography character is Will's personal illustration. Its logical frame
+size is 32 × 32 and integer enlargement preserves square pixels. The opening
+appearance lasts four seconds and leaves the page. The pricing appearance
+pushes a decorative Gold tier card across a ledge, then exits. The friendly
+shoot builder remains usable throughout. Reduced motion presents its final
+usable state immediately. The image viewer preserves focus and scrolling
+position, and all contact choices retain ordinary keyboard operation.
 
 An authentic exception gives a major composition one purposeful interruption
 to the standard grid. It must begin with a real source from Will's objects,

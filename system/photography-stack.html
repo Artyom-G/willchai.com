@@ -1,51 +1,66 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Photographic stacking · Will Chai</title>
-  <link rel="stylesheet" href="tokens.css" />
-  <link rel="stylesheet" href="../src/styles/photography.css" />
-  <style>
-    @font-face { font-family: 'Funnel Sans'; src: url('../public/assets/funnel-sans-latin.woff2') format('woff2'); font-weight: 400 600; }
-    * { box-sizing: border-box; }
-    body { margin: 0; color: var(--wc-ink); background: var(--wc-white); font: 17px/1.5 var(--wc-font-sans); }
-    button { font-family: inherit; }
-    img { display: block; max-width: 100%; }
-    .studyHeader { padding: var(--wc-space-6) clamp(1.5rem, 4vw, 4rem); }
-    .studyHeader a { color: var(--wc-blue); font-size: var(--wc-font-small); }
-    .studyHeader h1 { font-size: 1.5rem; font-weight: 400; margin: var(--wc-space-4) 0; }
-    .studyHeader p { max-width: 60ch; margin: 0; color: var(--wc-slate); }
-    :focus-visible { outline: 2px solid var(--wc-blue); outline-offset: 3px; }
-  </style>
-  <script src="../public/scripts/photography-collection.js" defer></script>
-</head>
-<body>
-  <header class="studyHeader">
-    <a href="index.html">Return to the system</a>
-    <h1>Photographic stacking</h1>
-    <p>The approved direction uses real photographs, ordinary document scrolling, and a reversible contact sheet. This study shares the Photography page's styles and interaction script.</p>
-  </header>
-  <section class="photoCollection" data-photo-collection data-layout="stack" aria-labelledby="collectionTitle">
-    <header class="collectionHeader">
-      <div class="collectionIntroduction"><h2 id="collectionTitle">Portraits and events.</h2><p>Hamilton and across Ontario.</p></div>
-      <button class="collectionToggle" type="button" data-collection-toggle aria-controls="collectionImages" hidden><span data-collection-label>Spread out</span></button>
-    </header>
-    <div id="collectionImages" class="collectionImages">
-      <div class="openingStack" data-opening-stack><div class="stackPin">
-        <figure class="collectionPhoto openingPhoto" data-collection-photo style="--card-index:0">
-          <a href="../public/photography/concert-nessa.avif"><img src="../public/photography/concert-nessa.avif" width="1920" height="2559" alt="Nessa Barrett performing" /></a><figcaption>Nessa Barrett, live performance, 2026</figcaption>
-        </figure>
-        <figure class="collectionPhoto openingPhoto" data-collection-photo style="--card-index:1">
-          <a href="../public/photography/concert-mcmaster.avif"><img src="../public/photography/concert-mcmaster.avif" width="1920" height="2400" alt="A vocalist at McMaster University" /></a><figcaption>Live performance at McMaster University, 2025</figcaption>
-        </figure>
-        <figure class="collectionPhoto openingPhoto" data-collection-photo style="--card-index:2">
-          <a href="../public/photography/portrait-lakeshore.webp"><img src="../public/photography/portrait-lakeshore.webp" width="1707" height="2560" alt="A portrait beside the water" /></a><figcaption>Lakeshore portrait</figcaption>
-        </figure>
-      </div></div>
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Photography motion and pricing | Will Chai</title><link rel="stylesheet" href="tokens.css"><link rel="stylesheet" href="../src/styles/photography.css"><style>@font-face{font-family:"Funnel Sans";src:url('../public/assets/funnel-sans-latin.woff2')}@font-face{font-family:Unbounded;src:url('../public/assets/unbounded-latin.woff2')}*{box-sizing:border-box}body{margin:0;font-family:var(--wc-font-sans);font-size:17px;line-height:1.5;color:var(--wc-ink)}button,input,textarea{font:inherit}a{color:var(--wc-blue)}.studyIntro{padding:32px;max-width:800px}.studyIntro h1{font-family:var(--wc-font-display);font-size:32px;font-weight:400}.pushingWillSprite{background-image:url('../public/photography/pixel-photographer.png')}img{max-width:100%;display:block}:focus-visible{outline:2px solid var(--wc-blue);outline-offset:4px}</style><script src="../public/scripts/photography-collection.js" defer></script><script src="../public/scripts/photography-arcade.js" defer></script></head><body class="photographyPage"><header class="studyIntro"><a href="index.html">Return to the system</a><h1>Photography motion and pricing</h1><p>The featured sequence and shoot builder use the production components. The Gold tier amount belongs to the animated prop. Shoot selections become an email draft for a personal quote.</p></header><section class="photoCollection" data-photo-collection data-layout="sequence" aria-labelledby="collectionTitle"><header class="collectionHeader"><div class="collectionIntroduction"><h2 id="collectionTitle">Featured photographs</h2></div><button class="collectionToggle" type="button" data-collection-toggle aria-controls="collectionImages" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z"></path></svg><span data-collection-label>View together</span></button></header><div id="collectionImages" class="collectionImages"><div class="featuredPassage" data-featured-passage><div class="passagePin"><div class="passageWindow"><div class="passageTrack" data-passage-track><figure class="collectionPhoto passagePhoto" data-collection-photo style="--card-index:0;--photo-ratio:0.7502930832356389"><a href="../public/photography/concert-nessa.avif" data-photo-open data-photo-group="featured" data-caption="Nessa Barrett, live performance, 2026" aria-label="Open photograph: Nessa Barrett, live performance, 2026"><img src="../public/photography/concert-nessa.avif" alt="Singer Nessa Barrett performing beneath warm stage lights" width="1920" height="2559" fetchpriority="high" decoding="async"></a><figcaption>Nessa Barrett, live performance, 2026</figcaption></figure><figure class="collectionPhoto passagePhoto" data-collection-photo style="--card-index:1;--photo-ratio:0.8"><a href="../public/photography/concert-mcmaster.avif" data-photo-open data-photo-group="featured" data-caption="Live performance at McMaster University, 2025" aria-label="Open photograph: Live performance at McMaster University, 2025"><img src="../public/photography/concert-mcmaster.avif" alt="A vocalist performing in a McMaster hoodie" width="1920" height="2400" fetchpriority="auto" decoding="async"></a><figcaption>Live performance at McMaster University, 2025</figcaption></figure><figure class="collectionPhoto passagePhoto" data-collection-photo style="--card-index:2;--photo-ratio:0.666796875"><a href="../public/photography/portrait-lakeshore.webp" data-photo-open data-photo-group="featured" data-caption="Lakeshore portrait" aria-label="Open photograph: Lakeshore portrait"><img src="../public/photography/portrait-lakeshore.webp" alt="Portrait of a person standing beside the water" width="1707" height="2560" fetchpriority="auto" decoding="async"></a><figcaption>Lakeshore portrait</figcaption></figure><figure class="collectionPhoto passagePhoto" data-collection-photo style="--card-index:3;--photo-ratio:1.25"><a href="../public/photography/portrait-group.webp" data-photo-open data-photo-group="featured" data-caption="Group portrait" aria-label="Open photograph: Group portrait"><img src="../public/photography/portrait-group.webp" alt="A group portrait made outdoors in warm evening light" width="1920" height="1536" fetchpriority="auto" decoding="async"></a><figcaption>Group portrait</figcaption></figure></div></div></div></div><div class="featuredGallery"><figure class="collectionPhoto" data-collection-photo data-reveal style="--photo-ratio:0.666796875;--entry-side:-1"><a href="../public/photography/portrait-formal.webp" data-photo-open data-photo-group="featured" data-caption="Portrait" aria-label="Open photograph: Portrait"><img src="../public/photography/portrait-formal.webp" alt="Portrait of a person wearing a suit outdoors" width="1707" height="2560" loading="lazy" decoding="async"></a><figcaption>Portrait</figcaption></figure><figure class="collectionPhoto" data-collection-photo data-reveal style="--photo-ratio:0.67265625;--entry-side:1"><a href="../public/photography/portrait-couple.webp" data-photo-open data-photo-group="featured" data-caption="Couple portrait" aria-label="Open photograph: Couple portrait"><img src="../public/photography/portrait-couple.webp" alt="A couple standing together in soft light" width="1722" height="2560" loading="lazy" decoding="async"></a><figcaption>Couple portrait</figcaption></figure><figure class="collectionPhoto" data-collection-photo data-reveal style="--photo-ratio:0.6668982285515804;--entry-side:-1"><a href="../public/photography/event-nightlife.webp" data-photo-open data-photo-group="featured" data-caption="Nightlife event" aria-label="Open photograph: Nightlife event"><img src="../public/photography/event-nightlife.webp" alt="Nightlife event portrait beneath blue and purple light" width="1920" height="2879" loading="lazy" decoding="async"></a><figcaption>Nightlife event</figcaption></figure><figure class="collectionPhoto" data-collection-photo data-reveal style="--photo-ratio:0.7142857142857143;--entry-side:1"><a href="../public/photography/portrait-graduation.webp" data-photo-open data-photo-group="featured" data-caption="Graduation portrait" aria-label="Open photograph: Graduation portrait"><img src="../public/photography/portrait-graduation.webp" alt="Graduation portrait made outdoors" width="1920" height="2688" loading="lazy" decoding="async"></a><figcaption>Graduation portrait</figcaption></figure><figure class="collectionPhoto" data-collection-photo data-reveal style="--photo-ratio:0.8;--entry-side:-1"><a href="../public/photography/concert-purple.avif" data-photo-open data-photo-group="featured" data-caption="Live performance, 2025" aria-label="Open photograph: Live performance, 2025"><img src="../public/photography/concert-purple.avif" alt="A concert performer lit by purple stage light" width="1920" height="2400" loading="lazy" decoding="async"></a><figcaption>Live performance, 2025</figcaption></figure><figure class="collectionPhoto" data-collection-photo data-reveal style="--photo-ratio:0.8229747106729532;--entry-side:1"><a href="../public/photography/product-eyewear.webp" data-photo-open data-photo-group="featured" data-caption="Eyewear study" aria-label="Open photograph: Eyewear study"><img src="../public/photography/product-eyewear.webp" alt="An eyewear product photograph with a clean studio arrangement" width="1920" height="2333" loading="lazy" decoding="async"></a><figcaption>Eyewear study</figcaption></figure><figure class="collectionPhoto" data-collection-photo data-reveal style="--photo-ratio:1;--entry-side:-1"><a href="../public/photography/property-aerial.webp" data-photo-open data-photo-group="featured" data-caption="Residential property, Ontario" aria-label="Open photograph: Residential property, Ontario"><img src="../public/photography/property-aerial.webp" alt="A winter aerial photograph of a residential property" width="1920" height="1920" loading="lazy" decoding="async"></a><figcaption>Residential property, Ontario</figcaption></figure><figure class="collectionPhoto" data-collection-photo data-reveal style="--photo-ratio:0.75;--entry-side:1"><a href="../public/photography/product-beverage.webp" data-photo-open data-photo-group="featured" data-caption="Beverage study" aria-label="Open photograph: Beverage study"><img src="../public/photography/product-beverage.webp" alt="A beverage product photograph with a bright studio composition" width="1920" height="2560" loading="lazy" decoding="async"></a><figcaption>Beverage study</figcaption></figure></div></div><p class="visuallyHidden" data-collection-status aria-live="polite"></p></section><section class="shootArcade" id="pricing" aria-labelledby="arcadeTitle" data-shoot-arcade data-asset-root="../public">
+  <div class="arcadeTopline"><p>Photography, with you.</p><button type="button" data-replay-scene hidden>Replay the shove <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5M19 12a7 7 0 1 0-2 5M20 12a7 7 0 0 0-2-5" /></svg></button></div>
+  <div class="arcadeCabinet">
+    <div class="arcadeInterior">
+      <header class="arcadeWelcome">
+        <div><h2 id="arcadeTitle">Build your shoot.</h2><p>Tell me what you have in mind. We’ll work out the details together.</p></div>
+        <img class="arcadePointer" src="../public/assets/pixel-cursor.svg" alt="" width="92" height="112" aria-hidden="true" />
+      </header>
+      <form class="shootBuilder" data-shoot-builder>
+        <div class="shootInputs">
+          <fieldset class="shootTypes"><legend>What are we photographing?</legend>
+            <label><input type="radio" name="kind" value="Portraits" checked /><span>Portraits</span></label>
+            <label><input type="radio" name="kind" value="Events" /><span>Events</span></label>
+            <label><input type="radio" name="kind" value="Another idea" /><span>Another idea</span></label>
+          </fieldset>
+          <fieldset class="shootDuration"><legend>How much time do you have in mind?</legend>
+            <label><input type="radio" name="duration" value="1 hour" /><span>1 hour</span></label>
+            <label><input type="radio" name="duration" value="2 hours" /><span>2 hours</span></label>
+            <label><input type="radio" name="duration" value="Half a day" /><span>Half a day</span></label>
+            <label><input type="radio" name="duration" value="Let’s work it out" checked /><span>Let’s work it out</span></label>
+          </fieldset>
+          <div class="shootFields">
+            <label>Where?<input type="text" name="location" placeholder="City or venue" maxlength="160" autocomplete="off" /></label>
+            <label>When?<input type="text" name="date" placeholder="A date, or a rough idea" maxlength="120" autocomplete="off" /></label>
+          </div>
+          <label class="shootIdea">Anything else?<textarea name="idea" rows="2" maxlength="1500" placeholder="The people, the occasion, what you’re imagining…"></textarea></label>
+        </div>
+        <aside class="shootReceipt" aria-labelledby="shootSummaryTitle">
+          <img data-shoot-image src="../public/photography/portrait-lakeshore.webp" alt="Lakeshore portrait" width="1707" height="2560" loading="lazy" decoding="async" />
+          <div class="shootReceiptCopy">
+            <h3 id="shootSummaryTitle">Your shoot</h3>
+            <p class="shootSelection" data-shoot-summary aria-live="polite">Portraits · Let’s work it out</p>
+            <p data-shoot-note>We can choose a place and make time to get comfortable in front of the camera.</p>
+            <p class="shootQuote">A quote for your plans.</p>
+            <p class="shootQuoteDetail">I’ll reply with a price covering photography, editing, delivery and travel.</p>
+            <a class="shootSend" data-shoot-send href="mailto:me@willchai.com?subject=Photography%20inquiry">Send Will your idea <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" /></svg></a>
+            <p class="shootSendNote">Opens your email with the details filled in.</p>
+          </div>
+        </aside>
+      </form>
+      <noscript><p class="arcadeFallback">Send your plans to <a href="mailto:me@willchai.com?subject=Photography%20inquiry">me@willchai.com</a> for a custom quote.</p><style>.shootBuilder{display:none}</style></noscript>
     </div>
-    <p class="visuallyHidden" data-collection-status aria-live="polite"></p>
-  </section>
-  <noscript><style>.photoCollection[data-layout="stack"] .openingStack { height:auto; } .photoCollection[data-layout="stack"] .stackPin { position:static;display:grid;height:auto; } .photoCollection[data-layout="stack"] .openingPhoto { position:static;width:100%; } .photoCollection[data-layout="stack"] .openingPhoto figcaption { visibility:visible; }</style></noscript>
-</body>
-</html>
+    <div class="goldScene" data-gold-scene aria-hidden="true" inert>
+      <div class="goldBackdrop"></div><div class="goldLedge"></div>
+      <div class="goldPlan"><div class="goldPlanHeading">Photography packages</div><p class="goldTier">Gold tier</p><p class="goldPrice">$600 <span>per event</span></p><div class="goldRule"></div><p>One package.<br />Every event.</p><div class="goldFakeButton">Select package</div></div>
+      <div class="pushingWill"><span class="pushingWillSprite"></span></div>
+    </div>
+  </div>
+  <div class="arcadeBelow"><a href="mailto:me@willchai.com?subject=Photography%20inquiry">Or email me directly</a><a href="../public/photography/services-policy.pdf">Service policy</a></div>
+</section>
+<dialog class="photoViewer" data-photo-viewer aria-labelledby="photoViewerTitle">
+  <h2 id="photoViewerTitle" class="visuallyHidden">Photograph</h2>
+  <header class="photoViewerHeader">
+    <p data-viewer-count aria-live="polite"></p>
+    <button type="button" data-viewer-close autofocus>Close<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+  </header>
+  <div class="photoViewerStage" data-viewer-stage>
+    <img data-viewer-image alt="" />
+  </div>
+  <footer class="photoViewerFooter">
+    <button type="button" data-viewer-previous aria-label="Previous photograph"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7 7-7-7 7-7" /></svg><span>Previous</span></button>
+    <p data-viewer-caption></p>
+    <button type="button" data-viewer-next aria-label="Next photograph"><span>Next</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-7-7 7 7-7 7" /></svg></button>
+  </footer>
+</dialog>
+</body></html>

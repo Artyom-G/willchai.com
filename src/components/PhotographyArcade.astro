@@ -1,0 +1,50 @@
+<section class="shootArcade" id="pricing" aria-labelledby="arcadeTitle" data-shoot-arcade>
+  <div class="arcadeTopline"><p>Photography, with you.</p><button type="button" data-replay-scene hidden>Replay the shove <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5M19 12a7 7 0 1 0-2 5M20 12a7 7 0 0 0-2-5" /></svg></button></div>
+  <div class="arcadeCabinet">
+    <div class="arcadeInterior">
+      <header class="arcadeWelcome">
+        <div><h2 id="arcadeTitle">Build your shoot.</h2><p>Tell me what you have in mind. We’ll work out the details together.</p></div>
+        <img class="arcadePointer" src="/assets/pixel-cursor.svg" alt="" width="92" height="112" aria-hidden="true" />
+      </header>
+      <form class="shootBuilder" data-shoot-builder>
+        <div class="shootInputs">
+          <fieldset class="shootTypes"><legend>What are we photographing?</legend>
+            <label><input type="radio" name="kind" value="Portraits" checked /><span>Portraits</span></label>
+            <label><input type="radio" name="kind" value="Events" /><span>Events</span></label>
+            <label><input type="radio" name="kind" value="Another idea" /><span>Another idea</span></label>
+          </fieldset>
+          <fieldset class="shootDuration"><legend>How much time do you have in mind?</legend>
+            <label><input type="radio" name="duration" value="1 hour" /><span>1 hour</span></label>
+            <label><input type="radio" name="duration" value="2 hours" /><span>2 hours</span></label>
+            <label><input type="radio" name="duration" value="Half a day" /><span>Half a day</span></label>
+            <label><input type="radio" name="duration" value="Let’s work it out" checked /><span>Let’s work it out</span></label>
+          </fieldset>
+          <div class="shootFields">
+            <label>Where?<input type="text" name="location" placeholder="City or venue" maxlength="160" autocomplete="off" /></label>
+            <label>When?<input type="text" name="date" placeholder="A date, or a rough idea" maxlength="120" autocomplete="off" /></label>
+          </div>
+          <label class="shootIdea">Anything else?<textarea name="idea" rows="2" maxlength="1500" placeholder="The people, the occasion, what you’re imagining…"></textarea></label>
+        </div>
+        <aside class="shootReceipt" aria-labelledby="shootSummaryTitle">
+          <img data-shoot-image src="/photography/portrait-lakeshore.webp" alt="Lakeshore portrait" width="1707" height="2560" loading="lazy" decoding="async" />
+          <div class="shootReceiptCopy">
+            <h3 id="shootSummaryTitle">Your shoot</h3>
+            <p class="shootSelection" data-shoot-summary aria-live="polite">Portraits · Let’s work it out</p>
+            <p data-shoot-note>We can choose a place and make time to get comfortable in front of the camera.</p>
+            <p class="shootQuote">A quote for your plans.</p>
+            <p class="shootQuoteDetail">I’ll reply with a price covering photography, editing, delivery and travel.</p>
+            <a class="shootSend" data-shoot-send href="mailto:me@willchai.com?subject=Photography%20inquiry">Send Will your idea <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" /></svg></a>
+            <p class="shootSendNote">Opens your email with the details filled in.</p>
+          </div>
+        </aside>
+      </form>
+      <noscript><p class="arcadeFallback">Send your plans to <a href="mailto:me@willchai.com?subject=Photography%20inquiry">me@willchai.com</a> for a custom quote.</p><style>.shootBuilder{display:none}</style></noscript>
+    </div>
+    <div class="goldScene" data-gold-scene aria-hidden="true" inert>
+      <div class="goldBackdrop"></div><div class="goldLedge"></div>
+      <div class="goldPlan"><div class="goldPlanHeading">Photography packages</div><p class="goldTier">Gold tier</p><p class="goldPrice">$600 <span>per event</span></p><div class="goldRule"></div><p>One package.<br />Every event.</p><div class="goldFakeButton">Select package</div></div>
+      <div class="pushingWill"><span class="pushingWillSprite"></span></div>
+    </div>
+  </div>
+  <div class="arcadeBelow"><a href="mailto:me@willchai.com?subject=Photography%20inquiry">Or email me directly</a><a href="/photography/services-policy.pdf">Service policy</a></div>
+</section>

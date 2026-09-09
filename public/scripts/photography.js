@@ -1,76 +1,70 @@
-const shuffleGallery = document.querySelector("[data-shuffle-gallery]");
-const shuffleButton = document.querySelector("[data-shuffle-more]");
-const shuffleReset = document.querySelector("[data-shuffle-reset]");
-const shuffleStatus = document.querySelector("[data-shuffle-status]");
+const shuffleGallery = document.querySelector('[data-shuffle-gallery]');
+const shuffleButton = document.querySelector('[data-shuffle-more]');
+const shuffleReset = document.querySelector('[data-shuffle-reset]');
+const shuffleStatus = document.querySelector('[data-shuffle-status]');
 
 if (shuffleGallery && shuffleButton) {
-  const batches = Array.from(shuffleGallery.querySelectorAll("[data-shuffle-batch]"));
-  const items = Array.from(shuffleGallery.querySelectorAll("[data-shuffle-item]"));
-  const batchSize = 36;
-  let automaticLoading = window.location.hash !== "#photography-contact";
-
-  const updateStatus = () => {
-    const visibleCount = batches
-      .filter((batch) => !batch.hidden)
-      .reduce((count, batch) => count + batch.childElementCount, 0);
+  let items = [...shuffleGallery.querySelectorAll('[data-shuffle-item]')];
+  let visibleCount = Math.min(36, items.length);
+  let automaticLoading = location.hash !== '#photography-contact';
+  let resizeFrame = 0;
+  let lastWidth = 0;
+  const motion = matchMedia('(prefers-reduced-motion: reduce)');
+  const layout = () => {
+    const width = shuffleGallery.clientWidth;
+    if (!width) return;
+    lastWidth = width;
+    const style = getComputedStyle(shuffleGallery);
+    const columns = Number(style.getPropertyValue('--shuffle-columns')) || 2;
+    const gap = parseFloat(style.columnGap) || 12;
+    const itemWidth = (width - gap * (columns - 1)) / columns;
+    const heights = Array(columns).fill(0);
+    shuffleGallery.classList.add('isMasonry');
+    items.slice(0, visibleCount).forEach(item => {
+      const img = item.querySelector('img');
+      const height = itemWidth * Number(img.getAttribute('height')) / Number(img.getAttribute('width'));
+      const column = heights.indexOf(Math.min(...heights));
+      Object.assign(item.style, { width: `${itemWidth}px`, height: `${height}px`, left: `${column * (itemWidth + gap)}px`, top: `${heights[column]}px` });
+      heights[column] += height + gap;
+    });
+    shuffleGallery.style.height = `${Math.max(0, ...heights) - gap}px`;
+  };
+  const render = () => {
+    items.forEach((item, index) => {
+      item.hidden = index >= visibleCount;
+      if (item.hidden) return;
+      const img = item.querySelector('img[data-src]');
+      if (img) { img.src = img.dataset.src; img.removeAttribute('data-src'); }
+    });
+    layout();
+    shuffleButton.hidden = visibleCount >= items.length;
     if (shuffleStatus) shuffleStatus.textContent = `${visibleCount} photographs shown`;
-    shuffleButton.hidden = visibleCount === items.length;
   };
-
-  const revealBatch = (batch) => {
-    if (!batch) return;
-    batch.querySelectorAll("img[data-src]").forEach((image) => {
-      image.src = image.dataset.src;
-      image.removeAttribute("data-src");
-    });
-    batch.hidden = false;
-    updateStatus();
-  };
-
-  const revealNextBatch = () => revealBatch(batches.find((batch) => batch.hidden));
-  shuffleButton.addEventListener("click", revealNextBatch);
-
-  const observer = "IntersectionObserver" in window
-    ? new IntersectionObserver(([entry]) => {
-        const footerIsFocused = document.activeElement?.closest(".photographyFooter");
-        if (entry.isIntersecting && automaticLoading && !footerIsFocused && !shuffleButton.hidden) {
-          revealNextBatch();
-        }
-      }, { rootMargin: "600px 0px" })
-    : null;
-
-  if (automaticLoading) observer?.observe(shuffleButton);
-
-  // A contact jump pauses loading so the destination stays in place.
-  document.querySelectorAll('a[href="#photography-contact"]').forEach((link) => {
-    link.addEventListener("click", () => {
-      automaticLoading = false;
-      observer?.disconnect();
-    });
+  const more = () => { visibleCount = Math.min(visibleCount + 36, items.length); render(); };
+  shuffleButton.addEventListener('click', more);
+  const observer = new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting && automaticLoading && !shuffleButton.hidden && !document.activeElement?.closest('.photographyFooter')) more();
+  }, { rootMargin: '500px 0px' });
+  document.querySelectorAll('a[href="#photography-contact"]').forEach(link => link.addEventListener('click', () => { automaticLoading = false; observer.disconnect(); }));
+  addEventListener('hashchange', () => {
+    automaticLoading = location.hash !== '#photography-contact';
+    if (automaticLoading) observer.observe(shuffleButton); else observer.disconnect();
   });
-
-  window.addEventListener("hashchange", () => {
-    automaticLoading = window.location.hash !== "#photography-contact";
-    if (automaticLoading) observer?.observe(shuffleButton);
-    else observer?.disconnect();
-  });
-
-  shuffleReset?.addEventListener("click", () => {
-    observer?.disconnect();
-    const order = [...items];
-    for (let index = order.length - 1; index > 0; index--) {
-      const swapIndex = Math.floor(Math.random() * (index + 1));
-      [order[index], order[swapIndex]] = [order[swapIndex], order[index]];
-    }
-    // Each batch owns its columns so loading leaves earlier photographs in place.
-    batches.forEach((batch, index) => {
-      batch.replaceChildren(...order.slice(index * batchSize, (index + 1) * batchSize));
-      batch.hidden = index > 0;
-    });
-    revealBatch(batches[0]);
+  shuffleReset?.addEventListener('click', () => {
+    for (let i = items.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [items[i], items[j]] = [items[j], items[i]]; }
+    shuffleGallery.append(...items);
+    visibleCount = Math.min(36, items.length);
+    render();
     automaticLoading = true;
-    observer?.observe(shuffleButton);
+    observer.observe(shuffleButton);
+    if (!motion.matches) shuffleGallery.animate([{ opacity: 0.35 }, { opacity: 1 }], { duration: 360 });
   });
+  new ResizeObserver(() => {
+    if (shuffleGallery.clientWidth === lastWidth || resizeFrame) return;
+    resizeFrame = requestAnimationFrame(() => { resizeFrame = 0; layout(); });
+  }).observe(shuffleGallery);
+  render();
+  if (automaticLoading) observer.observe(shuffleButton);
 }
 
 const contactTickets = document.querySelectorAll("[data-contact-ticket]");

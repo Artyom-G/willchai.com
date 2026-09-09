@@ -1,12 +1,10 @@
 ---
 import "../../styles/photography.css";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import SiteHeader from "../../components/SiteHeader.astro";
 import PhotographyFooter from "../../components/PhotographyFooter.astro";
-import PhotographyCharacter from "../../components/PhotographyCharacter.astro";
 import PhotographyCollection from "../../components/PhotographyCollection.astro";
 import PhotographyLightbox from "../../components/PhotographyLightbox.astro";
-import PhotographyTicket from "../../components/PhotographyTicket.astro";
+import PhotographyArcade from "../../components/PhotographyArcade.astro";
 import shuffleManifest from "../../data/photographyShuffle.json";
 
 const photographs = [
@@ -130,10 +128,6 @@ const clients = [
 
 const shufflePhotographs = shuffleManifest.images;
 const shuffleBatchSize = 36;
-const shuffleBatches = Array.from(
-  { length: Math.ceil(shufflePhotographs.length / shuffleBatchSize) },
-  (_, index) => shufflePhotographs.slice(index * shuffleBatchSize, (index + 1) * shuffleBatchSize),
-);
 ---
 
 <BaseLayout
@@ -145,24 +139,23 @@ const shuffleBatches = Array.from(
   <link slot="head" rel="preload" as="image" href="/photography/pixel-photographer.png" />
   <script slot="head" is:inline src="/scripts/photography.js" defer></script>
   <script slot="head" is:inline src="/scripts/photography-collection.js" defer></script>
+  <script slot="head" is:inline src="/scripts/photography-arcade.js" defer></script>
   <div class="pageShell">
-    <SiteHeader current="photography" />
     <main id="main" class="pageMain">
-      <div class="photographyIdentityBar">
-        <div class="photographyIdentity">
-          <PhotographyCharacter />
-          <h1 id="photographyTitle">Will Chai Photography</h1>
-        </div>
-        <a href="#pricing">Pricing</a>
-      </div>
+      <header class="photographyOpening">
+        <a class="photographyHome" href="/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7-7-7 7 7 7" /></svg>Back to willchai.com</a>
+        <div class="photographyMasthead"><div><p>Will Chai</p><h1>Photography.</h1></div><a class="openingBooking" href="#pricing">Build your shoot<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-7-7 7 7-7 7" /></svg></a></div>
+        <p class="photographyLocation">Portraits and events, in Hamilton and across Ontario.</p>
+      </header>
       <PhotographyCollection photographs={featuredPhotographs} />
 
       <section class="clientProof" aria-labelledby="clientProofTitle">
-        <h2 id="clientProofTitle">Organizations featuring my work</h2>
+        <div class="clientIntroduction" data-reveal><img src="/photography/concert-mcmaster.avif" alt="A vocalist performing at McMaster University" width="1920" height="2400" loading="lazy" decoding="async" />
+        <h2 id="clientProofTitle">Organizations featuring my work.</h2></div>
         <div class="clientLogoRow">
           {
             clients.map((client) => (
-              <figure class="clientLogo">
+              <figure class="clientLogo" data-reveal>
                 <img
                   src={client.logo}
                   alt=""
@@ -178,40 +171,7 @@ const shuffleBatches = Array.from(
         </div>
       </section>
 
-      <section class="photographyPricing" aria-labelledby="photographyPricingTitle">
-        <div class="bookingVisual" data-booking-visual>
-          <figure class="bookingPhotograph">
-            <a href={photographByKey.group.src} data-photo-open data-photo-group="booking" data-caption={photographByKey.group.caption} aria-label="Open photograph: Group portrait">
-              <img src={photographByKey.group.src} alt={photographByKey.group.alt} width={photographByKey.group.width} height={photographByKey.group.height} loading="lazy" decoding="async" />
-            </a>
-          </figure>
-          <div class="bookingTicketStage">
-            <PhotographyTicket clipId="booking-ticket-edge" />
-          </div>
-        </div>
-        <div class="pricingDetails" id="pricing" tabindex="-1">
-          <p class="pricingEyebrow">Portraits and events</p>
-          <h2 id="photographyPricingTitle">What are you planning?</h2>
-          <h3>Custom quotes</h3>
-          <p class="pricingIntroduction">
-            Share your date, location, and what you have in mind. I’ll put together a quote covering photography, editing, delivery, travel, and any outside costs.
-          </p>
-          <dl class="pricingFacts">
-            <div>
-              <dt>Your photographs</dt>
-              <dd>Final edited images, with delivery timing agreed in your quote.</dd>
-            </div>
-            <div>
-              <dt>Booking terms</dt>
-              <dd>The service policy covers revisions, delivery, and the satisfaction request window.</dd>
-            </div>
-          </dl>
-          <div class="pricingActions">
-            <a class="pricingAction" href="mailto:me@willchai.com?subject=Photography%20inquiry&amp;body=Hi%20Will%2C%0A%0AI%E2%80%99m%20planning%20a%20shoot.%0A%0ADate%3A%20%0ALocation%3A%20%0AWhat%20I%20have%20in%20mind%3A%20%0A">Tell me about your shoot<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" /></svg></a>
-            <a class="pricingPolicy" href="/photography/services-policy.pdf">Read the service policy</a>
-          </div>
-        </div>
-      </section>
+      <PhotographyArcade />
 
       <section class="shuffleSection" aria-labelledby="shuffleTitle">
         <header class="shuffleHeader">
@@ -225,27 +185,13 @@ const shuffleBatches = Array.from(
           </div>
         </header>
         <div class="shuffleGallery" data-shuffle-gallery>
-          {
-            shuffleBatches.map((batch, batchIndex) => (
-              <div class="shuffleBatch" data-shuffle-batch hidden={batchIndex > 0}>
-                {batch.map((photograph, index) => (
-                  <figure class="shuffleItem" data-shuffle-item>
-                    <a href={photograph.src} data-photo-open data-photo-group="shuffle" aria-label={`Open portfolio photograph ${batchIndex * shuffleBatchSize + index + 1}`}>
-                    <img
-                      src={batchIndex === 0 ? photograph.src : undefined}
-                      data-src={batchIndex > 0 ? photograph.src : undefined}
-                      alt={`Portfolio photograph ${batchIndex * shuffleBatchSize + index + 1}`}
-                      width={photograph.width}
-                      height={photograph.height}
-                      loading="lazy"
-                      decoding="async"
-                    />
-                    </a>
-                  </figure>
-                ))}
-              </div>
-            ))
-          }
+          {shufflePhotographs.map((photograph, index) => (
+            <figure class="shuffleItem" data-shuffle-item hidden={index >= shuffleBatchSize}>
+              <a href={photograph.src} data-photo-open data-photo-group="shuffle" aria-label={`Open portfolio photograph ${index + 1}`}>
+                <img src={index < shuffleBatchSize ? photograph.src : undefined} data-src={index >= shuffleBatchSize ? photograph.src : undefined} alt={`Portfolio photograph ${index + 1}`} width={photograph.width} height={photograph.height} loading="lazy" decoding="async" />
+              </a>
+            </figure>
+          ))}
         </div>
         <div class="shuffleControls">
           <button type="button" data-shuffle-more>Load more photographs</button>

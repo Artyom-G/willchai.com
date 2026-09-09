@@ -302,73 +302,35 @@ mode removes tilt and bounce but preserves the colour change and confirmation.
 
 ### Photography character
 
-Will approved the personal pixel character for Photography on 9 September 2026.
-`system/photographer-pixel.html` presents four actual 32 × 32 RGBA frames,
-a four second entrance, and a stationary final pose. The source artwork,
-six colour palette, generation prompts, and frame atlas live in
-`system/assets/photographer-pixel/`. Integer enlargement preserves square
-pixels. The study includes replay and an original size comparison. Reduced
-motion presents the resting pose. `PhotographyCharacter.astro` uses the approved
-atlas from `public/photography/pixel-photographer.png` beside the page title.
-The four second CSS sequence plays once and holds the fourth pose. Frames
-appear at 64px on desktop and 32px on narrow screens. The character reserves
-its space within the identity line and remains a decorative element.
+Photography opens with a direct return to willchai.com and an explicitly named
+featured selection. Four photographs travel sideways during a short section of
+ordinary document scrolling. A compact gallery follows with scroll driven edge
+reveals. View together arranges all twelve images in a contact sheet, and Play
+sequence restores their passage. Native image proportions and the expanded
+viewer remain available. The opening character appears at 128px, plays four
+poses over four seconds, and leaves.
 
-## Photography
+The pricing scene uses Will's personal pixel character, the homepage pointer,
+and an irregular Brand Blue enclosure. A decorative Gold tier card reading
+$600 per event is pushed across a ledge and tips away. This amount belongs to
+the animated prop. The shoot builder collects the type, duration, location,
+date and idea, then opens an email draft containing the visitor's selections.
+Actual pricing remains a personal quote until Will supplies calculation rules.
+The page stores none of these entries. Replay is available, interaction clears
+the prop immediately, and reduced motion presents the builder directly.
 
-Photography is the professional service and should own the strongest visual
-module. Its single page begins with a compact identity line and a strong
-photograph. Ten to fifteen featured photographs continue as one long,
-uncategorized sequence with small lower corner captions. Pricing, selected
-professional relationships, and a direct inquiry route follow the feature
-sequence. A dense caption free shuffle carries the wider body of work into the
-complete service footer.
+Organization marks accompany a photograph with existing McMaster context.
+The shuffle places incoming photographs into the shortest continuous column,
+using intrinsic dimensions to reserve space. Earlier images retain their
+positions as more arrive. The complete contact footer retains the authentic
+ticket, policy and rights information, with a direct return to the homepage.
+Photograph selection, captions and organization selection remain provisional.
 
-On the homepage, Photography uses the largest Unbounded project-title scale
-and a proportionally enlarged descriptor while remaining within the shared
-panel typography system.
-
-Use real image dimensions and intentional crops. Pricing remains available
-from the opening identity line, and the complete inquiry area appears before
-the shuffle. The shuffle loads in controlled batches so the footer remains
-reachable and initial image transfer stays measured.
-
-### Photography stacking direction
-
-Will approved the stacking direction on 9 September. The page retains its
-White canvas, compact Vermilion identity, persistent Pricing link, and native
-photograph proportions. Three opening photographs overlap at small vertical
-offsets and gather toward the centre during ordinary document scrolling.
-The stack then leaves the viewport with the page and a varied image sequence
-continues below. The pixel character retains its four second entrance.
-
-“Spread out” moves the same twelve photographs into a contact sheet with four
-columns on desktop and two on phones. “Stack” reverses the arrangement.
-Transitions preserve each photograph's visual position through the shared
-700 millisecond layout token. The opening settles by eight pixels on entry.
-The larger scroll and layout movements are specific to this photographic
-composition. Reduced motion begins with the contact sheet and retains static
-stacking as an optional arrangement.
-
-A native modal image viewer provides a large image, identifying caption,
-previous and next controls, keyboard arrows, Escape dismissal, and touch
-swiping. Opening and closing use the shared 360 millisecond image duration.
-The page retains its scrolling position and returns keyboard focus to the
-originating photograph. Image links remain useful with JavaScript disabled.
-
-The booking photograph crosses from White into Cloud and moves upward to
-reveal the approved holographic ticket. The Pricing link lands directly on
-quote information. The ticket retains its original surface, motion, clipboard
-response, and a separate direct email action. The complete footer remains
-available after the shuffle. All image choices and exact rates are provisional.
-
-The wider shuffle keeps each loaded batch in its own columns. Loading more
-photographs preserves earlier image positions. A Shuffle control changes the
-order, and contact links pause automatic loading so the footer stays reachable.
-The image viewer also supports the currently loaded shuffle photographs.
-
-`system/photography-stack.html` demonstrates the stack and contact sheet using
-the production stylesheet and interaction script.
+The production reference is `system/photography-stack.html`. The Gold tier
+prop uses the bounded `--wc-pricing-prop-gold` token. Its four second sequence
+uses `--wc-duration-scene`. The enclosure derives from the homepage portrait
+and ticket geometry, while controls retain Funnel Sans and selected headings
+use Unbounded. Gold is specific to the departing prop.
 
 ## Films and Projects
 

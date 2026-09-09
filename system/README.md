@@ -52,10 +52,10 @@ quick link contexts, and contact invitations live within relevant pages.
 The system also records the need for an authentic exception layer so the final
 site does not inherit the corporate evenness of a conventional component
 library. The contact ticket is an approved example. Will also approved the
-personal pixel photographer on 9 September 2026. It appears beside the
-Photography title. The four frame artwork and entrance can be replayed in
+personal pixel photographer on 9 September 2026. It appears briefly in the
+Photography opening and returns for the pricing scene. The four frame artwork and entrance can be replayed in
 `photographer-pixel.html`.
-Each drawing is 32 × 32 pixels and the sequence lasts four seconds. The
+Each drawing is 32 × 32 pixels and each appearance lasts four seconds. The
 broader visual language continues to develop from Will's real source material.
 The implementation was adapted from the live WordPress ticket's perforated
 path, pointer-driven perspective, Brand Blue interference layer, repeated W
@@ -102,3 +102,29 @@ guideline, `tokens.css` when applicable, and the affected example on the system
 page in the same change. When a production component becomes more accurate
 than its demonstration here, bring the system page forward rather than leaving
 two competing versions.
+
+## Photography motion and pricing
+
+Photography opens with a direct return to willchai.com and an explicitly named
+featured selection. Four photographs travel sideways during a short section of
+ordinary document scrolling. A compact gallery follows with scroll driven edge
+reveals. View together arranges all twelve images in a contact sheet, and Play
+sequence restores their passage. Native image proportions and the expanded
+viewer remain available. The opening character appears at 128px, plays four
+poses over four seconds, and leaves.
+
+The pricing scene uses Will's personal pixel character, the homepage pointer,
+and an irregular Brand Blue enclosure. A decorative Gold tier card reading
+$600 per event is pushed across a ledge and tips away. This amount belongs to
+the animated prop. The shoot builder collects the type, duration, location,
+date and idea, then opens an email draft containing the visitor's selections.
+Actual pricing remains a personal quote until Will supplies calculation rules.
+The page stores none of these entries. Replay is available, interaction clears
+the prop immediately, and reduced motion presents the builder directly.
+
+Organization marks accompany a photograph with existing McMaster context.
+The shuffle places incoming photographs into the shortest continuous column,
+using intrinsic dimensions to reserve space. Earlier images retain their
+positions as more arrive. The complete contact footer retains the authentic
+ticket, policy and rights information, with a direct return to the homepage.
+Photograph selection, captions and organization selection remain provisional.
