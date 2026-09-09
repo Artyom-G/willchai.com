@@ -291,6 +291,12 @@ as a memorable contact invitation at the end of a page and may inspire a small
 number of related tactile objects, but the full holographic treatment remains
 specific to contact.
 
+Photography may use a small pixel character of Will as a personal illustrated
+element. The agreed format is four simple 32 × 32 drawings over four seconds,
+ending in a resting pose. Its appearance comes from Will's existing portrait.
+The initial artwork is available for review in `system/photographer-pixel.html`.
+Placement belongs to the continuing Photography design discussion.
+
 The current blue W in `system/assets/willchai-mark.avif` is the official compact mark and
 should appear in the system library, site metadata, and suitable identity or
 footer contexts. “willchai.com” remains the official website name. The W mark

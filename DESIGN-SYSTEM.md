@@ -300,6 +300,17 @@ tap, or keyboard activation reveals
 the foil briefly and confirms that `me@willchai.com` was copied. Reduced-motion
 mode removes tilt and bounce but preserves the colour change and confirmation.
 
+### Photography character study
+
+The user selected a personal pixel character as a direction for Photography.
+`system/photographer-pixel.html` presents four actual 32 × 32 RGBA frames,
+a four second entrance, and a stationary final pose. The source artwork,
+six colour palette, generation prompts, and frame atlas live in
+`system/assets/photographer-pixel/`. Integer enlargement preserves square
+pixels. The study includes replay and an original size comparison. Reduced
+motion presents the resting pose. Final artwork and page placement remain
+part of the design review.
+
 ## Photography
 
 Photography is the professional service and should own the strongest visual
