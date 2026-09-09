@@ -1,32 +1,37 @@
 ---
+import "../../styles/photography.css";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
-import SiteFooter from "../../components/SiteFooter.astro";
-import ContactEnding from "../../components/ContactEnding.astro";
+import PhotographyFooter from "../../components/PhotographyFooter.astro";
+import shuffleManifest from "../../data/photographyShuffle.json";
 
 const photographs = [
   {
+    key: "nessa",
     src: "/photography/concert-nessa.avif",
     alt: "Singer Nessa Barrett performing beneath warm stage lights",
-    caption: "Live performance · 2026",
+    caption: "Nessa Barrett, live performance, 2026",
     width: 1920,
     height: 2559,
   },
   {
+    key: "lakeshore",
     src: "/photography/portrait-lakeshore.webp",
     alt: "Editorial portrait of a person sitting beside the water",
-    caption: "Editorial portrait",
+    caption: "Lakeshore portrait",
     width: 1707,
     height: 2560,
   },
   {
+    key: "mcmaster",
     src: "/photography/concert-mcmaster.avif",
     alt: "A vocalist performing in a McMaster hoodie",
-    caption: "Campus concert · 2025",
+    caption: "Live performance at McMaster University, 2025",
     width: 1920,
     height: 2400,
   },
   {
+    key: "formal",
     src: "/photography/portrait-formal.webp",
     alt: "Formal editorial portrait against a dark background",
     caption: "Studio portrait",
@@ -34,20 +39,23 @@ const photographs = [
     height: 2560,
   },
   {
+    key: "purple",
     src: "/photography/concert-purple.avif",
     alt: "A concert performer lit by purple stage light",
-    caption: "Live performance · 2025",
+    caption: "Live performance, 2025",
     width: 1920,
     height: 2400,
   },
   {
+    key: "nightlife",
     src: "/photography/event-nightlife.webp",
     alt: "Nightlife event portrait beneath blue and purple light",
-    caption: "Event portrait",
+    caption: "Nightlife event",
     width: 1920,
     height: 2879,
   },
   {
+    key: "couple",
     src: "/photography/portrait-couple.webp",
     alt: "A monochrome portrait of a couple outdoors",
     caption: "Couple portrait",
@@ -55,6 +63,7 @@ const photographs = [
     height: 2560,
   },
   {
+    key: "graduation",
     src: "/photography/portrait-graduation.webp",
     alt: "Graduation portrait made outdoors",
     caption: "Graduation portrait",
@@ -62,6 +71,7 @@ const photographs = [
     height: 2688,
   },
   {
+    key: "group",
     src: "/photography/portrait-group.webp",
     alt: "A group portrait made outdoors in warm evening light",
     caption: "Group portrait",
@@ -69,27 +79,62 @@ const photographs = [
     height: 1536,
   },
   {
+    key: "property",
     src: "/photography/property-aerial.webp",
     alt: "A winter aerial photograph of a residential property",
-    caption: "Property aerial",
+    caption: "Residential property, Ontario",
     width: 1920,
     height: 1920,
   },
   {
+    key: "beverage",
     src: "/photography/product-beverage.webp",
     alt: "A beverage product photograph with a bright studio composition",
-    caption: "Product study",
+    caption: "Beverage study",
     width: 1920,
     height: 2560,
   },
   {
+    key: "eyewear",
     src: "/photography/product-eyewear.webp",
     alt: "An eyewear product photograph with a clean studio arrangement",
-    caption: "Product study",
+    caption: "Eyewear study",
     width: 1920,
     height: 2333,
   },
 ];
+
+const photographByKey = Object.fromEntries(photographs.map((photograph) => [photograph.key, photograph]));
+
+const featuredSpreads = [
+  { className: "featuredSpreadQuiet", photographs: [photographByKey.lakeshore, photographByKey.eyewear] },
+  { className: "featuredSpreadWide", photographs: [photographByKey.group] },
+  {
+    className: "featuredSpreadPerformance",
+    photographs: [photographByKey.mcmaster, photographByKey.purple, photographByKey.nightlife],
+  },
+  { className: "featuredSpreadPortraitPair", photographs: [photographByKey.couple, photographByKey.formal] },
+  {
+    className: "featuredSpreadClosing",
+    photographs: [photographByKey.graduation, photographByKey.property, photographByKey.beverage],
+  },
+];
+
+const clients = [
+  { name: "Luxetints", logo: "/photography/clients/luxetints.avif" },
+  { name: "Health Sciences Musical", logo: "/photography/clients/health-sciences-musical.avif" },
+  { name: "McMaster Film Production Club", logo: "/photography/clients/mcmaster-film-production-club.avif" },
+  { name: "Matt", logo: "/photography/clients/matt.avif" },
+  { name: "McMaster A Cappella", logo: "/photography/clients/mcmaster-a-cappella.avif" },
+  { name: "McMaster University", logo: "/photography/clients/mcmaster.avif" },
+  { name: "SJK School", logo: "/photography/clients/sjk-school.avif" },
+  { name: "McMaster BHSS", logo: "/photography/clients/mcmaster-bhss.avif" },
+  { name: "Platinum Moon", logo: "/photography/clients/platinum-moon.avif" },
+  { name: "Snazzy Labs", logo: "/photography/clients/snazzy-labs.avif" },
+];
+
+const shufflePhotographs = shuffleManifest.images;
+const shuffleBatchSize = 45;
 ---
 
 <BaseLayout
@@ -98,83 +143,127 @@ const photographs = [
   path="/photography/"
   pageClass="photographyPage"
 >
+  <script slot="head" is:inline src="/scripts/photography.js" defer></script>
   <div class="pageShell">
     <SiteHeader current="photography" />
     <main id="main" class="pageMain">
-      <section class="photographyHero" aria-labelledby="photographyTitle">
-        <div class="photographyHeroCopy">
-          <div>
-            <p class="sectionMarker">Will Chai Photography</p>
-            <h1 id="photographyTitle" class="pageTitle">People, places, and the energy between them.</h1>
-          </div>
-          <div>
-            <p class="pageLead">
-              Portraits, events, performances, products, property, and film made with a direct, observant approach.
-            </p>
-            <div class="actionRow">
-              <a class="primaryAction" href="mailto:me@willchai.com?subject=Photography%20inquiry">
-                Start an inquiry <span aria-hidden="true">↗</span>
-              </a>
-            </div>
-          </div>
+      <section class="photographyOpening" aria-labelledby="photographyTitle">
+        <div class="photographyIdentityBar">
+          <h1 id="photographyTitle">Will Chai Photography</h1>
+          <a href="#pricing">Pricing</a>
         </div>
-        <figure class="photographyHeroMedia">
+        <figure class="photographyOpeningMedia">
           <img
-            src="/assets/photography-banner.avif"
-            alt="A contact sheet of portraits, live performances, events, and creative photography"
-            width="1280"
-            height="720"
+            src="/photography/concert-nessa.avif"
+            alt="Singer Nessa Barrett performing beneath warm stage lights"
+            width="1920"
+            height="2559"
+            fetchpriority="high"
           />
+          <figcaption>{photographByKey.nessa.caption}</figcaption>
         </figure>
       </section>
 
-      <section class="section" aria-labelledby="photographyWorkTitle">
-        <div class="sectionHeader">
-          <h2 id="photographyWorkTitle">Selected photographs</h2>
-          <p>A single editorial sequence moving across portraiture, live work, and commercial studies.</p>
-        </div>
-        <div class="photoMosaic">
+      <section class="featuredSequence" aria-labelledby="featuredPhotographyTitle">
+        <h2 id="featuredPhotographyTitle" class="visuallyHidden">Featured photographs</h2>
+        {
+          featuredSpreads.map((spread) => (
+            <div class:list={["featuredSpread", spread.className]}>
+              {spread.photographs.map((photograph) => (
+                <figure class="featuredFigure">
+                  <img
+                    src={photograph.src}
+                    alt={photograph.alt}
+                    width={photograph.width}
+                    height={photograph.height}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <figcaption>{photograph.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
+          ))
+        }
+      </section>
+
+      <section class="clientProof" aria-labelledby="clientProofTitle">
+        <h2 id="clientProofTitle">Organizations featuring my work</h2>
+        <div class="clientLogoRow">
           {
-            photographs.map((photograph) => (
-              <figure>
+            clients.map((client) => (
+              <figure class="clientLogo">
                 <img
-                  src={photograph.src}
-                  alt={photograph.alt}
-                  width={photograph.width}
-                  height={photograph.height}
+                  src={client.logo}
+                  alt={client.name}
+                  width="280"
+                  height="140"
                   loading="lazy"
                   decoding="async"
                 />
-                <figcaption class="photoCaption">{photograph.caption}</figcaption>
               </figure>
             ))
           }
         </div>
       </section>
 
-      <section class="section" aria-labelledby="photographyServicesTitle">
-        <div class="sectionHeader">
-          <h2 id="photographyServicesTitle">Ways to work together</h2>
-          <p>Based in Hamilton and available for work across Ontario.</p>
+      <section class="photographyPricing" id="pricing" aria-labelledby="photographyPricingTitle">
+        <div class="pricingTitleBlock">
+          <p>Pricing</p>
+          <h2 id="photographyPricingTitle">Pricing for your shoot.</h2>
         </div>
-        <div class="serviceNotes">
-          <article class="serviceNote">
-            <h3>Portraits and events</h3>
-            <p>Individual portraits, groups, graduation, celebrations, and gathering coverage with room for candid moments.</p>
-          </article>
-          <article class="serviceNote">
-            <h3>Performances and film</h3>
-            <p>Concerts, musicals, rehearsals, production stills, and cinematography shaped around the pace of a live room.</p>
-          </article>
-          <article class="serviceNote">
-            <h3>Products and property</h3>
-            <p>Promotional images, product studies, interiors, property photographs, aerials, and spatial media.</p>
-          </article>
+        <div class="pricingDetails">
+          <p class="pricingMode">Custom quote</p>
+          <p class="pricingIntroduction">
+            Send the date, location, expected time, and intended use. The quote records photography, editing, delivery, travel, and any outside costs.
+          </p>
+          <dl class="pricingFacts">
+            <div>
+              <dt>Based in</dt>
+              <dd>Hamilton, with work across Ontario</dd>
+            </div>
+            <div>
+              <dt>Delivery</dt>
+              <dd>Final edited photographs, with timing recorded in the quote</dd>
+            </div>
+            <div>
+              <dt>Terms</dt>
+              <dd>Current service policy includes a 14 day satisfaction request window and revisions within the agreed scope</dd>
+            </div>
+          </dl>
+          <a class="pricingAction" href="mailto:me@willchai.com?subject=Photography%20quote">Request a quote</a>
         </div>
       </section>
 
-      <ContactEnding photography />
+      <section class="shuffleSection" aria-labelledby="shuffleTitle">
+        <header class="shuffleHeader">
+          <h2 id="shuffleTitle">A shuffle</h2>
+        </header>
+        <div class="shuffleGallery" data-shuffle-gallery>
+          {
+            shufflePhotographs.map((photograph, index) => (
+              <figure class="shuffleItem" data-shuffle-item hidden={index >= shuffleBatchSize}>
+                <img
+                  src={index < shuffleBatchSize ? photograph.src : undefined}
+                  data-src={index >= shuffleBatchSize ? photograph.src : undefined}
+                  alt={`Uncaptioned portfolio photograph ${index + 1}`}
+                  width={photograph.width}
+                  height={photograph.height}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+            ))
+          }
+        </div>
+        <div class="shuffleControls">
+          <button type="button" data-shuffle-more>Load more photographs</button>
+          <p class="visuallyHidden" data-shuffle-status aria-live="polite">
+            {shuffleBatchSize} photographs shown
+          </p>
+        </div>
+      </section>
     </main>
-    <SiteFooter />
+    <PhotographyFooter />
   </div>
 </BaseLayout>

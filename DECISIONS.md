@@ -65,8 +65,9 @@ In order:
 The launch site is shallow and substantial. It contains twelve public pages.
 The homepage is a curated introduction to Will and selected work. `/hey/` is a
 utility destination for quick links and QR codes. Photography occupies one
-continuous page with an editorial sequence, practical service context, and its
-own inquiry area.
+long page with ten to fifteen captioned featured photographs, pricing, selected
+professional relationships, a caption free shuffle, its own inquiry area, and
+the complete service footer.
 
 Films and Projects provide the two branch points. `/films/` introduces the film
 practice and leads to the Wattleseed and Murder of Minus pages. `/projects/`
@@ -316,3 +317,4 @@ choices that affect the site's direction, structure, or long-term maintenance.
 | 2026-09-08 | Standardise sidebar capitalization as Photography, Films, Projects, Objects & experiments, LinkedIn, and Contact. | Correct brand and destination casing makes the navigation feel finished and consistent. |
 | 2026-09-08 | Render the Projects triangular grid as the panel's sampled image layer rather than a CSS background. | The black-hole shader can now gravitationally distort the grid with the rest of the card instead of leaving it visually detached above the effect. |
 | 2026-09-08 | Launch with twelve public pages, one substantial Photography page, and all branching within Films and Projects. | The structure gives selected work enough context while keeping maintenance and primary navigation manageable. |
+| 2026-09-09 | Present Photography as a long uncategorized sequence with ten to fifteen captioned featured photographs, commercial information, a caption free shuffle, and the complete footer. | The sequence gives the photographs room, keeps individual identities available in small captions, and preserves the broad visual range without asking visitors to choose a category. |

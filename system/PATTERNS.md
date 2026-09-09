@@ -131,17 +131,18 @@ identified without interrupting the project narrative.
 
 ## Photography service information
 
-Photography service information presents Portraits, Events, and Creative as
-chapters within one substantial page while retaining the site's personal
-voice. It requires representative commissioned work, a plain description of
-the type of engagement, and a photography-specific inquiry action. Pricing,
-availability, location, or delivery information appears when it is current and
-useful.
+Photography service information belongs within one long page retaining the
+site's personal voice. The page requires ten to fifteen featured photographs,
+small identifying captions, pricing, selected professional relationships, and
+a photography specific inquiry action. Availability, location, and delivery
+information appears when it is current and useful.
 
-The chapter order and featured photographs may change. Editorial transitions
-keep the sequence continuous. Photographs remain the primary visual material,
-the inquiry action stays outside any lightbox, and client privacy or
-publication permission must be confirmed before use.
+The featured order and photographs may change. Editorial transitions keep the
+uncategorized sequence continuous. A caption free shuffle follows the
+commercial information and loads in controlled batches before the complete
+service footer. Photographs remain the primary visual material, the inquiry
+action stays outside any lightbox, and client privacy or publication
+permission must be confirmed before use.
 
 ## External project handoff
 

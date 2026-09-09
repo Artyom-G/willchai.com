@@ -303,17 +303,21 @@ mode removes tilt and bounce but preserves the colour change and confirmation.
 ## Photography
 
 Photography is the professional service and should own the strongest visual
-module. Its single page begins with an introduction, then moves through
-Portraits, Events, performances, and Creative work as one editorial sequence.
-Service context and the inquiry area stay within the same page.
+module. Its single page begins with a compact identity line and a strong
+photograph. Ten to fifteen featured photographs continue as one long,
+uncategorized sequence with small lower corner captions. Pricing, selected
+professional relationships, and a direct inquiry route follow the feature
+sequence. A dense caption free shuffle carries the wider body of work into the
+complete service footer.
 
 On the homepage, Photography uses the largest Unbounded project-title scale
 and a proportionally enlarged descriptor while remaining within the shared
 panel typography system.
 
-Use real image dimensions and intentional crops. A visitor should never need to
-wait for an oversized gallery before understanding the offer or reaching the
-photography inquiry path.
+Use real image dimensions and intentional crops. Pricing remains available
+from the opening identity line, and the complete inquiry area appears before
+the shuffle. The shuffle loads in controlled batches so the footer remains
+reachable and initial image transfer stays measured.
 
 ## Films and Projects
 

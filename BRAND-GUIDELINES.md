@@ -38,12 +38,15 @@ tries to explain everything. It can reward exploration, but the paths into the
 work and the route to contact should remain immediate and legible.
 
 Photography is the professional service and receives one substantial page with
-its own client inquiry path. Portraits, Events, performances, and Creative work
-flow together through an editorial sequence. Films and Projects are separate
-destinations. Individual work pages belong within those two areas. Sharing
-Stories continues as the idea connecting the practice. The whole site uses the
-broad invitation “Let’s do something together,” while Photography provides a
-more specific inquiry route.
+its own client inquiry path. Ten to fifteen featured photographs flow through
+one uncategorized editorial sequence. Small captions identify a person,
+occasion, place, or commission when confirmed. Pricing and selected
+professional relationships follow the feature sequence, then a caption free
+shuffle carries the wider body of work into the complete service footer. Films
+and Projects are separate destinations. Individual work pages belong within
+those two areas. Sharing Stories continues as the idea connecting the practice.
+The whole site uses the broad invitation “Let’s do something together,” while
+Photography provides a more specific inquiry route.
 
 The Résumé is a professional record with matching PDF and HTML versions. It may
 link to a film or project when the connection is useful. `/hey/` is a compact

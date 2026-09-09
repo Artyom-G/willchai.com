@@ -18,15 +18,17 @@ item has one canonical home when it intersects several disciplines.
 
 ## Photography service
 
-The Photography page introduces the practice, states a short point of view,
-makes the current inquiry route clear, and presents a considered sequence of
-work. Portraits, Events, performances, and Creative commissions may create
-editorial chapters within the page. Each chapter remains part of the same
-continuous experience.
+The Photography page introduces the practice through a compact identity line
+and a strong photograph. Publish ten to fifteen featured photographs as one
+uncategorized sequence. Each featured caption names the person, occasion,
+place, or commission when the information is confirmed. Pricing, selected
+professional relationships, and the inquiry route follow the feature sequence.
 
-Publish a small selection of strong photographs with useful captions. A future
-service such as weddings or real estate may receive its own page once the
-business and visitor journey support a dedicated destination.
+The wider portfolio appears as a caption free shuffle loaded in controlled
+batches. The complete service footer follows it with contact, policy, rights,
+and navigation information. A future service such as weddings or real estate
+may receive its own page once the business and visitor journey support a
+dedicated destination.
 
 The general site contact invitation should feel open and collaborative (“Let’s
 do something together”). Within photography, provide a specific inquiry route
