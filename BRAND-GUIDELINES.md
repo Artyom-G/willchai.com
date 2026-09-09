@@ -53,6 +53,12 @@ link to a film or project when the connection is useful. `/hey/` is a compact
 utility page for quick links and QR codes. Contact appears within existing
 pages through relevant invitations and compact endings.
 
+Photography gives visual quality priority while supporting portrait and event
+inquiries through useful information and straightforward contact. Current
+photographs, captions, and professional relationships serve as provisional
+material during design review. The page should be assessed through its full
+scrolling composition and ordinary visitor tasks on desktop and mobile.
+
 ## Voice and writing
 
 The voice is conversational, observant, assured, and specific. It should sound

@@ -1,7 +1,3 @@
-.photographyPage {
-  scroll-behavior: auto;
-}
-
 html:has(.photographyPage) {
   scroll-behavior: auto;
 }
@@ -16,6 +12,7 @@ html:has(.photographyPage) {
 
 .photographyPage .siteHeader {
   grid-template-columns: minmax(12rem, 1fr) auto minmax(12rem, 1fr);
+  padding-inline: clamp(1rem, 4vw, 4rem);
 }
 
 .photographyPage .siteNav a::after {
@@ -26,24 +23,29 @@ html:has(.photographyPage) {
   color: var(--wc-vermilion);
 }
 
-.photographyOpening {
-  background: var(--wc-white);
+.photographyPage .pageMain {
+  overflow: visible;
 }
 
 .photographyIdentityBar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
   display: flex;
-  min-height: 3.75rem;
   align-items: center;
   justify-content: space-between;
+  min-height: 4rem;
   gap: var(--wc-space-6);
-  padding: var(--wc-space-3) var(--wc-space-4);
+  padding: var(--wc-space-3) clamp(1rem, 4vw, 4rem);
+  background: var(--wc-white);
 }
 
 .photographyIdentityBar h1,
 .photographyIdentityBar a {
   margin: 0;
   font-size: var(--wc-font-small);
-  font-weight: 600;
+  font-weight: 500;
+  line-height: 1.3;
   text-decoration: none;
 }
 
@@ -51,36 +53,48 @@ html:has(.photographyPage) {
   color: var(--wc-vermilion);
 }
 
+.photographyIdentityBar a {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  padding-inline: var(--wc-space-2);
+}
+
 .photographyIdentityBar a:hover,
 .photographyIdentityBar a:focus-visible {
   color: var(--wc-blue);
 }
 
-.photographyOpeningMedia {
-  position: relative;
-  height: calc(100svh - 8.5rem);
-  min-height: 34rem;
+.photographyOpening {
+  display: grid;
+  grid-template-columns: 1.125fr 1fr;
+  align-items: start;
+  gap: var(--wc-space-6);
+  width: min(calc(100% - 6rem), calc(108svh + 1.5rem), 80rem);
+  margin: 0 auto;
+  padding: var(--wc-space-6) 0 clamp(3rem, 6vw, 6rem);
+}
+
+.photographyOpeningMedia,
+.featuredFigure {
+  min-width: 0;
   margin: 0;
-  overflow: hidden;
-  background: var(--wc-ink);
 }
 
-.photographyOpeningMedia img {
+.photographyOpeningMedia img,
+.featuredFigure img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 24%;
+  height: auto;
 }
 
-.photographyOpeningMedia figcaption {
-  position: absolute;
-  right: var(--wc-space-4);
-  bottom: var(--wc-space-4);
-  padding: 0.5rem 0.7rem;
-  color: var(--wc-white);
-  background: rgba(17, 19, 23, 0.82);
+.photographyOpeningMedia figcaption,
+.featuredFigure figcaption {
+  padding-top: var(--wc-space-3);
+  color: var(--wc-slate);
   font-size: var(--wc-font-small);
-  line-height: 1.3;
+  line-height: 1.4;
+  text-align: right;
+  text-wrap: pretty;
 }
 
 .visuallyHidden {
@@ -89,244 +103,157 @@ html:has(.photographyPage) {
   height: 1px;
   padding: 0;
   overflow: hidden;
-  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
 
 .featuredSequence {
-  background: var(--wc-white);
+  display: grid;
+  gap: clamp(3rem, 6vw, 6rem);
+  width: min(calc(100% - 6rem), 80rem);
+  margin: 0 auto;
+  padding-bottom: clamp(4rem, 8vw, 8rem);
 }
 
 .featuredSpread {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: clamp(0.75rem, 1.5vw, 1.5rem);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--wc-space-6);
 }
 
 .featuredFigure {
-  position: relative;
-  margin: 0;
-  overflow: hidden;
-  background: var(--wc-cloud);
+  flex: var(--photograph-ratio) 1 0%;
 }
 
-.featuredFigure img {
-  width: 100%;
-  height: auto;
-}
-
-.featuredFigure figcaption {
-  position: absolute;
-  right: var(--wc-space-3);
-  bottom: var(--wc-space-3);
-  max-width: calc(100% - 1.5rem);
-  padding: 0.42rem 0.65rem;
-  color: var(--wc-white);
-  background: rgba(17, 19, 23, 0.82);
-  font-size: var(--wc-font-small);
-  line-height: 1.3;
-}
-
-.featuredSpreadQuiet {
-  min-height: 110svh;
-  align-items: end;
-  padding: clamp(5rem, 12vw, 13rem) clamp(1.5rem, 7vw, 7rem);
-}
-
-.featuredSpreadQuiet .featuredFigure:first-child {
-  grid-column: 1 / span 7;
-}
-
-.featuredSpreadQuiet .featuredFigure:last-child {
-  grid-column: 9 / span 4;
-  margin-bottom: clamp(1rem, 7vw, 7rem);
-}
-
-.featuredSpreadWide {
-  padding: 0 var(--wc-space-4) clamp(6rem, 12vw, 12rem);
-}
-
-.featuredSpreadWide .featuredFigure {
-  grid-column: 1 / -1;
-}
-
-.featuredSpreadPerformance {
-  min-height: 180svh;
-  align-items: start;
-  padding: clamp(5rem, 10vw, 10rem) clamp(1rem, 5vw, 5rem);
-  color: var(--wc-white);
-  background: var(--wc-ink);
-}
-
-.featuredSpreadPerformance .featuredFigure:nth-child(1) {
-  grid-column: 1 / span 5;
-}
-
-.featuredSpreadPerformance .featuredFigure:nth-child(2) {
-  grid-column: 7 / span 6;
-  margin-top: clamp(7rem, 16vw, 16rem);
-}
-
-.featuredSpreadPerformance .featuredFigure:nth-child(3) {
-  grid-column: 3 / span 6;
-  margin-top: clamp(7rem, 15vw, 15rem);
-}
-
-.featuredSpreadPortraitPair {
-  min-height: 130svh;
-  align-items: start;
-  padding: clamp(7rem, 15vw, 15rem) clamp(1.5rem, 8vw, 8rem);
-}
-
-.featuredSpreadPortraitPair .featuredFigure:first-child {
-  grid-column: 1 / span 5;
-}
-
-.featuredSpreadPortraitPair .featuredFigure:last-child {
-  grid-column: 7 / span 6;
-  margin-top: clamp(10rem, 22vw, 22rem);
-}
-
-.featuredSpreadClosing {
-  align-items: start;
-  padding: clamp(5rem, 10vw, 10rem) clamp(1rem, 4vw, 4rem);
-  background: var(--wc-cloud);
-}
-
-.featuredSpreadClosing .featuredFigure:nth-child(1) {
-  grid-column: 1 / span 4;
-}
-
-.featuredSpreadClosing .featuredFigure:nth-child(2) {
-  grid-column: 5 / span 4;
-  margin-top: clamp(7rem, 12vw, 12rem);
-}
-
-.featuredSpreadClosing .featuredFigure:nth-child(3) {
-  grid-column: 9 / span 4;
-  margin-top: clamp(2rem, 5vw, 5rem);
+.featuredSpread:nth-of-type(3) {
+  width: 85%;
+  margin-inline: auto;
 }
 
 .clientProof {
-  display: grid;
-  grid-template-columns: minmax(12rem, 0.28fr) minmax(0, 1fr);
-  gap: clamp(2rem, 7vw, 7rem);
-  padding: clamp(5rem, 9vw, 9rem) clamp(1.5rem, 6vw, 6rem);
-  background: var(--wc-white);
-  border-block: 1px solid var(--wc-hairline);
+  width: min(calc(100% - 6rem), 80rem);
+  margin-inline: auto;
+  padding-block: var(--wc-space-12) var(--wc-space-16);
+  border-top: 1px solid var(--wc-hairline);
 }
 
 .clientProof h2 {
-  margin: 0;
-  color: var(--wc-vermilion);
-  font-size: var(--wc-font-small);
-  font-weight: 600;
+  margin: 0 0 var(--wc-space-12);
+  color: var(--wc-slate);
+  font-size: 1.0625rem;
+  font-weight: 400;
+  text-align: center;
 }
 
 .clientLogoRow {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  align-items: center;
-  gap: clamp(2rem, 5vw, 5rem) clamp(1rem, 3vw, 3rem);
+  gap: var(--wc-space-8) var(--wc-space-6);
 }
 
 .clientLogo {
-  display: grid;
-  min-height: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--wc-space-3);
   margin: 0;
-  place-items: center;
 }
 
 .clientLogo img {
-  width: 100%;
-  height: 5.5rem;
+  width: 7rem;
+  height: 3.5rem;
   object-fit: contain;
+}
+
+.clientLogo figcaption {
+  max-width: 20ch;
+  color: var(--wc-slate);
+  font-size: var(--wc-font-small);
+  line-height: 1.3;
+  text-align: center;
+  text-wrap: balance;
 }
 
 .photographyPricing {
   display: grid;
-  grid-template-columns: minmax(18rem, 0.72fr) minmax(0, 1.28fr);
-  min-height: 42rem;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(3rem, 8vw, 8rem);
+  padding: clamp(3rem, 6vw, 6rem) max(3rem, calc((100% - 80rem) / 2));
   background: var(--wc-cloud);
-  scroll-margin-top: var(--wc-space-4);
+  scroll-margin-top: 4rem;
 }
 
-.pricingTitleBlock,
-.pricingDetails {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: var(--wc-space-8);
-  padding: clamp(3rem, 7vw, 7rem) clamp(1.5rem, 6vw, 6rem);
-}
-
-.pricingTitleBlock {
-  border-right: 1px solid var(--wc-hairline);
-}
-
-.pricingTitleBlock > p {
-  margin: 0;
-  color: var(--wc-vermilion);
-  font-size: var(--wc-font-small);
-  font-weight: 600;
-}
-
-.pricingTitleBlock h2 {
-  max-width: 9ch;
+.pricingTitleBlock h2,
+.photographyFooterCopy h2 {
   margin: 0;
   font-family: var(--wc-font-display);
-  font-size: clamp(2.35rem, 5.5vw, 5.75rem);
+  font-size: clamp(2rem, 3.6vw, 3.75rem);
   font-weight: 400;
-  letter-spacing: -0.045em;
-  line-height: 0.98;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
 }
 
-.pricingMode {
-  margin: 0;
-  font-size: clamp(1.65rem, 3.2vw, 3.2rem);
+.pricingTitleBlock p {
+  max-width: 28ch;
+  margin: var(--wc-space-6) 0 0;
+  font-size: clamp(1.125rem, 1.5vw, 1.375rem);
+  line-height: 1.5;
+}
+
+.pricingDetails h3 {
+  margin: 0 0 var(--wc-space-3);
+  font-size: 1.25rem;
   font-weight: 500;
-  letter-spacing: -0.035em;
 }
 
 .pricingIntroduction {
-  max-width: 44rem;
+  max-width: 54ch;
   margin: 0;
-  font-size: clamp(1.125rem, 1.7vw, 1.4rem);
+  color: var(--wc-slate);
 }
 
 .pricingFacts {
-  display: grid;
-  margin: 0;
+  margin: var(--wc-space-8) 0;
+  font-size: var(--wc-font-small);
 }
 
 .pricingFacts div {
   display: grid;
-  grid-template-columns: minmax(7rem, 0.28fr) minmax(0, 1fr);
-  gap: var(--wc-space-6);
-  padding: var(--wc-space-4) 0;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  gap: var(--wc-space-4);
+  padding-block: var(--wc-space-4);
   border-top: 1px solid var(--wc-hairline);
 }
 
 .pricingFacts dt {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .pricingFacts dd {
-  max-width: 38rem;
   margin: 0;
+  color: var(--wc-slate);
+}
+
+.pricingActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--wc-space-4) var(--wc-space-6);
 }
 
 .pricingAction {
   display: inline-flex;
-  width: fit-content;
-  min-height: 3.25rem;
   align-items: center;
-  padding: 0.8rem 1.1rem;
+  justify-content: space-between;
+  min-height: 3.25rem;
+  gap: var(--wc-space-6);
+  padding: var(--wc-space-3) var(--wc-space-6);
   color: var(--wc-white);
   background: var(--wc-blue);
   font-size: var(--wc-font-small);
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: none;
 }
 
@@ -335,38 +262,98 @@ html:has(.photographyPage) {
   background: var(--wc-ink);
 }
 
+.pricingAction svg,
+.shuffleSection svg,
+.photographyEmailLink svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.pricingPolicy {
+  padding-block: var(--wc-space-3);
+  color: var(--wc-slate);
+  font-size: var(--wc-font-small);
+  text-decoration: none;
+}
+
+.pricingPolicy:hover,
+.pricingPolicy:focus-visible {
+  color: var(--wc-blue);
+}
+
 .shuffleSection {
-  padding: clamp(5rem, 9vw, 9rem) var(--wc-space-4) var(--wc-space-16);
-  color: var(--wc-white);
-  background: var(--wc-ink);
+  padding: clamp(3rem, 6vw, 6rem) var(--wc-space-6) var(--wc-space-12);
+  background: var(--wc-white);
 }
 
 .shuffleHeader {
-  padding: 0 0 clamp(2rem, 5vw, 5rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--wc-space-6);
+  padding-bottom: var(--wc-space-6);
 }
 
 .shuffleHeader h2 {
   margin: 0;
   font-family: var(--wc-font-display);
-  font-size: clamp(2.1rem, 5vw, 5rem);
+  font-size: clamp(1.5rem, 2.3vw, 2.25rem);
   font-weight: 400;
-  letter-spacing: -0.045em;
-  line-height: 1;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
 }
 
-.shuffleGallery {
-  columns: 3;
+.shuffleNavigation,
+.shuffleControls {
+  display: flex;
+  align-items: center;
+  gap: var(--wc-space-6);
+}
+
+.shuffleSection button,
+.shuffleSection a {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: var(--wc-space-2);
+  padding: var(--wc-space-2) 0;
+  border: 0;
+  color: var(--wc-ink);
+  background: transparent;
+  font-size: var(--wc-font-small);
+  font-weight: 500;
+  line-height: 1.3;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.shuffleSection button:hover,
+.shuffleSection button:focus-visible,
+.shuffleSection a:hover,
+.shuffleSection a:focus-visible {
+  color: var(--wc-blue);
+}
+
+.shuffleBatch {
+  columns: 4;
   column-gap: var(--wc-space-3);
+}
+
+.shuffleBatch[hidden],
+.shuffleControls button[hidden] {
+  display: none;
 }
 
 .shuffleItem {
   margin: 0 0 var(--wc-space-3);
   break-inside: avoid;
-  background: #000;
-}
-
-.shuffleItem[hidden] {
-  display: none;
+  background: var(--wc-cloud);
 }
 
 .shuffleItem img {
@@ -375,101 +362,80 @@ html:has(.photographyPage) {
 }
 
 .shuffleControls {
-  display: grid;
-  padding-top: var(--wc-space-6);
-  place-items: center;
-}
-
-.shuffleControls button {
-  min-height: 3.25rem;
-  padding: 0.8rem 1.15rem;
-  color: var(--wc-white);
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  font-size: var(--wc-font-small);
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.shuffleControls button:hover,
-.shuffleControls button:focus-visible {
-  color: var(--wc-ink);
-  background: var(--wc-white);
+  justify-content: space-between;
+  margin-top: var(--wc-space-4);
+  padding-top: var(--wc-space-4);
+  border-top: 1px solid var(--wc-hairline);
 }
 
 .photographyFooter {
-  color: var(--wc-white);
-  background: var(--wc-ink);
+  color: var(--wc-ink);
+  background: var(--wc-contact-field);
 }
 
 .photographyPolicy {
-  display: grid;
-  grid-template-columns: minmax(14rem, 0.36fr) minmax(0, 1fr);
-  gap: clamp(2rem, 7vw, 7rem);
-  padding: var(--wc-space-6) clamp(1.5rem, 6vw, 6rem);
-  color: var(--wc-ink);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--wc-space-3) var(--wc-space-12);
+  padding: var(--wc-space-6) clamp(1.5rem, 4vw, 4rem);
   background: var(--wc-cloud);
-  border-bottom: 1px solid var(--wc-hairline);
+  border-block: 1px solid var(--wc-hairline);
+  font-size: var(--wc-font-small);
 }
 
 .photographyPolicy a {
-  width: fit-content;
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: none;
 }
 
-.photographyPolicy a:hover,
-.photographyPolicy a:focus-visible {
-  color: var(--wc-blue);
-}
-
 .photographyPolicy p {
-  max-width: 48rem;
+  flex: 1 1 28rem;
+  max-width: 65ch;
   margin: 0;
+  color: var(--wc-slate);
 }
 
 .photographyFooterContact {
   display: grid;
-  grid-template-columns: minmax(18rem, 0.72fr) minmax(24rem, 1.28fr);
-  min-height: 38rem;
-}
-
-.photographyFooterCopy {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: clamp(3rem, 7vw, 7rem) clamp(1.5rem, 6vw, 6rem);
-}
-
-.photographyFooterCopy > p {
-  margin: 0 0 var(--wc-space-6);
-  color: #aeb5bd;
-  font-size: var(--wc-font-small);
-  font-weight: 600;
+  grid-template-columns: 1fr 1.15fr;
+  align-items: center;
+  gap: clamp(2rem, 5vw, 5rem);
+  padding: clamp(3rem, 6vw, 6rem) clamp(1.5rem, 4vw, 4rem);
+  scroll-margin-top: var(--wc-space-6);
 }
 
 .photographyFooterCopy h2 {
-  max-width: 9ch;
-  margin: 0;
-  font-family: var(--wc-font-display);
-  font-size: clamp(2.35rem, 5.4vw, 5.5rem);
-  font-weight: 400;
-  letter-spacing: -0.045em;
-  line-height: 0.98;
+  max-width: 12ch;
 }
 
-.photographyFooterCopy > span {
-  max-width: 34rem;
-  margin-top: var(--wc-space-6);
-  color: #c9ced4;
+.photographyFooterCopy p {
+  max-width: 31ch;
+  margin: var(--wc-space-6) 0;
+  color: var(--wc-slate);
+}
+
+.photographyEmailLink {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: var(--wc-space-4);
+  color: var(--wc-blue);
+  font-size: var(--wc-font-small);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.photographyEmailLink:hover {
+  color: var(--wc-ink);
 }
 
 .photographyTicketStage {
   display: grid;
-  min-height: 30rem;
+  min-height: 24rem;
   place-items: center;
-  background: var(--wc-blue);
-  clip-path: polygon(4% 0, 96% 3%, 100% 43%, 96% 96%, 3% 100%, 0 35%);
+  background: var(--wc-ticket-stage);
+  clip-path: polygon(8% 2%, 94% 0, 100% 49%, 92% 96%, 5% 100%, 0 35%);
 }
 
 .photographyTicket {
@@ -477,8 +443,9 @@ html:has(.photographyPage) {
   --mouse-y: 50%;
   position: relative;
   z-index: 3;
-  width: 300px;
-  height: 120px;
+  width: min(300px, calc(100% - 2rem));
+  height: auto;
+  aspect-ratio: 5 / 2;
   padding: 0;
   overflow: visible;
   color: #000;
@@ -501,8 +468,8 @@ html:has(.photographyPage) {
 }
 
 .photographyTicket:focus-visible {
-  outline: 4px solid var(--wc-white);
-  outline-offset: 7px;
+  outline: 2px solid var(--wc-blue);
+  outline-offset: 3px;
 }
 
 .photographyTicketSurface {
@@ -515,7 +482,7 @@ html:has(.photographyPage) {
   justify-content: center;
   overflow: hidden;
   background: var(--wc-white);
-  clip-path: path("M 20 0 L 280 0 A 20 20 0 0 0 300 20 L 300 25 A 3 3 0 0 0 297 28 A 3 3 0 0 0 300 31 L 300 41 A 3 3 0 0 0 297 44 A 3 3 0 0 0 300 47 L 300 57 A 3 3 0 0 0 297 60 A 3 3 0 0 0 300 63 L 300 73 A 3 3 0 0 0 297 76 A 3 3 0 0 0 300 79 L 300 89 A 3 3 0 0 0 297 92 A 3 3 0 0 0 300 95 L 300 100 A 20 20 0 0 0 280 120 L 20 120 A 20 20 0 0 0 0 100 L 0 95 A 3 3 0 0 0 3 92 A 3 3 0 0 0 0 89 L 0 79 A 3 3 0 0 0 3 76 A 3 3 0 0 0 0 73 L 0 63 A 3 3 0 0 0 3 60 A 3 3 0 0 0 0 57 L 0 47 A 3 3 0 0 0 3 44 A 3 3 0 0 0 0 41 L 0 31 A 3 3 0 0 0 3 28 A 3 3 0 0 0 0 25 L 0 20 A 20 20 0 0 0 20 0 Z");
+  clip-path: url(#photography-ticket-edge);
   transform-style: preserve-3d;
   transition: background-color 500ms ease-out, box-shadow 500ms ease-out;
 }
@@ -578,13 +545,17 @@ html:has(.photographyPage) {
   font-size: var(--wc-font-min);
 }
 
+.photographyTicket.isHolographic {
+  color: var(--wc-white);
+}
+
 .photographyFooterBase {
   display: grid;
-  grid-template-columns: minmax(14rem, 1fr) auto;
-  gap: var(--wc-space-8);
-  align-items: end;
-  padding: clamp(2rem, 5vw, 5rem) clamp(1.5rem, 6vw, 6rem);
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  grid-template-columns: minmax(12rem, 1fr) auto;
+  align-items: center;
+  gap: var(--wc-space-6);
+  padding: var(--wc-space-8) clamp(1.5rem, 4vw, 4rem);
+  border-top: 1px solid var(--wc-hairline);
 }
 
 .photographyFooterBrand {
@@ -598,133 +569,52 @@ html:has(.photographyPage) {
 }
 
 .photographyFooterBrand img {
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .photographyFooterBase nav {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: var(--wc-space-3) var(--wc-space-6);
+  gap: var(--wc-space-4) var(--wc-space-6);
   font-size: var(--wc-font-small);
 }
 
 .photographyFooterBase nav a {
+  padding-block: var(--wc-space-2);
   text-decoration: none;
 }
 
-.photographyFooterBase nav a:hover,
-.photographyFooterBase nav a:focus-visible {
-  color: #9d9aff;
+.photographyFooterBase a:hover,
+.photographyPolicy a:hover {
+  color: var(--wc-blue);
 }
 
 .photographyFooterBase > p {
   grid-column: 1 / -1;
   margin: 0;
-  color: #aeb5bd;
+  color: var(--wc-slate);
   font-size: var(--wc-font-small);
 }
 
 @media (max-width: 62rem) {
   .photographyPage .siteHeader {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: 1fr auto;
   }
 
-  .photographyOpeningMedia {
-    height: min(72rem, 78svh);
+  .photographyOpening,
+  .featuredSequence,
+  .clientProof {
+    width: calc(100% - 3rem);
   }
 
-  .featuredSpreadPerformance {
-    min-height: 140svh;
+  .photographyOpening {
+    width: min(calc(100% - 3rem), calc(108svh + 1.5rem));
   }
 
-  .clientProof,
-  .photographyPricing,
-  .photographyFooterContact {
-    grid-template-columns: 1fr;
-  }
-
-  .clientLogoRow {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .pricingTitleBlock {
-    min-height: 24rem;
-    border-right: 0;
-    border-bottom: 1px solid var(--wc-hairline);
-  }
-
-  .photographyTicketStage {
-    min-height: 28rem;
-  }
-}
-
-@media (max-width: 46rem) {
-  .photographyIdentityBar {
-    min-height: 3.25rem;
-    padding-inline: var(--wc-space-3);
-  }
-
-  .photographyOpeningMedia {
-    height: 74svh;
-    min-height: 30rem;
-  }
-
-  .photographyOpeningMedia figcaption {
-    right: var(--wc-space-3);
-    bottom: var(--wc-space-3);
-  }
-
-  .featuredSpread {
-    grid-template-columns: 1fr;
-    gap: var(--wc-space-3);
-  }
-
-  .featuredSpreadQuiet,
-  .featuredSpreadWide,
-  .featuredSpreadPerformance,
-  .featuredSpreadPortraitPair,
-  .featuredSpreadClosing {
-    min-height: 0;
-    padding: var(--wc-space-12) var(--wc-space-3);
-  }
-
-  .featuredSpreadWide {
-    padding-inline: 0;
-  }
-
-  .featuredSpread .featuredFigure,
-  .featuredSpread .featuredFigure:nth-child(n) {
-    grid-column: 1;
-    margin: 0;
-  }
-
-  .featuredSpread .featuredFigure + .featuredFigure {
-    margin-top: var(--wc-space-12);
-  }
-
-  .featuredFigure figcaption {
-    right: var(--wc-space-2);
-    bottom: var(--wc-space-2);
-  }
-
-  .clientProof,
-  .photographyPolicy {
-    grid-template-columns: 1fr;
-  }
-
-  .clientLogoRow {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .clientLogo img {
-    height: 4.75rem;
-  }
-
-  .pricingTitleBlock,
-  .pricingDetails {
-    padding: var(--wc-space-12) var(--wc-space-6);
+  .photographyPricing {
+    gap: var(--wc-space-12);
+    padding-inline: var(--wc-space-6);
   }
 
   .pricingFacts div {
@@ -732,11 +622,123 @@ html:has(.photographyPage) {
     gap: var(--wc-space-1);
   }
 
-  .shuffleSection {
+  .photographyFooterContact {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--wc-space-6);
+  }
+
+  .photographyTicketStage {
+    min-height: 20rem;
+  }
+
+  .shuffleBatch {
+    columns: 3;
+  }
+}
+
+@media (max-width: 46rem) {
+  .photographyPage .siteHeader {
+    grid-template-columns: 1fr;
+    gap: var(--wc-space-3);
+    padding: var(--wc-space-3);
+  }
+
+  .photographyPage .siteNav {
+    justify-content: space-between;
+    gap: var(--wc-space-3);
+  }
+
+  .photographyIdentityBar {
+    min-height: 3.5rem;
     padding-inline: var(--wc-space-3);
   }
 
-  .shuffleGallery {
+  .photographyOpening {
+    width: calc(100% - 1.5rem);
+    grid-template-columns: 1fr;
+    gap: var(--wc-space-8);
+    padding-top: var(--wc-space-3);
+    padding-bottom: var(--wc-space-8);
+  }
+
+  .featuredSequence {
+    width: calc(100% - 1.5rem);
+    gap: var(--wc-space-8);
+    padding-bottom: var(--wc-space-12);
+  }
+
+  .featuredSpread {
+    display: grid;
+    gap: var(--wc-space-8);
+  }
+
+  .featuredSpread:nth-of-type(3) {
+    width: 100%;
+  }
+
+  .photographyOpeningMedia figcaption,
+  .featuredFigure figcaption {
+    padding-top: var(--wc-space-2);
+    font-size: var(--wc-font-min);
+  }
+
+  .clientProof {
+    width: calc(100% - 3rem);
+    padding-block: var(--wc-space-8) var(--wc-space-12);
+  }
+
+  .clientProof h2 {
+    margin-bottom: var(--wc-space-8);
+  }
+
+  .clientLogoRow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--wc-space-8) var(--wc-space-6);
+  }
+
+  .clientLogo img {
+    height: 3rem;
+  }
+
+  .photographyPricing {
+    grid-template-columns: 1fr;
+    gap: var(--wc-space-8);
+    padding: var(--wc-space-12) var(--wc-space-6);
+    scroll-margin-top: 3.5rem;
+  }
+
+  .pricingTitleBlock p {
+    max-width: 32ch;
+    margin-top: var(--wc-space-4);
+  }
+
+  .pricingFacts {
+    margin-block: var(--wc-space-6);
+  }
+
+  .pricingAction {
+    width: 100%;
+  }
+
+  .shuffleSection {
+    padding: var(--wc-space-12) var(--wc-space-3) var(--wc-space-8);
+  }
+
+  .shuffleHeader {
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: var(--wc-space-3);
+  }
+
+  .shuffleNavigation {
+    gap: var(--wc-space-4);
+  }
+
+  .shuffleNavigation svg {
+    display: none;
+  }
+
+  .shuffleBatch {
     columns: 2;
     column-gap: var(--wc-space-2);
   }
@@ -745,43 +747,30 @@ html:has(.photographyPage) {
     margin-bottom: var(--wc-space-2);
   }
 
-  .photographyFooterCopy {
-    min-height: 28rem;
-    padding: var(--wc-space-12) var(--wc-space-6);
+  .shuffleControls {
+    gap: var(--wc-space-3);
+  }
+
+  .photographyFooterContact {
+    grid-template-columns: 1fr;
+    gap: var(--wc-space-8);
+    padding-block: var(--wc-space-12) var(--wc-space-8);
+  }
+
+  .photographyFooterCopy h2 {
+    max-width: 15ch;
   }
 
   .photographyTicketStage {
-    min-height: 24rem;
-    clip-path: polygon(3% 0, 97% 3%, 100% 49%, 96% 96%, 4% 100%, 0 31%);
+    min-height: 19rem;
   }
 
   .photographyFooterBase {
     grid-template-columns: 1fr;
     align-items: start;
   }
-
-  .photographyFooterBase nav {
-    justify-content: flex-start;
-  }
-
-  .photographyFooterBase > p {
-    grid-column: 1;
-  }
-}
-
-@media (max-width: 24rem) {
-  .photographyTicket {
-    width: 270px;
-    height: 108px;
-  }
-
-  .photographyTicketSurface {
-    clip-path: polygon(6% 0, 94% 0, 100% 16%, 100% 84%, 94% 100%, 6% 100%, 0 84%, 0 16%);
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .photographyTicket {
-    transform: none !important;
-  }
+  .photographyTicket { transform: none !important; }
 }

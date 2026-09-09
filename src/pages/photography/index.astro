@@ -17,7 +17,7 @@ const photographs = [
   {
     key: "lakeshore",
     src: "/photography/portrait-lakeshore.webp",
-    alt: "Editorial portrait of a person sitting beside the water",
+    alt: "Portrait of a person standing beside the water",
     caption: "Lakeshore portrait",
     width: 1707,
     height: 2560,
@@ -33,8 +33,8 @@ const photographs = [
   {
     key: "formal",
     src: "/photography/portrait-formal.webp",
-    alt: "Formal editorial portrait against a dark background",
-    caption: "Studio portrait",
+    alt: "Portrait of a person wearing a suit outdoors",
+    caption: "Portrait",
     width: 1707,
     height: 2560,
   },
@@ -57,7 +57,7 @@ const photographs = [
   {
     key: "couple",
     src: "/photography/portrait-couple.webp",
-    alt: "A monochrome portrait of a couple outdoors",
+    alt: "A couple standing together in soft light",
     caption: "Couple portrait",
     width: 1722,
     height: 2560,
@@ -107,17 +107,10 @@ const photographs = [
 const photographByKey = Object.fromEntries(photographs.map((photograph) => [photograph.key, photograph]));
 
 const featuredSpreads = [
-  { className: "featuredSpreadQuiet", photographs: [photographByKey.lakeshore, photographByKey.eyewear] },
-  { className: "featuredSpreadWide", photographs: [photographByKey.group] },
-  {
-    className: "featuredSpreadPerformance",
-    photographs: [photographByKey.mcmaster, photographByKey.purple, photographByKey.nightlife],
-  },
-  { className: "featuredSpreadPortraitPair", photographs: [photographByKey.couple, photographByKey.formal] },
-  {
-    className: "featuredSpreadClosing",
-    photographs: [photographByKey.graduation, photographByKey.property, photographByKey.beverage],
-  },
+  [photographByKey.group, photographByKey.formal],
+  [photographByKey.mcmaster, photographByKey.couple, photographByKey.nightlife],
+  [photographByKey.graduation, photographByKey.purple],
+  [photographByKey.eyewear, photographByKey.property, photographByKey.beverage],
 ];
 
 const clients = [
@@ -134,7 +127,11 @@ const clients = [
 ];
 
 const shufflePhotographs = shuffleManifest.images;
-const shuffleBatchSize = 45;
+const shuffleBatchSize = 36;
+const shuffleBatches = Array.from(
+  { length: Math.ceil(shufflePhotographs.length / shuffleBatchSize) },
+  (_, index) => shufflePhotographs.slice(index * shuffleBatchSize, (index + 1) * shuffleBatchSize),
+);
 ---
 
 <BaseLayout
@@ -147,11 +144,11 @@ const shuffleBatchSize = 45;
   <div class="pageShell">
     <SiteHeader current="photography" />
     <main id="main" class="pageMain">
+      <div class="photographyIdentityBar">
+        <h1 id="photographyTitle">Will Chai Photography</h1>
+        <a href="#pricing">Pricing</a>
+      </div>
       <section class="photographyOpening" aria-labelledby="photographyTitle">
-        <div class="photographyIdentityBar">
-          <h1 id="photographyTitle">Will Chai Photography</h1>
-          <a href="#pricing">Pricing</a>
-        </div>
         <figure class="photographyOpeningMedia">
           <img
             src="/photography/concert-nessa.avif"
@@ -162,15 +159,25 @@ const shuffleBatchSize = 45;
           />
           <figcaption>{photographByKey.nessa.caption}</figcaption>
         </figure>
+        <figure class="photographyOpeningMedia">
+          <img
+            src={photographByKey.lakeshore.src}
+            alt={photographByKey.lakeshore.alt}
+            width={photographByKey.lakeshore.width}
+            height={photographByKey.lakeshore.height}
+            decoding="async"
+          />
+          <figcaption>{photographByKey.lakeshore.caption}</figcaption>
+        </figure>
       </section>
 
       <section class="featuredSequence" aria-labelledby="featuredPhotographyTitle">
         <h2 id="featuredPhotographyTitle" class="visuallyHidden">Featured photographs</h2>
         {
           featuredSpreads.map((spread) => (
-            <div class:list={["featuredSpread", spread.className]}>
-              {spread.photographs.map((photograph) => (
-                <figure class="featuredFigure">
+            <div class="featuredSpread">
+              {spread.map((photograph) => (
+                <figure class="featuredFigure" style={`--photograph-ratio: ${photograph.width / photograph.height}`}>
                   <img
                     src={photograph.src}
                     alt={photograph.alt}
@@ -195,73 +202,84 @@ const shuffleBatchSize = 45;
               <figure class="clientLogo">
                 <img
                   src={client.logo}
-                  alt={client.name}
+                  alt=""
                   width="280"
                   height="140"
                   loading="lazy"
                   decoding="async"
                 />
+                <figcaption>{client.name}</figcaption>
               </figure>
             ))
           }
         </div>
       </section>
 
-      <section class="photographyPricing" id="pricing" aria-labelledby="photographyPricingTitle">
+      <section class="photographyPricing" id="pricing" aria-labelledby="photographyPricingTitle" tabindex="-1">
         <div class="pricingTitleBlock">
-          <p>Pricing</p>
-          <h2 id="photographyPricingTitle">Pricing for your shoot.</h2>
+          <h2 id="photographyPricingTitle">Pricing</h2>
+          <p>I photograph portraits and events in Hamilton and across Ontario.</p>
         </div>
         <div class="pricingDetails">
-          <p class="pricingMode">Custom quote</p>
+          <h3>Custom quotes</h3>
           <p class="pricingIntroduction">
-            Send the date, location, expected time, and intended use. The quote records photography, editing, delivery, travel, and any outside costs.
+            Share your date, location, and what you have in mind. I’ll put together a quote covering photography, editing, delivery, travel, and any outside costs.
           </p>
           <dl class="pricingFacts">
             <div>
-              <dt>Based in</dt>
-              <dd>Hamilton, with work across Ontario</dd>
+              <dt>Your photographs</dt>
+              <dd>Final edited images, with delivery timing agreed in your quote.</dd>
             </div>
             <div>
-              <dt>Delivery</dt>
-              <dd>Final edited photographs, with timing recorded in the quote</dd>
-            </div>
-            <div>
-              <dt>Terms</dt>
-              <dd>Current service policy includes a 14 day satisfaction request window and revisions within the agreed scope</dd>
+              <dt>Booking terms</dt>
+              <dd>The service policy covers revisions, delivery, and the satisfaction request window.</dd>
             </div>
           </dl>
-          <a class="pricingAction" href="mailto:me@willchai.com?subject=Photography%20quote">Request a quote</a>
+          <div class="pricingActions">
+            <a class="pricingAction" href="mailto:me@willchai.com?subject=Photography%20inquiry">Tell me about your shoot<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" /></svg></a>
+            <a class="pricingPolicy" href="/photography/services-policy.pdf">Read the service policy</a>
+          </div>
         </div>
       </section>
 
       <section class="shuffleSection" aria-labelledby="shuffleTitle">
         <header class="shuffleHeader">
           <h2 id="shuffleTitle">A shuffle</h2>
+          <div class="shuffleNavigation">
+            <button type="button" data-shuffle-reset aria-label="Shuffle the photographs">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h3c4 0 8 12 12 12h3M17 14l4 4-4 4M3 18h3c1.5 0 3-1.7 4.5-4M13.5 10C15 7.7 16.5 6 18 6h3M17 2l4 4-4 4" /></svg>
+              Shuffle
+            </button>
+            <a href="#photography-contact">Contact</a>
+          </div>
         </header>
         <div class="shuffleGallery" data-shuffle-gallery>
           {
-            shufflePhotographs.map((photograph, index) => (
-              <figure class="shuffleItem" data-shuffle-item hidden={index >= shuffleBatchSize}>
-                <img
-                  src={index < shuffleBatchSize ? photograph.src : undefined}
-                  data-src={index >= shuffleBatchSize ? photograph.src : undefined}
-                  alt={`Uncaptioned portfolio photograph ${index + 1}`}
-                  width={photograph.width}
-                  height={photograph.height}
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
+            shuffleBatches.map((batch, batchIndex) => (
+              <div class="shuffleBatch" data-shuffle-batch hidden={batchIndex > 0}>
+                {batch.map((photograph, index) => (
+                  <figure class="shuffleItem" data-shuffle-item>
+                    <img
+                      src={batchIndex === 0 ? photograph.src : undefined}
+                      data-src={batchIndex > 0 ? photograph.src : undefined}
+                      alt={`Portfolio photograph ${batchIndex * shuffleBatchSize + index + 1}`}
+                      width={photograph.width}
+                      height={photograph.height}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </figure>
+                ))}
+              </div>
             ))
           }
         </div>
         <div class="shuffleControls">
           <button type="button" data-shuffle-more>Load more photographs</button>
-          <p class="visuallyHidden" data-shuffle-status aria-live="polite">
-            {shuffleBatchSize} photographs shown
-          </p>
+          <a href="#photography-contact">Get in touch<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7" /></svg></a>
+          <p class="visuallyHidden" data-shuffle-status aria-live="polite">{shuffleBatchSize} photographs shown</p>
         </div>
+        <noscript><style>[data-shuffle-more], [data-shuffle-reset] { display: none; }</style></noscript>
       </section>
     </main>
     <PhotographyFooter />

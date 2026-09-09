@@ -144,6 +144,14 @@ service footer. Photographs remain the primary visual material, the inquiry
 action stays outside any lightbox, and client privacy or publication
 permission must be confirmed before use.
 
+The current visual proposal places photographs at native aspect ratios on a
+continuous White canvas with captions below the lower right edge. A compact
+identity line keeps Pricing within reach. The service area introduces portrait
+and event work, and the ending reuses the established cool grey contact colours
+and ticket. The composition remains open for review using provisional content.
+Shuffle batches retain earlier image positions as new photographs load. An
+explicit contact jump pauses automatic loading until gallery exploration resumes.
+
 ## External project handoff
 
 An external handoff is used when a project has a substantial independent site,

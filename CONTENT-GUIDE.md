@@ -34,6 +34,12 @@ The general site contact invitation should feel open and collaborative (“Let�
 do something together”). Within photography, provide a specific inquiry route
 with only the information required to understand the shoot and respond.
 
+During the current Photography design review, photographs and captions remain
+provisional. Portraits and events are the commercial focus. Use the complete
+page to assess beauty, comfortable browsing, access to practical information,
+and ease of contacting Will. Final image selection, identifying details,
+professional relationships, and exact rates can follow the visual review.
+
 ## Films and Projects
 
 Films remain separate from Projects. Each film uses its `/films/` page as its

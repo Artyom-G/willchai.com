@@ -319,6 +319,20 @@ from the opening identity line, and the complete inquiry area appears before
 the shuffle. The shuffle loads in controlled batches so the footer remains
 reachable and initial image transfer stays measured.
 
+### Photography proposal for review
+
+The September 9 proposal uses a continuous White canvas, a compact Vermilion
+identity line with a persistent Pricing link, and photographs at native aspect
+ratios in rows with shared image heights. Captions sit directly below the lower
+right edge. Mobile uses one featured photograph per row. Commercial information
+is compact, and the contact ending uses the established Contact Field and
+Ticket Stage colours through shared tokens. The detailed composition remains
+a proposal for visual review.
+
+The wider shuffle keeps each loaded batch in its own columns. Loading additional
+photographs preserves earlier image positions. A Shuffle control changes the
+order, and contact links pause automatic loading so the footer stays reachable.
+
 ## Films and Projects
 
 Films and Projects are the two chooser destinations. Their individual work
