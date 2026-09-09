@@ -144,13 +144,30 @@ service footer. Photographs remain the primary visual material, the inquiry
 action stays outside any lightbox, and client privacy or publication
 permission must be confirmed before use.
 
-The current visual proposal places photographs at native aspect ratios on a
-continuous White canvas with captions below the lower right edge. A compact
-identity line keeps Pricing within reach. The service area introduces portrait
-and event work, and the ending reuses the established cool grey contact colours
-and ticket. The composition remains open for review using provisional content.
-Shuffle batches retain earlier image positions as new photographs load. An
-explicit contact jump pauses automatic loading until gallery exploration resumes.
+The approved direction uses three overlapping photographs at the opening,
+followed by a varied sequence on White. The opening gathers as the document
+scrolls, then continues upward with the page. The compact identity keeps
+Pricing within reach. “Spread out” rearranges the same featured photographs
+into a contact sheet, and “Stack” restores the sequence. Four desktop columns
+become two on phones. Both layouts preserve native image proportions.
+
+The implementation uses a 700 millisecond layout transition and the shared
+360 millisecond image transition for the expanded viewer. A native dialog
+provides modal focus, previous and next buttons, arrow keys, Escape dismissal,
+and touch swiping. Closing restores scrolling position and keyboard focus.
+Modified image clicks retain ordinary link behaviour. JavaScript disabled
+presents a static gallery with direct image links. Reduced motion starts with
+the contact sheet and uses immediate layout changes. Scroll work is scheduled
+only in response to events and stops while the document is hidden.
+
+The booking image crosses into the Cloud service section and lifts to reveal
+the approved ticket. Its inquiry text, direct email action, and ticket remain
+accessible. The Pricing anchor targets the quote copy itself. The full footer
+retains contact, policy, rights, and navigation. Shuffle batches preserve prior
+image positions and contact jumps pause automatic loading. The viewer includes
+only loaded shuffle batches. Photograph selection and captions are provisional.
+
+Open `photography-stack.html` for a study using the production CSS and script.
 
 ## External project handoff
 

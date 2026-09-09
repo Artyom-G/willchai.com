@@ -309,6 +309,17 @@ image changes use 360 milliseconds. Movement is normally limited to opacity,
 crop, colour, or a translation of no more than eight pixels. Reduced-motion
 mode removes translations and changes content without an animated delay.
 
+Photography now has an approved photographic stacking direction. Three real
+photographs overlap at the opening and gather during ordinary document
+scrolling. A reversible “Spread out” control arranges the featured photographs
+as a contact sheet. Selecting an image opens a large view and closing it
+preserves the browsing position. A photograph extends into the booking section
+and lifts to reveal the existing contact ticket. These movements form a
+bounded exception to the usual eight pixel limit. Layout transitions use the
+shared 700 millisecond duration. Reduced motion opens the contact sheet and
+keeps every action available with immediate state changes. The detailed
+composition and provisional curation continue through visual review.
+
 ## Stewardship
 
 Brand consistency means preserving the underlying voice and logic, not making

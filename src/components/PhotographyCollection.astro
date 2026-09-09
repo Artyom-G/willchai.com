@@ -1,0 +1,57 @@
+---
+interface Photograph {
+  key: string;
+  src: string;
+  alt: string;
+  caption: string;
+  width: number;
+  height: number;
+}
+const { photographs } = Astro.props as { photographs: Photograph[] };
+const opening = photographs.slice(0, 3);
+const sequence = photographs.slice(3);
+---
+<section class="photoCollection" data-photo-collection data-layout="stack" aria-labelledby="collectionTitle">
+  <header class="collectionHeader">
+    <div class="collectionIntroduction">
+      <h2 id="collectionTitle">Portraits and events.</h2>
+      <p>Hamilton and across Ontario.</p>
+    </div>
+    <button class="collectionToggle" type="button" data-collection-toggle aria-controls="collectionImages" hidden>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z" /></svg>
+      <span data-collection-label>Spread out</span>
+    </button>
+  </header>
+  <div id="collectionImages" class="collectionImages">
+    <div class="openingStack" data-opening-stack>
+      <div class="stackPin">
+        {opening.map((photo, index) => (
+          <figure class="collectionPhoto openingPhoto" data-collection-photo style={`--card-index:${index};--photo-ratio:${photo.width / photo.height}`}>
+            <a href={photo.src} data-photo-open data-photo-group="featured" data-caption={photo.caption} aria-label={`Open photograph: ${photo.caption}`}>
+              <img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} fetchpriority={index === 0 ? "high" : "auto"} decoding="async" />
+            </a>
+            <figcaption>{photo.caption}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+    <div class="featuredGallery">
+      {sequence.map((photo) => (
+        <figure class="collectionPhoto" data-collection-photo style={`--photo-ratio:${photo.width / photo.height}`}>
+          <a href={photo.src} data-photo-open data-photo-group="featured" data-caption={photo.caption} aria-label={`Open photograph: ${photo.caption}`}>
+            <img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading="lazy" decoding="async" />
+          </a>
+          <figcaption>{photo.caption}</figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+  <p class="visuallyHidden" data-collection-status aria-live="polite"></p>
+</section>
+
+<noscript><style>
+  .photoCollection[data-layout="stack"] .openingStack { height: auto; }
+  .photoCollection[data-layout="stack"] .stackPin { position: static; display: grid; height: auto; }
+  .photoCollection[data-layout="stack"] .openingPhoto { position: static; width: 100%; }
+  .photoCollection[data-layout="stack"] .openingPhoto figcaption { visibility: visible; }
+</style></noscript>

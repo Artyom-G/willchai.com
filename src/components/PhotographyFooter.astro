@@ -1,11 +1,7 @@
+---
+import PhotographyTicket from "./PhotographyTicket.astro";
+---
 <footer class="photographyFooter" aria-labelledby="photographyFooterTitle">
-  <svg width="0" height="0" aria-hidden="true" style="position:absolute">
-    <defs>
-      <clipPath id="photography-ticket-edge" clipPathUnits="objectBoundingBox">
-        <path transform="scale(0.003333333333 0.008333333333)" d="M 20 0 L 280 0 A 20 20 0 0 0 300 20 L 300 25 A 3 3 0 0 0 297 28 A 3 3 0 0 0 300 31 L 300 41 A 3 3 0 0 0 297 44 A 3 3 0 0 0 300 47 L 300 57 A 3 3 0 0 0 297 60 A 3 3 0 0 0 300 63 L 300 73 A 3 3 0 0 0 297 76 A 3 3 0 0 0 300 79 L 300 89 A 3 3 0 0 0 297 92 A 3 3 0 0 0 300 95 L 300 100 A 20 20 0 0 0 280 120 L 20 120 A 20 20 0 0 0 0 100 L 0 95 A 3 3 0 0 0 3 92 A 3 3 0 0 0 0 89 L 0 79 A 3 3 0 0 0 3 76 A 3 3 0 0 0 0 73 L 0 63 A 3 3 0 0 0 3 60 A 3 3 0 0 0 0 57 L 0 47 A 3 3 0 0 0 3 44 A 3 3 0 0 0 0 41 L 0 31 A 3 3 0 0 0 3 28 A 3 3 0 0 0 0 25 L 0 20 A 20 20 0 0 0 20 0 Z" />
-      </clipPath>
-    </defs>
-  </svg>
   <div class="photographyPolicy">
     <a href="/photography/services-policy.pdf">Photography services policy</a>
     <p>Booking terms cover the satisfaction request window, editing revisions, delivery, travel, and outside costs.</p>
@@ -18,17 +14,7 @@
       <a class="photographyEmailLink" href="mailto:me@willchai.com?subject=Photography%20inquiry">Send me an email<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" /></svg></a>
     </div>
     <div class="photographyTicketStage">
-      <button
-        class="photographyTicket"
-        type="button"
-        data-contact-ticket
-        aria-label="Copy me@willchai.com to the clipboard"
-      >
-        <span class="photographyTicketSurface">
-          <span class="photographyTicketEmail">me<span aria-hidden="true">@</span>willchai.com</span>
-          <span class="photographyTicketStatus" data-ticket-status aria-live="polite">don’t be a stranger</span>
-        </span>
-      </button>
+      <PhotographyTicket />
     </div>
   </section>
 

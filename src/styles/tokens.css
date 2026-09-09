@@ -39,6 +39,7 @@
 
   --wc-duration-interface: 160ms;
   --wc-duration-image: 360ms;
+  --wc-duration-layout: 700ms;
   --wc-ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
@@ -46,5 +47,6 @@
   :root {
     --wc-duration-interface: 0ms;
     --wc-duration-image: 0ms;
+    --wc-duration-layout: 0ms;
   }
 }

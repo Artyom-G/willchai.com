@@ -4,6 +4,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import PhotographyFooter from "../../components/PhotographyFooter.astro";
 import PhotographyCharacter from "../../components/PhotographyCharacter.astro";
+import PhotographyCollection from "../../components/PhotographyCollection.astro";
+import PhotographyLightbox from "../../components/PhotographyLightbox.astro";
+import PhotographyTicket from "../../components/PhotographyTicket.astro";
 import shuffleManifest from "../../data/photographyShuffle.json";
 
 const photographs = [
@@ -107,12 +110,10 @@ const photographs = [
 
 const photographByKey = Object.fromEntries(photographs.map((photograph) => [photograph.key, photograph]));
 
-const featuredSpreads = [
-  [photographByKey.group, photographByKey.formal],
-  [photographByKey.mcmaster, photographByKey.couple, photographByKey.nightlife],
-  [photographByKey.graduation, photographByKey.purple],
-  [photographByKey.eyewear, photographByKey.property, photographByKey.beverage],
-];
+const featuredPhotographs = [
+  "nessa", "mcmaster", "lakeshore", "group", "formal", "couple",
+  "nightlife", "graduation", "purple", "eyewear", "property", "beverage",
+].map((key) => photographByKey[key]);
 
 const clients = [
   { name: "Luxetints", logo: "/photography/clients/luxetints.avif" },
@@ -143,6 +144,7 @@ const shuffleBatches = Array.from(
 >
   <link slot="head" rel="preload" as="image" href="/photography/pixel-photographer.png" />
   <script slot="head" is:inline src="/scripts/photography.js" defer></script>
+  <script slot="head" is:inline src="/scripts/photography-collection.js" defer></script>
   <div class="pageShell">
     <SiteHeader current="photography" />
     <main id="main" class="pageMain">
@@ -153,51 +155,7 @@ const shuffleBatches = Array.from(
         </div>
         <a href="#pricing">Pricing</a>
       </div>
-      <section class="photographyOpening" aria-labelledby="photographyTitle">
-        <figure class="photographyOpeningMedia">
-          <img
-            src="/photography/concert-nessa.avif"
-            alt="Singer Nessa Barrett performing beneath warm stage lights"
-            width="1920"
-            height="2559"
-            fetchpriority="high"
-          />
-          <figcaption>{photographByKey.nessa.caption}</figcaption>
-        </figure>
-        <figure class="photographyOpeningMedia">
-          <img
-            src={photographByKey.lakeshore.src}
-            alt={photographByKey.lakeshore.alt}
-            width={photographByKey.lakeshore.width}
-            height={photographByKey.lakeshore.height}
-            decoding="async"
-          />
-          <figcaption>{photographByKey.lakeshore.caption}</figcaption>
-        </figure>
-      </section>
-
-      <section class="featuredSequence" aria-labelledby="featuredPhotographyTitle">
-        <h2 id="featuredPhotographyTitle" class="visuallyHidden">Featured photographs</h2>
-        {
-          featuredSpreads.map((spread) => (
-            <div class="featuredSpread">
-              {spread.map((photograph) => (
-                <figure class="featuredFigure" style={`--photograph-ratio: ${photograph.width / photograph.height}`}>
-                  <img
-                    src={photograph.src}
-                    alt={photograph.alt}
-                    width={photograph.width}
-                    height={photograph.height}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <figcaption>{photograph.caption}</figcaption>
-                </figure>
-              ))}
-            </div>
-          ))
-        }
-      </section>
+      <PhotographyCollection photographs={featuredPhotographs} />
 
       <section class="clientProof" aria-labelledby="clientProofTitle">
         <h2 id="clientProofTitle">Organizations featuring my work</h2>
@@ -220,12 +178,20 @@ const shuffleBatches = Array.from(
         </div>
       </section>
 
-      <section class="photographyPricing" id="pricing" aria-labelledby="photographyPricingTitle" tabindex="-1">
-        <div class="pricingTitleBlock">
-          <h2 id="photographyPricingTitle">Pricing</h2>
-          <p>I photograph portraits and events in Hamilton and across Ontario.</p>
+      <section class="photographyPricing" aria-labelledby="photographyPricingTitle">
+        <div class="bookingVisual" data-booking-visual>
+          <figure class="bookingPhotograph">
+            <a href={photographByKey.group.src} data-photo-open data-photo-group="booking" data-caption={photographByKey.group.caption} aria-label="Open photograph: Group portrait">
+              <img src={photographByKey.group.src} alt={photographByKey.group.alt} width={photographByKey.group.width} height={photographByKey.group.height} loading="lazy" decoding="async" />
+            </a>
+          </figure>
+          <div class="bookingTicketStage">
+            <PhotographyTicket clipId="booking-ticket-edge" />
+          </div>
         </div>
-        <div class="pricingDetails">
+        <div class="pricingDetails" id="pricing" tabindex="-1">
+          <p class="pricingEyebrow">Portraits and events</p>
+          <h2 id="photographyPricingTitle">What are you planning?</h2>
           <h3>Custom quotes</h3>
           <p class="pricingIntroduction">
             Share your date, location, and what you have in mind. I’ll put together a quote covering photography, editing, delivery, travel, and any outside costs.
@@ -241,7 +207,7 @@ const shuffleBatches = Array.from(
             </div>
           </dl>
           <div class="pricingActions">
-            <a class="pricingAction" href="mailto:me@willchai.com?subject=Photography%20inquiry">Tell me about your shoot<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" /></svg></a>
+            <a class="pricingAction" href="mailto:me@willchai.com?subject=Photography%20inquiry&amp;body=Hi%20Will%2C%0A%0AI%E2%80%99m%20planning%20a%20shoot.%0A%0ADate%3A%20%0ALocation%3A%20%0AWhat%20I%20have%20in%20mind%3A%20%0A">Tell me about your shoot<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" /></svg></a>
             <a class="pricingPolicy" href="/photography/services-policy.pdf">Read the service policy</a>
           </div>
         </div>
@@ -264,6 +230,7 @@ const shuffleBatches = Array.from(
               <div class="shuffleBatch" data-shuffle-batch hidden={batchIndex > 0}>
                 {batch.map((photograph, index) => (
                   <figure class="shuffleItem" data-shuffle-item>
+                    <a href={photograph.src} data-photo-open data-photo-group="shuffle" aria-label={`Open portfolio photograph ${batchIndex * shuffleBatchSize + index + 1}`}>
                     <img
                       src={batchIndex === 0 ? photograph.src : undefined}
                       data-src={batchIndex > 0 ? photograph.src : undefined}
@@ -273,6 +240,7 @@ const shuffleBatches = Array.from(
                       loading="lazy"
                       decoding="async"
                     />
+                    </a>
                   </figure>
                 ))}
               </div>
@@ -288,5 +256,6 @@ const shuffleBatches = Array.from(
       </section>
     </main>
     <PhotographyFooter />
+    <PhotographyLightbox />
   </div>
 </BaseLayout>

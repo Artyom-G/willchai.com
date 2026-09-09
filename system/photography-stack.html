@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Photographic stacking · Will Chai</title>
+  <link rel="stylesheet" href="tokens.css" />
+  <link rel="stylesheet" href="../src/styles/photography.css" />
+  <style>
+    @font-face { font-family: 'Funnel Sans'; src: url('../public/assets/funnel-sans-latin.woff2') format('woff2'); font-weight: 400 600; }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--wc-ink); background: var(--wc-white); font: 17px/1.5 var(--wc-font-sans); }
+    button { font-family: inherit; }
+    img { display: block; max-width: 100%; }
+    .studyHeader { padding: var(--wc-space-6) clamp(1.5rem, 4vw, 4rem); }
+    .studyHeader a { color: var(--wc-blue); font-size: var(--wc-font-small); }
+    .studyHeader h1 { font-size: 1.5rem; font-weight: 400; margin: var(--wc-space-4) 0; }
+    .studyHeader p { max-width: 60ch; margin: 0; color: var(--wc-slate); }
+    :focus-visible { outline: 2px solid var(--wc-blue); outline-offset: 3px; }
+  </style>
+  <script src="../public/scripts/photography-collection.js" defer></script>
+</head>
+<body>
+  <header class="studyHeader">
+    <a href="index.html">Return to the system</a>
+    <h1>Photographic stacking</h1>
+    <p>The approved direction uses real photographs, ordinary document scrolling, and a reversible contact sheet. This study shares the Photography page's styles and interaction script.</p>
+  </header>
+  <section class="photoCollection" data-photo-collection data-layout="stack" aria-labelledby="collectionTitle">
+    <header class="collectionHeader">
+      <div class="collectionIntroduction"><h2 id="collectionTitle">Portraits and events.</h2><p>Hamilton and across Ontario.</p></div>
+      <button class="collectionToggle" type="button" data-collection-toggle aria-controls="collectionImages" hidden><span data-collection-label>Spread out</span></button>
+    </header>
+    <div id="collectionImages" class="collectionImages">
+      <div class="openingStack" data-opening-stack><div class="stackPin">
+        <figure class="collectionPhoto openingPhoto" data-collection-photo style="--card-index:0">
+          <a href="../public/photography/concert-nessa.avif"><img src="../public/photography/concert-nessa.avif" width="1920" height="2559" alt="Nessa Barrett performing" /></a><figcaption>Nessa Barrett, live performance, 2026</figcaption>
+        </figure>
+        <figure class="collectionPhoto openingPhoto" data-collection-photo style="--card-index:1">
+          <a href="../public/photography/concert-mcmaster.avif"><img src="../public/photography/concert-mcmaster.avif" width="1920" height="2400" alt="A vocalist at McMaster University" /></a><figcaption>Live performance at McMaster University, 2025</figcaption>
+        </figure>
+        <figure class="collectionPhoto openingPhoto" data-collection-photo style="--card-index:2">
+          <a href="../public/photography/portrait-lakeshore.webp"><img src="../public/photography/portrait-lakeshore.webp" width="1707" height="2560" alt="A portrait beside the water" /></a><figcaption>Lakeshore portrait</figcaption>
+        </figure>
+      </div></div>
+    </div>
+    <p class="visuallyHidden" data-collection-status aria-live="polite"></p>
+  </section>
+  <noscript><style>.photoCollection[data-layout="stack"] .openingStack { height:auto; } .photoCollection[data-layout="stack"] .stackPin { position:static;display:grid;height:auto; } .photoCollection[data-layout="stack"] .openingPhoto { position:static;width:100%; } .photoCollection[data-layout="stack"] .openingPhoto figcaption { visibility:visible; }</style></noscript>
+</body>
+</html>

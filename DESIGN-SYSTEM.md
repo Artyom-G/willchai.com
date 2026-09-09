@@ -333,19 +333,42 @@ from the opening identity line, and the complete inquiry area appears before
 the shuffle. The shuffle loads in controlled batches so the footer remains
 reachable and initial image transfer stays measured.
 
-### Photography proposal for review
+### Photography stacking direction
 
-The September 9 proposal uses a continuous White canvas, a compact Vermilion
-identity line with a persistent Pricing link, and photographs at native aspect
-ratios in rows with shared image heights. Captions sit directly below the lower
-right edge. Mobile uses one featured photograph per row. Commercial information
-is compact, and the contact ending uses the established Contact Field and
-Ticket Stage colours through shared tokens. The detailed composition remains
-a proposal for visual review.
+Will approved the stacking direction on 9 September. The page retains its
+White canvas, compact Vermilion identity, persistent Pricing link, and native
+photograph proportions. Three opening photographs overlap at small vertical
+offsets and gather toward the centre during ordinary document scrolling.
+The stack then leaves the viewport with the page and a varied image sequence
+continues below. The pixel character retains its four second entrance.
 
-The wider shuffle keeps each loaded batch in its own columns. Loading additional
+“Spread out” moves the same twelve photographs into a contact sheet with four
+columns on desktop and two on phones. “Stack” reverses the arrangement.
+Transitions preserve each photograph's visual position through the shared
+700 millisecond layout token. The opening settles by eight pixels on entry.
+The larger scroll and layout movements are specific to this photographic
+composition. Reduced motion begins with the contact sheet and retains static
+stacking as an optional arrangement.
+
+A native modal image viewer provides a large image, identifying caption,
+previous and next controls, keyboard arrows, Escape dismissal, and touch
+swiping. Opening and closing use the shared 360 millisecond image duration.
+The page retains its scrolling position and returns keyboard focus to the
+originating photograph. Image links remain useful with JavaScript disabled.
+
+The booking photograph crosses from White into Cloud and moves upward to
+reveal the approved holographic ticket. The Pricing link lands directly on
+quote information. The ticket retains its original surface, motion, clipboard
+response, and a separate direct email action. The complete footer remains
+available after the shuffle. All image choices and exact rates are provisional.
+
+The wider shuffle keeps each loaded batch in its own columns. Loading more
 photographs preserves earlier image positions. A Shuffle control changes the
 order, and contact links pause automatic loading so the footer stays reachable.
+The image viewer also supports the currently loaded shuffle photographs.
+
+`system/photography-stack.html` demonstrates the stack and contact sheet using
+the production stylesheet and interaction script.
 
 ## Films and Projects
 

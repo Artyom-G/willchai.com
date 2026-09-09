@@ -73,10 +73,10 @@ if (shuffleGallery && shuffleButton) {
   });
 }
 
-const contactTicket = document.querySelector("[data-contact-ticket]");
+const contactTickets = document.querySelectorAll("[data-contact-ticket]");
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-if (contactTicket) {
+if (contactTickets.length) {
   class ContactTicket {
     constructor(card) {
       this.card = card;
@@ -251,5 +251,5 @@ if (contactTicket) {
     }
   }
 
-  new ContactTicket(contactTicket);
+  contactTickets.forEach((ticket) => new ContactTicket(ticket));
 }

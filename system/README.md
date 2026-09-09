@@ -23,6 +23,7 @@ governs until both are reconciled.
   versions of the patterns.
 - `system.js` demonstrates the portrait-control and holographic-ticket
   behaviours without introducing a framework dependency.
+- `photography-stack.html` demonstrates the approved photographic stacking and contact sheet direction using the production CSS and interaction script.
 - `PATTERNS.md` records the content, behaviour, variation, accessibility, and
   performance contracts that future components must preserve.
 

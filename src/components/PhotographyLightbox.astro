@@ -1,0 +1,15 @@
+<dialog class="photoViewer" data-photo-viewer aria-labelledby="photoViewerTitle">
+  <h2 id="photoViewerTitle" class="visuallyHidden">Photograph</h2>
+  <header class="photoViewerHeader">
+    <p data-viewer-count aria-live="polite"></p>
+    <button type="button" data-viewer-close autofocus>Close<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+  </header>
+  <div class="photoViewerStage" data-viewer-stage>
+    <img data-viewer-image alt="" />
+  </div>
+  <footer class="photoViewerFooter">
+    <button type="button" data-viewer-previous aria-label="Previous photograph"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7 7-7-7 7-7" /></svg><span>Previous</span></button>
+    <p data-viewer-caption></p>
+    <button type="button" data-viewer-next aria-label="Next photograph"><span>Next</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-7-7 7 7-7 7" /></svg></button>
+  </footer>
+</dialog>
