@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import FilmsEnding from "../../components/FilmsEnding.astro";
 import FilmTrailer from "../../components/FilmTrailer.astro";
+import FilmTransitions from "../../components/FilmTransitions.astro";
 import { films, type Film } from "../../data/films";
 import "../../styles/films.css";
 
@@ -14,6 +15,7 @@ const otherFilm = films.find(item => item.slug !== film.slug);
 const trailer = film.links[0];
 ---
 <BaseLayout title={`${film.title} | Will Chai`} description={film.summary} path={`/films/${film.slug}/`} image={film.still} imageAlt={film.stillAlt} pageClass="filmDetailPage">
+  <FilmTransitions slot="head" />
   <main id="main" class="filmsShell">
     <nav class="filmBreadcrumb" aria-label="Film navigation">
       <a class="filmsHome" href="/" aria-label="Will Chai, home">Will Chai</a>

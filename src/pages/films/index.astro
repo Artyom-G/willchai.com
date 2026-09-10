@@ -2,10 +2,12 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import FilmsEnding from "../../components/FilmsEnding.astro";
 import FilmTrailer from "../../components/FilmTrailer.astro";
+import FilmTransitions from "../../components/FilmTransitions.astro";
 import { films } from "../../data/films";
 import "../../styles/films.css";
 ---
 <BaseLayout title="Films | Will Chai" description="Wattleseed and Murder of Minus. Independent films made by Will Chai with friends and collaborators." path="/films/" image={films[0].still} imageAlt={films[0].stillAlt} pageClass="filmsPage">
+  <FilmTransitions slot="head" />
   <main id="main" class="filmsShell">
     <header class="filmsOpening">
       <a class="filmsHome" href="/" aria-label="Will Chai, home">Will Chai</a>

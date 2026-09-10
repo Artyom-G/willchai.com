@@ -299,6 +299,10 @@ duration and easing from shared tokens. Browsers with reduced motion use
 immediate navigation. Hover and keyboard focus settle the small poster beside
 its still. The original image proportions remain stable at rest.
 
+Transition lifecycle handlers register in the document head before rendering.
+They consume the rejected readiness promise when the browser skips a visual
+transition, preserving ordinary navigation during quick successive visits.
+
 The trailer opens in a native dialog. A brief masked expansion connects the
 action to the viewing surface. The iframe loads after a visitor chooses a
 trailer. Closing the dialog, pressing Escape or clicking its backdrop stops
