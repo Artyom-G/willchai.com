@@ -61,6 +61,17 @@ canonical home. Projects uses its chooser to introduce Medical Terminology
 Games, Tachyboard, Searing Stories, and ConspiraSea. A creative work can carry
 the Sharing Stories idea while its medium determines its public route.
 
+The Films chooser introduces Wattleseed and Murder of Minus with their exact
+titles, years, runtimes, director credits and a short premise. Each detail page
+uses a synopsis followed by a personal production account grounded in the
+published film page or press kit. The press kits remain original downloadable
+PDFs. `src/data/film-media-sources.json` records source URLs and file hashes.
+
+Trailer actions identify the trailer explicitly. The full films are available
+through a screening inquiry. The YouTube players offer automatic English
+captions, which the dialog identifies as automatic. Media loads from YouTube
+after a visitor chooses Watch trailer. Direct YouTube links remain available.
+
 ## Résumé and utility content
 
 The Résumé is a professional record with a current PDF at the top and a

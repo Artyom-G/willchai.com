@@ -1,59 +1,32 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import SiteHeader from "../../components/SiteHeader.astro";
-import SiteFooter from "../../components/SiteFooter.astro";
-import ContactEnding from "../../components/ContactEnding.astro";
-import WorkCard from "../../components/WorkCard.astro";
+import FilmsEnding from "../../components/FilmsEnding.astro";
+import FilmTrailer from "../../components/FilmTrailer.astro";
 import { films } from "../../data/films";
+import "../../styles/films.css";
 ---
-
-<BaseLayout
-  title="Films | Will Chai"
-  description="Short films directed and made by Will Chai with friends and collaborators."
-  path="/films/"
-  pageClass="filmsPage"
->
-  <div class="pageShell">
-    <SiteHeader current="films" />
-    <main id="main" class="pageMain">
-      <section class="indexHero" aria-labelledby="filmsTitle">
-        <div class="indexHeroCopy">
-          <p class="sectionMarker">Moving pictures</p>
-          <h1 id="filmsTitle" class="indexTitle">Films made together.</h1>
-          <p class="indexLead">
-            Two independent shorts about ambition, technology, and the choices people make under pressure.
-          </p>
+<BaseLayout title="Films | Will Chai" description="Wattleseed and Murder of Minus. Independent films made by Will Chai with friends and collaborators." path="/films/" image={films[0].still} imageAlt={films[0].stillAlt} pageClass="filmsPage">
+  <main id="main" class="filmsShell">
+    <header class="filmsOpening">
+      <a class="filmsHome" href="/" aria-label="Will Chai, home">Will Chai</a>
+      <div class="filmsIntro"><h1>Films.</h1><p>I make films with friends. These two follow people caught up in their own inventions.</p></div>
+    </header>
+    <section class="filmProgramme" aria-label="Selected films">
+      {films.map((film, index) => <article class="filmEntry">
+        <div class="filmEntryMeta"><span>0{index + 1}</span><p>{film.year}<span aria-hidden="true"> / </span>{film.runtime}</p></div>
+        <a class="filmEntryArt" href={`/films/${film.slug}/`} aria-label={`Explore ${film.title}`}>
+          <div class="filmEntryFrame" style={`view-transition-name:film-${film.slug}`}><img class="filmEntryStill" src={film.still} srcset={film.stillSrcSet} sizes="(max-width: 46rem) calc(100vw - 2rem), (max-width: 92rem) calc(46.5vw - 1rem), 41rem" alt={film.stillAlt} width={film.stillWidth} height={film.stillHeight} fetchpriority={index === 0 ? "high" : "auto"} /></div>
+          <img class="filmEntryPoster" src={film.poster} alt={film.posterAlt} width={film.posterWidth} height={film.posterHeight} />
+        </a>
+        <div class="filmEntryCopy">
+          <h2><a href={`/films/${film.slug}/`}>{film.title}</a></h2>
+          <p class="filmEntrySummary">{film.summary}</p>
+          <p class="filmByline">{film.directorLine}</p>
+          <div class="filmEntryActions"><a class="filmTextAction" href={`/films/${film.slug}/`}>Explore the film<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" /></svg></a><a class="filmTrailerAction" href={film.links[0].href} data-trailer={film.slug}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 11 7-11 7z" /></svg>Watch trailer</a></div>
         </div>
-        <aside class="indexAside">
-          <p>Each film page holds its story, principal credits, festival record, and current viewing links.</p>
-        </aside>
-      </section>
-
-      <section class="section" aria-labelledby="filmCollectionTitle">
-        <div class="sectionHeader">
-          <h2 id="filmCollectionTitle">The films</h2>
-          <p>Wattleseed and Murder of Minus are the current public collection.</p>
-        </div>
-        <div class="collectionGrid">
-          {
-            films.map((film) => (
-              <WorkCard
-                href={`/films/${film.slug}/`}
-                title={film.title}
-                meta={`${film.year} · ${film.runtime}`}
-                description={film.summary}
-                image={film.poster}
-                imageAlt={film.posterAlt}
-                imageClass="posterImage"
-                actionLabel="Open film"
-              />
-            ))
-          }
-        </div>
-      </section>
-
-      <ContactEnding />
-    </main>
-    <SiteFooter />
-  </div>
+      </article>)}
+    </section>
+    <FilmsEnding />
+  </main>
+  <FilmTrailer />
 </BaseLayout>

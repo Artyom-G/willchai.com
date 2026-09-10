@@ -367,6 +367,21 @@ pages share the interface system while allowing crop, media sequence, title
 placement, and internal composition to respond to each work. Shared
 navigation, typography, and contact endings keep the pages related.
 
+The Films chooser pairs two substantial stills with the original poster artwork
+overlapping a lower corner. The second entry begins slightly lower on desktop;
+phone layouts read in one column. Titles and director credits sit beneath each
+image. A shared image transition connects a selected entry to its film page.
+The poster settles on hover or keyboard focus. Trailers open in a white dialog
+through a brief masked expansion. These movements follow visitor actions.
+Reduced motion presents each destination directly. All dimensions, typography,
+colour and timing derive from the shared token system.
+
+Film detail pages retain the leading image, synopsis, production account,
+original poster, two supporting stills, principal credits and festival record.
+Press kits and screening inquiries appear alongside viewing actions. A compact
+link to the other film follows the record. The shared ending uses the existing
+contact invitation and email address.
+
 The Résumé uses the same reading system with restrained formatting suited to a
 professional record. The PDF appears first through view and download actions,
 and the HTML version follows with matching facts. The `/hey/` utility page may

@@ -1,0 +1,191 @@
+{
+  "checked": "2026-09-10",
+  "sources": [
+    {
+      "film": "Wattleseed",
+      "purpose": "cover",
+      "source": "https://willchai.com/wp-content/uploads/2026/02/Wattleseed-Still-8.jpg",
+      "page": "https://willchai.com/wattleseed/",
+      "original_sha256": "df7dde77d558bd4291155d5511d14999b06e7e48e1ce7ea22888fe3877606f20",
+      "derivatives": [
+        {
+          "src": "/assets/films/wattleseed/cover-640.avif",
+          "width": 640,
+          "height": 346,
+          "bytes": 12048
+        },
+        {
+          "src": "/assets/films/wattleseed/cover-1280.avif",
+          "width": 1280,
+          "height": 692,
+          "bytes": 29421
+        },
+        {
+          "src": "/assets/films/wattleseed/cover-1920.avif",
+          "width": 1920,
+          "height": 1038,
+          "bytes": 52846
+        }
+      ]
+    },
+    {
+      "film": "Wattleseed",
+      "purpose": "apparatus",
+      "source": "https://willchai.com/wp-content/uploads/2026/02/Wattleseed-Still-2.jpg",
+      "page": "https://willchai.com/wattleseed/",
+      "original_sha256": "2f1349ebfc670fc21bda7998c5300e27b80dd565bc43fb7277b3f2dcf25a275c",
+      "derivatives": [
+        {
+          "src": "/assets/films/wattleseed/apparatus-640.avif",
+          "width": 640,
+          "height": 346,
+          "bytes": 8624
+        },
+        {
+          "src": "/assets/films/wattleseed/apparatus-1280.avif",
+          "width": 1280,
+          "height": 692,
+          "bytes": 26062
+        }
+      ]
+    },
+    {
+      "film": "Wattleseed",
+      "purpose": "profile",
+      "source": "https://willchai.com/wp-content/uploads/2026/02/Wattleseed-Still-4.jpg",
+      "page": "https://willchai.com/wattleseed/",
+      "original_sha256": "705cc4530ec3a16bc69bfac4f45818b52e5af84dac5bbf25e839a9357773be0a",
+      "derivatives": [
+        {
+          "src": "/assets/films/wattleseed/profile-640.avif",
+          "width": 640,
+          "height": 346,
+          "bytes": 8306
+        },
+        {
+          "src": "/assets/films/wattleseed/profile-1280.avif",
+          "width": 1280,
+          "height": 692,
+          "bytes": 25819
+        }
+      ]
+    },
+    {
+      "film": "Wattleseed",
+      "purpose": "poster",
+      "source": "https://willchai.com/wp-content/uploads/2024/09/Wattleseed-Main-Poster.avif",
+      "page": "https://willchai.com/wattleseed/",
+      "original_sha256": "66f56a54aa3eb150f71b03bbcb289444d8896d1dfe8919f8d8a701bd7a956265",
+      "derivatives": [
+        {
+          "src": "/assets/films/wattleseed/poster-800.avif",
+          "width": 800,
+          "height": 1104,
+          "bytes": 41599
+        }
+      ]
+    },
+    {
+      "film": "Murder of Minus",
+      "purpose": "cover",
+      "source": "https://willchai.com/wp-content/uploads/2024/11/MoM_stills_6.jpg",
+      "page": "https://willchai.com/murder-of-minus-a-sci-fi-thriller/",
+      "original_sha256": "2bba01e27bf887f17cc80c10049b669f6d6ec00af8f4441a6833ca270c0143cb",
+      "derivatives": [
+        {
+          "src": "/assets/films/murder-of-minus/cover-640.avif",
+          "width": 640,
+          "height": 346,
+          "bytes": 19795
+        },
+        {
+          "src": "/assets/films/murder-of-minus/cover-1280.avif",
+          "width": 1280,
+          "height": 693,
+          "bytes": 49918
+        },
+        {
+          "src": "/assets/films/murder-of-minus/cover-1920.avif",
+          "width": 1920,
+          "height": 1040,
+          "bytes": 89380
+        }
+      ]
+    },
+    {
+      "film": "Murder of Minus",
+      "purpose": "closeup",
+      "source": "https://willchai.com/wp-content/uploads/2024/11/MoM_stills_7.jpg",
+      "page": "https://willchai.com/murder-of-minus-a-sci-fi-thriller/",
+      "original_sha256": "ab7a9f90ead0847efc7e2fb0cde29a87746905140f4e97b05efe8eb566b85e97",
+      "derivatives": [
+        {
+          "src": "/assets/films/murder-of-minus/closeup-640.avif",
+          "width": 640,
+          "height": 346,
+          "bytes": 6416
+        },
+        {
+          "src": "/assets/films/murder-of-minus/closeup-1280.avif",
+          "width": 1280,
+          "height": 693,
+          "bytes": 18577
+        }
+      ]
+    },
+    {
+      "film": "Murder of Minus",
+      "purpose": "aerial",
+      "source": "https://willchai.com/wp-content/uploads/2024/11/MoM_stills_1.webp",
+      "page": "https://willchai.com/murder-of-minus-a-sci-fi-thriller/",
+      "original_sha256": "1ea33bb39e8fcd0b7cbee51b594d99623353fa1cb27d4f2b69b0eab256c4e7d8",
+      "derivatives": [
+        {
+          "src": "/assets/films/murder-of-minus/aerial-640.avif",
+          "width": 640,
+          "height": 346,
+          "bytes": 13705
+        },
+        {
+          "src": "/assets/films/murder-of-minus/aerial-1280.avif",
+          "width": 1280,
+          "height": 693,
+          "bytes": 40683
+        }
+      ]
+    },
+    {
+      "film": "Murder of Minus",
+      "purpose": "poster",
+      "source": "https://willchai.com/wp-content/uploads/2024/11/Murder-of-Minus-Poster-EBG-Version-Alt-1.png",
+      "page": "https://willchai.com/murder-of-minus-a-sci-fi-thriller/",
+      "original_sha256": "e59f99c7d3f115ca5914ad7e4de079bbd7c28fdfef826f9b14cb9a93cbd1bf8e",
+      "derivatives": [
+        {
+          "src": "/assets/films/murder-of-minus/poster-800.avif",
+          "width": 800,
+          "height": 1067,
+          "bytes": 46021
+        }
+      ]
+    },
+    {
+      "film": "Wattleseed",
+      "purpose": "original press kit and production context",
+      "source": "https://willchai.com/wp-content/uploads/2026/02/Wattleseed-Press-Kit.pdf",
+      "original_sha256": "b6fd5e7a69af5a33e45f2370a5335db0502cd830eea57db0afbbbb4a399c6b22",
+      "published": "/assets/films/wattleseed/press-kit.pdf",
+      "bytes": 1449635,
+      "pages": 5
+    },
+    {
+      "film": "Murder of Minus",
+      "purpose": "original press kit and production context",
+      "source": "https://willchai.com/wp-content/uploads/2025/05/Murder-of-Minus-Press-kit.pdf",
+      "original_sha256": "e86bd7f41940ac958cee9dfcb21660b0e826af27c4de675e73d10a65629ad1e6",
+      "published": "/assets/films/murder-of-minus/press-kit.pdf",
+      "bytes": 1235027,
+      "pages": 10
+    }
+  ]
+}

@@ -8,9 +8,18 @@ export type FilmLink = {
   href: string;
 };
 
+export type FilmImage = {
+  src: string;
+  alt: string;
+  srcSet?: string;
+  width: number;
+  height: number;
+};
+
 export type Film = {
   slug: string;
   title: string;
+  directorLine: string;
   year: string;
   runtime: string;
   genre: string;
@@ -19,10 +28,14 @@ export type Film = {
   story: string[];
   poster: string;
   posterAlt: string;
+  posterWidth: number;
+  posterHeight: number;
   still: string;
   stillAlt: string;
+  stillSrcSet?: string;
   stillWidth: number;
   stillHeight: number;
+  gallery?: FilmImage[];
   facts: FilmCredit[];
   credits: FilmCredit[];
   recognition: string[];
@@ -33,22 +46,30 @@ export const films: Film[] = [
   {
     slug: "wattleseed",
     title: "Wattleseed",
+    directorLine: "Directed by Will Chai",
     year: "2026",
     runtime: "12 minutes",
     genre: "Thriller and mystery",
     summary: "Two researchers plan a lethal incident to halt an artificial intelligence arms race.",
     introduction:
-      "Two researchers conclude destroying Wattleseed will leave the coming singularity intact. Their response sets a severe plan in motion.",
+      "Two researchers devise a plan to stage a lethal incident and halt an artificial intelligence arms race. Each has a different understanding of the risks involved.",
     story: [
-      "Wattleseed follows Adrian and Leo as research, pressure, and institutional delay narrow their choices. The film keeps its attention on a private moral argument with public consequences.",
-      "Will directed, cowrote, produced, photographed, and edited the short. The production was completed with a small team at McMaster University and released in February 2026.",
+      "We filmed at McMaster University, including the Mueller History of Health and Medicine Room. The apparatus on screen brought together a control board, fishing equipment and raw aluminum prisms from the team’s hobbies.",
+      "I directed Wattleseed and wrote it with Cain Chai. Our team came together from Health Sciences, Computer Science and iBioMed. We released the film in February 2026.",
     ],
-    poster: "/assets/wattleseed-poster.avif",
+    poster: "/assets/films/wattleseed/poster-800.avif",
     posterAlt: "Wattleseed film poster",
-    still: "/assets/wattleseed-still.avif",
-    stillAlt: "Two researchers sit at a table in a room lined with books",
+    posterWidth: 800,
+    posterHeight: 1104,
+    still: "/assets/films/wattleseed/cover-1920.avif",
+    stillSrcSet: "/assets/films/wattleseed/cover-640.avif 640w, /assets/films/wattleseed/cover-1280.avif 1280w, /assets/films/wattleseed/cover-1920.avif 1920w",
+    stillAlt: "A researcher in a plaid shirt leans across a table in a library",
     stillWidth: 1920,
     stillHeight: 1038,
+    gallery: [
+      { src: "/assets/films/wattleseed/apparatus-1280.avif", srcSet: "/assets/films/wattleseed/apparatus-640.avif 640w, /assets/films/wattleseed/apparatus-1280.avif 1280w", alt: "A curved microphone and wooden speaker apparatus on a table", width: 1280, height: 692 },
+      { src: "/assets/films/wattleseed/profile-1280.avif", srcSet: "/assets/films/wattleseed/profile-640.avif 640w, /assets/films/wattleseed/profile-1280.avif 1280w", alt: "A researcher wearing glasses in profile against library shelves", width: 1280, height: 692 },
+    ],
     facts: [
       { label: "Year", value: "2026" },
       { label: "Runtime", value: "12 minutes" },
@@ -72,11 +93,13 @@ export const films: Film[] = [
     links: [
       { label: "Watch the trailer", href: "https://www.youtube.com/watch?v=o-5DN5ygX80" },
       { label: "Request a screener", href: "mailto:me@willchai.com?subject=Wattleseed%20screener" },
+      { label: "Press kit (PDF)", href: "/assets/films/wattleseed/press-kit.pdf" },
     ],
   },
   {
     slug: "murder-of-minus",
     title: "Murder of Minus",
+    directorLine: "Directed by Will Chai and Artyom Gabtraupov",
     year: "2025",
     runtime: "35 minutes",
     genre: "Thriller, drama, science fiction",
@@ -84,15 +107,22 @@ export const films: Film[] = [
     introduction:
       "Tech prodigy Quinten Spencer builds Minus, an artificial intelligence capable of remarkable feats. Its progress draws him toward recognition and a violent confrontation.",
     story: [
-      "Murder of Minus follows Quinten through an ambitious experiment, a public breakthrough, and the consequences of his pursuit. The story grew from a collaborative production made across several years.",
-      "Will cowrote and codirected the film with Artyom Gabtraupov. He also served as executive producer, cinematographer, camera operator, editor, score cocomposer, and lead actor as Quinten and Minus.",
+      "I started Murder of Minus in high school in November 2021. Artyom Gabtraupov and I wrote and directed it together, filming mostly around Kitchener and Waterloo. We finished postproduction in January 2025.",
+      "Friends joined the cast and crew, and I played both Quinten and Minus. At one point, we filmed a scene for three characters with two people on set, sharing the acting, directing and camera work.",
     ],
-    poster: "/assets/murder-of-minus-poster.avif",
+    poster: "/assets/films/murder-of-minus/poster-800.avif",
     posterAlt: "Murder of Minus film poster",
-    still: "/assets/murder-of-minus-still.webp",
-    stillAlt: "Quinten stands before a projected artificial intelligence interface",
+    posterWidth: 800,
+    posterHeight: 1067,
+    still: "/assets/films/murder-of-minus/cover-1920.avif",
+    stillSrcSet: "/assets/films/murder-of-minus/cover-640.avif 640w, /assets/films/murder-of-minus/cover-1280.avif 1280w, /assets/films/murder-of-minus/cover-1920.avif 1920w",
+    stillAlt: "Two people sit across a table in daylight, one holding a tablet",
     stillWidth: 1920,
     stillHeight: 1040,
+    gallery: [
+      { src: "/assets/films/murder-of-minus/closeup-1280.avif", srcSet: "/assets/films/murder-of-minus/closeup-640.avif 640w, /assets/films/murder-of-minus/closeup-1280.avif 1280w", alt: "A young man faces a pistol in a monochrome closeup", width: 1280, height: 693 },
+      { src: "/assets/films/murder-of-minus/aerial-1280.avif", srcSet: "/assets/films/murder-of-minus/aerial-640.avif 640w, /assets/films/murder-of-minus/aerial-1280.avif 1280w", alt: "Figures cast long shadows beside a building in a monochrome overhead shot", width: 1280, height: 693 },
+    ],
     facts: [
       { label: "Year", value: "2025" },
       { label: "Runtime", value: "35 minutes" },
@@ -118,6 +148,7 @@ export const films: Film[] = [
     links: [
       { label: "Watch the trailer", href: "https://www.youtube.com/watch?v=g3s0Y_epU2I" },
       { label: "Ask about the film", href: "mailto:me@willchai.com?subject=Murder%20of%20Minus" },
+      { label: "Press kit (PDF)", href: "/assets/films/murder-of-minus/press-kit.pdf" },
     ],
   },
 ];

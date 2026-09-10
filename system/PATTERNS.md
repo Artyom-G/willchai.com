@@ -283,6 +283,35 @@ project panels do not receive the treatment by default.
 
 ## Medium-specific rules
 
+### Films programme and player
+
+The Films chooser introduces two films through authentic stills and their
+original posters. Each entry requires an exact title, year, runtime, director
+credit, premise, detail link and trailer link. Two desktop columns use a small
+vertical offset. Phone layouts place the entries in a single reading column.
+Poster artwork overlaps the lower corner of the still and remains clear of
+the title. Detail pages preserve the synopsis, production context, credits,
+festival record, supporting images, press kit and screening contact.
+
+A native view transition carries the chosen still into the detail page when
+the browser supports cross document transitions. The transition takes its
+duration and easing from shared tokens. Browsers with reduced motion use
+immediate navigation. Hover and keyboard focus settle the small poster beside
+its still. The original image proportions remain stable at rest.
+
+The trailer opens in a native dialog. A brief masked expansion connects the
+action to the viewing surface. The iframe loads after a visitor chooses a
+trailer. Closing the dialog, pressing Escape or clicking its backdrop stops
+playback and restores focus and scrolling. A direct YouTube link accompanies
+the player. Automatic English caption availability is stated beneath it.
+The original anchor remains a working trailer link when JavaScript is disabled.
+
+Responsive AVIF stills reserve width and height. The two film entries together
+use approximately 489 KB of image derivatives across every published size.
+Press kits retain the original PDFs and load on request. The source manifest
+records their provenance. The system page carries a film entry example and
+links to the complete Films pages in the private preview.
+
 The system stays consistent across forms, but the evidence each form needs is
 different. Photography leads with image sequences and honest captions; it
 avoids automatic slideshows and unnecessary compression artefacts. Film leads

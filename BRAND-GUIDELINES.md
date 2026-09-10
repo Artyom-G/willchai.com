@@ -48,6 +48,12 @@ those two areas. Sharing Stories continues as the idea connecting the practice.
 The whole site uses the broad invitation “Let’s do something together,” while
 Photography provides a more specific inquiry route.
 
+Films uses original stills and poster artwork on the shared white canvas. A
+slight offset between entries gives the chooser its composition, while titles,
+director credits and viewing actions stay together. Motion follows the choice
+to explore a film or watch its trailer. Personal production accounts carry
+the collaborative character of the work into the detail pages.
+
 The Résumé is a professional record with matching PDF and HTML versions. It may
 link to a film or project when the connection is useful. `/hey/` is a compact
 utility page for quick links and QR codes. Contact appears within existing
