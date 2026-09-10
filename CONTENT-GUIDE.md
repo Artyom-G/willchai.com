@@ -19,10 +19,10 @@ item has one canonical home when it intersects several disciplines.
 ## Photography service
 
 The Photography page introduces Will directly and names the opening selection
-Featured photographs. Publish ten to fifteen featured photographs as one
-uncategorized sequence. Each featured caption names the person, occasion,
-place, or commission when the information is confirmed. Pricing, selected
-professional relationships, and the inquiry route follow the feature sequence.
+Featured photographs for assistive tools. Publish the nine approved photographs
+from the existing public Photography page as one uncategorized sequence. Keep
+the presentation caption free. Three client cards identify McMaster University,
+Foxwood Homes, and Platinum Moon before the inquiry route.
 
 The wider portfolio appears as a caption free shuffle loaded in controlled
 batches. The complete service footer follows it with contact, policy, rights,
@@ -34,26 +34,24 @@ The general site contact invitation should feel open and collaborative (“Let�
 do something together”). Within photography, provide a specific inquiry route
 with only the information required to understand the shoot and respond.
 
-During the current Photography design review, photographs and captions remain
-provisional. Portraits and events are the commercial focus. Use the complete
-page to assess beauty, comfortable browsing, access to practical information,
-and ease of contacting Will. Final image selection, identifying details,
-professional relationships, and exact rates can follow the visual review.
+Portraits and events are the commercial focus. Use the complete page to assess
+beauty, comfortable browsing, access to practical information, and ease of
+contacting Will. Exact rates can follow the visual review.
 
-The shared site header introduces Photography. Featured photographs follow a
-vertical editorial sequence, preserving the approved source order across wide
-and narrow screens. Captions stay small, clear, and set in Funnel Sans. A
-photograph opens in a focused viewer with usable previous and next controls.
+The featured sequence advances through ordinary vertical scrolling. The linked
+photographs open in the viewer, where Previous, Next, Add reference, and Close
+remain available. The board introduces Event name and two questions about place
+and date. Next advances to optional budget and notes, then to the completed
+inquiry. The final choices are Open email and Copy text. Back keeps all answers.
+Budgets accept an amount or range in CAD, with guidance available. The supplied
+amount is labelled Your budget. Will quotes assignments personally and keeps his
+pricing rules private. Further details can be added in the email. The decorative
+Gold tier card reads Standard event package.
 
-The inquiry gathers Event name, Where?, and When? in one compact form. The date
-field accepts a precise date or a useful approximation such as “Sometime in
-August.” Starting an email prepares a direct draft with the supplied details.
-Will quotes each assignment personally.
-
-Selected organizations appear as existing marks in a compact proof field. The
-wider portfolio appears as a caption free shuffle loaded in controlled batches.
-Its Load more photographs control carries a clear primary treatment. The
-complete service footer follows with contact, policy, rights, and navigation.
+Visitors may add references from an opened featured or shuffle photograph.
+Reference selections produce image links in the inquiry and remain editable
+on the board. Alternative text supplies internal reference descriptions. The
+selection, form answers and draft remain local to the current page.
 
 ## Films and Projects
 

@@ -65,9 +65,9 @@ In order:
 The launch site is shallow and substantial. It contains twelve public pages.
 The homepage is a curated introduction to Will and selected work. `/hey/` is a
 utility destination for quick links and QR codes. Photography occupies one
-long page with ten to fifteen captioned featured photographs, pricing, selected
-professional relationships, a caption free shuffle, its own inquiry area, and
-the complete service footer.
+long page with a caption free sequence of nine featured photographs, three client
+cards, a shoot builder, a caption free shuffle, its own inquiry area, and the
+complete service footer.
 
 Films and Projects provide the two branch points. `/films/` introduces the film
 practice and leads to the Wattleseed and Murder of Minus pages. `/projects/`
@@ -334,6 +334,8 @@ choices that affect the site's direction, structure, or long-term maintenance.
 | 2026 09 10 | Present the featured work in three scroll chapters with consistent viewing areas and complete image proportions. Let the opening character duck behind the featured boundary. Add reference selection inside the photograph viewer for both collections. | Scrolling advances the photographs, the character has a physical connection to the page, and selected image links can accompany an inquiry. |
 
 | 2026 09 10 | Explore the supplied Jitter motion references through a horizontal featured strip, a brief photographic composition, and bounded stretch transitions. Combine the opening identity link and simplify its booking action. Let Will recover after the shove and duck behind the blue frame. | The visitor controls browsing, images settle into complete proportions, and the character finishes within his own scene. The revision is prepared for visual review. |
-| 2026 09 10 | Use the shared site header and a vertical featured sequence for Photography. Preserve source order, retain complete image proportions, and set captions in Funnel Sans. Replace the multi step shoot board with Event name, Where?, and When? leading into direct email. Present selected organizations as an ordered field of existing marks. | The visual review favoured direct browsing, clear hierarchy, and fewer labels. The page remains one substantial photography destination with the current images, captions, organizations, and pricing choices held for later review. |
+
+| 2026 09 10 | Replace the featured strip with nine approved public portfolio photographs in an Orbit Cards sequence driven by native vertical scroll. Keep the movement on mobile and use a caption free featured presentation. | Will selected the existing public Photography page as the image source, specified nine photographs, and approved the diagonal movement from lower right to upper left. |
+| 2026 09 10 | Present credibility through three client cards for McMaster University, Foxwood Homes, and Platinum Moon. Use the shared site header and remove the annotated duplicate actions, helper lines, counters, and booking shortcuts. | The page keeps its personal interactions while the featured work, client proof, and inquiry path become easier to read. |
 
 | 2026 09 10 | Build the Films chooser and its two detail pages around original stills, overlapping poster artwork, personal production accounts and direct viewing actions. Connect the selected image to its detail page and open trailers in a dismissible player. Include the original press kits and screening contact links. | Will asked for the next page to receive a complete implementation and production readiness pass. The composition and motion are available in the private preview for his review. |

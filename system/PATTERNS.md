@@ -132,10 +132,10 @@ identified without interrupting the project narrative.
 ## Photography service information
 
 Photography service information belongs within one long page retaining the
-site's personal voice. The page requires ten to fifteen featured photographs,
-small identifying captions, pricing, selected professional relationships, and
-a photography specific inquiry action. Availability, location, and delivery
-information appears when it is current and useful.
+site's personal voice. The page uses a caption free sequence of nine approved
+featured photographs, three selected client cards, a shoot builder, and a photography
+specific inquiry action. Availability, location, and delivery information
+appears when it is current and useful.
 
 The featured order and photographs may change. Editorial transitions keep the
 uncategorized sequence continuous. A caption free shuffle follows the
@@ -144,20 +144,17 @@ service footer. Photographs remain the primary visual material, the inquiry
 action stays outside any lightbox, and client privacy or publication
 permission must be confirmed before use.
 
-Photography opens with a linked Will Chai name, the Photography title, a short
-portrait and event description, and a single booking link. Featured photographs
-form a native horizontal strip with close spacing and complete image proportions.
-The next photograph remains partly visible. Previous and Next move the strip,
-while View together exposes the full collection. Keyboard arrows, Home and End
-operate the focused strip. Vertical document scrolling remains native.
+Photography uses the shared site header, the Photography title, and a short
+portrait and event description. Nine featured photographs move through a sticky
+viewport while ordinary vertical scrolling advances the sequence. Cards enter
+from the lower right, reach the centre at full scale, then leave through the
+upper left. The complete image proportions remain visible on desktop and mobile.
 
-Will supplied Jitter references for Orbit: Social Media Showreel, Share Your Work,
-and Image Stretch Transition. The current study gathers the visible photographs
-into a brief overlapping arrangement, then opens them into the strip. Horizontal
-movement produces a bounded elastic response. Opening and changing a photograph
-uses a directional image stretch and masked reveal. Each image returns to its
-native proportions at rest. Movement ends when browsing settles, and direct
-interaction can finish the introductory composition immediately.
+The movement draws from Will's Orbit Cards reference. A small arc, rotation, and
+scale shift give nearby cards depth. Each card remains a keyboard reachable link
+in source order, and focus centres the selected card. Reduced motion presents a
+static responsive grid. Opening a photograph preserves the established viewer,
+directional image changes, and reference selection.
 
 The opening character emerges from the lower edge of the first photograph after
 the collection settles, takes a photograph, and ducks behind the edge. The four
@@ -184,22 +181,12 @@ headers provide a return to the shoot when references are selected. Clipboard
 failure selects the message for manual copying. Inquiry contents stay in the
 current page.
 
-Organization marks retain their measured artwork sizing. The shuffle reserves
-image dimensions and fills continuous columns while preserving earlier positions.
-The footer retains the original contact ticket, policy, rights and homepage return.
-Reduced motion presents the contact sheet, direct image changes and usable builder.
-The composition is prepared for visual review. Photograph selection, captions,
-organizations and actual pricing remain provisional.
-
-### Current Photography composition
-
-Photography uses the shared site header and a vertical featured sequence. The
-source order remains visible across wide and narrow screens, captions use
-Funnel Sans, and each photograph opens in a focused viewer. Selected
-organizations appear as existing marks in a compact proof field. The inquiry
-contains Event name, Where?, and When?, then starts a direct email draft.
-The wider portfolio remains a caption free gallery loaded in controlled
-batches, with a clear Load more photographs control.
+Three equal client cards carry the marks, names, and work types for McMaster
+University, Foxwood Homes, and Platinum Moon. The shuffle reserves image
+dimensions and fills continuous columns while preserving earlier positions. The
+footer retains the original contact ticket, policy, rights and homepage return.
+Reduced motion presents the static featured grid, direct image changes and usable
+builder. Actual pricing remains provisional.
 
 Open `photography-stack.html` for the production interaction study.
 

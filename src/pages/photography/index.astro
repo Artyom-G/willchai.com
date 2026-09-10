@@ -1,130 +1,29 @@
 ---
 import "../../styles/photography.css";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
 import PhotographyFooter from "../../components/PhotographyFooter.astro";
 import PhotographyCollection from "../../components/PhotographyCollection.astro";
 import PhotographyLightbox from "../../components/PhotographyLightbox.astro";
 import PhotographyArcade from "../../components/PhotographyArcade.astro";
-import SiteHeader from "../../components/SiteHeader.astro";
 import shuffleManifest from "../../data/photographyShuffle.json";
 
-const photographs = [
-  {
-    key: "nessa",
-    src: "/photography/concert-nessa.avif",
-    alt: "Singer Nessa Barrett performing beneath warm stage lights",
-    caption: "Nessa Barrett, live performance, 2026",
-    width: 1920,
-    height: 2559,
-  },
-  {
-    key: "lakeshore",
-    src: "/photography/portrait-lakeshore.webp",
-    alt: "Portrait of a person standing beside the water",
-    caption: "Lakeshore portrait",
-    width: 1707,
-    height: 2560,
-  },
-  {
-    key: "mcmaster",
-    src: "/photography/concert-mcmaster.avif",
-    alt: "A vocalist performing in a McMaster hoodie",
-    caption: "Live performance at McMaster University, 2025",
-    width: 1920,
-    height: 2400,
-  },
-  {
-    key: "formal",
-    src: "/photography/portrait-formal.webp",
-    alt: "Portrait of a person wearing a suit outdoors",
-    caption: "Portrait",
-    width: 1707,
-    height: 2560,
-  },
-  {
-    key: "purple",
-    src: "/photography/concert-purple.avif",
-    alt: "A concert performer lit by purple stage light",
-    caption: "Live performance, 2025",
-    width: 1920,
-    height: 2400,
-  },
-  {
-    key: "nightlife",
-    src: "/photography/event-nightlife.webp",
-    alt: "Nightlife event portrait beneath blue and purple light",
-    caption: "Nightlife event",
-    width: 1920,
-    height: 2879,
-  },
-  {
-    key: "couple",
-    src: "/photography/portrait-couple.webp",
-    alt: "A couple standing together in soft light",
-    caption: "Couple portrait",
-    width: 1722,
-    height: 2560,
-  },
-  {
-    key: "graduation",
-    src: "/photography/portrait-graduation.webp",
-    alt: "Graduation portrait made outdoors",
-    caption: "Graduation portrait",
-    width: 1920,
-    height: 2688,
-  },
-  {
-    key: "group",
-    src: "/photography/portrait-group.webp",
-    alt: "A group portrait made outdoors in warm evening light",
-    caption: "Group portrait",
-    width: 1920,
-    height: 1536,
-  },
-  {
-    key: "property",
-    src: "/photography/property-aerial.webp",
-    alt: "A winter aerial photograph of a residential property",
-    caption: "Residential property, Ontario",
-    width: 1920,
-    height: 1920,
-  },
-  {
-    key: "beverage",
-    src: "/photography/product-beverage.webp",
-    alt: "A beverage product photograph with a bright studio composition",
-    caption: "Beverage study",
-    width: 1920,
-    height: 2560,
-  },
-  {
-    key: "eyewear",
-    src: "/photography/product-eyewear.webp",
-    alt: "An eyewear product photograph with a clean studio arrangement",
-    caption: "Eyewear study",
-    width: 1920,
-    height: 2333,
-  },
+const featuredPhotographs = [
+  { src: "/photography/portrait-lakeshore.webp", alt: "A person wearing black and white standing beside rocks at the water's edge", width: 1707, height: 2560 },
+  { src: "/photography/portrait-formal-group.webp", alt: "Two people in formalwear standing together on a wooden bridge by a pond", width: 1920, height: 1280 },
+  { src: "/photography/portrait-frost.webp", alt: "A person wrapped in a blanket facing a distant horizon across frosted ground", width: 1920, height: 2400 },
+  { src: "/photography/product-eyewear.webp", alt: "Black Prada sunglasses photographed on a white surface", width: 1920, height: 2333 },
+  { src: "/photography/portrait-formal.webp", alt: "Close portrait of a person in a navy suit holding a pair of glasses", width: 1707, height: 2560 },
+  { src: "/photography/concert-mcmaster.avif", alt: "A vocalist in a McMaster University hoodie performing beneath warm stage lights", width: 1920, height: 2400 },
+  { src: "/photography/portrait-couple.webp", alt: "A couple in formal clothes holding each other indoors", width: 1722, height: 2560 },
+  { src: "/photography/concept-time.webp", alt: "Black and white conceptual photograph of marked hands holding an open pocket watch", width: 1920, height: 1920 },
+  { src: "/photography/product-beverage.webp", alt: "Cotton candy soda bottle photographed against a bright blue background", width: 1920, height: 2560 },
 ];
 
-const photographByKey = Object.fromEntries(photographs.map((photograph) => [photograph.key, photograph]));
-
-const featuredPhotographs = [
-  "nessa", "mcmaster", "lakeshore", "group", "formal", "couple",
-  "nightlife", "graduation", "purple", "eyewear", "property", "beverage",
-].map((key) => photographByKey[key]);
-
 const clients = [
-  { name: "Luxetints", logo: "/photography/clients/luxetints.avif", artwork: "--mark-size:147.54px;--mark-x:-0.59px;--mark-y:0.00px" },
-  { name: "Health Sciences Musical", logo: "/photography/clients/health-sciences-musical.avif", artwork: "--mark-size:72.00px;--mark-x:0.00px;--mark-y:0.00px" },
-  { name: "McMaster Film Production Club", logo: "/photography/clients/mcmaster-film-production-club.avif", artwork: "--mark-size:72.00px;--mark-x:0.00px;--mark-y:0.00px" },
-  { name: "Matt", logo: "/photography/clients/matt.avif", artwork: "--mark-size:72.00px;--mark-x:0.00px;--mark-y:0.00px" },
-  { name: "McMaster A Cappella", logo: "/photography/clients/mcmaster-a-cappella.avif", artwork: "--mark-size:72.00px;--mark-x:0.00px;--mark-y:0.00px" },
-  { name: "McMaster University", logo: "/photography/clients/mcmaster.avif", artwork: "--mark-size:201.18px;--mark-x:0.00px;--mark-y:0.40px" },
-  { name: "SJK School", logo: "/photography/clients/sjk-school.avif", artwork: "--mark-size:148.80px;--mark-x:0.15px;--mark-y:-0.74px" },
-  { name: "McMaster BHSS", logo: "/photography/clients/mcmaster-bhss.avif", artwork: "--mark-size:79.65px;--mark-x:-0.08px;--mark-y:-0.32px" },
-  { name: "Platinum Moon", logo: "/photography/clients/platinum-moon.avif", artwork: "--mark-size:72.43px;--mark-x:0.07px;--mark-y:-0.07px" },
-  { name: "Snazzy Labs", logo: "/photography/clients/snazzy-labs.avif", artwork: "--mark-size:115.38px;--mark-x:0.12px;--mark-y:0.00px" },
+  { name: "McMaster University", detail: "University events and performances", logo: "/photography/clients/mcmaster.avif", width: 500, height: 500, treatment: "mcmaster" },
+  { name: "Foxwood Homes", detail: "Residential projects", logo: "/photography/clients/foxwood-homes.png", width: 213, height: 141, treatment: "foxwood" },
+  { name: "Platinum Moon", detail: "Band photography and live performance", logo: "/photography/clients/platinum-moon.avif", width: 500, height: 500, treatment: "platinum" },
 ];
 
 const shufflePhotographs = shuffleManifest.images;
@@ -137,7 +36,10 @@ const shuffleBatchSize = 36;
   path="/photography/"
   pageClass="photographyPage"
 >
+  <link slot="head" rel="preload" as="image" href="/photography/pixel-photographer.png" />
   <script slot="head" is:inline src="/scripts/photography.js" defer></script>
+  <script slot="head" is:inline src="/scripts/photography-opening.js" defer></script>
+  <script slot="head" is:inline src="/scripts/photography-orbit.js" defer></script>
   <script slot="head" is:inline src="/scripts/photography-collection.js" defer></script>
   <script slot="head" is:inline src="/scripts/photography-arcade.js" defer></script>
   <div class="pageShell">
@@ -145,28 +47,31 @@ const shuffleBatchSize = 36;
     <main id="main" class="pageMain">
       <header class="photographyOpening">
         <h1>Photography.</h1>
-        <p class="photographyLocation">Portraits and events in Hamilton and across Ontario.</p>
+        <div class="photographyIntroduction"><p class="photographyLocation">Portraits and events, in Hamilton and across Ontario.</p></div>
       </header>
       <PhotographyCollection photographs={featuredPhotographs} />
 
       <section class="clientProof" aria-labelledby="clientProofTitle">
-        <header class="clientIntroduction">
-          <h2 id="clientProofTitle">Selected organizations.</h2>
+        <header class="clientProofHeader" data-reveal>
+          <h2 id="clientProofTitle">Selected clients.</h2>
         </header>
-        <div class="clientLogoRow">
+        <div class="clientCardGrid">
           {
             clients.map((client) => (
-              <figure class="clientLogo" data-reveal>
-                <span class="clientLogoArtwork" style={client.artwork}><img
+              <article class={`clientCard clientCard-${client.treatment}`} data-reveal>
+                <div class="clientCardArtwork"><img
                   src={client.logo}
-                  alt=""
-                  width="500"
-                  height="500"
+                  alt={`${client.name} logo`}
+                  width={client.width}
+                  height={client.height}
                   loading="lazy"
                   decoding="async"
-                /></span>
-                <figcaption>{client.name}</figcaption>
-              </figure>
+                /></div>
+                <div class="clientCardCopy">
+                  <h3>{client.name}</h3>
+                  <p>{client.detail}</p>
+                </div>
+              </article>
             ))
           }
         </div>
@@ -176,7 +81,14 @@ const shuffleBatchSize = 36;
 
       <section class="shuffleSection" aria-labelledby="shuffleTitle">
         <header class="shuffleHeader">
-          <h2 id="shuffleTitle">More photographs.</h2>
+          <h2 id="shuffleTitle">A shuffle</h2>
+          <div class="shuffleNavigation">
+            <a href="#pricing" data-reference-return hidden></a>
+            <button type="button" data-shuffle-reset aria-label="Shuffle the photographs">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h3c4 0 8 12 12 12h3M17 14l4 4-4 4M3 18h3c1.5 0 3-1.7 4.5-4M13.5 10C15 7.7 16.5 6 18 6h3M17 2l4 4-4 4" /></svg>
+              Shuffle
+            </button>
+          </div>
         </header>
         <div class="shuffleGallery" data-shuffle-gallery>
           {shufflePhotographs.map((photograph, index) => (
@@ -191,7 +103,7 @@ const shuffleBatchSize = 36;
           <button type="button" data-shuffle-more>Load more photographs</button>
           <p class="visuallyHidden" data-shuffle-status aria-live="polite">{shuffleBatchSize} photographs shown</p>
         </div>
-        <noscript><style>[data-shuffle-more] { display: none; }</style></noscript>
+        <noscript><style>[data-shuffle-more], [data-shuffle-reset] { display: none; }</style></noscript>
       </section>
     </main>
     <PhotographyFooter />

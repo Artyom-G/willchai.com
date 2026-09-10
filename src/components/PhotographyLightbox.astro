@@ -1,6 +1,8 @@
 <dialog class="photoViewer" data-photo-viewer aria-labelledby="photoViewerTitle">
   <h2 id="photoViewerTitle" class="visuallyHidden">Photograph</h2>
   <header class="photoViewerHeader">
+    <p data-viewer-count aria-live="polite"></p>
+    <button class="viewerReference" type="button" data-viewer-reference aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg><span>Add reference</span></button>
     <button type="button" data-viewer-close autofocus>Close<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
   </header>
   <div class="photoViewerStage" data-viewer-stage>

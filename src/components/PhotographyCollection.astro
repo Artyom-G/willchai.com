@@ -1,17 +1,23 @@
 ---
-interface Photograph { key: string; src: string; alt: string; caption: string; width: number; height: number; }
+import PhotographyCharacter from "./PhotographyCharacter.astro";
+interface Photograph { src: string; alt: string; width: number; height: number; }
 const { photographs } = Astro.props as { photographs: Photograph[] };
 ---
-<section class="featuredCollection" aria-labelledby="collectionTitle">
+<section class="photoCollection" data-photo-collection data-layout="orbit" aria-labelledby="collectionTitle">
   <h2 id="collectionTitle" class="visuallyHidden">Featured photographs</h2>
-  <div class="featuredGrid">
-    {photographs.map((photo, index) => (
-      <figure class="featuredPhoto">
-        <a href={photo.src} data-photo-open data-photo-group="featured" data-caption={photo.caption} aria-label={"Open photograph: " + photo.caption}>
-          <img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading={index < 3 ? "eager" : "lazy"} fetchpriority={index === 0 ? "high" : "auto"} decoding="async" />
-        </a>
-        <figcaption>{photo.caption}</figcaption>
-      </figure>
-    ))}
+  <div class="collectionViewport">
+    <div id="collectionImages" class="collectionImages" aria-label="Featured photographs. Scroll to move through the sequence.">
+      {photographs.map((photo, index) => (
+        <figure class="collectionPhoto" data-collection-photo style={`--photo-ratio:${photo.width / photo.height};--photo-index:${index}`}>
+          <div class="collectionFrame">
+            <a href={photo.src} data-photo-open data-photo-group="featured" aria-label={`Open featured photograph ${index + 1}`}>
+              <img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading={index < 2 ? "eager" : "lazy"} fetchpriority={index === 0 ? "high" : "auto"} decoding="async" />
+            </a>
+            {index === 0 && <PhotographyCharacter />}
+          </div>
+        </figure>
+      ))}
+    </div>
   </div>
+  <p class="visuallyHidden" data-collection-status aria-live="polite"></p>
 </section>

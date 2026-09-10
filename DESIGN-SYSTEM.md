@@ -302,20 +302,17 @@ mode removes tilt and bounce but preserves the colour change and confirmation.
 
 ### Photography character
 
-Photography opens with a linked Will Chai name, the Photography title, a short
-portrait and event description, and a single booking link. Featured photographs
-form a native horizontal strip with close spacing and complete image proportions.
-The next photograph remains partly visible. Previous and Next move the strip,
-while View together exposes the full collection. Keyboard arrows, Home and End
-operate the focused strip. Vertical document scrolling remains native.
+Photography uses the shared site header, the Photography title, and a short
+portrait and event description. Nine featured photographs move inside a sticky
+viewport while the document scrolls normally. Upcoming cards enter from the
+lower right. The centred card reaches full scale and level orientation. Earlier
+cards leave through the upper left. Card size respects each image's complete
+proportions on desktop and mobile.
 
-Will supplied Jitter references for Orbit: Social Media Showreel, Share Your Work,
-and Image Stretch Transition. The current study gathers the visible photographs
-into a brief overlapping arrangement, then opens them into the strip. Horizontal
-movement produces a bounded elastic response. Opening and changing a photograph
-uses a directional image stretch and masked reveal. Each image returns to its
-native proportions at rest. Movement ends when browsing settles, and direct
-interaction can finish the introductory composition immediately.
+The sequence uses the direction and depth of Will's Orbit Cards reference. A
+small arc, rotation, and scale shift distinguish nearby cards. Each card remains
+a keyboard reachable link in source order. Keyboard focus centres its card.
+Reduced motion removes the sticky passage and presents a static responsive grid.
 
 The opening character emerges from the lower edge of the first photograph after
 the collection settles, takes a photograph, and ducks behind the edge. The four
@@ -342,12 +339,12 @@ headers provide a return to the shoot when references are selected. Clipboard
 failure selects the message for manual copying. Inquiry contents stay in the
 current page.
 
-Organization marks retain their measured artwork sizing. The shuffle reserves
+Three equal client cards carry the approved marks, names, and work types for
+McMaster University, Foxwood Homes, and Platinum Moon. The shuffle reserves
 image dimensions and fills continuous columns while preserving earlier positions.
-The footer retains the original contact ticket, policy, rights and homepage return.
-Reduced motion presents the contact sheet, direct image changes and usable builder.
-The composition is prepared for visual review. Photograph selection, captions,
-organizations and actual pricing remain provisional.
+The footer retains the original contact ticket, policy, rights and homepage
+return. Reduced motion presents the static featured grid, direct image changes
+and usable builder. Actual pricing remains provisional.
 
 The production reference is `system/photography-stack.html`. The Gold tier
 prop uses the bounded `--wc-pricing-prop-gold` token. Its four second sequence
@@ -359,16 +356,6 @@ JavaScript readers convert duration tokens from seconds or milliseconds into
 milliseconds before starting an animation. The production stylesheet may
 express 4000ms as 4s. Verify the greeting and field transition against the
 production build when changing their timing.
-
-## Current Photography composition
-
-The current Photography composition uses the shared site header, a vertical
-featured sequence, and a compact direct inquiry. Featured photographs retain
-their source order and complete proportions, while captions use Funnel Sans.
-Selected organization marks appear together as visual proof. The inquiry
-collects Event name, Where?, and When? before starting an email draft. The
-pixel photographer remains an available future direction while the primary page
-composition settles through review.
 
 ## Films and Projects
 

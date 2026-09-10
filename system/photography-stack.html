@@ -1,55 +1,79 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Photography reference | Will Chai</title>
-    <link rel="stylesheet" href="tokens.css">
-    <link rel="stylesheet" href="../src/styles/global.css">
-    <link rel="stylesheet" href="../src/styles/photography.css">
-    <style>
-      body { margin:0; background:var(--wc-white); color:var(--wc-ink); font-family:var(--wc-font-sans); }
-      img { display:block; max-width:100%; }
-    </style>
-  </head>
-  <body class="photographyPage">
-    <div class="pageShell">
-      <header class="siteHeader">
-        <a class="siteBrand" href="index.html"><img src="../public/assets/willchai-mark.avif" alt="" width="42" height="42"><span>willchai.com</span></a>
-        <nav class="siteNav" aria-label="Primary navigation"><a aria-current="page" href="#photography">Photography</a><a href="#films">Films</a><a href="#projects">Projects</a><a href="#resume">Résumé</a></nav>
-        <a class="headerContact" href="#inquiry">Contact</a>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Photography motion study | Will Chai</title>
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="../src/styles/photography.css">
+  <style>
+    @font-face { font-family:"Funnel Sans"; src:url("../public/assets/funnel-sans-latin.woff2"); font-weight:100 900; }
+    @font-face { font-family:"Unbounded"; src:url("../public/assets/unbounded-latin.woff2"); }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--wc-ink); font:17px/1.5 var(--wc-font-sans); }
+    button { font:inherit; }
+    a { color:var(--wc-blue); }
+    .studyIntro { padding:24px clamp(1rem,4vw,4rem); background:var(--wc-cloud); }
+    .studyIntro p { max-width:64ch; margin:12px 0; }
+    .photographyCharacter { --character-frame:256px; position:absolute; z-index:2; right:8%; bottom:0; display:block; width:128px; height:176px; overflow:hidden; pointer-events:none; }
+    .photographyCharacterSprite { position:absolute; left:-64px; bottom:-32px; width:var(--character-frame); height:var(--character-frame); background:url("../public/photography/pixel-photographer.png") 0 0 / 400% 100% no-repeat; image-rendering:pixelated; transform:translateY(100%); }
+    @media(max-width:62rem) {
+      .photographyCharacter { --character-frame:192px; right:4%; width:96px; height:132px; }
+      .photographyCharacterSprite { left:-48px; bottom:-24px; }
+    }
+    @media(prefers-reduced-motion:reduce) { .photographyCharacterSprite { display:none; } }
+  </style>
+  <script src="../public/scripts/photography-opening.js" defer></script>
+  <script src="../public/scripts/photography-orbit.js" defer></script>
+  <script src="../public/scripts/photography-collection.js" defer></script>
+</head>
+<body class="photographyPage">
+  <header class="studyIntro">
+    <a href="index.html">Return to the system</a>
+    <p>Nine approved photographs move from the lower right through the centre toward the upper left as the page scrolls. The client section contains three selected organizations.</p>
+  </header>
+  <div class="pageShell">
+    <main class="pageMain">
+      <header class="photographyOpening">
+        <h1>Photography.</h1>
+        <div class="photographyIntroduction"><p class="photographyLocation">Portraits and events, in Hamilton and across Ontario.</p></div>
       </header>
-      <main id="photography">
-        <header class="photographyOpening">
-          <h1>Photography.</h1>
-          <p class="photographyLocation">Portraits and events in Hamilton and across Ontario.</p>
-        </header>
-        <section class="featuredCollection" aria-labelledby="featured-title">
-          <h2 id="featured-title" class="visuallyHidden">Featured photographs</h2>
-          <div class="featuredGrid">
-            <figure class="featuredPhoto"><img src="../public/photography/concert-nessa.avif" alt="Singer Nessa Barrett performing beneath warm stage lights" width="1920" height="2559"><figcaption>Nessa Barrett, live performance, 2026</figcaption></figure>
-            <figure class="featuredPhoto"><img src="../public/photography/concert-mcmaster.avif" alt="A vocalist performing in a McMaster hoodie" width="1920" height="2400"><figcaption>Live performance at McMaster University, 2025</figcaption></figure>
-            <figure class="featuredPhoto"><img src="../public/photography/portrait-lakeshore.webp" alt="Portrait of a person standing beside the water" width="1707" height="2560"><figcaption>Lakeshore portrait</figcaption></figure>
+
+      <section class="photoCollection" data-photo-collection data-layout="orbit" aria-labelledby="collectionTitle">
+        <h2 id="collectionTitle" class="visuallyHidden">Featured photographs</h2>
+        <div class="collectionViewport">
+          <div id="collectionImages" class="collectionImages" aria-label="Featured photographs. Scroll to move through the sequence.">
+            <figure class="collectionPhoto" data-collection-photo style="--photo-ratio:.6668;--photo-index:0"><div class="collectionFrame"><a href="../public/photography/portrait-lakeshore.webp" data-photo-open data-photo-group="featured" aria-label="Open featured photograph 1"><img src="../public/photography/portrait-lakeshore.webp" alt="A person wearing black and white standing beside rocks at the water's edge" width="1707" height="2560"></a><span class="photographyCharacter" data-photographer-hello data-atlas="../public/photography/pixel-photographer.png" aria-hidden="true"><span class="photographyCharacterSprite"></span></span></div></figure>
+            <figure class="collectionPhoto" data-collection-photo style="--photo-ratio:1.5;--photo-index:1"><div class="collectionFrame"><a href="../public/photography/portrait-formal-group.webp" data-photo-open data-photo-group="featured" aria-label="Open featured photograph 2"><img src="../public/photography/portrait-formal-group.webp" alt="Two people in formalwear standing together on a wooden bridge by a pond" width="1920" height="1280"></a></div></figure>
+            <figure class="collectionPhoto" data-collection-photo style="--photo-ratio:.8;--photo-index:2"><div class="collectionFrame"><a href="../public/photography/portrait-frost.webp" data-photo-open data-photo-group="featured" aria-label="Open featured photograph 3"><img src="../public/photography/portrait-frost.webp" alt="A person wrapped in a blanket facing a distant horizon across frosted ground" width="1920" height="2400"></a></div></figure>
+            <figure class="collectionPhoto" data-collection-photo style="--photo-ratio:.823;--photo-index:3"><div class="collectionFrame"><a href="../public/photography/product-eyewear.webp" data-photo-open data-photo-group="featured" aria-label="Open featured photograph 4"><img src="../public/photography/product-eyewear.webp" alt="Black Prada sunglasses photographed on a white surface" width="1920" height="2333"></a></div></figure>
+            <figure class="collectionPhoto" data-collection-photo style="--photo-ratio:.6668;--photo-index:4"><div class="collectionFrame"><a href="../public/photography/portrait-formal.webp" data-photo-open data-photo-group="featured" aria-label="Open featured photograph 5"><img src="../public/photography/portrait-formal.webp" alt="Close portrait of a person in a navy suit holding a pair of glasses" width="1707" height="2560"></a></div></figure>
+            <figure class="collectionPhoto" data-collection-photo style="--photo-ratio:.8;--photo-index:5"><div class="collectionFrame"><a href="../public/photography/concert-mcmaster.avif" data-photo-open data-photo-group="featured" aria-label="Open featured photograph 6"><img src="../public/photography/concert-mcmaster.avif" alt="A vocalist in a McMaster University hoodie performing beneath warm stage lights" width="1920" height="2400"></a></div></figure>
+            <figure class="collectionPhoto" data-collection-photo style="--photo-ratio:.6727;--photo-index:6"><div class="collectionFrame"><a href="../public/photography/portrait-couple.webp" data-photo-open data-photo-group="featured" aria-label="Open featured photograph 7"><img src="../public/photography/portrait-couple.webp" alt="A couple in formal clothes holding each other indoors" width="1722" height="2560"></a></div></figure>
+            <figure class="collectionPhoto" data-collection-photo style="--photo-ratio:1;--photo-index:7"><div class="collectionFrame"><a href="../public/photography/concept-time.webp" data-photo-open data-photo-group="featured" aria-label="Open featured photograph 8"><img src="../public/photography/concept-time.webp" alt="Black and white conceptual photograph of marked hands holding an open pocket watch" width="1920" height="1920"></a></div></figure>
+            <figure class="collectionPhoto" data-collection-photo style="--photo-ratio:.75;--photo-index:8"><div class="collectionFrame"><a href="../public/photography/product-beverage.webp" data-photo-open data-photo-group="featured" aria-label="Open featured photograph 9"><img src="../public/photography/product-beverage.webp" alt="Cotton candy soda bottle photographed against a bright blue background" width="1920" height="2560"></a></div></figure>
           </div>
-        </section>
-        <section class="clientProof" aria-labelledby="organizations-title">
-          <header class="clientIntroduction"><h2 id="organizations-title">Selected organizations.</h2></header>
-          <div class="clientLogoRow">
-            <figure class="clientLogo"><span class="clientLogoArtwork"><img src="../public/photography/clients/mcmaster.avif" alt=""></span><figcaption>McMaster University</figcaption></figure>
-            <figure class="clientLogo"><span class="clientLogoArtwork"><img src="../public/photography/clients/mcmaster-bhss.avif" alt=""></span><figcaption>McMaster BHSS</figcaption></figure>
-            <figure class="clientLogo"><span class="clientLogoArtwork"><img src="../public/photography/clients/snazzy-labs.avif" alt=""></span><figcaption>Snazzy Labs</figcaption></figure>
-          </div>
-        </section>
-        <section class="photoInquiry" id="inquiry" aria-labelledby="inquiry-title">
-          <div class="photoInquiryCopy"><h2 id="inquiry-title">Build your shoot.</h2></div>
-          <form class="photoInquiryForm">
-            <label class="visuallyHidden" for="event-name">Event name</label><input id="event-name" type="text" placeholder="Event name">
-            <label class="visuallyHidden" for="place">Where?</label><input id="place" type="text" placeholder="Where?">
-            <label class="visuallyHidden" for="date">When?</label><input id="date" type="text" placeholder="e.g. Sometime in August">
-            <button type="button">Start an email</button>
-          </form>
-        </section>
-      </main>
-    </div>
-  </body>
+        </div>
+        <p class="visuallyHidden" data-collection-status aria-live="polite"></p>
+      </section>
+
+      <section class="clientProof" aria-labelledby="clientProofTitle">
+        <header class="clientProofHeader"><h2 id="clientProofTitle">Selected clients.</h2></header>
+        <div class="clientCardGrid">
+          <article class="clientCard clientCard-mcmaster"><div class="clientCardArtwork"><img src="../public/photography/clients/mcmaster.avif" alt="McMaster University logo" width="500" height="500"></div><div class="clientCardCopy"><h3>McMaster University</h3><p>University events and performances</p></div></article>
+          <article class="clientCard clientCard-foxwood"><div class="clientCardArtwork"><img src="../public/photography/clients/foxwood-homes.png" alt="Foxwood Homes logo" width="213" height="141"></div><div class="clientCardCopy"><h3>Foxwood Homes</h3><p>Residential projects</p></div></article>
+          <article class="clientCard clientCard-platinum"><div class="clientCardArtwork"><img src="../public/photography/clients/platinum-moon.avif" alt="Platinum Moon logo" width="500" height="500"></div><div class="clientCardCopy"><h3>Platinum Moon</h3><p>Band photography and live performance</p></div></article>
+        </div>
+      </section>
+
+      <dialog class="photoViewer" data-photo-viewer aria-labelledby="photoViewerTitle">
+        <h2 id="photoViewerTitle" class="visuallyHidden">Photograph</h2>
+        <header class="photoViewerHeader"><p data-viewer-count aria-live="polite"></p><button class="viewerReference" type="button" data-viewer-reference aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg><span>Add reference</span></button><button type="button" data-viewer-close autofocus>Close</button></header>
+        <div class="photoViewerStage" data-viewer-stage><img data-viewer-image alt=""></div>
+        <footer class="photoViewerFooter"><button type="button" data-viewer-previous aria-label="Previous photograph">Previous</button><p data-viewer-caption></p><button type="button" data-viewer-next aria-label="Next photograph">Next</button></footer>
+        <p class="visuallyHidden" data-viewer-status role="status"></p>
+      </dialog>
+    </main>
+  </div>
+</body>
 </html>

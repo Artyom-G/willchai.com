@@ -38,15 +38,15 @@ tries to explain everything. It can reward exploration, but the paths into the
 work and the route to contact should remain immediate and legible.
 
 Photography is the professional service and receives one substantial page with
-its own client inquiry path. Ten to fifteen featured photographs flow through
-one uncategorized editorial sequence. Small captions identify a person,
-occasion, place, or commission when confirmed. Pricing and selected
-professional relationships follow the feature sequence, then a caption free
-shuffle carries the wider body of work into the complete service footer. Films
-and Projects are separate destinations. Individual work pages belong within
-those two areas. Sharing Stories continues as the idea connecting the practice.
-The whole site uses the broad invitation “Let’s do something together,” while
-Photography provides a more specific inquiry route.
+its own client inquiry path. Nine approved featured photographs flow through
+one uncategorized, caption free scroll sequence. Three client cards
+for McMaster University, Foxwood Homes, and Platinum Moon follow the sequence.
+The shoot builder comes next, then a caption free shuffle carries the wider
+body of work into the complete service footer. Films and Projects are separate
+destinations. Individual work pages belong within those two areas. Sharing
+Stories continues as the idea connecting the practice. The whole site uses the
+broad invitation “Let’s do something together,” while Photography provides a
+more specific inquiry route.
 
 Films uses original stills and poster artwork on the shared white canvas. A
 slight offset between entries gives the chooser its composition, while titles,
@@ -61,8 +61,8 @@ pages through relevant invitations and compact endings.
 
 Photography gives visual quality priority while supporting portrait and event
 inquiries through useful information and straightforward contact. Current
-photographs, captions, and professional relationships serve as provisional
-material during design review. The page should be assessed through its full
+featured photographs and the three selected client relationships are approved
+for the current design review. The page should be assessed through its full
 scrolling composition and ordinary visitor tasks on desktop and mobile.
 
 ## Voice and writing
@@ -314,20 +314,20 @@ image changes use 360 milliseconds. Movement is normally limited to opacity,
 crop, colour, or a translation of no more than eight pixels. Reduced-motion
 mode removes translations and changes content without an animated delay.
 
-Photography opens with a linked Will Chai name, the Photography title, a short
-portrait and event description, and a single booking link. Featured photographs
-form a native horizontal strip with close spacing and complete image proportions.
-The next photograph remains partly visible. Previous and Next move the strip,
-while View together exposes the full collection. Keyboard arrows, Home and End
-operate the focused strip. Vertical document scrolling remains native.
+Photography uses the shared site header, the Photography title, and a short
+portrait and event description. Nine featured photographs move through a sticky
+viewport as ordinary vertical scrolling advances the sequence. Each card enters
+from the lower right, reaches the centre at full scale, then leaves through the
+upper left. The complete image proportions remain visible. Mobile keeps the same
+scroll movement with tighter spacing. Keyboard focus centres each linked image
+in source order. Reduced motion presents a static grid.
 
-Will supplied Jitter references for Orbit: Social Media Showreel, Share Your Work,
-and Image Stretch Transition. The current study gathers the visible photographs
-into a brief overlapping arrangement, then opens them into the strip. Horizontal
-movement produces a bounded elastic response. Opening and changing a photograph
-uses a directional image stretch and masked reveal. Each image returns to its
-native proportions at rest. Movement ends when browsing settles, and direct
-interaction can finish the introductory composition immediately.
+The sequence takes its movement direction from Will's Orbit Cards reference.
+The page retains native document scrolling throughout. Each
+photograph opens in the existing viewer, where directional image changes and
+reference selection remain available. The page and viewer use an image led,
+caption free presentation. Descriptive alternative text remains available to
+assistive tools.
 
 The opening character emerges from the lower edge of the first photograph after
 the collection settles, takes a photograph, and ducks behind the edge. The four
@@ -354,22 +354,12 @@ headers provide a return to the shoot when references are selected. Clipboard
 failure selects the message for manual copying. Inquiry contents stay in the
 current page.
 
-Organization marks retain their measured artwork sizing. The shuffle reserves
-image dimensions and fills continuous columns while preserving earlier positions.
-The footer retains the original contact ticket, policy, rights and homepage return.
-Reduced motion presents the contact sheet, direct image changes and usable builder.
-The composition is prepared for visual review. Photograph selection, captions,
-organizations and actual pricing remain provisional.
-
-## Current Photography composition
-
-The current Photography composition uses the shared site header, a vertical
-featured sequence, and a compact direct inquiry. Featured photographs retain
-their source order and complete proportions, while captions use Funnel Sans.
-Selected organization marks appear together as visual proof. The inquiry
-collects Event name, Where?, and When? before starting an email draft. The
-pixel photographer remains an available future direction while the primary page
-composition settles through review.
+Three client cards identify McMaster University, Foxwood Homes, and Platinum
+Moon through their marks, names, and the relevant work type. The shuffle
+reserves image dimensions and fills continuous columns while preserving earlier
+positions. The footer retains the original contact ticket, policy, rights and
+homepage return. Reduced motion presents the static featured grid, direct image
+changes and usable builder. Actual pricing remains provisional.
 
 ## Stewardship
 
