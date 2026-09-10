@@ -40,19 +40,20 @@ page to assess beauty, comfortable browsing, access to practical information,
 and ease of contacting Will. Final image selection, identifying details,
 professional relationships, and exact rates can follow the visual review.
 
-The collection controls are View together, View strip, Previous, Next and
-Close. The board introduces an editable shoot name and two questions about
-place and date. Next advances to optional budget and notes, then to the
-completed inquiry. The final choices are Open email and Copy text. Back keeps
-all answers. Budgets accept an amount or range in CAD, with guidance available.
-The supplied amount is labelled Your budget. Will quotes assignments personally
-and keeps his pricing rules private. Further details can be added in the email.
-The decorative Gold tier card reads Standard event package.
+The shared site header introduces Photography. Featured photographs follow a
+vertical editorial sequence, preserving the approved source order across wide
+and narrow screens. Captions stay small, clear, and set in Funnel Sans. A
+photograph opens in a focused viewer with usable previous and next controls.
 
-Visitors may add references from an opened featured or shuffle photograph.
-Reference selections produce image links in the inquiry and remain editable
-on the board. Gallery captions retain their identifying role. The selection,
-form answers and draft remain local to the current page.
+The inquiry gathers Event name, Where?, and When? in one compact form. The date
+field accepts a precise date or a useful approximation such as “Sometime in
+August.” Starting an email prepares a direct draft with the supplied details.
+Will quotes each assignment personally.
+
+Selected organizations appear as existing marks in a compact proof field. The
+wider portfolio appears as a caption free shuffle loaded in controlled batches.
+Its Load more photographs control carries a clear primary treatment. The
+complete service footer follows with contact, policy, rights, and navigation.
 
 ## Films and Projects
 

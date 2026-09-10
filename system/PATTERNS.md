@@ -191,6 +191,16 @@ Reduced motion presents the contact sheet, direct image changes and usable build
 The composition is prepared for visual review. Photograph selection, captions,
 organizations and actual pricing remain provisional.
 
+### Current Photography composition
+
+Photography uses the shared site header and a vertical featured sequence. The
+source order remains visible across wide and narrow screens, captions use
+Funnel Sans, and each photograph opens in a focused viewer. Selected
+organizations appear as existing marks in a compact proof field. The inquiry
+contains Event name, Where?, and When?, then starts a direct email draft.
+The wider portfolio remains a caption free gallery loaded in controlled
+batches, with a clear Load more photographs control.
+
 Open `photography-stack.html` for the production interaction study.
 
 ## External project handoff

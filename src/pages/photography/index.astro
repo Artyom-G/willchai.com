@@ -5,6 +5,7 @@ import PhotographyFooter from "../../components/PhotographyFooter.astro";
 import PhotographyCollection from "../../components/PhotographyCollection.astro";
 import PhotographyLightbox from "../../components/PhotographyLightbox.astro";
 import PhotographyArcade from "../../components/PhotographyArcade.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
 import shuffleManifest from "../../data/photographyShuffle.json";
 
 const photographs = [
@@ -136,23 +137,22 @@ const shuffleBatchSize = 36;
   path="/photography/"
   pageClass="photographyPage"
 >
-  <link slot="head" rel="preload" as="image" href="/photography/pixel-photographer.png" />
   <script slot="head" is:inline src="/scripts/photography.js" defer></script>
-  <script slot="head" is:inline src="/scripts/photography-opening.js" defer></script>
   <script slot="head" is:inline src="/scripts/photography-collection.js" defer></script>
   <script slot="head" is:inline src="/scripts/photography-arcade.js" defer></script>
   <div class="pageShell">
+    <SiteHeader current="photography" />
     <main id="main" class="pageMain">
       <header class="photographyOpening">
-        <a class="photographyHome" href="/" aria-label="Will Chai, home">Will Chai</a>
         <h1>Photography.</h1>
-        <div class="photographyIntroduction"><p class="photographyLocation">Portraits and events, in Hamilton and across Ontario.</p><a class="openingBooking" href="#pricing">Build your shoot</a></div>
+        <p class="photographyLocation">Portraits and events in Hamilton and across Ontario.</p>
       </header>
       <PhotographyCollection photographs={featuredPhotographs} />
 
       <section class="clientProof" aria-labelledby="clientProofTitle">
-        <div class="clientIntroduction" data-reveal><img src="/photography/concert-mcmaster.avif" alt="A vocalist performing at McMaster University" width="1920" height="2400" loading="lazy" decoding="async" />
-        <h2 id="clientProofTitle">Organizations featuring my work.</h2></div>
+        <header class="clientIntroduction">
+          <h2 id="clientProofTitle">Selected organizations.</h2>
+        </header>
         <div class="clientLogoRow">
           {
             clients.map((client) => (
@@ -176,15 +176,7 @@ const shuffleBatchSize = 36;
 
       <section class="shuffleSection" aria-labelledby="shuffleTitle">
         <header class="shuffleHeader">
-          <h2 id="shuffleTitle">A shuffle</h2>
-          <div class="shuffleNavigation">
-            <a href="#pricing" data-reference-return hidden></a>
-            <button type="button" data-shuffle-reset aria-label="Shuffle the photographs">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h3c4 0 8 12 12 12h3M17 14l4 4-4 4M3 18h3c1.5 0 3-1.7 4.5-4M13.5 10C15 7.7 16.5 6 18 6h3M17 2l4 4-4 4" /></svg>
-              Shuffle
-            </button>
-            <a href="#photography-contact">Contact</a>
-          </div>
+          <h2 id="shuffleTitle">More photographs.</h2>
         </header>
         <div class="shuffleGallery" data-shuffle-gallery>
           {shufflePhotographs.map((photograph, index) => (
@@ -197,10 +189,9 @@ const shuffleBatchSize = 36;
         </div>
         <div class="shuffleControls">
           <button type="button" data-shuffle-more>Load more photographs</button>
-          <a href="#photography-contact">Get in touch<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7" /></svg></a>
           <p class="visuallyHidden" data-shuffle-status aria-live="polite">{shuffleBatchSize} photographs shown</p>
         </div>
-        <noscript><style>[data-shuffle-more], [data-shuffle-reset] { display: none; }</style></noscript>
+        <noscript><style>[data-shuffle-more] { display: none; }</style></noscript>
       </section>
     </main>
     <PhotographyFooter />

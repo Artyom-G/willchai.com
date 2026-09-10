@@ -361,6 +361,16 @@ Reduced motion presents the contact sheet, direct image changes and usable build
 The composition is prepared for visual review. Photograph selection, captions,
 organizations and actual pricing remain provisional.
 
+## Current Photography composition
+
+The current Photography composition uses the shared site header, a vertical
+featured sequence, and a compact direct inquiry. Featured photographs retain
+their source order and complete proportions, while captions use Funnel Sans.
+Selected organization marks appear together as visual proof. The inquiry
+collects Event name, Where?, and When? before starting an email draft. The
+pixel photographer remains an available future direction while the primary page
+composition settles through review.
+
 ## Stewardship
 
 Brand consistency means preserving the underlying voice and logic, not making

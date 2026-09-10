@@ -360,6 +360,16 @@ milliseconds before starting an animation. The production stylesheet may
 express 4000ms as 4s. Verify the greeting and field transition against the
 production build when changing their timing.
 
+## Current Photography composition
+
+The current Photography composition uses the shared site header, a vertical
+featured sequence, and a compact direct inquiry. Featured photographs retain
+their source order and complete proportions, while captions use Funnel Sans.
+Selected organization marks appear together as visual proof. The inquiry
+collects Event name, Where?, and When? before starting an email draft. The
+pixel photographer remains an available future direction while the primary page
+composition settles through review.
+
 ## Films and Projects
 
 Films and Projects are the two chooser destinations. Their individual work

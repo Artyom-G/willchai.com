@@ -1,32 +1,17 @@
 ---
-import PhotographyCharacter from "./PhotographyCharacter.astro";
 interface Photograph { key: string; src: string; alt: string; caption: string; width: number; height: number; }
 const { photographs } = Astro.props as { photographs: Photograph[] };
 ---
-<section class="photoCollection" data-photo-collection data-layout="strip" aria-labelledby="collectionTitle">
-  <header class="collectionHeader">
-    <h2 id="collectionTitle">Featured photographs</h2>
-    <div class="collectionActions">
-      <a class="referenceReturn" href="#pricing" data-reference-return hidden></a>
-      <button class="collectionToggle" type="button" data-collection-toggle aria-controls="collectionImages" hidden>
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z" /></svg>
-        <span data-collection-label>View together</span>
-      </button>
-    </div>
-  </header>
-  <div id="collectionImages" class="collectionImages" tabindex="0" aria-label="Featured photographs. Scroll sideways to browse.">
-          {photographs.map((photo, index) => (
-            <figure class="collectionPhoto" data-collection-photo style={`--photo-ratio:${photo.width / photo.height};--photo-index:${index}`}>
-              <div class="collectionFrame">
-              <a href={photo.src} data-photo-open data-photo-group="featured" data-caption={photo.caption} aria-label={`Open photograph: ${photo.caption}`}>
-                <img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading={index < 3 ? "eager" : "lazy"} fetchpriority={index === 0 ? "high" : "auto"} decoding="async" />
-              </a>
-              {index === 0 && <PhotographyCharacter />}
-              </div>
-              <figcaption><span class="photoNumber">{String(index + 1).padStart(2, "0")}</span><span>{photo.caption}</span></figcaption>
-            </figure>
-          ))}
+<section class="featuredCollection" aria-labelledby="collectionTitle">
+  <h2 id="collectionTitle" class="visuallyHidden">Featured photographs</h2>
+  <div class="featuredGrid">
+    {photographs.map((photo, index) => (
+      <figure class="featuredPhoto">
+        <a href={photo.src} data-photo-open data-photo-group="featured" data-caption={photo.caption} aria-label={"Open photograph: " + photo.caption}>
+          <img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading={index < 3 ? "eager" : "lazy"} fetchpriority={index === 0 ? "high" : "auto"} decoding="async" />
+        </a>
+        <figcaption>{photo.caption}</figcaption>
+      </figure>
+    ))}
   </div>
-  <div class="collectionPaging" data-collection-paging hidden><span data-collection-count>01 / {photographs.length}</span><div><button type="button" data-strip-previous aria-label="Previous featured photograph">Previous</button><button type="button" data-strip-next aria-label="Next featured photograph">Next</button></div></div>
-  <p class="visuallyHidden" data-collection-status aria-live="polite"></p>
 </section>
