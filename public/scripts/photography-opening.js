@@ -4,7 +4,11 @@
   const sprite = stage.querySelector('.photographyCharacterSprite');
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   const key = 'willchai.photography.hello.v3';
-  const token = key => parseFloat(getComputedStyle(document.documentElement).getPropertyValue(key)) || 0;
+  const token = key => {
+    const value = getComputedStyle(document.documentElement).getPropertyValue(key).trim();
+    const amount = parseFloat(value) || 0;
+    return amount * (value.endsWith('ms') ? 1 : value.endsWith('s') ? 1000 : 1);
+  };
   let played = false;
   let visible = false;
   let ready = false;

@@ -10,7 +10,11 @@
   }));
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   const phone = matchMedia('(max-width: 46rem)');
-  const duration = name => parseFloat(getComputedStyle(document.documentElement).getPropertyValue(name)) || 0;
+  const duration = key => {
+    const value = getComputedStyle(document.documentElement).getPropertyValue(key).trim();
+    const amount = parseFloat(value) || 0;
+    return amount * (value.endsWith('ms') ? 1 : value.endsWith('s') ? 1000 : 1);
+  };
   const ease = getComputedStyle(document.documentElement).getPropertyValue('--wc-ease-settle').trim();
   const clamp = value => Math.max(0, Math.min(1, value));
   const smooth = value => { const x = clamp(value); return x*x*x*(x*(x*6-15)+10); };

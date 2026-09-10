@@ -18,7 +18,11 @@
   const window = arcade.querySelector('[data-shoot-steps]');
   const steps = [...arcade.querySelectorAll('[data-shoot-step]')];
   const pointer = arcade.querySelector('[data-builder-pointer]');
-  const token = key => parseFloat(getComputedStyle(document.documentElement).getPropertyValue(key)) || 0;
+  const token = key => {
+    const value = getComputedStyle(document.documentElement).getPropertyValue(key).trim();
+    const amount = parseFloat(value) || 0;
+    return amount * (value.endsWith('ms') ? 1 : value.endsWith('s') ? 1000 : 1);
+  };
   const ease = getComputedStyle(document.documentElement).getPropertyValue('--wc-ease-settle').trim();
   const tidy = value => String(value || '').replace(/[\r\n\t]+/g,' ').trim();
   let step = 0;

@@ -349,6 +349,11 @@ uses `--wc-duration-scene`. The enclosure derives from the homepage portrait
 and ticket geometry, while controls retain Funnel Sans and selected headings
 use Unbounded. Gold is specific to the departing prop.
 
+JavaScript readers convert duration tokens from seconds or milliseconds into
+milliseconds before starting an animation. The production stylesheet may
+express 4000ms as 4s. Verify the greeting and field transition against the
+production build when changing their timing.
+
 ## Films and Projects
 
 Films and Projects are the two chooser destinations. Their individual work
