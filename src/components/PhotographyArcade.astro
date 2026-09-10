@@ -1,57 +1,50 @@
 <section class="shootArcade" id="pricing" aria-labelledby="arcadeTitle" data-shoot-arcade>
-  <header class="arcadeWelcome">
-    <div><h2 id="arcadeTitle">Make it your shoot.</h2><p>Give your idea a name. We can work out the photographs and the price together.</p></div>
-    <button class="sceneReplay" type="button" data-replay-scene hidden>Replay the shove<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5M19 12a7 7 0 1 0-2 5M20 12a7 7 0 0 0-2-5" /></svg></button>
-  </header>
+  <div class="arcadeTopline"><p>Photography, with you.</p><button class="sceneReplay" type="button" data-replay-scene hidden>Replay the shove<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5M19 12a7 7 0 1 0-2 5M20 12a7 7 0 0 0-2-5" /></svg></button></div>
   <div class="arcadeCabinet">
-    <form class="shootBuilder" data-shoot-builder>
-      <fieldset class="shootTypes">
-        <legend>What are we photographing?</legend>
-        <div class="shootTypeChoices">
-          <label><input type="radio" name="kind" value="Portraits" checked /><span>Portraits</span></label>
-          <label><input type="radio" name="kind" value="Events" /><span>Events</span></label>
-          <label><input type="radio" name="kind" value="Another idea" /><span>Another idea</span></label>
-        </div>
-      </fieldset>
-      <div class="shootCard" data-shoot-card>
-        <div class="shootCardFace">
-          <div class="shootCardPhoto"><img data-shoot-image src="/photography/portrait-lakeshore.webp" alt="Lakeshore portrait" width="1707" height="2560" loading="lazy" decoding="async" /></div>
-          <div class="shootCardContent">
-            <div class="shootCardByline"><span data-shoot-kind>Portraits</span><span>with Will Chai</span></div>
-            <label class="shootNameLabel" for="shoot-name">Your shoot name <span>(optional)</span></label>
-            <textarea id="shoot-name" class="shootName" name="title" rows="2" maxlength="80" placeholder="Your portrait session" autocomplete="off" spellcheck="true" aria-describedby="shoot-name-hint"></textarea>
-            <p class="shootNameHint" id="shoot-name-hint" data-shoot-hint>For example, Graduation with friends.</p>
-            <div class="shootBudget">
-              <label for="shoot-budget">Have a photography budget in mind? <span>(optional)</span></label>
-              <div class="shootBudgetInput"><input id="shoot-budget" type="text" name="budget" maxlength="64" placeholder="An amount or range" autocomplete="off" aria-describedby="shoot-currency" /><span id="shoot-currency">CAD</span></div>
-              <label class="shootGuidance"><input type="checkbox" name="guidance" value="yes" /><span>I’d like guidance</span></label>
-            </div>
-            <img class="arcadePointer" src="/assets/pixel-cursor.svg" alt="" width="92" height="112" aria-hidden="true" />
-            <p class="shootBudgetSummary" data-budget-summary aria-live="polite">We can work out the budget together.</p>
-          </div>
-        </div>
-        <div class="shootInquiry">
-          <button class="inquiryToggle" type="button" data-inquiry-toggle aria-expanded="false" aria-controls="shoot-inquiry" hidden><span>Review your inquiry</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></button>
-          <div class="inquiryFold" id="shoot-inquiry" data-inquiry-fold hidden>
-            <div class="inquiryLetter">
-              <p class="inquirySubject"><span>Subject</span><strong data-inquiry-subject>Your portrait session</strong></p>
+    <div class="arcadeInterior">
+      <header class="arcadeWelcome"><h2 id="arcadeTitle">Build your shoot.</h2><p>Tell me what you have in mind. I’ll put together a quote around your plans.</p></header>
+      <img class="arcadePointer" data-builder-pointer src="/assets/pixel-cursor.svg" alt="" width="92" height="112" aria-hidden="true" />
+      <form class="shootBuilder" data-shoot-builder>
+        <div class="shootInputs">
+          <label class="shootNameLabel" for="shoot-name">Give your shoot a name</label>
+          <textarea id="shoot-name" class="shootName" name="title" rows="1" maxlength="80" placeholder="An evening with friends" autocomplete="off" spellcheck="true"></textarea>
+          <div class="shootStepHeading"><p data-step-label>Your plans</p><span data-step-count>1 of 3</span></div>
+          <div class="shootSteps" data-shoot-steps>
+            <section class="shootStep" data-shoot-step="0" aria-label="Your plans">
+              <div class="shootFields">
+                <label for="shoot-location">Where?<input id="shoot-location" type="text" name="location" placeholder="City or venue" maxlength="160" autocomplete="off" /></label>
+                <label for="shoot-date">When?<input id="shoot-date" type="text" name="date" placeholder="A date or rough idea" maxlength="120" autocomplete="off" /></label>
+              </div>
+              <p class="shootStepNote">A rough idea is welcome.</p>
+              <span class="shootGrip" data-step-grip aria-hidden="true"></span>
+            </section>
+            <section class="shootStep" data-shoot-step="1" aria-label="Optional details" hidden>
+              <div class="shootFields">
+                <div class="shootBudget"><label for="shoot-budget">Your budget <span>(optional)</span></label><div class="shootBudgetInput"><input id="shoot-budget" type="text" name="budget" maxlength="64" placeholder="Amount or range" autocomplete="off" aria-describedby="shoot-currency" /><span id="shoot-currency">CAD</span></div><label class="shootGuidance"><input type="checkbox" name="guidance" value="yes" /><span>I’d like guidance</span></label></div>
+                <label for="shoot-idea">Anything else? <span>(optional)</span><textarea id="shoot-idea" name="idea" rows="3" maxlength="1500" placeholder="The people, the occasion, what you’re imagining…"></textarea></label>
+              </div>
+              <span class="shootGrip" data-step-grip aria-hidden="true"></span>
+            </section>
+            <section class="shootStep inquiryLetter" data-shoot-step="2" aria-label="Your inquiry" hidden>
+              <p class="inquirySubject"><span>To me@willchai.com</span><strong data-inquiry-subject>Photography inquiry</strong></p>
               <label class="visuallyHidden" for="inquiry-message">Your inquiry message</label>
-              <textarea id="inquiry-message" data-inquiry-message rows="9" readonly></textarea>
-            </div>
+              <textarea id="inquiry-message" data-inquiry-message rows="8" readonly></textarea>
+              <div class="inquiryActions"><a class="shootSend" data-shoot-send href="mailto:me@willchai.com?subject=Photography%20inquiry">Open email<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-7-7 7 7-7 7" /></svg></a><button class="shootCopy" type="button" data-copy-inquiry>Copy text<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="1" /><path d="M15 4H4v11" /></svg></button></div>
+              <p class="shootStepNote">You can add the remaining details in your email.</p>
+              <span class="shootGrip" data-step-grip aria-hidden="true"></span>
+            </section>
           </div>
-          <div class="inquiryActions">
-            <a class="shootSend" data-shoot-send href="mailto:me@willchai.com?subject=Photography%20inquiry">Open email<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-7-7 7 7-7 7" /></svg></a>
-            <button class="shootCopy" type="button" data-copy-inquiry hidden>Copy inquiry<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="1" /><path d="M15 4H4v11" /></svg></button>
-          </div>
-          <div class="inquiryDestination">
-            <button type="button" data-copy-address hidden aria-label="Copy email address">me@willchai.com<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="1" /><path d="M15 4H4v11" /></svg></button>
-            <span>Add the date, place and other details in your email.</span>
-          </div>
+          <div class="shootProgress"><button class="shootBack" type="button" data-shoot-back hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7 7-7-7 7-7" /></svg>Back</button><button class="shootNext" type="submit" data-shoot-next>Next<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-7-7 7 7-7 7" /></svg></button></div>
           <p class="inquiryStatus" data-inquiry-status role="status"></p>
         </div>
-      </div>
-    </form>
-    <noscript><p class="arcadeFallback">Send your plans to <a href="mailto:me@willchai.com?subject=Photography%20inquiry">me@willchai.com</a> for a personal quote.</p><style>.shootBuilder{display:none}</style></noscript>
+        <aside class="shootReceipt" aria-labelledby="shootSummaryTitle">
+          <div class="shootReceiptPhoto"><img data-shoot-image src="/photography/portrait-lakeshore.webp" alt="Lakeshore portrait" width="1707" height="2560" loading="lazy" decoding="async" /></div>
+          <div class="shootReceiptCopy"><p class="shootReceiptByline">With Will Chai</p><h3 id="shootSummaryTitle" data-shoot-summary-title>Your shoot</h3><p class="shootSelection" data-shoot-summary>Your plans, taking shape.</p><p class="shootBudgetSummary" data-budget-summary hidden></p><p class="shootQuote">A quote for your plans.</p><p class="shootQuoteDetail">I’ll reply with a price covering photography, editing, delivery and travel.</p></div>
+          <div class="shootReferences" data-shoot-references hidden><p data-reference-heading></p><div class="shootReferenceImages" data-reference-images></div></div>
+        </aside>
+      </form>
+      <noscript><p class="arcadeFallback">Send your plans to <a href="mailto:me@willchai.com?subject=Photography%20inquiry">me@willchai.com</a> for a personal quote.</p><style>.shootBuilder,.arcadePointer{display:none}</style></noscript>
+    </div>
     <div class="goldScene" data-gold-scene aria-hidden="true" inert>
       <div class="goldBackdrop"></div><div class="goldLedge"></div>
       <div class="goldPlan"><div class="goldPlanHeading">Photography packages</div><p class="goldTier">Gold tier</p><p class="goldPackage">Standard event package</p><div class="goldRule"></div><p>A fixed format for every occasion.</p><div class="goldFakeButton">Select package</div></div>

@@ -3,7 +3,7 @@
   if (!stage) return;
   const sprite = stage.querySelector('.photographyCharacterSprite');
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
-  const key = 'willchai.photography.hello.v2';
+  const key = 'willchai.photography.hello.v3';
   const token = key => parseFloat(getComputedStyle(document.documentElement).getPropertyValue(key)) || 0;
   let played = false;
   let visible = false;
@@ -23,11 +23,11 @@
     const duration = token('--wc-duration-scene') / speed;
     animations = [
       sprite.animate([
-        { transform:'translateY(76%)', opacity:0, offset:0, easing:'cubic-bezier(0.16,1,0.3,1)' },
-        { transform:'translateY(-4px)', opacity:1, offset:0.14, easing:'ease-out' },
-        { transform:'none', opacity:1, offset:0.21 },
-        { transform:'none', opacity:1, offset:0.78, easing:'cubic-bezier(0.6,0,1,1)' },
-        { transform:'translateY(76%)', opacity:0, offset:1 }
+        { transform:'translateY(100%)', offset:0, easing:'cubic-bezier(0.16,1,0.3,1)' },
+        { transform:'translateY(0)', offset:0.15 },
+        { transform:'translateY(0)', offset:0.76, easing:'ease-in-out' },
+        { transform:'translateY(12px)', offset:0.83, easing:'cubic-bezier(0.55,0,1,1)' },
+        { transform:'translateY(100%)', offset:1 }
       ], { duration, fill:'forwards' }),
       sprite.animate([
         { backgroundPositionX:'0%', offset:0, easing:'steps(1,end)' },

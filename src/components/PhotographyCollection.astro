@@ -1,49 +1,36 @@
 ---
-interface Photograph {
-  key: string;
-  src: string;
-  alt: string;
-  caption: string;
-  width: number;
-  height: number;
-}
+import PhotographyCharacter from "./PhotographyCharacter.astro";
+interface Photograph { key: string; src: string; alt: string; caption: string; width: number; height: number; }
 const { photographs } = Astro.props as { photographs: Photograph[] };
-const opening = photographs.slice(0, 4);
-const sequence = photographs.slice(4);
+const chapters = Array.from({ length: Math.ceil(photographs.length / 4) }, (_, i) => photographs.slice(i * 4, i * 4 + 4));
 ---
 <section class="photoCollection" data-photo-collection data-layout="sequence" aria-labelledby="collectionTitle">
   <header class="collectionHeader">
-    <div class="collectionIntroduction">
-      <h2 id="collectionTitle">Featured photographs</h2>
+    <PhotographyCharacter />
+    <h2 id="collectionTitle">Featured photographs</h2>
+    <div class="collectionActions">
+      <a class="referenceReturn" href="#pricing" data-reference-return hidden></a>
+      <button class="collectionToggle" type="button" data-collection-toggle aria-controls="collectionImages" hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z" /></svg>
+        <span data-collection-label>View together</span>
+      </button>
     </div>
-    <button class="collectionToggle" type="button" data-collection-toggle aria-controls="collectionImages" hidden>
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z" /></svg>
-      <span data-collection-label>View together</span>
-    </button>
   </header>
   <div id="collectionImages" class="collectionImages">
-    <div class="featuredPassage" data-featured-passage>
-      <div class="passagePin"><div class="passageWindow"><div class="passageTrack" data-passage-track>
-        {opening.map((photo, index) => (
-          <figure class="collectionPhoto passagePhoto" data-collection-photo style={`--card-index:${index};--photo-ratio:${photo.width / photo.height}`}>
-            <a href={photo.src} data-photo-open data-photo-group="featured" data-caption={photo.caption} aria-label={`Open photograph: ${photo.caption}`}>
-              <img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} fetchpriority={index === 0 ? "high" : "auto"} decoding="async" />
-            </a>
-            <figcaption>{photo.caption}</figcaption>
-          </figure>
-        ))}
-      </div></div></div>
-    </div>
-    <div class="featuredGallery">
-      {sequence.map((photo, index) => (
-        <figure class="collectionPhoto" data-collection-photo data-reveal style={`--photo-ratio:${photo.width / photo.height};--entry-side:${index % 2 ? 1 : -1}`}>
-          <a href={photo.src} data-photo-open data-photo-group="featured" data-caption={photo.caption} aria-label={`Open photograph: ${photo.caption}`}>
-            <img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading="lazy" decoding="async" />
-          </a>
-          <figcaption>{photo.caption}</figcaption>
-        </figure>
-      ))}
-    </div>
+    {chapters.map((chapter, chapterIndex) => (
+      <div class="featuredChapter" data-featured-chapter>
+        <div class="chapterPin"><div class="chapterWindow">
+          {chapter.map((photo, index) => (
+            <figure class="collectionPhoto" data-collection-photo style={`--photo-ratio:${photo.width / photo.height};--photo-index:${index}`}>
+              <a href={photo.src} data-photo-open data-photo-group="featured" data-caption={photo.caption} aria-label={`Open photograph: ${photo.caption}`}>
+                <img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading={chapterIndex === 0 ? "eager" : "lazy"} fetchpriority={chapterIndex === 0 && index === 0 ? "high" : "auto"} decoding="async" />
+              </a>
+              <figcaption><span class="photoNumber">{String(chapterIndex * 4 + index + 1).padStart(2, "0")}</span><span>{photo.caption}</span></figcaption>
+            </figure>
+          ))}
+        </div></div>
+      </div>
+    ))}
   </div>
   <p class="visuallyHidden" data-collection-status aria-live="polite"></p>
 </section>

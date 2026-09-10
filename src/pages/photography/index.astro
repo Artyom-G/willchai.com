@@ -5,7 +5,6 @@ import PhotographyFooter from "../../components/PhotographyFooter.astro";
 import PhotographyCollection from "../../components/PhotographyCollection.astro";
 import PhotographyLightbox from "../../components/PhotographyLightbox.astro";
 import PhotographyArcade from "../../components/PhotographyArcade.astro";
-import PhotographyCharacter from "../../components/PhotographyCharacter.astro";
 import shuffleManifest from "../../data/photographyShuffle.json";
 
 const photographs = [
@@ -146,7 +145,7 @@ const shuffleBatchSize = 36;
     <main id="main" class="pageMain">
       <header class="photographyOpening">
         <a class="photographyHome" href="/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7-7-7 7 7 7" /></svg>Back to willchai.com</a>
-        <div class="photographyMasthead"><div class="photographyTitleRow"><div class="photographyTitle"><p>Will Chai</p><h1>Photography.</h1></div><PhotographyCharacter /></div><a class="openingBooking" href="#pricing">Build your shoot<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-7-7 7 7-7 7" /></svg></a></div>
+        <div class="photographyMasthead"><div class="photographyTitle"><p>Will Chai</p><h1>Photography.</h1></div><a class="openingBooking" href="#pricing">Build your shoot<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-7-7 7 7-7 7" /></svg></a></div>
         <p class="photographyLocation">Portraits and events, in Hamilton and across Ontario.</p>
       </header>
       <PhotographyCollection photographs={featuredPhotographs} />
@@ -179,6 +178,7 @@ const shuffleBatchSize = 36;
         <header class="shuffleHeader">
           <h2 id="shuffleTitle">A shuffle</h2>
           <div class="shuffleNavigation">
+            <a href="#pricing" data-reference-return hidden></a>
             <button type="button" data-shuffle-reset aria-label="Shuffle the photographs">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h3c4 0 8 12 12 12h3M17 14l4 4-4 4M3 18h3c1.5 0 3-1.7 4.5-4M13.5 10C15 7.7 16.5 6 18 6h3M17 2l4 4-4 4" /></svg>
               Shuffle

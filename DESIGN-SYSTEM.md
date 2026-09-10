@@ -303,36 +303,45 @@ mode removes tilt and bounce but preserves the colour change and confirmation.
 ### Photography character
 
 Photography opens with a direct homepage link, the Photography title, and an
-explicitly named featured selection. On desktop, the sideways passage pauses
-at three composed positions during ordinary document scrolling. Transitions
-between these positions ease at both ends. Phones use a directly swipeable
-strip and natural vertical scrolling. Gallery photographs reveal once as they
-enter view, then remain settled. Native image proportions, View together and
-the expanded viewer remain available.
+explicitly named featured selection. Three short chapters present four
+photographs each. Desktop chapters hold two photographs together; phones hold
+one. Each photograph occupies the same viewing area and retains its complete
+composition. Scrolling brings the following photographs upward into place,
+with a pause at each resting position. Document scrolling stays native and
+reverses the sequence. View together exposes the full collection immediately.
+The current composition remains available for Will's visual review.
 
-Will appears beside the title in four simple poses over four seconds, then
-leaves. Integer enlargement gives the drawn body a height of 176 pixels on
-desktop and 110 pixels on phones. A session flag limits the greeting to one
-appearance per visit. The pricing scene uses four dedicated pushing poses
-with aligned palms and feet. The Gold tier prop reads Standard event package.
-It pauses at the edge of its ledge, tips away, and reveals the personal shoot
-card. Interaction gives the visitor immediate access, and replay is available.
+Will rises above the Featured photographs boundary, takes a photograph, then
+ducks behind the edge. The four second greeting plays once per session using
+the approved four poses. Integer enlargement gives the drawn body a height of
+176 pixels on desktop and 132 pixels on phones. His later appearance retains
+the dedicated pushing poses. The Gold tier prop reads Standard event package.
+It pauses at its ledge, tips away and reveals the builder. Direct inquiry links
+and form interaction expose the usable board immediately. Replay is available.
 
-The shoot card holds the category, an optional shoot name, and an optional
-budget amount or range in CAD. Visitors can request budget guidance. Their
-name becomes the inquiry subject, and a supplied budget is labelled Your
-budget. Actual fees are quoted personally. Date, location, duration and other
-details can be added in the email. Open email and Copy inquiry share the same
-generated message. An optional review control unfolds the message within the
-card. The address is separately copyable. Clipboard failure selects the
-relevant text for manual copying. Inquiry contents stay in the current page.
+The builder restores the white interior within the irregular blue enclosure.
+Its heading and homepage pointer sit inside the board. An editable shoot name
+stays above two questions about place and date. Next exchanges these questions
+for an optional CAD budget and additional notes. A second Next reveals the
+completed inquiry with Open email and Copy text. Back preserves every answer.
+The pointer meets the field panel at a defined grip point, travels with it,
+then returns to its resting position. The shoot name and photographic preview
+remain in place while the fields change. A supplied budget is labelled Your
+budget, and visitors may request guidance. Actual fees are quoted personally.
 
-Organization marks use measured artwork bounds for consistent visual sizing.
-The shuffle places incoming photographs into the shortest continuous column,
-reserving space from intrinsic dimensions and preserving earlier positions.
-The complete footer retains the original contact ticket, policy, rights and
-homepage return. Reduced motion presents the contact sheet and usable builder
-immediately. Photograph selection, captions and organizations remain provisional.
+An opened photograph offers Add reference across both featured work and the
+shuffle. Selected references appear on the shoot board and may be removed
+there. Their image links appear in the generated email and copied text.
+Collection headers provide a return to the shoot when references are selected.
+The same draft powers both contact choices. Clipboard failure selects the
+message for manual copying. Inquiry contents stay in the current page.
+
+Organization marks retain their measured artwork sizing. The shuffle places
+incoming photographs into the shortest continuous column, reserves intrinsic
+image dimensions and preserves earlier positions. The footer retains the
+original contact ticket, policy, rights and homepage return. Reduced motion
+presents the contact sheet and usable builder immediately. Photograph
+selection, captions and organizations remain provisional.
 
 The production reference is `system/photography-stack.html`. The Gold tier
 prop uses the bounded `--wc-pricing-prop-gold` token. Its four second sequence

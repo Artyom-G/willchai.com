@@ -2,6 +2,7 @@
   <h2 id="photoViewerTitle" class="visuallyHidden">Photograph</h2>
   <header class="photoViewerHeader">
     <p data-viewer-count aria-live="polite"></p>
+    <button class="viewerReference" type="button" data-viewer-reference aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg><span>Add reference</span></button>
     <button type="button" data-viewer-close autofocus>Close<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
   </header>
   <div class="photoViewerStage" data-viewer-stage>
@@ -12,4 +13,5 @@
     <p data-viewer-caption></p>
     <button type="button" data-viewer-next aria-label="Next photograph"><span>Next</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-7-7 7 7-7 7" /></svg></button>
   </footer>
+  <p class="visuallyHidden" data-viewer-status role="status"></p>
 </dialog>

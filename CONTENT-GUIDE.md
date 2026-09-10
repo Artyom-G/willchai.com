@@ -40,14 +40,19 @@ page to assess beauty, comfortable browsing, access to practical information,
 and ease of contacting Will. Final image selection, identifying details,
 professional relationships, and exact rates can follow the visual review.
 
-The functional labels are View together, Play sequence, Previous, Next and
-Close. The shoot card asks for a category, an optional shoot name and an
-optional photography budget in CAD. Budget guidance is an available choice.
-The supplied amount is labelled Your budget. Will quotes each assignment
-personally and keeps his pricing rules private. Dates, duration, location and
-further details belong in the visitor's email. Open email and Copy inquiry
-use the same message, with a separate address copy action and an optional
-inquiry preview. The decorative Gold tier card reads Standard event package.
+The collection controls are View together, Play sequence, Previous, Next and
+Close. The board introduces an editable shoot name and two questions about
+place and date. Next advances to optional budget and notes, then to the
+completed inquiry. The final choices are Open email and Copy text. Back keeps
+all answers. Budgets accept an amount or range in CAD, with guidance available.
+The supplied amount is labelled Your budget. Will quotes assignments personally
+and keeps his pricing rules private. Further details can be added in the email.
+The decorative Gold tier card reads Standard event package.
+
+Visitors may add references from an opened featured or shuffle photograph.
+Reference selections produce image links in the inquiry and remain editable
+on the board. Gallery captions retain their identifying role. The selection,
+form answers and draft remain local to the current page.
 
 ## Films and Projects
 
