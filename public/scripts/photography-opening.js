@@ -3,7 +3,7 @@
   if (!stage) return;
   const sprite = stage.querySelector('.photographyCharacterSprite');
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
-  const key = 'willchai.photography.hello.v3';
+  const key = 'willchai.photography.hello.v4';
   const token = key => {
     const value = getComputedStyle(document.documentElement).getPropertyValue(key).trim();
     const amount = parseFloat(value) || 0;
