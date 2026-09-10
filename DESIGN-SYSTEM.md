@@ -302,46 +302,52 @@ mode removes tilt and bounce but preserves the colour change and confirmation.
 
 ### Photography character
 
-Photography opens with a direct homepage link, the Photography title, and an
-explicitly named featured selection. Three short chapters present four
-photographs each. Desktop chapters hold two photographs together; phones hold
-one. Each photograph occupies the same viewing area and retains its complete
-composition. Scrolling brings the following photographs upward into place,
-with a pause at each resting position. Document scrolling stays native and
-reverses the sequence. View together exposes the full collection immediately.
-The current composition remains available for Will's visual review.
+Photography opens with a linked Will Chai name, the Photography title, a short
+portrait and event description, and a single booking link. Featured photographs
+form a native horizontal strip with close spacing and complete image proportions.
+The next photograph remains partly visible. Previous and Next move the strip,
+while View together exposes the full collection. Keyboard arrows, Home and End
+operate the focused strip. Vertical document scrolling remains native.
 
-Will rises above the Featured photographs boundary, takes a photograph, then
-ducks behind the edge. The four second greeting plays once per session using
-the approved four poses. Integer enlargement gives the drawn body a height of
-176 pixels on desktop and 132 pixels on phones. His later appearance retains
-the dedicated pushing poses. The Gold tier prop reads Standard event package.
-It pauses at its ledge, tips away and reveals the builder. Direct inquiry links
-and form interaction expose the usable board immediately. Replay is available.
+Will supplied Jitter references for Orbit: Social Media Showreel, Share Your Work,
+and Image Stretch Transition. The current study gathers the visible photographs
+into a brief overlapping arrangement, then opens them into the strip. Horizontal
+movement produces a bounded elastic response. Opening and changing a photograph
+uses a directional image stretch and masked reveal. Each image returns to its
+native proportions at rest. Movement ends when browsing settles, and direct
+interaction can finish the introductory composition immediately.
 
-The builder restores the white interior within the irregular blue enclosure.
-Its heading and homepage pointer sit inside the board. An editable shoot name
-stays above two questions about place and date. Next exchanges these questions
-for an optional CAD budget and additional notes. A second Next reveals the
-completed inquiry with Open email and Copy text. Back preserves every answer.
-The pointer meets the field panel at a defined grip point, travels with it,
-then returns to its resting position. The shoot name and photographic preview
-remain in place while the fields change. A supplied budget is labelled Your
-budget, and visitors may request guidance. Actual fees are quoted personally.
+The opening character emerges from the lower edge of the first photograph after
+the collection settles, takes a photograph, and ducks behind the edge. The four
+second greeting uses the approved four poses and integer enlargement. The later
+appearance retains the approved pushing poses. A blue rim joins the enclosure
+sides beneath the Gold tier prop. Will pushes the panel past the edge, recovers
+his stance, pauses, and ducks vertically behind the rim. The scene stays opaque
+until his exit is complete, then reveals the board. The prop reads Standard
+event package. Direct inquiry links and form interaction reveal the usable board
+immediately. Replay remains available.
 
-An opened photograph offers Add reference across both featured work and the
-shuffle. Selected references appear on the shoot board and may be removed
-there. Their image links appear in the generated email and copied text.
-Collection headers provide a return to the shoot when references are selected.
-The same draft powers both contact choices. Clipboard failure selects the
-message for manual copying. Inquiry contents stay in the current page.
+The white shoot board retains its irregular blue enclosure. An editable shoot
+name stays above two questions about place and date. Next reveals an optional
+CAD budget and additional notes, then the completed inquiry with Open email and
+Copy text. Back preserves every answer. The rough pointer accompanies Next and
+responds briefly to a press. A directional mask exchanges the question pair while
+the title and photographic preview stay anchored. Supplied amounts are labelled
+Your budget, and visitors may request guidance. Actual fees are quoted personally.
 
-Organization marks retain their measured artwork sizing. The shuffle places
-incoming photographs into the shortest continuous column, reserves intrinsic
-image dimensions and preserves earlier positions. The footer retains the
-original contact ticket, policy, rights and homepage return. Reduced motion
-presents the contact sheet and usable builder immediately. Photograph
-selection, captions and organizations remain provisional.
+An opened photograph offers Add reference across the featured work and shuffle.
+Selections appear on the shoot board and remain removable. Their image links
+appear in the same generated message used by email and copying. Collection
+headers provide a return to the shoot when references are selected. Clipboard
+failure selects the message for manual copying. Inquiry contents stay in the
+current page.
+
+Organization marks retain their measured artwork sizing. The shuffle reserves
+image dimensions and fills continuous columns while preserving earlier positions.
+The footer retains the original contact ticket, policy, rights and homepage return.
+Reduced motion presents the contact sheet, direct image changes and usable builder.
+The composition is prepared for visual review. Photograph selection, captions,
+organizations and actual pricing remain provisional.
 
 The production reference is `system/photography-stack.html`. The Gold tier
 prop uses the bounded `--wc-pricing-prop-gold` token. Its four second sequence

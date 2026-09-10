@@ -40,7 +40,7 @@ page to assess beauty, comfortable browsing, access to practical information,
 and ease of contacting Will. Final image selection, identifying details,
 professional relationships, and exact rates can follow the visual review.
 
-The collection controls are View together, Play sequence, Previous, Next and
+The collection controls are View together, View strip, Previous, Next and
 Close. The board introduces an editable shoot name and two questions about
 place and date. Next advances to optional budget and notes, then to the
 completed inquiry. The final choices are Open email and Copy text. Back keeps

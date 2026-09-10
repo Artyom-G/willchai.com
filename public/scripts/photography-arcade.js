@@ -55,12 +55,12 @@
       playScene();
       sceneObserver.disconnect();
     }
-  },{rootMargin:'0px 0px -22% 0px',threshold:0});
+  },{rootMargin:'-16px 0px -16px 0px',threshold:Math.min(.95,(innerHeight-48)/392)});
   const engage = () => { played=true; finishScene(); sceneObserver.disconnect(); };
   if (!motion.matches && location.hash !== '#pricing') scene.classList.add('isReady');
-  if (location.hash === '#pricing') engage(); else sceneObserver.observe(arcade.querySelector('.arcadeCabinet'));
+  if (location.hash === '#pricing') engage(); else sceneObserver.observe(arcade.querySelector('.willStage'));
   scene.addEventListener('animationend',event => { if(event.target.classList.contains('pushingWill')) finishScene(); });
-  replay.addEventListener('click',playScene);
+  replay.addEventListener('click',()=>{ arcade.scrollIntoView({block:'start',behavior:motion.matches?'instant':'smooth'}); playScene(); });
   form.addEventListener('focusin',engage);
   form.addEventListener('pointerdown',engage);
   document.querySelectorAll('a[href="#pricing"]').forEach(link => link.addEventListener('click',engage));
@@ -116,13 +116,6 @@
     const incoming=steps[target];
     const direction=target>step?1:-1;
     const fromHeight=window.getBoundingClientRect().height;
-    const pointerBounds=pointer.getBoundingClientRect();
-    const handle=outgoing.querySelector('[data-step-grip]');
-    if(direction<0) { handle.style.left='0'; handle.style.right='auto'; }
-    const grip=handle.getBoundingClientRect();
-    const width=window.clientWidth;
-    const reachX=grip.left-pointerBounds.left-pointerBounds.width*.05;
-    const reachY=grip.top+4-pointerBounds.top-pointerBounds.width*.05;
     step=target;
     const focusStep = () => {
       const focus = target===2 ? send : incoming.querySelector('input,textarea');
@@ -142,25 +135,18 @@
     incoming.inert=true;
     window.classList.add('isChanging');
     const toHeight=incoming.getBoundingClientRect().height;
-    const length=token('--wc-duration-layout');
-    const motionFrames=(from,to)=>[
-      {transform:from,offset:0},
-      {transform:from,offset:.24,easing:ease},
-      {transform:to,offset:.8},
-      {transform:to,offset:1}
-    ];
-    const pull=-direction*(width+16);
+    const length=token('--wc-duration-fold');
     transitions=[
-      outgoing.animate(motionFrames('translateX(0)',`translateX(${pull}px)`),{duration:length,fill:'both'}),
-      incoming.animate(motionFrames(`translateX(${-pull}px)`,'translateX(0)'),{duration:length,fill:'both'}),
-      pointer.animate([
-        {transform:'translate(0,0)',offset:0,easing:ease},
-        {transform:`translate(${reachX}px,${reachY}px)`,offset:.2},
-        {transform:`translate(${reachX}px,${reachY+3}px)`,offset:.24,easing:ease},
-        {transform:`translate(${reachX+pull}px,${reachY+3}px)`,offset:.8,easing:ease},
-        {transform:'translate(0,0)',offset:1}
-      ],{duration:length,fill:'both'}),
-      window.animate([{height:fromHeight+'px',offset:0},{height:fromHeight+'px',offset:.24},{height:toHeight+'px',offset:1}],{duration:length,easing:ease,fill:'both'})
+      outgoing.animate([
+        {clipPath:'inset(0)',transform:'translateY(0)'},
+        {clipPath:direction>0?'inset(0 0 100% 0)':'inset(100% 0 0 0)',transform:`translateY(${-direction*24}px)`}
+      ],{duration:length*.75,easing:ease,fill:'both'}),
+      incoming.animate([
+        {clipPath:direction>0?'inset(100% 0 0 0)':'inset(0 0 100% 0)',transform:`translateY(${direction*24}px)`},
+        {clipPath:'inset(0)',transform:'translateY(0)'}
+      ],{duration:length,delay:length*.12,easing:ease,fill:'both'}),
+      pointer.animate([{transform:'translateY(0)'},{transform:'translateY(4px)',offset:.35},{transform:'translateY(0)'}],{duration:token('--wc-duration-image'),easing:ease}),
+      window.animate([{height:fromHeight+'px'},{height:toHeight+'px'}],{duration:length,easing:ease,fill:'both'})
     ];
     await Promise.all(transitions.map(animation=>animation.finished.catch(()=>{})));
     if(version!==transitionVersion) return;

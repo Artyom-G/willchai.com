@@ -2,11 +2,9 @@
 import PhotographyCharacter from "./PhotographyCharacter.astro";
 interface Photograph { key: string; src: string; alt: string; caption: string; width: number; height: number; }
 const { photographs } = Astro.props as { photographs: Photograph[] };
-const chapters = Array.from({ length: Math.ceil(photographs.length / 4) }, (_, i) => photographs.slice(i * 4, i * 4 + 4));
 ---
-<section class="photoCollection" data-photo-collection data-layout="sequence" aria-labelledby="collectionTitle">
+<section class="photoCollection" data-photo-collection data-layout="strip" aria-labelledby="collectionTitle">
   <header class="collectionHeader">
-    <PhotographyCharacter />
     <h2 id="collectionTitle">Featured photographs</h2>
     <div class="collectionActions">
       <a class="referenceReturn" href="#pricing" data-reference-return hidden></a>
@@ -16,21 +14,19 @@ const chapters = Array.from({ length: Math.ceil(photographs.length / 4) }, (_, i
       </button>
     </div>
   </header>
-  <div id="collectionImages" class="collectionImages">
-    {chapters.map((chapter, chapterIndex) => (
-      <div class="featuredChapter" data-featured-chapter>
-        <div class="chapterPin"><div class="chapterWindow">
-          {chapter.map((photo, index) => (
+  <div id="collectionImages" class="collectionImages" tabindex="0" aria-label="Featured photographs. Scroll sideways to browse.">
+          {photographs.map((photo, index) => (
             <figure class="collectionPhoto" data-collection-photo style={`--photo-ratio:${photo.width / photo.height};--photo-index:${index}`}>
+              <div class="collectionFrame">
               <a href={photo.src} data-photo-open data-photo-group="featured" data-caption={photo.caption} aria-label={`Open photograph: ${photo.caption}`}>
-                <img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading={chapterIndex === 0 ? "eager" : "lazy"} fetchpriority={chapterIndex === 0 && index === 0 ? "high" : "auto"} decoding="async" />
+                <img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading={index < 3 ? "eager" : "lazy"} fetchpriority={index === 0 ? "high" : "auto"} decoding="async" />
               </a>
-              <figcaption><span class="photoNumber">{String(chapterIndex * 4 + index + 1).padStart(2, "0")}</span><span>{photo.caption}</span></figcaption>
+              {index === 0 && <PhotographyCharacter />}
+              </div>
+              <figcaption><span class="photoNumber">{String(index + 1).padStart(2, "0")}</span><span>{photo.caption}</span></figcaption>
             </figure>
           ))}
-        </div></div>
-      </div>
-    ))}
   </div>
+  <div class="collectionPaging" data-collection-paging hidden><span data-collection-count>01 / {photographs.length}</span><div><button type="button" data-strip-previous aria-label="Previous featured photograph">Previous</button><button type="button" data-strip-next aria-label="Next featured photograph">Next</button></div></div>
   <p class="visuallyHidden" data-collection-status aria-live="polite"></p>
 </section>

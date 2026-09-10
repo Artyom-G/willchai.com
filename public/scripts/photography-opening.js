@@ -3,7 +3,7 @@
   if (!stage) return;
   const sprite = stage.querySelector('.photographyCharacterSprite');
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
-  const key = 'willchai.photography.hello.v4';
+  const key = 'willchai.photography.hello.v5';
   const token = key => {
     const value = getComputedStyle(document.documentElement).getPropertyValue(key).trim();
     const amount = parseFloat(value) || 0;
@@ -12,6 +12,8 @@
   let played = false;
   let visible = false;
   let ready = false;
+  let compositionReady = !document.querySelector('[data-photo-collection]');
+  document.addEventListener('photography:composed', () => { compositionReady=true; play(); });
   let animations = [];
   try { played = sessionStorage.getItem(key) === 'played'; } catch {}
   const observer = new IntersectionObserver(entries => {
@@ -19,7 +21,7 @@
     play();
   }, { threshold:0.6 });
   function play() {
-    if (!ready || !visible || played || motion.matches || document.hidden) return;
+    if (!ready || !compositionReady || !visible || played || motion.matches || document.hidden) return;
     played = true;
     try { sessionStorage.setItem(key, 'played'); } catch {}
     observer.disconnect();

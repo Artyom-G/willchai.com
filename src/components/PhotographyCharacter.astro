@@ -2,7 +2,7 @@
   <span class="photographyCharacterSprite"></span>
 </span>
 <style>
-  .photographyCharacter { --character-frame:256px; position:absolute; right:8%; bottom:100%; display:block; width:128px; height:176px; overflow:hidden; pointer-events:none; }
+  .photographyCharacter { --character-frame:256px; position:absolute; z-index:2; right:8%; bottom:0; display:block; width:128px; height:176px; overflow:hidden; pointer-events:none; }
   .photographyCharacterSprite { position:absolute; left:-64px; bottom:-32px; width:var(--character-frame); height:var(--character-frame); background:url("/photography/pixel-photographer.png") 0 0 / 400% 100% no-repeat; image-rendering:pixelated; transform:translateY(100%); }
   @media(max-width:62rem) {
     .photographyCharacter { --character-frame:192px; right:4%; width:96px; height:132px; }

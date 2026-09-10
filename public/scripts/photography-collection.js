@@ -1,120 +1,140 @@
 (() => {
   const collection = document.querySelector('[data-photo-collection]');
   if (!collection) return;
+  const rail = collection.querySelector('.collectionImages');
   const toggle = collection.querySelector('[data-collection-toggle]');
   const label = collection.querySelector('[data-collection-label]');
   const status = collection.querySelector('[data-collection-status]');
   const cards = [...collection.querySelectorAll('[data-collection-photo]')];
-  const chapters = [...collection.querySelectorAll('[data-featured-chapter]')].map(element => ({
-    element, window:element.querySelector('.chapterWindow'), cards:[...element.querySelectorAll('[data-collection-photo]')], distance:0, height:0
-  }));
+  const paging = collection.querySelector('[data-collection-paging]');
+  const previous = collection.querySelector('[data-strip-previous]');
+  const next = collection.querySelector('[data-strip-next]');
+  const stripCount = collection.querySelector('[data-collection-count]');
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
-  const phone = matchMedia('(max-width: 46rem)');
   const duration = key => {
     const value = getComputedStyle(document.documentElement).getPropertyValue(key).trim();
-    const amount = parseFloat(value) || 0;
-    return amount * (value.endsWith('ms') ? 1 : value.endsWith('s') ? 1000 : 1);
+    return (parseFloat(value) || 0) * (value.endsWith('ms') ? 1 : value.endsWith('s') ? 1000 : 1);
   };
   const ease = getComputedStyle(document.documentElement).getPropertyValue('--wc-ease-settle').trim();
-  const clamp = value => Math.max(0, Math.min(1, value));
-  const smooth = value => { const x = clamp(value); return x*x*x*(x*(x*6-15)+10); };
   let frame = 0;
-  let columns = 2;
-  const cardStates = new WeakMap();
-  let restoringViewerFocus = false;
-  const render = () => {
-    frame = 0;
-    if (document.hidden || !collection.classList.contains('hasPhotoSequence')) return;
-    chapters.forEach(chapter => {
-      const bounds = chapter.element.getBoundingClientRect();
-      const rowCount = Math.ceil(chapter.cards.length / columns);
-      const progress = clamp((chapter.pinTop - bounds.top) / Math.max(1,chapter.distance)) * (rowCount - 1);
-      chapter.cards.forEach((card,index) => {
-        const row = Math.floor(index / columns);
-        const rowImages = chapter.cards.slice(row*columns,(row+1)*columns).map(el => el.querySelector('img'));
-        const ready = rowImages.every(img => img.complete && img.naturalWidth);
-        const arrival = row === 0 ? 1 : (ready ? smooth((progress - (row-1) - .16) / .68) : 0);
-        const y = Math.round((1-arrival)*(chapter.height+16));
-        const previous = cardStates.get(card);
-        if(previous?.y !== y) card.style.transform = `translate3d(0,${y}px,0)`;
-        const nextImages = chapter.cards.slice((row+1)*columns,(row+2)*columns).map(el => el.querySelector('img'));
-        const covered = nextImages.length && nextImages.every(img => img.complete && img.naturalWidth) && progress >= row+.84;
-        const visible = arrival > 0 && !covered;
-        if(previous?.visible !== visible) {
-          card.setAttribute('aria-hidden', String(!visible));
-          card.querySelector('a').tabIndex = visible ? 0 : -1;
-        }
-        cardStates.set(card,{y,visible});
-      });
-    });
+  let active = 0;
+  let offsets = [];
+  let velocity = 0;
+  let lastScroll = rail.scrollLeft;
+  let lastTime = performance.now();
+  let lastEvent = 0;
+  let stretch = 0;
+  let composing = false;
+  let composed = false;
+  let composition = [];
+  const cleanFrames = () => cards.forEach(card => {
+    card.querySelector('[data-photo-open]').style.transform = '';
+  });
+  const announceComposition = () => {
+    composing = false;
+    composition.forEach(a => a.cancel());
+    composition = [];
+    collection.classList.remove('isComposing');
+    document.dispatchEvent(new CustomEvent('photography:composed'));
   };
-  const schedule = () => { if (!frame && !document.hidden) frame = requestAnimationFrame(render); };
-  const measure = () => {
-    columns = phone.matches ? 1 : 2;
-    const enabled = !motion.matches && collection.dataset.layout === 'sequence' && innerHeight >= 520;
-    collection.classList.toggle('hasPhotoSequence',enabled);
-    chapters.forEach(chapter => {
-      chapter.element.style.height = '';
-      chapter.element.style.removeProperty('--photo-stage');
-      if (enabled) {
-        const stableHeight = parseFloat(getComputedStyle(chapter.window).height);
-        chapter.height = Math.round(phone.matches ? Math.min(stableHeight,chapter.window.clientWidth*1.5+58,608) : stableHeight);
-        chapter.distance = Math.round(chapter.height*.8*(Math.ceil(chapter.cards.length/columns)-1));
-        chapter.element.style.setProperty('--photo-stage',chapter.height+'px');
-        chapter.element.style.height = (chapter.height+chapter.distance)+'px';
-        chapter.pinTop = parseFloat(getComputedStyle(chapter.element.querySelector('.chapterPin')).top) || 16;
-      }
-      chapter.cards.forEach((card,index) => {
-        cardStates.delete(card);
-        card.style.setProperty('--photo-column',String(index%columns));
-        card.style.zIndex = String(Math.floor(index/columns)+1);
-        if (!enabled) {
-          card.style.transform = '';
-          card.removeAttribute('aria-hidden');
-          card.querySelector('a').removeAttribute('tabindex');
-        }
+  const render = time => {
+    frame = 0;
+    if (document.hidden || collection.dataset.layout !== 'strip') return;
+    active = offsets.reduce((best,x,i) => Math.abs(x-rail.scrollLeft)<Math.abs(offsets[best]-rail.scrollLeft)?i:best,0);
+    if(rail.scrollLeft>=rail.scrollWidth-rail.clientWidth-2) active=cards.length-1;
+    stripCount.textContent = String(active+1).padStart(2,'0')+' / '+cards.length;
+    previous.disabled = rail.scrollLeft < 2;
+    next.disabled = rail.scrollLeft >= rail.scrollWidth-rail.clientWidth-2;
+    const target = time-lastEvent<70 && !motion.matches && !composing ? Math.min(.16,Math.abs(velocity)*.055) : 0;
+    stretch += (target-stretch)*.22;
+    if (!composing) {
+      cards.forEach((card,i) => {
+        const visible = offsets[i]+card.offsetWidth>rail.scrollLeft && offsets[i]<rail.scrollLeft+rail.clientWidth;
+        card.querySelector('[data-photo-open]').style.transform = visible && stretch>.001 ? `scaleX(${1+stretch}) scaleY(${1-stretch*.35})` : '';
       });
-    });
+    }
+    if(stretch>.001 || target>0) frame=requestAnimationFrame(render);
+  };
+  const schedule = () => { if(!frame) frame=requestAnimationFrame(render); };
+  const measure = () => {
+    const left = cards[0]?.offsetLeft || 0;
+    offsets = cards.map(card=>card.offsetLeft-left);
     schedule();
   };
+  const go = index => {
+    announceComposition();
+    const target = Math.max(0,Math.min(cards.length-1,index));
+    cards.slice(target,target+3).forEach(card=>card.querySelector('img').loading='eager');
+    rail.scrollTo({left:offsets[target],behavior:motion.matches?'instant':'smooth'});
+  };
   const setLayout = layout => {
-    collection.dataset.layout = layout;
-    label.textContent = layout === 'sheet' ? 'Play sequence' : 'View together';
-    status.textContent = layout === 'sheet' ? cards.length+' featured photographs arranged together.' : 'Featured photograph sequence.';
+    announceComposition(); cleanFrames();
+    collection.dataset.layout=layout;
+    label.textContent=layout==='sheet'?'View strip':'View together';
+    paging.hidden=layout==='sheet';
+    rail.tabIndex=layout==='strip'?0:-1;
+    rail.setAttribute('aria-label',layout==='strip'?'Featured photographs. Scroll sideways to browse.':'Featured photographs arranged together.');
+    status.textContent=layout==='sheet'?cards.length+' featured photographs arranged together.':'Featured photographs in a horizontal strip.';
     measure();
   };
-  const prepare = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      prepare.unobserve(entry.target);
-      entry.target.querySelectorAll('img').forEach(img => {
-        img.loading = 'eager';
-        img.decode().then(schedule).catch(schedule);
-      });
+  const compose = async () => {
+    if(composed) return;
+    composed=true;
+    if(motion.matches || rail.scrollLeft>8 || collection.dataset.layout!=='strip') return announceComposition();
+    const bounds=rail.getBoundingClientRect();
+    const visible=cards.filter(card=>card.getBoundingClientRect().left<bounds.right).slice(0,4);
+    await Promise.all(visible.map(card=>card.querySelector('img').decode().catch(()=>{})));
+    if(rail.scrollLeft>8 || motion.matches || collection.dataset.layout!=='strip') return announceComposition();
+    composing=true;
+    collection.classList.add('isComposing');
+    const centre=bounds.left+Math.min(bounds.width*.5,480);
+    composition=visible.map((card,i)=>{
+      const box=card.getBoundingClientRect();
+      const x=centre-(box.left+box.width/2);
+      const angle=(i-(visible.length-1)/2)*9;
+      return card.querySelector('[data-photo-open]').animate([
+        {transform:`translate(${x}px,28px) rotate(${angle}deg) scale(.72)`,offset:0},
+        {transform:`translate(${x*.75}px,-12px) rotate(${angle*.65}deg) scale(.85)`,offset:.24,easing:ease},
+        {transform:'translate(0,0) rotate(0) scale(1)',offset:1}
+      ],{duration:duration('--wc-duration-photo-compose'),delay:i*55,easing:'linear',fill:'both'});
     });
-  }, { rootMargin:'120% 0px' });
-  chapters.forEach(chapter => prepare.observe(chapter.element));
-  toggle.hidden = false;
-  setLayout(motion.matches ? 'sheet' : 'sequence');
-  toggle.addEventListener('click', () => setLayout(collection.dataset.layout === 'sheet' ? 'sequence' : 'sheet'));
-  addEventListener('scroll',schedule,{passive:true});
-  addEventListener('resize',measure,{passive:true});
-  document.fonts?.ready.then(measure);
-  let width = collection.clientWidth;
-  new ResizeObserver(() => { if (width !== collection.clientWidth) { width=collection.clientWidth; measure(); } }).observe(collection);
-  collection.addEventListener('focusin',event => {
-    if (restoringViewerFocus || !collection.classList.contains('hasPhotoSequence')) return;
-    const card = event.target.closest('[data-collection-photo]');
-    const chapter = chapters.find(item => item.cards.includes(card));
-    if (!chapter) return;
-    const row = Math.floor(chapter.cards.indexOf(card)/columns);
-    const rows = Math.ceil(chapter.cards.length/columns)-1;
-    const top = scrollY+chapter.element.getBoundingClientRect().top-chapter.pinTop+(row/Math.max(1,rows))*chapter.distance;
-    if (Math.abs(scrollY-top)>chapter.height*.25) scrollTo({top,behavior:'instant'});
+    await Promise.all(composition.map(a=>a.finished.catch(()=>{})));
+    announceComposition();
+  };
+  toggle.hidden=false; paging.hidden=false;
+  if(motion.matches) setLayout('sheet');
+  toggle.addEventListener('click',()=>setLayout(collection.dataset.layout==='strip'?'sheet':'strip'));
+  previous.addEventListener('click',()=>go(active-1));
+  next.addEventListener('click',()=>go(active+1));
+  rail.addEventListener('scroll',()=>{
+    const now=performance.now();
+    velocity=(rail.scrollLeft-lastScroll)/Math.max(8,now-lastTime);
+    lastScroll=rail.scrollLeft; lastTime=now; lastEvent=now;
+    if(composing) announceComposition();
+    schedule();
+  },{passive:true});
+  rail.addEventListener('pointerdown',()=>{ if(composing) announceComposition(); },{passive:true});
+  rail.addEventListener('keydown',event=>{
+    if(event.target!==rail || collection.dataset.layout!=='strip') return;
+    const destinations={ArrowRight:active+1,ArrowLeft:active-1,Home:0,End:cards.length-1};
+    if(event.key in destinations) { event.preventDefault(); go(destinations[event.key]); }
   });
-  motion.addEventListener('change',() => { if(motion.matches) setLayout('sheet'); else measure(); });
-  document.addEventListener('visibilitychange',() => {
-    if(document.hidden) { cancelAnimationFrame(frame); frame=0; } else measure();
+  const prepare=new IntersectionObserver(entries=>entries.forEach(entry=>{
+    if(!entry.isIntersecting) return;
+    prepare.unobserve(entry.target);
+    entry.target.querySelector('img').loading='eager';
+  }),{root:rail,rootMargin:'0px 100%'});
+  cards.forEach(card=>prepare.observe(card));
+  const entrance=new IntersectionObserver(entries=>{
+    if(entries.some(entry=>entry.isIntersecting)) { entrance.disconnect(); compose(); }
+  },{threshold:.25});
+  entrance.observe(rail);
+  new ResizeObserver(measure).observe(rail);
+  document.fonts?.ready.then(measure);
+  motion.addEventListener('change',()=>{ announceComposition(); cleanFrames(); if(motion.matches) setLayout('sheet'); });
+  document.addEventListener('visibilitychange',()=>{
+    if(document.hidden) { cancelAnimationFrame(frame); frame=0; if(composing) announceComposition(); cleanFrames(); }
+    else { stretch=0; measure(); }
   });
 
   const viewer = document.querySelector('[data-photo-viewer]');
@@ -189,55 +209,67 @@
     viewerStatus.textContent = '';
     updateReference();
   };
-  const imageTransform = (from, to) => `translate(${from.left - to.left}px, ${from.top - to.top}px) scale(${from.width / to.width}, ${from.height / to.height})`;
+  let viewerVersion=0;
+  let requestedImage=0;
+  let departing=null;
+  let departureAnimation=null;
+  const clearTransition=()=>{
+    imageAnimation?.cancel(); departureAnimation?.cancel();
+    departing?.remove(); departing=null;
+  };
+  const revealImage=(direction=1)=>{
+    if(motion.matches) return;
+    imageAnimation=image.animate([
+      {clipPath:direction>0?'inset(0 100% 0 0)':'inset(0 0 0 100%)',transform:'scaleX(1.22)',transformOrigin:direction>0?'0 50%':'100% 50%'},
+      {clipPath:'inset(0)',transform:'scaleX(1)',transformOrigin:direction>0?'0 50%':'100% 50%'}
+    ],{duration:duration('--wc-duration-photo-stretch'),easing:ease});
+  };
   const open = (link) => {
     if (viewer.open || closing) return;
+    if(composing) announceComposition();
     origin = link;
     group = visibleLinks(link.dataset.photoGroup);
-    const source = link.querySelector('img')?.getBoundingClientRect();
     previousOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
-    showImage(group.indexOf(link));
+    requestedImage=group.indexOf(link);
+    showImage(requestedImage);
     viewer.showModal();
-    closeButton.focus({ preventScroll: true });
-    const target = image.getBoundingClientRect();
-    if (!motion.matches && source?.width && target.width) {
-      imageAnimation = image.animate([
-        { transform: imageTransform(source, target), transformOrigin: '0 0' },
-        { transform: 'none', transformOrigin: '0 0' },
-      ], { duration: duration('--wc-duration-image'), easing: ease });
-    }
+    closeButton.focus({preventScroll:true});
+    const version=++viewerVersion;
+    image.decode().catch(()=>{}).then(()=>{ if(version===viewerVersion && viewer.open) revealImage(); });
   };
-  const close = async () => {
-    if (!viewer.open || closing) return;
-    closing = true;
-    imageAnimation?.cancel();
-    const sourceLink = group[current];
-    const destination = sourceLink?.querySelector('img')?.getBoundingClientRect();
-    const from = image.getBoundingClientRect();
-    const returnsToOrigin = sourceLink === origin && destination?.bottom > 0 && destination.top < innerHeight;
-    if (!motion.matches) {
-      imageAnimation = image.animate([
-        { transform: 'none', opacity: 1, transformOrigin: '0 0' },
-        returnsToOrigin
-          ? { transform: imageTransform(destination, from), opacity: 1, transformOrigin: '0 0' }
-          : { opacity: 0, transform: 'scale(0.985)', transformOrigin: '50% 50%' },
-      ], { duration: duration('--wc-duration-image'), easing: ease, fill: 'forwards' });
-      await imageAnimation.finished.catch(() => {});
-    }
+  const close = () => {
+    if(!viewer.open || closing) return;
+    ++viewerVersion; clearTransition();
     viewer.close();
-    imageAnimation?.cancel();
-    document.body.style.overflow = previousOverflow;
-    restoringViewerFocus = true;
-    origin?.focus({ preventScroll: true });
-    restoringViewerFocus = false;
-    closing = false;
+    document.body.style.overflow=previousOverflow;
+    origin?.focus({preventScroll:true});
     schedule();
   };
-  const step = (amount) => {
-    if (closing) return;
-    showImage(current + amount);
-    if (!motion.matches) imageAnimation = image.animate([{ opacity: 0 }, { opacity: 1 }], { duration: duration('--wc-duration-interface'), easing: ease });
+  const step = async amount => {
+    if(closing || !viewer.open) return;
+    const version=++viewerVersion;
+    requestedImage=(requestedImage+amount+group.length)%group.length;
+    const target=requestedImage;
+    const prepared=new Image(); prepared.src=group[target].href;
+    try { await prepared.decode(); }
+    catch { if(version===viewerVersion) viewerStatus.textContent='Please try opening this photograph again.'; return; }
+    if(version!==viewerVersion || !viewer.open) return;
+    clearTransition();
+    if(!motion.matches) {
+      departing=image.cloneNode(false);
+      departing.removeAttribute('data-viewer-image');
+      departing.className='viewerDeparting';
+      departing.alt=''; departing.setAttribute('aria-hidden','true');
+      stage.append(departing);
+      departureAnimation=departing.animate([
+        {clipPath:'inset(0)',transform:'scaleX(1)',transformOrigin:amount>0?'100% 50%':'0 50%'},
+        {clipPath:amount>0?'inset(0 0 0 100%)':'inset(0 100% 0 0)',transform:'scaleX(.78)',transformOrigin:amount>0?'100% 50%':'0 50%'}
+      ],{duration:duration('--wc-duration-photo-stretch'),easing:ease,fill:'forwards'});
+    }
+    showImage(target); revealImage(amount);
+    await imageAnimation?.finished.catch(()=>{});
+    if(version===viewerVersion) { departing?.remove(); departing=null; departureAnimation?.cancel(); }
   };
 
   document.addEventListener('click', (event) => {
@@ -270,5 +302,5 @@
     if (Math.abs(x) > 60 && Math.abs(y) < 60) { swipeConsumed = true; step(x < 0 ? 1 : -1); }
   });
   stage.addEventListener('pointercancel', () => { touchStart = null; });
-  motion.addEventListener('change', () => { if (motion.matches) imageAnimation?.cancel(); });
+  motion.addEventListener('change', () => { if (motion.matches) clearTransition(); });
 })();
