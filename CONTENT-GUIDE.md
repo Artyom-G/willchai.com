@@ -21,9 +21,10 @@ item has one canonical home when it intersects several disciplines.
 The Photography page introduces Will directly and names the opening selection
 Featured photographs for assistive tools. Publish the nine approved photographs
 from the existing public Photography page as one uncategorized sequence. Keep
-the presentation caption free. An image led McMaster University feature and two
-compact entries for Foxwood Homes and Platinum Moon appear before the inquiry
-route.
+the presentation caption free. An animated collaboration composition appears
+before the inquiry route. McMaster University holds the image led feature while
+Foxwood Homes and Platinum Moon use compact supporting positions. All three
+remain visible in the settled composition.
 
 The wider portfolio appears as a caption free shuffle loaded in controlled
 batches. The complete service footer follows it with contact, policy, rights,
@@ -45,9 +46,10 @@ remain available. The board introduces Event name and two questions about place
 and date. Next advances to optional budget and notes, then to the completed
 inquiry. The final choices are Open email and Copy text. Back keeps all answers.
 Budgets accept an amount or range in CAD, with guidance available. The supplied
-amount is labelled Your budget. Will quotes assignments personally and keeps his
-pricing rules private. Further details can be added in the email. The decorative
-Gold tier card reads Standard event package.
+amount is labelled Your budget. The departing package prop places $600 first.
+The builder states $120 an hour and $360 for a large event as flexible starting
+points, and presents $600 as a budget with room for broader coverage. Will quotes
+assignments personally. Further details can be added in the email.
 
 Visitors may add references from an opened featured or shuffle photograph.
 Reference selections produce image links in the inquiry and remain editable

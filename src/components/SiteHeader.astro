@@ -1,9 +1,10 @@
 ---
 interface Props {
   current?: "photography" | "films" | "projects" | "resume" | "hey";
+  showPrimaryNavigation?: boolean;
 }
 
-const { current } = Astro.props;
+const { current, showPrimaryNavigation = true } = Astro.props;
 const links = [
   { key: "photography", label: "Photography", href: "/photography/" },
   { key: "films", label: "Films", href: "/films/" },
@@ -12,19 +13,21 @@ const links = [
 ];
 ---
 
-<header class="siteHeader">
+<header class:list={["siteHeader", { siteHeaderCompact: !showPrimaryNavigation }]}>
   <a class="siteBrand" href="/" aria-label="Will Chai, home">
     <img src="/assets/willchai-mark.avif" alt="" width="42" height="42" />
     <span>willchai.com</span>
   </a>
-  <nav class="siteNav" aria-label="Primary navigation">
-    {
-      links.map((link) => (
-        <a href={link.href} aria-current={current === link.key ? "page" : undefined}>
-          {link.label}
-        </a>
-      ))
-    }
-  </nav>
+  {
+    showPrimaryNavigation && (
+      <nav class="siteNav" aria-label="Primary navigation">
+        {links.map((link) => (
+          <a href={link.href} aria-current={current === link.key ? "page" : undefined}>
+            {link.label}
+          </a>
+        ))}
+      </nav>
+    )
+  }
   <a class="headerContact" href="mailto:me@willchai.com">Contact</a>
 </header>

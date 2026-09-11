@@ -39,8 +39,10 @@ work and the route to contact should remain immediate and legible.
 
 Photography is the professional service and receives one substantial page with
 its own client inquiry path. Nine approved featured photographs flow through
-one uncategorized, caption free scroll sequence. Three client cards
-for McMaster University, Foxwood Homes, and Platinum Moon follow the sequence.
+one uncategorized, caption free scroll sequence. An animated collaboration
+composition for McMaster University, Foxwood Homes, and Platinum Moon follows
+the sequence. Its settled frame keeps all three organizations visible together
+while McMaster carries the larger position.
 The shoot builder comes next, then a caption free shuffle carries the wider
 body of work into the complete service footer. Films and Projects are separate
 destinations. Individual work pages belong within those two areas. Sharing
@@ -300,7 +302,7 @@ specific to contact.
 Photography uses Will's approved 32 × 32 pixel artwork for brief appearances.
 The opening enlarges the artwork in whole pixel steps above the Featured
 photographs boundary, then lets the character duck behind it after four seconds. The pricing scene gives the character a physical action by pushing
-a decorative Gold tier card away to reveal the shoot builder. The homepage
+a fixed $600 package card away to reveal the shoot builder. The homepage
 pointer and irregular blue shape connect this scene to Will's existing work.
 
 The current blue W in `system/assets/willchai-mark.avif` is the official compact mark and
@@ -314,7 +316,8 @@ image changes use 360 milliseconds. Movement is normally limited to opacity,
 crop, colour, or a translation of no more than eight pixels. Reduced-motion
 mode removes translations and changes content without an animated delay.
 
-Photography uses the shared site header, the Photography title, and a short
+Photography uses a compact site header with the shared identity and Contact,
+the Photography title, and a short
 portrait and event description. Nine featured photographs move through a sticky
 viewport as ordinary vertical scrolling advances the sequence. Each card enters
 from the lower right, reaches the centre at full scale, then leaves through the
@@ -330,13 +333,15 @@ caption free presentation. Descriptive alternative text remains available to
 assistive tools.
 
 The opening character emerges from the lower edge of the first photograph after
-the collection settles, takes a photograph, and ducks behind the edge. The four
-second greeting uses the approved four poses and integer enlargement. The later
+the collection settles, takes a photograph, and ducks behind the edge. A separate
+collection level stage follows the first card and keeps the complete greeting
+above incoming photographs. Stable phone measurements wait for an active scroll
+gesture to settle. The four second greeting uses the approved four poses and integer enlargement. The later
 appearance retains the approved pushing poses. A blue rim joins the enclosure
-sides beneath the Gold tier prop. Will pushes the panel past the edge, recovers
+sides beneath the $600 package prop. Will pushes the panel past the edge, recovers
 his stance, pauses, and ducks vertically behind the rim. The scene stays opaque
-until his exit is complete, then reveals the board. The prop reads Standard
-event package. Direct inquiry links and form interaction reveal the usable board
+until his exit is complete, then reveals the board. The prop presents $600
+event photography. Direct inquiry links and form interaction reveal the usable board
 immediately. Replay remains available.
 
 The white shoot board retains its irregular blue enclosure. An editable shoot
@@ -354,14 +359,18 @@ headers provide a return to the shoot when references are selected. Clipboard
 failure selects the message for manual copying. Inquiry contents stay in the
 current page.
 
-The client proof gives McMaster University the large image led position because
-Will studies, works, and photographs there. Foxwood Homes and Platinum Moon use
-smaller transparent entries with their marks, names, and work types. A staggered
-entrance and gentle photograph drift carry the section into view. The shuffle
+The client proof reads as a Will Chai collaboration composition. McMaster University
+holds the large image led position because Will studies, works, and photographs
+there. Foxwood Homes and Platinum Moon enter as smaller transparent elements.
+The heading, photograph, and two marks settle in stages, then all three
+organizations remain visible together. The shuffle
 reserves image dimensions and fills continuous columns while preserving earlier
 positions. The footer retains the original contact ticket, policy, rights and
 homepage return. Reduced motion presents the static featured grid, direct image
-changes and usable builder. Actual pricing remains provisional.
+changes and usable builder. The pricing scene gives $600 the dominant visual
+position and remains readable before Will pushes the fixed package away. The
+builder states flexible starting points of $120 an hour and $360 for a large
+event, with $600 presented as a budget allowing broader coverage.
 
 ## Stewardship
 

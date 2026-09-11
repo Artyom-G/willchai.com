@@ -315,13 +315,16 @@ a keyboard reachable link in source order. Keyboard focus centres its card.
 Reduced motion removes the sticky passage and presents a static responsive grid.
 
 The opening character emerges from the lower edge of the first photograph after
-the collection settles, takes a photograph, and ducks behind the edge. The four
-second greeting uses the approved four poses and integer enlargement. The later
+the collection settles, takes a photograph, and ducks behind the edge. Its
+collection level stage follows the first card while sitting above the incoming
+stack. Phone viewport height changes during an active gesture preserve the
+current geometry, and meaningful measurement updates run after scrolling
+settles. The four second greeting uses the approved four poses and integer enlargement. The later
 appearance retains the approved pushing poses. A blue rim joins the enclosure
-sides beneath the Gold tier prop. Will pushes the panel past the edge, recovers
+sides beneath the $600 package prop. Will pushes the panel past the edge, recovers
 his stance, pauses, and ducks vertically behind the rim. The scene stays opaque
-until his exit is complete, then reveals the board. The prop reads Standard
-event package. Direct inquiry links and form interaction reveal the usable board
+until his exit is complete, then reveals the board. The prop presents $600
+event photography. Direct inquiry links and form interaction reveal the usable board
 immediately. Replay remains available.
 
 The white shoot board retains its irregular blue enclosure. An editable shoot
@@ -330,7 +333,9 @@ CAD budget and additional notes, then the completed inquiry with Open email and
 Copy text. Back preserves every answer. The rough pointer accompanies Next and
 responds briefly to a press. A directional mask exchanges the question pair while
 the title and photographic preview stay anchored. Supplied amounts are labelled
-Your budget, and visitors may request guidance. Actual fees are quoted personally.
+Your budget, and visitors may request guidance. The budget guidance places $600
+first, followed by flexible starting points of $120 an hour and $360 for a large
+event. Actual fees are quoted personally.
 
 An opened photograph offers Add reference across the featured work and shuffle.
 Selections appear on the shoot board and remain removable. Their image links
@@ -339,26 +344,31 @@ headers provide a return to the shoot when references are selected. Clipboard
 failure selects the message for manual copying. Inquiry contents stay in the
 current page.
 
-The client proof uses an asymmetric composition. McMaster University occupies
-two thirds of the desktop width with an image led panel and personal copy.
-Foxwood Homes and Platinum Moon share the remaining column as transparent
-supporting entries. The section enters in stages and the McMaster photograph
-moves gently with page scroll. The shuffle reserves
+The client proof uses an animated Will Chai collaboration composition. McMaster
+University occupies two thirds of the desktop width with an image led panel and
+personal copy. Foxwood Homes and Platinum Moon settle into the remaining column
+as transparent supporting entries. The heading and three organizations enter in
+stages, then remain visible together while the McMaster photograph moves gently
+with page scroll. The shuffle reserves
 image dimensions and fills continuous columns while preserving earlier positions.
 The footer retains the original contact ticket, policy, rights and homepage
 return. Reduced motion presents the static featured grid, direct image changes
-and usable builder. Actual pricing remains provisional.
+and usable builder. Final quotes remain personal to each assignment.
 
-The production reference is `system/photography-stack.html`. The Gold tier
-prop uses the bounded `--wc-pricing-prop-gold` token. Its four second sequence
-uses `--wc-duration-scene`. The enclosure derives from the homepage portrait
+The Photography header uses the shared identity mark and Contact action in a
+compact arrangement. Its primary destination labels are omitted on this page.
+
+The production reference is `system/photography-stack.html`. The departing
+package prop uses the bounded `--wc-pricing-prop-gold` token. Its eight second
+sequence uses `--wc-duration-pricing-scene`. The enclosure derives from the homepage portrait
 and ticket geometry, while controls retain Funnel Sans and selected headings
 use Unbounded. Gold is specific to the departing prop.
 
 JavaScript readers convert duration tokens from seconds or milliseconds into
 milliseconds before starting an animation. The production stylesheet may
-express 4000ms as 4s. Verify the greeting and field transition against the
-production build when changing their timing.
+express 4000ms as 4s. The character greeting retains four seconds, and the
+pricing scene receives eight seconds. Verify both against the production build
+when changing their timing.
 
 ## Films and Projects
 

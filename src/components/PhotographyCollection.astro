@@ -13,10 +13,12 @@ const { photographs } = Astro.props as { photographs: Photograph[] };
             <a href={photo.src} data-photo-open data-photo-group="featured" aria-label={`Open featured photograph ${index + 1}`}>
               <img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading={index < 2 ? "eager" : "lazy"} fetchpriority={index === 0 ? "high" : "auto"} decoding="async" />
             </a>
-            {index === 0 && <PhotographyCharacter />}
           </div>
         </figure>
       ))}
+    </div>
+    <div class="collectionCharacterStage" data-collection-character>
+      <PhotographyCharacter />
     </div>
   </div>
   <p class="visuallyHidden" data-collection-status aria-live="polite"></p>

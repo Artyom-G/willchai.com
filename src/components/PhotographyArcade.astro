@@ -17,7 +17,7 @@
             </section>
             <section class="shootStep" data-shoot-step="1" aria-label="Optional details" hidden>
               <div class="shootFields">
-                <div class="shootBudget"><label for="shoot-budget">Your budget <span>(optional)</span></label><div class="shootBudgetInput"><input id="shoot-budget" type="text" name="budget" maxlength="64" placeholder="Amount or range" autocomplete="off" aria-describedby="shoot-currency" /><span id="shoot-currency">CAD</span></div><label class="shootGuidance"><input type="checkbox" name="guidance" value="yes" /><span>I’d like guidance</span></label></div>
+                <div class="shootBudget"><label for="shoot-budget">Your budget <span>(optional)</span></label><div class="shootBudgetInput"><input id="shoot-budget" type="text" name="budget" maxlength="64" placeholder="e.g. $600" autocomplete="off" aria-describedby="shoot-currency shoot-budget-guide" /><span id="shoot-currency">CAD</span></div><p id="shoot-budget-guide" class="shootBudgetGuide"><strong>$600</strong> gives us room to shape the coverage. Smaller shoots can begin at $120 an hour, and large events can begin at $360.</p><label class="shootGuidance"><input type="checkbox" name="guidance" value="yes" /><span>Help me shape a budget</span></label></div>
                 <label for="shoot-idea">Anything else? <span>(optional)</span><textarea id="shoot-idea" name="idea" rows="3" maxlength="1500" placeholder="The people, the occasion, what you’re imagining…"></textarea></label>
               </div>
               <span class="shootGrip" data-step-grip aria-hidden="true"></span>
@@ -36,7 +36,7 @@
         </div>
         <aside class="shootReceipt" aria-labelledby="shootSummaryTitle">
           <div class="shootReceiptPhoto"><img data-shoot-image src="/photography/portrait-lakeshore.webp" alt="Lakeshore portrait" width="1707" height="2560" loading="lazy" decoding="async" /></div>
-          <div class="shootReceiptCopy"><h3 id="shootSummaryTitle" data-shoot-summary-title>Your shoot</h3><p class="shootSelection" data-shoot-summary>Your plans, taking shape.</p><p class="shootBudgetSummary" data-budget-summary hidden></p><p class="shootQuote">A quote for your plans.</p></div>
+          <div class="shootReceiptCopy"><h3 id="shootSummaryTitle" data-shoot-summary-title>Your shoot</h3><p class="shootSelection" data-shoot-summary>Your plans, taking shape.</p><p class="shootBudgetSummary" data-budget-summary hidden></p><p class="shootQuote">Coverage shaped around your plans.</p></div>
           <div class="shootReferences" data-shoot-references hidden><p data-reference-heading></p><div class="shootReferenceImages" data-reference-images></div></div>
         </aside>
       </form>
@@ -44,7 +44,7 @@
     </div>
     <div class="goldScene" data-gold-scene aria-hidden="true" inert>
       <div class="goldBackdrop"></div><div class="goldLedge"></div>
-      <div class="goldPlan"><div class="goldPlanHeading">Photography packages</div><p class="goldTier">Gold tier</p><p class="goldPackage">Standard event package</p><div class="goldRule"></div><p>A fixed format for every occasion.</p><div class="goldFakeButton">Select package</div></div>
+      <div class="goldPlan"><div class="goldPlanHeading">The standard package</div><p class="goldPrice">$600</p><p class="goldPackage">Event photography</p><div class="goldRule"></div><p>One fixed format for every event.</p><div class="goldFakeButton">Choose package</div></div>
       <div class="willStage"><div class="pushingWill"><span class="pushingWillSprite"></span></div></div>
     </div>
   </div>

@@ -43,7 +43,7 @@ const shuffleBatchSize = 36;
   <script slot="head" is:inline src="/scripts/photography-collection.js" defer></script>
   <script slot="head" is:inline src="/scripts/photography-arcade.js" defer></script>
   <div class="pageShell">
-    <SiteHeader current="photography" />
+    <SiteHeader current="photography" showPrimaryNavigation={false} />
     <main id="main" class="pageMain">
       <header class="photographyOpening">
         <h1>Photography.</h1>
@@ -52,7 +52,12 @@ const shuffleBatchSize = 36;
       <PhotographyCollection photographs={featuredPhotographs} />
 
       <section class="clientProof" data-client-proof aria-labelledby="clientProofTitle">
-        <h2 id="clientProofTitle" class="visuallyHidden">Selected photography clients</h2>
+        <header class="clientProofHeader">
+          <h2 id="clientProofTitle">
+            <span aria-hidden="true">Will Chai <span class="clientProofMultiply">×</span></span>
+            <span class="visuallyHidden">Organizations Will Chai has photographed for</span>
+          </h2>
+        </header>
         <div class="clientProofComposition">
           <article class="clientFeature">
             <img
@@ -68,7 +73,7 @@ const shuffleBatchSize = 36;
               <img src="/photography/clients/mcmaster.avif" alt="" width="500" height="500" loading="lazy" decoding="async" />
               <div>
                 <h3>McMaster University</h3>
-                <p>McMaster is where I study, work, and photograph.</p>
+                <p>I study here, work here, and photograph the people around it.</p>
               </div>
             </div>
           </article>

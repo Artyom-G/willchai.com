@@ -4,6 +4,7 @@
 
   const viewport = section.querySelector('.collectionViewport');
   const cards = [...section.querySelectorAll('[data-collection-photo]')];
+  const characterStage = section.querySelector('[data-collection-character]');
   const status = section.querySelector('[data-collection-status]');
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
@@ -17,6 +18,10 @@
   let keyboardIntent = false;
   let composed = false;
   let currentCard = -1;
+  let scrolling = false;
+  let pendingMeasure = false;
+  let resizeTimer = 0;
+  let scrollTimer = 0;
 
   const clearCardMotion = () => {
     cards.forEach((card) => {
@@ -28,6 +33,12 @@
       card.style.removeProperty('pointer-events');
       card.style.removeProperty('will-change');
     });
+    if (characterStage) {
+      characterStage.style.removeProperty('--orbit-card-width');
+      characterStage.style.removeProperty('--orbit-card-height');
+      characterStage.style.removeProperty('transform');
+      characterStage.style.removeProperty('opacity');
+    }
   };
 
   const render = () => {
@@ -50,12 +61,18 @@
       const proximity = Math.abs(q);
       const scale = 1 - Math.min(proximity, 2) * 0.075;
       const angle = clamp(q, -2, 2) * (mobile ? 6 : 8);
-      card.style.transform = `translate(-50%,-50%) translate3d(${x}px,${y}px,0) rotate(${angle}deg) scale(${scale})`;
+      const transform = `translate(-50%,-50%) translate3d(${x}px,${y}px,0) rotate(${angle}deg) scale(${scale})`;
+      const opacity = clamp((2.3 - proximity) / 0.5, 0, 1);
+      card.style.transform = transform;
       card.style.zIndex = String(100 - Math.round(proximity * 10));
-      card.style.opacity = String(clamp((2.3 - proximity) / 0.5, 0, 1));
+      card.style.opacity = String(opacity);
       card.style.pointerEvents = proximity < 1.5 ? 'auto' : 'none';
       card.style.willChange = active && proximity < 2.3 ? 'transform' : 'auto';
       if (proximity < 2.5) card.querySelector('img').loading = 'eager';
+      if (index === 0 && characterStage) {
+        characterStage.style.transform = transform;
+        characterStage.style.opacity = String(opacity);
+      }
     });
 
     if (!composed) {
@@ -93,19 +110,54 @@
       const cardWidth = Math.min(width * (mobile ? 0.86 : 0.68), height * (mobile ? 0.69 : 0.79) * ratio);
       card.style.setProperty('--orbit-card-width', `${cardWidth}px`);
       card.style.setProperty('--orbit-card-height', `${cardWidth / ratio}px`);
+      if (card === cards[0] && characterStage) {
+        characterStage.style.setProperty('--orbit-card-width', `${cardWidth}px`);
+        characterStage.style.setProperty('--orbit-card-height', `${cardWidth / ratio}px`);
+      }
     });
     schedule();
   };
 
-  addEventListener('scroll', schedule, { passive: true });
-  addEventListener('resize', measure, { passive: true });
+  const runPendingMeasure = () => {
+    scrolling = false;
+    clearTimeout(scrollTimer);
+    if (!pendingMeasure) return;
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      pendingMeasure = false;
+      measure();
+    }, 120);
+  };
+
+  const requestMeasure = ({ force = false } = {}) => {
+    const nextWidth = viewport.clientWidth;
+    const mobileHeightOnlyChange = nextWidth <= 640 && Math.abs(nextWidth - width) < 2;
+    if (mobileHeightOnlyChange && !force) {
+      schedule();
+      return;
+    }
+    pendingMeasure = true;
+    if (!scrolling) runPendingMeasure();
+  };
+
+  addEventListener('scroll', () => {
+    scrolling = true;
+    schedule();
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(runPendingMeasure, 180);
+  }, { passive: true });
+  addEventListener('scrollend', runPendingMeasure, { passive: true });
+  addEventListener('resize', requestMeasure, { passive: true });
   addEventListener('keydown', (event) => {
     if (event.key === 'Tab') keyboardIntent = true;
   });
   addEventListener('pointerdown', () => {
     keyboardIntent = false;
   }, { passive: true });
-  motion.addEventListener('change', measure);
+  motion.addEventListener('change', () => {
+    pendingMeasure = false;
+    measure();
+  });
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
       cancelAnimationFrame(frame);
@@ -122,8 +174,6 @@
   observer.observe(section);
 
   cards.forEach((card) => {
-    const image = card.querySelector('img');
-    image.addEventListener('load', measure, { once: true });
     card.addEventListener('focusin', () => {
       if (!motion.matches && keyboardIntent) {
         scrollTo({ top: sectionTop + cards.indexOf(card) * cardStep, behavior: 'auto' });
@@ -132,6 +182,6 @@
     });
   });
 
-  document.fonts?.ready.then(measure);
+  document.fonts?.ready.then(() => requestMeasure({ force: true }));
   measure();
 })();

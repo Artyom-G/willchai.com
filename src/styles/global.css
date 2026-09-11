@@ -107,6 +107,10 @@ a {
   background: var(--wc-white);
 }
 
+.siteHeaderCompact {
+  grid-template-columns: minmax(12rem, 1fr) auto;
+}
+
 .siteBrand {
   display: inline-flex;
   width: fit-content;

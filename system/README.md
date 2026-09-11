@@ -105,7 +105,8 @@ two competing versions.
 
 ## Photography motion and pricing
 
-Photography uses the shared site header, the Photography title, and a short
+Photography uses a compact site header with the shared identity and Contact,
+the Photography title, and a short
 portrait and event description. Nine approved photographs move through a sticky
 viewport while ordinary vertical scrolling advances the sequence. Cards enter
 from the lower right, reach the centre at full scale, then leave through the upper
@@ -116,13 +117,14 @@ scale shift give nearby cards depth. Every photograph remains a keyboard reachab
 link and opens in the established viewer. Reduced motion presents a static grid.
 
 The opening character emerges from the lower edge of the first photograph after
-the collection settles, takes a photograph, and ducks behind the edge. The four
-second greeting uses the approved four poses and integer enlargement. The later
+the collection settles, takes a photograph, and ducks behind the edge. A separate
+stage follows the first card above the incoming stack, and phone measurements
+wait for active scrolling to settle. The four second greeting uses the approved four poses and integer enlargement. The later
 appearance retains the approved pushing poses. A blue rim joins the enclosure
-sides beneath the Gold tier prop. Will pushes the panel past the edge, recovers
+sides beneath the $600 package prop. Will pushes the panel past the edge, recovers
 his stance, pauses, and ducks vertically behind the rim. The scene stays opaque
-until his exit is complete, then reveals the board. The prop reads Standard
-event package. Direct inquiry links and form interaction reveal the usable board
+until his exit is complete, then reveals the board. The prop presents $600
+event photography. Direct inquiry links and form interaction reveal the usable board
 immediately. Replay remains available.
 
 The white shoot board retains its irregular blue enclosure. An editable shoot
@@ -131,7 +133,9 @@ CAD budget and additional notes, then the completed inquiry with Open email and
 Copy text. Back preserves every answer. The rough pointer accompanies Next and
 responds briefly to a press. A directional mask exchanges the question pair while
 the title and photographic preview stay anchored. Supplied amounts are labelled
-Your budget, and visitors may request guidance. Actual fees are quoted personally.
+Your budget, and visitors may request guidance. The guidance places $600 first,
+then states flexible starting points of $120 an hour and $360 for a large event.
+Actual fees are quoted personally.
 
 An opened photograph offers Add reference across the featured work and shuffle.
 Selections appear on the shoot board and remain removable. Their image links
@@ -142,9 +146,10 @@ current page.
 
 The client proof gives McMaster University an image led feature occupying two
 thirds of the desktop composition. Foxwood Homes and Platinum Moon appear as
-smaller transparent entries in the remaining column. A staged entrance and
-gentle photograph drift animate the group. The shuffle reserves image
+smaller transparent entries in the remaining column. A staged Will Chai
+collaboration scene settles all three organizations into one visible group.
+Gentle photograph drift animates the group. The shuffle reserves image
 dimensions and fills continuous columns while preserving earlier positions. The
 footer retains the original contact ticket, policy, rights and homepage return.
 Reduced motion presents the static featured grid, direct image changes and usable
-builder. Actual pricing remains provisional.
+builder. Final quotes remain personal to each assignment.
