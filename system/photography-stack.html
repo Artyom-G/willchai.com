@@ -25,12 +25,13 @@
   </style>
   <script src="../public/scripts/photography-opening.js" defer></script>
   <script src="../public/scripts/photography-orbit.js" defer></script>
+  <script src="../public/scripts/photography-clients.js" defer></script>
   <script src="../public/scripts/photography-collection.js" defer></script>
 </head>
 <body class="photographyPage">
   <header class="studyIntro">
     <a href="index.html">Return to the system</a>
-    <p>Nine approved photographs move from the lower right through the centre toward the upper left as the page scrolls. The client section contains three selected organizations.</p>
+    <p>Nine approved photographs move from the lower right through the centre toward the upper left as the page scrolls. McMaster leads the client section, with Foxwood Homes and Platinum Moon in supporting positions.</p>
   </header>
   <div class="pageShell">
     <main class="pageMain">
@@ -57,12 +58,17 @@
         <p class="visuallyHidden" data-collection-status aria-live="polite"></p>
       </section>
 
-      <section class="clientProof" aria-labelledby="clientProofTitle">
-        <header class="clientProofHeader"><h2 id="clientProofTitle">Selected clients.</h2></header>
-        <div class="clientCardGrid">
-          <article class="clientCard clientCard-mcmaster"><div class="clientCardArtwork"><img src="../public/photography/clients/mcmaster.avif" alt="McMaster University logo" width="500" height="500"></div><div class="clientCardCopy"><h3>McMaster University</h3><p>University events and performances</p></div></article>
-          <article class="clientCard clientCard-foxwood"><div class="clientCardArtwork"><img src="../public/photography/clients/foxwood-homes.png" alt="Foxwood Homes logo" width="213" height="141"></div><div class="clientCardCopy"><h3>Foxwood Homes</h3><p>Residential projects</p></div></article>
-          <article class="clientCard clientCard-platinum"><div class="clientCardArtwork"><img src="../public/photography/clients/platinum-moon.avif" alt="Platinum Moon logo" width="500" height="500"></div><div class="clientCardCopy"><h3>Platinum Moon</h3><p>Band photography and live performance</p></div></article>
+      <section class="clientProof" data-client-proof aria-labelledby="clientProofTitle">
+        <h2 id="clientProofTitle" class="visuallyHidden">Selected photography clients</h2>
+        <div class="clientProofComposition">
+          <article class="clientFeature">
+            <img class="clientFeaturePhoto" src="../public/photography/concert-mcmaster.avif" alt="A vocalist in a McMaster University hoodie performing beneath warm stage lights" width="1920" height="2400">
+            <div class="clientFeatureCopy"><img src="../public/photography/clients/mcmaster.avif" alt="" width="500" height="500"><div><h3>McMaster University</h3><p>McMaster is where I study, work, and photograph.</p></div></div>
+          </article>
+          <div class="clientSupport">
+            <article class="clientSupportItem clientSupportItem-foxwood"><img src="../public/photography/clients/foxwood-homes.png" alt="" width="213" height="141"><div class="clientSupportCopy"><h3>Foxwood Homes</h3><p>Residential projects</p></div></article>
+            <article class="clientSupportItem clientSupportItem-platinum"><img src="../public/photography/clients/platinum-moon.avif" alt="" width="500" height="500"><div class="clientSupportCopy"><h3>Platinum Moon</h3><p>Band photography and live performance</p></div></article>
+          </div>
         </div>
       </section>
 

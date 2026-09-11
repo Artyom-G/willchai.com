@@ -21,8 +21,9 @@ item has one canonical home when it intersects several disciplines.
 The Photography page introduces Will directly and names the opening selection
 Featured photographs for assistive tools. Publish the nine approved photographs
 from the existing public Photography page as one uncategorized sequence. Keep
-the presentation caption free. Three client cards identify McMaster University,
-Foxwood Homes, and Platinum Moon before the inquiry route.
+the presentation caption free. An image led McMaster University feature and two
+compact entries for Foxwood Homes and Platinum Moon appear before the inquiry
+route.
 
 The wider portfolio appears as a caption free shuffle loaded in controlled
 batches. The complete service footer follows it with contact, policy, rights,

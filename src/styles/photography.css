@@ -24,18 +24,37 @@ html:has(.photographyPage) { scroll-behavior:auto; scrollbar-gutter:stable; }
 .photoCollection.isOrbit .collectionPhoto a { width:100%; height:100%; }
 .photoCollection.isOrbit .collectionPhoto a { display:flex; align-items:center; justify-content:center; background:var(--wc-white); }
 .photoCollection.isOrbit .collectionPhoto img { width:100%; height:100%; object-fit:contain; }
-.clientProof { padding:var(--wc-space-12) clamp(1rem,4vw,4rem); background:var(--wc-cloud); }
-.clientProofHeader { display:flex; align-items:end; justify-content:space-between; gap:var(--wc-space-6); padding-bottom:var(--wc-space-6); }
-.clientProofHeader h2 { max-width:17ch; margin:0; font-family:var(--wc-font-display); font-size:clamp(1.8rem,4vw,4rem); line-height:1.12; font-weight:400; letter-spacing:-.04em; }
-.clientCardGrid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:var(--wc-space-4); }
-.clientCard { min-width:0; min-height:clamp(22rem,35vw,34rem); display:grid; grid-template-rows:minmax(0,1fr) auto; background:var(--wc-white); border:1px solid var(--wc-hairline); }
-.clientCardArtwork { display:grid; min-height:0; place-items:center; padding:clamp(2rem,5vw,5rem) var(--wc-space-6); overflow:hidden; }
-.clientCardArtwork img { display:block; width:min(100%,17rem); max-height:14rem; object-fit:contain; }
-.clientCard-foxwood .clientCardArtwork img { width:min(100%,14rem); }
-.clientCard-platinum .clientCardArtwork img { width:min(100%,13rem); }
-.clientCardCopy { padding:var(--wc-space-6); border-top:1px solid var(--wc-hairline); }
-.clientCardCopy h3 { margin:0; font-family:var(--wc-font-sans); font-size:clamp(1.2rem,1.8vw,1.6rem); line-height:1.25; font-weight:600; }
-.clientCardCopy p { margin:var(--wc-space-2) 0 0; color:var(--wc-slate); font-size:var(--wc-font-small); line-height:1.45; }
+.clientProof { padding:clamp(3rem,8vw,8rem) clamp(1rem,4vw,4rem); overflow:clip; background:var(--wc-white); }
+.clientProofComposition { display:grid; grid-template-columns:minmax(0,2fr) minmax(18rem,1fr); gap:clamp(1.5rem,3vw,3rem); align-items:stretch; }
+.clientFeature { position:relative; isolation:isolate; min-width:0; min-height:clamp(38rem,54vw,54rem); overflow:hidden; background:var(--wc-blue); clip-path:polygon(0 1.25%,98.5% 0,100% 96.5%,2% 100%); }
+.clientFeature::after { content:""; position:absolute; inset:0; z-index:1; border:clamp(7px,1vw,13px) solid var(--wc-blue); pointer-events:none; }
+.clientFeaturePhoto { position:absolute; inset:-4% 0; width:100%; height:108%; object-fit:cover; object-position:50% 42%; transform:translate3d(0,var(--client-photo-shift,0px),0) scale(1.04); transition:transform var(--wc-duration-layout) var(--wc-ease-settle); }
+.clientFeatureCopy { position:absolute; left:clamp(1.25rem,3vw,3rem); bottom:clamp(1.25rem,3vw,3rem); z-index:2; display:grid; grid-template-columns:auto minmax(0,1fr); align-items:center; gap:var(--wc-space-4); width:min(calc(100% - clamp(2.5rem,6vw,6rem)),36rem); padding:clamp(1.25rem,2vw,2rem); background:var(--wc-white); }
+.clientFeatureCopy > img { display:block; width:clamp(4rem,7vw,6.5rem); height:auto; }
+.clientFeatureCopy h3,.clientSupportCopy h3 { margin:0; font-family:var(--wc-font-sans); line-height:1.2; font-weight:600; }
+.clientFeatureCopy h3 { font-size:clamp(1.55rem,2.6vw,2.8rem); }
+.clientFeatureCopy p,.clientSupportCopy p { margin:var(--wc-space-2) 0 0; color:var(--wc-slate); line-height:1.45; }
+.clientFeatureCopy p { font-size:clamp(1rem,1.25vw,1.2rem); }
+.clientSupport { display:grid; grid-template-rows:repeat(2,minmax(0,1fr)); min-width:0; }
+.clientSupportItem { display:flex; flex-direction:column; justify-content:center; min-width:0; padding:clamp(2rem,4vw,4rem) clamp(1rem,2vw,2rem); background:transparent; }
+.clientSupportItem + .clientSupportItem { border-top:1px solid var(--wc-hairline); }
+.clientSupportItem > img { display:block; width:min(100%,12rem); max-height:9rem; margin-bottom:clamp(2rem,5vw,5rem); object-fit:contain; object-position:left center; transform-origin:left center; transition:transform var(--wc-duration-fold) var(--wc-ease-settle); }
+.clientSupportItem-foxwood > img { width:min(100%,11rem); }
+.clientSupportItem-platinum > img { width:min(100%,9rem); }
+.clientSupportCopy h3 { font-size:clamp(1.2rem,1.8vw,1.6rem); }
+.clientSupportCopy p { font-size:var(--wc-font-small); }
+.clientProof.isClientMotion .clientFeature { opacity:.01; transform:translate3d(-2rem,4rem,0) rotate(-1.5deg); transition:opacity var(--wc-duration-layout) var(--wc-ease-settle),transform var(--wc-duration-layout) var(--wc-ease-settle); }
+.clientProof.isClientMotion .clientFeaturePhoto { transform:translate3d(0,var(--client-photo-shift,0px),0) scale(1.12); }
+.clientProof.isClientMotion .clientFeatureCopy { opacity:.01; transform:translate3d(0,2rem,0); transition:opacity var(--wc-duration-reveal) var(--wc-ease-settle) 240ms,transform var(--wc-duration-reveal) var(--wc-ease-settle) 240ms; }
+.clientProof.isClientMotion .clientSupportItem { opacity:.01; transform:translate3d(3rem,0,0); transition:opacity var(--wc-duration-reveal) var(--wc-ease-settle),transform var(--wc-duration-reveal) var(--wc-ease-settle); }
+.clientProof.isClientMotion .clientSupportItem:nth-child(1) { transition-delay:180ms; }
+.clientProof.isClientMotion .clientSupportItem:nth-child(2) { transition-delay:320ms; }
+.clientProof.isClientMotion.isClientVisible .clientFeature,.clientProof.isClientMotion.isClientVisible .clientFeatureCopy,.clientProof.isClientMotion.isClientVisible .clientSupportItem { opacity:1; transform:none; }
+.clientProof.isClientMotion.isClientVisible .clientFeaturePhoto { transform:translate3d(0,var(--client-photo-shift,0px),0) scale(1.04); }
+@media(hover:hover) {
+  .clientFeature:hover .clientFeaturePhoto { transform:translate3d(0,var(--client-photo-shift,0px),0) scale(1.08); }
+  .clientSupportItem:hover > img { transform:translate3d(.75rem,0,0) rotate(2deg); }
+}
 .shootArcade { padding:var(--wc-space-8) clamp(1rem,4vw,4rem) var(--wc-space-12); scroll-margin-top:var(--wc-space-6); }
 .arcadeTopline { display:flex; justify-content:space-between; align-items:center; gap:var(--wc-space-4); margin-bottom:var(--wc-space-3); font-size:var(--wc-font-small); }
 .arcadeTopline p { margin:0; }
@@ -444,10 +463,14 @@ html:has(.photographyPage) { scroll-behavior:auto; scrollbar-gutter:stable; }
   .photographyLocation { font-size:1rem; max-width:30ch; }
   .collectionImages { grid-template-columns:1fr; padding:var(--wc-space-4); }
   .clientProof { padding:var(--wc-space-8) var(--wc-space-4); }
-  .clientProofHeader { padding-bottom:var(--wc-space-4); }
-  .clientCardGrid { grid-template-columns:1fr; gap:var(--wc-space-3); }
-  .clientCard { min-height:24rem; }
-  .clientCardArtwork { padding:var(--wc-space-8) var(--wc-space-6); }
+  .clientProofComposition { grid-template-columns:1fr; gap:var(--wc-space-6); }
+  .clientFeature { min-height:min(39rem,150vw); }
+  .clientFeatureCopy { grid-template-columns:4rem minmax(0,1fr); width:calc(100% - 2.5rem); }
+  .clientFeatureCopy > img { width:4rem; }
+  .clientSupport { grid-template-columns:repeat(2,minmax(0,1fr)); grid-template-rows:none; }
+  .clientSupportItem { min-height:15rem; padding:var(--wc-space-6) var(--wc-space-3); }
+  .clientSupportItem + .clientSupportItem { border-top:0; border-left:1px solid var(--wc-hairline); }
+  .clientSupportItem > img { max-height:6rem; margin-bottom:var(--wc-space-6); }
   .shootArcade { padding:var(--wc-space-6) var(--wc-space-3); }
   .arcadeTopline { padding-inline:var(--wc-space-1); }
   .sceneReplay { font-size:var(--wc-font-min); }
@@ -496,6 +519,8 @@ html:has(.photographyPage) { scroll-behavior:auto; scrollbar-gutter:stable; }
   .photoCollection.isOrbit .collectionPhoto a { width:auto; height:auto; }
   .photoCollection.isOrbit .collectionPhoto img { width:100%; height:auto; }
   .goldScene { display:none !important; }
+  .clientFeaturePhoto,.clientFeature:hover .clientFeaturePhoto,.clientSupportItem:hover > img { transform:none !important; }
+  .clientProof.isClientMotion .clientFeature,.clientProof.isClientMotion .clientFeatureCopy,.clientProof.isClientMotion .clientSupportItem { opacity:1; transform:none; }
   .photographyTicket { transform:none !important; }
   .photographyPage *, .photographyPage *::before, .photographyPage *::after { scroll-behavior:auto !important; }
 }

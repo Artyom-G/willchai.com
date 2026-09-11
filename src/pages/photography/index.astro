@@ -20,8 +20,7 @@ const featuredPhotographs = [
   { src: "/photography/product-beverage.webp", alt: "Cotton candy soda bottle photographed against a bright blue background", width: 1920, height: 2560 },
 ];
 
-const clients = [
-  { name: "McMaster University", detail: "University events and performances", logo: "/photography/clients/mcmaster.avif", width: 500, height: 500, treatment: "mcmaster" },
+const supportingClients = [
   { name: "Foxwood Homes", detail: "Residential projects", logo: "/photography/clients/foxwood-homes.png", width: 213, height: 141, treatment: "foxwood" },
   { name: "Platinum Moon", detail: "Band photography and live performance", logo: "/photography/clients/platinum-moon.avif", width: 500, height: 500, treatment: "platinum" },
 ];
@@ -40,6 +39,7 @@ const shuffleBatchSize = 36;
   <script slot="head" is:inline src="/scripts/photography.js" defer></script>
   <script slot="head" is:inline src="/scripts/photography-opening.js" defer></script>
   <script slot="head" is:inline src="/scripts/photography-orbit.js" defer></script>
+  <script slot="head" is:inline src="/scripts/photography-clients.js" defer></script>
   <script slot="head" is:inline src="/scripts/photography-collection.js" defer></script>
   <script slot="head" is:inline src="/scripts/photography-arcade.js" defer></script>
   <div class="pageShell">
@@ -51,29 +51,47 @@ const shuffleBatchSize = 36;
       </header>
       <PhotographyCollection photographs={featuredPhotographs} />
 
-      <section class="clientProof" aria-labelledby="clientProofTitle">
-        <header class="clientProofHeader" data-reveal>
-          <h2 id="clientProofTitle">Selected clients.</h2>
-        </header>
-        <div class="clientCardGrid">
-          {
-            clients.map((client) => (
-              <article class={`clientCard clientCard-${client.treatment}`} data-reveal>
-                <div class="clientCardArtwork"><img
-                  src={client.logo}
-                  alt={`${client.name} logo`}
-                  width={client.width}
-                  height={client.height}
-                  loading="lazy"
-                  decoding="async"
-                /></div>
-                <div class="clientCardCopy">
-                  <h3>{client.name}</h3>
-                  <p>{client.detail}</p>
-                </div>
-              </article>
-            ))
-          }
+      <section class="clientProof" data-client-proof aria-labelledby="clientProofTitle">
+        <h2 id="clientProofTitle" class="visuallyHidden">Selected photography clients</h2>
+        <div class="clientProofComposition">
+          <article class="clientFeature">
+            <img
+              class="clientFeaturePhoto"
+              src="/photography/concert-mcmaster.avif"
+              alt="A vocalist in a McMaster University hoodie performing beneath warm stage lights"
+              width="1920"
+              height="2400"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="clientFeatureCopy">
+              <img src="/photography/clients/mcmaster.avif" alt="" width="500" height="500" loading="lazy" decoding="async" />
+              <div>
+                <h3>McMaster University</h3>
+                <p>McMaster is where I study, work, and photograph.</p>
+              </div>
+            </div>
+          </article>
+          <div class="clientSupport">
+            {
+              supportingClients.map((client) => (
+                <article class={`clientSupportItem clientSupportItem-${client.treatment}`}>
+                  <img
+                    src={client.logo}
+                    alt=""
+                    width={client.width}
+                    height={client.height}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div class="clientSupportCopy">
+                    <h3>{client.name}</h3>
+                    <p>{client.detail}</p>
+                  </div>
+                </article>
+              ))
+            }
+          </div>
         </div>
       </section>
 

@@ -354,8 +354,10 @@ headers provide a return to the shoot when references are selected. Clipboard
 failure selects the message for manual copying. Inquiry contents stay in the
 current page.
 
-Three client cards identify McMaster University, Foxwood Homes, and Platinum
-Moon through their marks, names, and the relevant work type. The shuffle
+The client proof gives McMaster University the large image led position because
+Will studies, works, and photographs there. Foxwood Homes and Platinum Moon use
+smaller transparent entries with their marks, names, and work types. A staggered
+entrance and gentle photograph drift carry the section into view. The shuffle
 reserves image dimensions and fills continuous columns while preserving earlier
 positions. The footer retains the original contact ticket, policy, rights and
 homepage return. Reduced motion presents the static featured grid, direct image
