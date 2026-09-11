@@ -369,8 +369,9 @@ positions. The footer retains the original contact ticket, policy, rights and
 homepage return. Reduced motion presents the static featured grid, direct image
 changes and usable builder. The pricing scene gives $600 the dominant visual
 position and remains readable before Will pushes the fixed package away. The
-builder keeps $600 as its sole public pricing reference and explains how
-coverage, editing, travel, and delivery shape each personal quote.
+builder keeps $600 as its sole public pricing reference and explains the work
+inside the amount. Its guidance connects additional budget room with longer
+coverage and a wider final gallery.
 
 ## Stewardship
 

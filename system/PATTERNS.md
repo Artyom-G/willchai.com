@@ -175,8 +175,9 @@ Copy text. Back preserves every answer. The rough pointer accompanies Next and
 responds briefly to a press. A directional mask exchanges the question pair while
 the title and photographic preview stay anchored. Supplied amounts are labelled
 Your budget, and visitors may request guidance. The budget field keeps $600 as
-the sole public pricing reference. Supporting copy describes the coverage,
-editing, travel, and delivery factors shaping each personal quote.
+the sole public pricing reference. The package connects the amount with planning,
+photography, editing, and delivery. Supporting copy describes the quote factors
+and connects additional budget room with longer coverage and a wider final gallery.
 
 An opened photograph offers Add reference across the featured work and shuffle.
 Selections appear on the shoot board and remain removable. Their image links

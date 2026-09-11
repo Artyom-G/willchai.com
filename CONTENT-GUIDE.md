@@ -47,9 +47,10 @@ and date. Next advances to optional budget and notes, then to the completed
 inquiry. The final choices are Open email and Copy text. Back keeps all answers.
 Budgets accept an amount or range in CAD, with guidance available. The supplied
 amount is labelled Your budget. The departing package prop places $600 first,
-and the budget field repeats it as the sole public pricing reference. Supporting
-copy explains how coverage, editing, travel, and delivery shape a personal
-quote. Further details can be added in the email.
+connects it with planning, photography, editing, and delivery, and the budget
+field repeats it as the sole public pricing reference. Supporting copy connects
+additional budget room with longer coverage and a wider final gallery. Further
+details can be added in the email.
 
 Visitors may add references from an opened featured or shuffle photograph.
 Reference selections produce image links in the inquiry and remain editable
