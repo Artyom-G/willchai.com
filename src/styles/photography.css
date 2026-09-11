@@ -99,7 +99,6 @@ html:has(.photographyPage) { scroll-behavior:auto; scrollbar-gutter:stable; }
 .shootBudgetInput > span { position:absolute; right:var(--wc-space-3); top:50%; transform:translateY(-50%); color:var(--wc-slate); font-size:var(--wc-font-small); }
 .shootBudgetInput input:disabled { color:var(--wc-slate); background:var(--wc-cloud); }
 .shootBudgetGuide { max-width:44ch; margin:var(--wc-space-3) 0 var(--wc-space-1); color:var(--wc-slate); font-size:var(--wc-font-small); font-weight:400; line-height:1.45; }
-.shootBudgetGuide strong { color:var(--wc-ink); font-weight:600; }
 .shootFields .shootGuidance { display:flex; align-items:center; gap:var(--wc-space-2); min-height:44px; margin-top:var(--wc-space-1); font-weight:400; font-size:var(--wc-font-small); cursor:pointer; }
 .shootGuidance input { width:18px; height:18px; margin:0; accent-color:var(--wc-blue); flex:none; }
 .shootGuidance span { color:var(--wc-ink) !important; }

@@ -369,8 +369,8 @@ positions. The footer retains the original contact ticket, policy, rights and
 homepage return. Reduced motion presents the static featured grid, direct image
 changes and usable builder. The pricing scene gives $600 the dominant visual
 position and remains readable before Will pushes the fixed package away. The
-builder states flexible starting points of $120 an hour and $360 for a large
-event, with $600 presented as a budget allowing broader coverage.
+builder keeps $600 as its sole public pricing reference and explains how
+coverage, editing, travel, and delivery shape each personal quote.
 
 ## Stewardship
 

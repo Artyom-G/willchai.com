@@ -174,9 +174,9 @@ CAD budget and additional notes, then the completed inquiry with Open email and
 Copy text. Back preserves every answer. The rough pointer accompanies Next and
 responds briefly to a press. A directional mask exchanges the question pair while
 the title and photographic preview stay anchored. Supplied amounts are labelled
-Your budget, and visitors may request guidance. The guidance places $600 first,
-then states flexible starting points of $120 an hour and $360 for a large event.
-Actual fees are quoted personally.
+Your budget, and visitors may request guidance. The budget field keeps $600 as
+the sole public pricing reference. Supporting copy describes the coverage,
+editing, travel, and delivery factors shaping each personal quote.
 
 An opened photograph offers Add reference across the featured work and shuffle.
 Selections appear on the shoot board and remain removable. Their image links
