@@ -10,14 +10,13 @@
   const guidance = form.elements.namedItem('guidance');
   const subject = arcade.querySelector('[data-inquiry-subject]');
   const message = arcade.querySelector('[data-inquiry-message]');
-  const send = arcade.querySelector('[data-shoot-send]');
   const copy = arcade.querySelector('[data-copy-inquiry]');
   const status = arcade.querySelector('[data-inquiry-status]');
   const next = arcade.querySelector('[data-shoot-next]');
+  const nextLabel = arcade.querySelector('[data-next-label]');
   const back = arcade.querySelector('[data-shoot-back]');
   const window = arcade.querySelector('[data-shoot-steps]');
   const steps = [...arcade.querySelectorAll('[data-shoot-step]')];
-  const pointer = arcade.querySelector('[data-builder-pointer]');
   const token = key => {
     const value = getComputedStyle(document.documentElement).getPropertyValue(key).trim();
     const amount = parseFloat(value) || 0;
@@ -39,7 +38,7 @@
 
   const finishScene = () => {
     scene.classList.remove('isReady','isPlaying');
-    if (replay) replay.hidden = motion.matches;
+    replay.hidden = motion.matches;
   };
   const playScene = () => {
     if (motion.matches) return finishScene();
@@ -48,19 +47,19 @@
     scene.classList.add('isReady');
     void scene.offsetWidth;
     scene.classList.add('isPlaying');
-    if (replay) replay.hidden = false;
+    replay.hidden = false;
   };
   const sceneObserver = new IntersectionObserver(entries => {
     if(entries.some(entry=>entry.isIntersecting) && !played) {
       playScene();
       sceneObserver.disconnect();
     }
-  },{rootMargin:'-16px 0px -16px 0px',threshold:Math.min(.95,(innerHeight-48)/392)});
+  },{rootMargin:'-10% 0px -10% 0px',threshold:.55});
   const engage = () => { played=true; finishScene(); sceneObserver.disconnect(); };
   if (!motion.matches && location.hash !== '#pricing') scene.classList.add('isReady');
-  if (location.hash === '#pricing') engage(); else sceneObserver.observe(arcade.querySelector('.willStage'));
+  if (location.hash === '#pricing') engage(); else sceneObserver.observe(arcade.querySelector('.arcadeStageStack'));
   scene.addEventListener('animationend',event => { if(event.target.classList.contains('pushingWill')) finishScene(); });
-  replay?.addEventListener('click',()=>{ arcade.scrollIntoView({block:'start',behavior:motion.matches?'instant':'smooth'}); playScene(); });
+  replay.addEventListener('click',()=>{ arcade.scrollIntoView({block:'start',behavior:motion.matches?'instant':'smooth'}); playScene(); });
   form.addEventListener('focusin',engage);
   form.addEventListener('pointerdown',engage);
   document.querySelectorAll('a[href="#pricing"]').forEach(link => link.addEventListener('click',engage));
@@ -94,14 +93,16 @@
       '','Could you suggest an approach and put together a quote?',''
     ].join('\n');
     message.value=inquiryBody;
-    send.href='mailto:me@willchai.com?subject='+encodeURIComponent(subject.textContent)+'&body='+encodeURIComponent(inquiryBody);
+    next.dataset.emailHref='mailto:me@willchai.com?subject='+encodeURIComponent(subject.textContent)+'&body='+encodeURIComponent(inquiryBody);
     fitName();
   };
   const syncStep = () => {
     steps.forEach((element,index)=>{ element.hidden=index!==step; element.inert=index!==step; element.classList.remove('isOutgoing'); element.querySelector('[data-step-grip]').style.left=''; element.querySelector('[data-step-grip]').style.right=''; });
     window.classList.remove('isChanging');
     window.style.height='';
-    next.hidden=step===2;
+    next.hidden=false;
+    nextLabel.textContent=step===2?'Open email':'Next';
+    next.classList.toggle('isEmail',step===2);
     back.hidden=step===0;
     next.disabled=back.disabled=false;
     changing=false;
@@ -116,7 +117,7 @@
     const fromHeight=window.getBoundingClientRect().height;
     step=target;
     const focusStep = () => {
-      const focus = target===2 ? send : incoming.querySelector('input,textarea');
+      const focus = target===2 ? next : incoming.querySelector('input,textarea');
       const bounds = focus.getBoundingClientRect();
       if(bounds.top<24 || bounds.bottom>innerHeight-24) {
         const heading=window.getBoundingClientRect();
@@ -143,7 +144,6 @@
         {clipPath:direction>0?'inset(100% 0 0 0)':'inset(0 0 100% 0)',transform:`translateY(${direction*24}px)`},
         {clipPath:'inset(0)',transform:'translateY(0)'}
       ],{duration:length,delay:length*.12,easing:ease,fill:'both'}),
-      pointer.animate([{transform:'translateY(0)'},{transform:'translateY(4px)',offset:.35},{transform:'translateY(0)'}],{duration:token('--wc-duration-image'),easing:ease}),
       window.animate([{height:fromHeight+'px'},{height:toHeight+'px'}],{duration:length,easing:ease,fill:'both'})
     ];
     await Promise.all(transitions.map(animation=>animation.finished.catch(()=>{})));
@@ -153,7 +153,11 @@
     syncStep();
     focusStep();
   };
-  form.addEventListener('submit',event=>{ event.preventDefault(); if(step<2) moveTo(step+1); });
+  form.addEventListener('submit',event=>{
+    event.preventDefault();
+    if(step<2) return moveTo(step+1);
+    location.href=next.dataset.emailHref||'mailto:me@willchai.com?subject=Photography%20inquiry';
+  });
   back.addEventListener('click',()=>moveTo(step-1));
   form.addEventListener('input',update);
   form.addEventListener('change',update);

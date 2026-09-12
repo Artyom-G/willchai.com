@@ -56,24 +56,22 @@
 
     cards.forEach((card, index) => {
       const q = index - cursor;
-      const x = q * width * (mobile ? 0.48 : 0.49) + Math.sin(q * 0.8) * width * 0.035;
-      const y = q * height * (mobile ? 0.31 : 0.4) + Math.sin(q * 0.8) * height * 0.025;
+      const x = q * width * (mobile ? 0.56 : 0.49) + Math.sin(q * 0.8) * width * 0.035;
+      const y = q * height * (mobile ? 0.38 : 0.4) + Math.sin(q * 0.8) * height * 0.025;
       const proximity = Math.abs(q);
-      const scale = 1 - Math.min(proximity, 2) * (mobile ? 0.045 : 0.075);
-      const angle = clamp(q, -2, 2) * (mobile ? 4 : 8);
+      const scale = 1 - Math.min(proximity, 2) * 0.075;
+      const angle = clamp(q, -2, 2) * (mobile ? 6 : 8);
       const transform = `translate(-50%,-50%) translate3d(${x}px,${y}px,0) rotate(${angle}deg) scale(${scale})`;
-      const visibilityRange = mobile ? 1.25 : 2.3;
-      const opacity = clamp((visibilityRange - proximity) / 0.45, 0, 1);
+      const opacity = clamp((2.3 - proximity) / 0.5, 0, 1);
       card.style.transform = transform;
       card.style.zIndex = String(100 - Math.round(proximity * 10));
       card.style.opacity = String(opacity);
       card.style.pointerEvents = proximity < 1.5 ? 'auto' : 'none';
-      card.style.willChange = active && proximity < visibilityRange ? 'transform' : 'auto';
+      card.style.willChange = active && proximity < 2.3 ? 'transform' : 'auto';
       if (proximity < 2.5) card.querySelector('img').loading = 'eager';
       if (index === 0 && characterStage) {
-        const characterPresence = clamp((0.18 - cursor) / 0.08, 0, 1);
         characterStage.style.transform = transform;
-        characterStage.style.opacity = String(opacity * characterPresence);
+        characterStage.style.opacity = String(opacity);
       }
     });
 
@@ -109,7 +107,7 @@
       const intrinsicWidth = Number(image.getAttribute('width')) || image.naturalWidth;
       const intrinsicHeight = Number(image.getAttribute('height')) || image.naturalHeight;
       const ratio = intrinsicWidth / intrinsicHeight || 3 / 4;
-      const cardWidth = Math.min(width * (mobile ? 0.94 : 0.68), height * (mobile ? 0.74 : 0.79) * ratio);
+      const cardWidth = Math.min(width * (mobile ? 0.86 : 0.68), height * (mobile ? 0.69 : 0.79) * ratio);
       card.style.setProperty('--orbit-card-width', `${cardWidth}px`);
       card.style.setProperty('--orbit-card-height', `${cardWidth / ratio}px`);
       if (card === cards[0] && characterStage) {

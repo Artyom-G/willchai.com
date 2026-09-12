@@ -15,11 +15,11 @@
     a { color:var(--wc-blue); }
     .studyIntro { padding:24px clamp(1rem,4vw,4rem); background:var(--wc-cloud); }
     .studyIntro p { max-width:64ch; margin:12px 0; }
-    .photographyCharacter { --character-frame:256px; position:absolute; z-index:2; right:8%; bottom:0; display:block; width:128px; height:176px; overflow:hidden; pointer-events:none; }
-    .photographyCharacterSprite { position:absolute; left:-64px; bottom:-32px; width:var(--character-frame); height:var(--character-frame); background:url("../public/photography/pixel-photographer.png") 0 0 / 400% 100% no-repeat; image-rendering:pixelated; transform:translateY(100%); }
+    .photographyCharacter { --character-frame:160px; --character-edge-inset:32px; position:absolute; z-index:2; right:10%; bottom:calc(100% - var(--character-edge-inset)); display:block; width:80px; height:110px; overflow:hidden; pointer-events:none; }
+    .photographyCharacterSprite { position:absolute; left:-40px; bottom:-20px; width:var(--character-frame); height:var(--character-frame); background:url("../public/photography/pixel-photographer.png") 0 0 / 400% 100% no-repeat; image-rendering:pixelated; transform:translateY(100%); }
     @media(max-width:62rem) {
-      .photographyCharacter { --character-frame:192px; right:4%; width:96px; height:132px; }
-      .photographyCharacterSprite { left:-48px; bottom:-24px; }
+      .photographyCharacter { --character-frame:128px; --character-edge-inset:24px; right:8%; width:64px; height:88px; }
+      .photographyCharacterSprite { left:-32px; bottom:-16px; }
     }
     @media(prefers-reduced-motion:reduce) { .photographyCharacterSprite { display:none; } }
   </style>
@@ -31,7 +31,7 @@
 <body class="photographyPage">
   <header class="studyIntro">
     <a href="index.html">Return to the system</a>
-    <p>Nine approved photographs move from the lower right through the centre toward the upper left as the page scrolls. McMaster leads the animated three client composition, with Foxwood Homes and Platinum Moon settling into typeset supporting positions.</p>
+    <p>Nine approved photographs move from the lower right through the centre toward the upper left as the page scrolls. McMaster leads the animated collaboration composition, with Foxwood Homes and Platinum Moon settling into supporting positions.</p>
   </header>
   <div class="pageShell">
     <main class="pageMain">
@@ -60,15 +60,15 @@
       </section>
 
       <section class="clientProof" data-client-proof aria-labelledby="clientProofTitle">
-        <h2 id="clientProofTitle" class="visuallyHidden">Organizations Will Chai has photographed for</h2>
+        <header class="clientProofHeader"><h2 id="clientProofTitle"><span aria-hidden="true">Will Chai <span class="clientProofMultiply">×</span></span><span class="visuallyHidden">Organizations Will Chai has photographed for</span></h2></header>
         <div class="clientProofComposition">
           <article class="clientFeature">
             <img class="clientFeaturePhoto" src="../public/photography/concert-mcmaster.avif" alt="A vocalist in a McMaster University hoodie performing beneath warm stage lights" width="1920" height="2400">
-            <div class="clientFeatureCopy"><img src="../public/photography/clients/mcmaster.avif" alt="" width="500" height="500"><h3>McMaster University</h3></div>
+            <div class="clientFeatureCopy"><img src="../public/photography/clients/mcmaster.avif" alt="" width="500" height="500"><div><h3>McMaster University</h3></div></div>
           </article>
           <div class="clientSupport">
-            <article class="clientSupportItem clientSupportItem-foxwood"><div class="clientSupportCopy"><h3>Foxwood Homes</h3></div></article>
-            <article class="clientSupportItem clientSupportItem-platinum"><div class="clientSupportCopy"><h3>Platinum Moon</h3></div></article>
+            <article class="clientSupportItem clientSupportItem-foxwood"><img src="../public/photography/clients/foxwood-homes.png" alt="" width="213" height="141"><div class="clientSupportCopy"><h3>Foxwood Homes</h3><p>Residential projects</p></div></article>
+            <article class="clientSupportItem clientSupportItem-platinum"><img src="../public/photography/clients/platinum-moon.avif" alt="" width="500" height="500"><div class="clientSupportCopy"><h3>Platinum Moon</h3><p>Band photography and live performance</p></div></article>
           </div>
         </div>
       </section>

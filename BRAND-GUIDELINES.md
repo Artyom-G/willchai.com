@@ -302,8 +302,9 @@ specific to contact.
 Photography uses Will's approved 32 × 32 pixel artwork for brief appearances.
 The opening enlarges the artwork in whole pixel steps above the Featured
 photographs boundary, then lets the character duck behind it after four seconds. The pricing scene gives the character a physical action by pushing
-a fixed $600 package card away to reveal the shoot builder. The homepage
-pointer and irregular blue shape connect this scene to Will's existing work.
+a large $600 package card away to reveal the shoot builder. The card occupies
+the white page surface while Will enters beside it and pushes it beyond the
+right edge.
 
 The current blue W in `system/assets/willchai-mark.avif` is the official compact mark and
 should appear in the system library, site metadata, and suitable identity or
@@ -332,23 +333,25 @@ reference selection remain available. The page and viewer use an image led,
 caption free presentation. Descriptive alternative text remains available to
 assistive tools.
 
-The opening character emerges from the lower edge of the first photograph after
-the collection settles, takes a photograph, and ducks behind the edge. A separate
-collection level stage follows the first card and keeps the complete greeting
-above incoming photographs. Stable phone measurements wait for an active scroll
-gesture to settle. The four second greeting uses the approved four poses and integer enlargement. The later
-appearance retains the approved pushing poses. A blue rim joins the enclosure
-sides beneath the $600 package prop. Will pushes the panel past the edge, recovers
-his stance, pauses, and ducks vertically behind the rim. The scene stays opaque
-until his exit is complete, then reveals the board. The prop presents Super
-Generic Package and $600. Direct inquiry links and form interaction reveal the
-usable board immediately.
+The opening character rises through the upper edge of the first photograph after
+the collection settles and stands on its top boundary. The collection level
+stage follows the first card and keeps the complete greeting above incoming
+photographs. Stable phone measurements wait for an active scroll gesture to
+settle. The four second greeting uses the clean arrive, ready, and rest poses
+from the approved atlas at integer enlargement. The later
+appearance retains the approved pushing poses. The large $600 package prop sits
+directly on the white page surface. Will enters beside its lower edge, braces,
+and pushes it beyond the right side of the page. The shoot board appears beneath
+the departing scene. The prop copy reads Super Generic Package and $600. Direct
+inquiry links and form interaction reveal the usable board immediately. Replay
+remains available.
 
 The white shoot board retains its irregular blue enclosure. An editable shoot
 name stays above two questions about place and date. Next reveals an optional
 CAD budget and additional notes, then the completed inquiry with Open email and
-Copy text. Back preserves every answer. The rough pointer accompanies Next and
-responds briefly to a press. A directional mask exchanges the question pair while
+Copy text. Back preserves every answer. The rough pointer approaches the primary
+button in a stepped loop and presses it. The second advance changes the same
+button into Open email. A directional mask exchanges the question pair while
 the title and photographic preview stay anchored. Supplied amounts are labelled
 Your budget, and visitors may request guidance. Actual fees are quoted personally.
 
@@ -359,17 +362,19 @@ headers provide a return to the shoot when references are selected. Clipboard
 failure selects the message for manual copying. Inquiry contents stay in the
 current page.
 
-The client proof reads as one animated three client composition. McMaster University
-holds the large photograph led position with a compact name plaque. Foxwood Homes
-and Platinum Moon enter as typeset supporting names. The photograph and three
-names settle in stages, then all three organizations remain visible together. The shuffle
+The client proof reads as a Will Chai collaboration composition. McMaster University
+holds the large image led position with a compact mark and name. Foxwood Homes
+and Platinum Moon enter as smaller transparent elements.
+The heading, photograph, and two marks settle in stages, then all three
+organizations remain visible together. The shuffle
 reserves image dimensions and fills continuous columns while preserving earlier
 positions. The footer retains the original contact ticket, policy, rights and
 homepage return. Reduced motion presents the static featured grid, direct image
 changes and usable builder. The pricing scene gives $600 the dominant visual
-position and remains readable before Will pushes the generic package away. The
-prop uses the short label Super Generic Package with the amount. The builder
-collects plans and budget for a personal quote.
+position and remains readable before Will pushes the package away. The page
+limits the prop copy to Super Generic Package and $600. The builder keeps $600 as its sole public pricing
+reference. Its guidance connects additional budget room with longer coverage
+and a wider final gallery.
 
 ## Stewardship
 

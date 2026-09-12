@@ -3,7 +3,7 @@
   if (!stage) return;
   const sprite = stage.querySelector('.photographyCharacterSprite');
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
-  const key = 'willchai.photography.hello.v7';
+  const key = 'willchai.photography.hello.v9';
   const token = key => {
     const value = getComputedStyle(document.documentElement).getPropertyValue(key).trim();
     const amount = parseFloat(value) || 0;
@@ -37,9 +37,8 @@
       ], { duration, fill:'forwards' }),
       sprite.animate([
         { backgroundPositionX:'0%', offset:0, easing:'steps(1,end)' },
-        { backgroundPositionX:'33.333333%', offset:0.24, easing:'steps(1,end)' },
-        { backgroundPositionX:'66.666667%', offset:0.46, easing:'steps(1,end)' },
-        { backgroundPositionX:'100%', offset:0.7, easing:'steps(1,end)' },
+        { backgroundPositionX:'33.333333%', offset:0.28, easing:'steps(1,end)' },
+        { backgroundPositionX:'100%', offset:0.68, easing:'steps(1,end)' },
         { backgroundPositionX:'100%', offset:1 }
       ], { duration, fill:'forwards' })
     ];

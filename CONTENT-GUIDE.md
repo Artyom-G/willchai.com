@@ -21,10 +21,9 @@ item has one canonical home when it intersects several disciplines.
 The Photography page introduces Will directly and names the opening selection
 Featured photographs for assistive tools. Publish the nine approved photographs
 from the existing public Photography page as one uncategorized sequence. Keep
-the presentation caption free. An animated client composition appears before
-the inquiry route. McMaster University holds the photograph led feature with a
-compact name plaque. Foxwood Homes and Platinum Moon use typeset supporting
-positions. The assistive heading stays available to screen readers. All three
+the presentation caption free. An animated collaboration composition appears
+before the inquiry route. McMaster University holds the image led feature while
+Foxwood Homes and Platinum Moon use compact supporting positions. All three
 remain visible in the settled composition.
 
 The wider portfolio appears as a caption free shuffle loaded in controlled
@@ -45,11 +44,14 @@ The featured sequence advances through ordinary vertical scrolling. The linked
 photographs open in the viewer, where Previous, Next, Add reference, and Close
 remain available. The board introduces Event name and two questions about place
 and date. Next advances to optional budget and notes, then to the completed
-inquiry. The final choices are Open email and Copy text. Back keeps all answers.
+inquiry. The second advance changes Next into Open email. Copy text remains in
+the completed inquiry. Back keeps all answers.
 Budgets accept an amount or range in CAD, with guidance available. The supplied
-amount is labelled Your budget. The departing prop reads Super Generic Package
-and $600. The budget field repeats $600 as the sole public pricing reference.
-Further details can be added in the email.
+amount is labelled Your budget. The departing package prop identifies a Super
+Generic Package and presents $600. The budget field repeats it as the sole public
+pricing reference. The prop copy contains its name and amount. Supporting copy connects
+additional budget room with longer coverage and a wider final gallery. Further
+details can be added in the email.
 
 Visitors may add references from an opened featured or shuffle photograph.
 Reference selections produce image links in the inquiry and remain editable
