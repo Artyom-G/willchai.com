@@ -67,12 +67,15 @@ html:has(.photographyPage) { scroll-behavior:auto; scrollbar-gutter:stable; }
   .clientSupportItem-platinum:hover > img { transform:translate3d(-.75rem,0,0) rotate(0); }
 }
 .shootArcade { position:relative; padding:var(--wc-space-8) var(--photo-gutter) var(--wc-space-16); scroll-margin-top:var(--wc-space-6); }
-.arcadeStageStack { position:relative; display:grid; }
+.arcadeStageStack { position:relative; display:grid; --scene-height:clamp(36rem,82svh,50rem); }
 .arcadeStageStack > * { grid-area:1 / 1; }
+.arcadeStageStack.isSceneReady { min-height:var(--scene-height); }
+.arcadeStageStack.isScenePlaying { animation:sceneSettle var(--wc-duration-pricing-scene) linear both; }
+.arcadeStageStack.isPaused { animation-play-state:paused; }
 .sceneReplay { display:flex; align-items:center; gap:var(--wc-space-2); width:max-content; min-height:44px; margin:0 0 0 auto; padding:var(--wc-space-2) 0; border:0; background:transparent; color:var(--wc-blue); font-size:var(--wc-font-small); cursor:pointer; }
 .sceneReplay svg { transition:transform var(--wc-duration-fold) var(--wc-ease-settle); }
 .sceneReplay:hover svg { transform:rotate(-45deg); }
-.arcadeCabinet { position:relative; isolation:isolate; padding:var(--wc-space-4); }
+.arcadeCabinet { position:relative; align-self:start; isolation:isolate; padding:var(--wc-space-4); }
 .arcadeCabinet::before { content:""; position:absolute; inset:0; z-index:-1; background:var(--wc-blue); clip-path:polygon(1% 0,98% 1%,100% 54%,98% 99%,3% 100%,0 32%); }
 .arcadeInterior { position:relative; padding:clamp(1.5rem,4vw,4rem); background:var(--wc-white); clip-path:polygon(1% 0,98% 1%,100% 54%,98% 99%,3% 100%,0 32%); }
 .arcadeWelcome { padding-right:0; margin-bottom:var(--wc-space-8); }
@@ -84,10 +87,9 @@ html:has(.photographyPage) { scroll-behavior:auto; scrollbar-gutter:stable; }
 .shootName { display:block; width:100%; margin:var(--wc-space-2) 0 var(--wc-space-6); padding:0 0 var(--wc-space-3); border:0; border-bottom:2px solid var(--wc-ink); border-radius:0; resize:none; overflow:hidden; background:var(--wc-white); color:var(--wc-ink); font-family:var(--wc-font-display); font-size:clamp(1.5rem,2.3vw,2.4rem); line-height:1.3; letter-spacing:-.035em; }
 .shootName::placeholder { color:var(--wc-slate); opacity:1; }
 .shootName:focus { border-color:var(--wc-blue); }
-.shootSteps { position:relative; min-height:var(--shoot-step-height,0px); overflow:clip; }
+.shootSteps { position:relative; overflow:clip; }
 .shootSteps.isChanging { overflow:hidden; }
 .shootStep { position:relative; background:var(--wc-white); padding:var(--wc-space-1); }
-.shootStep.isMeasuring { display:block !important; position:absolute; inset:0 0 auto; visibility:hidden; pointer-events:none; }
 .shootStep.isOutgoing { position:absolute; top:0; left:0; width:100%; }
 .shootFields { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--wc-space-4); }
 .shootFields label,.shootBudget > label { display:block; font-size:1rem; font-weight:500; }
@@ -146,7 +148,7 @@ html:has(.photographyPage) { scroll-behavior:auto; scrollbar-gutter:stable; }
 .inquiryStatus:empty { margin:0; }
 .arcadeBelow { display:flex; flex-wrap:wrap; align-items:center; gap:var(--wc-space-2) var(--wc-space-8); justify-content:space-between; padding:var(--wc-space-3) var(--wc-space-2); font-size:var(--wc-font-small); }
 .arcadeBelow a { min-height:44px; display:flex; align-items:center; color:var(--wc-blue); }
-.goldScene { position:relative; z-index:5; display:none; min-height:clamp(36rem,82svh,50rem); overflow:hidden; background:var(--wc-white); pointer-events:none; --plan-width:min(72vw,46rem); --plan-height:min(68svh,38rem); --sprite-size:clamp(10rem,15vw,14rem); }
+.goldScene { position:absolute; inset:0; z-index:5; display:none; overflow:hidden; pointer-events:none; --plan-width:min(72vw,46rem); --plan-height:min(68svh,38rem); --sprite-size:clamp(10rem,15vw,14rem); }
 .goldScene.isReady { display:block; }
 .goldBackdrop { position:absolute; inset:0; background:var(--wc-white); }
 .goldPlan { position:absolute; top:50%; left:50%; width:var(--plan-width); height:var(--plan-height); translate:-50% -50%; display:grid; place-content:center; gap:clamp(1rem,3vw,2rem); padding:clamp(2rem,5vw,5rem); background:var(--wc-white); border:3px solid var(--wc-ink); color:var(--wc-ink); text-align:center; transform-origin:50% 100%; }
@@ -177,7 +179,15 @@ html:has(.photographyPage) { scroll-behavior:auto; scrollbar-gutter:stable; }
   78%,100% { transform:translate3d(120vw,0,0); }
 }
 @keyframes pushPose { 0%{background-position-x:0} 16%{background-position-x:33.333333%} 49%{background-position-x:66.666667%} 72%,100%{background-position-x:100%} }
-@keyframes sceneClear { 0%,84%{clip-path:inset(0)} 100%{clip-path:inset(0 0 0 100%)} }
+@keyframes sceneClear {
+  0%,53% { clip-path:inset(0); animation-timing-function:cubic-bezier(.22,.65,.3,1); }
+  70% { clip-path:inset(0 0 0 54vw); animation-timing-function:cubic-bezier(.4,0,.7,1); }
+  78%,100% { clip-path:inset(0 0 0 100%); }
+}
+@keyframes sceneSettle {
+  0%,78% { min-height:var(--scene-height); animation-timing-function:var(--wc-ease-settle); }
+  100% { min-height:0; }
+}
 .goldScene.isPaused * { animation-play-state:paused !important; }
 .shuffleSection { padding:var(--wc-space-8) var(--photo-gutter) var(--wc-space-16); }
 .shuffleHeader { display:flex; align-items:center; justify-content:space-between; gap:var(--wc-space-4); margin-bottom:var(--wc-space-6); }
@@ -502,7 +512,7 @@ html:has(.photographyPage) { scroll-behavior:auto; scrollbar-gutter:stable; }
   .arcadeInterior { padding:var(--wc-space-6) var(--wc-space-4); }
   .arcadeWelcome { padding-right:0; margin-bottom:var(--wc-space-6); }
   .arcadeWelcome h2 { max-width:10ch; font-size:clamp(1.85rem,7.5vw,2.75rem); }
-  .arcadePointer { width:32px; right:-16px; bottom:-20px; }
+  .arcadePointer { width:32px; right:4px; bottom:-12px; }
   .shootBuilder { grid-template-columns:1fr; gap:var(--wc-space-6); }
   .shootName { font-size:1.5rem; }
   .shootFields { gap:var(--wc-space-4); }
@@ -519,7 +529,8 @@ html:has(.photographyPage) { scroll-behavior:auto; scrollbar-gutter:stable; }
   .inquiryActions { gap:var(--wc-space-2); }
   .shootCopy { gap:var(--wc-space-2); padding:var(--wc-space-3) var(--wc-space-2); font-size:var(--wc-font-small); }
   .inquiryActions svg { width:16px; height:16px; flex:none; }
-  .goldScene { min-height:clamp(32rem,78svh,42rem); --plan-width:calc(100% - 2rem); --plan-height:clamp(24rem,64svh,32rem); --sprite-size:128px; }
+  .arcadeStageStack { --scene-height:clamp(32rem,78svh,42rem); }
+  .goldScene { --plan-width:calc(100% - 2rem); --plan-height:clamp(24rem,64svh,32rem); --sprite-size:128px; }
   .goldPlan { padding:var(--wc-space-6) var(--wc-space-4); }
   .goldPlanHeading { font-size:1.15rem; }
   .goldPrice { font-size:clamp(5.25rem,25vw,8rem); }

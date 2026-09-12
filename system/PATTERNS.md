@@ -203,10 +203,11 @@ Open `photography-stack.html` for the production interaction study.
 Photography uses a shared responsive gutter across the page. The gallery fits
 within the opening viewport and reserves room above the first photograph for
 Will. Client spacing keeps the settled group together. The white shoot board
-and its blue outline share the irregular silhouette. Step measurement reserves
-the largest question height at the current width, keeping the primary action
-in place while its label changes from Next to Open email. Recalculate this
-space when fonts or the form width change. Empty summary details stay hidden
+and its blue outline share the irregular silhouette. Each form step uses its
+visible content height, with a measured transition between questions. The
+primary action follows the fields and becomes Open email on the final step.
+The departing package uncovers the board during the shove. The scene height
+settles into the board height as the movement ends. Empty summary details stay hidden
 until the visitor supplies them. The policy and replay controls share a row,
 and the shuffle ends with a centred Load more photographs action.
 

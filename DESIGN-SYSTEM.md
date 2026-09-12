@@ -368,8 +368,9 @@ uses content sized spacing so its settled group can be read together.
 
 The shoot board keeps a continuous irregular blue outline around its white
 interior. Fields use a fine boundary with an Ink baseline and a Blue focus
-state. Every question step is measured at the current width to reserve a shared
-height. Next and Open email occupy the same position through the sequence.
+state. Each question step uses its visible content height. The field area
+interpolates between step heights, with the primary action following directly
+below the fields. Its label becomes Open email on the final step.
 The photographic summary displays supplied details, while its empty state
 carries the image and Your shoot title. Service policy and Replay the shove
 share one utility row. Load more photographs is centred beneath the shuffle.
@@ -378,7 +379,9 @@ The production reference is `system/photography-stack.html`. The departing
 package prop uses the bounded `--wc-pricing-prop-gold` token. Its five and a half second
 sequence uses `--wc-duration-pricing-scene`. The pricing scene uses the page
 surface as its stage. The irregular blue enclosure belongs to the shoot board
-revealed underneath. Controls retain Funnel Sans and selected headings use
+revealed underneath. The board appears along the departing card during the
+shove. Any remaining scene height settles into the board height as the movement
+ends. Controls retain Funnel Sans and selected headings use
 Unbounded. Gold is specific to the departing prop.
 
 JavaScript readers convert duration tokens from seconds or milliseconds into

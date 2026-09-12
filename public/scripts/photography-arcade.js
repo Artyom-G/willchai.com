@@ -3,6 +3,7 @@
   if (!arcade) return;
   const form = arcade.querySelector('[data-shoot-builder]');
   const scene = arcade.querySelector('[data-gold-scene]');
+  const stage = arcade.querySelector('.arcadeStageStack');
   const replay = arcade.querySelector('[data-replay-scene]');
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   const nameInput = form.elements.namedItem('title');
@@ -38,15 +39,19 @@
 
   const finishScene = () => {
     scene.classList.remove('isReady','isPlaying');
+    stage.classList.remove('isSceneReady','isScenePlaying');
     replay.hidden = motion.matches;
   };
   const playScene = () => {
     if (motion.matches) return finishScene();
     played = true;
     scene.classList.remove('isPlaying');
+    stage.classList.remove('isScenePlaying');
     scene.classList.add('isReady');
+    stage.classList.add('isSceneReady');
     void scene.offsetWidth;
     scene.classList.add('isPlaying');
+    stage.classList.add('isScenePlaying');
     replay.hidden = false;
   };
   const sceneObserver = new IntersectionObserver(entries => {
@@ -56,8 +61,11 @@
     }
   },{rootMargin:'-10% 0px -10% 0px',threshold:.55});
   const engage = () => { played=true; finishScene(); sceneObserver.disconnect(); };
-  if (!motion.matches && location.hash !== '#pricing') scene.classList.add('isReady');
-  if (location.hash === '#pricing') engage(); else sceneObserver.observe(arcade.querySelector('.arcadeStageStack'));
+  if (!motion.matches && location.hash !== '#pricing') {
+    scene.classList.add('isReady');
+    stage.classList.add('isSceneReady');
+  }
+  if (location.hash === '#pricing') engage(); else sceneObserver.observe(scene);
   scene.addEventListener('animationend',event => { if(event.target.classList.contains('pushingWill')) finishScene(); });
   replay.addEventListener('click',()=>{ arcade.scrollIntoView({block:'start',behavior:motion.matches?'instant':'smooth'}); playScene(); });
   form.addEventListener('focusin',engage);
@@ -108,17 +116,6 @@
     back.hidden=step===0;
     next.disabled=back.disabled=false;
     changing=false;
-  };
-  const fitSteps = () => {
-    if(changing) return;
-    // Measure every question at its actual width so the main action stays in place.
-    const height=Math.max(...steps.map(element=>{
-      element.classList.add('isMeasuring');
-      const measured=element.getBoundingClientRect().height;
-      element.classList.remove('isMeasuring');
-      return measured;
-    }));
-    window.style.setProperty('--shoot-step-height',Math.ceil(height)+'px');
   };
   const moveTo = async target => {
     if(changing || target<0 || target>2 || target===step) return;
@@ -219,18 +216,17 @@
   });
   document.addEventListener('visibilitychange',()=>{
     scene.classList.toggle('isPaused',document.hidden);
+    stage.classList.toggle('isPaused',document.hidden);
     transitions.forEach(animation=>document.hidden?animation.pause():animation.play());
   });
-  document.fonts?.ready.then(()=>{ fitName(); fitSteps(); });
+  document.fonts?.ready.then(fitName);
   let nameWidth=0;
   new ResizeObserver(()=>{
     if(nameInput.clientWidth===nameWidth) return;
     nameWidth=nameInput.clientWidth;
     fitName();
     if(changing) { ++transitionVersion; transitions.forEach(animation=>animation.cancel()); transitions=[]; syncStep(); }
-    fitSteps();
   }).observe(nameInput);
   syncStep();
   update();
-  fitSteps();
 })();
