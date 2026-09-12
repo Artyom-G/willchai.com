@@ -39,7 +39,7 @@
 
   const finishScene = () => {
     scene.classList.remove('isReady','isPlaying');
-    replay.hidden = motion.matches;
+    if (replay) replay.hidden = motion.matches;
   };
   const playScene = () => {
     if (motion.matches) return finishScene();
@@ -48,7 +48,7 @@
     scene.classList.add('isReady');
     void scene.offsetWidth;
     scene.classList.add('isPlaying');
-    replay.hidden = false;
+    if (replay) replay.hidden = false;
   };
   const sceneObserver = new IntersectionObserver(entries => {
     if(entries.some(entry=>entry.isIntersecting) && !played) {
@@ -60,7 +60,7 @@
   if (!motion.matches && location.hash !== '#pricing') scene.classList.add('isReady');
   if (location.hash === '#pricing') engage(); else sceneObserver.observe(arcade.querySelector('.willStage'));
   scene.addEventListener('animationend',event => { if(event.target.classList.contains('pushingWill')) finishScene(); });
-  replay.addEventListener('click',()=>{ arcade.scrollIntoView({block:'start',behavior:motion.matches?'instant':'smooth'}); playScene(); });
+  replay?.addEventListener('click',()=>{ arcade.scrollIntoView({block:'start',behavior:motion.matches?'instant':'smooth'}); playScene(); });
   form.addEventListener('focusin',engage);
   form.addEventListener('pointerdown',engage);
   document.querySelectorAll('a[href="#pricing"]').forEach(link => link.addEventListener('click',engage));

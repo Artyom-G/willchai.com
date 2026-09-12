@@ -340,9 +340,9 @@ gesture to settle. The four second greeting uses the approved four poses and int
 appearance retains the approved pushing poses. A blue rim joins the enclosure
 sides beneath the $600 package prop. Will pushes the panel past the edge, recovers
 his stance, pauses, and ducks vertically behind the rim. The scene stays opaque
-until his exit is complete, then reveals the board. The prop presents $600
-event photography. Direct inquiry links and form interaction reveal the usable board
-immediately. Replay remains available.
+until his exit is complete, then reveals the board. The prop presents Super
+Generic Package and $600. Direct inquiry links and form interaction reveal the
+usable board immediately.
 
 The white shoot board retains its irregular blue enclosure. An editable shoot
 name stays above two questions about place and date. Next reveals an optional
@@ -359,19 +359,17 @@ headers provide a return to the shoot when references are selected. Clipboard
 failure selects the message for manual copying. Inquiry contents stay in the
 current page.
 
-The client proof reads as a Will Chai collaboration composition. McMaster University
-holds the large image led position because Will studies, works, and photographs
-there. Foxwood Homes and Platinum Moon enter as smaller transparent elements.
-The heading, photograph, and two marks settle in stages, then all three
-organizations remain visible together. The shuffle
+The client proof reads as one animated three client composition. McMaster University
+holds the large photograph led position with a compact name plaque. Foxwood Homes
+and Platinum Moon enter as typeset supporting names. The photograph and three
+names settle in stages, then all three organizations remain visible together. The shuffle
 reserves image dimensions and fills continuous columns while preserving earlier
 positions. The footer retains the original contact ticket, policy, rights and
 homepage return. Reduced motion presents the static featured grid, direct image
 changes and usable builder. The pricing scene gives $600 the dominant visual
-position and remains readable before Will pushes the fixed package away. The
-builder keeps $600 as its sole public pricing reference and explains the work
-inside the amount. Its guidance connects additional budget room with longer
-coverage and a wider final gallery.
+position and remains readable before Will pushes the generic package away. The
+prop uses the short label Super Generic Package with the amount. The builder
+collects plans and budget for a personal quote.
 
 ## Stewardship
 

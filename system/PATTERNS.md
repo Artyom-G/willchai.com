@@ -160,13 +160,15 @@ directional image changes, and reference selection.
 The opening character emerges from the lower edge of the first photograph after
 the collection settles, takes a photograph, and ducks behind the edge. A separate
 stage follows the first card above the incoming stack. Phone viewport height
-changes preserve the current geometry during active scrolling. The four second greeting uses the approved four poses and integer enlargement. The later
+changes preserve the current geometry during active scrolling. Larger phone cards
+follow a closer diagonal path. The character fades before the following photograph
+reaches its area. The four second greeting uses the approved four poses and integer enlargement. The later
 appearance retains the approved pushing poses. A blue rim joins the enclosure
 sides beneath the $600 package prop. Will pushes the panel past the edge, recovers
 his stance, pauses, and ducks vertically behind the rim. The scene stays opaque
-until his exit is complete, then reveals the board. The prop presents $600
-event photography. Direct inquiry links and form interaction reveal the usable board
-immediately. Replay remains available.
+until his exit is complete, then reveals the board. The prop presents Super
+Generic Package and $600. Direct inquiry links and form interaction reveal the
+usable board immediately.
 
 The white shoot board retains its irregular blue enclosure. An editable shoot
 name stays above two questions about place and date. Next reveals an optional
@@ -175,9 +177,9 @@ Copy text. Back preserves every answer. The rough pointer accompanies Next and
 responds briefly to a press. A directional mask exchanges the question pair while
 the title and photographic preview stay anchored. Supplied amounts are labelled
 Your budget, and visitors may request guidance. The budget field keeps $600 as
-the sole public pricing reference. The package connects the amount with planning,
-photography, editing, and delivery. Supporting copy describes the quote factors
-and connects additional budget room with longer coverage and a wider final gallery.
+the sole public pricing reference. A short Super Generic Package label identifies
+the departing prop. The builder gathers the visitor's plans and budget for a
+personal quote.
 
 An opened photograph offers Add reference across the featured work and shuffle.
 Selections appear on the shoot board and remain removable. Their image links
@@ -186,10 +188,11 @@ headers provide a return to the shoot when references are selected. Clipboard
 failure selects the message for manual copying. Inquiry contents stay in the
 current page.
 
-The client proof gives McMaster University an image led feature occupying two
+The client proof gives McMaster University a photograph led feature occupying two
 thirds of the desktop composition. Foxwood Homes and Platinum Moon appear as
-smaller transparent entries in the remaining column. A staged Will Chai
-collaboration scene settles all three organizations into one visible group.
+typeset names in the remaining column. A staged entrance settles all three
+organizations into one visible group. The assistive heading stays available to
+screen readers while the visible treatment consists of the photograph and names.
 Gentle photograph drift animates the group. The shuffle reserves image
 dimensions and fills continuous columns while preserving earlier positions. The
 footer retains the original contact ticket, policy, rights and homepage return.

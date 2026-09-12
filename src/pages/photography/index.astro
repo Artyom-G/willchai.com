@@ -21,8 +21,8 @@ const featuredPhotographs = [
 ];
 
 const supportingClients = [
-  { name: "Foxwood Homes", detail: "Residential projects", logo: "/photography/clients/foxwood-homes.png", width: 213, height: 141, treatment: "foxwood" },
-  { name: "Platinum Moon", detail: "Band photography and live performance", logo: "/photography/clients/platinum-moon.avif", width: 500, height: 500, treatment: "platinum" },
+  { name: "Foxwood Homes", treatment: "foxwood" },
+  { name: "Platinum Moon", treatment: "platinum" },
 ];
 
 const shufflePhotographs = shuffleManifest.images;
@@ -52,12 +52,7 @@ const shuffleBatchSize = 36;
       <PhotographyCollection photographs={featuredPhotographs} />
 
       <section class="clientProof" data-client-proof aria-labelledby="clientProofTitle">
-        <header class="clientProofHeader">
-          <h2 id="clientProofTitle">
-            <span aria-hidden="true">Will Chai <span class="clientProofMultiply">×</span></span>
-            <span class="visuallyHidden">Organizations Will Chai has photographed for</span>
-          </h2>
-        </header>
+        <h2 id="clientProofTitle" class="visuallyHidden">Organizations Will Chai has photographed for</h2>
         <div class="clientProofComposition">
           <article class="clientFeature">
             <img
@@ -71,27 +66,15 @@ const shuffleBatchSize = 36;
             />
             <div class="clientFeatureCopy">
               <img src="/photography/clients/mcmaster.avif" alt="" width="500" height="500" loading="lazy" decoding="async" />
-              <div>
-                <h3>McMaster University</h3>
-                <p>I study here, work here, and photograph the people around it.</p>
-              </div>
+              <h3>McMaster University</h3>
             </div>
           </article>
           <div class="clientSupport">
             {
               supportingClients.map((client) => (
                 <article class={`clientSupportItem clientSupportItem-${client.treatment}`}>
-                  <img
-                    src={client.logo}
-                    alt=""
-                    width={client.width}
-                    height={client.height}
-                    loading="lazy"
-                    decoding="async"
-                  />
                   <div class="clientSupportCopy">
                     <h3>{client.name}</h3>
-                    <p>{client.detail}</p>
                   </div>
                 </article>
               ))
