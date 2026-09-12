@@ -360,6 +360,20 @@ and usable builder. Final quotes remain personal to each assignment.
 The Photography header uses the shared identity mark and Contact action in a
 compact arrangement. Its primary destination labels are omitted on this page.
 
+Photography shares one responsive outer gutter across its header, opening,
+client composition, inquiry and shuffle. The featured viewport fits beneath
+the opening and centres itself as scrolling begins. Image sizing reserves
+clearance for the greeting above the first photograph. The client composition
+uses content sized spacing so its settled group can be read together.
+
+The shoot board keeps a continuous irregular blue outline around its white
+interior. Fields use a fine boundary with an Ink baseline and a Blue focus
+state. Every question step is measured at the current width to reserve a shared
+height. Next and Open email occupy the same position through the sequence.
+The photographic summary displays supplied details, while its empty state
+carries the image and Your shoot title. Service policy and Replay the shove
+share one utility row. Load more photographs is centred beneath the shuffle.
+
 The production reference is `system/photography-stack.html`. The departing
 package prop uses the bounded `--wc-pricing-prop-gold` token. Its five and a half second
 sequence uses `--wc-duration-pricing-scene`. The pricing scene uses the page

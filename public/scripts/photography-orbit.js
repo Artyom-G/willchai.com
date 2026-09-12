@@ -10,6 +10,7 @@
   const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
   let frame = 0;
   let sectionTop = 0;
+  let stickyTop = 0;
   let width = 1;
   let height = 1;
   let cardStep = 1;
@@ -45,7 +46,7 @@
     frame = 0;
     if (motion.matches || document.hidden) return;
 
-    const progress = clamp((scrollY - sectionTop) / distance, 0, 1);
+    const progress = clamp((scrollY - sectionTop + stickyTop) / distance, 0, 1);
     const cursor = progress * (cards.length - 1);
     const mobile = width <= 640;
     const nearest = Math.round(cursor);
@@ -57,7 +58,7 @@
     cards.forEach((card, index) => {
       const q = index - cursor;
       const x = q * width * (mobile ? 0.56 : 0.49) + Math.sin(q * 0.8) * width * 0.035;
-      const y = q * height * (mobile ? 0.38 : 0.4) + Math.sin(q * 0.8) * height * 0.025;
+      const y = q * height * (mobile ? 0.38 : 0.4) + Math.sin(q * 0.8) * height * 0.025 + (mobile ? 24 : 32);
       const proximity = Math.abs(q);
       const scale = 1 - Math.min(proximity, 2) * 0.075;
       const angle = clamp(q, -2, 2) * (mobile ? 6 : 8);
@@ -94,20 +95,23 @@
     }
 
     section.classList.add('isOrbit');
+    sectionTop = section.getBoundingClientRect().top + scrollY;
+    section.style.setProperty('--orbit-opening-space',`${Math.round(sectionTop)}px`);
     width = viewport.clientWidth;
     height = viewport.clientHeight;
+    stickyTop = parseFloat(getComputedStyle(viewport).top) || 0;
     const mobile = width <= 640;
     cardStep = height * (mobile ? 0.72 : 0.68);
     distance = cardStep * (cards.length - 1);
     section.style.height = `${height + distance}px`;
-    sectionTop = section.getBoundingClientRect().top + scrollY;
 
     cards.forEach((card) => {
       const image = card.querySelector('img');
       const intrinsicWidth = Number(image.getAttribute('width')) || image.naturalWidth;
       const intrinsicHeight = Number(image.getAttribute('height')) || image.naturalHeight;
       const ratio = intrinsicWidth / intrinsicHeight || 3 / 4;
-      const cardWidth = Math.min(width * (mobile ? 0.86 : 0.68), height * (mobile ? 0.69 : 0.79) * ratio);
+      const maximumHeight = Math.min(height * (mobile ? 0.69 : 0.79), height - (mobile ? 144 : 176));
+      const cardWidth = Math.min(width * (mobile ? 0.86 : 0.68), maximumHeight * ratio);
       card.style.setProperty('--orbit-card-width', `${cardWidth}px`);
       card.style.setProperty('--orbit-card-height', `${cardWidth / ratio}px`);
       if (card === cards[0] && characterStage) {
@@ -176,7 +180,7 @@
   cards.forEach((card) => {
     card.addEventListener('focusin', () => {
       if (!motion.matches && keyboardIntent) {
-        scrollTo({ top: sectionTop + cards.indexOf(card) * cardStep, behavior: 'auto' });
+        scrollTo({ top: sectionTop - stickyTop + cards.indexOf(card) * cardStep, behavior: 'auto' });
         render();
       }
     });

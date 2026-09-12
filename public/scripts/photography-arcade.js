@@ -77,7 +77,9 @@
     const budget=guidance.checked?'':tidy(data.budget);
     const notes=String(data.idea||'').trim();
     arcade.querySelector('[data-shoot-summary-title]').textContent=title||'Your shoot';
-    arcade.querySelector('[data-shoot-summary]').textContent=[place,date].filter(Boolean).join(' · ')||'Your plans, taking shape.';
+    const summary=arcade.querySelector('[data-shoot-summary]');
+    summary.textContent=[place,date].filter(Boolean).join(' · ');
+    summary.hidden=!summary.textContent;
     const budgetSummary=arcade.querySelector('[data-budget-summary]');
     budgetSummary.hidden=!(budget||guidance.checked);
     budgetSummary.textContent=budget?'Your budget: '+budget+' CAD':'I’d like guidance on the budget.';
@@ -106,6 +108,17 @@
     back.hidden=step===0;
     next.disabled=back.disabled=false;
     changing=false;
+  };
+  const fitSteps = () => {
+    if(changing) return;
+    // Measure every question at its actual width so the main action stays in place.
+    const height=Math.max(...steps.map(element=>{
+      element.classList.add('isMeasuring');
+      const measured=element.getBoundingClientRect().height;
+      element.classList.remove('isMeasuring');
+      return measured;
+    }));
+    window.style.setProperty('--shoot-step-height',Math.ceil(height)+'px');
   };
   const moveTo = async target => {
     if(changing || target<0 || target>2 || target===step) return;
@@ -208,14 +221,16 @@
     scene.classList.toggle('isPaused',document.hidden);
     transitions.forEach(animation=>document.hidden?animation.pause():animation.play());
   });
-  document.fonts?.ready.then(fitName);
+  document.fonts?.ready.then(()=>{ fitName(); fitSteps(); });
   let nameWidth=0;
   new ResizeObserver(()=>{
     if(nameInput.clientWidth===nameWidth) return;
     nameWidth=nameInput.clientWidth;
     fitName();
     if(changing) { ++transitionVersion; transitions.forEach(animation=>animation.cancel()); transitions=[]; syncStep(); }
+    fitSteps();
   }).observe(nameInput);
   syncStep();
   update();
+  fitSteps();
 })();

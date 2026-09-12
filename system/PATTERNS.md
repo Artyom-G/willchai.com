@@ -200,6 +200,16 @@ builder. Final quotes remain personal to each assignment.
 
 Open `photography-stack.html` for the production interaction study.
 
+Photography uses a shared responsive gutter across the page. The gallery fits
+within the opening viewport and reserves room above the first photograph for
+Will. Client spacing keeps the settled group together. The white shoot board
+and its blue outline share the irregular silhouette. Step measurement reserves
+the largest question height at the current width, keeping the primary action
+in place while its label changes from Next to Open email. Recalculate this
+space when fonts or the form width change. Empty summary details stay hidden
+until the visitor supplies them. The policy and replay controls share a row,
+and the shuffle ends with a centred Load more photographs action.
+
 ## External project handoff
 
 An external handoff is used when a project has a substantial independent site,
