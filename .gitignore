@@ -10,6 +10,12 @@
 
 # production
 /build
+/dist
+/.astro
+
+# local verification and generated artifacts
+/tmp
+/output
 
 # misc
 .DS_Store

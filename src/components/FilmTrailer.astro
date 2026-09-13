@@ -1,0 +1,21 @@
+---
+import { films } from "../data/films";
+---
+<dialog class="filmTrailer" aria-labelledby="trailerTitle" data-film-trailer>
+  <div class="trailerTop">
+    <div><p>Trailer</p><h2 id="trailerTitle" data-trailer-title></h2></div>
+    <button type="button" class="trailerClose" data-trailer-close autofocus>
+      Close<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg>
+    </button>
+  </div>
+  <div class="trailerScreen" data-trailer-screen aria-busy="false">
+    <p class="trailerStatus" data-trailer-status role="status">Loading trailer…</p>
+  </div>
+  <div class="trailerBottom">
+    <a data-trailer-page href="/films/">About the film</a>
+    <a data-trailer-external href="https://www.youtube.com/">Watch on YouTube<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M7 6h11v11" /></svg></a>
+  </div>
+  <p class="trailerCaptions">Automatic English captions are available in the player.</p>
+</dialog>
+<script is:inline type="application/json" id="filmTrailerData" set:html={JSON.stringify(films.map(film => ({ slug: film.slug, title: film.title, href: film.links[0].href }))).replace(/</g, "\\u003c")} />
+<script is:inline src="/scripts/films.js" defer></script>

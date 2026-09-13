@@ -1,0 +1,61 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+  image?: string;
+  imageAlt?: string;
+  pageClass?: string;
+}
+
+const {
+  title,
+  description,
+  path,
+  image,
+  imageAlt = "Will Chai, student, maker, and storyteller",
+  pageClass = "",
+} = Astro.props;
+
+const canonical = new URL(path, Astro.site);
+const socialImage = image ? new URL(image, Astro.site) : undefined;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#eef0f2" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/assets/willchai-mark.png" type="image/png" />
+    <link rel="icon" href="/assets/willchai-mark.avif" type="image/avif" />
+    <link
+      rel="preload"
+      href="/assets/funnel-sans-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <title>{title}</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="willchai.com" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    {socialImage && <meta property="og:image" content={socialImage} />}
+    {socialImage && <meta property="og:image:alt" content={imageAlt} />}
+    <meta name="twitter:card" content={socialImage ? "summary_large_image" : "summary"} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {socialImage && <meta name="twitter:image" content={socialImage} />}
+    <slot name="head" />
+  </head>
+  <body class={pageClass}>
+    <a class="skipLink" href="#main">Skip to content</a>
+    <slot />
+  </body>
+</html>

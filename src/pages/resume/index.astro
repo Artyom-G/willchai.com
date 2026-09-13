@@ -1,0 +1,84 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import ContactEnding from "../../components/ContactEnding.astro";
+import { resumeProfile, resumeSections } from "../../data/resume";
+---
+
+<BaseLayout
+  title="Résumé | Will Chai"
+  description="The current professional record for Will Chai, with a PDF and an accessible web edition."
+  path="/resume/"
+  pageClass="resumePage"
+>
+  <meta slot="head" name="robots" content="noindex, nofollow" />
+  <div class="pageShell">
+    <SiteHeader current="resume" />
+    <main id="main" class="pageMain">
+      <section class="resumeIntro" aria-labelledby="resumePageTitle">
+        <div class="resumeIntroCopy">
+          <p class="sectionMarker">Professional record</p>
+          <h1 id="resumePageTitle" class="pageTitle">Résumé</h1>
+          <p>View the PDF here or continue to the accessible web edition below.</p>
+        </div>
+        <div class="resumeActions">
+          <a class="resumeAction resumeActionPrimary" href="/resume.pdf" target="_blank" rel="noreferrer">
+            View PDF <span aria-hidden="true">↗</span>
+          </a>
+          <a class="resumeAction" href="/resume.pdf" download>Download PDF</a>
+        </div>
+      </section>
+
+      <section class="resumePreview" aria-labelledby="resumePreviewTitle">
+        <div class="resumePreviewHeader">
+          <h2 id="resumePreviewTitle">PDF edition</h2>
+          <p>Two pages, prepared for printing and sharing.</p>
+        </div>
+        <iframe src="/resume.pdf#view=FitH" title="Will Chai résumé PDF"></iframe>
+      </section>
+
+      <article class="resumeDocument" aria-labelledby="resumeDocumentTitle">
+        <header class="resumeHeader">
+          <div>
+            <h2 id="resumeDocumentTitle">{resumeProfile.name}</h2>
+            <p>{resumeProfile.headline}</p>
+          </div>
+          <div class="resumeContact">
+            <span>{resumeProfile.location}</span>
+            <a href={`mailto:${resumeProfile.email}`}>{resumeProfile.email}</a>
+            <a href={`https://www.${resumeProfile.linkedin}`}>LinkedIn</a>
+            <a href="/">{resumeProfile.website}</a>
+          </div>
+        </header>
+
+        {
+          resumeSections.map((section) => (
+            <section class="resumeSection" aria-labelledby={`resume${section.title.replace(/\s/g, "")}`}>
+              <h3 id={`resume${section.title.replace(/\s/g, "")}`}>{section.title}</h3>
+              <div class="resumeList">
+                {section.items.map((item) => (
+                  <div class="resumeItem">
+                    <h3>
+                      {item.href ? <a href={item.href}>{item.title}</a> : item.title}
+                    </h3>
+                    <p class="resumeRole">{item.role}</p>
+                    <p class="resumeDate">{item.date}</p>
+                    {item.detail && <p>{item.detail}</p>}
+                  </div>
+                ))}
+              </div>
+            </section>
+          ))
+        }
+
+        <p class="resumeSource">
+          Professional dates and titles were checked against Will’s LinkedIn record in {resumeProfile.checked}.
+        </p>
+      </article>
+
+      <ContactEnding />
+    </main>
+    <SiteFooter />
+  </div>
+</BaseLayout>

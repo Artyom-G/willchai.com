@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="">
+  <defs>
+    <pattern id="triangles" width="120" height="104" patternUnits="userSpaceOnUse">
+      <path d="M0 104 60 0l60 104M0 104h120" fill="none" stroke="#fff" stroke-opacity=".16" stroke-width="2"/>
+    </pattern>
+    <radialGradient id="glow" cx="76%" cy="20%" r="42%">
+      <stop offset="0" stop-color="#fff" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="#2d29f4"/>
+  <rect width="1600" height="900" fill="url(#triangles)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+</svg>

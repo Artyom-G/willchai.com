@@ -1,0 +1,12 @@
+<span class="photographyCharacter" data-photographer-hello aria-hidden="true">
+  <span class="photographyCharacterSprite"></span>
+</span>
+<style>
+  .photographyCharacter { --character-frame:160px; position:absolute; z-index:2; right:10%; bottom:100%; display:block; width:80px; height:110px; overflow:hidden; pointer-events:none; }
+  .photographyCharacterSprite { position:absolute; left:-40px; bottom:-20px; width:var(--character-frame); height:var(--character-frame); background:url("/photography/pixel-photographer.png") 0 0 / 400% 100% no-repeat; image-rendering:pixelated; transform:translateY(100%); }
+  @media(max-width:62rem) {
+    .photographyCharacter { --character-frame:128px; right:8%; width:64px; height:88px; }
+    .photographyCharacterSprite { left:-32px; bottom:-16px; }
+  }
+  @media(prefers-reduced-motion:reduce) { .photographyCharacterSprite { display:none; } }
+</style>
