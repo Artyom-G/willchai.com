@@ -397,9 +397,10 @@ on phones and 120 pixels on desktop for the greeting. It plays on each page load
 
 The shuffle randomizes its full collection on each load and each button press.
 The explicit reshuffle uses `--wc-duration-shuffle` at 1100ms. Four outgoing
-photographs gather into a small stack beside Will, then four incoming photographs
-deal into the next arrangement. The temporary layer uses the existing pushing
-atlas at whole pixel enlargement. Controls resume after completion, and a
+photographs gather into two small piles beside Will, weave into one deck, then
+deal into the next arrangement. The temporary layer uses the clean photographer
+atlas at whole pixel enlargement. The pricing scene retains the pushing atlas.
+Controls resume after completion, and a
 resize, hidden document or reduced motion change settles the gallery immediately.
 The image folder sync command and publishing steps live in `CONTENT-GUIDE.md`.
 

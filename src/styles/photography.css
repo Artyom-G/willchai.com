@@ -195,7 +195,7 @@ html:has(.photographyPage) { scroll-behavior:auto; scrollbar-gutter:stable; }
 .shuffleTheatre { position:absolute; height:0; z-index:5; pointer-events:none; }
 .shuffleDealtPhoto { position:absolute; top:0; left:0; display:block; object-fit:contain; transform-origin:0 0; }
 .shufflePerformer { position:absolute; width:96px; height:96px; z-index:30; }
-.shufflePerformerSprite { display:block; width:100%; height:100%; image-rendering:pixelated; background:url('/photography/pixel-photographer-push.png') 0 0 / 400% 100% no-repeat; }
+.shufflePerformerSprite { display:block; width:100%; height:100%; image-rendering:pixelated; background:url('/photography/pixel-photographer.png') 0 0 / 400% 100% no-repeat; }
 .shuffleHeader { display:flex; align-items:center; justify-content:space-between; gap:var(--wc-space-4); margin-bottom:var(--wc-space-6); }
 .shuffleHeader h2 { margin:0; font-family:var(--wc-font-display); font-size:clamp(1.8rem,4vw,4rem); letter-spacing:-.04em; font-weight:400; }
 .shuffleNavigation,.shuffleControls { display:flex; align-items:center; gap:var(--wc-space-6); }

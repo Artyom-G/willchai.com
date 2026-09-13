@@ -114,18 +114,22 @@ if (shuffleGallery && shuffleButton) {
       Object.assign(card.style,{width:photo.width+'px',height:photo.height+'px',zIndex:String((arriving?20:10)+index)});
       theatre.append(card);
       const spread = `translate3d(${photo.x}px,${photo.y}px,0) rotate(0deg) scale(1)`;
-      const deck = `translate3d(${deckX+index*3}px,${deckY+index*3}px,0) rotate(${(index-1)*5}deg) scale(${deckWidth/photo.width})`;
+      const pileX = deckX + (index % 2 ? deckWidth * .36 : -deckWidth * .36) + (Math.floor(index / 2) * 3);
+      const pileY = deckY + Math.floor(index / 2) * 4;
+      const splitPile = `translate3d(${pileX}px,${pileY}px,0) rotate(${(index % 2 ? 1 : -1) * 8}deg) scale(${deckWidth/photo.width})`;
+      const wovenDeck = `translate3d(${deckX+index*3}px,${deckY+index*3}px,0) rotate(${(index-1)*4}deg) scale(${deckWidth/photo.width})`;
       const frames = arriving ? [
-        {transform:deck,opacity:0,offset:0},
-        {transform:deck,opacity:0,offset:.4},
-        {transform:deck,opacity:1,offset:.43+index*.025,easing:ease},
-        {transform:spread,opacity:1,offset:.82+index*.04},
+        {transform:splitPile,opacity:0,offset:0},
+        {transform:splitPile,opacity:0,offset:.36},
+        {transform:splitPile,opacity:1,offset:.4+index*.025,easing:ease},
+        {transform:wovenDeck,opacity:1,offset:.62+index*.035,easing:ease},
+        {transform:spread,opacity:1,offset:.84+index*.03},
         {transform:spread,opacity:0,offset:1}
       ] : [
         {transform:spread,opacity:1,offset:0,easing:ease},
-        {transform:deck,opacity:1,offset:.36+index*.02},
-        {transform:deck,opacity:0,offset:.48},
-        {transform:deck,opacity:0,offset:1}
+        {transform:splitPile,opacity:1,offset:.34+index*.025},
+        {transform:splitPile,opacity:0,offset:.52},
+        {transform:splitPile,opacity:0,offset:1}
       ];
       shuffleAnimations.push(card.animate(frames,{duration,fill:'both'}));
     };
@@ -139,15 +143,17 @@ if (shuffleGallery && shuffleButton) {
       {transform:'translate3d(-12px,32px,0)',opacity:0,offset:0},
       {transform:'translate3d(0,-8px,0)',opacity:1,offset:.18},
       {transform:'translate3d(0,0,0)',opacity:1,offset:.3},
-      {transform:'translate3d(8px,0,0)',opacity:1,offset:.48},
-      {transform:'translate3d(0,0,0)',opacity:1,offset:.76},
+      {transform:'translate3d(0,-4px,0)',opacity:1,offset:.48},
+      {transform:'translate3d(-4px,0,0)',opacity:1,offset:.7},
+      {transform:'translate3d(0,0,0)',opacity:1,offset:.8},
       {transform:'translate3d(0,24px,0)',opacity:0,offset:1}
     ].map(frame=>({...frame,easing:ease})),{duration,fill:'both'}));
     shuffleAnimations.push(sprite.animate([
       {backgroundPositionX:'0%',offset:0},
-      {backgroundPositionX:'33.333333%',offset:.3},
-      {backgroundPositionX:'66.666667%',offset:.43},
-      {backgroundPositionX:'100%',offset:.7}
+      {backgroundPositionX:'33.333333%',offset:.24},
+      {backgroundPositionX:'66.666667%',offset:.4},
+      {backgroundPositionX:'33.333333%',offset:.62},
+      {backgroundPositionX:'100%',offset:.8}
     ].map(frame=>({...frame,easing:'steps(1,end)'})),{duration,fill:'both'}));
     const reveal = shuffleGallery.animate([{opacity:0,offset:0},{opacity:0,offset:.72},{opacity:1,offset:1}],{duration,fill:'both'});
     shuffleAnimations.push(reveal);

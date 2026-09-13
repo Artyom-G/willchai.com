@@ -212,10 +212,10 @@ until the visitor supplies them. The policy and replay controls share a row,
 and the shuffle ends with a centred Load more photographs action.
 
 Each fresh Photography page load plays the opening greeting and randomizes the
-shuffle. The explicit Shuffle action gathers four photographs beside the pixel
-photographer and deals the new selection into the gallery over 1100ms. The
-character uses the existing pushing atlas and remains visible on the white
-canvas. The gallery settles immediately for reduced motion or an interrupted
+shuffle. The explicit Shuffle action gathers four photographs into two piles,
+weaves them into one deck, and deals the new selection into the gallery over
+1100ms. The character uses the clean photographer atlas while the pricing scene
+retains the pushing atlas. The gallery settles immediately for reduced motion or an interrupted
 sequence. Additional batches preserve the chosen order. Featured image offsets
 respond to the dimensions of adjacent photographs.
 

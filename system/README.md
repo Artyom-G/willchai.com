@@ -63,8 +63,10 @@ texture, and click-to-copy response rather than recreated from appearance
 alone.
 
 The opening greeting now plays once on every Photography page load. Each load
-also chooses a random shuffle order. Pressing Shuffle gives Will a brief
-gathering and dealing action using the same pixel artwork. The image folder and
+also chooses a random shuffle order. Pressing Shuffle gathers four photographs
+into two piles, weaves them into a deck, and deals a new selection while Will
+uses the clean photographer artwork. The pricing scene uses the pushing artwork.
+The image folder and
 `npm run photos:sync` workflow are documented in `CONTENT-GUIDE.md`.
 
 ## Reference models
