@@ -1,57 +1,28 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import FilmsEnding from "../../components/FilmsEnding.astro";
-import FilmTrailer from "../../components/FilmTrailer.astro";
-import FilmTransitions from "../../components/FilmTransitions.astro";
-import FilmHero from "../../components/FilmHero.astro";
-import FilmLaurels from "../../components/FilmLaurels.astro";
-import SiteHeader from "../../components/SiteHeader.astro";
-import { films, type Film } from "../../data/films";
-import "../../styles/films.css";
-export function getStaticPaths() {
-  return films.map(film => ({ params: { slug: film.slug }, props: { film } }));
-}
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import FilmHero from '../../components/FilmHero.astro';
+import FilmSpread from '../../components/FilmSpread.astro';
+import FilmRecognition from '../../components/FilmRecognition.astro';
+import FilmClosing from '../../components/FilmClosing.astro';
+import FilmTrailer from '../../components/FilmTrailer.astro';
+import FilmViewer from '../../components/FilmViewer.astro';
+import { films, type Film } from '../../data/films';
+import '../../styles/films.css';
+export function getStaticPaths() { return films.map(film => ({ params:{slug:film.slug},props:{film} })); }
 interface Props { film: Film; }
-const { film } = Astro.props;
-const otherFilm = films.find(item => item.slug !== film.slug);
+const {film} = Astro.props;
 ---
 <BaseLayout title={`${film.title} | Will Chai`} description={film.summary} path={`/films/${film.slug}/`} image={film.still} imageAlt={film.stillAlt} pageClass="filmDetailPage filmCinema">
-  <FilmTransitions slot="head" />
   <div class="filmSiteHeader"><SiteHeader current="films" /></div>
   <main id="main">
-    <nav class="filmIntroduction" aria-label="Film navigation"><a class="filmBack" href="/films/">All films</a><p>{film.genre}</p></nav>
+    <nav class="filmIntroduction" aria-label="Film navigation"><a href="/films/">All films ↗</a><a href="#credits">Credits ↓</a></nav>
     <FilmHero film={film} first detail />
-    <section class="filmAbout" id="about" aria-labelledby="synopsis-title">
-      <div class="filmAboutCopy">
-        <h2 id="synopsis-title" class="filmSectionLabel">Synopsis</h2>
-        <p class="filmSynopsis">{film.introduction}</p>
-        <div class="filmActions">{film.links.slice(1).map(link => <a class="filmLink" href={link.href}>{link.label}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" /></svg></a>)}</div>
-      </div>
-      <figure class="filmPoster"><a href={film.poster} aria-label={`${film.title} poster`}><img src={film.poster} alt={film.posterAlt} width={film.posterWidth} height={film.posterHeight} loading="lazy" decoding="async" /></a></figure>
-    </section>
-    {film.gallery && <section class="filmImages" aria-label={`${film.title} stills`}>
-      {film.gallery.map(still => <figure data-film-reveal><img src={still.src} srcset={still.srcSet} sizes="(max-width: 46rem) 100vw, 60vw" alt={still.alt} width={still.width} height={still.height} loading="lazy" decoding="async" /></figure>)}
-    </section>}
-    <section class="filmProduction" aria-labelledby="production-title">
-      <h2 class="filmSectionLabel" id="production-title">Production</h2>
-      <div>{film.story.map(paragraph => <p>{paragraph}</p>)}</div>
-    </section>
-    <section class="filmRecognition" aria-labelledby="recognition-title">
-      <h2 class="filmSectionLabel" id="recognition-title">Festivals</h2>
-      <FilmLaurels laurels={film.laurels} />
-      <details class="filmDisclosure"><summary>Festival record<span aria-hidden="true">+</span></summary><ul>{film.recognition.map(item => <li>{item}</li>)}</ul></details>
-    </section>
-    <section class="filmCredits" aria-label="Film credits">
-      <details class="filmDisclosure"><summary>Credits<span aria-hidden="true">+</span></summary>
-        <dl>{film.credits.map(credit => <div><dt>{credit.value}</dt><dd>{credit.label}</dd></div>)}</dl>
-      </details>
-    </section>
-    {otherFilm && <a class="filmNext" href={`/films/${otherFilm.slug}/`}>
-      <img src={otherFilm.still} srcset={otherFilm.stillSrcSet} sizes="100vw" alt="" width={otherFilm.stillWidth} height={otherFilm.stillHeight} loading="lazy" decoding="async" />
-      <div><p>Next film</p><h2>{otherFilm.title}</h2></div>
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" /></svg>
-    </a>}
-    <FilmsEnding />
+    <FilmSpread film={film} detail />
+    <section class="filmCredits" id="credits" aria-labelledby="credits-title"><header><h2 id="credits-title">Credits</h2><span>{film.year} / Canada</span></header><dl>{film.credits.map(credit => <div><dt>{credit.value}</dt><dd>{credit.label}</dd></div>)}</dl></section>
+    <FilmRecognition film={film} detail />
+    <section class="filmOriginalPoster" aria-label="Original poster"><a href={film.poster} data-film-image aria-label={`View ${film.title} poster`}><img src={film.poster} alt={`${film.title} original poster`} width={film.posterWidth} height={film.posterHeight} loading="lazy" /></a><a class="filmLink" href={film.links.find(link => link.label === 'Press kit')?.href}>Press kit ↗</a></section>
+    <FilmClosing />
   </main>
-  <FilmTrailer />
+  <FilmTrailer /><FilmViewer />
 </BaseLayout>

@@ -1,0 +1,10 @@
+---
+import type { Film } from '../data/films';
+import FilmLaurels from './FilmLaurels.astro';
+interface Props { film: Film; detail?: boolean; }
+const { film, detail = false } = Astro.props;
+---
+<section class="filmRecognition" id={detail ? 'festivals' : `festivals-${film.slug}`} aria-labelledby={`festivals-heading-${film.slug}`}>
+  <header><h2 id={`festivals-heading-${film.slug}`}>Festivals</h2><span>{film.title} / {film.year}</span></header>
+  <FilmLaurels laurels={film.laurels} />
+</section>

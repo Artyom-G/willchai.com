@@ -1,14 +1,13 @@
 ---
-import type { FilmLaurel } from "../data/films";
-interface Props { laurels: FilmLaurel[]; compact?: boolean; }
-const { laurels, compact = false } = Astro.props;
+import type { FilmLaurel } from '../data/films';
+interface Props { laurels: FilmLaurel[]; }
+const { laurels } = Astro.props;
+const groups = [...new Set(laurels.map(item => item.festival))].map(festival => ({festival, results: laurels.filter(item => item.festival === festival)}));
 ---
-<ul class:list={["filmLaurels", { filmLaurelsCompact: compact }]} aria-label="Festival recognition">
-  {laurels.map(laurel => <li>
-    <a class="filmLaurel" href={laurel.source}>
-      <span class="filmLaurelCategory">{laurel.category}</span>
-      <span class="filmLaurelFestival">{laurel.festival}</span>
-      <span class="filmLaurelStatus">{laurel.status}</span>
-    </a>
+<ul class="filmLaurels" data-festivals={groups.length} aria-label="Festival recognition">
+  {groups.map(group => <li class="filmLaurelGroup">
+    {group.results[0].artwork ? <a class="filmLaurelArtwork" href={group.results[0].source} tabindex="-1" aria-hidden="true"><img src={group.results[0].artwork} alt="" width="400" height="270" loading="lazy" /></a> : <div class="filmLaurelDrawn" aria-hidden="true"><span>{group.festival}</span></div>}
+    <h3>{group.festival}</h3>
+    <ul>{group.results.map(result => <li><a href={result.source}>{result.category && <span>{result.category}</span>}<span class="filmLaurelStatus">{result.outcome} · {result.year}</span></a></li>)}</ul>
   </li>)}
 </ul>

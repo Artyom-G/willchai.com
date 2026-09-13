@@ -1,27 +1,30 @@
 ---
-import type { Film } from "../data/films";
-import FilmLaurels from "./FilmLaurels.astro";
+import type { Film } from '../data/films';
+import FilmTitle from './FilmTitle.astro';
 interface Props { film: Film; first?: boolean; detail?: boolean; }
 const { film, first = false, detail = false } = Astro.props;
-const Heading = detail ? "h1" : "h2";
+const Heading = detail ? 'h1' : 'h2';
+const wattle = film.slug === 'wattleseed';
+const nextFrame = film.gallery?.[0];
 ---
-<section class="filmChapter" data-film-chapter aria-labelledby={`title-${film.slug}`}>
+<section class:list={['filmChapter', { filmChapterMinus: !wattle, filmChapterFirst: first }]} id={film.slug} data-film-chapter aria-labelledby={`title-${film.slug}`}>
   <div class="filmStage">
-    <div class="filmFrame" style={`view-transition-name:film-${film.slug}`}>
-      <img src={film.still} srcset={film.stillSrcSet} sizes="100vw" alt={film.stillAlt} width={film.stillWidth} height={film.stillHeight} loading={first ? "eager" : "lazy"} fetchpriority={first ? "high" : "auto"} />
-      {film.gallery?.[1] && <img class="filmFrameSecond" src={film.gallery[1].src} srcset={film.gallery[1].srcSet} sizes="100vw" alt="" width={film.gallery[1].width} height={film.gallery[1].height} loading="lazy" />}
+    <div class="filmFrame">
+      {wattle ? <img class="filmFirstFrame" src={film.still} srcset={film.stillSrcSet} sizes="100vw" alt={film.stillAlt} width={film.stillWidth} height={film.stillHeight} loading={first ? 'eager' : 'lazy'} fetchpriority={first ? 'high' : 'auto'} /> : <div class="filmPortraitCrop"><img class="filmPortrait" src="/assets/films/minus-portrait.avif" width="1920" height="2560" alt="Murder of Minus poster portrait. Quinten holds a small component in his raised hand." loading={first ? 'eager' : 'lazy'} /></div>}
+      {nextFrame && <div class="filmAperture"><img src={nextFrame.src} srcset={nextFrame.srcSet} sizes="100vw" width={nextFrame.width} height={nextFrame.height} alt="" loading="lazy" /></div>}
+      <div class="filmImageShade"></div>
     </div>
+    <div class="filmHeroTop"><span>{film.year} / {film.runtime}</span><a href={detail ? '#festivals' : `#festivals-${film.slug}`}>Festivals</a></div>
     <div class="filmHeroContent">
-      <div class="filmHeroIdentity">
-        <p class="filmMeta">{film.year}<span>{film.runtime}</span></p>
-        <Heading id={`title-${film.slug}`} class="filmTitle">{film.title}</Heading>
-        <p class="filmDirector">{film.directorLine}</p>
+      <Heading class="visuallyHidden" id={`title-${film.slug}`}>{film.title}</Heading>
+      <FilmTitle slug={film.slug} />
+      <div class="filmHeroBottom">
+        <p>{film.directorLine}</p>
         <div class="filmActions">
-          <a class="filmPlay" href={film.links[0].href} data-trailer={film.slug}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 11 7-11 7z" /></svg>Trailer</a>
-          <a class="filmLink" href={detail ? "#about" : `/films/${film.slug}/`}>{detail ? "About" : "Film details"}<svg viewBox="0 0 24 24" aria-hidden="true"><path d={detail ? "M12 5v14m-6-6 6 6 6-6" : "M5 12h14m-6-6 6 6-6 6"} /></svg></a>
+          <a class="filmPlay" href={film.links[0].href} data-trailer={film.slug}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 4 12 8-12 8z" /></svg>Trailer</a>
+          <a class="filmLink" href={detail ? '#about' : `/films/${film.slug}/`}>{detail ? 'About' : 'Film details'}<span aria-hidden="true">↗</span></a>
         </div>
       </div>
-      <FilmLaurels laurels={film.laurels.slice(0, 2)} compact />
     </div>
   </div>
 </section>

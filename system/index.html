@@ -330,19 +330,26 @@
             <article class="pattern-entry" id="films-cinema">
               <div class="pattern-copy">
                 <h3>Films cinema canvas</h3>
-                <p>Full width stills, direct viewing actions and readable laurels share an Ink canvas. Ordinary scrolling exchanges two film frames on spacious desktop screens. Compact layouts present a static vertical sequence.</p>
+                <p>Original stills, poster lettering and festival artwork share an Ink canvas. Native scrolling opens a central image mask during each short desktop passage. Compact layouts present the same images in a settled vertical sequence.</p>
                 <dl class="pattern-contract">
-                  <div><dt>Required</dt><dd>Exact title, year, runtime, director credit, premise, Trailer action and sourced recognition.</dd></div>
-                  <div><dt>Behaviour</dt><dd>Native scrolling, a dark trailer dialog and expandable film records.</dd></div>
-                  <div><dt>Must hold</dt><dd>Readable laurels, keyboard operation, playback cleanup and reduced motion support.</dd></div>
+                  <div><dt>Content</dt><dd>Original title artwork, year, runtime, director, Trailer action and sourced festival records.</dd></div>
+                  <div><dt>Behavior</dt><dd>Native scrolling, responsive compositions and dismissible trailer and image dialogs.</dd></div>
+                  <div><dt>Access</dt><dd>Readable records, keyboard operation, focus restoration and reduced motion support.</dd></div>
                 </dl>
               </div>
               <div class="pattern-demo film-cinema-demo">
-                <img src="../public/assets/films/wattleseed/cover-1280.avif" alt="A researcher leans across a library table in Wattleseed" width="1280" height="692" loading="lazy" />
+                <div class="film-cinema-demo__frame">
+                  <img src="../public/assets/films/wattleseed/cover-1280.avif" alt="A researcher leans across a library table in Wattleseed" width="1280" height="692" loading="lazy" />
+                  <svg viewBox="163 727 472 118" aria-label="Wattleseed" role="img">
+                    <defs><filter id="system-wattle-lettering" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 3 0 0 0 -1.5" /></filter></defs>
+                    <image href="../public/assets/films/wattleseed/poster-800.avif" width="800" height="1104" filter="url(#system-wattle-lettering)" />
+                  </svg>
+                </div>
                 <div class="film-cinema-demo__body">
-                  <p>2026 · 12 minutes</p><h4>Wattleseed</h4><p>Directed by Will Chai</p>
+                  <p>2026 / 12 minutes</p><p>Directed by Will Chai</p>
                   <a href="https://www.youtube.com/watch?v=o-5DN5ygX80">Trailer</a>
-                  <div class="film-cinema-demo__laurel"><span>Best Original Score</span><span>Cine Paris Film Festival</span><span>Winner · 2026</span></div>
+                  <div class="film-cinema-demo__spread"><img src="../public/assets/films/wattleseed/apparatus-640.avif" alt="Wattleseed apparatus" width="640" height="346" loading="lazy" /><img src="../public/assets/films/wattleseed/profile-640.avif" alt="Researcher in profile" width="640" height="346" loading="lazy" /></div>
+                  <div class="film-cinema-demo__laurel"><img src="../public/assets/films/laurels/prisma-nominee.png" alt="Rome Prisma Independent Film Awards nominee laurel" width="464" height="195" loading="lazy" /><span>Best Trailer</span><span>Nominee · February 2026</span></div>
                   <a href="https://willchai-site.willchai.chatgpt.site/films/">Open Films</a>
                 </div>
               </div>

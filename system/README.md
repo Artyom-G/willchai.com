@@ -166,8 +166,10 @@ builder. Final quotes remain personal to each assignment.
 
 ## Films cinema canvas
 
-Films and both detail pages use the Ink canvas, original stills and readable
-festival laurels. The system page presents the title and laurel composition.
-The production sequence uses native scrolling, with static compact layouts
-and reduced motion support. Trailer, credits and festival record controls
-preserve keyboard operation. See `PATTERNS.md` for the complete contract.
+Films and both detail pages use the Ink canvas, original stills, extracted
+poster lettering and dedicated festival spreads. The system page presents the
+library opening, original Wattleseed title and Prisma nominee artwork.
+The production sequence uses native scrolling, with a central expanding image
+mask in each short desktop passage. Compact layouts and reduced motion use a
+settled vertical sequence. Trailer and image dialogs restore focus on close.
+See `PATTERNS.md` for the complete contract.

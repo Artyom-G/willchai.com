@@ -53,13 +53,13 @@ work. Sharing Stories continues as the idea connecting the practice. The whole s
 broad invitation “Let’s do something together,” while Photography provides a
 more specific inquiry route.
 
-Films uses the Ink canvas with full width original stills, compact title groups,
-direct Trailer actions and visible festival laurels. The introduction reads
-“I am a filmmaker.” A short sequence follows ordinary scrolling on spacious
-desktop screens. Phone layouts present the same content in a natural vertical
-sequence. Categories, festivals, outcomes and years remain readable live text.
-Production accounts name the work and collaborators directly. The dark canvas
-is specific to Films and its detail pages.
+Films uses the Ink canvas with original stills, extracted poster lettering,
+direct Trailer actions and dedicated festival spreads. The introduction reads
+“I am a filmmaker.” Native scrolling opens a central image mask during two
+short desktop passages. Phone layouts retain the image order and original
+subjects in a natural vertical sequence. Categories, festivals, outcomes and
+years use readable live text. Production accounts name the work and
+collaborators directly. This canvas belongs to Films and its detail pages.
 
 
 The Résumé is a professional record with matching PDF and HTML versions. It may

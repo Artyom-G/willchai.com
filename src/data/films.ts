@@ -19,7 +19,9 @@ export type FilmImage = {
 export type FilmLaurel = {
   category: string;
   festival: string;
-  status: string;
+  outcome: string;
+  year: string;
+  artwork?: string;
   source: string;
 };
 
@@ -45,7 +47,6 @@ export type Film = {
   gallery?: FilmImage[];
   facts: FilmCredit[];
   credits: FilmCredit[];
-  recognition: string[];
   laurels: FilmLaurel[];
   links: FilmLink[];
 };
@@ -93,14 +94,11 @@ export const films: Film[] = [
       { label: "Voice of Dr. Jimson", value: "Mitchell Hynes" },
     ],
     laurels: [
-      { category: "Best Original Score", festival: "Cine Paris Film Festival", status: "Winner · 2026", source: "https://www.cineparisfilmfestival.com/index.html" },
-      { category: "Best Trailer", festival: "Rome Prisma Independent Film Awards", status: "Nominee · 2026", source: "https://www.romeprismafilmawards.com/february-2026-nominees/" },
-    ],
-    recognition: [
-      "Best Original Score, Cine Paris Film Festival",
-      "Best Trailer nominee and monthly pick, Rome Prisma Independent Film Awards",
-      "Toronto Shorts International Film Festival, Program 5",
-      "Student Film listing, Toronto Arts and Entertainment Film Festival",
+      { category: "Best Original Score", festival: "Cine Paris Film Festival", outcome: "Winner", year: "February 2026", source: "https://www.cineparisfilmfestival.com/index.html" },
+      { category: "Best Trailer", festival: "Rome Prisma Independent Film Awards", artwork: "/assets/films/laurels/prisma-nominee.png", outcome: "Nominee", year: "February 2026", source: "https://www.romeprismafilmawards.com/february-2026-nominees/" },
+      { category: "Monthly Pick", festival: "Rome Prisma Independent Film Awards", artwork: "/assets/films/laurels/prisma-nominee.png", outcome: "Selected", year: "February 2026", source: "https://www.romeprismafilmawards.com/february-2026-monthly-picks/" },
+      { category: "Programme 5", festival: "Toronto Shorts International Film Festival", artwork: "/assets/films/laurels/toronto-shorts-2026.png", outcome: "Official selection", year: "2026", source: "https://www.torontoshorts.com/program-5" },
+      { category: "Student Film", festival: "Toronto Arts & Entertainment Film Festival", outcome: "Festival listing", year: "2026", source: "https://torontoartfilmfestival.com/award-winners-taeff-2026/" },
     ],
     links: [
       { label: "Trailer", href: "https://www.youtube.com/watch?v=o-5DN5ygX80" },
@@ -146,22 +144,30 @@ export const films: Film[] = [
       { label: "Cowriter, codirector, executive producer, cinematographer, Mark", value: "Artyom Gabtraupov" },
       { label: "Owens", value: "Ian Carswell" },
       { label: "Julia", value: "Eden Lucchetta" },
-      { label: "Producer, score cocomposer", value: "Matthew Buchanan MacDougall" },
+      { label: "Producer, score cocomposer", value: "Matthew Buchanan-MacDougall" },
       { label: "Producer, production designer", value: "Calum Heimbecker" },
       { label: "Producers", value: "Keon Park and Yengkong Lynhiavu" },
+      { label: "Associate producers", value: "Jeremy Atafo, Andrea Ng, Walter Wang, Zarra Rahemtulla, Evan Ingle, Yitong (Cain) Chai" },
+      { label: "Award Presenter", value: "Brian Hendry" },
+      { label: "Officer 2", value: "Stanislau Hollingsworth-Pratasousky" },
+      { label: "Officer Kevin", value: "Keon Park" },
+      { label: "Cinematography and videography", value: "William Chai, Artyom Gabtraupov, Calum Heimbecker, Yengkong Lynhiavu" },
+      { label: "Original score", value: "Matthew Buchanan-MacDougall and William Chai" },
+      { label: "Script supervision", value: "Keon Park, Matthew Buchanan-MacDougall, Yitong (Cain) Chai, Maya Schiedel, Miret Morgan, Bogda David, Walter Wang, Kasvi Kaushik, Jory Breen, Alison Hunter Stewart, David Newman" },
+      { label: "Prop master", value: "Evan Ingle" },
     ],
     laurels: [
-      { category: "Best Student Film", festival: "Cine Paris Film Festival", status: "Winner · 2025", source: "https://willchai.com/murder-of-minus-a-sci-fi-thriller/" },
-      { category: "Best Student Short Film", festival: "Toronto Independent Festival of CIFT", status: "Winner · 2025", source: "https://cyrusmonthlyfestival.com/winners-april-2025/" },
-      { category: "Best Mystery, Suspense, or Thriller", festival: "Couch Film Festival", status: "Winner · 2025", source: "https://willchai.com/murder-of-minus-a-sci-fi-thriller/" },
-      { category: "Best Actor · William Chai", festival: "Alternative Film Festival", status: "Winner · 2025", source: "https://willchai.com/murder-of-minus-a-sci-fi-thriller/" },
-    ],
-    recognition: [
-      "Best Student Film, Cine Paris Film Festival",
-      "Best Student Short Film, Toronto Independent Festival of CIFT",
-      "Best Mystery, Suspense, or Thriller, Couch Film Festival",
-      "Best Actor for William Chai, Alternative Film Festival",
-      "Short Live Action Narrative official selection, Austin Lift Off Film Festival",
+      { category: "Best Student Film", festival: "Cine Paris Film Festival", artwork: "/assets/films/laurels/Cine-Paris-Film-Festival-Award-Winner-2025-1-800x531.avif", outcome: "Winner", year: "2025", source: "https://willchai.com/murder-of-minus-a-sci-fi-thriller/" },
+      { category: "Best Student Short Film", festival: "Toronto Independent Festival of CIFT", artwork: "/assets/films/laurels/Toronto-Independent-Film-Festival-Award-Winner-2025-800x531.avif", outcome: "Winner", year: "2025", source: "https://cyrusmonthlyfestival.com/winners-april-2025/" },
+      { category: "Best Mystery, Suspense, or Thriller", festival: "Couch Film Festival", artwork: "/assets/films/laurels/07Mys-800x800.avif", outcome: "Winner", year: "2025", source: "https://willchai.com/murder-of-minus-a-sci-fi-thriller/" },
+      { category: "Best Actor · William Chai", festival: "Alternative Film Festival", artwork: "/assets/films/laurels/08Actor-png-e1743354268105-800x459.avif", outcome: "Winner", year: "2025", source: "https://willchai.com/murder-of-minus-a-sci-fi-thriller/" },
+      { category: "Best Student Film", festival: "Alternative Film Festival", artwork: "/assets/films/laurels/08Actor-png-e1743354268105-800x459.avif", outcome: "Nominee", year: "Spring 2025", source: "https://willchai.com/murder-of-minus-a-sci-fi-thriller/" },
+      { category: "", festival: "Kitchener Waterloo International Film Festival", artwork: "/assets/films/laurels/FINALIST-KitchenerWaterlooInternationalFilmFestivalKWIFF-2025-800x531.avif", outcome: "Finalist", year: "2025", source: "https://willchai.com/murder-of-minus-a-sci-fi-thriller/" },
+      { category: "Best Short Drama/Thriller Film", festival: "Kitchener Waterloo International Film Festival", artwork: "/assets/films/laurels/FINALIST-KitchenerWaterlooInternationalFilmFestivalKWIFF-2025-800x531.avif", outcome: "Nominee", year: "2025", source: "https://willchai.com/murder-of-minus-a-sci-fi-thriller/" },
+      { category: "Best Short Film Canada", festival: "Kitchener Waterloo International Film Festival", artwork: "/assets/films/laurels/FINALIST-KitchenerWaterlooInternationalFilmFestivalKWIFF-2025-800x531.avif", outcome: "Nominee", year: "2025", source: "https://willchai.com/murder-of-minus-a-sci-fi-thriller/" },
+      { category: "Best Movie Trailer", festival: "Kitchener Waterloo International Film Festival", artwork: "/assets/films/laurels/FINALIST-KitchenerWaterlooInternationalFilmFestivalKWIFF-2025-800x531.avif", outcome: "Nominee", year: "2025", source: "https://willchai.com/murder-of-minus-a-sci-fi-thriller/" },
+      { category: "", festival: "Kitchener Waterloo International Film Festival", artwork: "/assets/films/laurels/FINALIST-KitchenerWaterlooInternationalFilmFestivalKWIFF-2025-800x531.avif", outcome: "Official selection", year: "2025", source: "https://willchai.com/murder-of-minus-a-sci-fi-thriller/" },
+      { category: "Short Live Action Narrative", festival: "Austin Lift Off Film Festival", artwork: "/assets/films/laurels/Austin-Laurels-2025-300x300.avif", outcome: "Official selection", year: "2025", source: "https://willchai.com/murder-of-minus-a-sci-fi-thriller/" },
     ],
     links: [
       { label: "Trailer", href: "https://www.youtube.com/watch?v=g3s0Y_epU2I" },

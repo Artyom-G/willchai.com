@@ -176,7 +176,8 @@
       "original_sha256": "b6fd5e7a69af5a33e45f2370a5335db0502cd830eea57db0afbbbb4a399c6b22",
       "published": "/assets/films/wattleseed/press-kit.pdf",
       "bytes": 1449635,
-      "pages": 5
+      "pages": 5,
+      "sha256": "b6fd5e7a69af5a33e45f2370a5335db0502cd830eea57db0afbbbb4a399c6b22"
     },
     {
       "film": "Murder of Minus",
@@ -185,7 +186,8 @@
       "original_sha256": "e86bd7f41940ac958cee9dfcb21660b0e826af27c4de675e73d10a65629ad1e6",
       "published": "/assets/films/murder-of-minus/press-kit.pdf",
       "bytes": 1235027,
-      "pages": 10
+      "pages": 10,
+      "sha256": "e86bd7f41940ac958cee9dfcb21660b0e826af27c4de675e73d10a65629ad1e6"
     },
     {
       "purpose": "Decorative laurel branches with live festival text",
@@ -194,6 +196,86 @@
       "derivative": "/assets/films/laurel-wreath.png",
       "processing": "Central festival lettering cleared from the original wreath. Category, festival, outcome and year are rendered as live text.",
       "sha256": "27df2d008908ab767457b8ca4c555a906a6f40b9d3e1b523f2e322654c0096fa"
+    },
+    {
+      "src": "/assets/films/minus-portrait.avif",
+      "source": "https://willchai.com/wp-content/uploads/2024/11/Murder-of-Minus-Poster-EBG-Version-Alt-1-1920x2560.avif",
+      "bytes": 281071,
+      "sha256": "a731c22f95231040aa4742cb313112f65e45e35a3bce90b7e251f99c38b91e07"
+    },
+    {
+      "src": "/assets/films/laurels/08Actor-png-e1743354268105-800x459.avif",
+      "source": "https://willchai.com/wp-content/uploads/2024/11/08Actor-png-e1743354268105-800x459.avif",
+      "bytes": 45446,
+      "sha256": "4abc2c618a7642724c2a9c3fb7595ab5fb131fcc13754ee2a20bca85af525ad2"
+    },
+    {
+      "src": "/assets/films/laurels/Laurel-Center-edited-800x533.avif",
+      "source": "https://willchai.com/wp-content/uploads/2025/03/Laurel-Center-edited-800x533.avif",
+      "bytes": 53492,
+      "sha256": "1a3b1b3ed2bd2ab3f4f44cd7ac4208b569a1801b550e8077682439b0b5e93be5"
+    },
+    {
+      "src": "/assets/films/laurels/FINALIST-KitchenerWaterlooInternationalFilmFestivalKWIFF-2025-800x531.avif",
+      "source": "https://willchai.com/wp-content/uploads/2024/11/FINALIST-KitchenerWaterlooInternationalFilmFestivalKWIFF-2025-800x531.avif",
+      "bytes": 36861,
+      "sha256": "88fbb435e6c66e865740bdf0a8eca83c0cf2e93872d011a876ddadbfa45b3992"
+    },
+    {
+      "src": "/assets/films/laurels/Kitchener-Waterloo-Film-Festival-2025-Nominee-2-800x531.avif",
+      "source": "https://willchai.com/wp-content/uploads/2024/11/Kitchener-Waterloo-Film-Festival-2025-Nominee-2-800x531.avif",
+      "bytes": 36963,
+      "sha256": "b8fe5fb791d48a2450f6aff36b8b13263c436f95f25cde74b3f5732eda7d685b"
+    },
+    {
+      "src": "/assets/films/laurels/Kitchener-Waterloo-Film-Festival-2025-Official-Selection-1-800x531.avif",
+      "source": "https://willchai.com/wp-content/uploads/2024/11/Kitchener-Waterloo-Film-Festival-2025-Official-Selection-1-800x531.avif",
+      "bytes": 38760,
+      "sha256": "d79e1e436ae357c90f119ec488a449e4a43d60670060a89bcfc564665d9c255d"
+    },
+    {
+      "src": "/assets/films/laurels/Toronto-Independent-Film-Festival-Award-Winner-2025-800x531.avif",
+      "source": "https://willchai.com/wp-content/uploads/2024/11/Toronto-Independent-Film-Festival-Award-Winner-2025-800x531.avif",
+      "bytes": 35049,
+      "sha256": "c5b4ab89ca2f811ad5ecbe05778d8d42457e1a29c80435a536d82bfb75b089d5"
+    },
+    {
+      "src": "/assets/films/laurels/07Mys-800x800.avif",
+      "source": "https://willchai.com/wp-content/uploads/2024/11/07Mys-800x800.avif",
+      "bytes": 41716,
+      "sha256": "b41f4e9e7e345caf3337881f1aff6d3964b735deed30bb66004eafa9f5696905"
+    },
+    {
+      "src": "/assets/films/laurels/Cine-Paris-Film-Festival-Award-Winner-2025-1-800x531.avif",
+      "source": "https://willchai.com/wp-content/uploads/2024/11/Cine-Paris-Film-Festival-Award-Winner-2025-1-800x531.avif",
+      "bytes": 37064,
+      "sha256": "597be018fa4d456bd86334f04ca6b4f1dc04fca0e37228beef18b65519c69c11"
+    },
+    {
+      "src": "/assets/films/laurels/Austin-Laurels-2025-300x300.avif",
+      "source": "https://willchai.com/wp-content/uploads/2024/11/Austin-Laurels-2025-300x300.avif",
+      "bytes": 12075,
+      "sha256": "12396899c7606df7003b80df57f2fc1cacc79f9d0f73d5886ff443c7c3a45942"
+    },
+    {
+      "purpose": "Original Prisma nominee laurel",
+      "source": "https://drive.google.com/uc?export=download&id=16Qsy7odP_ncyMzuQopPYX4hHOAWsOt6q",
+      "page": "https://www.romeprismafilmawards.com/february-2026-nominees/",
+      "published": "/assets/films/laurels/prisma-nominee.png",
+      "sha256": "420aafadada4b8d05ab4dd933c61712979808398211e080b4ba21e099ced6ad8",
+      "bytes": 11981
+    },
+    {
+      "purpose": "Original Toronto Shorts selection laurel",
+      "source": "https://static.wixstatic.com/media/a8c840_ee20dbb1f18c453abaa761494d0ebe3e~mv2.png",
+      "published": "/assets/films/laurels/toronto-shorts-2026.png",
+      "sha256": "8493a0b9e0620796a5253e133dc0abfa737895e3653eb766d55eb2b32838faeb",
+      "bytes": 171475,
+      "processing": "Original black artwork is inverted to white in CSS for the Ink canvas."
+    },
+    {
+      "purpose": "Film title artwork and portrait composition",
+      "processing": "SVG viewports crop the original poster artwork. Colour matrices isolate existing letters. The portrait uses a CSS crop of the original poster photograph. Subjects and lettering are preserved."
     }
   ]
 }

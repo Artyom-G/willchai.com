@@ -311,29 +311,35 @@ project panels do not receive the treatment by default.
 
 ### Films programme and player
 
-The Films opening places full width authentic stills over an Ink canvas. Its
-title group contains the exact title, year, runtime, director credit, Trailer
-action and two festival laurels. Categories, festivals, outcomes and years use
-readable live text inside the existing wreath artwork. Each laurel links to
-its source. A film detail page preserves the synopsis, poster, production
-account, credits, full festival record, supporting images and press kit.
+The Films opening combines the Wattleseed library frame, original title
+lettering and a compact group containing the year, runtime, director and
+Trailer action. The second chapter uses the original Murder of Minus portrait
+and lettering. Photography and poster artwork determine each composition.
+Supporting images occupy different grid widths alongside concise production
+text. An image viewer reveals the complete framing.
 
-On spacious desktop viewports the image expands as the header leaves, then a
-horizontal wipe exchanges two frames during ordinary scrolling. The title
-stays visible. Scroll and resize schedule a single animation frame; idle and
-hidden pages stop rendering. Compact viewports, enlarged content and reduced
-motion use the static vertical sequence. Every destination remains a native
-link, and credits and festival records use native disclosure controls.
+On spacious desktop viewports each chapter occupies one and a half viewport
+heights. Native vertical scrolling expands a central image mask to reveal the
+next still. Text holds its position during the passage. Scroll and resize
+schedule a single frame. Compact viewports, enlarged content and reduced
+motion use the natural vertical sequence. Every action is a native link or
+button. Credits and festival records remain visible in ordinary page flow.
 
-The trailer opens in an Ink native dialog. A brief masked expansion connects
-the action to the player. The iframe loads after activation. Closing, Escape
-and the backdrop stop playback and restore focus and scrolling. A direct
-YouTube link and automatic caption information accompany the player.
+Festival spreads use original festival graphics and a shared collection of
+sourced results. Every category, outcome and year remains readable. Original
+wreath branches accompany records whose festival artwork remains pending.
+A film detail page preserves its synopsis, original poster, production account,
+credits, festival record, supporting images and original press kit.
 
-Responsive AVIF stills reserve dimensions. The original press kits load on
-request. The source manifest records the laurel artwork and its processing.
-Film colours and motion timings come from `tokens.css`. The system example
-uses the same title, laurel wording and original film imagery.
+Trailers open in an Ink native dialog. The iframe loads after activation.
+Closing, Escape and the backdrop stop playback and restore focus and scrolling.
+A direct YouTube link and caption information accompany the player. The image
+viewer follows the same dismissal and focus behavior.
+
+Responsive AVIF stills reserve their dimensions. Press kits load on request.
+The source manifest records original media and title extraction. Film colors
+and motion timings come from `tokens.css`. The system example uses the original
+Wattleseed lettering, library still and Prisma nominee artwork.
 
 The system stays consistent across forms, but the evidence each form needs is
 different. Photography leads with image sequences and honest captions; it

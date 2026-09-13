@@ -411,25 +411,33 @@ pages share the interface system while allowing crop, media sequence, title
 placement, and internal composition to respond to each work. Shared
 navigation, typography, and contact endings keep the pages related.
 
-Films uses full width stills above an Ink title area. A title, year, runtime,
-director credit, Trailer action and two laurels share the opening composition.
-The desktop frame expands into the viewport as the header scrolls away. A
-horizontal wipe exchanges two authentic frames while the title stays legible.
-The document retains ordinary scrolling. Compact layouts, enlarged text and
-reduced motion use the natural static sequence.
+Films opens with the Wattleseed library frame and original title artwork. A
+small director credit, year, runtime and Trailer action share the composition.
+The introduction reads “I am a filmmaker.” Two film links lead to each chapter.
+The Murder of Minus chapter uses the original red portrait and extracted title
+lettering. Its crop preserves the face, raised hand and held component.
+
+Each chapter occupies one and a half viewport heights on spacious desktop
+screens. A central horizontal opening expands to reveal a second original
+frame. Essential text stays stationary. Native scrolling controls the image
+mask and scale. Compact layouts and reduced motion use the settled vertical
+sequence. Supporting stills use varied widths within a twelve column grid,
+with a native dialog providing their original framing.
 
 The canvas uses `--wc-film-surface`, with `--wc-film-muted` for secondary text
-and `--wc-film-line` for separators. Funnel Sans and Unbounded keep their
-shared roles. `--wc-duration-film` supplies the one second image reveal.
-Frames update on scroll and resize events, and animation frames settle when
-input stops. Trailer dialogs use the same Ink surface and restore focus and
-scrolling on close. Film records and credits use native disclosure controls.
+and `--wc-film-line` for separators. The original poster lettering is image
+artwork. Funnel Sans carries live text. Shared Unbounded display roles remain
+available elsewhere. `--wc-duration-film` supplies the supporting image reveal,
+and `--wc-film-chapter-height` sets the desktop passage length. Scroll and
+resize schedule a single animation frame. Idle and hidden pages stop rendering.
 
-Laurels use the existing wreath branches as decorative artwork around live
-category, festival, outcome and year text. Each laurel links to its source.
-Film detail pages carry the synopsis, original poster, supporting stills,
-production account, credits, festival record, press kit and screening contact.
-The ending reads Film enquiries and provides the email address.
+Dedicated festival spreads group the records from `src/data/films.ts` by
+festival. Original artwork accompanies readable category, outcome and year
+text. Every result links to its supporting source. The index and detail pages
+render the same collection. Film detail pages expand the synopsis, production
+account, stills, credits, festival records, original poster and press kit.
+Trailers load on activation inside native dialogs. Closing restores focus and
+scrolling. Modest original posters and Film enquiries form the ending.
 
 
 The Résumé uses the same reading system with restrained formatting suited to a

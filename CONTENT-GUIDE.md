@@ -174,9 +174,16 @@ the selected destination benefits from it.
 ## Films recognition and labels
 
 The Films introduction reads “I am a filmmaker.” Viewing actions read Trailer.
-Film details, About, Screener, Press kit and Screening enquiry identify their
-destinations directly. Each laurel records its exact category, festival,
-outcome and year in `src/data/films.ts`, with a supporting source URL.
-The original wreath branches provide the surrounding artwork. Award winners,
-nominees and selections retain their respective descriptions. The full record
-remains available within each film page.
+Film details, About, Screener, Press kit and Film enquiries identify their
+destinations directly. Festival records live in `src/data/films.ts`, with the
+category, festival, outcome, year, supporting source and optional original
+artwork. The index and detail pages render this single collection. Festival
+spreads group the artwork by festival and expose every sourced result in live
+text. Winners, nominees, finalists and selections retain their recorded status.
+
+Original title lettering is extracted from the original posters. Film stills
+retain their original subjects and provide a viewer with the original framing.
+The source manifest records each asset and its processing. Additional
+Wattleseed records mentioned in the public festival count remain pending the
+festival names and nomination categories. The public page includes the records
+supported by the published film pages, press kits and festival listings.

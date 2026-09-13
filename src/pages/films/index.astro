@@ -1,26 +1,21 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import FilmsEnding from "../../components/FilmsEnding.astro";
-import FilmTrailer from "../../components/FilmTrailer.astro";
-import FilmTransitions from "../../components/FilmTransitions.astro";
-import FilmHero from "../../components/FilmHero.astro";
-import SiteHeader from "../../components/SiteHeader.astro";
-import { films } from "../../data/films";
-import "../../styles/films.css";
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import FilmHero from '../../components/FilmHero.astro';
+import FilmSpread from '../../components/FilmSpread.astro';
+import FilmRecognition from '../../components/FilmRecognition.astro';
+import FilmClosing from '../../components/FilmClosing.astro';
+import FilmTrailer from '../../components/FilmTrailer.astro';
+import FilmViewer from '../../components/FilmViewer.astro';
+import { films } from '../../data/films';
+import '../../styles/films.css';
 ---
 <BaseLayout title="Films | Will Chai" description="Films by Will Chai. Wattleseed and Murder of Minus." path="/films/" image={films[0].still} imageAlt={films[0].stillAlt} pageClass="filmsPage filmCinema">
-  <FilmTransitions slot="head" />
   <div class="filmSiteHeader"><SiteHeader current="films" /></div>
   <main id="main">
-    <header class="filmIntroduction"><h1>I am a filmmaker.</h1></header>
-    {films.map((film, index) => <>
-      <FilmHero film={film} first={index === 0} />
-      <section class="filmPassage" aria-label={`${film.title} synopsis`}>
-        <p>{film.summary}</p>
-        <a class="filmLink" href={`/films/${film.slug}/`}>Film details<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" /></svg></a>
-      </section>
-    </>)}
-    <FilmsEnding />
+    <header class="filmIntroduction"><h1>I am a filmmaker.</h1><nav aria-label="Films">{films.map(film => <a href={`#${film.slug}`}>{film.title}<span aria-hidden="true">↓</span></a>)}</nav></header>
+    {films.map((film, index) => <><FilmHero film={film} first={index === 0} /><FilmSpread film={film} /><FilmRecognition film={film} /></>)}
+    <FilmClosing />
   </main>
-  <FilmTrailer />
+  <FilmTrailer /><FilmViewer />
 </BaseLayout>
