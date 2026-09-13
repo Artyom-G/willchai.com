@@ -23,6 +23,7 @@ governs until both are reconciled.
   versions of the patterns.
 - `system.js` demonstrates the portrait-control and holographic-ticket
   behaviours without introducing a framework dependency.
+- `photography-stack.html` demonstrates the current featured passage, client cards, and photograph viewer using the production CSS and interaction scripts.
 - `PATTERNS.md` records the content, behaviour, variation, accessibility, and
   performance contracts that future components must preserve.
 
@@ -36,22 +37,38 @@ input, and with reduced motion.
 
 The current patterns are the identity rail, portrait control, project media
 panel, black-hole project entry, project detail opener, media and caption, role and credits, photography
-service information, archive row, external handoff, general contact invitation,
+service information, project chooser row, external handoff, general contact invitation,
 photography inquiry, and the holographic contact ticket. Homepage project
 panels share one exterior size while
 their internal art direction comes from authentic project media, crop,
 sequencing, title placement, and interaction. The Vermilion dashed boundary is
 a selective signature, not the default border around every module.
 
+The complete source architecture contains twelve page routes. The current
+public release exposes Home, Photography, `/hey/`, Films, and Projects with
+their detail pages. The utility page links to Home, Photography, LinkedIn, and
+email. Résumé remains in source during continued review. Contact invitations
+live within Home, Photography, Films, and Projects.
+
 The system also records the need for an authentic exception layer so the final
 site does not inherit the corporate evenness of a conventional component
-library. The contact ticket is the only approved example so far. Other organic,
-rough, or pixel-derived ideas remain open and should be developed from Will's
-real source material rather than generic decorative components.
+library. The contact ticket is an approved example. Will also approved the
+personal pixel photographer on 9 September 2026. It appears briefly in the
+Photography opening and returns for the pricing scene. The source atlas and entrance can be replayed in
+`photographer-pixel.html`.
+Each drawing is 32 × 32 pixels and each appearance lasts four seconds. The
+broader visual language continues to develop from Will's real source material.
 The implementation was adapted from the live WordPress ticket's perforated
 path, pointer-driven perspective, Brand Blue interference layer, repeated W
 texture, and click-to-copy response rather than recreated from appearance
 alone.
+
+The opening greeting now plays once on every Photography page load. Each load
+also chooses a random shuffle order. Pressing Shuffle gathers four photographs
+into two piles, weaves them into a deck, and deals a new selection while Will
+uses the clean photographer artwork. The pricing scene uses the pushing artwork.
+The image folder and
+`npm run photos:sync` workflow are documented in `CONTENT-GUIDE.md`.
 
 ## Reference models
 
@@ -93,3 +110,56 @@ guideline, `tokens.css` when applicable, and the affected example on the system
 page in the same change. When a production component becomes more accurate
 than its demonstration here, bring the system page forward rather than leaving
 two competing versions.
+
+## Photography motion and pricing
+
+Photography uses a compact site header with the shared identity and Contact,
+the Photography title, and a short
+portrait and event description. Nine approved photographs move through a sticky
+viewport while ordinary vertical scrolling advances the sequence. Cards enter
+from the lower right, reach the centre at full scale, then leave through the upper
+left. Complete image proportions remain visible on desktop and mobile.
+
+The sequence draws from Will's Orbit Cards reference. A small arc, rotation, and
+scale shift give nearby cards depth. Every photograph remains a keyboard reachable
+link and opens in the established viewer. Reduced motion presents a static grid.
+
+The opening character rises through the upper edge of the first photograph after
+the collection settles and stands on its top boundary. A separate stage follows
+the first card above the incoming stack, and phone measurements wait for active
+scrolling to settle. The four second greeting uses the clean arrive, ready, and
+rest poses from the approved atlas at integer enlargement. The later
+appearance retains the approved pushing poses. The large $600 package prop sits
+directly on the white page surface. Will enters beside its lower edge, braces,
+and pushes it beyond the right side of the page. The shoot board appears beneath
+the departing scene. The prop copy reads Super Generic Package and $600. Direct
+inquiry links and form interaction reveal the usable board immediately. Replay
+remains available.
+
+The white shoot board retains its irregular blue enclosure. An editable shoot
+name stays above two questions about place and date. Next reveals an optional
+CAD budget and additional notes, then the completed inquiry with Open email and
+Copy text. Back preserves every answer. The rough pointer approaches the primary
+button in a stepped loop and presses it. The second advance changes the same
+button into Open email. A directional mask exchanges the question pair while
+the title and photographic preview stay anchored. Supplied amounts are labelled
+Your budget, and visitors may request guidance. The budget field keeps $600 as
+the sole public pricing reference. Supporting copy describes the quote factors
+and connects additional budget room with longer coverage and a wider final gallery.
+
+An opened photograph offers Add reference across the featured work and shuffle.
+Selections appear on the shoot board and remain removable. Their image links
+appear in the same generated message used by email and copying. Collection
+headers provide a return to the shoot when references are selected. Clipboard
+failure selects the message for manual copying. Inquiry contents stay in the
+current page.
+
+The client proof gives McMaster University an image led feature occupying two
+thirds of the desktop composition. Foxwood Homes and Platinum Moon appear as
+smaller transparent entries in the remaining column. A staged Will Chai
+collaboration scene settles all three organizations into one visible group.
+Gentle photograph drift animates the group. The shuffle reserves image
+dimensions and fills continuous columns while preserving earlier positions. The
+footer retains the original contact ticket, policy, rights and homepage return.
+Reduced motion presents the static featured grid, direct image changes and usable
+builder. Final quotes remain personal to each assignment.

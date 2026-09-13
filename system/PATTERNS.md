@@ -79,12 +79,12 @@ displays, and missing WebGL leave navigation direct and omit the enhancement.
 The restrained light trace must not grow into a colourful portal, galaxy,
 general-purpose glow, or bright uniform outline.
 
-## Archive row
+## Project chooser row
 
-An archive row keeps a project findable without giving it homepage prominence.
-It requires a title, year or durable time label, primary form, and destination.
-A role, collaborator, small preview, or external-site marker may be added when
-it provides useful context.
+A project chooser row gives a useful older work a compact place on `/projects/`.
+It requires a title, year or durable time label, primary form, and suitable
+destination. A role, collaborator, small preview, or external site marker may
+be added when it provides useful context.
 
 The row remains one semantic link with a visible focus state. Its title and
 essential context are present without hover. Narrow layouts may hide secondary
@@ -131,16 +131,93 @@ identified without interrupting the project narrative.
 
 ## Photography service information
 
-Photography service information presents Portraits, Events, and Creative as
-clear professional routes while retaining the site's personal voice. It
-requires representative commissioned work, a plain description of the type of
-engagement, and a photography-specific inquiry action. Pricing, availability,
-location, or delivery information appears only when it is current and useful.
+Photography service information belongs within one long page retaining the
+site's personal voice. The page uses a caption free sequence of nine approved
+featured photographs, three selected client cards, a shoot builder, and a photography
+specific inquiry action. Availability, location, and delivery information
+appears when it is current and useful.
 
-The category order and featured photographs may change. The pattern must not
-read like a generic agency services grid or conceal the inquiry route behind a
-portfolio lightbox. Photographs remain the primary visual material, and client
-privacy or publication permission must be confirmed before use.
+The featured order and photographs may change. Editorial transitions keep the
+uncategorized sequence continuous. A caption free shuffle follows the
+commercial information and loads in controlled batches before the complete
+service footer. Photographs remain the primary visual material, the inquiry
+action stays outside any lightbox, and client privacy or publication
+permission must be confirmed before use.
+
+Photography uses a compact site header with the shared identity mark and Contact,
+the Photography title, and a short
+portrait and event description. Nine featured photographs move through a sticky
+viewport while ordinary vertical scrolling advances the sequence. Cards enter
+from the lower right, reach the centre at full scale, then leave through the
+upper left. The complete image proportions remain visible on desktop and mobile.
+
+The movement draws from Will's Orbit Cards reference. A small arc, rotation, and
+scale shift give nearby cards depth. Each card remains a keyboard reachable link
+in source order, and focus centres the selected card. Reduced motion presents a
+static responsive grid. Opening a photograph preserves the established viewer,
+directional image changes, and reference selection.
+
+The opening character rises through the upper edge of the first photograph after
+the collection settles and stands on its top boundary. A separate stage follows
+the first card above the incoming stack. Phone viewport height changes preserve
+the current geometry during active scrolling. The four second greeting uses the
+clean arrive, ready, and rest poses from the approved atlas at integer
+enlargement. The later
+appearance retains the approved pushing poses. The large $600 package prop sits
+directly on the white page surface. Will enters beside its lower edge, braces,
+and pushes it beyond the right side of the page. The shoot board appears beneath
+the departing scene. The prop copy reads Super Generic Package and $600. Direct
+inquiry links and form interaction reveal the usable board immediately. Replay
+remains available.
+
+The white shoot board retains its irregular blue enclosure. An editable shoot
+name stays above two questions about place and date. Next reveals an optional
+CAD budget and additional notes, then the completed inquiry with Open email and
+Copy text. Back preserves every answer. The rough pointer approaches the primary
+button in a stepped loop and presses it. The second advance changes the same
+button into Open email. A directional mask exchanges the question pair while
+the title and photographic preview stay anchored. Supplied amounts are labelled
+Your budget, and visitors may request guidance. The budget field keeps $600 as
+the sole public pricing reference. Supporting copy describes the quote factors
+and connects additional budget room with longer coverage and a wider final gallery.
+
+An opened photograph offers Add reference across the featured work and shuffle.
+Selections appear on the shoot board and remain removable. Their image links
+appear in the same generated message used by email and copying. Collection
+headers provide a return to the shoot when references are selected. Clipboard
+failure selects the message for manual copying. Inquiry contents stay in the
+current page.
+
+The client proof gives McMaster University an image led feature occupying two
+thirds of the desktop composition. Foxwood Homes and Platinum Moon appear as
+smaller transparent entries in the remaining column. A staged Will Chai
+collaboration scene settles all three organizations into one visible group.
+Gentle photograph drift animates the group. The shuffle reserves image
+dimensions and fills continuous columns while preserving earlier positions. The
+footer retains the original contact ticket, policy, rights and homepage return.
+Reduced motion presents the static featured grid, direct image changes and usable
+builder. Final quotes remain personal to each assignment.
+
+Open `photography-stack.html` for the production interaction study.
+
+Photography uses a shared responsive gutter across the page. The gallery fits
+within the opening viewport and reserves room above the first photograph for
+Will. Client spacing keeps the settled group together. The white shoot board
+and its blue outline share the irregular silhouette. Each form step uses its
+visible content height, with a measured transition between questions. The
+primary action follows the fields and becomes Open email on the final step.
+The departing package uncovers the board during the shove. The scene height
+settles into the board height as the movement ends. Empty summary details stay hidden
+until the visitor supplies them. The policy and replay controls share a row,
+and the shuffle ends with a centred Load more photographs action.
+
+Each fresh Photography page load plays the opening greeting and randomizes the
+shuffle. The explicit Shuffle action gathers four photographs into two piles,
+weaves them into one deck, and deals the new selection into the gallery over
+1100ms. The character uses the clean photographer atlas while the pricing scene
+retains the pushing atlas. The gallery settles immediately for reduced motion or an interrupted
+sequence. Additional batches preserve the chosen order. Featured image offsets
+respond to the dimensions of adjacent photographs.
 
 ## External project handoff
 
@@ -159,14 +236,16 @@ outgoing links still resolve.
 The general invitation uses “Let's go do something.” and welcomes
 multidisciplinary collaboration. On the homepage it pairs the heading directly
 with one specific contact action; no supporting paragraph is required.
+Other pages may use a compact version as their ending. Contact stays within
+existing page contexts.
 
 ## Photography inquiry
 
-The photography inquiry appears within photography pages and gives prospective
-clients a direct route for Portraits, Events, or Creative work. It asks only
-for the details required to understand and respond to a shoot. If a form is
-introduced, every field must earn its place, expose a real label, describe
-errors clearly, and document how submitted information is retained.
+The photography inquiry appears within the Photography page and gives
+prospective clients a direct route for Portraits, Events, or Creative work. It
+asks only for the details required to understand and respond to a shoot. If a
+form is introduced, every field must earn its place, expose a real label,
+describe errors clearly, and document how submitted information is retained.
 
 ## Holographic contact ticket
 
@@ -201,6 +280,14 @@ completely when the ticket returns to the stage.
 
 ## Authentic exception
 
+The Photography character is Will's personal illustration. Its logical frame
+size is 32 × 32 and integer enlargement preserves square pixels. The opening
+appearance lasts four seconds and leaves the page. The pricing appearance
+pushes a large $600 package card across the page, then exits. The friendly
+shoot builder is revealed underneath. Reduced motion presents its final
+usable state immediately. The image viewer preserves focus and scrolling
+position, and all contact choices retain ordinary keyboard operation.
+
 An authentic exception gives a major composition one purposeful interruption
 to the standard grid. It must begin with a real source from Will's objects,
 artwork, images, handwriting, or project process rather than an invented
@@ -221,6 +308,38 @@ opening viewport normally contains no more than one dashed region, and ordinary
 project panels do not receive the treatment by default.
 
 ## Medium-specific rules
+
+### Films programme and player
+
+The Films chooser introduces two films through authentic stills and their
+original posters. Each entry requires an exact title, year, runtime, director
+credit, premise, detail link and trailer link. Desktop and phone layouts use a
+single reading column. Upright poster artwork sits beside the still and remains clear of
+the title. Detail pages preserve the synopsis, production context, credits,
+festival record, supporting images, press kit and screening contact.
+
+A native view transition carries the chosen still into the detail page when
+the browser supports cross document transitions. The transition takes its
+duration and easing from shared tokens. Browsers with reduced motion use
+immediate navigation. Hover and keyboard focus settle the small poster beside
+its still. The original image proportions remain stable at rest.
+
+Transition lifecycle handlers register in the document head before rendering.
+They consume the rejected readiness promise when the browser skips a visual
+transition, preserving ordinary navigation during quick successive visits.
+
+The trailer opens in a native dialog. A brief masked expansion connects the
+action to the viewing surface. The iframe loads after a visitor chooses a
+trailer. Closing the dialog, pressing Escape or clicking its backdrop stops
+playback and restores focus and scrolling. A direct YouTube link accompanies
+the player. Automatic English caption availability is stated beneath it.
+The original anchor remains a working trailer link when JavaScript is disabled.
+
+Responsive AVIF stills reserve width and height. The two film entries together
+use approximately 489 KB of image derivatives across every published size.
+Press kits retain the original PDFs and load on request. The source manifest
+records their provenance. The system page carries a film entry example and
+links to the complete public Films pages.
 
 The system stays consistent across forms, but the evidence each form needs is
 different. Photography leads with image sequences and honest captions; it

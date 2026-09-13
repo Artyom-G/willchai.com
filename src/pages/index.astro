@@ -1,0 +1,246 @@
+---
+import "../styles/home.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Will Chai is a student, maker, and storyteller. Explore photography, films, and projects."
+    />
+    <meta name="theme-color" content="#eef0f2" />
+    <link rel="canonical" href="https://willchai.com/" />
+    <title>Will Chai · Sharing Stories</title>
+    <link
+      rel="preload"
+      href="/assets/funnel-sans-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="preload" href="/assets/photography-banner.avif" as="image" />
+    <link rel="icon" href="/assets/willchai-mark.png" type="image/png" />
+    <link rel="icon" href="/assets/willchai-mark.avif" type="image/avif" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="willchai.com" />
+    <meta property="og:title" content="Will Chai · Sharing Stories" />
+    <meta
+      property="og:description"
+      content="Photography, films, and projects by Will Chai."
+    />
+    <meta property="og:url" content="https://willchai.com/" />
+    <meta name="twitter:card" content="summary" />
+    <script is:inline>
+      const legacyPage = new URLSearchParams(window.location.search).get("page_id");
+      if (legacyPage === "275") window.location.replace("/photography/");
+      if (legacyPage === "109") window.location.replace("/films/");
+      if (legacyPage === "16") window.location.replace("/#contact");
+    </script>
+    <script is:inline src="/scripts/home.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#work">Skip to selected work</a>
+
+    <main class="site-shell">
+      <aside class="identity-rail" aria-labelledby="will-name">
+        <a class="brand" href="/" aria-label="Will Chai, home">
+          <img src="/assets/willchai-mark.avif" alt="" width="46" height="46" />
+          <span>willchai.com</span>
+        </a>
+
+        <div class="portrait-wrap">
+          <button
+            class="portrait-switcher"
+            type="button"
+            aria-label="Show another portrait of Will"
+            data-portrait-switcher
+          >
+            <span class="portrait-stack" aria-hidden="true"></span>
+            <img
+              class="portrait portrait--primary is-visible"
+              src="/assets/will-portrait.avif"
+              alt="Portrait of Will Chai wearing a dark suit"
+              width="300"
+              height="300"
+              data-portrait
+            />
+            <img
+              class="portrait portrait--alternate portrait--radio"
+              src="/assets/will-portrait-radio.webp"
+              alt="Will Chai at the CFMU radio studio"
+              width="800"
+              height="1067"
+              decoding="async"
+              fetchpriority="low"
+              data-portrait
+            />
+            <img
+              class="portrait portrait--alternate portrait--transit"
+              src="/assets/will-portrait-transit.webp"
+              alt="Will Chai seated on public transit"
+              width="1200"
+              height="800"
+              decoding="async"
+              fetchpriority="low"
+              data-portrait
+            />
+            <img
+              class="portrait portrait--alternate portrait--offa"
+              src="/assets/will-portrait-offa.webp"
+              alt="Will Chai at the Oakville Festivals of Film and Art"
+              width="900"
+              height="901"
+              decoding="async"
+              fetchpriority="low"
+              data-portrait
+            />
+            <img
+              class="portrait-cursor"
+              src="/assets/pixel-cursor.svg"
+              alt=""
+              width="92"
+              height="112"
+              aria-hidden="true"
+            />
+          </button>
+        </div>
+
+        <section class="introduction" id="top">
+          <h1 id="will-name">Hi, I’m Will.</h1>
+          <p>I’m a student, a maker, and a storyteller.</p>
+        </section>
+
+        <nav class="primary-nav" aria-label="Primary navigation">
+          <a href="/photography/">Photography</a>
+          <a href="/films/">Films</a>
+          <a href="/projects/">Projects</a>
+          <a href="https://www.linkedin.com/in/willchai/">LinkedIn</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </aside>
+
+      <section class="work-column" id="work" aria-label="Selected work">
+        <article class="project-panel photography-panel" id="photography">
+          <a class="panel-link" href="/photography/" aria-label="Open Will Chai Photography">
+            <img
+              class="panel-image"
+              src="/assets/photography-banner.avif"
+              alt="A contact sheet of portraits, performances, events, and creative photography"
+              width="1280"
+              height="720"
+            />
+            <span class="panel-shade" aria-hidden="true"></span>
+            <span class="panel-copy panel-copy--light">
+              <strong>Photography</strong>
+              <span class="panel-description">Portraits, events, performances, creative work</span>
+            </span>
+          </a>
+        </article>
+
+        <article class="project-panel films-panel" id="films">
+          <a class="panel-link" href="/films/" aria-label="Open Films">
+            <img
+              class="film-poster film-poster--wattleseed"
+              src="/assets/wattleseed-poster.avif"
+              alt="Wattleseed film poster"
+              width="217"
+              height="300"
+              loading="lazy"
+            />
+            <img
+              class="film-poster film-poster--minus"
+              src="/assets/murder-of-minus-poster.avif"
+              alt="Murder of Minus film poster"
+              width="225"
+              height="300"
+              loading="lazy"
+            />
+            <span class="films-marquee" aria-hidden="true">MOVING PICTURES</span>
+            <span class="panel-copy panel-copy--light panel-copy--films">
+              <strong>Films</strong>
+              <span class="panel-description">Wattleseed · Murder of Minus</span>
+              <span class="films-recognition">Two short films made with friends and collaborators</span>
+            </span>
+          </a>
+        </article>
+
+        <article class="project-panel projects-panel" id="projects">
+          <a class="panel-link" href="/projects/" aria-label="Open Projects">
+            <img
+              class="panel-image panel-image--projects"
+              src="/assets/projects-triangle-grid.svg"
+              alt=""
+              width="1600"
+              height="900"
+              loading="lazy"
+            />
+            <span class="projects-field" aria-hidden="true">
+              <span>TACHYBOARD</span>
+              <span>MEDTERMS</span>
+              <span>CONSPIRASEA</span>
+              <span>SEARING STORIES</span>
+            </span>
+            <span class="panel-shade panel-shade--projects" aria-hidden="true"></span>
+            <span class="panel-copy panel-copy--light panel-copy--projects">
+              <strong>Projects</strong>
+              <span class="panel-description">Games, tools, and editorial work in progress.</span>
+            </span>
+          </a>
+        </article>
+
+        <article class="project-panel searing-panel">
+          <a
+            class="panel-link"
+            href="https://searingstories.com"
+            rel="external"
+            aria-label="Visit Searing Stories, external site"
+          >
+            <img
+              class="panel-image"
+              src="/assets/searing-stories.avif"
+              alt="A candlelit meal being served"
+              width="800"
+              height="556"
+              loading="lazy"
+            />
+            <span class="panel-shade panel-shade--warm" aria-hidden="true"></span>
+            <span class="panel-copy panel-copy--light panel-copy--searing">
+              <strong>Searing Stories</strong>
+              <span class="panel-description">Candid stories served over a home cooked dinner.</span>
+              <span class="searing-guest">Volume one · Felipe Hoffa and Janiru Jayatunge</span>
+            </span>
+          </a>
+        </article>
+
+        <section class="contact-section" id="contact" aria-labelledby="contact-heading">
+          <div class="contact-copy">
+            <h2 id="contact-heading">Let’s go do something.</h2>
+            <a class="photography-inquiry" href="mailto:me@willchai.com">Contact me</a>
+          </div>
+
+          <div class="ticket-stage">
+            <button
+              class="contact-ticket"
+              type="button"
+              data-contact-ticket
+              aria-label="Copy me@willchai.com to the clipboard"
+            >
+              <span class="contact-ticket__surface">
+                <span class="contact-ticket__email">me<span aria-hidden="true">@</span>willchai.com</span>
+                <span class="contact-ticket__status" data-ticket-status aria-live="polite">say hello</span>
+              </span>
+            </button>
+          </div>
+        </section>
+
+        <footer class="site-footer">
+          <span>willchai.com</span>
+          <span>© 2026 William Chai</span>
+        </footer>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,139 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import ContactEnding from "../../components/ContactEnding.astro";
+import { projects, type Project } from "../../data/projects";
+
+export function getStaticPaths() {
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+const otherProjects = projects.filter((item) => item.slug !== project.slug);
+---
+
+<BaseLayout
+  title={`${project.title} | Will Chai`}
+  description={project.summary}
+  path={`/projects/${project.slug}/`}
+  pageClass="projectDetailPage"
+>
+  <div class="pageShell">
+    <SiteHeader current="projects" />
+    <main id="main" class="pageMain">
+      <section class="detailHero" aria-labelledby="projectTitle">
+        <div class="detailHeroCopy">
+          <p class="sectionMarker">Project · {project.status}</p>
+          <h1 id="projectTitle" class="detailTitle">{project.title}</h1>
+          <p class="detailIntro">{project.introduction}</p>
+          <dl class="detailMeta">
+            <div>
+              <dt>Form</dt>
+              <dd>{project.form}</dd>
+            </div>
+            <div>
+              <dt>Period</dt>
+              <dd>{project.period}</dd>
+            </div>
+          </dl>
+        </div>
+        <figure class="detailHeroMedia">
+          <img
+            class={project.imageClass}
+            src={project.image}
+            alt={project.imageAlt}
+            width="1600"
+            height="1000"
+          />
+        </figure>
+      </section>
+
+      <div class="detailBody">
+        <aside class="detailRail">
+          <p class="detailMetaLabel">Also in projects</p>
+          <nav aria-label="Other projects">
+            {otherProjects.map((item) => <a href={item.slug === "searing-stories" ? "https://searingstories.com" : `/projects/${item.slug}/`} rel={item.slug === "searing-stories" ? "external" : undefined} aria-label={item.slug === "searing-stories" ? "Searing Stories, external site" : undefined}>{item.title}</a>)}
+          </nav>
+        </aside>
+
+        <article class="detailStory">
+          <section class="storyBlock" aria-labelledby="projectStoryTitle">
+            <h2 id="projectStoryTitle">The project</h2>
+            <div class="storyCopy">
+              {project.story.map((paragraph) => <p>{paragraph}</p>)}
+            </div>
+          </section>
+
+          <section class="storyBlock" aria-labelledby="projectFactsTitle">
+            <h2 id="projectFactsTitle">At a glance</h2>
+            <dl class="factList">
+              {
+                project.facts.map((fact) => (
+                  <div>
+                    <dt>{fact.label}</dt>
+                    <dd>{fact.value}</dd>
+                  </div>
+                ))
+              }
+            </dl>
+          </section>
+
+          <section class="storyBlock" aria-labelledby="projectCreditsTitle">
+            <h2 id="projectCreditsTitle">Credits</h2>
+            <dl class="creditList">
+              {
+                project.credits.map((credit) => (
+                  <div>
+                    <dt>{credit.label}</dt>
+                    <dd>{credit.value}</dd>
+                  </div>
+                ))
+              }
+            </dl>
+          </section>
+
+          {
+            project.secondaryImage && (
+              <figure class="mediaFigure">
+                <img
+                  src={project.secondaryImage}
+                  alt={project.secondaryImageAlt}
+                  width={project.secondaryImageWidth}
+                  height={project.secondaryImageHeight}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+            )
+          }
+
+          <div class="actionRow" aria-label="Project links">
+            {
+              project.links.map((link, index) => (
+                <a
+                  class={index === 0 ? "primaryAction" : "secondaryAction"}
+                  href={link.href}
+                  target={link.href.startsWith("http") ? "_blank" : undefined}
+                  rel={link.href.startsWith("http") ? "noreferrer" : undefined}
+                >
+                  {link.label} <span aria-hidden="true">↗</span>
+                </a>
+              ))
+            }
+          </div>
+        </article>
+      </div>
+
+      <ContactEnding />
+    </main>
+    <SiteFooter />
+  </div>
+</BaseLayout>

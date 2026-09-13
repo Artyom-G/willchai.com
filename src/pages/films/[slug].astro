@@ -1,0 +1,67 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import FilmsEnding from "../../components/FilmsEnding.astro";
+import FilmTrailer from "../../components/FilmTrailer.astro";
+import FilmTransitions from "../../components/FilmTransitions.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import { films, type Film } from "../../data/films";
+import "../../styles/films.css";
+
+export function getStaticPaths() {
+  return films.map((film) => ({ params: { slug: film.slug }, props: { film } }));
+}
+interface Props { film: Film; }
+const { film } = Astro.props;
+const otherFilm = films.find(item => item.slug !== film.slug);
+const trailer = film.links[0];
+---
+<BaseLayout title={`${film.title} | Will Chai`} description={film.summary} path={`/films/${film.slug}/`} image={film.still} imageAlt={film.stillAlt} pageClass="filmDetailPage">
+  <FilmTransitions slot="head" />
+  <div class="pageShell filmsPageShell">
+    <SiteHeader current="films" />
+    <main id="main" class="filmsShell">
+      <nav class="filmBreadcrumb" aria-label="Film navigation">
+        <a href="/films/">All films</a>
+      </nav>
+    <header class="filmDetailHeading">
+      <h1>{film.title}</h1>
+      <div class="filmHeadingMeta"><p>{film.directorLine}</p><p>{film.year}<span aria-hidden="true"> / </span>{film.runtime}<span aria-hidden="true"> / </span>Canada</p></div>
+    </header>
+    <a class="filmScreen" id="trailer" href={trailer.href} data-trailer={film.slug} aria-label={`Watch the ${film.title} trailer`} style={`view-transition-name:film-${film.slug}`}>
+      <img src={film.still} srcset={film.stillSrcSet} sizes="(max-width: 46rem) calc(100vw - 2rem), (max-width: 92rem) 93vw, 84rem" alt={film.stillAlt} width={film.stillWidth} height={film.stillHeight} fetchpriority="high" />
+      <span class="filmScreenPlay"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7z" /></svg>Watch trailer</span>
+    </a>
+    <div class="filmOverview">
+      <figure class="filmPoster"><a href={film.poster} aria-label={`Open the ${film.title} poster`}><img src={film.poster} alt={film.posterAlt} width={film.posterWidth} height={film.posterHeight} loading="lazy" decoding="async" /></a></figure>
+      <section class="filmStory" aria-labelledby="filmStoryTitle">
+        <h2 id="filmStoryTitle">The story</h2>
+        <p class="filmSynopsis">{film.introduction}</p>
+        {film.story.map(paragraph => <p>{paragraph}</p>)}
+        <div class="filmViewingLinks">{film.links.slice(1).map(link => <a class="filmTextAction" href={link.href}>{link.label}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" /></svg></a>)}<a class="filmTrailerAction" href={trailer.href} data-trailer={film.slug}>Watch trailer</a></div>
+      </section>
+    </div>
+    {film.gallery && film.gallery.length > 0 && <section class="filmStills" aria-labelledby="filmStillsTitle">
+      <div class="filmSectionTitle"><h2 id="filmStillsTitle">From the film</h2><p>{film.genre}</p></div>
+      <div class="filmStillPair">{film.gallery.map(still => <figure><img src={still.src} srcset={still.srcSet} sizes="(max-width: 46rem) calc(100vw - 2rem), 45vw" alt={still.alt} width={still.width} height={still.height} loading="lazy" decoding="async" /></figure>)}</div>
+    </section>}
+    <div class="filmRecord">
+      <section class="filmCredits" aria-labelledby="filmCreditsTitle">
+        <h2 id="filmCreditsTitle">Principal credits</h2>
+        <dl>{film.credits.map(credit => <div><dt>{credit.value}</dt><dd>{credit.label}</dd></div>)}</dl>
+      </section>
+      <section class="filmRecognition" aria-labelledby="filmRecognitionTitle">
+        <h2 id="filmRecognitionTitle">Festival record</h2>
+        <ul>{film.recognition.map(item => <li>{item}</li>)}</ul>
+        <a class="filmTextAction" href={`mailto:me@willchai.com?subject=${encodeURIComponent(`${film.title} screening`)}`}>Ask about a screening<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" /></svg></a>
+      </section>
+    </div>
+    {otherFilm && <a class="filmNext" href={`/films/${otherFilm.slug}/`}>
+      <img src={otherFilm.still} srcset={otherFilm.stillSrcSet} sizes="208px" alt="" width={otherFilm.stillWidth} height={otherFilm.stillHeight} loading="lazy" decoding="async" />
+      <div><p>Also in films</p><h2>{otherFilm.title}</h2><p>{otherFilm.year}<span aria-hidden="true"> / </span>{otherFilm.runtime}</p></div>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" /></svg>
+    </a>}
+      <FilmsEnding />
+    </main>
+    <FilmTrailer />
+  </div>
+</BaseLayout>

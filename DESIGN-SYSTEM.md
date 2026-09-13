@@ -88,7 +88,7 @@ The opening viewport should contain:
 
 1. **Identity module:** changeable portrait, name, one-line premise, and a
    small invitation to reveal another side.
-2. **Navigation module:** Photography, Sharing Stories, About, and Contact.
+2. **Navigation module:** Photography, LinkedIn, and Contact.
 3. **Project stream:** two or three short panels visible at once, establishing
    immediately that the page is meant to be browsed rather than presenting one
    dominant hero.
@@ -103,6 +103,13 @@ aspect ratio rather than a viewport-relative height.
 Films share one homepage panel and lead to a dedicated Films index. On mobile,
 the identity rail becomes a compact opening/header and the same panels continue
 as one vertical sequence.
+
+The current public structure contains Home, Photography, `/hey/`, Films, and
+Projects with their detail pages. Photography carries its own inquiry area,
+and the homepage carries the main contact invitation. `/hey/` remains a
+branded utility page outside the primary navigation and links to Home,
+Photography, LinkedIn, and email. Résumé remains in source during continued
+review.
 
 ## Module grammar
 
@@ -293,26 +300,136 @@ tap, or keyboard activation reveals
 the foil briefly and confirms that `me@willchai.com` was copied. Reduced-motion
 mode removes tilt and bounce but preserves the colour change and confirmation.
 
-## Photography
+### Photography character
 
-Photography is the professional service and should own the strongest visual
-module. The Photography landing page begins with an introduction and then
-routes into Portraits, Events, and Creative.
+Photography uses the shared site header, the Photography title, and a short
+portrait and event description. Nine featured photographs move inside a sticky
+viewport while the document scrolls normally. Upcoming cards enter from the
+lower right. The centred card reaches full scale and level orientation. Earlier
+cards leave through the upper left. Card size respects each image's complete
+proportions on desktop and mobile.
 
-On the homepage, Photography uses the largest Unbounded project-title scale
-and a proportionally enlarged descriptor while remaining within the shared
-panel typography system.
+The sequence uses the direction and depth of Will's Orbit Cards reference. A
+small arc, rotation, and scale shift distinguish nearby cards. Each card remains
+a keyboard reachable link in source order. Keyboard focus centres its card.
+Reduced motion removes the sticky passage and presents a static responsive grid.
 
-Use real image dimensions and intentional crops. A visitor should never need to
-wait for an oversized gallery before understanding the offer or reaching the
-photography inquiry path.
+The opening character rises through the upper edge of the first photograph after
+the collection settles and stands on its top boundary. Its collection level
+stage follows the first card above the incoming stack. Phone viewport height
+changes during an active gesture preserve the current geometry, and meaningful
+measurement updates run after scrolling settles. The four second greeting uses
+the clean arrive, ready, and rest poses from the approved atlas at integer
+enlargement. The later
+appearance retains the approved pushing poses. The large $600 package prop sits
+directly on the white page surface. Will enters beside its lower edge, braces,
+and pushes it beyond the right side of the page. The shoot board appears beneath
+the departing scene. The prop copy reads Super Generic Package and $600. Direct
+inquiry links and form interaction reveal the usable board immediately. Replay
+remains available.
 
-## Sharing Stories
+The white shoot board retains its irregular blue enclosure. An editable shoot
+name stays above two questions about place and date. Next reveals an optional
+CAD budget and additional notes, then the completed inquiry with Open email and
+Copy text. Back preserves every answer. The rough pointer approaches the primary
+button in a stepped loop and presses it. The second advance changes the same
+button into Open email. A directional mask exchanges the question pair while
+the title and photographic preview stay anchored. Supplied amounts are labelled
+Your budget, and visitors may request guidance. The budget field keeps $600 as
+the sole public pricing reference. Supporting copy describes the quote factors
+and connects additional budget room with longer coverage and a wider final gallery.
 
-Film, writing, games, watchmaking, and other projects share the same interface
-system. Their homepage panels use the common exterior size but may change crop,
-media sequence, title placement, and internal composition to reflect the work.
-They do not invent separate navigation or brand typography systems.
+An opened photograph offers Add reference across the featured work and shuffle.
+Selections appear on the shoot board and remain removable. Their image links
+appear in the same generated message used by email and copying. Collection
+headers provide a return to the shoot when references are selected. Clipboard
+failure selects the message for manual copying. Inquiry contents stay in the
+current page.
+
+The client proof uses an animated Will Chai collaboration composition. McMaster
+University occupies two thirds of the desktop width with an image led panel and
+compact mark. Foxwood Homes and Platinum Moon settle into the remaining column
+as transparent supporting entries. The heading and three organizations enter in
+stages, then remain visible together while the McMaster photograph moves gently
+with page scroll. The shuffle reserves
+image dimensions and fills continuous columns while preserving earlier positions.
+The footer retains the original contact ticket, policy, rights and homepage
+return. Reduced motion presents the static featured grid, direct image changes
+and usable builder. Final quotes remain personal to each assignment.
+
+The Photography header uses the shared identity mark and Contact action in a
+compact arrangement. Its primary destination labels are omitted on this page.
+
+Photography shares one responsive outer gutter across its header, opening,
+client composition, inquiry and shuffle. The featured viewport fits beneath
+the opening and centres itself as scrolling begins. Image sizing reserves
+clearance for the greeting above the first photograph. The client composition
+uses content sized spacing so its settled group can be read together.
+
+The shoot board keeps a continuous irregular blue outline around its white
+interior. Fields use a fine boundary with an Ink baseline and a Blue focus
+state. Each question step uses its visible content height. The field area
+interpolates between step heights, with the primary action following directly
+below the fields. Its label becomes Open email on the final step.
+The photographic summary displays supplied details, while its empty state
+carries the image and Your shoot title. Service policy and Replay the shove
+share one utility row. Load more photographs is centred beneath the shuffle.
+
+The production reference is `system/photography-stack.html`. The departing
+package prop uses the bounded `--wc-pricing-prop-gold` token. Its five and a half second
+sequence uses `--wc-duration-pricing-scene`. The pricing scene uses the page
+surface as its stage. The irregular blue enclosure belongs to the shoot board
+revealed underneath. The board appears along the departing card during the
+shove. Any remaining scene height settles into the board height as the movement
+ends. Controls retain Funnel Sans and selected headings use
+Unbounded. Gold is specific to the departing prop.
+
+JavaScript readers convert duration tokens from seconds or milliseconds into
+milliseconds before starting an animation. The production stylesheet may
+express 4000ms as 4s. The character greeting retains four seconds, and the
+pricing scene receives five and a half seconds. Verify both against the production build
+when changing their timing.
+
+Featured spacing responds to the dimensions of adjacent photographs. The
+diagonal direction remains consistent while portrait and horizontal pairs use
+their own offsets. The opening reserves 96 pixels above the first photograph
+on phones and 120 pixels on desktop for the greeting. It plays on each page load.
+
+The shuffle randomizes its full collection on each load and each button press.
+The explicit reshuffle uses `--wc-duration-shuffle` at 1100ms. Four outgoing
+photographs gather into two small piles beside Will, weave into one deck, then
+deal into the next arrangement. The temporary layer uses the clean photographer
+atlas at whole pixel enlargement. The pricing scene retains the pushing atlas.
+Controls resume after completion, and a
+resize, hidden document or reduced motion change settles the gallery immediately.
+The image folder sync command and publishing steps live in `CONTENT-GUIDE.md`.
+
+## Films and Projects
+
+Films and Projects are the two chooser destinations. Their individual work
+pages share the interface system while allowing crop, media sequence, title
+placement, and internal composition to respond to each work. Shared
+navigation, typography, and contact endings keep the pages related.
+
+The Films chooser follows one reading column. Two substantial stills lead their
+entries, with each original poster placed upright beside its still. Titles and
+director credits sit beneath each image group. A shared image transition
+connects a selected entry to its film page. Trailers open in a white dialog
+through a brief masked expansion. These movements follow visitor actions.
+Reduced motion presents each destination directly. All dimensions, typography,
+colour and timing derive from the shared token system.
+
+Film detail pages retain the leading image, synopsis, production account,
+original poster, two supporting stills, principal credits and festival record.
+Press kits and screening inquiries appear alongside viewing actions. A compact
+link to the other film follows the record. The shared ending uses the existing
+contact invitation and email address.
+
+The Résumé uses the same reading system with restrained formatting suited to a
+professional record. The PDF appears first through view and download actions,
+and the HTML version follows with matching facts. The `/hey/` utility page
+compresses the brand into links for Home, Photography, LinkedIn, and email
+while preserving type, colour, focus, and spacing rules.
 
 ## Explicitly avoid
 

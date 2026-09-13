@@ -1,0 +1,61 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import ContactEnding from "../../components/ContactEnding.astro";
+import WorkCard from "../../components/WorkCard.astro";
+import { projects } from "../../data/projects";
+---
+
+<BaseLayout
+  title="Projects | Will Chai"
+  description="Selected games, tools, and editorial projects by Will Chai."
+  path="/projects/"
+  pageClass="projectsPage"
+>
+  <div class="pageShell">
+    <SiteHeader current="projects" />
+    <main id="main" class="pageMain">
+      <section class="indexHero projectsOpening" aria-labelledby="projectsTitle">
+        <div class="indexHeroCopy">
+          <p class="sectionMarker">Selected projects</p>
+          <h1 id="projectsTitle" class="indexTitle">Projects.</h1>
+          <p class="indexLead">
+            Games, tools, and editorial work I make with friends and collaborators.
+          </p>
+        </div>
+        <aside class="indexAside">
+          <p>Medical terminology games, typing practice, a dinner magazine, and a social deduction game.</p>
+        </aside>
+      </section>
+
+      <section class="section projectsCollection" aria-labelledby="projectCollectionTitle">
+        <div class="sectionHeader">
+          <h2 id="projectCollectionTitle">Current work</h2>
+          <p>Each entry leads to the project itself or to a concise record here.</p>
+        </div>
+        <div class="collectionGrid projectsGrid">
+          {
+            projects.map((project) => (
+              <WorkCard
+                href={project.slug === "searing-stories" ? "https://searingstories.com" : `/projects/${project.slug}/`}
+                title={project.title}
+                meta={`${project.form} · ${project.period}`}
+                description={project.summary}
+                image={project.image}
+                imageAlt={project.imageAlt}
+                imageClass={project.imageClass}
+                className={`workCard--${project.slug}`}
+                external={project.slug === "searing-stories"}
+                actionLabel={project.slug === "searing-stories" ? "Visit Searing Stories" : project.slug === "tachyboard" ? "View working record" : "Open project"}
+              />
+            ))
+          }
+        </div>
+      </section>
+
+      <ContactEnding />
+    </main>
+    <SiteFooter />
+  </div>
+</BaseLayout>

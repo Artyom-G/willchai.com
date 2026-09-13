@@ -62,15 +62,62 @@ In order:
 
 ## Information architecture
 
-- The homepage is a **curated index**, not an exhaustive feed. It prioritizes
-  selected work across disciplines and points to deeper archive pages.
-- **Photography** is the professional service. Its landing page introduces the
-  practice, availability, and approach, then routes visitors to selected types
-  of work: portraits, events, and creative work.
-- **Sharing Stories** is the umbrella for the personal creative practice:
-  films, screenplays/writing, games, watchmaking, and future story-led work.
-  Individual works live within the relevant archive and also may be featured on
-  the homepage.
+The complete source architecture is shallow and substantial. It contains
+twelve page routes. The current public release exposes Home, Photography,
+`/hey/`, Films, and Projects with their detail pages. LinkedIn, email, and
+Searing Stories are external destinations. Résumé remains in source during
+continued review. Its route uses `noindex`, stays outside the sitemap, and
+carries a crawler exclusion. The homepage panels link directly to their current
+destinations.
+
+The homepage is a curated introduction to Will and selected work. `/hey/` is a
+utility destination for quick links and QR codes. It links to Home,
+Photography, LinkedIn, and email during the focused release. Photography occupies one
+long page with a caption free sequence of nine featured photographs, three client
+cards, a shoot builder, a caption free shuffle, its own inquiry area, and the
+complete service footer.
+
+Films and Projects provide the two branch points. `/films/` introduces the film
+practice and leads to the Wattleseed and Murder of Minus pages. `/projects/`
+helps visitors choose among Medical Terminology Games, Tachyboard, Searing
+Stories, and ConspiraSea. Each film and project page is the canonical home for
+its work.
+
+The résumé page presents the current PDF first, with view and download actions,
+followed by an accessible HTML record carrying the same facts. Its content
+stays aligned with LinkedIn. Contact lives within the homepage, Photography,
+and compact endings on other pages. `/hey/` stays outside primary navigation.
+
+Sharing Stories remains the organising idea connecting the creative practice.
+Its expression lives in page copy and project context. Older work receives a
+public mention when curation supports it. A small item on `/projects/` can carry
+a useful older project in compact form.
+
+The complete source page map is:
+
+1. `/`
+2. `/hey/`
+3. `/photography/`
+4. `/films/`
+5. `/films/wattleseed/`
+6. `/films/murder-of-minus/`
+7. `/projects/`
+8. `/projects/medterms/`
+9. `/projects/tachyboard/`
+10. `/projects/searing-stories/`
+11. `/projects/conspirasea/`
+12. `/resume/`
+
+Published resources include sitemap output, `robots.txt`, a useful 404 page,
+and permanent redirects for meaningful legacy URLs. `/resume.pdf` follows the
+same crawler boundary as `/resume/` during the current release. Future growth
+may add dedicated Photography services or substantial projects while
+preserving the same page logic.
+
+Possible later routes include `/photography/weddings/`,
+`/photography/real-estate/`, `/films/level-55/`, and
+`/projects/[future-project]/`. Each route is created when the work and visitor
+journey support a dedicated destination.
 - The desktop homepage uses a persistent left identity/navigation rail beside a
   naturally scrolling right-hand sequence of project panels. The page has one
   document scroll; do not create a nested scroll area for the panels. The rail
@@ -107,7 +154,7 @@ In order:
   portrait cycler, contact ticket, and footer do not need preambles, counters,
   instructions, or back-to-top copy merely to fill space.
 - The site-wide contact invitation is broad and collaborative—“Let’s do
-  something together.” Photography pages additionally offer a distinct
+  something together.” Photography additionally offers a distinct
   photography-inquiries path for clients.
 
 ## Migration, discoverability, and privacy
@@ -203,7 +250,6 @@ choices that affect the site's direction, structure, or long-term maintenance.
 ## Decisions still to make
 
 - Choose a deployment provider and a privacy-respecting analytics approach.
-- Decide which existing projects are featured at launch and which are archived.
 - Define the first release's photography inquiry experience: direct email only
   or email plus a hosted inquiry form.
 - Decide whether the identity portrait is best as a click-to-cycle image or a
@@ -279,3 +325,39 @@ choices that affect the site's direction, structure, or long-term maintenance.
 | 2026-09-08 | Remove Waterbear as a standalone homepage card and represent it as “Watchmaking” inside a triangular-grid Projects panel. | Watchmaking belongs within the broader project archive, reducing homepage duplication while making the Projects destination more representative. |
 | 2026-09-08 | Standardise sidebar capitalization as Photography, Films, Projects, Objects & experiments, LinkedIn, and Contact. | Correct brand and destination casing makes the navigation feel finished and consistent. |
 | 2026-09-08 | Render the Projects triangular grid as the panel's sampled image layer rather than a CSS background. | The black-hole shader can now gravitationally distort the grid with the rest of the card instead of leaving it visually detached above the effect. |
+| 2026-09-08 | Launch with twelve public pages, one substantial Photography page, and all branching within Films and Projects. | The structure gives selected work enough context while keeping maintenance and primary navigation manageable. |
+| 2026-09-09 | Present Photography as a long uncategorized sequence with ten to fifteen captioned featured photographs, commercial information, a caption free shuffle, and the complete footer. | The sequence gives the photographs room, keeps individual identities available in small captions, and preserves the broad visual range without asking visitors to choose a category. |
+| 2026-09-09 | Prioritize a beautiful Photography page with comfortable browsing and useful paths to portrait and event inquiries. Review the complete visual proposal with provisional photographs and captions. | Success means visitors can enjoy the work, understand the service, and contact Will. Image selection, captions, organization selection, and exact rates remain open. |
+| 2026-09-09 | Continue exploring the Photography composition around beauty and an inviting commercial experience. Develop a personal pixel character using four simple 32 × 32 drawings over four seconds. | Will chose an animated character as his personal presence on this page. The character arrives, prepares the camera, takes a photograph, and settles. The artwork study and its eventual placement remain available for review. |
+| 2026-09-09 | Approve the six colour pixel photographer and its four second entrance. Use the character beside the Photography title. | The four 32 × 32 poses play once on entry and hold the resting pose. The approved artwork gives the page a personal detail while the broader visual composition continues through review. |
+
+| 2026-09-09 | Develop Photography around overlapping photographs, scroll driven stacking, a reversible contact sheet, and an expanded image view. Connect the booking section through a photograph crossing its boundary and revealing the existing ticket. | Will approved this direction after discussing beauty, movement, and comfortable exploration. The four second pixel entrance remains approved. Photograph selection, captions, organization selection, and exact rates remain provisional. |
+
+| 2026-09-09 | Adopt a short sideways featured passage, compact image spacing, direct homepage return, and brief enlarged character appearances. Give pricing an arcade inspired shoot builder revealed by Will pushing a decorative Gold tier card off a ledge. | Will requested a warmer page with the homepage pointer and irregular shapes. The $600 amount is a theatrical prop. Actual rates await pricing rules. Incoming shuffle images fill continuous columns. |
+
+| 2026 09 09 | Refine Photography with composed desktop resting positions, a directly swipeable phone strip, and a larger character entrance beside the title. Reveal gallery images once and align organization marks by visible artwork. | The movement supports comfortable viewing and preserves the visitor's place. |
+| 2026 09 09 | Make the shoot card editable through its name, category and optional CAD budget. Provide email, inquiry copy, address copy and an optional unfolding preview. Move scheduling details into the email. Keep actual pricing private and remove the numerical amount from the Gold tier prop. | The visitor can prepare a personal inquiry and use their preferred email or messaging service. |
+| 2026 09 09 | Use the approved script cleanup of the generated pushing poses to produce a transparent six colour atlas. Align feet at logical y28 and contact palms at x25. | The character can brace against the card, push it to the ledge and recover after the fall. |
+
+| 2026 09 10 | Restore the white shoot board within its irregular blue enclosure. Keep an editable title and two questions at a time, with Next advancing to optional details and the completed inquiry. Preserve the pushing poses and choreograph the pointer around a shared grip point. | Will preferred the earlier board and asked for a simple progression. The current revision is prepared for visual review. |
+| 2026 09 10 | Present the featured work in three scroll chapters with consistent viewing areas and complete image proportions. Let the opening character duck behind the featured boundary. Add reference selection inside the photograph viewer for both collections. | Scrolling advances the photographs, the character has a physical connection to the page, and selected image links can accompany an inquiry. |
+
+| 2026 09 10 | Explore the supplied Jitter motion references through a horizontal featured strip, a brief photographic composition, and bounded stretch transitions. Combine the opening identity link and simplify its booking action. Let Will recover after the shove and duck behind the blue frame. | The visitor controls browsing, images settle into complete proportions, and the character finishes within his own scene. The revision is prepared for visual review. |
+
+| 2026 09 10 | Replace the featured strip with nine approved public portfolio photographs in an Orbit Cards sequence driven by native vertical scroll. Keep the movement on mobile and use a caption free featured presentation. | Will selected the existing public Photography page as the image source, specified nine photographs, and approved the diagonal movement from lower right to upper left. |
+| 2026 09 10 | Present credibility through three client cards for McMaster University, Foxwood Homes, and Platinum Moon. Use the shared site header and remove the annotated duplicate actions, helper lines, counters, and booking shortcuts. | The page keeps its personal interactions while the featured work, client proof, and inquiry path become easier to read. |
+| 2026 09 10 | Give McMaster University twice the visual area within the client proof and use the existing performance photograph as its image. Present Foxwood Homes and Platinum Moon as smaller transparent entries. Animate the composition through a staged entrance and gentle photograph drift. | McMaster carries personal importance because Will studies, works, and photographs there. The visual hierarchy reflects this relationship. |
+| 2026 09 10 | Use a compact Photography header with the Will Chai identity and Contact. | The page opens directly into the photography experience while the identity link provides the homepage route. |
+| 2026 09 10 | Stabilize the featured sequence during phone scrolling and place the opening character in a collection level stage following the first photograph. | Mobile browser chrome may resize during a gesture. Stable measurements preserve scroll progress, while the separate stage keeps the complete character greeting visible above incoming cards. |
+| 2026 09 10 | Present McMaster University, Foxwood Homes, and Platinum Moon in one animated Will Chai collaboration composition. Keep all three visible in the settled frame and retain the larger McMaster position. | The shared composition connects credibility to the playful homepage identity and gives visitors time to read every relationship together. |
+| 2026 09 10 | Use $600 as the sole public pricing anchor inside a nine second departing package scene. Label the prop Super Generic Package and keep the simulated package action. Keep internal pricing thresholds private and quote each assignment after reviewing its scope and submitted budget. | The amount receives a quiet reading interval before Will pushes the prop away. The builder connects additional budget room with longer coverage and a wider final gallery. |
+| 2026 09 12 | Place the large Super Generic Package card directly on the white page surface. Let Will enter beside it and push it beyond the right edge to reveal the shoot board. Limit the prop copy to its name and $600. Animate the board cursor and change the second Next advance into Open email. | The price receives a clear reading interval. The transition belongs to the page itself, while the inquiry keeps one continuous primary action. |
+| 2026 09 12 | Shorten the pricing scene to five and a half seconds while preserving its initial reading pause. Move the opening character to the upper edge of the first photograph and keep his stage above incoming cards. Play the clean arrive, ready, and rest poses from the approved atlas. | The shove completes promptly. The opening character remains attached to the first photograph, stays visible, and avoids the grey camera blocks in the unused pose. |
+| 2026 09 12 | Polish Photography through shared outer gutters, an opening gallery sized to the remaining viewport, compact client spacing, a continuous blue board outline, measured question heights and aligned utility actions. Keep Next and Open email in the same position. | Will moved the approved composition into its design and polish phase. Consistent spacing and predictable controls support the established interactions. |
+| 2026 09 12 | Size the shoot board around each visible step and interpolate its question height during advances. Keep the primary action directly below the fields. Reveal the board during the shove and settle the scene height as the movement ends. | Will identified the transition and board as the next areas for refinement. The first step and its action fit together on a phone, while the blue outline and moving pointer remain part of the composition. |
+| 2026 09 12 | Replay the greeting on each Photography page load, randomize the shuffle on entry, and give Will a brief gathering and dealing action on each Shuffle press. Tune featured offsets to adjacent image proportions and provide a folder sync command for the wider collection. | Will approved the next interaction and maintenance pass while preserving the selected photographs and inquiry flow. |
+| 2026 09 12 | Use the clean photographer atlas for the Shuffle action. Gather four photographs into two piles, weave them into one deck, then deal the next arrangement. Keep the pushing atlas for the Super Generic Package scene. | The Shuffle action now reads through the photographs themselves, while the package scene retains its distinct physical push. |
+
+| 2026 09 10 | Build the Films chooser and its two detail pages around original stills, overlapping poster artwork, personal production accounts and direct viewing actions. Connect the selected image to its detail page and open trailers in a dismissible player. Include the original press kits and screening contact links. | Will asked for the next page to receive a complete implementation and production readiness pass. The composition and motion are available in the private preview for his review. |
+| 2026 09 13 | Publish Home, Photography, and `/hey/` as the focused public release. Limit `/hey/` to Home, Photography, LinkedIn, and email. Keep Films, Projects, and Résumé source routes outside the sitemap and crawler discovery until approved. | The approved Home and Photography experiences can ship now. The remaining route designs and records continue in review. |
+| 2026 09 13 | Add Films and Projects with their detail pages to the public release. Connect Searing Stories directly to its own site. Keep Résumé outside current visitor and crawler discovery. | A contained index pass gives both collections a usable public form while preserving their existing records and media. |

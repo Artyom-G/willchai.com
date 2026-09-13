@@ -37,11 +37,39 @@ has been selected with care. The experience should create curiosity before it
 tries to explain everything. It can reward exploration, but the paths into the
 work and the route to contact should remain immediate and legible.
 
-Photography is the professional service and receives its own client-facing
-inquiry path. Portraits, Events, and Creative are the initial ways into that
-work. Film, writing, games, watchmaking, and other personal projects live under
-Sharing Stories. The whole site uses the broad invitation “Let’s do something
-together,” while photography pages provide a more specific inquiry route.
+Photography is the professional service and receives one substantial page with
+its own client inquiry path. Nine approved featured photographs flow through
+one uncategorized, caption free scroll sequence. An animated collaboration
+composition for McMaster University, Foxwood Homes, and Platinum Moon follows
+the sequence. Its settled frame keeps all three organizations visible together
+while McMaster carries the larger position.
+The shoot builder comes next, then a caption free shuffle carries the wider
+body of work into the complete service footer. The current public release
+exposes Home, Photography, `/hey/`, Films, and Projects with their detail
+pages. The utility page links to Home, Photography, LinkedIn, and email.
+Résumé remains in source during continued review and stays outside current
+visitor discovery. Films and Projects serve as destinations for individual
+work. Sharing Stories continues as the idea connecting the practice. The whole site uses the
+broad invitation “Let’s do something together,” while Photography provides a
+more specific inquiry route.
+
+Films uses original stills and upright poster artwork on the shared white
+canvas. The chooser follows one calm reading column, with each still carrying
+the visual lead. Titles, director credits, and viewing actions stay together.
+Motion follows the choice to explore a film or watch its trailer. Personal
+production accounts carry the collaborative character of the work into the
+detail pages.
+
+The Résumé is a professional record with matching PDF and HTML versions. It may
+link to a film or project when the connection is useful. `/hey/` is a compact utility page for quick links and QR
+codes. Contact appears within existing pages through relevant invitations and
+compact endings.
+
+Photography gives visual quality priority while supporting portrait and event
+inquiries through useful information and straightforward contact. Current
+featured photographs and the three selected client relationships are approved
+for the current design review. The page should be assessed through its full
+scrolling composition and ordinary visitor tasks on desktop and mobile.
 
 ## Voice and writing
 
@@ -275,6 +303,13 @@ as a memorable contact invitation at the end of a page and may inspire a small
 number of related tactile objects, but the full holographic treatment remains
 specific to contact.
 
+Photography uses Will's approved 32 × 32 pixel artwork for brief appearances.
+The opening enlarges the artwork in whole pixel steps above the Featured
+photographs boundary, then lets the character duck behind it after four seconds. The pricing scene gives the character a physical action by pushing
+a large $600 package card away to reveal the shoot builder. The card occupies
+the white page surface while Will enters beside it and pushes it beyond the
+right edge.
+
 The current blue W in `system/assets/willchai-mark.avif` is the official compact mark and
 should appear in the system library, site metadata, and suitable identity or
 footer contexts. “willchai.com” remains the official website name. The W mark
@@ -285,6 +320,71 @@ Interface responses use a 160-millisecond transition with an ease-out curve;
 image changes use 360 milliseconds. Movement is normally limited to opacity,
 crop, colour, or a translation of no more than eight pixels. Reduced-motion
 mode removes translations and changes content without an animated delay.
+
+Photography uses a compact site header with the shared identity and Contact,
+the Photography title, and a short
+portrait and event description. Nine featured photographs move through a sticky
+viewport as ordinary vertical scrolling advances the sequence. Each card enters
+from the lower right, reaches the centre at full scale, then leaves through the
+upper left. The complete image proportions remain visible. Mobile keeps the same
+scroll movement with tighter spacing. Keyboard focus centres each linked image
+in source order. Reduced motion presents a static grid.
+
+The sequence takes its movement direction from Will's Orbit Cards reference.
+The page retains native document scrolling throughout. Each
+photograph opens in the existing viewer, where directional image changes and
+reference selection remain available. The page and viewer use an image led,
+caption free presentation. Descriptive alternative text remains available to
+assistive tools.
+
+The opening character rises through the upper edge of the first photograph after
+the collection settles and stands on its top boundary. The collection level
+stage follows the first card and keeps the complete greeting above incoming
+photographs. Stable phone measurements wait for an active scroll gesture to
+settle. The four second greeting uses the clean arrive, ready, and rest poses
+from the approved atlas at integer enlargement. The later
+appearance retains the approved pushing poses. The large $600 package prop sits
+directly on the white page surface. Will enters beside its lower edge, braces,
+and pushes it beyond the right side of the page. The shoot board appears beneath
+the departing scene. The prop copy reads Super Generic Package and $600. Direct
+inquiry links and form interaction reveal the usable board immediately. Replay
+remains available.
+
+The white shoot board retains its irregular blue enclosure. An editable shoot
+name stays above two questions about place and date. Next reveals an optional
+CAD budget and additional notes, then the completed inquiry with Open email and
+Copy text. Back preserves every answer. The rough pointer approaches the primary
+button in a stepped loop and presses it. The second advance changes the same
+button into Open email. A directional mask exchanges the question pair while
+the title and photographic preview stay anchored. Supplied amounts are labelled
+Your budget, and visitors may request guidance. Actual fees are quoted personally.
+
+An opened photograph offers Add reference across the featured work and shuffle.
+Selections appear on the shoot board and remain removable. Their image links
+appear in the same generated message used by email and copying. Collection
+headers provide a return to the shoot when references are selected. Clipboard
+failure selects the message for manual copying. Inquiry contents stay in the
+current page.
+
+The client proof reads as a Will Chai collaboration composition. McMaster University
+holds the large image led position with a compact mark and name. Foxwood Homes
+and Platinum Moon enter as smaller transparent elements.
+The heading, photograph, and two marks settle in stages, then all three
+organizations remain visible together. The shuffle
+reserves image dimensions and fills continuous columns while preserving earlier
+positions. The footer retains the original contact ticket, policy, rights and
+homepage return. Reduced motion presents the static featured grid, direct image
+changes and usable builder. The pricing scene gives $600 the dominant visual
+position and remains readable before Will pushes the package away. The page
+limits the prop copy to Super Generic Package and $600. The builder keeps $600 as its sole public pricing
+reference. Its guidance connects additional budget room with longer coverage
+and a wider final gallery.
+
+The opening greeting plays once on each page load. The shuffle gives the same
+character a brief task: several photographs gather beside him, then spread into
+a newly randomized arrangement as he pushes. His silhouette stays against the
+white canvas. This appearance follows the Shuffle button, lasts about a second,
+and yields an immediate new arrangement for reduced motion preferences.
 
 ## Stewardship
 
