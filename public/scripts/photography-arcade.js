@@ -41,7 +41,7 @@
   const finishScene = () => {
     scene.classList.remove('isReady','isPlaying');
     stage.classList.remove('isSceneReady','isScenePlaying');
-    replay.hidden = motion.matches;
+    if (replay) replay.hidden = motion.matches;
   };
   const playScene = () => {
     if (motion.matches) return finishScene();
@@ -53,7 +53,7 @@
     void scene.offsetWidth;
     scene.classList.add('isPlaying');
     stage.classList.add('isScenePlaying');
-    replay.hidden = false;
+    if (replay) replay.hidden = false;
   };
   const sceneObserver = new IntersectionObserver(entries => {
     if(entries.some(entry=>entry.isIntersecting) && !played) {
@@ -68,7 +68,7 @@
   }
   if (location.hash === '#pricing') engage(); else sceneObserver.observe(scene);
   scene.addEventListener('animationend',event => { if(event.target.classList.contains('pushingWill')) finishScene(); });
-  replay.addEventListener('click',()=>{ arcade.scrollIntoView({block:'start',behavior:motion.matches?'instant':'smooth'}); playScene(); });
+  replay?.addEventListener('click',()=>{ arcade.scrollIntoView({block:'start',behavior:motion.matches?'instant':'smooth'}); playScene(); });
   form.addEventListener('focusin',engage);
   form.addEventListener('pointerdown',engage);
   document.addEventListener('photography:shuffle',engage);
