@@ -114,7 +114,8 @@ html:has(.photographyPage) { scroll-behavior:auto; scrollbar-gutter:stable; }
 .shootNext,.shootCopy { display:flex; align-items:center; justify-content:space-between; gap:var(--wc-space-4); min-height:52px; padding:var(--wc-space-3) var(--wc-space-4); border:2px solid var(--wc-blue); font-size:1rem; font-weight:500; cursor:pointer; text-decoration:none; transition:background var(--wc-duration-interface),color var(--wc-duration-interface),transform var(--wc-duration-interface); }
 .shootNext { color:var(--wc-white); background:var(--wc-blue); }
 .shootNext { position:relative; margin-left:auto; width:max(50%,10rem); }
-.shootNext [data-next-label] { white-space:nowrap; }
+.shootNext[hidden] { display:none; }
+.shootNext [data-next-label],.shootNext [data-email-label] { white-space:nowrap; }
 .shootNext > svg { flex:none; transition:transform var(--wc-duration-interface) var(--wc-ease-out); }
 .shootNext:hover > svg { transform:translateX(4px); }
 .shootNext:focus-visible .arcadePointer,.shootNext:hover .arcadePointer { animation-play-state:paused; }

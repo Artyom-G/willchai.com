@@ -15,6 +15,8 @@
   const status = arcade.querySelector('[data-inquiry-status]');
   const next = arcade.querySelector('[data-shoot-next]');
   const nextLabel = arcade.querySelector('[data-next-label]');
+  const email = arcade.querySelector('[data-shoot-email]');
+  const emailLabel = arcade.querySelector('[data-email-label]');
   const back = arcade.querySelector('[data-shoot-back]');
   const window = arcade.querySelector('[data-shoot-steps]');
   const steps = [...arcade.querySelectorAll('[data-shoot-step]')];
@@ -105,17 +107,18 @@
       '','Could you suggest an approach and put together a quote?',''
     ].join('\n');
     message.value=inquiryBody;
-    next.dataset.emailHref='mailto:me@willchai.com?subject='+encodeURIComponent(subject.textContent)+'&body='+encodeURIComponent(inquiryBody);
+    email.href='mailto:me@willchai.com?subject='+encodeURIComponent(subject.textContent)+'&body='+encodeURIComponent(inquiryBody);
     fitName();
   };
   const syncStep = () => {
     steps.forEach((element,index)=>{ element.hidden=index!==step; element.inert=index!==step; element.classList.remove('isOutgoing'); element.querySelector('[data-step-grip]').style.left=''; element.querySelector('[data-step-grip]').style.right=''; });
     window.classList.remove('isChanging');
     window.style.height='';
-    next.hidden=false;
-    nextLabel.textContent=step===2?'Open email':'Next';
-    next.classList.remove('isEmailOpening');
-    next.classList.toggle('isEmail',step===2);
+    next.hidden=step===2;
+    email.hidden=step!==2;
+    nextLabel.textContent='Next';
+    emailLabel.textContent='Open email';
+    email.classList.remove('isEmailOpening');
     back.hidden=step===0;
     next.disabled=back.disabled=false;
     changing=false;
@@ -130,7 +133,7 @@
     const fromHeight=window.getBoundingClientRect().height;
     step=target;
     const focusStep = () => {
-      const focus = target===2 ? next : incoming.querySelector('input,textarea');
+      const focus = target===2 ? email : incoming.querySelector('input,textarea');
       const bounds = focus.getBoundingClientRect();
       if(bounds.top<24 || bounds.bottom>innerHeight-24) {
         const heading=window.getBoundingClientRect();
@@ -169,20 +172,16 @@
   form.addEventListener('submit',event=>{
     event.preventDefault();
     if(step<2) return moveTo(step+1);
-    if(next.classList.contains('isEmailOpening')) return;
-    next.classList.add('isEmailOpening');
-    next.disabled=true;
-    nextLabel.textContent='Opening email…';
+  });
+  email.addEventListener('click',()=>{
+    email.classList.add('isEmailOpening');
+    emailLabel.textContent='Opening email…';
     announce('Opening your email app. Copy text is ready if it stays here.');
-    requestAnimationFrame(()=>{
-      location.href=next.dataset.emailHref||'mailto:me@willchai.com?subject=Photography%20inquiry';
-      clearTimeout(emailTimer);
-      emailTimer=setTimeout(()=>{
-        next.classList.remove('isEmailOpening');
-        next.disabled=false;
-        nextLabel.textContent='Open email';
-      },1200);
-    });
+    clearTimeout(emailTimer);
+    emailTimer=setTimeout(()=>{
+      email.classList.remove('isEmailOpening');
+      emailLabel.textContent='Open email';
+    },1200);
   });
   back.addEventListener('click',()=>moveTo(step-1));
   form.addEventListener('input',update);
