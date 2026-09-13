@@ -376,6 +376,12 @@ limits the prop copy to Super Generic Package and $600. The builder keeps $600 a
 reference. Its guidance connects additional budget room with longer coverage
 and a wider final gallery.
 
+The opening greeting plays once on each page load. The shuffle gives the same
+character a brief task: several photographs gather beside him, then spread into
+a newly randomized arrangement as he pushes. His silhouette stays against the
+white canvas. This appearance follows the Shuffle button, lasts about a second,
+and yields an immediate new arrangement for reduced motion preferences.
+
 ## Stewardship
 
 Brand consistency means preserving the underlying voice and logic, not making

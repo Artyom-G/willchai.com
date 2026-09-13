@@ -70,6 +70,7 @@
   replay.addEventListener('click',()=>{ arcade.scrollIntoView({block:'start',behavior:motion.matches?'instant':'smooth'}); playScene(); });
   form.addEventListener('focusin',engage);
   form.addEventListener('pointerdown',engage);
+  document.addEventListener('photography:shuffle',engage);
   document.querySelectorAll('a[href="#pricing"]').forEach(link => link.addEventListener('click',engage));
 
   const fitName = () => {

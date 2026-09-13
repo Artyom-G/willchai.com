@@ -62,6 +62,11 @@ path, pointer-driven perspective, Brand Blue interference layer, repeated W
 texture, and click-to-copy response rather than recreated from appearance
 alone.
 
+The opening greeting now plays once on every Photography page load. Each load
+also chooses a random shuffle order. Pressing Shuffle gives Will a brief
+gathering and dealing action using the same pixel artwork. The image folder and
+`npm run photos:sync` workflow are documented in `CONTENT-GUIDE.md`.
+
 ## Reference models
 
 This is a compact personal system rather than an enterprise component library,

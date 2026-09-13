@@ -390,6 +390,19 @@ express 4000ms as 4s. The character greeting retains four seconds, and the
 pricing scene receives five and a half seconds. Verify both against the production build
 when changing their timing.
 
+Featured spacing responds to the dimensions of adjacent photographs. The
+diagonal direction remains consistent while portrait and horizontal pairs use
+their own offsets. The opening reserves 96 pixels above the first photograph
+on phones and 120 pixels on desktop for the greeting. It plays on each page load.
+
+The shuffle randomizes its full collection on each load and each button press.
+The explicit reshuffle uses `--wc-duration-shuffle` at 1100ms. Four outgoing
+photographs gather into a small stack beside Will, then four incoming photographs
+deal into the next arrangement. The temporary layer uses the existing pushing
+atlas at whole pixel enlargement. Controls resume after completion, and a
+resize, hidden document or reduced motion change settles the gallery immediately.
+The image folder sync command and publishing steps live in `CONTENT-GUIDE.md`.
+
 ## Films and Projects
 
 Films and Projects are the two chooser destinations. Their individual work

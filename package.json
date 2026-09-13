@@ -4,15 +4,19 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "npm run photos:check && astro build",
     "check": "astro check",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "photos:sync": "node scripts/sync-photography.mjs",
+    "photos:check": "node scripts/sync-photography.mjs --check",
+    "test:photos": "node --test scripts/sync-photography.test.mjs"
   },
   "dependencies": {
     "astro": "7.3.2"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
+    "sharp": "^0.35.4",
     "typescript": "^6.0.3"
   }
 }

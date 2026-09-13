@@ -3,7 +3,6 @@
   if (!stage) return;
   const sprite = stage.querySelector('.photographyCharacterSprite');
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
-  const key = 'willchai.photography.hello.v9';
   const token = key => {
     const value = getComputedStyle(document.documentElement).getPropertyValue(key).trim();
     const amount = parseFloat(value) || 0;
@@ -15,7 +14,6 @@
   let compositionReady = !document.querySelector('[data-photo-collection]');
   document.addEventListener('photography:composed', () => { compositionReady=true; play(); });
   let animations = [];
-  try { played = sessionStorage.getItem(key) === 'played'; } catch {}
   const observer = new IntersectionObserver(entries => {
     visible = entries.some(entry => entry.isIntersecting);
     play();
@@ -23,7 +21,6 @@
   function play() {
     if (!ready || !compositionReady || !visible || played || motion.matches || document.hidden) return;
     played = true;
-    try { sessionStorage.setItem(key, 'played'); } catch {}
     observer.disconnect();
     const speed = Number(document.querySelector('[data-motion-speed]')?.value) || 1;
     const duration = token('--wc-duration-scene') / speed;

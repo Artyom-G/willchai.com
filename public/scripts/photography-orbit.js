@@ -14,6 +14,8 @@
   let width = 1;
   let height = 1;
   let cardStep = 1;
+  let cardPositions = [];
+  let centerOffset = 0;
   let distance = 1;
   let active = false;
   let keyboardIntent = false;
@@ -49,6 +51,11 @@
     const progress = clamp((scrollY - sectionTop + stickyTop) / distance, 0, 1);
     const cursor = progress * (cards.length - 1);
     const mobile = width <= 640;
+    const left = Math.floor(cursor);
+    const right = Math.min(left + 1, cards.length - 1);
+    const fraction = cursor - left;
+    const originX = cardPositions[left].x + (cardPositions[right].x - cardPositions[left].x) * fraction;
+    const originY = cardPositions[left].y + (cardPositions[right].y - cardPositions[left].y) * fraction;
     const nearest = Math.round(cursor);
     if (nearest !== currentCard) {
       currentCard = nearest;
@@ -57,8 +64,8 @@
 
     cards.forEach((card, index) => {
       const q = index - cursor;
-      const x = q * width * (mobile ? 0.56 : 0.49) + Math.sin(q * 0.8) * width * 0.035;
-      const y = q * height * (mobile ? 0.38 : 0.4) + Math.sin(q * 0.8) * height * 0.025 + (mobile ? 24 : 32);
+      const x = cardPositions[index].x - originX + Math.sin(q * 0.8) * width * 0.025;
+      const y = cardPositions[index].y - originY + Math.sin(q * 0.8) * height * 0.02 + centerOffset;
       const proximity = Math.abs(q);
       const scale = 1 - Math.min(proximity, 2) * 0.075;
       const angle = clamp(q, -2, 2) * (mobile ? 6 : 8);
@@ -105,7 +112,7 @@
     distance = cardStep * (cards.length - 1);
     section.style.height = `${height + distance}px`;
 
-    cards.forEach((card) => {
+    const sizes = cards.map((card) => {
       const image = card.querySelector('img');
       const intrinsicWidth = Number(image.getAttribute('width')) || image.naturalWidth;
       const intrinsicHeight = Number(image.getAttribute('height')) || image.naturalHeight;
@@ -118,6 +125,17 @@
         characterStage.style.setProperty('--orbit-card-width', `${cardWidth}px`);
         characterStage.style.setProperty('--orbit-card-height', `${cardWidth / ratio}px`);
       }
+      return {width:cardWidth,height:cardWidth / ratio};
+    });
+    centerOffset = Math.max(mobile ? 0 : 8, (mobile ? 96 : 120) - (height - sizes[0].height) / 2);
+    cardPositions = [{x:0,y:0}];
+    sizes.slice(1).forEach((size,index)=>{
+      const previous = sizes[index];
+      const position = cardPositions[index];
+      cardPositions.push({
+        x:position.x + clamp((previous.width + size.width) * .34, width * (mobile ? .38 : .3), width * (mobile ? .56 : .49)),
+        y:position.y + clamp((previous.height + size.height) * .31, height * .18, height * .38)
+      });
     });
     schedule();
   };

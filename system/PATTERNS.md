@@ -211,6 +211,14 @@ settles into the board height as the movement ends. Empty summary details stay h
 until the visitor supplies them. The policy and replay controls share a row,
 and the shuffle ends with a centred Load more photographs action.
 
+Each fresh Photography page load plays the opening greeting and randomizes the
+shuffle. The explicit Shuffle action gathers four photographs beside the pixel
+photographer and deals the new selection into the gallery over 1100ms. The
+character uses the existing pushing atlas and remains visible on the white
+canvas. The gallery settles immediately for reduced motion or an interrupted
+sequence. Additional batches preserve the chosen order. Featured image offsets
+respond to the dimensions of adjacent photographs.
+
 ## External project handoff
 
 An external handoff is used when a project has a substantial independent site,

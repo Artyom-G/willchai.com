@@ -58,6 +58,24 @@ Reference selections produce image links in the inquiry and remain editable
 on the board. Alternative text supplies internal reference descriptions. The
 selection, form answers and draft remain local to the current page.
 
+## Updating the Photography shuffle
+
+The folder `public/photography/shuffle/` is the source of the shuffle image list.
+Add exported JPEG, PNG, WebP or AVIF photographs directly to this folder. To
+retire a photograph, move its file outside the folder. Keep original media in
+your usual archive. Run `npm run photos:sync` from the project folder after
+changing the selection, then preview and publish the site.
+
+The command updates `src/data/photographyShuffle.json`, reads image dimensions,
+and preserves existing source information. It changes the list and leaves the
+photograph files intact. `npm run photos:check` previews whether the list needs
+an update, and the build performs this check automatically. Export optimized
+images before adding them. Filename changes become image URL changes.
+
+Fresh page loads choose a new random order from the complete list. The Shuffle
+button chooses another order and plays the brief character sequence. Loading
+more photographs continues the current order in batches of 36.
+
 ## Films and Projects
 
 Films remain separate from Projects. Each film uses its `/films/` page as its

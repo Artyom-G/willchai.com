@@ -9,7 +9,30 @@ if (shuffleGallery && shuffleButton) {
   let automaticLoading = location.hash !== '#photography-contact';
   let resizeFrame = 0;
   let lastWidth = 0;
+  let shuffling = false;
+  let shuffleAnimations = [];
+  let theatre = null;
+  const section = shuffleGallery.closest('.shuffleSection');
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
+  const randomize = () => {
+    for (let i = items.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [items[i], items[j]] = [items[j], items[i]];
+    }
+    shuffleGallery.append(...items);
+  };
+  const finishShuffle = () => {
+    shuffleAnimations.forEach(animation => animation.cancel());
+    shuffleAnimations = [];
+    theatre?.remove();
+    theatre = null;
+    shuffling = false;
+    shuffleGallery.inert = false;
+    shuffleGallery.removeAttribute('aria-busy');
+    shuffleReset.removeAttribute('aria-disabled');
+    shuffleReset.disabled = shuffleButton.disabled = false;
+    if (automaticLoading) observer.observe(shuffleButton);
+  };
   const layout = () => {
     const width = shuffleGallery.clientWidth;
     if (!width) return;
@@ -40,7 +63,7 @@ if (shuffleGallery && shuffleButton) {
     shuffleButton.hidden = visibleCount >= items.length;
     if (shuffleStatus) shuffleStatus.textContent = `${visibleCount} photographs shown`;
   };
-  const more = () => { visibleCount = Math.min(visibleCount + 36, items.length); render(); };
+  const more = () => { if (shuffling) return; visibleCount = Math.min(visibleCount + 36, items.length); render(); };
   shuffleButton.addEventListener('click', more);
   const observer = new IntersectionObserver(([entry]) => {
     if (entry.isIntersecting && automaticLoading && !shuffleButton.hidden && !document.activeElement?.closest('.photographyFooter')) more();
@@ -51,18 +74,93 @@ if (shuffleGallery && shuffleButton) {
     if (automaticLoading) observer.observe(shuffleButton); else observer.disconnect();
   });
   shuffleReset?.addEventListener('click', () => {
-    for (let i = items.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [items[i], items[j]] = [items[j], items[i]]; }
-    shuffleGallery.append(...items);
+    if (shuffling || items.length < 2) return;
+    document.dispatchEvent(new CustomEvent('photography:shuffle'));
+    const capture = () => items.slice(0, 4).map(item => ({
+      src:item.querySelector('img').src,
+      x:parseFloat(item.style.left), y:parseFloat(item.style.top),
+      width:parseFloat(item.style.width), height:parseFloat(item.style.height)
+    }));
+    const outgoing = capture();
+    observer.disconnect();
+    randomize();
     visibleCount = Math.min(36, items.length);
     render();
     automaticLoading = true;
-    observer.observe(shuffleButton);
-    if (!motion.matches) shuffleGallery.animate([{ opacity: 0.35 }, { opacity: 1 }], { duration: 360 });
+    if (motion.matches) { observer.observe(shuffleButton); return; }
+    shuffling = true;
+    shuffleReset.setAttribute('aria-disabled','true');
+    shuffleButton.disabled = true;
+    shuffleGallery.inert = true;
+    shuffleGallery.setAttribute('aria-busy','true');
+    const incoming = capture();
+    const galleryBounds = shuffleGallery.getBoundingClientRect();
+    const sectionBounds = section.getBoundingClientRect();
+    const deckWidth = Math.min(112, galleryBounds.width * .3);
+    const deckX = galleryBounds.width - deckWidth - 12;
+    const deckY = 16;
+    const rootStyle = getComputedStyle(document.documentElement);
+    const time = rootStyle.getPropertyValue('--wc-duration-shuffle').trim();
+    const duration = parseFloat(time) * (time.endsWith('ms') ? 1 : 1000) || 1100;
+    const ease = rootStyle.getPropertyValue('--wc-ease-settle').trim();
+    theatre = document.createElement('div');
+    theatre.className = 'shuffleTheatre';
+    theatre.setAttribute('aria-hidden','true');
+    Object.assign(theatre.style,{left:galleryBounds.left-sectionBounds.left+'px',top:galleryBounds.top-sectionBounds.top+'px',width:galleryBounds.width+'px'});
+    section.append(theatre);
+    const deal = (photo,index,arriving) => {
+      const card = document.createElement('img');
+      card.className = 'shuffleDealtPhoto'; card.src = photo.src; card.alt = '';
+      Object.assign(card.style,{width:photo.width+'px',height:photo.height+'px',zIndex:String((arriving?20:10)+index)});
+      theatre.append(card);
+      const spread = `translate3d(${photo.x}px,${photo.y}px,0) rotate(0deg) scale(1)`;
+      const deck = `translate3d(${deckX+index*3}px,${deckY+index*3}px,0) rotate(${(index-1)*5}deg) scale(${deckWidth/photo.width})`;
+      const frames = arriving ? [
+        {transform:deck,opacity:0,offset:0},
+        {transform:deck,opacity:0,offset:.4},
+        {transform:deck,opacity:1,offset:.43+index*.025,easing:ease},
+        {transform:spread,opacity:1,offset:.82+index*.04},
+        {transform:spread,opacity:0,offset:1}
+      ] : [
+        {transform:spread,opacity:1,offset:0,easing:ease},
+        {transform:deck,opacity:1,offset:.36+index*.02},
+        {transform:deck,opacity:0,offset:.48},
+        {transform:deck,opacity:0,offset:1}
+      ];
+      shuffleAnimations.push(card.animate(frames,{duration,fill:'both'}));
+    };
+    outgoing.forEach((photo,index)=>deal(photo,index,false));
+    incoming.forEach((photo,index)=>deal(photo,index,true));
+    const actor = document.createElement('span');
+    actor.className = 'shufflePerformer';
+    Object.assign(actor.style,{left:deckX-72+'px',top:'-96px'});
+    const sprite = document.createElement('span'); sprite.className='shufflePerformerSprite'; actor.append(sprite); theatre.append(actor);
+    shuffleAnimations.push(actor.animate([
+      {transform:'translate3d(-12px,32px,0)',opacity:0,offset:0},
+      {transform:'translate3d(0,-8px,0)',opacity:1,offset:.18},
+      {transform:'translate3d(0,0,0)',opacity:1,offset:.3},
+      {transform:'translate3d(8px,0,0)',opacity:1,offset:.48},
+      {transform:'translate3d(0,0,0)',opacity:1,offset:.76},
+      {transform:'translate3d(0,24px,0)',opacity:0,offset:1}
+    ].map(frame=>({...frame,easing:ease})),{duration,fill:'both'}));
+    shuffleAnimations.push(sprite.animate([
+      {backgroundPositionX:'0%',offset:0},
+      {backgroundPositionX:'33.333333%',offset:.3},
+      {backgroundPositionX:'66.666667%',offset:.43},
+      {backgroundPositionX:'100%',offset:.7}
+    ].map(frame=>({...frame,easing:'steps(1,end)'})),{duration,fill:'both'}));
+    const reveal = shuffleGallery.animate([{opacity:0,offset:0},{opacity:0,offset:.72},{opacity:1,offset:1}],{duration,fill:'both'});
+    shuffleAnimations.push(reveal);
+    reveal.finished.then(finishShuffle).catch(()=>{});
   });
+  motion.addEventListener('change',()=>{ if (motion.matches && shuffling) finishShuffle(); });
+  document.addEventListener('visibilitychange',()=>{ if (document.hidden && shuffling) finishShuffle(); });
   new ResizeObserver(() => {
     if (shuffleGallery.clientWidth === lastWidth || resizeFrame) return;
+    if (shuffling) finishShuffle();
     resizeFrame = requestAnimationFrame(() => { resizeFrame = 0; layout(); });
   }).observe(shuffleGallery);
+  randomize();
   render();
   if (automaticLoading) observer.observe(shuffleButton);
 }
