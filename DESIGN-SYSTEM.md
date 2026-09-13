@@ -417,8 +417,8 @@ The introduction reads “I am a filmmaker.” Two film links lead to each chapt
 The Murder of Minus chapter uses the original red portrait and extracted title
 lettering. Its crop preserves the face, raised hand and held component.
 
-Each chapter occupies one and a half viewport heights on spacious desktop
-screens. A central horizontal opening expands to reveal a second original
+Each chapter occupies one and a half viewport heights from 44rem wide and
+38rem high when the text fits the composition. A central horizontal opening expands to reveal a second original
 frame. Essential text stays stationary. Native scrolling controls the image
 mask and scale. Compact layouts and reduced motion use the settled vertical
 sequence. Supporting stills use varied widths within a twelve column grid,
@@ -432,8 +432,14 @@ and `--wc-film-chapter-height` sets the desktop passage length. Scroll and
 resize schedule a single animation frame. Idle and hidden pages stop rendering.
 
 Dedicated festival spreads group the records from `src/data/films.ts` by
-festival. Original artwork accompanies readable category, outcome and year
-text. Every result links to its supporting source. The index and detail pages
+festival. Featured groups lead with larger artwork. Supporting groups use
+smaller artwork, followed by a compact city arrangement for Lift Off selections.
+Wattleseed opens with Oakville and Toronto Shorts, followed by Kitchener
+Waterloo. Murder of Minus opens with Kitchener Waterloo, Couch and Alternative
+Film Festival. These placements are editorial choices. The artwork sizes use
+`--wc-film-laurel-feature` and `--wc-film-laurel-support`. Each category, outcome
+and year remains readable. Publicly sourced results link to their supporting
+pages. Owner supplied records retain their evidence reference in the data. The index and detail pages
 render the same collection. Film detail pages expand the synopsis, production
 account, stills, credits, festival records, original poster and press kit.
 Trailers load on activation inside native dialogs. Closing restores focus and

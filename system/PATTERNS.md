@@ -318,15 +318,18 @@ and lettering. Photography and poster artwork determine each composition.
 Supporting images occupy different grid widths alongside concise production
 text. An image viewer reveals the complete framing.
 
-On spacious desktop viewports each chapter occupies one and a half viewport
-heights. Native vertical scrolling expands a central image mask to reveal the
+From 44rem wide and 38rem high, each chapter occupies one and a half viewport
+heights when its text fits. Native vertical scrolling expands a central image mask to reveal the
 next still. Text holds its position during the passage. Scroll and resize
 schedule a single frame. Compact viewports, enlarged content and reduced
 motion use the natural vertical sequence. Every action is a native link or
 button. Credits and festival records remain visible in ordinary page flow.
 
 Festival spreads use original festival graphics and a shared collection of
-sourced results. Every category, outcome and year remains readable. Original
+publicly sourced and owner confirmed results. Featured groups lead with larger
+artwork, supporting groups use smaller artwork, and Lift Off selections form a
+compact city arrangement. The feature and support artwork heights use shared
+film laurel tokens. Every category, outcome and year remains readable. Original
 wreath branches accompany records whose festival artwork remains pending.
 A film detail page preserves its synopsis, original poster, production account,
 credits, festival record, supporting images and original press kit.
@@ -339,7 +342,8 @@ viewer follows the same dismissal and focus behavior.
 Responsive AVIF stills reserve their dimensions. Press kits load on request.
 The source manifest records original media and title extraction. Film colors
 and motion timings come from `tokens.css`. The system example uses the original
-Wattleseed lettering, library still and Prisma nominee artwork.
+Wattleseed lettering, library still, Oakville logo, Toronto Shorts selection
+artwork and a smaller Prisma nominee group.
 
 The system stays consistent across forms, but the evidence each form needs is
 different. Photography leads with image sequences and honest captions; it

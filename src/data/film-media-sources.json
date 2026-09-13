@@ -276,6 +276,40 @@
     {
       "purpose": "Film title artwork and portrait composition",
       "processing": "SVG viewports crop the original poster artwork. Colour matrices isolate existing letters. The portrait uses a CSS crop of the original poster photograph. Subjects and lettering are preserved."
+    },
+    {
+      "purpose": "Original festival identity for a sourced result",
+      "source": "https://offa.ca/wp-content/uploads/2021/04/offa_logo_menu.png",
+      "published": "/assets/films/laurels/offa-logo.png",
+      "sha256": "07922d6b94c49dc8cce36e7f6c425276d0a9fcb724f776bc5cec405c94ed6921",
+      "bytes": 9624,
+      "width": 518,
+      "height": 94
+    },
+    {
+      "purpose": "Original festival identity for a sourced result",
+      "source": "https://altff.org/onewebmedia/Add%20a%20heading.png",
+      "published": "/assets/films/laurels/altff-logo.png",
+      "sha256": "3ec48f6a67ee8de4c596d9b43d235b310109b158995a3d8e7091c444ecb407c2",
+      "bytes": 304061,
+      "width": 2000,
+      "height": 2000
+    }
+  ],
+  "recognitionEvidence": [
+    {
+      "film": "Wattleseed",
+      "source": "SCR-20260913-niwj.png",
+      "kind": "Owner supplied FilmFreeway judging record",
+      "received": "2026-09-13",
+      "notes": "Seven successful festival outcomes. Notification dates are not treated as festival screening dates. Award categories remain unspecified where the record omits them."
+    },
+    {
+      "film": "Murder of Minus",
+      "source": "SCR-20260913-njdj.png",
+      "kind": "Owner supplied FilmFreeway judging record",
+      "received": "2026-09-13",
+      "notes": "Ten successful festival outcomes, including five Lift Off city selections. Existing verified individual categories are preserved."
     }
   ]
 }

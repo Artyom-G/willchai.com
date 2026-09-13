@@ -1,0 +1,24 @@
+---
+import type { FilmLaurel } from '../data/films';
+interface Props { festival: string; results: FilmLaurel[]; featured?: boolean; }
+const { festival, results, featured = false } = Astro.props;
+const artwork = results.find(result => result.artwork);
+const wide = featured && results.length > 3;
+---
+<li class:list={['filmLaurelGroup', { filmLaurelFeature: featured, filmLaurelWide: wide }]}>
+  {artwork ? <div class:list={['filmLaurelArtwork', { filmLaurelLogo: artwork.artworkKind === 'logo' }]} aria-hidden="true">
+    <img src={artwork.artwork} alt="" width="500" height="320" loading="lazy" />
+  </div> : <div class="filmLaurelArtwork filmLaurelFallback">
+    <h3>{festival}</h3>
+  </div>}
+  {artwork && <h3>{festival}</h3>}
+  <ul class="filmLaurelResults">{results.map(result => {
+    const Element = result.source ? 'a' : 'div';
+    return <li class="filmLaurelResult" data-outcome={result.outcome}>
+      <Element href={result.source}>
+        {result.category && <span>{result.category}</span>}
+        <span class="filmLaurelStatus">{result.outcome} · {result.year}</span>
+      </Element>
+    </li>;
+  })}</ul>
+</li>

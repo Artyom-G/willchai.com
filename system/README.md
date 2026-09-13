@@ -168,8 +168,9 @@ builder. Final quotes remain personal to each assignment.
 
 Films and both detail pages use the Ink canvas, original stills, extracted
 poster lettering and dedicated festival spreads. The system page presents the
-library opening, original Wattleseed title and Prisma nominee artwork.
+library opening, original Wattleseed title, featured Oakville and Toronto
+Shorts artwork, and a smaller Prisma nominee group.
 The production sequence uses native scrolling, with a central expanding image
-mask in each short desktop passage. Compact layouts and reduced motion use a
+mask in each short passage on medium and large screens. Compact layouts and reduced motion use a
 settled vertical sequence. Trailer and image dialogs restore focus on close.
 See `PATTERNS.md` for the complete contract.

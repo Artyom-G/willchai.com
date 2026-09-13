@@ -176,14 +176,18 @@ the selected destination benefits from it.
 The Films introduction reads “I am a filmmaker.” Viewing actions read Trailer.
 Film details, About, Screener, Press kit and Film enquiries identify their
 destinations directly. Festival records live in `src/data/films.ts`, with the
-category, festival, outcome, year, supporting source and optional original
-artwork. The index and detail pages render this single collection. Festival
+category, festival, outcome, year, supporting source or owner supplied evidence,
+and optional original artwork. The index and detail pages render this single collection. Festival
 spreads group the artwork by festival and expose every sourced result in live
 text. Winners, nominees, finalists and selections retain their recorded status.
 
 Original title lettering is extracted from the original posters. Film stills
 retain their original subjects and provide a viewer with the original framing.
-The source manifest records each asset and its processing. Additional
-Wattleseed records mentioned in the public festival count remain pending the
-festival names and nomination categories. The public page includes the records
-supported by the published film pages, press kits and festival listings.
+The source manifest records each asset and its processing. Owner supplied judging records confirm successful results across seven
+Wattleseed festivals and ten Murder of Minus festivals. Public sources supply
+the individual categories and screening programme names. Kitchener Waterloo
+provides nine Wattleseed nomination categories. Its winning category and the
+Wattleseed Alternative Film Festival nomination category remain pending. Those
+two entries display their confirmed outcome and year. Notification dates remain
+submission metadata. Public source links appear where a supporting page exists.
+The source manifest records owner evidence without publishing the screenshots.

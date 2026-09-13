@@ -7,8 +7,7 @@ const wattle = film.slug === 'wattleseed';
 const gallery = film.gallery || [];
 ---
 <section class:list={['filmSpread', { filmSpreadMinus: !wattle }]} id={detail ? 'about' : `about-${film.slug}`} aria-label={`${film.title} images and synopsis`}>
-  <div class="filmSpreadRule"><span>{film.title}</span><span>{film.genre}</span></div>
-  {gallery[0] && <FilmImage image={gallery[0]} class="filmSpreadLead" sizes="(max-width: 760px) 100vw, 86vw" />}
+  {gallery[0] && <FilmImage image={gallery[0]} class="filmSpreadLead" sizes="(max-width: 703px) 100vw, 64vw" />}
   <div class="filmSpreadCopy">
     <p class="filmSynopsis">{detail ? film.introduction : film.summary}</p>
     <div class="filmActions">

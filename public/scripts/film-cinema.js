@@ -3,7 +3,7 @@
   if (!root) return;
   const chapters = [...root.querySelectorAll('[data-film-chapter]')];
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-  const wide = matchMedia('(min-width: 68rem) and (min-height: 38rem)');
+  const wide = matchMedia('(min-width: 44rem) and (min-height: 38rem)');
   let enabled = false;
   let frame = 0;
   const animations = new Set();

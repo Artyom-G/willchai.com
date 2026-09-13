@@ -56,7 +56,9 @@ more specific inquiry route.
 Films uses the Ink canvas with original stills, extracted poster lettering,
 direct Trailer actions and dedicated festival spreads. The introduction reads
 “I am a filmmaker.” Native scrolling opens a central image mask during two
-short desktop passages. Phone layouts retain the image order and original
+short passages on medium and large screens. Featured festival artwork leads
+each recognition spread, with smaller supporting groups and compact Lift Off
+cities. Phone layouts retain the image order and original
 subjects in a natural vertical sequence. Categories, festivals, outcomes and
 years use readable live text. Production accounts name the work and
 collaborators directly. This canvas belongs to Films and its detail pages.

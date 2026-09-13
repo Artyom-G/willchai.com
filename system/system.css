@@ -1259,3 +1259,13 @@ img {
 .film-cinema-demo__spread>img { width: 100%; height: auto; }
 .film-cinema-demo__laurel { width: min(100%, 18rem); margin: var(--wc-space-8) auto 0; display: flex; flex-direction: column; align-items: center; gap: .5rem; font-size: var(--wc-font-small); text-align: center; line-height: 1.4; }
 .film-cinema-demo__laurel>img { width: 100%; height: auto; margin-bottom: var(--wc-space-4); }
+
+.film-cinema-demo__featured { display: grid; grid-template-columns: 1fr 1fr; gap: var(--wc-space-6); margin-top: var(--wc-space-8); }
+.film-cinema-demo__featured .film-cinema-demo__laurel { width: 100%; margin: 0; }
+.film-cinema-demo__featured .film-cinema-demo__laurel>img, .film-cinema-demo__offa { height: var(--wc-film-laurel-feature); width: 100%; object-fit: contain; margin-bottom: var(--wc-space-4); }
+.film-cinema-demo__offa { display: flex; align-items: center; padding: 15%; background: url('../public/assets/films/laurel-wreath.png') center/100% 100% no-repeat; }
+.film-cinema-demo__offa img { width: 100%; height: auto; }
+.film-cinema-demo__toronto { filter: invert(1); }
+.film-cinema-demo__support { width: 13rem; margin-left: 0; }
+.film-cinema-demo__support>img { height: var(--wc-film-laurel-support); object-fit: contain; }
+@media (max-width: 40rem) { .film-cinema-demo__featured { grid-template-columns: 1fr; } }

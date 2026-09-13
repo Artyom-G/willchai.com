@@ -1,13 +1,32 @@
 ---
 import type { FilmLaurel } from '../data/films';
+import FilmLaurelGroup from './FilmLaurelGroup.astro';
 interface Props { laurels: FilmLaurel[]; }
 const { laurels } = Astro.props;
-const groups = [...new Set(laurels.map(item => item.festival))].map(festival => ({festival, results: laurels.filter(item => item.festival === festival)}));
+const groups = [...new Set(laurels.map(item => item.festival))].map(festival => {
+  const results = laurels.filter(item => item.festival === festival);
+  const presentation = results.find(item => item.emphasis);
+  return { festival, results, emphasis: presentation?.emphasis || 'supporting', order: presentation?.order || 99, shortName: presentation?.shortName };
+}).sort((a, b) => a.order - b.order);
+const featured = groups.filter(group => group.emphasis === 'feature');
+const supporting = groups.filter(group => group.emphasis === 'supporting');
+const circuit = groups.filter(group => group.emphasis === 'compact');
 ---
-<ul class="filmLaurels" data-festivals={groups.length} aria-label="Festival recognition">
-  {groups.map(group => <li class="filmLaurelGroup">
-    {group.results[0].artwork ? <a class="filmLaurelArtwork" href={group.results[0].source} tabindex="-1" aria-hidden="true"><img src={group.results[0].artwork} alt="" width="400" height="270" loading="lazy" /></a> : <div class="filmLaurelDrawn" aria-hidden="true"><span>{group.festival}</span></div>}
-    <h3>{group.festival}</h3>
-    <ul>{group.results.map(result => <li><a href={result.source}>{result.category && <span>{result.category}</span>}<span class="filmLaurelStatus">{result.outcome} · {result.year}</span></a></li>)}</ul>
-  </li>)}
-</ul>
+<div class="filmFestivalComposition">
+  <ul class="filmLaurels filmLaurelsFeatured" aria-label="Featured festival recognition">
+    {featured.map(group => <FilmLaurelGroup festival={group.festival} results={group.results} featured />)}
+  </ul>
+  <ul class="filmLaurels filmLaurelsSupporting" aria-label="Festival recognition">
+    {supporting.map(group => <FilmLaurelGroup festival={group.festival} results={group.results} />)}
+  </ul>
+  {circuit.length > 0 && <section class="filmFestivalCircuit" aria-label="Lift Off selections">
+    <h3>Lift Off</h3>
+    <ul>{circuit.map(group => <li class="filmLaurelGroup filmLaurelCompact">
+      <h4>{group.shortName}</h4>
+      <span class="visuallyHidden">{group.festival}</span>
+      <ul>{group.results.map(result => <li class="filmLaurelResult">
+        {result.source ? <a href={result.source}>{result.category && <span>{result.category}</span>}<span class="filmLaurelStatus">{result.outcome} · {result.year}</span></a> : <div>{result.category && <span>{result.category}</span>}<span class="filmLaurelStatus">{result.outcome} · {result.year}</span></div>}
+      </li>)}</ul>
+    </li>)}</ul>
+  </section>}
+</div>
