@@ -166,12 +166,11 @@ builder. Final quotes remain personal to each assignment.
 
 ## Films cinema canvas
 
-Films and both detail pages use the Ink canvas, original stills, extracted
-poster lettering and dedicated festival spreads. The system page presents the
-library opening, original Wattleseed title, compact credits, a large apparatus
-frame and an offset synopsis and profile composition. Featured Oakville and
-Toronto Shorts artwork lead into a smaller Prisma nominee group.
-The production sequence uses native scrolling, with a central expanding image
-mask in each short passage on medium and large screens. Compact layouts and reduced motion use a
-settled vertical sequence. Trailer and image dialogs restore focus on close.
-See `PATTERNS.md` for the complete contract.
+Films and both detail pages use the Ink canvas and original film material.
+The system page presents Murder of Minus first, linked title artwork, compact
+credits, additional original stills and a synopsis with its own reading space.
+The festival example uses complete transparent artwork and underlined links.
+The production sequence uses native scrolling with one appearance of each
+index still. Compact layouts and reduced motion use ordinary vertical flow.
+Supporting photographs remain still under the pointer. Media dialogs restore
+focus on close. See `PATTERNS.md` for the complete contract.

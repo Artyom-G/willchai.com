@@ -411,49 +411,45 @@ pages share the interface system while allowing crop, media sequence, title
 placement, and internal composition to respond to each work. Shared
 navigation, typography, and contact endings keep the pages related.
 
-Films opens with the Wattleseed library frame and original title artwork. A
-small director credit, year, runtime and Trailer action share the composition.
-The introduction reads “I am a filmmaker.” Two film links lead to each chapter.
-The Murder of Minus chapter uses the original red portrait and extracted title
-lettering. Its crop preserves the face, raised hand and held component.
+Films opens with the original red Murder of Minus portrait. The face, raised
+hand and component remain in frame. Wattleseed follows with its library image.
+Original title artwork links to the individual film page. Year, runtime,
+director and Trailer form the remaining opening content beneath the shared
+header. Each synopsis has its own place in the image sequence.
 
-Each chapter occupies one and a half viewport heights from 44rem wide and
-38rem high when the text fits the composition. A central horizontal opening expands to reveal a second original
-frame. Essential text stays stationary. Native scrolling controls the image
-mask and scale. Compact layouts and reduced motion use the settled vertical
-sequence. Supporting stills use a twelve column grid. The Wattleseed apparatus spans
-eleven columns and reaches the left page edge. Its synopsis and production
-account share a left alignment below the image, with the researcher profile
-offset on the right. The Murder of Minus closeup reaches the right edge,
-followed by the synopsis and a full width overhead frame. A smaller daylight
-image sits beside the production account. Native dialogs provide the original
-framing. `--wc-film-sequence-gap` controls the intervals between compositions.
+Each chapter uses a short native scroll passage in wide viewports from 44rem wide and 38rem high
+when its title content fits. A central mask reveals one original still. The
+same image element appears in ordinary flow on compact screens and with
+reduced motion. Each index still appears once. Supporting images retain their
+position under the pointer. A native viewer shows full framing, accessible
+image descriptions and a Close button. Visible image captions are optional
+and require meaningful verified context.
 
-Title credits and viewing actions form separate compact groups aligned with
-the original lettering. `--wc-film-text-shadow` supports text legibility over
-the film image. On phones, the lead stills span the viewport and supporting
-images retain their smaller scale within the vertical sequence.
+The index sequence uses additional original colour portraits, the auditorium,
+and the overhead frame for Murder of Minus. Wattleseed uses the night frame,
+apparatus controls, library conversation and a close character study. Different
+image scales and a small overlap connect adjacent frames. Phone layouts keep
+the order and complete subjects. Production accounts remain on detail pages.
 
-The canvas uses `--wc-film-surface`, with `--wc-film-muted` for secondary text
-and `--wc-film-line` for separators. The original poster lettering is image
-artwork. Funnel Sans carries live text. Shared Unbounded display roles remain
-available elsewhere. `--wc-duration-film` supplies the supporting image reveal,
-and `--wc-film-chapter-height` sets the desktop passage length. Scroll and
-resize schedule a single animation frame. Idle and hidden pages stop rendering.
+Shared film surface, muted text, line, sequence spacing and text shadow tokens
+control the composition. Funnel Sans carries live text. Original film lettering
+is artwork. Unbounded retains its selected display roles elsewhere. The chapter
+height token sets the scroll passage length. Idle and hidden pages stop rendering.
 
-Dedicated festival spreads group the records from `src/data/films.ts` by
-festival. Featured groups lead with larger artwork. Supporting groups use
-smaller artwork, followed by a compact city arrangement for Lift Off selections.
-Wattleseed opens with Oakville and Toronto Shorts, followed by Kitchener
-Waterloo. Murder of Minus opens with Kitchener Waterloo, Couch and Alternative
-Film Festival. These placements are editorial choices. The artwork sizes use
-`--wc-film-laurel-feature` and `--wc-film-laurel-support`. Each category, outcome
-and year remains readable. Publicly sourced results link to their supporting
-pages. Owner supplied records retain their evidence reference in the data. The index and detail pages
-render the same collection. Film detail pages expand the synopsis, production
-account, stills, credits, festival records, original poster and press kit.
-Trailers load on activation inside native dialogs. Closing restores focus and
-scrolling. Modest original posters and Film enquiries form the ending.
+Festival spreads use one twelve column grid. Featured records occupy four
+columns each with artwork up to the shared feature height. Supporting records
+occupy three columns with smaller artwork. The Lift Off cities occupy one
+integrated group. On phones, original artwork sits beside each festival record.
+Original transparent leaf margins remain complete. Festivals with pending art
+use a text composition. Festival titles and sourced categories have persistent
+underlines. Outcomes and years group related categories into readable passages.
+All records come from the same collection on the index and detail pages.
+
+Press kit uses a bordered button below each index spread and beside the original
+poster on detail pages. Trailer players load on activation. Both media dialogs
+support Escape, backdrop dismissal and focus restoration. Original posters,
+linked film titles and Film enquiries form the ending. The expanded detail
+page composition is scheduled as the following design pass.
 
 
 The Résumé uses the same reading system with restrained formatting suited to a

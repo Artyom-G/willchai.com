@@ -7,13 +7,9 @@ const wattle = film.slug === 'wattleseed';
 const gallery = film.gallery || [];
 ---
 <section class:list={['filmSpread', { filmSpreadMinus: !wattle, filmSpreadDetail: detail }]} id={detail ? 'about' : `about-${film.slug}`} aria-label={`${film.title} images and synopsis`}>
-  {gallery[0] && <FilmImage image={gallery[0]} class="filmSpreadLead" sizes="(max-width: 703px) 100vw, 90vw" />}
   <div class="filmSpreadCopy">
     <p class="filmSynopsis">{detail ? film.introduction : film.summary}</p>
-    <div class="filmActions">
-      <a class="filmLink" href={film.links.find(link => link.label === 'Press kit')?.href}>Press kit<span aria-hidden="true">↗</span></a>
-      <a class="filmLink" href={detail ? film.links[1].href : `/films/${film.slug}/`}>{detail ? film.links[1].label : 'Film details'}<span aria-hidden="true">↗</span></a>
-    </div>
+
   </div>
   {gallery[1] && <FilmImage image={gallery[1]} class="filmSpreadSecond" sizes={wattle ? '(max-width: 703px) 85vw, 42vw' : '100vw'} />}
   <div class="filmSpreadNote">

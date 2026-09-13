@@ -23,6 +23,7 @@ export type FilmLaurel = {
   year: string;
   artwork?: string;
   source?: string;
+  website?: string;
   evidence?: string;
   sourceCategory?: string;
   artworkKind?: "logo";
@@ -51,6 +52,8 @@ export type Film = {
   stillWidth: number;
   stillHeight: number;
   gallery?: FilmImage[];
+  transition?: FilmImage;
+  sequence?: FilmImage[];
   facts: FilmCredit[];
   credits: FilmCredit[];
   laurels: FilmLaurel[];
@@ -149,7 +152,8 @@ export const films: Film[] = [
         "source": "https://www.cineparisfilmfestival.com/index.html",
         "evidence": "Owner supplied FilmFreeway judging record: SCR-20260913-niwj.png",
         "emphasis": "supporting",
-        "order": 5
+        "order": 5,
+        "website": "https://www.cineparisfilmfestival.com/index.html#winners"
       },
       {
         "category": "Best Trailer",
@@ -160,7 +164,8 @@ export const films: Film[] = [
         "source": "https://www.romeprismafilmawards.com/february-2026-nominees/",
         "evidence": "Owner supplied FilmFreeway judging record: SCR-20260913-niwj.png",
         "emphasis": "supporting",
-        "order": 6
+        "order": 6,
+        "website": "https://www.romeprismafilmawards.com/february-2026-nominees/"
       },
       {
         "category": "Monthly Pick",
@@ -169,7 +174,8 @@ export const films: Film[] = [
         "outcome": "Selected",
         "year": "February 2026",
         "source": "https://www.romeprismafilmawards.com/february-2026-monthly-picks/",
-        "evidence": "Owner supplied FilmFreeway judging record: SCR-20260913-niwj.png"
+        "evidence": "Owner supplied FilmFreeway judging record: SCR-20260913-niwj.png",
+        "website": "https://www.romeprismafilmawards.com/february-2026-nominees/"
       },
       {
         "category": "Programme 5",
@@ -180,7 +186,8 @@ export const films: Film[] = [
         "source": "https://www.torontoshorts.com/program-5",
         "evidence": "Owner supplied FilmFreeway judging record: SCR-20260913-niwj.png",
         "emphasis": "feature",
-        "order": 2
+        "order": 2,
+        "website": "https://www.torontoshorts.com/program-5"
       },
       {
         "category": "Student Film",
@@ -190,7 +197,8 @@ export const films: Film[] = [
         "source": "https://torontoartfilmfestival.com/award-winners-taeff-2026/",
         "evidence": "Owner supplied FilmFreeway judging record: SCR-20260913-niwj.png",
         "emphasis": "supporting",
-        "order": 4
+        "order": 4,
+        "website": "https://torontoartfilmfestival.com/award-winners-taeff-2026/"
       },
       {
         "festival": "Oakville Film Festival",
@@ -202,7 +210,8 @@ export const films: Film[] = [
         "artwork": "/assets/films/laurels/offa-logo.png",
         "artworkKind": "logo",
         "emphasis": "feature",
-        "order": 1
+        "order": 1,
+        "website": "https://offa.ca/wp-content/uploads/2026/06/OFFA-Festival2026-Guide-WEB.pdf#page=18"
       },
       {
         "festival": "Kitchener Waterloo International Film Festival",
@@ -211,7 +220,8 @@ export const films: Film[] = [
         "year": "2026",
         "evidence": "Owner supplied FilmFreeway judging record: SCR-20260913-niwj.png",
         "emphasis": "feature",
-        "order": 3
+        "order": 3,
+        "website": "https://www.kwiffestival.com/nominees"
       },
       {
         "festival": "Alternative Film Festival",
@@ -219,9 +229,10 @@ export const films: Film[] = [
         "outcome": "Nominee",
         "year": "2026",
         "evidence": "Owner supplied FilmFreeway judging record: SCR-20260913-niwj.png",
-        "artwork": "/assets/films/laurels/altff-logo.png",
+        "artwork": "/assets/films/laurels/altff-original-logo.png",
         "emphasis": "supporting",
-        "order": 7
+        "order": 7,
+        "website": "https://altff.org/"
       },
       {
         "festival": "Kitchener Waterloo International Film Festival",
@@ -229,7 +240,8 @@ export const films: Film[] = [
         "sourceCategory": "BEST SHORT FILM",
         "outcome": "Nominee",
         "year": "2026",
-        "source": "https://www.kwiffestival.com/nominees"
+        "source": "https://www.kwiffestival.com/nominees",
+        "website": "https://www.kwiffestival.com/nominees"
       },
       {
         "festival": "Kitchener Waterloo International Film Festival",
@@ -237,7 +249,8 @@ export const films: Film[] = [
         "sourceCategory": "BEST CANADIAN SHORT FILM",
         "outcome": "Nominee",
         "year": "2026",
-        "source": "https://www.kwiffestival.com/nominees"
+        "source": "https://www.kwiffestival.com/nominees",
+        "website": "https://www.kwiffestival.com/nominees"
       },
       {
         "festival": "Kitchener Waterloo International Film Festival",
@@ -245,7 +258,8 @@ export const films: Film[] = [
         "sourceCategory": "BEST FILM (THRILLER HORROR)",
         "outcome": "Nominee",
         "year": "2026",
-        "source": "https://www.kwiffestival.com/nominees"
+        "source": "https://www.kwiffestival.com/nominees",
+        "website": "https://www.kwiffestival.com/nominees"
       },
       {
         "festival": "Kitchener Waterloo International Film Festival",
@@ -253,7 +267,8 @@ export const films: Film[] = [
         "sourceCategory": "BEST STUDENT FILM",
         "outcome": "Nominee",
         "year": "2026",
-        "source": "https://www.kwiffestival.com/nominees"
+        "source": "https://www.kwiffestival.com/nominees",
+        "website": "https://www.kwiffestival.com/nominees"
       },
       {
         "festival": "Kitchener Waterloo International Film Festival",
@@ -261,7 +276,8 @@ export const films: Film[] = [
         "sourceCategory": "BEST TRAILERS",
         "outcome": "Nominee",
         "year": "2026",
-        "source": "https://www.kwiffestival.com/nominees"
+        "source": "https://www.kwiffestival.com/nominees",
+        "website": "https://www.kwiffestival.com/nominees"
       },
       {
         "festival": "Kitchener Waterloo International Film Festival",
@@ -269,7 +285,8 @@ export const films: Film[] = [
         "sourceCategory": "BEST EDITING",
         "outcome": "Nominee",
         "year": "2026",
-        "source": "https://www.kwiffestival.com/nominees"
+        "source": "https://www.kwiffestival.com/nominees",
+        "website": "https://www.kwiffestival.com/nominees"
       },
       {
         "festival": "Kitchener Waterloo International Film Festival",
@@ -277,7 +294,8 @@ export const films: Film[] = [
         "sourceCategory": "BEST EXPERIEMENTAL FILM",
         "outcome": "Nominee",
         "year": "2026",
-        "source": "https://www.kwiffestival.com/nominees"
+        "source": "https://www.kwiffestival.com/nominees",
+        "website": "https://www.kwiffestival.com/nominees"
       },
       {
         "festival": "Kitchener Waterloo International Film Festival",
@@ -285,7 +303,8 @@ export const films: Film[] = [
         "sourceCategory": "BEST ANIMATED / SCI-FI FILM",
         "outcome": "Nominee",
         "year": "2026",
-        "source": "https://www.kwiffestival.com/nominees"
+        "source": "https://www.kwiffestival.com/nominees",
+        "website": "https://www.kwiffestival.com/nominees"
       },
       {
         "festival": "Kitchener Waterloo International Film Festival",
@@ -293,7 +312,8 @@ export const films: Film[] = [
         "sourceCategory": "BEST CINEMATOGRAPHY",
         "outcome": "Nominee",
         "year": "2026",
-        "source": "https://www.kwiffestival.com/nominees"
+        "source": "https://www.kwiffestival.com/nominees",
+        "website": "https://www.kwiffestival.com/nominees"
       }
     ],
     "links": [
@@ -309,7 +329,37 @@ export const films: Film[] = [
         "label": "Press kit",
         "href": "/assets/films/wattleseed/press-kit.pdf"
       }
-    ]
+    ],
+    "sequence": [
+      {
+        "src": "/assets/films/wattleseed/control-1920.avif",
+        "srcSet": "/assets/films/wattleseed/control-640.avif 640w, /assets/films/wattleseed/control-1280.avif 1280w, /assets/films/wattleseed/control-1920.avif 1920w",
+        "width": 1920,
+        "height": 1038,
+        "alt": "The control panel and microphone in Wattleseed"
+      },
+      {
+        "src": "/assets/films/wattleseed/conversation-1920.avif",
+        "srcSet": "/assets/films/wattleseed/conversation-640.avif 640w, /assets/films/wattleseed/conversation-1280.avif 1280w, /assets/films/wattleseed/conversation-1920.avif 1920w",
+        "width": 1920,
+        "height": 1038,
+        "alt": "A researcher sits beside the apparatus in Wattleseed"
+      },
+      {
+        "src": "/assets/films/wattleseed/adrian-1920.avif",
+        "srcSet": "/assets/films/wattleseed/adrian-640.avif 640w, /assets/films/wattleseed/adrian-1280.avif 1280w, /assets/films/wattleseed/adrian-1920.avif 1920w",
+        "width": 1920,
+        "height": 1038,
+        "alt": "A researcher raises his hand beside his head in Wattleseed"
+      }
+    ],
+    "transition": {
+      "src": "/assets/films/wattleseed/night-1920.avif",
+      "srcSet": "/assets/films/wattleseed/night-640.avif 640w, /assets/films/wattleseed/night-1280.avif 1280w, /assets/films/wattleseed/night-1920.avif 1920w",
+      "width": 1920,
+      "height": 1038,
+      "alt": "Figures beside a light at night in Wattleseed"
+    }
   },
   {
     "slug": "murder-of-minus",
@@ -318,7 +368,7 @@ export const films: Film[] = [
     "year": "2025",
     "runtime": "35 minutes",
     "genre": "Thriller, drama, science fiction",
-    "summary": "A tech prodigy builds an artificial intelligence whose rapid progress draws him into a dangerous spotlight.",
+    "summary": "Quinten builds Minus, an artificial intelligence. Its progress draws him into a violent confrontation.",
     "introduction": "Tech prodigy Quinten Spencer builds Minus, an artificial intelligence capable of remarkable feats. Its progress draws him toward recognition and a violent confrontation.",
     "story": [
       "I started Murder of Minus in high school in November 2021. Artyom Gabtraupov and I wrote and directed it together, filming mostly around Kitchener and Waterloo. We finished postproduction in January 2025.",
@@ -337,7 +387,7 @@ export const films: Film[] = [
       {
         "src": "/assets/films/murder-of-minus/closeup-1280.avif",
         "srcSet": "/assets/films/murder-of-minus/closeup-640.avif 640w, /assets/films/murder-of-minus/closeup-1280.avif 1280w",
-        "alt": "A young man faces a pistol in a monochrome closeup",
+        "alt": "Artyom Gabtraupov as Mark in Murder of Minus",
         "width": 1280,
         "height": 693
       },
@@ -433,102 +483,112 @@ export const films: Film[] = [
       {
         "category": "Best Student Film",
         "festival": "Cine Paris Film Festival",
-        "artwork": "/assets/films/laurels/Cine-Paris-Film-Festival-Award-Winner-2025-1-800x531.avif",
+        "artwork": "/assets/films/laurels/cine-paris-2025.png",
         "outcome": "Winner",
         "year": "2025",
-        "source": "https://willchai.com/murder-of-minus-a-sci-fi-thriller/",
+        "source": "https://www.cineparisfilmfestival.com/winners-2025.html",
         "evidence": "Owner supplied FilmFreeway judging record: SCR-20260913-njdj.png",
         "emphasis": "supporting",
-        "order": 4
+        "order": 4,
+        "website": "https://www.cineparisfilmfestival.com/winners-2025.html"
       },
       {
         "category": "Best Student Short Film",
         "festival": "Toronto Independent Festival of CIFT",
-        "artwork": "/assets/films/laurels/Toronto-Independent-Film-Festival-Award-Winner-2025-800x531.avif",
+        "artwork": "/assets/films/laurels/cift-2025.png",
         "outcome": "Winner",
         "year": "2025",
         "source": "https://cyrusmonthlyfestival.com/winners-april-2025/",
         "evidence": "Owner supplied FilmFreeway judging record: SCR-20260913-njdj.png",
         "emphasis": "supporting",
-        "order": 5
+        "order": 5,
+        "website": "https://cyrusmonthlyfestival.com/winners-april-2025/"
       },
       {
         "category": "Best Mystery, Suspense, or Thriller",
         "festival": "Couch Film Festival",
-        "artwork": "/assets/films/laurels/07Mys-800x800.avif",
+        "artwork": "/assets/films/laurels/couch-mystery.png",
         "outcome": "Winner",
         "year": "2025",
-        "source": "https://willchai.com/murder-of-minus-a-sci-fi-thriller/",
+        "source": "https://couchff.weebly.com/uploads/1/2/0/3/120372188/spring_25_couch.pdf#page=9",
         "evidence": "Owner supplied FilmFreeway judging record: SCR-20260913-njdj.png",
         "emphasis": "feature",
-        "order": 2
+        "order": 2,
+        "website": "https://couchff.weebly.com/uploads/1/2/0/3/120372188/spring_25_couch.pdf#page=9"
       },
       {
         "category": "Best Actor · William Chai",
         "festival": "Alternative Film Festival",
-        "artwork": "/assets/films/laurels/08Actor-png-e1743354268105-800x459.avif",
+        "artwork": "/assets/films/laurels/altff-actor.png",
         "outcome": "Winner",
         "year": "2025",
-        "source": "https://willchai.com/murder-of-minus-a-sci-fi-thriller/",
+        "source": "https://altff.org/onewebmedia/MASTER%20AltFF%20Spr25.pdf#page=11",
         "evidence": "Owner supplied FilmFreeway judging record: SCR-20260913-njdj.png",
         "emphasis": "feature",
-        "order": 3
+        "order": 3,
+        "website": "https://altff.org/onewebmedia/MASTER%20AltFF%20Spr25.pdf#page=11"
       },
       {
         "category": "Best Student Film",
         "festival": "Alternative Film Festival",
-        "artwork": "/assets/films/laurels/08Actor-png-e1743354268105-800x459.avif",
+        "artwork": "/assets/films/laurels/altff-actor.png",
         "outcome": "Nominee",
         "year": "Spring 2025",
-        "source": "https://willchai.com/murder-of-minus-a-sci-fi-thriller/",
-        "evidence": "Owner supplied FilmFreeway judging record: SCR-20260913-njdj.png"
+        "source": "https://altff.org/onewebmedia/MASTER%20AltFF%20Spr25.pdf#page=11",
+        "evidence": "Owner supplied FilmFreeway judging record: SCR-20260913-njdj.png",
+        "website": "https://altff.org/onewebmedia/MASTER%20AltFF%20Spr25.pdf#page=11"
       },
       {
         "category": "",
         "festival": "Kitchener Waterloo International Film Festival",
-        "artwork": "/assets/films/laurels/FINALIST-KitchenerWaterlooInternationalFilmFestivalKWIFF-2025-800x531.avif",
+        "artwork": "/assets/films/laurels/kwiff-finalist-2025.png",
         "outcome": "Finalist",
         "year": "2025",
-        "source": "https://willchai.com/murder-of-minus-a-sci-fi-thriller/",
+        "source": "https://www.kwiffestival.com/kwiff2025nomination",
         "evidence": "Owner supplied FilmFreeway judging record: SCR-20260913-njdj.png",
         "emphasis": "feature",
-        "order": 1
+        "order": 1,
+        "website": "https://www.kwiffestival.com/kwiff2025nomination"
       },
       {
         "category": "Best Short Drama/Thriller Film",
         "festival": "Kitchener Waterloo International Film Festival",
-        "artwork": "/assets/films/laurels/FINALIST-KitchenerWaterlooInternationalFilmFestivalKWIFF-2025-800x531.avif",
+        "artwork": "/assets/films/laurels/kwiff-finalist-2025.png",
         "outcome": "Nominee",
         "year": "2025",
-        "source": "https://willchai.com/murder-of-minus-a-sci-fi-thriller/",
-        "evidence": "Owner supplied FilmFreeway judging record: SCR-20260913-njdj.png"
+        "source": "https://www.kwiffestival.com/kwiff2025nomination",
+        "evidence": "Owner supplied FilmFreeway judging record: SCR-20260913-njdj.png",
+        "website": "https://www.kwiffestival.com/kwiff2025nomination"
       },
       {
         "category": "Best Short Film Canada",
         "festival": "Kitchener Waterloo International Film Festival",
-        "artwork": "/assets/films/laurels/FINALIST-KitchenerWaterlooInternationalFilmFestivalKWIFF-2025-800x531.avif",
+        "artwork": "/assets/films/laurels/kwiff-finalist-2025.png",
         "outcome": "Nominee",
         "year": "2025",
-        "source": "https://willchai.com/murder-of-minus-a-sci-fi-thriller/",
-        "evidence": "Owner supplied FilmFreeway judging record: SCR-20260913-njdj.png"
+        "source": "https://www.kwiffestival.com/kwiff2025nomination",
+        "evidence": "Owner supplied FilmFreeway judging record: SCR-20260913-njdj.png",
+        "website": "https://www.kwiffestival.com/kwiff2025nomination"
       },
       {
         "category": "Best Movie Trailer",
         "festival": "Kitchener Waterloo International Film Festival",
-        "artwork": "/assets/films/laurels/FINALIST-KitchenerWaterlooInternationalFilmFestivalKWIFF-2025-800x531.avif",
+        "artwork": "/assets/films/laurels/kwiff-finalist-2025.png",
         "outcome": "Nominee",
         "year": "2025",
-        "source": "https://willchai.com/murder-of-minus-a-sci-fi-thriller/",
-        "evidence": "Owner supplied FilmFreeway judging record: SCR-20260913-njdj.png"
+        "source": "https://www.kwiffestival.com/kwiff2025nomination",
+        "evidence": "Owner supplied FilmFreeway judging record: SCR-20260913-njdj.png",
+        "website": "https://www.kwiffestival.com/kwiff2025nomination"
       },
       {
         "category": "",
         "festival": "Kitchener Waterloo International Film Festival",
-        "artwork": "/assets/films/laurels/FINALIST-KitchenerWaterlooInternationalFilmFestivalKWIFF-2025-800x531.avif",
+        "artwork": "/assets/films/laurels/kwiff-finalist-2025.png",
         "outcome": "Official selection",
         "year": "2025",
-        "source": "https://willchai.com/murder-of-minus-a-sci-fi-thriller/",
-        "evidence": "Owner supplied FilmFreeway judging record: SCR-20260913-njdj.png"
+        "source": "https://www.kwiffestival.com/kwiff2025nomination",
+        "evidence": "Owner supplied FilmFreeway judging record: SCR-20260913-njdj.png",
+        "website": "https://www.kwiffestival.com/kwiff2025nomination"
       },
       {
         "category": "Short Live Action Narrative",
@@ -540,7 +600,8 @@ export const films: Film[] = [
         "evidence": "Owner supplied FilmFreeway judging record: SCR-20260913-njdj.png",
         "emphasis": "compact",
         "order": 10,
-        "shortName": "Austin"
+        "shortName": "Austin",
+        "website": "https://liftoff.network/austin-lift-off-film-festival/"
       },
       {
         "festival": "London Lift Off Film Festival",
@@ -550,7 +611,8 @@ export const films: Film[] = [
         "evidence": "Owner supplied FilmFreeway judging record: SCR-20260913-njdj.png",
         "emphasis": "compact",
         "order": 6,
-        "shortName": "London"
+        "shortName": "London",
+        "website": "https://liftoff.network/london-lift-off-film-festival/"
       },
       {
         "festival": "Los Angeles Lift Off Film Festival",
@@ -560,7 +622,8 @@ export const films: Film[] = [
         "evidence": "Owner supplied FilmFreeway judging record: SCR-20260913-njdj.png",
         "emphasis": "compact",
         "order": 7,
-        "shortName": "Los Angeles"
+        "shortName": "Los Angeles",
+        "website": "https://liftoff.network/los-angeles-lift-off-film-festival/"
       },
       {
         "festival": "New York Lift Off Film Festival",
@@ -570,7 +633,8 @@ export const films: Film[] = [
         "evidence": "Owner supplied FilmFreeway judging record: SCR-20260913-njdj.png",
         "emphasis": "compact",
         "order": 8,
-        "shortName": "New York"
+        "shortName": "New York",
+        "website": "https://liftoff.network/new-york-lift-off-film-festival/"
       },
       {
         "festival": "Toronto Lift Off Film Festival",
@@ -580,7 +644,8 @@ export const films: Film[] = [
         "evidence": "Owner supplied FilmFreeway judging record: SCR-20260913-njdj.png",
         "emphasis": "compact",
         "order": 9,
-        "shortName": "Toronto"
+        "shortName": "Toronto",
+        "website": "https://liftoff.network/toronto-lift-off-film-festival/"
       }
     ],
     "links": [
@@ -595,6 +660,36 @@ export const films: Film[] = [
       {
         "label": "Press kit",
         "href": "/assets/films/murder-of-minus/press-kit.pdf"
+      }
+    ],
+    "sequence": [
+      {
+        "src": "/assets/films/murder-of-minus/quinten-colour-1920.avif",
+        "srcSet": "/assets/films/murder-of-minus/quinten-colour-640.avif 640w, /assets/films/murder-of-minus/quinten-colour-1280.avif 1280w, /assets/films/murder-of-minus/quinten-colour-1920.avif 1920w",
+        "width": 1920,
+        "height": 1040,
+        "alt": "A young man in blue and red light in Murder of Minus"
+      },
+      {
+        "src": "/assets/films/murder-of-minus/auditorium-1920.avif",
+        "srcSet": "/assets/films/murder-of-minus/auditorium-640.avif 640w, /assets/films/murder-of-minus/auditorium-1280.avif 1280w, /assets/films/murder-of-minus/auditorium-1920.avif 1920w",
+        "width": 1920,
+        "height": 1040,
+        "alt": "The auditorium in Murder of Minus"
+      },
+      {
+        "src": "/assets/films/murder-of-minus/owens-1920.avif",
+        "srcSet": "/assets/films/murder-of-minus/owens-640.avif 640w, /assets/films/murder-of-minus/owens-1280.avif 1280w, /assets/films/murder-of-minus/owens-1920.avif 1920w",
+        "width": 1920,
+        "height": 1040,
+        "alt": "A man in a suit looks upward in Murder of Minus"
+      },
+      {
+        "src": "/assets/films/murder-of-minus/aerial-1280.avif",
+        "srcSet": "/assets/films/murder-of-minus/aerial-640.avif 640w, /assets/films/murder-of-minus/aerial-1280.avif 1280w",
+        "alt": "Figures cast long shadows beside a building in a monochrome overhead shot",
+        "width": 1280,
+        "height": 693
       }
     ]
   }

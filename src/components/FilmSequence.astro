@@ -1,0 +1,11 @@
+---
+import type { Film } from '../data/films';
+import FilmImage from './FilmImage.astro';
+interface Props { film: Film; }
+const { film } = Astro.props;
+const frames = film.sequence || [];
+---
+<section class:list={['filmSequence', { filmSequenceMinus: film.slug === 'murder-of-minus' }]} aria-label={`${film.title} images and synopsis`}>
+  <p class="filmSynopsis">{film.summary}</p>
+  {frames.map((frame, index) => <FilmImage image={frame} class={`filmSequenceFrame filmSequenceFrame${index + 1}`} sizes={index === 1 ? '(max-width: 703px) 100vw, 75vw' : '(max-width: 703px) 100vw, 50vw'} />)}
+</section>

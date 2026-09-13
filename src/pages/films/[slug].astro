@@ -16,12 +16,12 @@ const {film} = Astro.props;
 <BaseLayout title={`${film.title} | Will Chai`} description={film.summary} path={`/films/${film.slug}/`} image={film.still} imageAlt={film.stillAlt} pageClass="filmDetailPage filmCinema">
   <div class="filmSiteHeader"><SiteHeader current="films" /></div>
   <main id="main">
-    <nav class="filmIntroduction" aria-label="Film navigation"><a href="/films/">All films ↗</a><a href="#credits">Credits ↓</a></nav>
+    <nav class="filmIntroduction" aria-label="Film navigation"><a href="/films/">All films</a><a href="#credits">Credits</a></nav>
     <FilmHero film={film} first detail />
     <FilmSpread film={film} detail />
     <section class="filmCredits" id="credits" aria-labelledby="credits-title"><header><h2 id="credits-title">Credits</h2><span>{film.year} / Canada</span></header><dl>{film.credits.map(credit => <div><dt>{credit.value}</dt><dd>{credit.label}</dd></div>)}</dl></section>
     <FilmRecognition film={film} detail />
-    <section class="filmOriginalPoster" aria-label="Original poster"><a href={film.poster} data-film-image aria-label={`View ${film.title} poster`}><img src={film.poster} alt={`${film.title} original poster`} width={film.posterWidth} height={film.posterHeight} loading="lazy" /></a><a class="filmLink" href={film.links.find(link => link.label === 'Press kit')?.href}>Press kit ↗</a></section>
+    <section class="filmOriginalPoster" aria-label="Original poster"><a href={film.poster} data-film-image aria-label={`View ${film.title} poster`}><img src={film.poster} alt={`${film.title} original poster`} width={film.posterWidth} height={film.posterHeight} loading="lazy" /></a><a class="filmButton" href={film.links.find(link => link.label === 'Press kit')?.href}>Press kit</a></section>
     <FilmClosing />
   </main>
   <FilmTrailer /><FilmViewer />

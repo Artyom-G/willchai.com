@@ -7,7 +7,6 @@
   const title = modal.querySelector('[data-trailer-title]');
   const screen = modal.querySelector('[data-trailer-screen]');
   const status = modal.querySelector('[data-trailer-status]');
-  const page = modal.querySelector('[data-trailer-page]');
   const external = modal.querySelector('[data-trailer-external]');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   let opener = null;
@@ -48,7 +47,6 @@
     opener = link;
     active = true;
     title.textContent = film.title;
-    page.href = `/films/${film.slug}/`;
     external.href = film.href;
     status.hidden = false;
     status.textContent = 'Loading trailer…';

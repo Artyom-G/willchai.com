@@ -2,19 +2,20 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
 import FilmHero from '../../components/FilmHero.astro';
-import FilmSpread from '../../components/FilmSpread.astro';
+import FilmSequence from '../../components/FilmSequence.astro';
 import FilmRecognition from '../../components/FilmRecognition.astro';
 import FilmClosing from '../../components/FilmClosing.astro';
 import FilmTrailer from '../../components/FilmTrailer.astro';
 import FilmViewer from '../../components/FilmViewer.astro';
 import { films } from '../../data/films';
 import '../../styles/films.css';
+const programme = [...films].reverse();
 ---
-<BaseLayout title="Films | Will Chai" description="Films by Will Chai. Wattleseed and Murder of Minus." path="/films/" image={films[0].still} imageAlt={films[0].stillAlt} pageClass="filmsPage filmCinema">
+<BaseLayout title="Films | Will Chai" description="Films by Will Chai. Wattleseed and Murder of Minus." path="/films/" image="/assets/films/minus-portrait.avif" imageAlt="Murder of Minus" pageClass="filmsPage filmCinema">
   <div class="filmSiteHeader"><SiteHeader current="films" /></div>
   <main id="main">
-    <header class="filmIntroduction"><h1>I am a filmmaker.</h1><nav aria-label="Films">{films.map(film => <a href={`#${film.slug}`}>{film.title}<span aria-hidden="true">↓</span></a>)}</nav></header>
-    {films.map((film, index) => <><FilmHero film={film} first={index === 0} /><FilmSpread film={film} /><FilmRecognition film={film} /></>)}
+    <h1 class="visuallyHidden">Films</h1>
+    {programme.map((film, index) => <><FilmHero film={film} first={index === 0} /><FilmSequence film={film} /><FilmRecognition film={film} /></>)}
     <FilmClosing />
   </main>
   <FilmTrailer /><FilmViewer />

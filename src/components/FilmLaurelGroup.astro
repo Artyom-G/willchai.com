@@ -3,22 +3,21 @@ import type { FilmLaurel } from '../data/films';
 interface Props { festival: string; results: FilmLaurel[]; featured?: boolean; }
 const { festival, results, featured = false } = Astro.props;
 const artwork = results.find(result => result.artwork);
-const wide = featured && results.length > 3;
+const website = results.find(result => result.website)?.website;
+const sets = [...new Set(results.map(result => `${result.outcome}|${result.year}`))].map(key => {
+  const records = results.filter(result => `${result.outcome}|${result.year}` === key);
+  return { outcome: records[0].outcome, year: records[0].year, records };
+});
 ---
-<li class:list={['filmLaurelGroup', { filmLaurelFeature: featured, filmLaurelWide: wide }]}>
-  {artwork ? <div class:list={['filmLaurelArtwork', { filmLaurelLogo: artwork.artworkKind === 'logo' }]} aria-hidden="true">
-    <img src={artwork.artwork} alt="" width="500" height="320" loading="lazy" />
-  </div> : <div class="filmLaurelArtwork filmLaurelFallback">
-    <h3>{festival}</h3>
-  </div>}
-  {artwork && <h3>{festival}</h3>}
-  <ul class="filmLaurelResults">{results.map(result => {
-    const Element = result.source ? 'a' : 'div';
-    return <li class="filmLaurelResult" data-outcome={result.outcome}>
-      <Element href={result.source}>
-        {result.category && <span>{result.category}</span>}
-        <span class="filmLaurelStatus">{result.outcome} · {result.year}</span>
-      </Element>
-    </li>;
-  })}</ul>
+<li class:list={['filmLaurelGroup', { filmLaurelFeature: featured, filmLaurelTextOnly: !artwork }]}>
+  {artwork && <div class="filmLaurelArtwork" aria-hidden="true"><img src={artwork.artwork} alt="" width="500" height="320" loading="lazy" /></div>}
+  <div class="filmLaurelCopy">
+  <h3>{website ? <a href={website}>{festival}</a> : festival}</h3>
+  {sets.map(set => <div class="filmLaurelSet">
+    <p class="filmLaurelStatus">{set.outcome} · {set.year}</p>
+    {set.records.some(result => result.category) && <ul class="filmLaurelResults">{set.records.filter(result => result.category).map(result => <li class="filmLaurelResult" data-outcome={result.outcome}>
+      {result.category && (result.source ? <a href={result.source}>{result.category}</a> : <span>{result.category}</span>)}
+    </li>)}</ul>}
+  </div>)}
+  </div>
 </li>

@@ -1,11 +1,10 @@
 ---
 import type { FilmImage } from '../data/films';
-interface Props { image: FilmImage; class?: string; sizes?: string; }
-const { image, class: className = '', sizes = '(max-width: 760px) 100vw, 70vw' } = Astro.props;
+interface Props { image: FilmImage; class?: string; sizes?: string; loading?: 'eager' | 'lazy'; }
+const { image, class: className = '', sizes = '(max-width: 760px) 100vw, 70vw', loading = 'lazy' } = Astro.props;
 ---
-<figure class:list={['filmStill', className]} data-film-reveal>
+<figure class:list={['filmStill', className]}>
   <a href={image.src} data-film-image aria-label={`View image: ${image.alt}`}>
-    <img src={image.src} srcset={image.srcSet} sizes={sizes} width={image.width} height={image.height} alt={image.alt} loading="lazy" decoding="async" />
-    <span class="filmImageOpen" aria-hidden="true">↗</span>
+    <img src={image.src} srcset={image.srcSet} sizes={sizes} width={image.width} height={image.height} alt={image.alt} loading={loading} decoding="async" />
   </a>
 </figure>

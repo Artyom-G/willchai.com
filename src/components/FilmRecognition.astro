@@ -7,4 +7,5 @@ const { film, detail = false } = Astro.props;
 <section class="filmRecognition" id={detail ? 'festivals' : `festivals-${film.slug}`} aria-labelledby={`festivals-heading-${film.slug}`}>
   <header><h2 id={`festivals-heading-${film.slug}`}>Festivals</h2><span>{film.title} / {film.year}</span></header>
   <FilmLaurels laurels={film.laurels} />
+  {!detail && <div class="filmResources"><a class="filmButton" href={film.links.find(link => link.label === 'Press kit')?.href} aria-label={`${film.title} press kit`}>Press kit</a></div>}
 </section>

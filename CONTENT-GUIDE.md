@@ -173,13 +173,15 @@ the selected destination benefits from it.
 
 ## Films recognition and labels
 
-The Films introduction reads “I am a filmmaker.” Viewing actions read Trailer.
-Film details, About, Screener, Press kit and Film enquiries identify their
-destinations directly. Festival records live in `src/data/films.ts`, with the
-category, festival, outcome, year, supporting source or owner supplied evidence,
-and optional original artwork. The index and detail pages render this single collection. Festival
-spreads group the artwork by festival and expose every sourced result in live
-text. Winners, nominees, finalists and selections retain their recorded status.
+Films opens directly with Murder of Minus and its original title artwork.
+Titles link to the individual film pages. Viewing actions read Trailer. The
+synopsis occupies its own reading space. Press kit uses a bordered control
+below each festival spread. Film enquiries identifies the contact destination.
+Festival records live in `src/data/films.ts`, with category, festival, outcome,
+year, supporting source, official destination, owner evidence and optional
+original artwork. The index and detail pages render the same collection.
+Festivals and sourced categories have persistent underlines. Winners, nominees,
+finalists and selections retain their recorded status.
 
 Original title lettering is extracted from the original posters. Film stills
 retain their original subjects and provide a viewer with the original framing.
@@ -192,6 +194,7 @@ two entries display their confirmed outcome and year. Notification dates remain
 submission metadata. Public source links appear where a supporting page exists.
 The source manifest records owner evidence without publishing the screenshots.
 
-The image sequence keeps the synopsis and production account as separate
-reading groups. Their placement follows each film’s still compositions.
-Director credits and viewing labels retain their existing wording.
+The index pairs a short synopsis with original stills. Production accounts and
+complete credits belong to the detail pages. The image viewer uses accessible
+alt text and a Close control. Any future visible captions require verified
+character, performer or production context.

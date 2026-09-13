@@ -311,33 +311,30 @@ project panels do not receive the treatment by default.
 
 ### Films programme and player
 
-The Films opening combines the Wattleseed library frame, original title
-lettering and a compact group containing the year, runtime, director and
-Trailer action. The second chapter uses the original Murder of Minus portrait
-and lettering. Photography and poster artwork determine each composition.
-The lead still occupies eleven columns and reaches one page edge. Wattleseed
-places its synopsis and production account on a shared left alignment below
-the apparatus, with the profile offset on the right. Murder of Minus follows
-its closeup with a synopsis interval and a full width overhead frame, then a
-smaller daylight image beside the production account. Compact title credits
-and actions align with the lettering. An image viewer reveals complete framing.
-Shared film sequence and text shadow tokens control spacing and legibility.
+The Films opening combines the original Murder of Minus portrait, linked title
+lettering and compact year, runtime, director and Trailer content. Wattleseed
+follows with the library frame. The shared header retains Contact. Each synopsis
+stands alone beside a selected original still. New colour portraits and the
+auditorium extend Murder of Minus. Apparatus controls and library scenes extend
+Wattleseed. A small overlap links two adjacent stills. The original framing is
+available through an image viewer. Every index still appears once.
 
-From 44rem wide and 38rem high, each chapter occupies one and a half viewport
-heights when its text fits. Native vertical scrolling expands a central image mask to reveal the
-next still. Text holds its position during the passage. Scroll and resize
-schedule a single frame. Compact viewports, enlarged content and reduced
-motion use the natural vertical sequence. Every action is a native link or
-button. Credits and festival records remain visible in ordinary page flow.
+In wide viewports from 44rem wide and 38rem high, each chapter occupies one and a half viewport
+heights when its text fits. Native vertical scrolling expands a central image
+mask. The same image element enters ordinary flow on compact viewports and with
+reduced motion. Supporting photographs remain fixed under the pointer and
+arrive through ordinary scrolling. Image controls use a zoom cursor and visible
+keyboard focus. The viewer presents the full image with a Close button.
 
-Festival spreads use original festival graphics and a shared collection of
-publicly sourced and owner confirmed results. Featured groups lead with larger
-artwork, supporting groups use smaller artwork, and Lift Off selections form a
-compact city arrangement. The feature and support artwork heights use shared
-film laurel tokens. Every category, outcome and year remains readable. Original
-wreath branches accompany records whose festival artwork remains pending.
-A film detail page preserves its synopsis, original poster, production account,
-credits, festival record, supporting images and original press kit.
+Festival spreads use one twelve column composition. Featured original artwork
+has a modest scale increase over supporting artwork. Transparent margins stay
+complete. Pending artwork uses a text composition. Lift Off cities share a
+single group within the same grid. On phones, artwork sits beside the record.
+Festival titles and sourced result categories have persistent underlines.
+Related categories share an outcome and year label. All confirmed records stay
+in ordinary page flow. A bordered Press kit control closes each index spread.
+The separate detail page pass will build upon the production material and
+complete credits already preserved in those routes.
 
 Trailers open in an Ink native dialog. The iframe loads after activation.
 Closing, Escape and the backdrop stop playback and restore focus and scrolling.
@@ -347,8 +344,9 @@ viewer follows the same dismissal and focus behavior.
 Responsive AVIF stills reserve their dimensions. Press kits load on request.
 The source manifest records original media and title extraction. Film colors
 and motion timings come from `tokens.css`. The system example uses the original
-Wattleseed lettering, library still, Oakville logo, Toronto Shorts selection
-artwork and a smaller Prisma nominee group.
+Murder of Minus lettering, portrait, additional colour stills and compact
+festival artwork. It demonstrates linked titles, underlined results and the
+bordered Press kit action.
 
 The system stays consistent across forms, but the evidence each form needs is
 different. Photography leads with image sequences and honest captions; it

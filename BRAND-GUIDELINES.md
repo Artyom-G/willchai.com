@@ -53,18 +53,16 @@ work. Sharing Stories continues as the idea connecting the practice. The whole s
 broad invitation “Let’s do something together,” while Photography provides a
 more specific inquiry route.
 
-Films uses the Ink canvas with original stills, extracted poster lettering,
-direct Trailer actions and dedicated festival spreads. The title lettering
-sets the alignment for compact credit and action groups. Large lead stills
-reach a page edge, with supporting photographs and text arranged beneath them.
-The introduction reads
-“I am a filmmaker.” Native scrolling opens a central image mask during two
-short passages on medium and large screens. Featured festival artwork leads
-each recognition spread, with smaller supporting groups and compact Lift Off
-cities. Phone layouts retain the image order and original
-subjects in a natural vertical sequence. Categories, festivals, outcomes and
-years use readable live text. Production accounts name the work and
-collaborators directly. This canvas belongs to Films and its detail pages.
+Films opens with the original red Murder of Minus portrait and title artwork,
+followed by Wattleseed. The shared header keeps Contact at the right. Original
+titles link to their film pages, and Trailer sits beside the director credit.
+Each synopsis stands alone within the image sequence. Original stills appear
+once per index chapter and remain still under the pointer. Native image viewers
+show the full framing with a Close control. Alt text describes the image for
+assistive technology. Compact festival compositions contain original artwork,
+underlined festival and result links, and every confirmed outcome. Lift Off
+cities share one group within the composition. Press kit uses a bordered control
+beneath each spread. Detail pages retain the production account and credits.
 
 
 The Résumé is a professional record with matching PDF and HTML versions. It may
