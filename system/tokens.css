@@ -18,6 +18,8 @@
   --wc-film-chapter-height: 150svh;
   --wc-film-laurel-feature: 16rem;
   --wc-film-laurel-support: 8rem;
+  --wc-film-sequence-gap: clamp(2.5rem, 5vw, 5rem);
+  --wc-film-text-shadow: 0 1px 6px var(--wc-ink);
   --wc-slate: #5f6670;
   --wc-hairline: #c9ced4;
   --wc-blue: #2d29f4;

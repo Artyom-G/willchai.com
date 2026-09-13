@@ -315,8 +315,13 @@ The Films opening combines the Wattleseed library frame, original title
 lettering and a compact group containing the year, runtime, director and
 Trailer action. The second chapter uses the original Murder of Minus portrait
 and lettering. Photography and poster artwork determine each composition.
-Supporting images occupy different grid widths alongside concise production
-text. An image viewer reveals the complete framing.
+The lead still occupies eleven columns and reaches one page edge. Wattleseed
+places its synopsis and production account on a shared left alignment below
+the apparatus, with the profile offset on the right. Murder of Minus follows
+its closeup with a synopsis interval and a full width overhead frame, then a
+smaller daylight image beside the production account. Compact title credits
+and actions align with the lettering. An image viewer reveals complete framing.
+Shared film sequence and text shadow tokens control spacing and legibility.
 
 From 44rem wide and 38rem high, each chapter occupies one and a half viewport
 heights when its text fits. Native vertical scrolling expands a central image mask to reveal the

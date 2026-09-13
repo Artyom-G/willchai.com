@@ -17,18 +17,18 @@ body.filmCinema { min-width: 0; background: var(--wc-film-surface); color: var(-
 .filmFrame, .filmAperture, .filmImageShade, .filmPortraitCrop { position: absolute; inset: 0; overflow: hidden; }
 .filmFirstFrame, .filmAperture img { width: 100%; height: 100%; object-fit: cover; }
 .filmFirstFrame { object-position: center 44%; }
-.filmPortrait { position: absolute; width: max(100%, 200svh); height: auto; max-width: none; left: 50%; top: 0; transform: translate(-50%, -38.4375%); }
+.filmPortrait { position: absolute; width: max(100%, 168svh); height: auto; max-width: none; left: 50%; top: 0; transform: translate(-50%, -38.4375%); }
 .filmImageShade { background: rgba(0,0,0,.06); }
 .filmAperture { visibility: hidden; clip-path: inset(50% 0); }
 .filmHeroTop { position: absolute; top: 1.75rem; left: var(--film-gutter); right: var(--film-gutter); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; font-size: var(--wc-font-small); }
 .filmChapterFirst .filmHeroTop { top: 9.25rem; }
-.filmHeroTop span, .filmHeroTop a { padding: .3rem .6rem; background: rgba(17,19,23,.65); }
+.filmHeroTop span, .filmHeroTop a { padding-block: .3rem; text-shadow: var(--wc-film-text-shadow); }
 .filmHeroTop a { text-decoration: none; }
-.filmHeroContent { position: absolute; bottom: 1.75rem; left: var(--film-gutter); right: var(--film-gutter); }
+.filmHeroContent { --film-title-inset: 7%; position: absolute; bottom: 2rem; left: var(--film-gutter); right: var(--film-gutter); }
 .filmWordmark { display: block; width: 100%; height: auto; overflow: hidden; }
-.filmHeroContent>.filmWordmark { width: 86%; margin: 0 auto 1.5rem; }
-.filmHeroBottom { display: flex; justify-content: space-between; align-items: center; gap: 2rem; padding: .7rem 1rem; background: rgba(17,19,23,.82); }
-.filmHeroBottom p { margin: 0; font-size: var(--wc-font-small); }
+.filmHeroContent>.filmWordmark { width: calc(100% - var(--film-title-inset) * 2); margin: 0 auto 1.5rem; }
+.filmHeroBottom { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem 2rem; margin-inline: var(--film-title-inset); text-shadow: var(--wc-film-text-shadow); }
+.filmHeroBottom p { margin: 0; max-width: 38ch; font-size: var(--wc-font-small); }
 .filmActions { display: flex; align-items: center; flex-wrap: wrap; gap: 1.75rem; }
 .filmPlay, .filmLink { display: inline-flex; align-items: center; gap: .75rem; min-height: 2.75rem; font-size: var(--wc-font-small); text-decoration: none; }
 .filmPlay svg { width: 1rem; height: 1rem; fill: currentColor; }
@@ -36,29 +36,30 @@ body.filmCinema { min-width: 0; background: var(--wc-film-surface); color: var(-
 .filmLink span { display: inline-block; transition: transform var(--wc-duration-interface) var(--wc-ease-out); }
 .filmLink:hover span { transform: translate(2px,-2px); }
 .filmPlay:hover, .filmIntroduction a:hover { opacity: .7; }
-.filmMinusWordmark { position: relative; width: 78%; margin: auto auto 1.5rem; }
+.filmMinusWordmark { position: relative; width: calc(100% - var(--film-title-inset) * 2); margin: auto auto 1.5rem; }
 .filmChapterMinus .filmStage { height: 100svh; min-height: 43rem; }
-.filmChapterMinus .filmHeroContent { bottom: 1.75rem; }
-.filmSpread { padding: 6rem var(--film-gutter) 8rem; display: grid; grid-template-columns: repeat(12,minmax(0,1fr)); gap: 4rem 2rem; }
+.filmChapterMinus .filmHeroContent { --film-title-inset: 11%; }
+.filmSpread { padding: var(--wc-film-sequence-gap) var(--film-gutter); display: grid; grid-template-columns: repeat(12,minmax(0,1fr)); column-gap: 2rem; row-gap: 0; }
 .filmStill { margin: 0; min-width: 0; }
 .filmStill>a { position: relative; display: block; overflow: hidden; }
 .filmStill img { width: 100%; height: auto; transition: transform var(--wc-duration-image) var(--wc-ease-out); }
 .filmStill a:hover img { transform: scale(1.015); }
 .filmImageOpen { position: absolute; bottom: .75rem; right: .75rem; display: grid; place-items: center; width: 2.75rem; height: 2.75rem; background: var(--wc-film-surface); font-size: 1.25rem; }
-.filmSpreadLead { grid-column: 1/9; grid-row: 1; }
-.filmSpreadCopy { grid-column: 9/13; grid-row: 1; align-self: center; }
-.filmSynopsis { font-size: clamp(1.35rem,2.05vw,2.1rem); line-height: 1.35; letter-spacing: -.025em; margin: 0 0 1.5rem; max-width: 34ch; }
-.filmSpreadSecond { grid-column: 7/13; grid-row: 2; margin-top: 2rem; }
-.filmSpreadNote { grid-column: 2/6; grid-row: 2; align-self: center; font-size: 1.0625rem; max-width: 44ch; line-height: 1.6; }
+.filmSpreadLead { grid-column: 1/12; grid-row: 1; margin-left: calc(-1 * var(--film-gutter)); }
+.filmSpreadCopy { grid-column: 2/7; grid-row: 2; padding-top: var(--wc-film-sequence-gap); }
+.filmSynopsis { font-size: clamp(1.6rem,2.65vw,2.65rem); line-height: 1.25; letter-spacing: -.025em; margin: 0 0 1.5rem; max-width: 28ch; }
+.filmSpreadSecond { grid-column: 8/13; grid-row: 2/4; align-self: start; margin-top: calc(var(--wc-film-sequence-gap) * 2); }
+.filmSpreadNote { grid-column: 2/6; grid-row: 3; padding-top: var(--wc-space-12); font-size: 1.0625rem; max-width: 44ch; line-height: 1.6; }
 .filmSpreadNote p { margin: 0; }
-.filmSpreadMinus { padding-inline: 0; }
-.filmSpreadMinus .filmSpreadLead { grid-column: 1/8; }
-.filmSpreadMinus .filmSpreadCopy { grid-column: 9/12; }
-.filmSpreadMinus .filmSpreadSecond { grid-column: 1/-1; margin-top: 2rem; grid-row: 2; }
-.filmSpreadMinus .filmSpreadNote { grid-column: 2/6; grid-row: 3; }
+.filmSpreadMinus .filmSpreadLead { grid-column: 2/13; margin-left: 0; margin-right: calc(-1 * var(--film-gutter)); }
+.filmSpreadMinus .filmSpreadCopy { grid-column: 2/11; padding-block: var(--wc-film-sequence-gap); }
+.filmSpreadMinus .filmSynopsis { max-width: 33ch; }
+.filmSpreadMinus .filmSpreadSecond { grid-column: 1/-1; grid-row: 3; margin: 0 calc(-1 * var(--film-gutter)); }
+.filmSpreadMinus .filmSpreadNote { grid-column: 8/12; grid-row: 4; align-self: center; padding-top: var(--wc-film-sequence-gap); }
 .filmPrincipalCredit { color: var(--wc-film-muted); padding-top: 2rem; }
-.filmSpreadDaylight { grid-column: 7/12; grid-row: 3; margin-top: 1rem; }
-.filmProduction { grid-column: 2/11; display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; padding-top: 2rem; }
+.filmSpreadDaylight { grid-column: 2/7; grid-row: 4; margin-top: var(--wc-film-sequence-gap); align-self: center; }
+.filmProduction { grid-column: 2/12; grid-row: 4; display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; padding-top: var(--wc-film-sequence-gap); }
+.filmSpreadMinus .filmProduction { grid-row: 5; }
 .filmProduction h2 { font-size: var(--wc-font-small); font-weight: 400; margin: 0; color: var(--wc-film-muted); }
 .filmProduction p { font-size: 1.125rem; line-height: 1.6; margin: 0; max-width: 55ch; }
 .filmRecognition { padding: 2rem var(--film-gutter) 7rem; scroll-margin-top: 2rem; }
@@ -120,7 +121,7 @@ body.filmCinema { min-width: 0; background: var(--wc-film-surface); color: var(-
 .filmCinema .filmsEnding>p { color: var(--wc-film-muted); }
 .filmMotion .filmChapter { height: var(--wc-film-chapter-height); }
 .filmMotion .filmStage { position: sticky; top: 0; height: 100svh; min-height: 0; }
-.filmMotion .filmAperture { visibility: visible; clip-path: inset(calc((1 - var(--film-progress,0)) * 50%) 0); }
+.filmMotion .filmAperture { visibility: visible; opacity: clamp(0,calc(var(--film-progress,0) * 100),1); clip-path: inset(calc((1 - var(--film-progress,0)) * 50%) 0); }
 .filmMotion .filmAperture img { transform: scale(calc(1.06 - var(--film-progress,0) * .06)); }
 .filmViewer { border: 0; padding: 0; margin: auto; width: calc(100% - 2rem); max-width: 100rem; max-height: calc(100dvh - 2rem); background: var(--wc-film-surface); color: var(--wc-white); }
 .filmViewer::backdrop { background: rgba(0,0,0,.96); }
@@ -150,9 +151,12 @@ body.filmCinema { min-width: 0; background: var(--wc-film-surface); color: var(-
 .filmsEnding>p>a { text-decoration: none; }
 
 @media(max-width: 70rem) {
-  .filmHeroContent>.filmWordmark, .filmMinusWordmark { width: 92%; }
-  .filmSpread { gap: 2rem 1.25rem; }
-  .filmSynopsis { font-size: clamp(1.2rem,2.6vw,1.75rem); }
+  .filmHeroContent, .filmChapterMinus .filmHeroContent { --film-title-inset: 4%; }
+  .filmSpread { column-gap: 1.25rem; }
+  .filmSpreadCopy, .filmSpreadNote { grid-column: 1/7; }
+  .filmSpreadSecond { grid-column: 8/13; }
+  .filmSpreadMinus .filmSpreadNote { grid-column: 8/13; }
+  .filmSpreadDaylight { grid-column: 1/7; }
   .filmLaurelsFeatured { gap: 3rem; padding-inline: 0; }
   .filmLaurelWide { gap: 0 2rem; }
   .filmLaurelsSupporting { gap: 1.5rem; }
@@ -174,9 +178,9 @@ body.filmCinema { min-width: 0; background: var(--wc-film-surface); color: var(-
   .filmHeroTop, .filmChapterFirst .filmHeroTop { top: .75rem; }
   .filmHeroTop span, .filmHeroTop a { font-size: var(--wc-font-min); }
   .filmHeroContent { position: relative; left: auto; right: auto; bottom: auto; padding: 0 var(--film-gutter) 1.5rem; margin-top: -2rem; }
-  .filmChapterMinus .filmHeroContent { bottom: auto; }
+  .filmHeroContent, .filmChapterMinus .filmHeroContent { --film-title-inset: 0%; bottom: auto; }
   .filmHeroContent>.filmWordmark, .filmMinusWordmark { width: 100%; margin-bottom: 1.25rem; }
-  .filmHeroBottom { display: block; background: transparent; padding: 0; }
+  .filmHeroBottom { display: block; padding: 0; text-shadow: none; }
   .filmHeroBottom p { margin-bottom: .5rem; }
   .filmHeroBottom .filmActions { gap: 1.5rem; }
   .filmImageShade { background: transparent; }
@@ -184,13 +188,15 @@ body.filmCinema { min-width: 0; background: var(--wc-film-surface); color: var(-
   .filmChapterMinus .filmFrame { height: auto; min-height: 0; aspect-ratio: 1.6; }
   .filmChapterMinus .filmStage { display: flex; flex-direction: column; }
   .filmChapterMinus .filmHeroTop { position: static; order: -1; padding: .65rem var(--film-gutter); }
-  .filmSpread, .filmSpreadMinus { display: flex; flex-direction: column; padding: 2.5rem var(--film-gutter) 3.5rem; gap: 2rem; }
+  .filmSpread, .filmSpreadMinus { display: flex; flex-direction: column; padding: 2rem var(--film-gutter) 3.5rem; gap: 2rem; }
   .filmSpreadCopy, .filmSpreadNote { padding: 0; }
   .filmSpreadCopy { order: 2; }
-  .filmSpreadLead { order: 1; }
-  .filmSpreadSecond, .filmSpreadMinus .filmSpreadSecond { order: 3; margin: 1.5rem 0 0 12%; width: 88%; }
+  .filmSpreadLead, .filmSpreadMinus .filmSpreadLead { order: 1; width: calc(100% + var(--film-gutter) * 2); margin: 0 calc(-1 * var(--film-gutter)); }
+  .filmSpreadCopy, .filmSpreadMinus .filmSpreadCopy { padding-block: 0; }
+  .filmSpreadSecond { order: 3; margin: 1rem 0 0 14%; width: 86%; }
+  .filmSpreadMinus .filmSpreadSecond { order: 3; width: calc(100% + var(--film-gutter) * 2); margin: 1rem calc(-1 * var(--film-gutter)) 0; }
   .filmSpreadNote, .filmSpreadMinus .filmSpreadNote { order: 4; padding: 0; margin: 0; }
-  .filmSpreadDaylight { order: 5; width: 78%; margin: 1rem 0 0; }
+  .filmSpreadDaylight { order: 5; width: 80%; margin: 0 0 0 20%; }
   .filmProduction { order: 6; display: block; padding: 0; }
   .filmProduction h2 { margin-bottom: 1rem; }
   .filmSynopsis { font-size: 1.5rem; }

@@ -421,8 +421,18 @@ Each chapter occupies one and a half viewport heights from 44rem wide and
 38rem high when the text fits the composition. A central horizontal opening expands to reveal a second original
 frame. Essential text stays stationary. Native scrolling controls the image
 mask and scale. Compact layouts and reduced motion use the settled vertical
-sequence. Supporting stills use varied widths within a twelve column grid,
-with a native dialog providing their original framing.
+sequence. Supporting stills use a twelve column grid. The Wattleseed apparatus spans
+eleven columns and reaches the left page edge. Its synopsis and production
+account share a left alignment below the image, with the researcher profile
+offset on the right. The Murder of Minus closeup reaches the right edge,
+followed by the synopsis and a full width overhead frame. A smaller daylight
+image sits beside the production account. Native dialogs provide the original
+framing. `--wc-film-sequence-gap` controls the intervals between compositions.
+
+Title credits and viewing actions form separate compact groups aligned with
+the original lettering. `--wc-film-text-shadow` supports text legibility over
+the film image. On phones, the lead stills span the viewport and supporting
+images retain their smaller scale within the vertical sequence.
 
 The canvas uses `--wc-film-surface`, with `--wc-film-muted` for secondary text
 and `--wc-film-line` for separators. The original poster lettering is image

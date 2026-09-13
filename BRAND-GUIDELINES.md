@@ -54,7 +54,10 @@ broad invitation “Let’s do something together,” while Photography provides
 more specific inquiry route.
 
 Films uses the Ink canvas with original stills, extracted poster lettering,
-direct Trailer actions and dedicated festival spreads. The introduction reads
+direct Trailer actions and dedicated festival spreads. The title lettering
+sets the alignment for compact credit and action groups. Large lead stills
+reach a page edge, with supporting photographs and text arranged beneath them.
+The introduction reads
 “I am a filmmaker.” Native scrolling opens a central image mask during two
 short passages on medium and large screens. Featured festival artwork leads
 each recognition spread, with smaller supporting groups and compact Lift Off

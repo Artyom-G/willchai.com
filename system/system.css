@@ -1251,11 +1251,18 @@ img {
 .film-cinema-demo { padding: 0; background: var(--wc-film-surface); color: var(--wc-white); }
 .film-cinema-demo__frame { position: relative; }
 .film-cinema-demo__frame>img { width: 100%; height: auto; }
-.film-cinema-demo__frame>svg { position: absolute; bottom: 8%; left: 8%; width: 84%; height: auto; overflow: hidden; }
+.film-cinema-demo__frame>svg { position: absolute; bottom: 18%; left: 8%; width: 84%; height: auto; overflow: hidden; }
 .film-cinema-demo__body { padding: var(--wc-space-6); }
 .film-cinema-demo__body>p { margin: 0 0 var(--wc-space-3); color: var(--wc-film-muted); font-size: var(--wc-font-small); }
 .film-cinema-demo__body>a { display: inline-block; color: var(--wc-white); font-size: var(--wc-font-small); margin-top: var(--wc-space-4); }
-.film-cinema-demo__spread { display: grid; grid-template-columns: 3fr 2fr; gap: var(--wc-space-6); align-items: end; margin-top: var(--wc-space-8); }
+.film-cinema-demo__spread { display: grid; grid-template-columns: repeat(12,minmax(0,1fr)); gap: var(--wc-space-6) var(--wc-space-3); margin-top: var(--wc-space-8); }
+.film-cinema-demo__lead { grid-column: 1/12; }
+.film-cinema-demo__spread>p { grid-column: 2/7; grid-row: 2; margin: 0; font-size: 1.25rem; line-height: 1.35; }
+.film-cinema-demo__profile { grid-column: 8/13; grid-row: 2; margin-top: var(--wc-space-8); }
+.film-cinema-demo__year { position: absolute; top: 6%; left: 4%; font-size: var(--wc-font-small); text-shadow: var(--wc-film-text-shadow); }
+.film-cinema-demo__credits { position: absolute; bottom: 4%; left: 8%; right: 8%; display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--wc-space-3); font-size: var(--wc-font-small); text-shadow: var(--wc-film-text-shadow); }
+.film-cinema-demo__credits a { color: var(--wc-white); }
+@media(max-width: 40rem) { .film-cinema-demo__spread>p { grid-column: 1/8; font-size: 1rem; } }
 .film-cinema-demo__spread>img { width: 100%; height: auto; }
 .film-cinema-demo__laurel { width: min(100%, 18rem); margin: var(--wc-space-8) auto 0; display: flex; flex-direction: column; align-items: center; gap: .5rem; font-size: var(--wc-font-small); text-align: center; line-height: 1.4; }
 .film-cinema-demo__laurel>img { width: 100%; height: auto; margin-bottom: var(--wc-space-4); }

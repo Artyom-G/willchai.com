@@ -191,3 +191,7 @@ Wattleseed Alternative Film Festival nomination category remain pending. Those
 two entries display their confirmed outcome and year. Notification dates remain
 submission metadata. Public source links appear where a supporting page exists.
 The source manifest records owner evidence without publishing the screenshots.
+
+The image sequence keeps the synopsis and production account as separate
+reading groups. Their placement follows each film’s still compositions.
+Director credits and viewing labels retain their existing wording.
