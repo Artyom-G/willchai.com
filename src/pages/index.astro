@@ -115,9 +115,6 @@ import "../styles/home.css";
 
         <nav class="primary-nav" aria-label="Primary navigation">
           <a href="/photography/">Photography</a>
-          <a href="/films/">Films</a>
-          <a href="/projects/">Projects</a>
-          <a href="/resume/">Résumé</a>
           <a href="https://www.linkedin.com/in/willchai/">LinkedIn</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -142,7 +139,7 @@ import "../styles/home.css";
         </article>
 
         <article class="project-panel films-panel" id="films">
-          <a class="panel-link" href="/films/" aria-label="Open Will Chai’s films">
+          <div class="panel-content">
             <img
               class="film-poster film-poster--wattleseed"
               src="/assets/wattleseed-poster.avif"
@@ -165,11 +162,11 @@ import "../styles/home.css";
               <span class="panel-description">Wattleseed · Murder of Minus</span>
               <span class="films-recognition">Two short films made with friends and collaborators</span>
             </span>
-          </a>
+          </div>
         </article>
 
         <article class="project-panel projects-panel" id="projects">
-          <a class="panel-link" href="/projects/" aria-label="Open Will Chai’s projects">
+          <div class="panel-content">
             <img
               class="panel-image panel-image--projects"
               src="/assets/projects-triangle-grid.svg"
@@ -189,15 +186,11 @@ import "../styles/home.css";
               <strong>Projects</strong>
               <span class="panel-description">Games, tools, and editorial work in progress.</span>
             </span>
-          </a>
+          </div>
         </article>
 
         <article class="project-panel searing-panel">
-          <a
-            class="panel-link"
-            href="/projects/searing-stories/"
-            aria-label="Open the Searing Stories project"
-          >
+          <div class="panel-content">
             <img
               class="panel-image"
               src="/assets/searing-stories.avif"
@@ -212,7 +205,7 @@ import "../styles/home.css";
               <span class="panel-description">Candid stories served over a home cooked dinner.</span>
               <span class="searing-guest">Volume one · Felipe Hoffa and Janiru Jayatunge</span>
             </span>
-          </a>
+          </div>
         </article>
 
         <section class="contact-section" id="contact" aria-labelledby="contact-heading">

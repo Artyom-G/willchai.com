@@ -303,7 +303,8 @@ img {
   }
 }
 
-.panel-link {
+.panel-link,
+.panel-content {
   position: absolute;
   inset: 0;
   display: block;
