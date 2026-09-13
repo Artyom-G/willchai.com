@@ -119,6 +119,7 @@ html:has(.photographyPage) { scroll-behavior:auto; scrollbar-gutter:stable; }
 .shootNext:hover > svg { transform:translateX(4px); }
 .shootNext:focus-visible .arcadePointer,.shootNext:hover .arcadePointer { animation-play-state:paused; }
 .shootNext:hover { background:var(--wc-ink); border-color:var(--wc-ink); }
+.shootNext.isEmailOpening { background:var(--wc-ink); border-color:var(--wc-ink); }
 .shootCopy { color:var(--wc-blue); background:var(--wc-white); }
 .shootCopy:hover { background:var(--wc-cloud); }
 .shootNext:active,.shootCopy:active { transform:translateY(2px); }

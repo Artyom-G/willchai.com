@@ -34,6 +34,7 @@
   let references = [];
   let imageVersion = 0;
   let statusTimer = 0;
+  let emailTimer = 0;
   const image = arcade.querySelector('[data-shoot-image]');
   const defaultImage = {src:image.src,alt:image.alt};
 
@@ -113,6 +114,7 @@
     window.style.height='';
     next.hidden=false;
     nextLabel.textContent=step===2?'Open email':'Next';
+    next.classList.remove('isEmailOpening');
     next.classList.toggle('isEmail',step===2);
     back.hidden=step===0;
     next.disabled=back.disabled=false;
@@ -167,8 +169,20 @@
   form.addEventListener('submit',event=>{
     event.preventDefault();
     if(step<2) return moveTo(step+1);
+    if(next.classList.contains('isEmailOpening')) return;
+    next.classList.add('isEmailOpening');
+    next.disabled=true;
+    nextLabel.textContent='Opening email…';
     announce('Opening your email app. Copy text is ready if it stays here.');
-    location.href=next.dataset.emailHref||'mailto:me@willchai.com?subject=Photography%20inquiry';
+    requestAnimationFrame(()=>{
+      location.href=next.dataset.emailHref||'mailto:me@willchai.com?subject=Photography%20inquiry';
+      clearTimeout(emailTimer);
+      emailTimer=setTimeout(()=>{
+        next.classList.remove('isEmailOpening');
+        next.disabled=false;
+        nextLabel.textContent='Open email';
+      },1200);
+    });
   });
   back.addEventListener('click',()=>moveTo(step-1));
   form.addEventListener('input',update);
