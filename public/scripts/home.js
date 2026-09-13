@@ -89,9 +89,10 @@ const fragmentShaderSource = `
     float frameDrag = u_tilt * pull * 0.085;
     vec2 warpedPoint = rotate2d(frameDrag) * direction * sourceRadius;
     vec2 warpedUv = u_center + warpedPoint / aspect;
-    warpedUv = clamp(warpedUv, vec2(0.001), vec2(0.999));
 
-    vec3 warpedScene = texture2D(u_scene, warpedUv).rgb;
+    float sceneBounds = step(0.0, warpedUv.x) * step(warpedUv.x, 1.0) *
+      step(0.0, warpedUv.y) * step(warpedUv.y, 1.0);
+    vec3 warpedScene = texture2D(u_scene, clamp(warpedUv, vec2(0.001), vec2(0.999))).rgb * sceneBounds;
 
     float normalizedRadius = distanceToCenter / horizon;
     float gravityShade = smoothstep(0.88, 1.65, normalizedRadius);
@@ -122,7 +123,7 @@ const fragmentShaderSource = `
     float labelMask = label.a * labelBounds * eventHorizon * u_reveal * u_reveal;
     color = mix(color, label.rgb * 0.9, labelMask);
 
-    gl_FragColor = vec4(color, visibleMask);
+    gl_FragColor = vec4(color * visibleMask, visibleMask);
   }
 `;
 
@@ -215,7 +216,7 @@ class BlackHoleRenderer {
       antialias: false,
       depth: false,
       stencil: false,
-      premultipliedAlpha: false,
+      premultipliedAlpha: true,
       preserveDrawingBuffer: false,
       powerPreference: "low-power",
     });
