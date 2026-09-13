@@ -88,7 +88,7 @@ The opening viewport should contain:
 
 1. **Identity module:** changeable portrait, name, one-line premise, and a
    small invitation to reveal another side.
-2. **Navigation module:** Photography, Films, Projects, Résumé, and Contact.
+2. **Navigation module:** Photography, LinkedIn, and Contact.
 3. **Project stream:** two or three short panels visible at once, establishing
    immediately that the page is meant to be browsed rather than presenting one
    dominant hero.
@@ -104,12 +104,11 @@ Films share one homepage panel and lead to a dedicated Films index. On mobile,
 the identity rail becomes a compact opening/header and the same panels continue
 as one vertical sequence.
 
-The public structure contains one Photography page, one Films chooser with two
-film pages, one Projects chooser with four project pages, and one Résumé page
-with PDF and HTML formats. The homepage carries the main contact invitation.
-Photography carries its own inquiry area, while other pages may close with a
-compact contact invitation. `/hey/` remains a branded utility page outside the
-primary navigation.
+The focused public structure contains Home, Photography, and `/hey/`.
+Photography carries its own inquiry area, and the homepage carries the main
+contact invitation. `/hey/` remains a branded utility page outside the primary
+navigation and links to Home, Photography, LinkedIn, and email. Film, Project,
+and Résumé routes remain in source during continued review.
 
 ## Module grammar
 
@@ -428,9 +427,9 @@ contact invitation and email address.
 
 The Résumé uses the same reading system with restrained formatting suited to a
 professional record. The PDF appears first through view and download actions,
-and the HTML version follows with matching facts. The `/hey/` utility page may
-compress the brand into a small link collection while preserving type, colour,
-focus, and spacing rules.
+and the HTML version follows with matching facts. The `/hey/` utility page
+compresses the brand into links for Home, Photography, LinkedIn, and email
+while preserving type, colour, focus, and spacing rules.
 
 ## Explicitly avoid
 

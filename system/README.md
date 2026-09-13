@@ -44,10 +44,11 @@ their internal art direction comes from authentic project media, crop,
 sequencing, title placement, and interaction. The Vermilion dashed boundary is
 a selective signature, not the default border around every module.
 
-The launch architecture contains twelve pages. Photography remains one
-substantial page. Films and Projects are the two chooser destinations with
-individual work pages. The Résumé pairs PDF and HTML formats, `/hey/` serves
-quick link contexts, and contact invitations live within relevant pages.
+The complete source architecture contains twelve page routes. The focused
+public release exposes Home, Photography, and `/hey/`. The utility page links
+to Home, Photography, LinkedIn, and email. Films, Projects, and Résumé remain
+in source during continued review. Contact invitations live within Home and
+Photography.
 
 The system also records the need for an authentic exception layer so the final
 site does not inherit the corporate evenness of a conventional component

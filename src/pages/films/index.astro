@@ -7,6 +7,7 @@ import { films } from "../../data/films";
 import "../../styles/films.css";
 ---
 <BaseLayout title="Films | Will Chai" description="Wattleseed and Murder of Minus. Independent films made by Will Chai with friends and collaborators." path="/films/" image={films[0].still} imageAlt={films[0].stillAlt} pageClass="filmsPage">
+  <meta slot="head" name="robots" content="noindex, nofollow" />
   <FilmTransitions slot="head" />
   <main id="main" class="filmsShell">
     <header class="filmsOpening">

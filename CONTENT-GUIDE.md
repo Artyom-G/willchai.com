@@ -103,8 +103,10 @@ help a reader inspect relevant work. Their case studies remain on the canonical
 Film and Project pages.
 
 `/hey/` is a branded quick links page for QR codes and profile contexts. It
-stays outside the primary navigation architecture. Contact appears within the
-homepage, the Photography inquiry area, and compact endings on other pages.
+stays outside the primary navigation architecture. During the focused public
+release it links to Home, Photography, LinkedIn, and email. Contact appears
+within the homepage and the Photography inquiry area. Film, Project, and
+Résumé routes stay outside the sitemap and crawler discovery until approved.
 
 ## Project entry checklist
 

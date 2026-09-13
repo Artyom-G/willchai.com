@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /films/
+Disallow: /projects/
+Disallow: /resume/
+Disallow: /resume.pdf
 
 Sitemap: https://willchai.com/sitemap.xml

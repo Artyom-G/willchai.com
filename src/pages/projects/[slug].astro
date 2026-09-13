@@ -26,6 +26,7 @@ const otherProjects = projects.filter((item) => item.slug !== project.slug);
   path={`/projects/${project.slug}/`}
   pageClass="projectDetailPage"
 >
+  <meta slot="head" name="robots" content="noindex, nofollow" />
   <div class="pageShell">
     <SiteHeader current="projects" />
     <main id="main" class="pageMain">

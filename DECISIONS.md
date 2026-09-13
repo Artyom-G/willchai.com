@@ -62,9 +62,17 @@ In order:
 
 ## Information architecture
 
-The launch site is shallow and substantial. It contains twelve public pages.
+The complete source architecture is shallow and substantial. It contains
+twelve page routes. The focused public release exposes `/`, `/photography/`,
+and `/hey/`, with LinkedIn and email as the external destinations. Films,
+Projects, and Résumé remain in source during continued review. Their routes use
+`noindex`, stay outside the sitemap, and carry crawler exclusions. The homepage
+may retain their approved static panel compositions without linking into those
+routes.
+
 The homepage is a curated introduction to Will and selected work. `/hey/` is a
-utility destination for quick links and QR codes. Photography occupies one
+utility destination for quick links and QR codes. It links to Home,
+Photography, LinkedIn, and email during the focused release. Photography occupies one
 long page with a caption free sequence of nine featured photographs, three client
 cards, a shoot builder, a caption free shuffle, its own inquiry area, and the
 complete service footer.
@@ -85,7 +93,7 @@ Its expression lives in page copy and project context. Older work receives a
 public mention when curation supports it. A small item on `/projects/` can carry
 a useful older project in compact form.
 
-The launch page map is:
+The complete source page map is:
 
 1. `/`
 2. `/hey/`
@@ -100,8 +108,9 @@ The launch page map is:
 11. `/projects/conspirasea/`
 12. `/resume/`
 
-Published resources include `/resume.pdf`, sitemap output, `robots.txt`, a
-useful 404 page, and permanent redirects for meaningful legacy URLs. Future
+Published resources include sitemap output, `robots.txt`, a useful 404 page,
+and permanent redirects for meaningful legacy URLs. `/resume.pdf` follows the
+same crawler boundary as `/resume/` during the focused release. Future
 growth may add dedicated Photography services, publicly ready films, or
 substantial projects while preserving the same page logic.
 
@@ -350,3 +359,4 @@ choices that affect the site's direction, structure, or long-term maintenance.
 | 2026 09 12 | Use the clean photographer atlas for the Shuffle action. Gather four photographs into two piles, weave them into one deck, then deal the next arrangement. Keep the pushing atlas for the Super Generic Package scene. | The Shuffle action now reads through the photographs themselves, while the package scene retains its distinct physical push. |
 
 | 2026 09 10 | Build the Films chooser and its two detail pages around original stills, overlapping poster artwork, personal production accounts and direct viewing actions. Connect the selected image to its detail page and open trailers in a dismissible player. Include the original press kits and screening contact links. | Will asked for the next page to receive a complete implementation and production readiness pass. The composition and motion are available in the private preview for his review. |
+| 2026 09 13 | Publish Home, Photography, and `/hey/` as the focused public release. Limit `/hey/` to Home, Photography, LinkedIn, and email. Keep Films, Projects, and Résumé source routes outside the sitemap and crawler discovery until approved. | The approved Home and Photography experiences can ship now. The remaining route designs and records continue in review. |

@@ -96,7 +96,15 @@ a { color: inherit; }
 }
 
 .identity p { max-width: 30ch; margin: 16px 0 0; color: var(--muted); font-size: clamp(17px, 2.4vw, 20px); line-height: 1.38; }
-.link-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.link-grid {
+  display: grid;
+  grid-template-areas:
+    "photography home"
+    "photography linkedin"
+    "email email";
+  grid-template-columns: minmax(0, 1.35fr) minmax(240px, 0.65fr);
+  gap: 12px;
+}
 
 .link-panel {
   position: relative;
@@ -111,8 +119,6 @@ a { color: inherit; }
   transition: transform 320ms var(--ease), filter 180ms ease;
 }
 
-.link-panel:first-child, .link-panel:nth-child(3) { grid-column: 1 / -1; }
-.link-panel:first-child { min-height: 188px; }
 .link-panel:hover, .link-panel:focus-visible { transform: translateY(-4px); filter: brightness(1.04); }
 .link-panel:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
 .link-panel strong { display: block; font-family: "Unbounded", Arial, sans-serif; font-size: clamp(25px, 5vw, 42px); font-weight: 400; letter-spacing: -0.065em; line-height: 1; }
@@ -131,13 +137,12 @@ a { color: inherit; }
 }
 
 .link-panel:hover .link-icon, .link-panel:focus-visible .link-icon { transform: translate(3px, -3px); }
-.link-panel--photography { color: var(--white); background: radial-gradient(circle at 88% 20%, rgba(255,255,255,.22), transparent 28%), linear-gradient(120deg, #1712df, #3d39ff 58%, #7773ff); }
-.link-panel--films { color: var(--white); background: #080a0c; }
-.link-panel--projects { color: var(--white); background-color: #523bca; background-image: linear-gradient(30deg, rgba(255,255,255,.1) 12%, transparent 12.5%, transparent 87%, rgba(255,255,255,.1) 87.5%), linear-gradient(150deg, rgba(255,255,255,.1) 12%, transparent 12.5%, transparent 87%, rgba(255,255,255,.1) 87.5%); background-size: 72px 42px; }
-.link-panel--resume { color: var(--ink); background: var(--yellow); }
-.link-panel--linkedin { color: var(--ink); background: var(--white); }
-.link-panel--linkedin small { color: var(--muted); }
-.link-panel--email { color: var(--white); background: var(--red); }
+.link-panel--photography { grid-area: photography; min-height: 316px; color: var(--white); background: var(--blue); }
+.link-panel--home { grid-area: home; color: var(--ink); background: var(--white); }
+.link-panel--home small { color: var(--muted); }
+.link-panel--linkedin { grid-area: linkedin; color: var(--white); background: var(--ink); }
+.link-panel--email { grid-area: email; min-height: 136px; color: var(--white); background: var(--red); }
+.link-panel--home strong, .link-panel--linkedin strong { font-size: clamp(24px, 3.6vw, 32px); }
 
 footer { display: flex; justify-content: space-between; gap: 18px; padding: 24px 2px 4px; color: var(--muted); font-size: 14px; }
 
@@ -151,8 +156,17 @@ footer { display: flex; justify-content: space-between; gap: 18px; padding: 24px
   .portrait-stage { width: 112px; height: 112px; }
   .identity h1 { font-size: clamp(31px, 9.2vw, 44px); }
   .identity p { margin-top: 10px; font-size: 16px; }
-  .link-grid { grid-template-columns: 1fr; gap: 10px; }
-  .link-panel, .link-panel:first-child, .link-panel:nth-child(3) { grid-column: auto; min-height: 118px; }
+  .link-grid {
+    grid-template-areas:
+      "photography"
+      "home"
+      "linkedin"
+      "email";
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .link-panel, .link-panel--email { min-height: 118px; }
+  .link-panel--photography { min-height: 146px; }
   .link-panel { padding: 20px; }
   .link-panel strong { font-size: clamp(25px, 8vw, 34px); }
 }

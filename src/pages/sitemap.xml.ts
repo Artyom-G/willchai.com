@@ -2,15 +2,6 @@ const paths = [
   "/",
   "/hey/",
   "/photography/",
-  "/films/",
-  "/films/wattleseed/",
-  "/films/murder-of-minus/",
-  "/projects/",
-  "/projects/medterms/",
-  "/projects/tachyboard/",
-  "/projects/searing-stories/",
-  "/projects/conspirasea/",
-  "/resume/",
 ];
 
 export function GET({ site }: { site: URL }) {

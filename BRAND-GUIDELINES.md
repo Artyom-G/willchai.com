@@ -44,8 +44,11 @@ composition for McMaster University, Foxwood Homes, and Platinum Moon follows
 the sequence. Its settled frame keeps all three organizations visible together
 while McMaster carries the larger position.
 The shoot builder comes next, then a caption free shuffle carries the wider
-body of work into the complete service footer. Films and Projects are separate
-destinations. Individual work pages belong within those two areas. Sharing
+body of work into the complete service footer. The focused public release
+exposes Home, Photography, and `/hey/`. The utility page links to Home,
+Photography, LinkedIn, and email. Film, Project, and Résumé routes remain in
+source during continued review and stay outside current visitor discovery.
+Films and Projects remain the planned destinations for individual work. Sharing
 Stories continues as the idea connecting the practice. The whole site uses the
 broad invitation “Let’s do something together,” while Photography provides a
 more specific inquiry route.
@@ -57,9 +60,10 @@ to explore a film or watch its trailer. Personal production accounts carry
 the collaborative character of the work into the detail pages.
 
 The Résumé is a professional record with matching PDF and HTML versions. It may
-link to a film or project when the connection is useful. `/hey/` is a compact
-utility page for quick links and QR codes. Contact appears within existing
-pages through relevant invitations and compact endings.
+link to a film or project when the connection is useful after those routes join
+the public release. `/hey/` is a compact utility page for quick links and QR
+codes. Contact appears within existing pages through relevant invitations and
+compact endings.
 
 Photography gives visual quality priority while supporting portrait and event
 inquiries through useful information and straightforward contact. Current
