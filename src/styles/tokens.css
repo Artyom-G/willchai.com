@@ -11,6 +11,10 @@
   --wc-ticket-stage: #e9edf0;
   --wc-white: #ffffff;
   --wc-ink: #111317;
+  --wc-film-surface: #111317;
+  --wc-film-muted: #b4bac2;
+  --wc-film-line: #393d43;
+  --wc-duration-film: 1000ms;
   --wc-slate: #5f6670;
   --wc-hairline: #c9ced4;
   --wc-blue: #2d29f4;

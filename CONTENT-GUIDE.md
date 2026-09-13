@@ -92,7 +92,7 @@ PDFs. `src/data/film-media-sources.json` records source URLs and file hashes.
 Trailer actions identify the trailer explicitly. The full films are available
 through a screening inquiry. The YouTube players offer automatic English
 captions, which the dialog identifies as automatic. Media loads from YouTube
-after a visitor chooses Watch trailer. Direct YouTube links remain available.
+after a visitor chooses Trailer. Direct YouTube links remain available.
 
 ## Résumé and utility content
 
@@ -170,3 +170,13 @@ Review older work individually. A useful project may remain as a compact item
 on Projects, move to a stronger replacement, or leave the public site with an
 appropriate redirect. Preserve accurate credit and project history wherever
 the selected destination benefits from it.
+
+## Films recognition and labels
+
+The Films introduction reads “I am a filmmaker.” Viewing actions read Trailer.
+Film details, About, Screener, Press kit and Screening enquiry identify their
+destinations directly. Each laurel records its exact category, festival,
+outcome and year in `src/data/films.ts`, with a supporting source URL.
+The original wreath branches provide the surrounding artwork. Award winners,
+nominees and selections retain their respective descriptions. The full record
+remains available within each film page.

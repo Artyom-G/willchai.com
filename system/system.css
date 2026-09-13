@@ -1247,3 +1247,11 @@ img {
     --ticket-scale: 1 !important;
   }
 }
+
+.film-cinema-demo { padding: 0; background: var(--wc-film-surface); color: var(--wc-white); }
+.film-cinema-demo>img { width: 100%; height: auto; }
+.film-cinema-demo__body { padding: var(--wc-space-6); }
+.film-cinema-demo__body>p { margin: 0 0 var(--wc-space-3); color: var(--wc-film-muted); font-size: var(--wc-font-small); }
+.film-cinema-demo__body>h4 { margin: 0 0 var(--wc-space-3); font-family: var(--wc-font-display); font-weight: 400; font-size: clamp(1.5rem, 3vw, 2.5rem); }
+.film-cinema-demo__body>a { display: inline-block; color: var(--wc-white); font-size: var(--wc-font-small); margin-top: var(--wc-space-4); }
+.film-cinema-demo__laurel { width: 13.5rem; min-height: 9.5rem; margin-top: var(--wc-space-8); padding: 1rem 2.1rem; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .35rem; font-size: var(--wc-font-min); text-align: center; line-height: 1.25; background: url('../public/assets/films/laurel-wreath.png') center / 100% 100% no-repeat; }

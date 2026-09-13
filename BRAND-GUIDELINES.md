@@ -53,12 +53,14 @@ work. Sharing Stories continues as the idea connecting the practice. The whole s
 broad invitation “Let’s do something together,” while Photography provides a
 more specific inquiry route.
 
-Films uses original stills and upright poster artwork on the shared white
-canvas. The chooser follows one calm reading column, with each still carrying
-the visual lead. Titles, director credits, and viewing actions stay together.
-Motion follows the choice to explore a film or watch its trailer. Personal
-production accounts carry the collaborative character of the work into the
-detail pages.
+Films uses the Ink canvas with full width original stills, compact title groups,
+direct Trailer actions and visible festival laurels. The introduction reads
+“I am a filmmaker.” A short sequence follows ordinary scrolling on spacious
+desktop screens. Phone layouts present the same content in a natural vertical
+sequence. Categories, festivals, outcomes and years remain readable live text.
+Production accounts name the work and collaborators directly. The dark canvas
+is specific to Films and its detail pages.
+
 
 The Résumé is a professional record with matching PDF and HTML versions. It may
 link to a film or project when the connection is useful. `/hey/` is a compact utility page for quick links and QR

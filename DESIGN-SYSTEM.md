@@ -19,7 +19,7 @@ a costume or nostalgic UI metaphor.
 
 ## Locked decisions
 
-- The default and only colour mode is light.
+The shared interface uses a light canvas. Films and its detail pages use Ink.
 - The homepage uses orderly boxes on a disciplined grid.
 - The right side is a vertical stream of self-contained panels, not a dashboard
   grid and not a hero-led landing page.
@@ -411,19 +411,26 @@ pages share the interface system while allowing crop, media sequence, title
 placement, and internal composition to respond to each work. Shared
 navigation, typography, and contact endings keep the pages related.
 
-The Films chooser follows one reading column. Two substantial stills lead their
-entries, with each original poster placed upright beside its still. Titles and
-director credits sit beneath each image group. A shared image transition
-connects a selected entry to its film page. Trailers open in a white dialog
-through a brief masked expansion. These movements follow visitor actions.
-Reduced motion presents each destination directly. All dimensions, typography,
-colour and timing derive from the shared token system.
+Films uses full width stills above an Ink title area. A title, year, runtime,
+director credit, Trailer action and two laurels share the opening composition.
+The desktop frame expands into the viewport as the header scrolls away. A
+horizontal wipe exchanges two authentic frames while the title stays legible.
+The document retains ordinary scrolling. Compact layouts, enlarged text and
+reduced motion use the natural static sequence.
 
-Film detail pages retain the leading image, synopsis, production account,
-original poster, two supporting stills, principal credits and festival record.
-Press kits and screening inquiries appear alongside viewing actions. A compact
-link to the other film follows the record. The shared ending uses the existing
-contact invitation and email address.
+The canvas uses `--wc-film-surface`, with `--wc-film-muted` for secondary text
+and `--wc-film-line` for separators. Funnel Sans and Unbounded keep their
+shared roles. `--wc-duration-film` supplies the one second image reveal.
+Frames update on scroll and resize events, and animation frames settle when
+input stops. Trailer dialogs use the same Ink surface and restore focus and
+scrolling on close. Film records and credits use native disclosure controls.
+
+Laurels use the existing wreath branches as decorative artwork around live
+category, festival, outcome and year text. Each laurel links to its source.
+Film detail pages carry the synopsis, original poster, supporting stills,
+production account, credits, festival record, press kit and screening contact.
+The ending reads Film enquiries and provides the email address.
+
 
 The Résumé uses the same reading system with restrained formatting suited to a
 professional record. The PDF appears first through view and download actions,
@@ -433,7 +440,6 @@ while preserving type, colour, focus, and spacing rules.
 
 ## Explicitly avoid
 
-- Dark cinematic archive styling
 - Vintage paperwork, specimen labels, or clinical imagery
 - High-fashion collage for its own sake
 - Faux operating-system windows or literal desktop chrome

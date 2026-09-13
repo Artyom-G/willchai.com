@@ -311,35 +311,29 @@ project panels do not receive the treatment by default.
 
 ### Films programme and player
 
-The Films chooser introduces two films through authentic stills and their
-original posters. Each entry requires an exact title, year, runtime, director
-credit, premise, detail link and trailer link. Desktop and phone layouts use a
-single reading column. Upright poster artwork sits beside the still and remains clear of
-the title. Detail pages preserve the synopsis, production context, credits,
-festival record, supporting images, press kit and screening contact.
+The Films opening places full width authentic stills over an Ink canvas. Its
+title group contains the exact title, year, runtime, director credit, Trailer
+action and two festival laurels. Categories, festivals, outcomes and years use
+readable live text inside the existing wreath artwork. Each laurel links to
+its source. A film detail page preserves the synopsis, poster, production
+account, credits, full festival record, supporting images and press kit.
 
-A native view transition carries the chosen still into the detail page when
-the browser supports cross document transitions. The transition takes its
-duration and easing from shared tokens. Browsers with reduced motion use
-immediate navigation. Hover and keyboard focus settle the small poster beside
-its still. The original image proportions remain stable at rest.
+On spacious desktop viewports the image expands as the header leaves, then a
+horizontal wipe exchanges two frames during ordinary scrolling. The title
+stays visible. Scroll and resize schedule a single animation frame; idle and
+hidden pages stop rendering. Compact viewports, enlarged content and reduced
+motion use the static vertical sequence. Every destination remains a native
+link, and credits and festival records use native disclosure controls.
 
-Transition lifecycle handlers register in the document head before rendering.
-They consume the rejected readiness promise when the browser skips a visual
-transition, preserving ordinary navigation during quick successive visits.
+The trailer opens in an Ink native dialog. A brief masked expansion connects
+the action to the player. The iframe loads after activation. Closing, Escape
+and the backdrop stop playback and restore focus and scrolling. A direct
+YouTube link and automatic caption information accompany the player.
 
-The trailer opens in a native dialog. A brief masked expansion connects the
-action to the viewing surface. The iframe loads after a visitor chooses a
-trailer. Closing the dialog, pressing Escape or clicking its backdrop stops
-playback and restores focus and scrolling. A direct YouTube link accompanies
-the player. Automatic English caption availability is stated beneath it.
-The original anchor remains a working trailer link when JavaScript is disabled.
-
-Responsive AVIF stills reserve width and height. The two film entries together
-use approximately 489 KB of image derivatives across every published size.
-Press kits retain the original PDFs and load on request. The source manifest
-records their provenance. The system page carries a film entry example and
-links to the complete public Films pages.
+Responsive AVIF stills reserve dimensions. The original press kits load on
+request. The source manifest records the laurel artwork and its processing.
+Film colours and motion timings come from `tokens.css`. The system example
+uses the same title, laurel wording and original film imagery.
 
 The system stays consistent across forms, but the evidence each form needs is
 different. Photography leads with image sequences and honest captions; it

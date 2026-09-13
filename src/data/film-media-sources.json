@@ -1,5 +1,5 @@
 {
-  "checked": "2026-09-10",
+  "checked": "2026-09-13",
   "sources": [
     {
       "film": "Wattleseed",
@@ -186,6 +186,14 @@
       "published": "/assets/films/murder-of-minus/press-kit.pdf",
       "bytes": 1235027,
       "pages": 10
+    },
+    {
+      "purpose": "Decorative laurel branches with live festival text",
+      "source": "https://willchai.com/wp-content/uploads/2024/11/Cine-Paris-Film-Festival-Award-Winner-2025-1-800x531.avif",
+      "page": "https://willchai.com/murder-of-minus-a-sci-fi-thriller/",
+      "derivative": "/assets/films/laurel-wreath.png",
+      "processing": "Central festival lettering cleared from the original wreath. Category, festival, outcome and year are rendered as live text.",
+      "sha256": "27df2d008908ab767457b8ca4c555a906a6f40b9d3e1b523f2e322654c0096fa"
     }
   ]
 }

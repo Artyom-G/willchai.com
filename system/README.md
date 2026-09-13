@@ -163,3 +163,11 @@ dimensions and fills continuous columns while preserving earlier positions. The
 footer retains the original contact ticket, policy, rights and homepage return.
 Reduced motion presents the static featured grid, direct image changes and usable
 builder. Final quotes remain personal to each assignment.
+
+## Films cinema canvas
+
+Films and both detail pages use the Ink canvas, original stills and readable
+festival laurels. The system page presents the title and laurel composition.
+The production sequence uses native scrolling, with static compact layouts
+and reduced motion support. Trailer, credits and festival record controls
+preserve keyboard operation. See `PATTERNS.md` for the complete contract.

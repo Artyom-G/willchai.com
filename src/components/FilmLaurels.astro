@@ -1,0 +1,14 @@
+---
+import type { FilmLaurel } from "../data/films";
+interface Props { laurels: FilmLaurel[]; compact?: boolean; }
+const { laurels, compact = false } = Astro.props;
+---
+<ul class:list={["filmLaurels", { filmLaurelsCompact: compact }]} aria-label="Festival recognition">
+  {laurels.map(laurel => <li>
+    <a class="filmLaurel" href={laurel.source}>
+      <span class="filmLaurelCategory">{laurel.category}</span>
+      <span class="filmLaurelFestival">{laurel.festival}</span>
+      <span class="filmLaurelStatus">{laurel.status}</span>
+    </a>
+  </li>)}
+</ul>

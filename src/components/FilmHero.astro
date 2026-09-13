@@ -1,0 +1,27 @@
+---
+import type { Film } from "../data/films";
+import FilmLaurels from "./FilmLaurels.astro";
+interface Props { film: Film; first?: boolean; detail?: boolean; }
+const { film, first = false, detail = false } = Astro.props;
+const Heading = detail ? "h1" : "h2";
+---
+<section class="filmChapter" data-film-chapter aria-labelledby={`title-${film.slug}`}>
+  <div class="filmStage">
+    <div class="filmFrame" style={`view-transition-name:film-${film.slug}`}>
+      <img src={film.still} srcset={film.stillSrcSet} sizes="100vw" alt={film.stillAlt} width={film.stillWidth} height={film.stillHeight} loading={first ? "eager" : "lazy"} fetchpriority={first ? "high" : "auto"} />
+      {film.gallery?.[1] && <img class="filmFrameSecond" src={film.gallery[1].src} srcset={film.gallery[1].srcSet} sizes="100vw" alt="" width={film.gallery[1].width} height={film.gallery[1].height} loading="lazy" />}
+    </div>
+    <div class="filmHeroContent">
+      <div class="filmHeroIdentity">
+        <p class="filmMeta">{film.year}<span>{film.runtime}</span></p>
+        <Heading id={`title-${film.slug}`} class="filmTitle">{film.title}</Heading>
+        <p class="filmDirector">{film.directorLine}</p>
+        <div class="filmActions">
+          <a class="filmPlay" href={film.links[0].href} data-trailer={film.slug}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 11 7-11 7z" /></svg>Trailer</a>
+          <a class="filmLink" href={detail ? "#about" : `/films/${film.slug}/`}>{detail ? "About" : "Film details"}<svg viewBox="0 0 24 24" aria-hidden="true"><path d={detail ? "M12 5v14m-6-6 6 6 6-6" : "M5 12h14m-6-6 6 6-6 6"} /></svg></a>
+        </div>
+      </div>
+      <FilmLaurels laurels={film.laurels.slice(0, 2)} compact />
+    </div>
+  </div>
+</section>

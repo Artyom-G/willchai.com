@@ -16,6 +16,13 @@ export type FilmImage = {
   height: number;
 };
 
+export type FilmLaurel = {
+  category: string;
+  festival: string;
+  status: string;
+  source: string;
+};
+
 export type Film = {
   slug: string;
   title: string;
@@ -39,6 +46,7 @@ export type Film = {
   facts: FilmCredit[];
   credits: FilmCredit[];
   recognition: string[];
+  laurels: FilmLaurel[];
   links: FilmLink[];
 };
 
@@ -84,6 +92,10 @@ export const films: Film[] = [
       { label: "Producer, Adrian", value: "Daniel Guo" },
       { label: "Voice of Dr. Jimson", value: "Mitchell Hynes" },
     ],
+    laurels: [
+      { category: "Best Original Score", festival: "Cine Paris Film Festival", status: "Winner · 2026", source: "https://www.cineparisfilmfestival.com/index.html" },
+      { category: "Best Trailer", festival: "Rome Prisma Independent Film Awards", status: "Nominee · 2026", source: "https://www.romeprismafilmawards.com/february-2026-nominees/" },
+    ],
     recognition: [
       "Best Original Score, Cine Paris Film Festival",
       "Best Trailer nominee and monthly pick, Rome Prisma Independent Film Awards",
@@ -91,9 +103,9 @@ export const films: Film[] = [
       "Student Film listing, Toronto Arts and Entertainment Film Festival",
     ],
     links: [
-      { label: "Watch the trailer", href: "https://www.youtube.com/watch?v=o-5DN5ygX80" },
-      { label: "Request a screener", href: "mailto:me@willchai.com?subject=Wattleseed%20screener" },
-      { label: "Press kit (PDF)", href: "/assets/films/wattleseed/press-kit.pdf" },
+      { label: "Trailer", href: "https://www.youtube.com/watch?v=o-5DN5ygX80" },
+      { label: "Screener", href: "mailto:me@willchai.com?subject=Wattleseed%20screener" },
+      { label: "Press kit", href: "/assets/films/wattleseed/press-kit.pdf" },
     ],
   },
   {
@@ -138,6 +150,12 @@ export const films: Film[] = [
       { label: "Producer, production designer", value: "Calum Heimbecker" },
       { label: "Producers", value: "Keon Park and Yengkong Lynhiavu" },
     ],
+    laurels: [
+      { category: "Best Student Film", festival: "Cine Paris Film Festival", status: "Winner · 2025", source: "https://willchai.com/murder-of-minus-a-sci-fi-thriller/" },
+      { category: "Best Student Short Film", festival: "Toronto Independent Festival of CIFT", status: "Winner · 2025", source: "https://cyrusmonthlyfestival.com/winners-april-2025/" },
+      { category: "Best Mystery, Suspense, or Thriller", festival: "Couch Film Festival", status: "Winner · 2025", source: "https://willchai.com/murder-of-minus-a-sci-fi-thriller/" },
+      { category: "Best Actor · William Chai", festival: "Alternative Film Festival", status: "Winner · 2025", source: "https://willchai.com/murder-of-minus-a-sci-fi-thriller/" },
+    ],
     recognition: [
       "Best Student Film, Cine Paris Film Festival",
       "Best Student Short Film, Toronto Independent Festival of CIFT",
@@ -146,9 +164,9 @@ export const films: Film[] = [
       "Short Live Action Narrative official selection, Austin Lift Off Film Festival",
     ],
     links: [
-      { label: "Watch the trailer", href: "https://www.youtube.com/watch?v=g3s0Y_epU2I" },
-      { label: "Ask about the film", href: "mailto:me@willchai.com?subject=Murder%20of%20Minus" },
-      { label: "Press kit (PDF)", href: "/assets/films/murder-of-minus/press-kit.pdf" },
+      { label: "Trailer", href: "https://www.youtube.com/watch?v=g3s0Y_epU2I" },
+      { label: "Screening enquiry", href: "mailto:me@willchai.com?subject=Murder%20of%20Minus" },
+      { label: "Press kit", href: "/assets/films/murder-of-minus/press-kit.pdf" },
     ],
   },
 ];
