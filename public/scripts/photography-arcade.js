@@ -167,6 +167,7 @@
   form.addEventListener('submit',event=>{
     event.preventDefault();
     if(step<2) return moveTo(step+1);
+    announce('Opening your email app. Copy text is ready if it stays here.');
     location.href=next.dataset.emailHref||'mailto:me@willchai.com?subject=Photography%20inquiry';
   });
   back.addEventListener('click',()=>moveTo(step-1));
