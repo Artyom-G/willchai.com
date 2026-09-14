@@ -196,6 +196,8 @@ export const films: Film[] = [
       {
         "category": "Student Film",
         "festival": "Toronto Arts & Entertainment Film Festival",
+        "artwork": "/assets/films/laurels/taeff-winner-2026.jpg",
+        "artworkSource": "https://torontoartfilmfestival.com/wp-content/uploads/2026/06/taeff-winners-2026.jpg",
         "outcome": "Winner",
         "year": "2026",
         "source": "https://torontoartfilmfestival.com/award-winners-taeff-2026/",

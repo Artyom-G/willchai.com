@@ -10,8 +10,8 @@ KWIFF retains Award winner and 2026 as approved by Will. Its linked centre https
 
 Cine Paris https://filmfreeway.com/laurels/64632/CineParisFilmFestival retains older display labels. The signed in original download visibly reads Award Winner 2026. Its original white PNG is now published.
 
-Toronto Arts and Entertainment https://filmfreeway.com/laurels/84660/TorontoArtsandEntertainment displays 2026 selection and Best Drama Short Film graphics. Student Film winner artwork remains pending. Festival correspondence across both mailboxes carries links and empty attachment lists.
+Toronto Arts and Entertainment publishes Wattleseed under Student Film on its official 2026 winners page. The festival owned page graphic at https://torontoartfilmfestival.com/wp-content/uploads/2026/06/taeff-winners-2026.jpg supplies the original 2026 winner laurel used by the site. Festival correspondence across both mailboxes carries links and empty attachment lists.
 
-Festival titles and sourced categories retain underlined destinations. Supporting groups use the shared 32 pixel spacing token. The artwork to text gap uses the shared 16 pixel token. Lift Off remains grouped as text.
+Festival titles and sourced categories retain underlined destinations. Featured results occupy a compact three column tier. Supporting results occupy a smaller four column tier. Artwork and copy use the shared 8 pixel spacing token. Lift Off remains grouped as text.
 
-Validation: Astro check passed with zero diagnostics. Production build passed. Browser layout checks at 320, 390, 768 and 1440 pixels showed ordinary flow and 15 pixel minimum festival text. All nine displayed festival images loaded. Desktop and phone artwork reviewed visually.
+Validation: Astro check passed with zero diagnostics. Production build passed. Browser layout checks at 320, 390, 768 and 1440 pixels showed ordinary flow and 14 pixel minimum festival text. All twelve displayed festival images loaded. Desktop, tablet and phone artwork were reviewed visually.

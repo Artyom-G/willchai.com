@@ -4,12 +4,13 @@ interface Props { festival: string; results: FilmLaurel[]; featured?: boolean; }
 const { festival, results, featured = false } = Astro.props;
 const artwork = results.find(result => result.artwork);
 const website = results.find(result => result.website)?.website;
+const dense = results.filter(result => result.category).length >= 5;
 const sets = [...new Set(results.map(result => `${result.outcome}|${result.year}`))].map(key => {
   const records = results.filter(result => `${result.outcome}|${result.year}` === key);
   return { outcome: records[0].outcome, year: records[0].year, records };
 });
 ---
-<li class:list={['filmLaurelGroup', { filmLaurelFeature: featured, filmLaurelTextOnly: !artwork }]}>
+<li class:list={['filmLaurelGroup', { filmLaurelFeature: featured, filmLaurelDense: dense, filmLaurelTextOnly: !artwork }]}>
   {artwork && <div class="filmLaurelArtwork" aria-hidden="true"><img src={artwork.artwork} alt="" width="500" height="320" loading="lazy" /></div>}
   <div class="filmLaurelCopy">
   <h3>{website ? <a href={website}>{festival}</a> : festival}</h3>

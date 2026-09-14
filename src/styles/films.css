@@ -63,39 +63,45 @@ body.filmCinema { min-width: 0; background: var(--wc-film-surface); color: var(-
 .filmSpreadMinus .filmProduction { grid-row: 5; }
 .filmProduction h2 { font-size: var(--wc-font-small); font-weight: 400; margin: 0; color: var(--wc-film-muted); }
 .filmProduction p { font-size: 1.125rem; line-height: 1.6; margin: 0; max-width: 55ch; }
-.filmRecognition { padding: 1rem var(--film-gutter) 5rem; scroll-margin-top: 2rem; }
+.filmRecognition { padding: 1rem var(--film-gutter) 4rem; scroll-margin-top: 2rem; }
 .filmRecognition>header, .filmCredits>header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 1rem; padding-top: 1.5rem; }
 .filmRecognition h2, .filmCredits h2 { font-weight: 400; font-size: clamp(1.8rem,3vw,3rem); line-height: 1.15; letter-spacing: -.04em; margin: 0; }
 .filmRecognition header>span, .filmCredits header>span { font-size: var(--wc-font-small); color: var(--wc-film-muted); }
-/* Each festival occupies the same composition. Original art retains its full bounds. */
-.filmLaurels { list-style: none; padding: 2.5rem 0 0; margin: 0; display: grid; grid-template-columns: repeat(12,minmax(0,1fr)); gap: var(--wc-space-8); align-items: start; }
-.filmLaurelGroup { min-width: 0; overflow-wrap: anywhere; grid-column: span 3; }
-.filmLaurelFeature { grid-column: span 4; }
-.filmLaurelArtwork { height: var(--wc-film-laurel-support); width: min(100%,12rem); display: flex; align-items: center; margin: 0 0 var(--wc-space-4); }
-.filmLaurelArtwork img { width: 100%; height: 100%; padding: .4rem; object-fit: contain; object-position: left center; }
-.filmLaurelFeature .filmLaurelArtwork { height: var(--wc-film-laurel-feature); width: min(100%,17rem); }
+/* Festival tiers keep high profile results first and remove row height gaps. */
+.filmLaurelCollection { padding-top: var(--wc-space-6); }
+.filmLaurels { list-style: none; padding: 0; margin: 0; display: grid; align-items: start; }
+.filmLaurels + .filmLaurels { margin-top: var(--wc-space-6); }
+.filmLaurelsFeatured { grid-template-columns: repeat(3,minmax(0,1fr)); gap: var(--wc-space-4); }
+.filmLaurelsSupporting { grid-template-columns: repeat(4,minmax(0,1fr)); gap: var(--wc-space-4); }
+.filmLaurelGroup { min-width: 0; overflow-wrap: anywhere; }
+.filmLaurelArtwork { height: var(--wc-film-laurel-support); width: min(100%,11rem); display: flex; align-items: center; margin: 0 0 var(--wc-space-2); }
+.filmLaurelArtwork img { width: 100%; height: 100%; padding: .2rem; object-fit: contain; object-position: left center; }
+.filmLaurelFeature .filmLaurelArtwork { height: var(--wc-film-laurel-feature); width: min(100%,15rem); }
 .filmLaurelArtwork img[src$="offa-selection-2026.png"] { max-width: 12rem; }
 .filmLaurelArtwork img[src$="toronto-shorts-2026.png"] { filter: invert(1); }
+.filmLaurelArtwork img[src$="taeff-winner-2026.jpg"] { filter: invert(1); }
 .filmLaurelArtwork img[src$="couch-mystery.png"] { filter: brightness(2.1); }
-.filmLaurelGroup h3 { font-size: 1rem; line-height: 1.35; font-weight: 500; margin: 0 0 .75rem; max-width: 29ch; }
+.filmLaurelGroup h3 { font-size: 1rem; line-height: 1.3; font-weight: 500; margin: 0 0 var(--wc-space-2); max-width: 29ch; }
 .filmLaurelFeature h3 { font-size: 1.2rem; }
 .filmLaurelGroup a { text-decoration: underline; text-underline-offset: .2em; text-decoration-thickness: 1px; text-decoration-color: var(--wc-film-muted); }
 .filmLaurelGroup a:hover { text-decoration-color: var(--wc-white); color: var(--wc-white); }
-.filmLaurelTextOnly { padding-top: 1rem; border-top: 1px solid var(--wc-film-line); }
+.filmLaurelTextOnly { padding-top: var(--wc-space-3); border-top: 1px solid var(--wc-film-line); }
 .filmLaurelStatus { font-size: var(--wc-font-small); color: var(--wc-film-muted); margin: 0 0 .3rem; }
-.filmLaurelSet + .filmLaurelSet { margin-top: .8rem; }
-.filmLaurelResults { list-style: none; padding: 0; margin: 0; font-size: var(--wc-font-small); line-height: 1.55; }
+.filmLaurelSet + .filmLaurelSet { margin-top: var(--wc-space-2); }
+.filmLaurelResults { list-style: none; padding: 0; margin: 0; font-size: var(--wc-font-small); line-height: 1.45; }
 .filmLaurelResult { display: inline; }
 .filmLaurelResult:empty { display: none; }
 .filmLaurelResult + .filmLaurelResult::before { content: ' / '; color: var(--wc-film-muted); padding-inline: .15em; }
-.filmFestivalCircuit { grid-column: span 6; align-self: center; padding-left: 2rem; }
-.filmFestivalCircuit h3 { font-size: 1.5rem; }
-.filmFestivalCircuit>ul { list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-wrap: wrap; gap: .5rem 1.3rem; }
+.filmLaurelDense .filmLaurelResults { font-size: var(--wc-font-min); line-height: 1.4; }
+.filmLaurelDense .filmLaurelResult + .filmLaurelResult::before { padding-inline: 0; }
+.filmFestivalCircuit { margin-top: var(--wc-space-6); padding-top: var(--wc-space-4); border-top: 1px solid var(--wc-film-line); }
+.filmFestivalCircuit h3 { font-size: 1.25rem; }
+.filmFestivalCircuit>ul { list-style: none; padding: 0; margin: var(--wc-space-2) 0 0; display: flex; flex-wrap: wrap; gap: var(--wc-space-2) var(--wc-space-4); }
 .filmLaurelCompact { font-size: var(--wc-font-small); }
 .filmLaurelCompact a { display: inline-flex; align-items: center; min-height: 2.75rem; }
 .filmCircuitCategory { display: block; color: var(--wc-film-muted); }
 .filmCircuitCategory:empty { display: none; }
-.filmResources { padding-top: 2.5rem; display: flex; justify-content: end; }
+.filmResources { padding-top: var(--wc-space-6); display: flex; justify-content: end; }
 .filmButton { display: inline-flex; align-items: center; justify-content: center; min-height: 3rem; padding: .7rem 1.4rem; border: 1px solid var(--wc-film-muted); border-radius: 3px; font-size: var(--wc-font-small); text-decoration: none; transition: background var(--wc-duration-interface), color var(--wc-duration-interface); }
 .filmButton:hover { color: var(--wc-film-surface); background: var(--wc-white); border-color: var(--wc-white); }
 .filmSequence { display: grid; grid-template-columns: repeat(12,minmax(0,1fr)); gap: var(--wc-film-sequence-gap) 1.5rem; padding: var(--wc-film-sequence-gap) var(--film-gutter) calc(var(--wc-film-sequence-gap) * 1.4); align-items: start; }
@@ -228,9 +234,8 @@ body.filmCinema { min-width: 0; background: var(--wc-film-surface); color: var(-
 }
 
 @media(max-width:70rem) {
-  .filmLaurels { gap: 2rem 1.5rem; }
-  .filmLaurelGroup, .filmLaurelFeature { grid-column: span 4; }
-  .filmFestivalCircuit { grid-column: span 4; padding-left: 0; border-left: 0; }
+  .filmLaurelsFeatured { gap: var(--wc-space-4); }
+  .filmLaurelsSupporting { gap: var(--wc-space-4); }
   .filmSequence>.filmSynopsis { grid-column: 1/7; }
 }
 @media(max-width:43.99rem), (max-width:70rem) and (max-aspect-ratio:1/1) {
@@ -241,21 +246,26 @@ body.filmCinema { min-width: 0; background: var(--wc-film-surface); color: var(-
   .filmSequenceFrame2 { width: calc(100% + var(--film-gutter) * 2); margin: 0 calc(-1 * var(--film-gutter)); }
   .filmSequenceFrame3 { width: 76%; margin: -3.5rem 0 0 auto; border-width: .5rem; }
   .filmSequenceMinus .filmSequenceFrame4 { width: 100%; margin: 0; }
-  .filmLaurels { grid-template-columns: 1fr 1fr; gap: 2rem 1.25rem; padding-top: 2rem; }
-  .filmLaurelGroup, .filmLaurelFeature, .filmFestivalCircuit { grid-column: auto; }
-  .filmLaurelArtwork, .filmLaurelFeature .filmLaurelArtwork { width: 100%; height: 6rem; margin-bottom: 1rem; }
+  .filmLaurelCollection { padding-top: var(--wc-space-4); }
+  .filmLaurelsFeatured, .filmLaurelsSupporting { grid-template-columns: repeat(2,minmax(0,1fr)); gap: var(--wc-space-4); }
+  .filmLaurels + .filmLaurels { margin-top: var(--wc-space-3); }
+  .filmLaurelArtwork, .filmLaurelFeature .filmLaurelArtwork { width: 100%; height: 5.5rem; margin-bottom: 0; }
   .filmLaurelFeature h3 { font-size: 1rem; }
-  .filmLaurelTextOnly { grid-column: 1/-1; }
-  .filmFestivalCircuit { grid-column: 1/-1; border-top: 1px solid var(--wc-film-line); padding: 1.25rem 0 0; }
+  .filmFestivalCircuit { margin-top: var(--wc-space-4); padding-top: var(--wc-space-3); }
   .filmResources { justify-content: start; }
 }
 @media(max-width:43.99rem), (max-width:70rem) and (max-aspect-ratio:1/1) {
-  .filmLaurels { grid-template-columns: 1fr; }
-  .filmLaurelGroup { display: flex; flex-wrap: wrap; align-items: start; gap: 1rem 1.25rem; }
+  .filmLaurelGroup { display: grid; grid-template-columns: minmax(5rem,12vw) minmax(0,1fr); align-items: start; gap: var(--wc-space-3); }
+  .filmLaurelsFeatured .filmLaurelDense { grid-column: 1 / -1; }
   .filmLaurelCopy { flex: 1 1 10rem; min-width: 0; }
-  .filmLaurelArtwork { flex: 0 0 min(6rem,24vw); }
-  .filmLaurelGroup:not(.filmLaurelFeature) .filmLaurelArtwork { height: 4.5rem; }
+  .filmLaurelArtwork { width: 100%; height: 4.5rem; }
+  .filmLaurelGroup:not(.filmLaurelFeature) .filmLaurelArtwork { height: 4rem; }
   .filmLaurelTextOnly, .filmFestivalCircuit { display: block; }
+}
+@media(max-width:43.99rem) {
+  .filmLaurelsFeatured, .filmLaurelsSupporting { grid-template-columns: 1fr; gap: var(--wc-space-3); }
+  .filmLaurelGroup { grid-template-columns: minmax(5rem,24vw) minmax(0,1fr); }
+  .filmLaurelsFeatured .filmLaurelDense { grid-column: auto; }
 }
 
 /* Film chapters close with a visible route into the production account. */

@@ -9,17 +9,24 @@ const groups = [...new Set(laurels.map(item => item.festival))].map(festival => 
   return { festival, results, emphasis: presentation?.emphasis || 'supporting', order: presentation?.order || 99, shortName: presentation?.shortName };
 }).sort((a, b) => a.order - b.order);
 const festivals = groups.filter(group => group.emphasis !== 'compact');
+const featured = festivals.filter(group => group.emphasis === 'feature');
+const supporting = festivals.filter(group => group.emphasis !== 'feature');
 const circuit = groups.filter(group => group.emphasis === 'compact');
 const circuitStatuses = [...new Set(circuit.flatMap(group => group.results.map(result => `${result.outcome} · ${result.year}`)))];
 ---
-<ul class="filmLaurels" aria-label="Festival recognition">
-  {festivals.map(group => <FilmLaurelGroup festival={group.festival} results={group.results} featured={group.emphasis === 'feature'} />)}
-  {circuit.length > 0 && <li class="filmLaurelGroup filmFestivalCircuit">
+<div class="filmLaurelCollection" role="group" aria-label="Festival recognition">
+  {featured.length > 0 && <ul class="filmLaurels filmLaurelsFeatured">
+    {featured.map(group => <FilmLaurelGroup festival={group.festival} results={group.results} featured />)}
+  </ul>}
+  {supporting.length > 0 && <ul class="filmLaurels filmLaurelsSupporting">
+    {supporting.map(group => <FilmLaurelGroup festival={group.festival} results={group.results} />)}
+  </ul>}
+  {circuit.length > 0 && <div class="filmLaurelGroup filmFestivalCircuit">
     <h3>Lift Off</h3>
     <p class="filmLaurelStatus">{circuitStatuses.join(' / ')}</p>
     <ul>{circuit.map(group => <li class="filmLaurelCompact">
       <a href={group.results[0].website} aria-label={`${group.festival}, official website`}>{group.shortName}</a>
       {group.results.map(result => <span class="filmCircuitCategory">{result.category}</span>)}
     </li>)}</ul>
-  </li>}
-</ul>
+  </div>}
+</div>

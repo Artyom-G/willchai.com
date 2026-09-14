@@ -326,10 +326,11 @@ reduced motion. Supporting photographs remain fixed under the pointer and
 arrive through ordinary scrolling. Image controls use a zoom cursor and visible
 keyboard focus. The viewer presents the full image with a Close button.
 
-Festival spreads use one twelve column composition. Featured original artwork
-has a modest scale increase over supporting artwork. Transparent margins stay
-complete. Pending artwork uses a text composition. Lift Off cities share a
-single group within the same grid. On phones, artwork sits beside the record.
+Festival spreads place featured original artwork in a compact three column tier
+and supporting artwork in a smaller four column tier. Transparent margins stay
+complete. Pending artwork uses a text composition. Lift Off cities share one
+compact group beneath the artwork tiers. On phones, artwork sits beside the record.
+Portrait tablets use two columns to keep the festival spread compact.
 Festival titles and sourced result categories have persistent underlines.
 Related categories share an outcome and year label. All confirmed records stay
 in ordinary page flow. A bordered Press kit control closes each index spread.
@@ -385,6 +386,6 @@ vertical flow, with a single column on phones and shared type and spacing tokens
 
 
 Festival artwork uses the original graphic for its recorded edition and outcome.
-Full leaf boundaries remain visible within the image frame. Supporting groups
-share a compact vertical gap. Each artwork source and pending retrieval belongs
-in the festival record or artwork audit.
+Full leaf boundaries remain visible within the image frame. Featured and supporting
+tiers use tight internal spacing without shared row height gaps. Each artwork source
+and pending retrieval belongs in the festival record or artwork audit.

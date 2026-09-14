@@ -1262,9 +1262,9 @@ img {
 .film-cinema-demo__spread>img { width: 100%; height: auto; }
 .film-cinema-demo__year { position: absolute; top: 6%; left: 4%; font-size: var(--wc-font-small); text-shadow: var(--wc-film-text-shadow); }
 .film-cinema-demo__credits { position: absolute; bottom: 4%; left: 8%; right: 8%; display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--wc-space-3); font-size: var(--wc-font-small); text-shadow: var(--wc-film-text-shadow); }
-.film-cinema-demo__featured { display: grid; grid-template-columns: 1fr 1fr; gap: var(--wc-space-6); margin-top: var(--wc-space-8); align-items: start; }
+.film-cinema-demo__featured { display: grid; grid-template-columns: 1fr 1fr; gap: var(--wc-space-4); margin-top: var(--wc-space-6); align-items: start; }
 .film-cinema-demo__laurel { display: flex; flex-direction: column; gap: .5rem; font-size: var(--wc-font-small); line-height: 1.4; }
-.film-cinema-demo__laurel>img { height: var(--wc-film-laurel-feature); width: 100%; padding: .4rem; object-fit: contain; object-position: left; margin-bottom: var(--wc-space-3); }
+.film-cinema-demo__laurel>img { height: var(--wc-film-laurel-feature); width: 100%; padding: .2rem; object-fit: contain; object-position: left; margin-bottom: var(--wc-space-2); }
 .film-cinema-demo__support>img { height: var(--wc-film-laurel-support); }
 .film-cinema-demo__cities { align-self: center; font-size: var(--wc-font-small); }
 .film-cinema-demo__cities>p { font-size: 1.25rem; margin: 0 0 .5rem; }
