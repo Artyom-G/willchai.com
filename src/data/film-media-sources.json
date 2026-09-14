@@ -576,6 +576,168 @@
           "sha256": "f8bb99e3b2b5af7d4dd4e56401d6493305933adcc64b0f32767bdc09ce60495d"
         }
       ]
+    },
+    {
+      "film": "Murder of Minus",
+      "purpose": "Detail page portrait",
+      "source": "https://drive.google.com/uc?export=download&id=1eUuiVCO_lucHBRErSd1RDhLzOVlGYbq5",
+      "page": "https://drive.google.com/drive/folders/19vEy-HytfsAgTOkWOYJHzcFtRNEFw53b",
+      "original_sha256": "fa702dde4ef9e1ee6f887de3469313c7d8c96ed2aa65443e05c490411f1df6b0",
+      "derivatives": [
+        {
+          "src": "/assets/films/murder-of-minus/detail-portrait-640.avif",
+          "width": 640,
+          "height": 427,
+          "bytes": 5985
+        },
+        {
+          "src": "/assets/films/murder-of-minus/detail-portrait-1280.avif",
+          "width": 1280,
+          "height": 853,
+          "bytes": 15772
+        },
+        {
+          "src": "/assets/films/murder-of-minus/detail-portrait-1920.avif",
+          "width": 1920,
+          "height": 1280,
+          "bytes": 31197
+        }
+      ]
+    },
+    {
+      "film": "Murder of Minus",
+      "purpose": "Detail page directors",
+      "source": "https://drive.google.com/uc?export=download&id=1v8mmacnfwoJ92m97GHPOp678a1B8oRuF",
+      "page": "https://drive.google.com/drive/folders/19vEy-HytfsAgTOkWOYJHzcFtRNEFw53b",
+      "original_sha256": "134aeb735e45b8e26402d96bd74d7ce03eeee854b92abb62b21d1abdb6ce439e",
+      "derivatives": [
+        {
+          "src": "/assets/films/murder-of-minus/detail-directors-640.avif",
+          "width": 640,
+          "height": 960,
+          "bytes": 17860
+        },
+        {
+          "src": "/assets/films/murder-of-minus/detail-directors-1280.avif",
+          "width": 1280,
+          "height": 1920,
+          "bytes": 65619
+        },
+        {
+          "src": "/assets/films/murder-of-minus/detail-directors-1920.avif",
+          "width": 1920,
+          "height": 2880,
+          "bytes": 200097
+        }
+      ]
+    },
+    {
+      "film": "Murder of Minus",
+      "purpose": "Detail page camera",
+      "source": "https://drive.google.com/uc?export=download&id=1VErYFXS40voyqiMFwKLvI3s7_-X9VrNq",
+      "page": "https://drive.google.com/drive/folders/19vEy-HytfsAgTOkWOYJHzcFtRNEFw53b",
+      "original_sha256": "f0892f6d59891e916de2ebf33d40a6463726e6c1d0e72eff809721d5d2286d2f",
+      "derivatives": [
+        {
+          "src": "/assets/films/murder-of-minus/detail-camera-640.avif",
+          "width": 640,
+          "height": 960,
+          "bytes": 39406
+        },
+        {
+          "src": "/assets/films/murder-of-minus/detail-camera-1280.avif",
+          "width": 1280,
+          "height": 1920,
+          "bytes": 108279
+        },
+        {
+          "src": "/assets/films/murder-of-minus/detail-camera-1920.avif",
+          "width": 1920,
+          "height": 2880,
+          "bytes": 186022
+        }
+      ]
+    },
+    {
+      "film": "Murder of Minus",
+      "purpose": "Detail page business-card",
+      "source": "https://willchai.com/wp-content/uploads/2024/11/MoM_stills_2.jpg",
+      "page": "https://willchai.com/murder-of-minus-a-sci-fi-thriller/",
+      "original_sha256": "acb2899e01d84f19ce5c0348cdcd213e1f7cfdc9a35e8213c06d509c620c6c39",
+      "derivatives": [
+        {
+          "src": "/assets/films/murder-of-minus/detail-business-card-640.avif",
+          "width": 640,
+          "height": 347,
+          "bytes": 6442
+        },
+        {
+          "src": "/assets/films/murder-of-minus/detail-business-card-1280.avif",
+          "width": 1280,
+          "height": 693,
+          "bytes": 17040
+        },
+        {
+          "src": "/assets/films/murder-of-minus/detail-business-card-1920.avif",
+          "width": 1920,
+          "height": 1040,
+          "bytes": 30763
+        }
+      ]
+    },
+    {
+      "film": "Wattleseed",
+      "purpose": "Detail page incident",
+      "source": "https://willchai.com/wp-content/uploads/2026/02/Wattleseed-Still-9.jpg",
+      "page": "https://willchai.com/wattleseed/",
+      "original_sha256": "0dd51bb73be6df84bbc5548a907d3038f548474d5b8c3740869f4188fe2685ce",
+      "derivatives": [
+        {
+          "src": "/assets/films/wattleseed/detail-incident-640.avif",
+          "width": 640,
+          "height": 346,
+          "bytes": 4452
+        },
+        {
+          "src": "/assets/films/wattleseed/detail-incident-1280.avif",
+          "width": 1280,
+          "height": 692,
+          "bytes": 11347
+        },
+        {
+          "src": "/assets/films/wattleseed/detail-incident-1920.avif",
+          "width": 1920,
+          "height": 1038,
+          "bytes": 26089
+        }
+      ]
+    },
+    {
+      "film": "Wattleseed",
+      "purpose": "Detail page researchers",
+      "source": "https://willchai.com/wp-content/uploads/2026/02/Wattleseed-Still-6.jpg",
+      "page": "https://willchai.com/wattleseed/",
+      "original_sha256": "3c22d6ce14118fa21c1b814f59e9ab8d693e7a6d4df64501895d50889dd3ad79",
+      "derivatives": [
+        {
+          "src": "/assets/films/wattleseed/detail-researchers-640.avif",
+          "width": 640,
+          "height": 346,
+          "bytes": 5688
+        },
+        {
+          "src": "/assets/films/wattleseed/detail-researchers-1280.avif",
+          "width": 1280,
+          "height": 692,
+          "bytes": 11872
+        },
+        {
+          "src": "/assets/films/wattleseed/detail-researchers-1920.avif",
+          "width": 1920,
+          "height": 1038,
+          "bytes": 19654
+        }
+      ]
     }
   ],
   "recognitionEvidence": [

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
+import FilmChapterEnd from '../../components/FilmChapterEnd.astro';
 import FilmHero from '../../components/FilmHero.astro';
 import FilmSequence from '../../components/FilmSequence.astro';
 import FilmRecognition from '../../components/FilmRecognition.astro';
@@ -15,7 +16,7 @@ const programme = [...films].reverse();
   <div class="filmSiteHeader"><SiteHeader current="films" /></div>
   <main id="main">
     <h1 class="visuallyHidden">Films</h1>
-    {programme.map((film, index) => <><FilmHero film={film} first={index === 0} /><FilmSequence film={film} /><FilmRecognition film={film} /></>)}
+    {programme.map((film, index) => <><FilmHero film={film} first={index === 0} /><FilmSequence film={film} /><FilmRecognition film={film} /><FilmChapterEnd film={film} /></>)}
     <FilmClosing />
   </main>
   <FilmTrailer /><FilmViewer />

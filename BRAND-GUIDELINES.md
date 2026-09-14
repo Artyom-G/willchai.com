@@ -62,7 +62,7 @@ show the full framing with a Close control. Alt text describes the image for
 assistive technology. Compact festival compositions contain original artwork,
 underlined festival and result links, and every confirmed outcome. Lift Off
 cities share one group within the composition. Press kit uses a bordered control
-beneath each spread. Detail pages retain the production account and credits.
+beneath each spread. Each index chapter closes with a prominent “Read more about the film” control. Detail pages use independent title and production image compositions, followed by expanded personal accounts, cast, production photographs, technical details, credits and original press kits.
 
 
 The Résumé is a professional record with matching PDF and HTML versions. It may

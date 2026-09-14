@@ -1279,3 +1279,12 @@ img {
   .film-cinema-demo__title { bottom: 30%; }
   .film-cinema-demo__featured { grid-template-columns: 1fr; }
 }
+
+.film-detail-demo { padding-top:var(--wc-space-12); margin-top:var(--wc-space-8); border-top:1px solid var(--wc-film-line); }
+.film-detail-demo>div { display:grid; grid-template-columns:1fr 1fr; gap:var(--wc-space-8); margin-top:var(--wc-space-12); align-items:center; }
+.film-detail-demo img { width:100%; height:auto; }
+.film-detail-demo p { font-size:1.0625rem; line-height:1.6; }
+.film-detail-demo>p { font-size:1.5rem; }
+@media(max-width:760px){.film-detail-demo>div{grid-template-columns:1fr;}}
+.film-detail-demo>.film-cinema-demo__button { color:var(--wc-ink); background:var(--wc-white); min-height:4.5rem; font-size:1.125rem; }
+.film-detail-demo p { font-weight:400; }

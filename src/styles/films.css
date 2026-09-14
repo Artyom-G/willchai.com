@@ -256,3 +256,93 @@ body.filmCinema { min-width: 0; background: var(--wc-film-surface); color: var(-
   .filmLaurelGroup:not(.filmLaurelFeature) .filmLaurelArtwork { height: 4.5rem; }
   .filmLaurelTextOnly, .filmFestivalCircuit { display: block; }
 }
+
+/* Film chapters close with a visible route into the production account. */
+.filmChapterEnd { margin: 0 var(--film-gutter); padding: var(--wc-space-12) 0 var(--wc-space-24); border-top: 1px solid var(--wc-film-line); display: flex; justify-content: space-between; align-items: center; gap: var(--wc-space-8); }
+.filmChapterEnd p { font-size: clamp(1.6rem,3vw,2.5rem); margin: 0 0 var(--wc-space-2); }
+.filmChapterEnd span { font-size: 1.0625rem; color: var(--wc-film-muted); }
+.filmReadMore { background: var(--wc-white); color: var(--wc-ink); font-size: 1.125rem; min-height: 4.5rem; padding: var(--wc-space-6) var(--wc-space-8); flex-shrink: 0; }
+.filmReadMore:hover { background: var(--wc-film-surface); color: var(--wc-white); }
+/* Detail pages are an independent editorial sequence of original production material. */
+.filmEssay { padding-top: 6rem; }
+.filmEssay p { font-size: 1.125rem; line-height: 1.65; max-width: 58ch; margin: 0 0 var(--wc-space-6); }
+.filmEssay h2 { font-weight: 400; font-size: clamp(2rem,4vw,4rem); letter-spacing: -.035em; line-height: 1.08; margin: 0; max-width: 15ch; }
+.filmEssay h3 { font-size: 1.125rem; font-weight: 500; margin: 0 0 var(--wc-space-3); }
+.filmEssayOpening { padding: var(--wc-space-4) var(--film-gutter) 0; }
+.filmBack { display: inline-flex; min-height: 2.75rem; align-items: center; font-size: var(--wc-font-small); text-underline-offset: .3em; }
+.filmEssayIdentity { display: grid; grid-template-columns: minmax(0,2fr) minmax(0,1fr); gap: var(--wc-space-12); align-items: end; padding: var(--wc-space-8) 0 var(--wc-space-12); }
+.filmEssayWordmark { max-width: 48rem; }
+.filmEssayIdentity>p { font-size: var(--wc-font-small); color: var(--wc-film-muted); line-height: 1.6; margin: 0; padding-bottom: var(--wc-space-2); }
+.filmEssayLead { display: grid; grid-template-columns: minmax(0,2fr) minmax(0,1fr); gap: var(--wc-space-12); align-items: end; }
+.filmEssayCover { margin-left: calc(-1 * var(--film-gutter)); }
+.filmEssayPremise { padding-bottom: var(--wc-space-8); }
+.filmEssayPremise>p { font-size: clamp(1.6rem,2.4vw,2.65rem); line-height: 1.25; letter-spacing: -.02em; }
+.filmEssayStory { padding: var(--wc-space-24) var(--film-gutter); display: grid; grid-template-columns: minmax(0,1fr) minmax(0,2fr); gap: var(--wc-space-12); }
+.filmEssayStory>div { max-width: 58ch; }
+.filmEssayCast { grid-column: 2; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: var(--wc-space-6); margin: 0; border-top: 1px solid var(--wc-film-line); padding-top: var(--wc-space-8); }
+.filmEssayCast dt { font-size: 1.25rem; }
+.filmEssayCast dd { margin: .5rem 0 0; color: var(--wc-film-muted); font-size: var(--wc-font-small); }
+.filmEssayPerspective { display: grid; grid-template-columns: repeat(12,minmax(0,1fr)); gap: var(--wc-space-12) var(--wc-space-6); padding: var(--wc-space-12) var(--film-gutter) var(--wc-space-24); }
+.filmEssayPerspectiveTitle { grid-column: 1/6; }
+.filmEssayPerspectiveTitle>span,.filmEssayMaking header>span { display: block; font-size: var(--wc-font-small); color: var(--wc-film-muted); margin-bottom: var(--wc-space-6); }
+.filmEssayPerspectives { grid-column: 7/13; }
+.filmEssayPerspectives>div+div { margin-top: var(--wc-space-12); }
+.filmEssayObject { grid-column: 2/10; margin-top: var(--wc-space-4); }
+.filmEssayMaking { display: grid; grid-template-columns: repeat(12,minmax(0,1fr)); gap: var(--wc-space-12) var(--wc-space-6); padding: var(--wc-space-12) var(--film-gutter) var(--wc-space-24); border-top: 1px solid var(--wc-film-line); }
+.filmEssayMaking>header { grid-column: 1/13; }
+.filmEssayMaking h2 { max-width: 20ch; }
+.filmEssayProductionCopy { grid-column: 7/13; grid-row: 2; align-self: center; }
+.filmEssayProductionPhoto { grid-column: 1/6; grid-row: 2; }
+.filmEssayMinus .filmEssayProductionPhoto img { max-height: 45rem; object-fit: contain; object-position: left; }
+.filmEssayMilestones { grid-column: 1/13; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: var(--wc-space-8); margin: 0; padding-top: var(--wc-space-8); border-top: 1px solid var(--wc-film-line); }
+.filmEssayMilestones dt { color: var(--wc-film-muted); font-size: var(--wc-font-small); }
+.filmEssayMilestones dd { margin: var(--wc-space-3) 0 0; font-size: clamp(1.3rem,2vw,2rem); }
+.filmEssayCraft { padding: var(--wc-space-12) var(--film-gutter) var(--wc-space-24); }
+.filmEssayCraft>h2 { max-width: 24ch; margin-bottom: var(--wc-space-12); }
+.filmEssayCraftBody { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: var(--wc-space-24); align-items: start; }
+.filmEssayCraftBody>div { padding-top: var(--wc-space-8); }
+.filmEssayCraftBody section+section { margin-top: var(--wc-space-8); }
+.filmEssayMinus .filmEssayCraftPhoto { max-width: 26rem; justify-self: center; }
+.filmEssaySpecs { padding: 0 var(--film-gutter) var(--wc-space-24); }
+.filmEssaySpecs dl { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: var(--wc-space-8); border-block: 1px solid var(--wc-film-line); margin: 0; padding-block: var(--wc-space-8); }
+.filmEssaySpecs dt { color: var(--wc-film-muted); font-size: var(--wc-font-small); margin-bottom: var(--wc-space-2); }
+.filmEssaySpecs dd { font-size: 1.125rem; margin: 0; }
+.filmEssayResources { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,2fr); gap: var(--wc-space-24); align-items: center; margin: var(--wc-space-8) var(--film-gutter) var(--wc-space-24); padding-top: var(--wc-space-12); border-top: 1px solid var(--wc-film-line); }
+.filmEssayResources>a { max-width: 16rem; justify-self: center; cursor: zoom-in; }
+.filmEssayResources img { width: 100%; height: auto; display: block; }
+.filmEssayResources h2 { font-size: clamp(2rem,3vw,3rem); font-weight: 400; margin: 0 0 var(--wc-space-6); }
+.filmEssayResources p { max-width: 50ch; font-size: 1.125rem; line-height: 1.6; }
+.filmEssayResourceActions { display: flex; flex-wrap: wrap; gap: var(--wc-space-4); margin-top: var(--wc-space-8); }
+.filmEssayFooter { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--wc-space-6); border-top: 1px solid var(--wc-film-line); padding: var(--wc-space-8) var(--film-gutter); font-size: var(--wc-font-small); }
+.filmEssayFooter a { min-height: 2.75rem; display: flex; align-items: center; text-underline-offset: .3em; }
+@media(max-width: 760px) {
+ .filmChapterEnd { flex-direction: column; align-items: stretch; padding-bottom: var(--wc-space-16); }
+ .filmReadMore { flex-shrink: 1; text-align: center; }
+ .filmEssay { padding-top: 6.5rem; }
+ .filmEssayIdentity,.filmEssayLead,.filmEssayStory,.filmEssayCraftBody,.filmEssayResources { grid-template-columns: minmax(0,1fr); gap: var(--wc-space-8); }
+ .filmEssayIdentity { padding-top: var(--wc-space-4); }
+ .filmEssayIdentity>p { max-width: none; }
+ .filmEssayCover { margin-right: calc(-1 * var(--film-gutter)); }
+ .filmEssayPremise { padding: 0; }
+ .filmEssayPremise>p { max-width: 30ch; }
+ .filmEssayStory,.filmEssayPerspective,.filmEssayMaking,.filmEssayCraft,.filmEssaySpecs { padding-block: var(--wc-space-12); }
+ .filmEssayStory { gap: var(--wc-space-6); }
+ .filmEssayCast { grid-column: 1; }
+ .filmEssayPerspective,.filmEssayMaking { display: flex; flex-direction: column; gap: var(--wc-space-8); }
+ .filmEssayObject { margin: 0; }
+ .filmEssayProductionPhoto { order: 1; }
+ .filmEssayMilestones { order: 2; grid-template-columns: minmax(0,1fr); gap: var(--wc-space-6); }
+ .filmEssayCraftBody { gap: var(--wc-space-6); }
+ .filmEssayCraftBody>div { padding: 0; }
+ .filmEssaySpecs dl { grid-template-columns: repeat(2,minmax(0,1fr)); gap: var(--wc-space-6); }
+ .filmEssayResources { margin-bottom: var(--wc-space-12); }
+ .filmEssayResources>a { max-width: 12rem; justify-self: start; }
+ .filmEssay p { font-size: 1.0625rem; }
+ .filmEssayPremise>p { font-size: 1.6rem; }
+}
+@media(max-width:43.99rem), (max-width:70rem) and (max-aspect-ratio:1/1) {
+ .filmEssay { padding-top: var(--wc-space-4); }
+}
+@media(max-width:380px) {
+ .filmEssayCast,.filmEssaySpecs dl { grid-template-columns: minmax(0,1fr); }
+}

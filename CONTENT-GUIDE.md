@@ -198,3 +198,24 @@ The index pairs a short synopsis with original stills. Production accounts and
 complete credits belong to the detail pages. The image viewer uses accessible
 alt text and a Close control. Any future visible captions require verified
 character, performer or production context.
+
+
+## Film detail reading sequence
+
+Each index chapter ends with its film title and a prominent filled control labelled
+“Read more about the film”. The boundary separates consecutive films and provides
+a visible destination after the festival composition.
+
+Detail pages use an independent opening with original title artwork, a selected
+production image, a premise and Trailer. The reading sequence includes the story,
+cast, director perspectives, production history, material and technical process,
+specifications, full credits, festivals and original press kit. Murder of Minus
+uses the monochrome chip portrait and original production photographs. Wattleseed
+uses apparatus and researcher frames reserved for this route. Every image opens
+in the native viewer. Supporting images remain stationary under the pointer.
+
+`src/data/film-essays.ts` records the expanded copy with source PDF page references.
+`src/data/film-detail-images.json` records the selected images. The media manifest
+preserves original URLs, hashes and derivative dimensions. Personal statements
+are editorial paraphrases of the published accounts. All content follows normal
+vertical flow, with a single column on phones and shared type and spacing tokens.

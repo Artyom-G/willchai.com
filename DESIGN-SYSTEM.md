@@ -448,8 +448,7 @@ All records come from the same collection on the index and detail pages.
 Press kit uses a bordered button below each index spread and beside the original
 poster on detail pages. Trailer players load on activation. Both media dialogs
 support Escape, backdrop dismissal and focus restoration. Original posters,
-linked film titles and Film enquiries form the ending. The expanded detail
-page composition is scheduled as the following design pass.
+linked film titles and Film enquiries form the ending. The detail pages use the independent reading sequence described below.
 
 
 The Résumé uses the same reading system with restrained formatting suited to a
@@ -480,3 +479,24 @@ while preserving type, colour, focus, and spacing rules.
   decorative effects; borrow the conviction, not the literal style.
 - **Maria Vasilyeva:** interaction can reveal a body of work as a system; keep
   our geometry orderly rather than spatial and freeform.
+
+
+## Film detail reading sequence
+
+Each index chapter ends with its film title and a prominent filled control labelled
+“Read more about the film”. The boundary separates consecutive films and provides
+a visible destination after the festival composition.
+
+Detail pages use an independent opening with original title artwork, a selected
+production image, a premise and Trailer. The reading sequence includes the story,
+cast, director perspectives, production history, material and technical process,
+specifications, full credits, festivals and original press kit. Murder of Minus
+uses the monochrome chip portrait and original production photographs. Wattleseed
+uses apparatus and researcher frames reserved for this route. Every image opens
+in the native viewer. Supporting images remain stationary under the pointer.
+
+`src/data/film-essays.ts` records the expanded copy with source PDF page references.
+`src/data/film-detail-images.json` records the selected images. The media manifest
+preserves original URLs, hashes and derivative dimensions. Personal statements
+are editorial paraphrases of the published accounts. All content follows normal
+vertical flow, with a single column on phones and shared type and spacing tokens.

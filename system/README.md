@@ -174,3 +174,5 @@ The production sequence uses native scrolling with one appearance of each
 index still. Compact layouts and reduced motion use ordinary vertical flow.
 Supporting photographs remain still under the pointer. Media dialogs restore
 focus on close. See `PATTERNS.md` for the complete contract.
+
+The Films reference also demonstrates the chapter ending and the detail reading sequence. Film detail content comes from the original press kits, with source pages recorded in `src/data/film-essays.ts`.
