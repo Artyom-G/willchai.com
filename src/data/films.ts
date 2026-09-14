@@ -27,6 +27,8 @@ export type FilmLaurel = {
   evidence?: string;
   sourceCategory?: string;
   artworkKind?: "logo";
+  artworkSource?: string;
+  artworkStatus?: string;
   emphasis?: "feature" | "supporting" | "compact";
   order?: number;
   shortName?: string;
@@ -207,8 +209,8 @@ export const films: Film[] = [
         "year": "2026",
         "source": "https://offa.ca/wp-content/uploads/2026/06/OFFA-Festival2026-Guide-WEB.pdf#page=18",
         "evidence": "Owner supplied FilmFreeway judging record: SCR-20260913-niwj.png",
-        "artwork": "/assets/films/laurels/offa-logo.png",
-        "artworkKind": "logo",
+        "artwork": "/assets/films/laurels/offa-selection-2026.png",
+        "artworkSource": "https://filmfreeway.com/laurels/14178/OakvilleFestivalsofFilmandArt",
         "emphasis": "feature",
         "order": 1,
         "website": "https://offa.ca/wp-content/uploads/2026/06/OFFA-Festival2026-Guide-WEB.pdf#page=18"
@@ -218,6 +220,7 @@ export const films: Film[] = [
         "category": "",
         "outcome": "Award winner",
         "year": "2026",
+        "artworkStatus": "2026 winner artwork pending. The official linked Laurel Center lists 2025 selection and nomination graphics as of 2026 09 14.",
         "evidence": "Owner supplied FilmFreeway judging record: SCR-20260913-niwj.png",
         "emphasis": "feature",
         "order": 3,
@@ -225,14 +228,17 @@ export const films: Film[] = [
       },
       {
         "festival": "Alternative Film Festival",
-        "category": "",
+        "category": "Best Sci-Fi/Fantasy/Supernatural",
+        "source": "https://www.altff.org/onewebmedia/WINNERS%20SC%20AltFF%20Spr%2026.pdf#page=3",
+        "artworkKind": "logo",
+        "artworkStatus": "Spring 2026 nominee artwork pending. The emailed Laurel Center password was rejected on 2026 09 14.",
         "outcome": "Nominee",
         "year": "2026",
         "evidence": "Owner supplied FilmFreeway judging record: SCR-20260913-niwj.png",
         "artwork": "/assets/films/laurels/altff-original-logo.png",
         "emphasis": "supporting",
         "order": 7,
-        "website": "https://altff.org/"
+        "website": "https://www.altff.org/onewebmedia/WINNERS%20SC%20AltFF%20Spr%2026.pdf#page=3"
       },
       {
         "festival": "Kitchener Waterloo International Film Festival",

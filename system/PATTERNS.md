@@ -382,3 +382,9 @@ in the native viewer. Supporting images remain stationary under the pointer.
 preserves original URLs, hashes and derivative dimensions. Personal statements
 are editorial paraphrases of the published accounts. All content follows normal
 vertical flow, with a single column on phones and shared type and spacing tokens.
+
+
+Festival artwork uses the original graphic for its recorded edition and outcome.
+Full leaf boundaries remain visible within the image frame. Supporting groups
+share a compact vertical gap. Each artwork source and pending retrieval belongs
+in the festival record or artwork audit.

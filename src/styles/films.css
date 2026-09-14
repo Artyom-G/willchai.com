@@ -68,12 +68,13 @@ body.filmCinema { min-width: 0; background: var(--wc-film-surface); color: var(-
 .filmRecognition h2, .filmCredits h2 { font-weight: 400; font-size: clamp(1.8rem,3vw,3rem); line-height: 1.15; letter-spacing: -.04em; margin: 0; }
 .filmRecognition header>span, .filmCredits header>span { font-size: var(--wc-font-small); color: var(--wc-film-muted); }
 /* Each festival occupies the same composition. Original art retains its full bounds. */
-.filmLaurels { list-style: none; padding: 2.5rem 0 0; margin: 0; display: grid; grid-template-columns: repeat(12,minmax(0,1fr)); gap: 2.5rem 2rem; align-items: start; }
+.filmLaurels { list-style: none; padding: 2.5rem 0 0; margin: 0; display: grid; grid-template-columns: repeat(12,minmax(0,1fr)); gap: var(--wc-space-8); align-items: start; }
 .filmLaurelGroup { min-width: 0; overflow-wrap: anywhere; grid-column: span 3; }
 .filmLaurelFeature { grid-column: span 4; }
-.filmLaurelArtwork { height: var(--wc-film-laurel-support); width: min(100%,12rem); display: flex; align-items: center; margin: 0 0 1.25rem; }
+.filmLaurelArtwork { height: var(--wc-film-laurel-support); width: min(100%,12rem); display: flex; align-items: center; margin: 0 0 var(--wc-space-4); }
 .filmLaurelArtwork img { width: 100%; height: 100%; padding: .4rem; object-fit: contain; object-position: left center; }
 .filmLaurelFeature .filmLaurelArtwork { height: var(--wc-film-laurel-feature); width: min(100%,17rem); }
+.filmLaurelArtwork img[src$="offa-selection-2026.png"] { max-width: 12rem; }
 .filmLaurelArtwork img[src$="toronto-shorts-2026.png"] { filter: invert(1); }
 .filmLaurelArtwork img[src$="couch-mystery.png"] { filter: brightness(2.1); }
 .filmLaurelGroup h3 { font-size: 1rem; line-height: 1.35; font-weight: 500; margin: 0 0 .75rem; max-width: 29ch; }

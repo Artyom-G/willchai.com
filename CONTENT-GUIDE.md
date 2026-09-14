@@ -188,9 +188,10 @@ retain their original subjects and provide a viewer with the original framing.
 The source manifest records each asset and its processing. Owner supplied judging records confirm successful results across seven
 Wattleseed festivals and ten Murder of Minus festivals. Public sources supply
 the individual categories and screening programme names. Kitchener Waterloo
-provides nine Wattleseed nomination categories. Its winning category and the
-Wattleseed Alternative Film Festival nomination category remain pending. Those
-two entries display their confirmed outcome and year. Notification dates remain
+provides nine Wattleseed nomination categories. Its winning category remains unspecified, with Award Winner and 2026 displayed
+as approved by Will. The Alternative Film Festival Spring 2026 result is a
+nomination for Best Sci Fi/Fantasy/Supernatural, confirmed on page three of the
+official results PDF. Notification dates remain
 submission metadata. Public source links appear where a supporting page exists.
 The source manifest records owner evidence without publishing the screenshots.
 
