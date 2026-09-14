@@ -148,6 +148,8 @@ export const films: Film[] = [
     "laurels": [
       {
         "category": "Best Original Score",
+        "artwork": "/assets/films/laurels/cine-paris-winner-2026.png",
+        "artworkSource": "https://filmfreeway.com/laurels/64632/CineParisFilmFestival",
         "festival": "Cine Paris Film Festival",
         "outcome": "Winner",
         "year": "February 2026",
@@ -220,7 +222,7 @@ export const films: Film[] = [
         "category": "",
         "outcome": "Award winner",
         "year": "2026",
-        "artworkStatus": "2026 winner artwork pending. The official linked Laurel Center lists 2025 selection and nomination graphics as of 2026 09 14.",
+        "artworkStatus": "Winner artwork pending. Signed in downloads provide 2026 nominee artwork despite older page labels. The nominee record carries its original graphic.",
         "evidence": "Owner supplied FilmFreeway judging record: SCR-20260913-niwj.png",
         "emphasis": "feature",
         "order": 3,
@@ -244,6 +246,8 @@ export const films: Film[] = [
         "festival": "Kitchener Waterloo International Film Festival",
         "category": "Best Short Film",
         "sourceCategory": "BEST SHORT FILM",
+        "artwork": "/assets/films/laurels/kwiff-nominee-2026.png",
+        "artworkSource": "https://filmfreeway.com/laurels/82251/KWIFF",
         "outcome": "Nominee",
         "year": "2026",
         "source": "https://www.kwiffestival.com/nominees",

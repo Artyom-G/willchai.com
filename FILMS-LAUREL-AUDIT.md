@@ -6,9 +6,9 @@ Oakville uses the official 2026 selection white PNG from https://filmfreeway.com
 
 AltFF Spring 2026 nomination category is confirmed by page three of https://www.altff.org/onewebmedia/WINNERS%20SC%20AltFF%20Spr%2026.pdf. Its emailed password was rejected by the current centre. The existing official festival logo remains while nominee artwork is pending.
 
-KWIFF retains Award winner and 2026 as approved by Will. Its linked centre https://filmfreeway.com/laurels/82251/KWIFF displays 2025 selection and nominee artwork. The winner graphic remains pending.
+KWIFF retains Award winner and 2026 as approved by Will. Its linked centre https://filmfreeway.com/laurels/82251/KWIFF labels the entries 2025. Signed in original files and visual inspection confirm 2026. The original white nominee graphic is now attached to the nomination record. The winner graphic remains pending.
 
-Cine Paris https://filmfreeway.com/laurels/64632/CineParisFilmFestival displays 2024 and 2025 graphics. Its 2026 winner artwork remains pending.
+Cine Paris https://filmfreeway.com/laurels/64632/CineParisFilmFestival retains older display labels. The signed in original download visibly reads Award Winner 2026. Its original white PNG is now published.
 
 Toronto Arts and Entertainment https://filmfreeway.com/laurels/84660/TorontoArtsandEntertainment displays 2026 selection and Best Drama Short Film graphics. Student Film winner artwork remains pending. Festival correspondence across both mailboxes carries links and empty attachment lists.
 
