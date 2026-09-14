@@ -3,56 +3,191 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import ContactEnding from "../../components/ContactEnding.astro";
-import WorkCard from "../../components/WorkCard.astro";
 import { projects } from "../../data/projects";
+import "../../styles/projects.css";
+
+const medterms = projects.find((project) => project.slug === "medterms")!;
+const tachyboard = projects.find((project) => project.slug === "tachyboard")!;
+const searing = projects.find((project) => project.slug === "searing-stories")!;
+const conspirasea = projects.find((project) => project.slug === "conspirasea")!;
 ---
 
 <BaseLayout
   title="Projects | Will Chai"
-  description="Selected games, tools, and editorial projects by Will Chai."
+  description="Games, tools, and editorial projects by Will Chai."
   path="/projects/"
   pageClass="projectsPage"
 >
-  <div class="pageShell">
+  <div class="pageShell projectsShell">
     <SiteHeader current="projects" />
-    <main id="main" class="pageMain">
-      <section class="indexHero projectsOpening" aria-labelledby="projectsTitle">
-        <div class="indexHeroCopy">
-          <p class="sectionMarker">Selected projects</p>
-          <h1 id="projectsTitle" class="indexTitle">Projects.</h1>
-          <p class="indexLead">
-            Games, tools, and editorial work I make with friends and collaborators.
-          </p>
+    <main id="main" class="pageMain projectsMain">
+      <section class="projectsHero" aria-labelledby="projectsTitle">
+        <div class="projectsHeroCopy">
+          <p class="projectsKicker">Selected work</p>
+          <h1 id="projectsTitle">Projects</h1>
+          <p class="projectsLead">Games, tools, and publishing.</p>
         </div>
-        <aside class="indexAside">
-          <p>Medical terminology games, typing practice, a dinner magazine, and a social deduction game.</p>
-        </aside>
+
+        <nav class="projectsIndex" aria-label="Project index">
+          <a href="#medical-terminology-games">
+            <span>01</span>
+            <strong>{medterms.title}</strong>
+            <small>{medterms.form}</small>
+          </a>
+          <a href="#tachyboard">
+            <span>02</span>
+            <strong>{tachyboard.title}</strong>
+            <small>Typing practice</small>
+          </a>
+          <a href="#searing-stories">
+            <span>03</span>
+            <strong>{searing.title}</strong>
+            <small>{searing.form}</small>
+          </a>
+          <a href="#conspirasea">
+            <span>04</span>
+            <strong>{conspirasea.title}</strong>
+            <small>Social deduction game</small>
+          </a>
+        </nav>
       </section>
 
-      <section class="section projectsCollection" aria-labelledby="projectCollectionTitle">
-        <div class="sectionHeader">
-          <h2 id="projectCollectionTitle">Current work</h2>
-          <p>Each entry leads to the project itself or to a concise record here.</p>
-        </div>
-        <div class="collectionGrid projectsGrid">
-          {
-            projects.map((project) => (
-              <WorkCard
-                href={project.slug === "searing-stories" ? "https://searingstories.com" : `/projects/${project.slug}/`}
-                title={project.title}
-                meta={`${project.form} · ${project.period}`}
-                description={project.summary}
-                image={project.image}
-                imageAlt={project.imageAlt}
-                imageClass={project.imageClass}
-                className={`workCard--${project.slug}`}
-                external={project.slug === "searing-stories"}
-                actionLabel={project.slug === "searing-stories" ? "Visit Searing Stories" : project.slug === "tachyboard" ? "View working record" : "Open project"}
+      <div class="projectsSequence">
+        <article id="medical-terminology-games" class="projectChapter projectChapterMedterms">
+          <header class="projectChapterHeader">
+            <p class="projectNumber">01</p>
+            <p class="projectMeta">{medterms.form} · {medterms.period}</p>
+          </header>
+
+          <div class="medtermsTitleGroup">
+            <h2>{medterms.title}</h2>
+            <p>{medterms.summary}</p>
+          </div>
+
+          <div class="medtermsComposition">
+            <div class="medtermsCount" aria-label="Six games">
+              <strong>6</strong>
+              <span>free browser games</span>
+            </div>
+            <figure class="medtermsCreators">
+              <img
+                src={medterms.image}
+                alt={medterms.imageAlt}
+                width="1448"
+                height="1086"
+                loading="eager"
+                decoding="async"
               />
-            ))
-          }
-        </div>
-      </section>
+            </figure>
+            <figure class="medtermsIdeosis">
+              <img
+                src={medterms.secondaryImage}
+                alt={medterms.secondaryImageAlt}
+                width={medterms.secondaryImageWidth}
+                height={medterms.secondaryImageHeight}
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+          </div>
+
+          <footer class="projectChapterFooter">
+            <p>Medical words become material for social play, quick decisions, and group practice.</p>
+            <a class="projectAction" href="/projects/medterms/">View the project</a>
+          </footer>
+        </article>
+
+        <article id="tachyboard" class="projectChapter projectChapterTachyboard">
+          <div class="tachyboardField" aria-hidden="true">
+            <img src={tachyboard.image} alt="" width="1600" height="900" loading="lazy" decoding="async" />
+          </div>
+
+          <header class="projectChapterHeader">
+            <p class="projectNumber">02</p>
+            <p class="projectMeta">Typing practice · In development</p>
+          </header>
+
+          <div class="tachyboardCopy">
+            <h2>{tachyboard.title}</h2>
+            <p>A typing practice system built around accuracy, timing, and readable progress.</p>
+            <a class="projectAction projectActionLight" href="/projects/tachyboard/">View the working record</a>
+          </div>
+
+          <p class="tachyboardMeasure" aria-hidden="true">TYPING<br />MEASURED</p>
+        </article>
+
+        <article id="searing-stories" class="projectChapter projectChapterSearing">
+          <header class="projectChapterHeader">
+            <p class="projectNumber">03</p>
+            <p class="projectMeta">{searing.form} · {searing.period}</p>
+          </header>
+
+          <div class="searingOpening">
+            <div class="searingTitleGroup">
+              <h2>{searing.title}</h2>
+              <p>{searing.summary}</p>
+            </div>
+            <figure class="searingMeal">
+              <img
+                src={searing.image}
+                alt={searing.imageAlt}
+                width="800"
+                height="556"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+          </div>
+
+          <div class="searingLower">
+            <figure class="searingHosts">
+              <img
+                src={searing.secondaryImage}
+                alt={searing.secondaryImageAlt}
+                width={searing.secondaryImageWidth}
+                height={searing.secondaryImageHeight}
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+            <div class="searingCopy">
+              <p>A guest, a home cooked dinner, and a conversation shaped into an editorial feature.</p>
+              <a class="projectAction" href="https://searingstories.com" rel="external">Visit Searing Stories</a>
+            </div>
+          </div>
+        </article>
+
+        <article id="conspirasea" class="projectChapter projectChapterConspirasea">
+          <header class="projectChapterHeader">
+            <p class="projectNumber">04</p>
+            <p class="projectMeta">{conspirasea.form} · {conspirasea.period}</p>
+          </header>
+
+          <figure class="conspiraseaArtwork">
+            <img
+              src={conspirasea.image}
+              alt={conspirasea.imageAlt}
+              width="1920"
+              height="1080"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+
+          <div class="conspiraseaClosing">
+            <div>
+              <h2>{conspirasea.title}</h2>
+              <p>{conspirasea.summary}</p>
+            </div>
+            <dl>
+              <div><dt>Players</dt><dd>5 to 16</dd></div>
+              <div><dt>Roles</dt><dd>32</dd></div>
+              <div><dt>Release</dt><dd>1.0</dd></div>
+            </dl>
+            <a class="projectAction projectActionLight" href="/projects/conspirasea/">View the project</a>
+          </div>
+        </article>
+      </div>
 
       <ContactEnding />
     </main>

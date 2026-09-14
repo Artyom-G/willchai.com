@@ -411,6 +411,14 @@ pages share the interface system while allowing crop, media sequence, title
 placement, and internal composition to respond to each work. Shared
 navigation, typography, and contact endings keep the pages related.
 
+The Projects chooser opens with a numbered index and continues as four full
+width chapters. Each chapter uses original project media, its own proportion,
+and one clear action. Medical Terminology Games combines the creator drawing
+with game artwork. Tachyboard uses its triangular field. Searing Stories pairs
+the dinner and host photographs. ConspiraSea closes with its original title
+artwork and compact game facts. Ordinary scrolling carries the sequence, and
+phone layouts retain the same order in one column.
+
 Films opens with the original red Murder of Minus portrait. The face, raised
 hand and component remain in frame. Wattleseed follows with its library image.
 Original title artwork links to the individual film page. Year, runtime,
