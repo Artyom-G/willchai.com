@@ -130,7 +130,18 @@ const shuffleBatchSize = 36;
           <button type="button" data-shuffle-more>Load more photographs</button>
           <p class="visuallyHidden" data-shuffle-status aria-live="polite">{shuffleBatchSize} photographs shown</p>
         </div>
-        <noscript><style>[data-shuffle-more], [data-shuffle-reset] { display: none; }</style></noscript>
+        <noscript>
+          <div class="shuffleGallery" aria-label="More portfolio photographs">
+            {shufflePhotographs.slice(shuffleBatchSize).map((photograph, index) => (
+              <figure class="shuffleItem">
+                <a href={photograph.src} aria-label={`Open portfolio photograph ${index + shuffleBatchSize + 1}`}>
+                  <img src={photograph.src} alt={`Portfolio photograph ${index + shuffleBatchSize + 1}`} width={photograph.width} height={photograph.height} loading="lazy" decoding="async" />
+                </a>
+              </figure>
+            ))}
+          </div>
+          <style>[data-shuffle-more], [data-shuffle-reset] { display: none; }</style>
+        </noscript>
       </section>
     </main>
     <PhotographyFooter />

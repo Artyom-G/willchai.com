@@ -433,3 +433,8 @@ ConspiraSea and Searing Stories use sections within Projects. Retired project ad
 ## Search continuity
 
 Shared page metadata describes the subject and author. Film details carry Movie data. Historical project records preserve the original topic and distinguish the recorded project from current services. Footer quick links give the Hey utility page a crawlable incoming link.
+
+
+## Photography access and inquiry delivery
+
+Photography keeps every portfolio photograph available in its static gallery. Images beyond the first batch use native lazy loading. The builder pointer runs while the builder is visible and the page is active. Long inquiries keep the complete message in the copyable field and use Copy and open email to prepare a subject addressed to Will.

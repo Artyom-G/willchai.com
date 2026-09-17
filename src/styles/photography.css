@@ -80,7 +80,7 @@ html:has(.photographyPage) { scroll-behavior:auto; scrollbar-gutter:stable; }
 .arcadeInterior { position:relative; padding:clamp(1.5rem,4vw,4rem); background:var(--wc-white); clip-path:polygon(1% 0,98% 1%,100% 54%,98% 99%,3% 100%,0 32%); }
 .arcadeWelcome { padding-right:0; margin-bottom:var(--wc-space-8); }
 .arcadeWelcome h2 { margin:0; font-family:var(--wc-font-display); font-weight:400; font-size:clamp(1.85rem,3.8vw,3.75rem); line-height:1.15; letter-spacing:-.04em; }
-.arcadePointer { position:absolute; width:40px; height:auto; right:-20px; bottom:-24px; pointer-events:none; z-index:4; transform-origin:25% 25%; animation:arcadePointerMove 2400ms steps(1,end) infinite; }
+.arcadePointer { position:absolute; width:40px; height:auto; right:-20px; bottom:-24px; pointer-events:none; z-index:4; transform-origin:25% 25%; animation:arcadePointerMove 2400ms steps(1,end) infinite; animation-play-state:paused; }
 @keyframes arcadePointerMove { 0%,18%,100%{transform:translate3d(10px,-10px,0)} 32%{transform:translate3d(5px,-5px,0)} 42%,50%{transform:translate3d(0,0,0)} 60%{transform:translate3d(2px,3px,0)} 72%{transform:translate3d(7px,-4px,0)} }
 .shootBuilder { display:grid; grid-template-columns:minmax(0,1.5fr) minmax(0,1fr); gap:clamp(1.5rem,4vw,4rem); align-items:start; }
 .shootInputs { min-width:0; }
@@ -118,6 +118,7 @@ html:has(.photographyPage) { scroll-behavior:auto; scrollbar-gutter:stable; }
 .shootNext [data-next-label],.shootNext [data-email-label] { white-space:nowrap; }
 .shootNext > svg { flex:none; transition:transform var(--wc-duration-interface) var(--wc-ease-out); }
 .shootNext:hover > svg { transform:translateX(4px); }
+.isPointerActive .arcadePointer { animation-play-state:running; }
 .shootNext:focus-visible .arcadePointer,.shootNext:hover .arcadePointer { animation-play-state:paused; }
 .shootNext:hover { background:var(--wc-ink); border-color:var(--wc-ink); }
 .shootNext.isEmailOpening { background:var(--wc-ink); border-color:var(--wc-ink); }

@@ -415,3 +415,8 @@ Discoverability takes priority in release review. Every indexable page needs a u
 ## September 17 project completion
 
 Searing Stories retains its title lettering as fixed SVG artwork derived from the existing outlined masthead. The downloadable Trattatello font is retired. Each current project scene states Will’s contribution using the recorded credits. Existing external destinations remain primary. Recovery of Velocity, MFPC and original SESR materials is closed by Will’s editorial decision.
+
+
+## Photography access and inquiry delivery
+
+Photography keeps every portfolio photograph available in its static gallery. Images beyond the first batch use native lazy loading. The builder pointer runs while the builder is visible and the page is active. Long inquiries keep the complete message in the copyable field and use Copy and open email to prepare a subject addressed to Will.

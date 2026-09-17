@@ -17,6 +17,15 @@
   const nextLabel = arcade.querySelector('[data-next-label]');
   const email = arcade.querySelector('[data-shoot-email]');
   const emailLabel = arcade.querySelector('[data-email-label]');
+  const emailGuidance = arcade.querySelector('[data-email-guidance]');
+  let copyBeforeEmail = false;
+  let builderVisible = false;
+  const syncPointer = () => arcade.classList.toggle('isPointerActive', builderVisible && !document.hidden && !motion.matches);
+  new IntersectionObserver(([entry]) => {
+    builderVisible = entry.isIntersecting;
+    syncPointer();
+  }).observe(form);
+  motion.addEventListener('change', syncPointer);
   const back = arcade.querySelector('[data-shoot-back]');
   const window = arcade.querySelector('[data-shoot-steps]');
   const steps = [...arcade.querySelectorAll('[data-shoot-step]')];
@@ -111,7 +120,14 @@
       '','Could you suggest an approach and put together a quote?',''
     ].join('\n');
     message.value=inquiryBody;
-    email.href='mailto:me@willchai.com?subject='+encodeURIComponent(subject.textContent)+'&body='+encodeURIComponent(inquiryBody);
+    const emailBase='mailto:me@willchai.com?subject='+encodeURIComponent(subject.textContent);
+    const fullEmail=emailBase+'&body='+encodeURIComponent(inquiryBody);
+    copyBeforeEmail=fullEmail.length>1800;
+    email.href=copyBeforeEmail?emailBase:fullEmail;
+    emailLabel.textContent=copyBeforeEmail?'Copy and open email':'Open email';
+    emailGuidance.textContent=copyBeforeEmail
+      ? 'Your full inquiry will be copied. Paste it into the email which opens.'
+      : 'Copy text keeps your complete inquiry ready to paste into your usual email.';
     fitName();
   };
   const syncStep = () => {
@@ -121,7 +137,7 @@
     next.hidden=step===2;
     email.hidden=step!==2;
     nextLabel.textContent='Next';
-    emailLabel.textContent='Open email';
+    emailLabel.textContent=copyBeforeEmail?'Copy and open email':'Open email';
     email.classList.remove('isEmailOpening');
     back.hidden=step===0;
     next.disabled=back.disabled=false;
@@ -177,14 +193,26 @@
     event.preventDefault();
     if(step<2) return moveTo(step+1);
   });
-  email.addEventListener('click',()=>{
+  email.addEventListener('click',async event=>{
+    if(copyBeforeEmail) {
+      event.preventDefault();
+      try {
+        await navigator.clipboard.writeText(inquiryBody);
+        announce('Full inquiry copied. Paste it into your email.');
+        location.href=email.href;
+      } catch {
+        message.focus(); message.select();
+        announce('Your full inquiry is selected. Copy it and paste it into an email to me@willchai.com.');
+      }
+      return;
+    }
     email.classList.add('isEmailOpening');
     emailLabel.textContent='Opening email…';
     announce('Opening your email app. Copy text is ready if it stays here.');
     clearTimeout(emailTimer);
     emailTimer=setTimeout(()=>{
       email.classList.remove('isEmailOpening');
-      emailLabel.textContent='Open email';
+      emailLabel.textContent=copyBeforeEmail?'Copy and open email':'Open email';
     },1200);
   });
   back.addEventListener('click',()=>moveTo(step-1));
@@ -234,6 +262,7 @@
     syncStep();
   });
   document.addEventListener('visibilitychange',()=>{
+    syncPointer();
     scene.classList.toggle('isPaused',document.hidden);
     stage.classList.toggle('isPaused',document.hidden);
     transitions.forEach(animation=>document.hidden?animation.pause():animation.play());
