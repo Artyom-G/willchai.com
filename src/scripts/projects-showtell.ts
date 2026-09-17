@@ -686,35 +686,6 @@ function startProjects(root: HTMLElement) {
     { rootMargin: "350px" },
   );
   loader.observe(handsHost);
-  let searingTitleLoading = false;
-  const searing = scenes.find((scene) => scene.dataset.scene === "searing")!;
-  const searingTitleLoader = new IntersectionObserver(
-    (entries) => {
-      if (!entries.some((entry) => entry.isIntersecting) || searingTitleLoading)
-        return;
-      searingTitleLoading = true;
-      searingTitleLoader.disconnect();
-      void new FontFace(
-        "Project Searing",
-        'url("/assets/projects-v5/searing-trattatello.woff2") format("woff2")',
-        { display: "swap" },
-      )
-        .load()
-        .then((font) => {
-          document.fonts.add(font);
-          searing.dataset.titleFont = "ready";
-          const masthead = searing.querySelector<HTMLElement>(".searingMasthead");
-          masthead?.style.setProperty("font-family", '"Project Searing", cursive');
-          masthead?.style.setProperty("font-weight", "400");
-          masthead?.style.setProperty("letter-spacing", "0");
-        })
-        .catch(() => {
-          searingTitleLoading = false;
-        });
-    },
-    { rootMargin: "700px" },
-  );
-  searingTitleLoader.observe(searing);
   const visibility = new IntersectionObserver((entries) => {
     for (const entry of entries) {
       handVisible = entry.isIntersecting;
@@ -760,7 +731,6 @@ function startProjects(root: HTMLElement) {
     if (!event.persisted) {
       hands?.dispose();
       loader.disconnect();
-      searingTitleLoader.disconnect();
       visibility.disconnect();
       resize.disconnect();
     }

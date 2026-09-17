@@ -241,8 +241,9 @@ if (demo) {
     signal(event.key);
     cue.textContent = cueFor(event.key);
   });
-  input.addEventListener("blur", () => {
-    if (!manual) return;
+  demo.addEventListener("focusout", () => {
+    window.setTimeout(() => {
+    if (!manual || demo.contains(document.activeElement)) return;
     manual = false;
     step = 0;
     completed = 0;
@@ -250,6 +251,7 @@ if (demo) {
     input.value = "";
     draw(true);
     sync();
+    }, 0);
   });
 
   const observer = new IntersectionObserver((entries) => {

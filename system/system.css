@@ -1,12 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Funnel+Sans:wght@400;500;600&family=Unbounded:wght@400&display=swap");
 @import url("./tokens.css");
 
-@font-face {
-  font-family: "Project Searing";
-  src: url("../public/assets/projects-v5/searing-trattatello.woff2") format("woff2");
-  font-display: swap;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -1314,9 +1308,11 @@ img {
 .showtellReferenceMedia{display:grid;gap:24px;margin-top:24px}.showtellReferenceMedia figure{margin:0;background:var(--wc-white);color:var(--wc-ink)}
 .showtellReferenceMedia img{display:block;width:100%;height:auto}.showtellReferenceMedia figcaption{padding:16px;font-size:15px;line-height:1.5}
 .showtellReferenceTyping h4{font:400 clamp(32px,4vw,56px)/1 'Tachyboard Serif',serif;letter-spacing:-.03em;margin:24px 24px 16px}.showtellReferenceTyping p{margin:0 24px;font-size:15px}
-.showtellReferenceDinner .showtellReferenceMasthead{display:flex;flex-direction:column;width:88%;margin:24px auto;font:400 clamp(32px,7vw,82px)/.72 "Project Searing",cursive}
+.showtellReferenceDinner .showtellReferenceMasthead{display:flex;flex-direction:column;width:88%;margin:24px auto;font:400 clamp(32px,7vw,82px)/.72 Georgia,serif}
 @media(max-width:480px){.showtellReferenceCatalogue{padding:16px}.showtellReferenceCatalogue li a{display:block;font-size:22px}.showtellReferenceCatalogue li img{margin-bottom:10px}}
 
 .showtellReferenceTyping h4 a{color:inherit;text-decoration:none}.showtellReferenceTyping .referencePractice{font:22px/1.6 var(--wc-project-typing-font);color:var(--wc-project-typing-untyped)}
 .referenceDinnerHero,.referenceSeaHero{position:relative;display:block}.referenceDinnerHero .showtellReferenceMasthead{position:absolute;left:6%;top:28%;width:88%;margin:0;color:#fff;text-shadow:0 2px 4px #0007}.referenceDinnerHero .showtellReferenceMasthead span+span{margin-left:clamp(22px,8vw,100px)}.showtellReferenceMedia .showtellReferenceDinner{background:var(--wc-project-searing-rust);color:#fff}.showtellReferenceMedia .showtellReferenceSea{background:var(--wc-project-sea-panel);color:#fff}.referenceSeaHero .referenceSeaLogo{position:absolute;left:18%;top:18%;width:64%;filter:invert(1)}
 .referenceSeaPackages{position:absolute;right:5%;bottom:3%;width:47%;height:46%;display:block}.referenceSeaPackages img:first-child{position:absolute;left:0;bottom:0;width:83%;filter:drop-shadow(0 10px 10px #0009)}.referenceSeaPackages img:last-child{position:absolute;right:0;bottom:-3%;width:31%;filter:drop-shadow(0 8px 8px #0009)}
+
+.showtellReferenceMasthead>span{display:block;height:.72em}.showtellReferenceMasthead>span img{display:block;width:2.6em;height:1.209em;max-width:none}.showtellReferenceMasthead>span+span img{width:2.305em}

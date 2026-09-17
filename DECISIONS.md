@@ -411,3 +411,7 @@ Projects is the portfolio destination for ConspiraSea and Searing Stories. Their
 ## Search continuity, September 17, 2026
 
 Discoverability takes priority in release review. Every indexable page needs a unique descriptive title, useful summary, canonical destination, crawlable incoming links and accurate structured data. Preserve useful historical destinations with substantive archive records or relevant permanent redirects. The URL inventory records evidence and unresolved source recovery. Keep private drafts outside production. Search Console processing and live HTTP verification form part of release validation. Inqling, Transit and LockedIn retain their historical article addresses.
+
+## September 17 project completion
+
+Searing Stories retains its title lettering as fixed SVG artwork derived from the existing outlined masthead. The downloadable Trattatello font is retired. Each current project scene states Will’s contribution using the recorded credits. Existing external destinations remain primary. Recovery of Velocity, MFPC and original SESR materials is closed by Will’s editorial decision.

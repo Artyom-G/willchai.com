@@ -5,7 +5,12 @@
   "publication": {
     "state": "site-published",
     "verifiedAt": "2026-09-17",
-    "activeGenerations": ["projects-v3", "projects-v4", "projects-v5", "projects-v6"],
+    "activeGenerations": [
+      "projects-v3",
+      "projects-v4",
+      "projects-v5",
+      "projects-v6"
+    ],
     "activeReferences": [
       "https://willchai.com/projects/",
       "https://willchai.com/projects/conspirasea/",
@@ -804,7 +809,7 @@
       "status": "current",
       "source": "/Users/wchai/Documents/Vault/WillChai Company/ConspiraSea/conspirasea-deploy/public/assets/ConspiraSea logo.png",
       "sourceSha256": "d3e94fedd36859bd1b055cde2c8fc8a9d754bbf0ced3cc5ce8244900374dee99",
-      "treatment": "Original logo pixels. A scoped CSS inversion follows the game’s white display.",
+      "treatment": "Original logo pixels. A scoped CSS inversion follows the game\u2019s white display.",
       "width": 1000,
       "height": 322,
       "alpha": true
@@ -837,10 +842,10 @@
       "file": "public/assets/projects-v5/searing-trattatello.woff2",
       "bytes": 223280,
       "sha256": "f70c629f7acc6c83c525bacc9114c1f599e28e672d574f5e93b3cec3e2f8aa07",
-      "status": "current",
+      "status": "retired",
       "source": "/Users/wchai/Documents/Vault/WillChai Company/Searing Stories/site/public/fonts/Trattatello.woff2",
       "sourceSha256": "f70c629f7acc6c83c525bacc9114c1f599e28e672d574f5e93b3cec3e2f8aa07",
-      "treatment": "Published title face loaded only as the Searing scene approaches. The scene retains the source’s two line masthead composition.",
+      "treatment": "Removed from public output. Existing outlined title artwork supplies the masthead.",
       "format": "WOFF2"
     }
   ],
@@ -881,5 +886,19 @@
     "hopMilliseconds": 780,
     "rigSha256": "bc2c6e900cff44926335bafbbee95227213d6454d105ec8e35f3cec848ec054e"
   },
-  "independentReview": "artifacts/projects-revision-2/independent/REVIEW.md"
+  "independentReview": "artifacts/projects-revision-2/independent/REVIEW.md",
+  "searingTitleArtwork": [
+    {
+      "file": "public/assets/projects-v5/searing-lettering.svg",
+      "source": "public/assets/projects-v4/searing-masthead-black.svg",
+      "treatment": "Existing word outlines separated for the responsive two line title.",
+      "sha256": "a38ee17320ec3210b8845903920b7483d8b3ac3bc83b1fa5a4bcb5ac97aa2df3"
+    },
+    {
+      "file": "public/assets/projects-v5/stories-lettering.svg",
+      "source": "public/assets/projects-v4/searing-masthead-black.svg",
+      "treatment": "Existing word outlines separated for the responsive two line title.",
+      "sha256": "2429f538daeb8d057247484896601c47683e8ceceb31f6f29010df2b07787b02"
+    }
+  ]
 }

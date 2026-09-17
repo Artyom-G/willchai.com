@@ -178,7 +178,7 @@ preserve keyboard operation. See `PATTERNS.md` for the complete contract.
 
 ## Projects show and tell reference
 
-`index.html#projects-sequence` presents the six game catalogue, Tachyboard’s active session view and corrected hands, Searing Stories’ landing and hosts photographs, and ConspiraSea’s underwater setting, physical game packages and role card deck. `PATTERNS.md` records the four scene compositions, bounded typography, physical supports, input behaviour and motion rules. The native sprite exporter preserves the original face and palette. Asset sources, dimensions, hashes and licences are recorded in `src/data/projects-showtell-sources.json` and `artifacts/projects-polish/conspirasea-role-cards.json`. The Searing title uses the published Trattatello face as its scene approaches. The contact component is shared by Home and Projects.
+`index.html#projects-sequence` presents the six game catalogue, Tachyboard’s active session view and corrected hands, Searing Stories’ landing and hosts photographs, and ConspiraSea’s underwater setting, physical game packages and role card deck. `PATTERNS.md` records the four scene compositions, bounded typography, physical supports, input behaviour and motion rules. The native sprite exporter preserves the original face and palette. Asset sources, dimensions, hashes and licences are recorded in `src/data/projects-showtell-sources.json` and `artifacts/projects-polish/conspirasea-role-cards.json`. The Searing title uses existing outlined artwork with an accessible link name. The contact component is shared by Home and Projects.
 
 ## September repair reference
 
