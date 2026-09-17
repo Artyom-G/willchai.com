@@ -1,0 +1,231 @@
+@import "../../system/tokens.css";
+@font-face{font-family:"Project Garamond";src:url("/assets/projects-v3/eb-garamond.woff2") format("woff2");font-style:normal;font-weight:700;font-display:swap;}
+@font-face{font-family:"Project Hand";src:url("/assets/projects-v3/patrick-hand.woff2") format("woff2");font-style:normal;font-weight:400;font-display:swap;}
+@font-face{font-family:"Project Instrument";src:url("/assets/projects-v4/instrument-serif-regular.woff2") format("woff2");font-style:normal;font-weight:400;font-display:swap;}
+@font-face{font-family:"Project Instrument";src:url("/assets/projects-v4/instrument-serif-italic.woff2") format("woff2");font-style:italic;font-weight:400;font-display:swap;}
+.projectsPage .pageShell {
+  max-width: 1600px;
+  padding-inline: var(--wc-gutter-desktop);
+}
+.showtell {
+  position: relative;
+  margin-top: 0;
+}
+.showOpening {
+  position: relative;
+  padding: 116px clamp(1rem, 4vw, 4rem) 2rem;
+}
+.showOpening h1 {
+  margin: 0;
+  font: 400 clamp(3.2rem, 9.5vw, 9rem)/1.04 var(--wc-font-display);
+  letter-spacing: -0.065em;
+}
+.showOpening h1{display:flex;align-items:baseline;gap:0;}
+.titleLetter {
+  display: inline-block;
+  position: relative;
+}
+.showOpening p {
+  font-size: 17px;
+  margin: 1.2rem 0 0;
+}
+.guideToggle {
+  position: absolute;
+  right: clamp(1rem, 4vw, 4rem);
+  bottom: 2.5rem;
+  background: transparent;
+  color: var(--wc-slate);
+  border: 1px solid var(--wc-hairline);
+  border-radius: 999px;
+  font: 500 15px var(--wc-font-sans);
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+}
+.projectScene {
+  position: relative;
+  margin-bottom: 16px;
+  padding: clamp(1.5rem, 4vw, 4rem);
+  scroll-margin-top: 16px;
+  isolation: isolate;
+}
+.sceneHeading {
+  position: relative;
+  z-index: 2;
+}
+.sceneHeading h2 {
+  overflow-wrap: anywhere;
+  font: 400 clamp(1.8rem, 3.1vw, 3rem)/1.14 var(--wc-font-display);
+  letter-spacing: -0.05em;
+  margin: 0;
+  max-width: 24ch;
+}
+.sceneHeading p {
+  font: 400 17px/1.5 var(--wc-font-sans);
+  max-width: 42ch;
+  margin: 1rem 0 0;
+}
+.support {
+  position: absolute;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+.showGuide {
+  position: absolute;
+  z-index: 5;
+  left: 0;
+  top: 0;
+  width: 192px;
+  height: 192px;
+  pointer-events: none;
+  contain: layout style;
+  --sprite-size: 192px;
+  --frame: 0;
+}
+.guideSprite {
+  width: 100%;
+  height: 100%;
+  background-image: url("/assets/projects-v3/will-host.png");
+  background-repeat: no-repeat;
+  background-size: 1800% 100%;
+  background-position: calc(var(--frame) * 100% / 17) 0;
+  image-rendering: pixelated;
+}
+.guideProp {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  transform: translate(-50%, -100%);
+  filter: drop-shadow(0 4px 2px #0004);
+}
+.guideBubble {
+  position: absolute;
+  top: 10%;
+  left: 70%;
+  width: max-content;
+  max-width: min(14em, calc(100vw - 24px));
+  padding: 0.8rem 1rem;
+  background: var(--wc-white);
+  color: var(--wc-ink);
+  border: 3px solid var(--wc-ink);
+  box-shadow: 4px 4px var(--wc-ink);
+  font: 400 15px/1.4 var(--wc-font-sans);
+}
+.guideBubble p {
+  margin: 0;
+}
+.guideBubble::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: var(--tail-left, 14px);
+  width: 10px;
+  height: 10px;
+  border-left: 3px solid var(--wc-ink);
+  background: white;
+}
+.guideBubble[data-side="left"] {
+  left: auto;
+  right: 65%;
+}
+.showtell [hidden] {
+  display: none !important;
+}
+.showtell :is(a, button, textarea):focus-visible {
+  outline: 3px solid var(--wc-vermilion);
+  outline-offset: 6px;
+}
+.showtell button {
+  font-family: var(--wc-font-sans);
+  font-size: 15px;
+}
+.showtell a,
+.showtell button {
+  -webkit-tap-highlight-color: transparent;
+}
+.showtell .contact-section {
+  margin-top: 16px;
+}
+.showtell[data-guide-hidden="true"] [data-character][aria-pressed="true"] {
+  transform: translateY(-12px) scale(1.15);
+}
+.showtell[data-guide-hidden="true"] [data-character][aria-pressed="true"] img {
+  opacity: 1;
+}
+@media (max-width: 1100px) {
+  .showGuide {
+    width: 160px;
+    height: 160px;
+    --sprite-size: 160px;
+  }
+  .guideProp {
+    width: 100px;
+    height: 100px;
+  }
+  .showOpening {
+    padding-top: 100px;
+  }
+}
+@media (max-width: 600px) {
+  .projectsPage .pageShell {
+    padding-inline: var(--wc-gutter-mobile);
+  }
+  .showOpening {
+    padding: 90px 0.5rem 5.5rem;
+  }
+  .showOpening p {
+    font-size: 15px;
+    max-width: 22ch;
+  }
+  .guideToggle {
+    bottom: 1rem;
+    right: 0.5rem;
+  }
+  .showGuide {
+    width: 128px;
+    height: 128px;
+    --sprite-size: 128px;
+  }
+  .guideProp {
+    width: 80px;
+    height: 80px;
+  }
+  .guideBubble {
+    max-width: min(12.15em, calc(100vw - 24px));
+    left: 55%;
+    font-size: 14px;
+    padding: 0.6rem;
+  }
+  .projectScene {
+    padding: 1.5rem 1rem;
+  }
+  .sceneHeading p {
+    font-size: 15px;
+  }
+  .sceneHeading h2 {
+    font-size: 1.7rem;
+  }
+  .showtell .contact-section {
+    padding: 2rem 1rem;
+  }
+  .showtell .ticket-stage {
+    margin-top: 3rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .showtell *,
+  .showtell *::before,
+  .showtell *::after {
+    animation-duration: 0s !important;
+    transition-duration: 0s !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@font-face{font-family:"Project Montserrat";src:url("/assets/projects-v5/montserrat-alternates.woff2") format("woff2");font-weight:400;font-display:swap;}
+@font-face{font-family:"Project Montserrat";src:url("/assets/projects-v5/montserrat-alternates-semibold.woff2") format("woff2");font-weight:600;font-display:swap;}
+@font-face{font-family:"Project Pirata";src:url("/assets/projects-v5/pirata-one.woff2") format("woff2");font-weight:400;font-display:swap;}
+.projectTitleLink,.projectTextLink{color:inherit;text-decoration:none;}.projectTitleLink{display:block;}.projectTitleLink:hover,.projectTextLink:hover{opacity:.8;}
+.guideJump{position:absolute;left:28%;top:14%;width:46%;height:83%;padding:0;border:0;background:transparent;pointer-events:auto;cursor:pointer;}
+.showGuide:has(.guideJump:hover) .guideSprite{filter:brightness(1.08) saturate(1.1);}

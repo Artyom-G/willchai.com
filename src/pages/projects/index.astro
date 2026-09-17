@@ -2,60 +2,82 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
-import ContactEnding from "../../components/ContactEnding.astro";
-import WorkCard from "../../components/WorkCard.astro";
-import { projects } from "../../data/projects";
+import ContactTicket from "../../components/ContactTicket.astro";
+import MedTermsScene from "../../components/projects/MedTermsScene.astro";
+import TachyboardScene from "../../components/projects/TachyboardScene.astro";
+import SearingScene from "../../components/projects/SearingScene.astro";
+import ConspiraSeaScene from "../../components/projects/ConspiraSeaScene.astro";
+import "../../styles/projects.css";
 ---
 
 <BaseLayout
   title="Projects | Will Chai"
-  description="Selected games, tools, and editorial projects by Will Chai."
+  description="Medical terminology games, typing practice, dinner conversations and social deduction. Projects by Will Chai."
   path="/projects/"
   pageClass="projectsPage"
 >
   <div class="pageShell">
     <SiteHeader current="projects" />
-    <main id="main" class="pageMain">
-      <section class="indexHero projectsOpening" aria-labelledby="projectsTitle">
-        <div class="indexHeroCopy">
-          <p class="sectionMarker">Selected projects</p>
-          <h1 id="projectsTitle" class="indexTitle">Projects.</h1>
-          <p class="indexLead">
-            Games, tools, and editorial work I make with friends and collaborators.
-          </p>
+    <main id="main" class="showtell" data-showtell>
+      <header
+        class="showOpening"
+        data-scene="hello"
+        data-speech="I’ve brought a few things."
+        data-entrance={JSON.stringify([
+          { pose: "wave", duration: 800 },
+          { pose: "look", duration: 700 },
+          { pose: "rest", duration: 500 },
+        ])}
+      >
+        <h1 aria-label="Projects.">
+          <span class="titleLetter">
+            P
+            <span
+              class="support"
+              data-support
+              data-x="0.6"
+              data-y="0.21"
+            ></span>
+          </span>
+          <span>rojects.</span>
+        </h1>
+        <p>A few things I’ve been making.</p>
+        <button
+          class="guideToggle"
+          type="button"
+          data-guide-toggle
+          aria-pressed="true"
+          hidden
+        >
+          Hide Will
+        </button>
+      </header>
+      <MedTermsScene />
+      <TachyboardScene />
+      <SearingScene />
+      <ConspiraSeaScene />
+      <ContactTicket guide />
+      <div class="showGuide" data-guide hidden>
+        <div class="guideSprite" data-guide-sprite aria-hidden="true"></div>
+        <button class="guideJump" type="button" data-guide-jump aria-label="Make Will jump"></button>
+        <img
+          class="guideProp"
+          data-guide-prop
+          alt=""
+          width="128"
+          height="128"
+          hidden
+        />
+        <div class="guideBubble" data-guide-bubble aria-hidden="true" hidden>
+          <p data-guide-speech></p>
         </div>
-        <aside class="indexAside">
-          <p>Medical terminology games, typing practice, a dinner magazine, and a social deduction game.</p>
-        </aside>
-      </section>
-
-      <section class="section projectsCollection" aria-labelledby="projectCollectionTitle">
-        <div class="sectionHeader">
-          <h2 id="projectCollectionTitle">Current work</h2>
-          <p>Each entry leads to the project itself or to a concise record here.</p>
-        </div>
-        <div class="collectionGrid projectsGrid">
-          {
-            projects.map((project) => (
-              <WorkCard
-                href={project.slug === "searing-stories" ? "https://searingstories.com" : `/projects/${project.slug}/`}
-                title={project.title}
-                meta={`${project.form} · ${project.period}`}
-                description={project.summary}
-                image={project.image}
-                imageAlt={project.imageAlt}
-                imageClass={project.imageClass}
-                className={`workCard--${project.slug}`}
-                external={project.slug === "searing-stories"}
-                actionLabel={project.slug === "searing-stories" ? "Visit Searing Stories" : project.slug === "tachyboard" ? "View working record" : "Open project"}
-              />
-            ))
-          }
-        </div>
-      </section>
-
-      <ContactEnding />
+      </div>
     </main>
     <SiteFooter />
   </div>
 </BaseLayout>
+<script>
+  import "../../scripts/project-roles";
+  import "../../scripts/projects-showtell";
+  import "../../scripts/project-typing";
+</script>

@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="./system.css" />
+    <link rel="stylesheet" href="../src/styles/blog.css" />
     <script src="./system.js" defer></script>
   </head>
   <body>
@@ -18,7 +19,7 @@
       <aside class="system-nav">
         <div>
           <div class="system-brand">
-            <img src="./assets/willchai-mark.png" alt="Will Chai W mark" width="150" height="150" />
+            <img src="./assets/willchai-mark.avif" alt="Will Chai W mark" width="150" height="150" />
             <p class="eyebrow">willchai.com</p>
           </div>
           <h2 class="system-nav__title">The Will Chai System</h2>
@@ -32,6 +33,7 @@
           <a href="#signature-object">Contact ticket</a>
           <a href="#patterns">Patterns</a>
           <a href="#media">Media rules</a>
+          <a href="#blog-reading">Blog reading</a>
           <a href="#voice">Voice</a>
           <a href="#assets">Assets</a>
         </nav>
@@ -161,7 +163,7 @@
               <h3>Marks and minimum type</h3>
               <div class="mark-demo">
                 <div class="mark-demo__icon">
-                  <img src="./assets/willchai-mark.png" alt="Will Chai W mark" width="150" height="150" loading="lazy" decoding="async" />
+                  <img src="./assets/willchai-mark.avif" alt="Will Chai W mark" width="150" height="150" loading="lazy" decoding="async" />
                 </div>
                 <div class="mark-demo__copy">
                   <strong>Compact W</strong>
@@ -297,6 +299,19 @@
               remain related without becoming identical.
             </p>
           </header>
+          <article class="pattern-card" id="resume-record">
+            <h3>Résumé record</h3>
+            <p>The introduction and contact links share the opening with a compact PDF preview. A persistent desktop index follows the reading position. Phones use wrapping section links. Positions at one organization share a heading with every role and date visible.</p>
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:var(--wc-space-6);padding:var(--wc-space-6);background:var(--wc-cloud)">
+              <a href="../public/resume.pdf"><img src="../public/assets/resume-preview.webp" width="849" height="1200" style="width:8rem;height:auto" loading="lazy" alt="First page of William Chai’s résumé" /></a>
+              <div><p>PDF edition</p><a href="../public/resume.pdf" download>Download PDF ↓</a></div>
+            </div>
+            <h4>McMaster University</h4>
+            <p>Honours Health Sciences, Bachelor of Health Sciences, Level 4</p>
+            <p>2023 to 2027 (expected)</p>
+            <p>Dean’s Honour List, 2024.</p>
+          </article>
+
 
           <div class="pattern-list">
             <article class="pattern-entry">
@@ -327,22 +342,72 @@
               </div>
             </article>
 
-            <article class="pattern-entry">
+            <article class="pattern-entry" id="films-cinema">
               <div class="pattern-copy">
-                <h3>Films programme</h3>
-                <p>Original stills lead each film in one reading column, with upright poster artwork beside each frame. A selected image continues into its detail page, and trailer actions open a dismissible player.</p>
+                <h3>Films cinema canvas</h3>
+                <p>Murder of Minus opens the sequence. Original linked titles, selected stills and a short synopsis share an Ink canvas. Compact festival groups preserve full artwork margins and use original graphics matched to the recorded edition and outcome. Each still appears once and opens in a viewer. Supporting images remain fixed under the pointer.</p>
                 <dl class="pattern-contract">
-                  <div><dt>Required</dt><dd>Exact title, year, runtime, director credit, premise, film page and trailer.</dd></div>
-                  <div><dt>Behaviour</dt><dd>Motion follows a viewing choice. Reduced motion opens the destination directly.</dd></div>
-                  <div><dt>Must hold</dt><dd>Reserved media dimensions, keyboard operation, playback cleanup and direct trailer links.</dd></div>
+                  <div><dt>Content</dt><dd>Original title artwork, year, runtime, director, Trailer and sourced festival records.</dd></div>
+                  <div><dt>Behavior</dt><dd>Native scrolling, linked titles, bordered Press kit controls and dismissible media dialogs.</dd></div>
+                  <div><dt>Access</dt><dd>Underlined festival links, readable text, keyboard operation and reduced motion support.</dd></div>
                 </dl>
               </div>
-              <div class="pattern-demo">
-                <figure class="detail-demo__media">
-                  <img src="../public/assets/films/wattleseed/cover-1280.avif" alt="A researcher leans across a library table in Wattleseed" width="1280" height="692" loading="lazy" />
-                  <figcaption>The original Wattleseed still leads its film entry.</figcaption>
-                </figure>
-                <a class="text-link" href="https://willchai-site.willchai.chatgpt.site/films/">Open the Films page</a>
+              <div class="pattern-demo film-cinema-demo">
+                <div class="film-cinema-demo__frame">
+                  <img src="../public/assets/films/minus-portrait.avif" alt="Murder of Minus original portrait artwork" width="1920" height="2560" loading="lazy" />
+                  <a class="film-cinema-demo__title" href="https://willchai-site.willchai.chatgpt.site/films/murder-of-minus/" aria-label="Murder of Minus"><svg viewBox="38 134 724 266" focusable="false">
+    <defs><filter id="system-minus-lettering" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 -20 0 0 0 3" /></filter><filter id="system-minus-red-lettering" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 .05 0 0 0 0 .07 10 0 0 0 -8.5" /></filter></defs>
+    <image href="../public/assets/films/minus-portrait.avif" width="800" height="1067" filter="url(#system-minus-lettering)" />
+    <image href="../public/assets/films/minus-portrait.avif" width="800" height="1067" filter="url(#system-minus-red-lettering)" />
+  </svg></a>
+                  <span class="film-cinema-demo__year">2025 / 35 minutes</span>
+                  <div class="film-cinema-demo__credits"><span>Directed by Will Chai and Artyom Gabtraupov</span><a href="https://www.youtube.com/watch?v=g3s0Y_epU2I">Trailer</a></div>
+                </div>
+                <div class="film-cinema-demo__body">
+                  <div class="film-cinema-demo__spread"><p>Quinten builds Minus, an artificial intelligence. Its progress draws him into a violent confrontation.</p><img class="film-cinema-demo__profile" src="../public/assets/films/murder-of-minus/quinten-colour-640.avif" alt="A young man in blue and red light" width="640" height="347" loading="lazy" /><img class="film-cinema-demo__lead" src="../public/assets/films/murder-of-minus/auditorium-1280.avif" alt="The auditorium in Murder of Minus" width="1280" height="693" loading="lazy" /></div>
+                  <div class="film-cinema-demo__featured">
+                    <div class="film-cinema-demo__laurel"><img src="../public/assets/films/laurels/kwiff-finalist-2025.png" alt="Kitchener Waterloo finalist laurel" width="832" height="550" loading="lazy" /><a href="https://www.kwiffestival.com/kwiff2025nomination">Kitchener Waterloo International Film Festival</a><span>Finalist · 2025</span></div>
+                    <div class="film-cinema-demo__laurel"><img src="../public/assets/films/laurels/altff-actor.png" alt="Alternative Film Festival Best Actor laurel" width="832" height="463" loading="lazy" /><a href="https://altff.org/onewebmedia/MASTER%20AltFF%20Spr25.pdf#page=11">Alternative Film Festival</a><span>Best Actor · William Chai</span><span>Winner · 2025</span></div>
+                    <div class="film-cinema-demo__laurel film-cinema-demo__support"><img src="../public/assets/films/laurels/cine-paris-2025.png" alt="Cine Paris winner laurel" width="832" height="550" loading="lazy" /><a href="https://www.cineparisfilmfestival.com/winners-2025.html">Cine Paris Film Festival</a><span>Best Student Film</span><span>Winner · 2025</span></div>
+                    <div class="film-cinema-demo__cities"><p>Lift Off</p><span>Official selections · 2025</span><div><a href="https://liftoff.network/london-lift-off-film-festival/">London</a><a href="https://liftoff.network/los-angeles-lift-off-film-festival/">Los Angeles</a><a href="https://liftoff.network/new-york-lift-off-film-festival/">New York</a><a href="https://liftoff.network/toronto-lift-off-film-festival/">Toronto</a><a href="https://liftoff.network/austin-lift-off-film-festival/">Austin</a></div></div>
+                  </div>
+                  <a class="film-cinema-demo__button" href="../public/assets/films/murder-of-minus/press-kit.pdf">Press kit</a><div class="film-detail-demo"><p>Murder of Minus</p><a class="film-cinema-demo__button" href="https://willchai-site.willchai.chatgpt.site/films/murder-of-minus/">Read more about the film</a><div><img src="../public/assets/films/murder-of-minus/detail-directors-640.avif" width="640" height="960" alt="Will Chai and Artyom Gabtraupov" loading="lazy"/><section><h3>Three years making Minus</h3><p>I began Murder of Minus in November 2021, while I was in high school. Artyom and I developed the screenplay and directed the film together. We finished postproduction in January 2025.</p></section></div></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="pattern-entry" id="projects-sequence">
+              <div class="pattern-copy">
+                <h3>Projects show and tell</h3>
+                <p>Four scenes use the catalogue, practice screen, dinner photographs and underwater artwork as their visual material. Will’s eighteen poses preserve his original face, hair and palette in transparent 32 × 32 cells.</p>
+                <dl class="pattern-contract">
+                  <div><dt>Material</dt><dd>The six game catalogue, Tachyboard’s actual practice screen and corrected hands, Searing Stories’ landing and hosts photographs, plus ConspiraSea’s painted setting and physical game packages.</dd></div>
+                  <div><dt>Movement</dt><dd>Native scrolling connects visible supports. Feet attach to objects; held characters follow hand coordinates. Entrances play once, with a quiet idle every eight seconds. Direct guide jumps resolve the current scene and return to its visible support.</dd></div>
+                  <div><dt>Input</dt><dd>A 95 WPM automatic passage drives the keyboard and hands. A persistent Finger guide indicator remains visible. Selecting the keyboard focuses a text field and visitor input drives the same key states. Will responds to direct selection in every scene and stays on a visible support. Titles and destination controls open each project directly.</dd></div>
+                  <div><dt>Type</dt><dd>Funnel Sans and Unbounded remain shared. EB Garamond and Patrick Hand belong to MedTerms. Instrument Serif and the practice monospace stack belong to Tachyboard. Pirata One and Montserrat Alternates belong to ConspiraSea. The published Trattatello face forms the Searing Stories title.</dd></div>
+                </dl>
+                <p>The guide toggle and reduced motion setting preserve access to the scenes and controls. Home and Projects share the contact ticket. Scene contents and the ticket surface grow with enlarged text, and supports follow the resulting geometry.</p>
+              </div>
+              <div class="pattern-demo showtellReference">
+                <div class="showtellReferenceCatalogue">
+                  <h4>MedTerms <span>Games</span></h4>
+                  <p>A catalogue of six games. Created with Dr. Stephen Russell.</p>
+                  <div class="showtellReferenceGreeting"><span class="showtellReferenceWill" aria-hidden="true"></span></div>
+                  <ul>
+                    <li style="--game-colour:var(--wc-project-splice)"><a href="https://medterms.willchai.com/rules/splice"><img src="../public/assets/projects-v4/medterms-splice.svg" alt="" width="42" height="42" /><span>Splice</span></a></li>
+                    <li style="--game-colour:var(--wc-project-one)"><a href="https://medterms.willchai.com/rules/one"><img src="../public/assets/projects-v4/medterms-one.svg" alt="" width="42" height="42" /><span>One</span></a></li>
+                    <li style="--game-colour:var(--wc-project-medsup)"><a href="https://medterms.willchai.com/rules/medsup"><img src="../public/assets/projects-v4/medterms-medsup.svg" alt="" width="42" height="42" /><span>Meds Up</span></a></li>
+                    <li style="--game-colour:var(--wc-project-cipher)"><a href="https://medterms.willchai.com/rules/cipher"><img src="../public/assets/projects-v4/medterms-cipher.svg" alt="" width="42" height="42" /><span>Cipher</span></a></li>
+                    <li style="--game-colour:var(--wc-project-ideosis)"><a href="https://medterms.willchai.com/rules/ideosis"><img src="../public/assets/projects-v4/medterms-ideosis.svg" alt="" width="42" height="42" /><span>Ideosis</span></a></li>
+                    <li style="--game-colour:var(--wc-project-twk)"><a href="https://medterms.willchai.com/rules/twk"><img src="../public/assets/projects-v4/medterms-twk.svg" alt="" width="42" height="42" /><span>Those Who Know</span></a></li>
+                  </ul>
+                  <a class="referenceCatalogueAction" href="https://medterms.willchai.com/">Explore the games</a>
+                </div>
+                <div class="showtellReferenceMedia">
+                  <figure class="showtellReferenceTyping"><h4><a href="https://tachyboard.willchai.com/">Endless · Fresh words · 0 segments</a></h4><p class="referencePractice">Almost around below treks crank high dried curbs.</p><img src="../public/assets/projects-v5/hands-poster-desktop.webp" alt="The corrected Tachyboard hands at rest above the keyboard" width="800" height="400" loading="lazy" /><figcaption>The casing supports Will. An automatic passage includes Shift, numbers, Space, Delete and Enter. Selecting the keyboard focuses the live text field.</figcaption></figure>
+                  <figure class="showtellReferenceDinner"><a class="referenceDinnerHero" href="https://searingstories.com/"><img src="../public/assets/projects-v5/searing-landing.avif" alt="Steak, fries and a candle on the dinner table" width="768" height="534" loading="lazy" /><span class="showtellReferenceMasthead" aria-label="Searing Stories"><span aria-hidden="true">Searing</span><span aria-hidden="true">Stories</span></span></a><figcaption>The hosts portrait frame supports Will. The dinner photograph and published masthead lead into the site’s rust surface and white destination control.</figcaption></figure>
+                  <figure class="showtellReferenceSea"><a class="referenceSeaHero" href="https://www.conspirasea.top/"><img src="../public/assets/projects-v5/sea-background.jpg" alt="The painted underwater setting from ConspiraSea" width="2752" height="1536" loading="lazy" /><img class="referenceSeaLogo" src="../public/assets/projects-v5/sea-logo.png" alt="ConspiraSea" width="1000" height="322" loading="lazy" /><span class="referenceSeaPackages"><img src="../public/assets/projects-v3/box.webp" alt="ConspiraSea base game box" width="724" height="572" loading="lazy" /><img src="../public/assets/projects-v3/hadal.webp" alt="Hadal expansion package" width="276" height="443" loading="lazy" /></span></a><figcaption>The physical base game and Hadal package accompany a three role deck. Hovering, focusing or selecting a card lets Will finish his current gesture before he moves from the card edge where he stands.</figcaption></figure>
+                </div>
               </div>
             </article>
 
@@ -488,6 +553,34 @@
                 </a>
               </div>
             </article>
+          </div>
+        </section>
+
+        <section class="system-section" id="blog-reading">
+          <header class="section-header"><h2 class="section-heading">Blog reading</h2><p>A centred article opening, overview, reading surface and supporting document previews using the production typography.</p></header>
+          <div class="blogOpening">
+            <p class="blogCategory">Student Government · Draft</p>
+            <h1>What I Learned Running for MSU Office</h1>
+            <p class="blogMeta"><time datetime="2026-09-13">September 13, 2026</time></p>
+            <p class="blogOverview">Running for MSU Vice President of Administration gave me an opportunity to propose changes, learn about student government, and reflect on how candidates experience the election process.</p>
+          </div>
+          <div class="blogProse">
+            <h2>The changes I hope to make</h2>
+            <p>My platform had three pillars: Open Office, Cluster Meetings+, and MSU Index. Each concerned how people could reach one another or find information.</p>
+            <div class="campaignMaterials">
+              <figure class="campaignMaterial">
+                <a class="campaignMaterialPreview" href="../src/content/blog-media/what-i-learned-running-for-msu-office/Will_Chai_VPAdmin_Platform.pdf"><img src="../src/content/blog-media/what-i-learned-running-for-msu-office/platform-preview.png" alt="First page of the platform" /></a>
+                <figcaption><strong>Platform</strong><a href="../src/content/blog-media/what-i-learned-running-for-msu-office/Will_Chai_VPAdmin_Platform.pdf">Open the PDF</a></figcaption>
+              </figure>
+              <figure class="campaignMaterial">
+                <a class="campaignMaterialPreview" href="../src/content/blog-media/what-i-learned-running-for-msu-office/Will_Chai_VPAdmin_Presentation.pdf"><img src="../src/content/blog-media/what-i-learned-running-for-msu-office/presentation-preview.png" alt="First slide of the presentation" /></a>
+                <figcaption><strong>Presentation</strong><a href="../src/content/blog-media/what-i-learned-running-for-msu-office/Will_Chai_VPAdmin_Presentation.pdf">Open the PDF</a></figcaption>
+              </figure>
+              <figure class="campaignMaterial">
+                <a class="campaignMaterialPreview" href="../src/content/blog-media/what-i-learned-running-for-msu-office/Will_Chai_VPAdmin_Handout.pdf"><img src="../src/content/blog-media/what-i-learned-running-for-msu-office/handout-preview.png" alt="First page of the handout" /></a>
+                <figcaption><strong>Handout</strong><a href="../src/content/blog-media/what-i-learned-running-for-msu-office/Will_Chai_VPAdmin_Handout.pdf">Open the PDF</a></figcaption>
+              </figure>
+            </div>
           </div>
         </section>
 

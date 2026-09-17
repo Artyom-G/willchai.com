@@ -1,0 +1,8 @@
+---
+import { films } from '../data/films';
+import FilmsEnding from './FilmsEnding.astro';
+---
+<section class="filmClosing" aria-label="Films">
+  {[...films].reverse().map(film => <a href={`/films/${film.slug}/`}><img src={film.poster} alt={`${film.title} poster`} width={film.posterWidth} height={film.posterHeight} loading="lazy" /><div><span>{film.year}</span><h2>{film.title}</h2></div></a>)}
+</section>
+<FilmsEnding />

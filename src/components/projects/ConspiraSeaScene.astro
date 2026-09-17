@@ -1,0 +1,39 @@
+---
+import { conspiraseaRoles } from "../../data/conspirasea-roles";
+import { getProject } from "../../data/projects";
+const project = getProject("conspirasea")!;
+const initialRoles = conspiraseaRoles.slice(0, 3);
+---
+<section id="conspirasea" class="projectScene seaScene" data-scene="conspirasea" data-speech="I made my game fully playing online and free!" data-entrance="[]" aria-labelledby="sea-title">
+ <img class="seaBackdrop" src="/assets/projects-v5/sea-background.jpg" alt="" width="2752" height="1536" loading="lazy" decoding="async" />
+ <div class="seaHeroLayout">
+  <header class="seaHeading">
+   <h2 id="sea-title"><a class="projectTitleLink" href={project.primaryHref}><img src="/assets/projects-v5/sea-logo.png" alt="ConspiraSea" width="1000" height="322" loading="lazy" /></a></h2>
+   <p class="seaPremise"><a class="projectTextLink" href={project.primaryHref}>Identify friends and foes before betrayal sinks the ship.</a></p>
+   <p class="seaExplanation">A social deduction game for a group of friends. Every player receives a secret role, shares partial information, and tries to work out whom to trust before the group votes.</p>
+   <ul class="seaFacts" aria-label="ConspiraSea details"><li>Online social deduction</li><li>Secret roles</li><li>Groups of 6 to 16</li></ul>
+   <a class="seaAction" data-primary href={project.primaryHref}>Play ConspiraSea Online</a>
+  </header>
+  <figure class="seaPackages">
+   <div><img class="seaBox" src="/assets/projects-v3/box.webp" alt="ConspiraSea base game box" width="724" height="572" loading="lazy" /><img class="seaHadal" src="/assets/projects-v3/hadal.webp" alt="Hadal expansion package" width="276" height="443" loading="lazy" /></div>
+   <figcaption>Base game and Hadal expansion</figcaption>
+  </figure>
+ </div>
+ <div class="seaPresentation">
+  <div class="seaDeck"><span class="support" data-support data-x="0.17" data-mobile-x="0.17" data-y="0"></span><div class="seaCrew" aria-label="Three ConspiraSea roles">
+   {initialRoles.map(role => <div class="crewCard"><button type="button" data-character={role.id} data-role-card={role.card} aria-label={`Present ${role.name}`} aria-pressed="false"><span class="crewArt"><img src={role.card} alt="" width="420" height="588" loading="lazy" /></span><span class="crewName">{role.name}</span></button></div>)}
+  </div></div>
+  <aside class="rolePrompt"><h3>Who can you trust?</h3><p>Each player enters with a different goal. Pick up a role to meet someone from the table.</p><button type="button" data-role-refresh>Deal three roles</button><p class="roleStatus" data-role-status aria-live="polite"></p></aside>
+ </div>
+</section>
+<style>
+ .seaScene{background:var(--wc-project-sea-night);color:#f5f4f1;padding:54px clamp(24px,5vw,80px) 42px;font-family:"Project Montserrat",sans-serif;isolation:isolate;}
+ .seaBackdrop{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;z-index:-2;}.seaScene::before{content:"";position:absolute;inset:0;background:#080b1278;z-index:-1;}
+ .seaHeroLayout{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.54fr);align-items:center;gap:clamp(30px,6vw,92px);max-width:1170px;margin:auto;}.seaHeading{text-align:left;max-width:670px;}.seaHeading h2{margin:0;max-width:590px;}.seaHeading h2 img{width:100%;height:auto;display:block;filter:invert(1);}.seaPremise{font:400 clamp(25px,2.65vw,35px)/1.12 "Project Pirata",serif;max-width:27ch;margin:19px 0 0;color:#d2d7df;}.seaExplanation{font:400 16px/1.55 "Project Montserrat",sans-serif;max-width:60ch;margin:20px 0 0;color:#e2e2e5;}.seaFacts{display:flex;flex-wrap:wrap;gap:8px;margin:19px 0 25px;padding:0;list-style:none;}.seaFacts li{border:1px solid #ffffff55;border-radius:999px;padding:7px 11px;font:600 14px/1.2 "Project Montserrat",sans-serif;color:#f4f4f2;}.seaAction{display:inline-flex;justify-content:center;align-items:center;min-height:46px;background:#d9d9db;border-radius:999px;color:#14151a;font:600 16px/1.3 "Project Montserrat",sans-serif;padding:12px 32px;text-decoration:none;}.seaAction:hover,.seaAction:focus-visible{background:#fff;}
+ .seaPackages{width:min(100%,430px);margin:0;justify-self:end;}.seaPackages > div{position:relative;min-height:300px;}.seaBox{position:absolute;left:0;bottom:0;width:86%;height:auto;filter:drop-shadow(0 17px 18px #0008);}.seaHadal{position:absolute;right:0;bottom:-5px;width:33%;height:auto;filter:drop-shadow(0 14px 14px #0009);}.seaPackages figcaption{text-align:center;font:500 14px/1.35 "Project Montserrat",sans-serif;color:#d2d5dd;margin:13px 0 0;}
+ .seaPresentation{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(260px,.55fr);align-items:center;gap:clamp(22px,4vw,54px);margin:76px auto 0;max-width:1170px;}.seaDeck{position:relative;}.seaCrew{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;}.crewCard{background:var(--wc-project-sea-panel);border:1px solid #ffffff20;border-radius:18px;min-width:0;}.seaCrew button{display:block;background:transparent;border:0;padding:12px;width:100%;text-align:left;cursor:pointer;color:#fff;border-radius:18px;transition:background 160ms,transform 160ms;}.crewArt{display:block;overflow:hidden;border-radius:9px;background:#170505;aspect-ratio:420 / 588;}.crewArt img{display:block;width:100%;height:100%;object-fit:cover;transition:opacity 150ms;}.seaScene:not([data-complete="true"]) .crewArt img,.seaScene[data-dealing="true"] .crewArt img{visibility:hidden;}.seaCrew .crewName{display:block;font:400 clamp(20px,2.1vw,28px)/1.05 "Project Pirata",serif;margin:14px 0 3px;}.seaCrew button:is(:hover,:focus-visible){background:#ffffff12;transform:translateY(-4px);}.seaCrew button[aria-pressed="true"]{box-shadow:inset 0 0 0 2px #f5efe4;}.seaCrew button[aria-pressed="true"] img{opacity:.22;}
+ .rolePrompt{align-self:center;padding:25px 0;}.rolePrompt h3{font:400 clamp(34px,4vw,50px)/.98 "Project Pirata",serif;margin:0 0 17px;max-width:9ch;}.rolePrompt > p:not(.roleStatus){font:400 16px/1.5 "Project Montserrat",sans-serif;color:#d5d7dc;max-width:29ch;margin:0 0 20px;}.rolePrompt button{border:1px solid #ffffff70;border-radius:999px;background:#f4f3ef;color:#19191e;min-height:46px;padding:10px 20px;font:600 14px/1.2 "Project Montserrat",sans-serif;cursor:pointer;}.rolePrompt button:hover,.rolePrompt button:focus-visible{background:#fff;}.roleStatus{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;}
+ :global(.showtell[data-guide-hidden="true"]) .seaCrew button[aria-pressed="true"] img{opacity:1;}
+ @media(max-width:900px){.seaHeroLayout{display:block;max-width:660px;}.seaHeading{text-align:center;margin:auto;}.seaHeading h2{margin:auto;}.seaExplanation{margin-left:auto;margin-right:auto;}.seaFacts{justify-content:center;}.seaPackages{margin:37px auto 0;justify-self:auto;}.seaPresentation{display:block;max-width:660px;}.rolePrompt{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:28px 0 0;}.rolePrompt h3{font-size:39px;margin:0;max-width:12ch;}.rolePrompt > p:not(.roleStatus){display:none;}}
+ @media(max-width:600px){.seaScene{padding:38px 18px 28px;background-position:center top;background-size:auto 100%;}.seaPremise{font-size:25px;}.seaExplanation{font-size:15px;}.seaFacts{gap:6px;margin:16px 0 22px;}.seaFacts li{font-size:14px;padding:6px 9px;}.seaPackages{width:min(100%,340px);margin-top:30px;}.seaPackages > div{min-height:238px;}.seaPresentation{margin-top:59px;}.seaCrew{gap:8px;}.crewCard,.seaCrew button{border-radius:12px;}.seaCrew button{padding:7px;}.crewArt{border-radius:6px;}.seaCrew .crewName{font-size:20px;margin:9px 0 2px;}.rolePrompt{padding-top:22px;}.rolePrompt h3{font-size:34px;}.rolePrompt button{min-height:44px;padding:9px 15px;font-size:14px;}}
+</style>

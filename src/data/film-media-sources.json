@@ -1,0 +1,935 @@
+{
+  "checked": "2026-09-13",
+  "sources": [
+    {
+      "film": "Wattleseed",
+      "purpose": "cover",
+      "source": "https://willchai.com/wp-content/uploads/2026/02/Wattleseed-Still-8.jpg",
+      "page": "https://willchai.com/wattleseed/",
+      "original_sha256": "df7dde77d558bd4291155d5511d14999b06e7e48e1ce7ea22888fe3877606f20",
+      "derivatives": [
+        {
+          "src": "/assets/films/wattleseed/cover-640.avif",
+          "width": 640,
+          "height": 346,
+          "bytes": 12048
+        },
+        {
+          "src": "/assets/films/wattleseed/cover-1280.avif",
+          "width": 1280,
+          "height": 692,
+          "bytes": 29421
+        },
+        {
+          "src": "/assets/films/wattleseed/cover-1920.avif",
+          "width": 1920,
+          "height": 1038,
+          "bytes": 52846
+        }
+      ]
+    },
+    {
+      "film": "Wattleseed",
+      "purpose": "apparatus",
+      "source": "https://willchai.com/wp-content/uploads/2026/02/Wattleseed-Still-2.jpg",
+      "page": "https://willchai.com/wattleseed/",
+      "original_sha256": "2f1349ebfc670fc21bda7998c5300e27b80dd565bc43fb7277b3f2dcf25a275c",
+      "derivatives": [
+        {
+          "src": "/assets/films/wattleseed/apparatus-640.avif",
+          "width": 640,
+          "height": 346,
+          "bytes": 8624
+        },
+        {
+          "src": "/assets/films/wattleseed/apparatus-1280.avif",
+          "width": 1280,
+          "height": 692,
+          "bytes": 26062
+        }
+      ]
+    },
+    {
+      "film": "Wattleseed",
+      "purpose": "profile",
+      "source": "https://willchai.com/wp-content/uploads/2026/02/Wattleseed-Still-4.jpg",
+      "page": "https://willchai.com/wattleseed/",
+      "original_sha256": "705cc4530ec3a16bc69bfac4f45818b52e5af84dac5bbf25e839a9357773be0a",
+      "derivatives": [
+        {
+          "src": "/assets/films/wattleseed/profile-640.avif",
+          "width": 640,
+          "height": 346,
+          "bytes": 8306
+        },
+        {
+          "src": "/assets/films/wattleseed/profile-1280.avif",
+          "width": 1280,
+          "height": 692,
+          "bytes": 25819
+        }
+      ]
+    },
+    {
+      "film": "Wattleseed",
+      "purpose": "poster",
+      "source": "https://willchai.com/wp-content/uploads/2024/09/Wattleseed-Main-Poster.avif",
+      "page": "https://willchai.com/wattleseed/",
+      "original_sha256": "66f56a54aa3eb150f71b03bbcb289444d8896d1dfe8919f8d8a701bd7a956265",
+      "derivatives": [
+        {
+          "src": "/assets/films/wattleseed/poster-800.avif",
+          "width": 800,
+          "height": 1104,
+          "bytes": 41599
+        }
+      ]
+    },
+    {
+      "film": "Murder of Minus",
+      "purpose": "cover",
+      "source": "https://willchai.com/wp-content/uploads/2024/11/MoM_stills_6.jpg",
+      "page": "https://willchai.com/murder-of-minus-a-sci-fi-thriller/",
+      "original_sha256": "2bba01e27bf887f17cc80c10049b669f6d6ec00af8f4441a6833ca270c0143cb",
+      "derivatives": [
+        {
+          "src": "/assets/films/murder-of-minus/cover-640.avif",
+          "width": 640,
+          "height": 346,
+          "bytes": 19795
+        },
+        {
+          "src": "/assets/films/murder-of-minus/cover-1280.avif",
+          "width": 1280,
+          "height": 693,
+          "bytes": 49918
+        },
+        {
+          "src": "/assets/films/murder-of-minus/cover-1920.avif",
+          "width": 1920,
+          "height": 1040,
+          "bytes": 89380
+        }
+      ]
+    },
+    {
+      "film": "Murder of Minus",
+      "purpose": "closeup",
+      "source": "https://willchai.com/wp-content/uploads/2024/11/MoM_stills_7.jpg",
+      "page": "https://willchai.com/murder-of-minus-a-sci-fi-thriller/",
+      "original_sha256": "ab7a9f90ead0847efc7e2fb0cde29a87746905140f4e97b05efe8eb566b85e97",
+      "derivatives": [
+        {
+          "src": "/assets/films/murder-of-minus/closeup-640.avif",
+          "width": 640,
+          "height": 346,
+          "bytes": 6416
+        },
+        {
+          "src": "/assets/films/murder-of-minus/closeup-1280.avif",
+          "width": 1280,
+          "height": 693,
+          "bytes": 18577
+        }
+      ]
+    },
+    {
+      "film": "Murder of Minus",
+      "purpose": "aerial",
+      "source": "https://willchai.com/wp-content/uploads/2024/11/MoM_stills_1.webp",
+      "page": "https://willchai.com/murder-of-minus-a-sci-fi-thriller/",
+      "original_sha256": "1ea33bb39e8fcd0b7cbee51b594d99623353fa1cb27d4f2b69b0eab256c4e7d8",
+      "derivatives": [
+        {
+          "src": "/assets/films/murder-of-minus/aerial-640.avif",
+          "width": 640,
+          "height": 346,
+          "bytes": 13705
+        },
+        {
+          "src": "/assets/films/murder-of-minus/aerial-1280.avif",
+          "width": 1280,
+          "height": 693,
+          "bytes": 40683
+        }
+      ]
+    },
+    {
+      "film": "Murder of Minus",
+      "purpose": "poster",
+      "source": "https://willchai.com/wp-content/uploads/2024/11/Murder-of-Minus-Poster-EBG-Version-Alt-1.png",
+      "page": "https://willchai.com/murder-of-minus-a-sci-fi-thriller/",
+      "original_sha256": "e59f99c7d3f115ca5914ad7e4de079bbd7c28fdfef826f9b14cb9a93cbd1bf8e",
+      "derivatives": [
+        {
+          "src": "/assets/films/murder-of-minus/poster-800.avif",
+          "width": 800,
+          "height": 1067,
+          "bytes": 46021
+        }
+      ]
+    },
+    {
+      "film": "Wattleseed",
+      "purpose": "original press kit and production context",
+      "source": "https://willchai.com/wp-content/uploads/2026/02/Wattleseed-Press-Kit.pdf",
+      "original_sha256": "b6fd5e7a69af5a33e45f2370a5335db0502cd830eea57db0afbbbb4a399c6b22",
+      "published": "/assets/films/wattleseed/press-kit.pdf",
+      "bytes": 1449635,
+      "pages": 5,
+      "sha256": "b6fd5e7a69af5a33e45f2370a5335db0502cd830eea57db0afbbbb4a399c6b22"
+    },
+    {
+      "film": "Murder of Minus",
+      "purpose": "original press kit and production context",
+      "source": "https://willchai.com/wp-content/uploads/2025/05/Murder-of-Minus-Press-kit.pdf",
+      "original_sha256": "e86bd7f41940ac958cee9dfcb21660b0e826af27c4de675e73d10a65629ad1e6",
+      "published": "/assets/films/murder-of-minus/press-kit.pdf",
+      "bytes": 1235027,
+      "pages": 10,
+      "sha256": "e86bd7f41940ac958cee9dfcb21660b0e826af27c4de675e73d10a65629ad1e6"
+    },
+    {
+      "purpose": "Decorative laurel branches with live festival text",
+      "source": "https://willchai.com/wp-content/uploads/2024/11/Cine-Paris-Film-Festival-Award-Winner-2025-1-800x531.avif",
+      "page": "https://willchai.com/murder-of-minus-a-sci-fi-thriller/",
+      "derivative": "/assets/films/laurel-wreath.png",
+      "processing": "Central festival lettering cleared from the original wreath. Category, festival, outcome and year are rendered as live text.",
+      "sha256": "27df2d008908ab767457b8ca4c555a906a6f40b9d3e1b523f2e322654c0096fa"
+    },
+    {
+      "src": "/assets/films/minus-portrait.avif",
+      "source": "https://willchai.com/wp-content/uploads/2024/11/Murder-of-Minus-Poster-EBG-Version-Alt-1-1920x2560.avif",
+      "bytes": 281071,
+      "sha256": "a731c22f95231040aa4742cb313112f65e45e35a3bce90b7e251f99c38b91e07"
+    },
+    {
+      "src": "/assets/films/laurels/08Actor-png-e1743354268105-800x459.avif",
+      "source": "https://willchai.com/wp-content/uploads/2024/11/08Actor-png-e1743354268105-800x459.avif",
+      "bytes": 45446,
+      "sha256": "4abc2c618a7642724c2a9c3fb7595ab5fb131fcc13754ee2a20bca85af525ad2"
+    },
+    {
+      "src": "/assets/films/laurels/Laurel-Center-edited-800x533.avif",
+      "source": "https://willchai.com/wp-content/uploads/2025/03/Laurel-Center-edited-800x533.avif",
+      "bytes": 53492,
+      "sha256": "1a3b1b3ed2bd2ab3f4f44cd7ac4208b569a1801b550e8077682439b0b5e93be5"
+    },
+    {
+      "src": "/assets/films/laurels/FINALIST-KitchenerWaterlooInternationalFilmFestivalKWIFF-2025-800x531.avif",
+      "source": "https://willchai.com/wp-content/uploads/2024/11/FINALIST-KitchenerWaterlooInternationalFilmFestivalKWIFF-2025-800x531.avif",
+      "bytes": 36861,
+      "sha256": "88fbb435e6c66e865740bdf0a8eca83c0cf2e93872d011a876ddadbfa45b3992"
+    },
+    {
+      "src": "/assets/films/laurels/Kitchener-Waterloo-Film-Festival-2025-Nominee-2-800x531.avif",
+      "source": "https://willchai.com/wp-content/uploads/2024/11/Kitchener-Waterloo-Film-Festival-2025-Nominee-2-800x531.avif",
+      "bytes": 36963,
+      "sha256": "b8fe5fb791d48a2450f6aff36b8b13263c436f95f25cde74b3f5732eda7d685b"
+    },
+    {
+      "src": "/assets/films/laurels/Kitchener-Waterloo-Film-Festival-2025-Official-Selection-1-800x531.avif",
+      "source": "https://willchai.com/wp-content/uploads/2024/11/Kitchener-Waterloo-Film-Festival-2025-Official-Selection-1-800x531.avif",
+      "bytes": 38760,
+      "sha256": "d79e1e436ae357c90f119ec488a449e4a43d60670060a89bcfc564665d9c255d"
+    },
+    {
+      "src": "/assets/films/laurels/Toronto-Independent-Film-Festival-Award-Winner-2025-800x531.avif",
+      "source": "https://willchai.com/wp-content/uploads/2024/11/Toronto-Independent-Film-Festival-Award-Winner-2025-800x531.avif",
+      "bytes": 35049,
+      "sha256": "c5b4ab89ca2f811ad5ecbe05778d8d42457e1a29c80435a536d82bfb75b089d5"
+    },
+    {
+      "src": "/assets/films/laurels/07Mys-800x800.avif",
+      "source": "https://willchai.com/wp-content/uploads/2024/11/07Mys-800x800.avif",
+      "bytes": 41716,
+      "sha256": "b41f4e9e7e345caf3337881f1aff6d3964b735deed30bb66004eafa9f5696905"
+    },
+    {
+      "src": "/assets/films/laurels/Cine-Paris-Film-Festival-Award-Winner-2025-1-800x531.avif",
+      "source": "https://willchai.com/wp-content/uploads/2024/11/Cine-Paris-Film-Festival-Award-Winner-2025-1-800x531.avif",
+      "bytes": 37064,
+      "sha256": "597be018fa4d456bd86334f04ca6b4f1dc04fca0e37228beef18b65519c69c11"
+    },
+    {
+      "src": "/assets/films/laurels/Austin-Laurels-2025-300x300.avif",
+      "source": "https://willchai.com/wp-content/uploads/2024/11/Austin-Laurels-2025-300x300.avif",
+      "bytes": 12075,
+      "sha256": "12396899c7606df7003b80df57f2fc1cacc79f9d0f73d5886ff443c7c3a45942"
+    },
+    {
+      "purpose": "Original Prisma nominee laurel",
+      "source": "https://drive.google.com/uc?export=download&id=16Qsy7odP_ncyMzuQopPYX4hHOAWsOt6q",
+      "page": "https://www.romeprismafilmawards.com/february-2026-nominees/",
+      "published": "/assets/films/laurels/prisma-nominee.png",
+      "sha256": "420aafadada4b8d05ab4dd933c61712979808398211e080b4ba21e099ced6ad8",
+      "bytes": 11981
+    },
+    {
+      "purpose": "Original Toronto Shorts selection laurel",
+      "source": "https://static.wixstatic.com/media/a8c840_ee20dbb1f18c453abaa761494d0ebe3e~mv2.png",
+      "published": "/assets/films/laurels/toronto-shorts-2026.png",
+      "sha256": "8493a0b9e0620796a5253e133dc0abfa737895e3653eb766d55eb2b32838faeb",
+      "bytes": 171475,
+      "processing": "Original black artwork is inverted to white in CSS for the Ink canvas."
+    },
+    {
+      "purpose": "Film title artwork and portrait composition",
+      "processing": "SVG viewports crop the original poster artwork. Colour matrices isolate existing letters. The portrait uses a CSS crop of the original poster photograph. Subjects and lettering are preserved."
+    },
+    {
+      "purpose": "Original festival identity for a sourced result",
+      "source": "https://offa.ca/wp-content/uploads/2021/04/offa_logo_menu.png",
+      "published": "/assets/films/laurels/offa-logo.png",
+      "sha256": "07922d6b94c49dc8cce36e7f6c425276d0a9fcb724f776bc5cec405c94ed6921",
+      "bytes": 9624,
+      "width": 518,
+      "height": 94
+    },
+    {
+      "purpose": "Original festival identity for a sourced result",
+      "source": "https://altff.org/onewebmedia/Add%20a%20heading.png",
+      "published": "/assets/films/laurels/altff-logo.png",
+      "sha256": "3ec48f6a67ee8de4c596d9b43d235b310109b158995a3d8e7091c444ecb407c2",
+      "bytes": 304061,
+      "width": 2000,
+      "height": 2000
+    },
+    {
+      "film": "Murder of Minus",
+      "purpose": "quinten-colour",
+      "source": "https://willchai.com/wp-content/uploads/2024/11/MoM_stills_5.jpg",
+      "page": "https://willchai.com/murder-of-minus-a-sci-fi-thriller/",
+      "original_sha256": "e95ba70d2c233286de532c3d1e8f2c8e81e1a728acc0f39dc2cf3a1a45545eaf",
+      "processing": "Responsive AVIF exports preserving original framing and colour.",
+      "derivatives": [
+        {
+          "src": "/assets/films/murder-of-minus/quinten-colour-640.avif",
+          "width": 640,
+          "height": 346,
+          "bytes": 10903,
+          "sha256": "640d4a4b66c2f265cbb0b6f3e3cfb9bbf7edd202f89fdc38740f3d02bca14f17"
+        },
+        {
+          "src": "/assets/films/murder-of-minus/quinten-colour-1280.avif",
+          "width": 1280,
+          "height": 693,
+          "bytes": 35514,
+          "sha256": "dd7e1cbf3d2cdea6a3081d58b79eaf23ce53579578bce69e0bdc462f757eb990"
+        },
+        {
+          "src": "/assets/films/murder-of-minus/quinten-colour-1920.avif",
+          "width": 1920,
+          "height": 1040,
+          "bytes": 71025,
+          "sha256": "2f1251848cff41becd9e21b3ebc6234c94717538c6471afd514f058f8ab27789"
+        }
+      ]
+    },
+    {
+      "film": "Murder of Minus",
+      "purpose": "auditorium",
+      "source": "https://willchai.com/wp-content/uploads/2024/11/MoM_stills_9.jpg",
+      "page": "https://willchai.com/murder-of-minus-a-sci-fi-thriller/",
+      "original_sha256": "728ebe55285102a111914c316e3a7797ca26028ba1a38725cf4148a010f9b3b7",
+      "processing": "Responsive AVIF exports preserving original framing and colour.",
+      "derivatives": [
+        {
+          "src": "/assets/films/murder-of-minus/auditorium-640.avif",
+          "width": 640,
+          "height": 346,
+          "bytes": 20474,
+          "sha256": "a61503972cb4d07c7c31e324adf19a2d195ba92f6b385eb47afdacb6073f9631"
+        },
+        {
+          "src": "/assets/films/murder-of-minus/auditorium-1280.avif",
+          "width": 1280,
+          "height": 693,
+          "bytes": 57946,
+          "sha256": "6e48597f9b84a03e912fbc40d93afb3ffd8cd0f373bc6dd066e0a0eaedd19f7d"
+        },
+        {
+          "src": "/assets/films/murder-of-minus/auditorium-1920.avif",
+          "width": 1920,
+          "height": 1040,
+          "bytes": 96092,
+          "sha256": "1d893f6a1b9d107b849e5ab7e867f1620bdc29fb916b7fd548dcdafa8cca4161"
+        }
+      ]
+    },
+    {
+      "film": "Murder of Minus",
+      "purpose": "owens",
+      "source": "https://willchai.com/wp-content/uploads/2024/11/MoM_stills_3.jpg",
+      "page": "https://willchai.com/murder-of-minus-a-sci-fi-thriller/",
+      "original_sha256": "d4bb4f0fd866ffbf9e282c7f5242343a0c3429607566ce5a53ec5c2f4e1b18e7",
+      "processing": "Responsive AVIF exports preserving original framing and colour.",
+      "derivatives": [
+        {
+          "src": "/assets/films/murder-of-minus/owens-640.avif",
+          "width": 640,
+          "height": 346,
+          "bytes": 9177,
+          "sha256": "f3511c4b8e037d09727e8148ae7743be39694308e304c6f11c60c807d3bd4d29"
+        },
+        {
+          "src": "/assets/films/murder-of-minus/owens-1280.avif",
+          "width": 1280,
+          "height": 693,
+          "bytes": 29732,
+          "sha256": "0190e4f897fa55b44e3b74d6455531f59141deb14327c5f6f0d417f21c7cbfab"
+        },
+        {
+          "src": "/assets/films/murder-of-minus/owens-1920.avif",
+          "width": 1920,
+          "height": 1040,
+          "bytes": 56078,
+          "sha256": "3dade6c67265f5e766c74783c4345a74cbb88044d7e422a11399b7cb7cba81db"
+        }
+      ]
+    },
+    {
+      "film": "Wattleseed",
+      "purpose": "control",
+      "source": "https://drive.google.com/uc?export=download&id=1d47_rLI20CZoSsxCdXXzClOA7Lxb8YcK",
+      "page": "https://drive.google.com/drive/folders/1P83pN3KQvM2vofSiZWhhyIdgprvDx7eI",
+      "original_sha256": "cdac1484309453b26396defaba5fa0d4517bee6721c2903a38b03f17e9e34d1d",
+      "processing": "Responsive AVIF exports preserving original framing and colour.",
+      "derivatives": [
+        {
+          "src": "/assets/films/wattleseed/control-640.avif",
+          "width": 640,
+          "height": 346,
+          "bytes": 11338,
+          "sha256": "515c878ed31616131453922ba4f7f1d9a9cf7aff74daaed05ec9be6470dd2ca1"
+        },
+        {
+          "src": "/assets/films/wattleseed/control-1280.avif",
+          "width": 1280,
+          "height": 692,
+          "bytes": 29760,
+          "sha256": "c51e4fbe5c5871b8a96e77b0de7c339ada63f1287b0b0a6aff3cf07dea38f601"
+        },
+        {
+          "src": "/assets/films/wattleseed/control-1920.avif",
+          "width": 1920,
+          "height": 1038,
+          "bytes": 59712,
+          "sha256": "8a89069a67e61502a5d4e18c3d6156b4ebd392b165b43f8b110b885885df66bb"
+        }
+      ]
+    },
+    {
+      "film": "Wattleseed",
+      "purpose": "conversation",
+      "source": "https://drive.google.com/uc?export=download&id=1EnslGKBxS-YfqV9VVPLKPY1oLsK2VUTw",
+      "page": "https://drive.google.com/drive/folders/1P83pN3KQvM2vofSiZWhhyIdgprvDx7eI",
+      "original_sha256": "c63a052a1b0d84278f939eab4aa1ab4afb309495bf2be8d729ad90eb304b0d6c",
+      "processing": "Responsive AVIF exports preserving original framing and colour.",
+      "derivatives": [
+        {
+          "src": "/assets/films/wattleseed/conversation-640.avif",
+          "width": 640,
+          "height": 346,
+          "bytes": 9951,
+          "sha256": "c2c7d0586befa92167a75c679e08df05b5d9ad27e9e6cf17e6cbbe9aaa1ba1a8"
+        },
+        {
+          "src": "/assets/films/wattleseed/conversation-1280.avif",
+          "width": 1280,
+          "height": 692,
+          "bytes": 23498,
+          "sha256": "f241b2741423106b17ff9f19c28446c8c12596fa1214dc340620dc6d92033a15"
+        },
+        {
+          "src": "/assets/films/wattleseed/conversation-1920.avif",
+          "width": 1920,
+          "height": 1038,
+          "bytes": 42761,
+          "sha256": "e764abb325f3050096e62ed89f7d9940a6e7fe45e6250760a55f3eb741feec78"
+        }
+      ]
+    },
+    {
+      "film": "Wattleseed",
+      "purpose": "adrian",
+      "source": "https://drive.google.com/uc?export=download&id=1gn3fSx82jZnk56EPiYWTPkgaIVk5GmR7",
+      "page": "https://drive.google.com/drive/folders/1P83pN3KQvM2vofSiZWhhyIdgprvDx7eI",
+      "original_sha256": "278f2e6f645094039eb3ef160474813070ef47df6f4a0804db46db372146375d",
+      "processing": "Responsive AVIF exports preserving original framing and colour.",
+      "derivatives": [
+        {
+          "src": "/assets/films/wattleseed/adrian-640.avif",
+          "width": 640,
+          "height": 346,
+          "bytes": 6538,
+          "sha256": "3fdbdb5fe96d9824c2ff36ea4d18f2f845eb3c771dba63867e7fe8614def4d45"
+        },
+        {
+          "src": "/assets/films/wattleseed/adrian-1280.avif",
+          "width": 1280,
+          "height": 692,
+          "bytes": 15988,
+          "sha256": "6bbc735fbdb742d464a182f9253c74853a8e3bad4c413e4bb9b5de1af079e2d8"
+        },
+        {
+          "src": "/assets/films/wattleseed/adrian-1920.avif",
+          "width": 1920,
+          "height": 1038,
+          "bytes": 36110,
+          "sha256": "bb6f0f6b190730091c8228870a13de464f451fc90dcee106ba8f5f2cb28f7826"
+        }
+      ]
+    },
+    {
+      "film": "Wattleseed",
+      "purpose": "night",
+      "source": "https://willchai.com/wp-content/uploads/2026/02/Wattleseed-Still-1.jpg",
+      "page": "https://willchai.com/wattleseed/",
+      "original_sha256": "d09daeaa74f36fb77ee8c0fe84db9bf18ba93be9022f0192efd56a9ab1ba0754",
+      "processing": "Responsive AVIF exports preserving original framing and colour.",
+      "derivatives": [
+        {
+          "src": "/assets/films/wattleseed/night-640.avif",
+          "width": 640,
+          "height": 346,
+          "bytes": 1995,
+          "sha256": "87a7c173836fe8cf0edff187bd1a758f0a877fb31f0023b54aefe1da76f37714"
+        },
+        {
+          "src": "/assets/films/wattleseed/night-1280.avif",
+          "width": 1280,
+          "height": 692,
+          "bytes": 9929,
+          "sha256": "90198a69c316f183833a1f776708eac0e24ef4595f9d5c780a8ac6ccb2ac84b0"
+        },
+        {
+          "src": "/assets/films/wattleseed/night-1920.avif",
+          "width": 1920,
+          "height": 1038,
+          "bytes": 27129,
+          "sha256": "d726f7f3955e092b2c798c9c682759dba30093d644358ace4f56ee24e3f2a471"
+        }
+      ]
+    },
+    {
+      "film": "Murder of Minus",
+      "purpose": "Original festival artwork",
+      "source": "https://willchai.com/wp-content/uploads/2024/11/08Actor.png",
+      "original_sha256": "37d27161e8a76589e7d7ce0ce69410bf95e1f573935e8c3b6f98f05de69981d4",
+      "processing": "Original alpha bounds preserved with 16 pixels of transparent padding. Resized to 800 pixels before padding.",
+      "derivatives": [
+        {
+          "src": "/assets/films/laurels/altff-actor.png",
+          "sha256": "e1541eeda05d8d40f59e12fdec47565446a439b74d7a8e525aff3e6bda51aba6"
+        }
+      ]
+    },
+    {
+      "film": "Murder of Minus",
+      "purpose": "Original festival artwork",
+      "source": "https://willchai.com/wp-content/uploads/2024/11/07Mys.png",
+      "original_sha256": "c08f3b6f131cf698d94a0323fb6149cbd7ade17687fdcd35a83b04fc3641479b",
+      "processing": "Original alpha bounds preserved with 16 pixels of transparent padding. Resized to 800 pixels before padding.",
+      "derivatives": [
+        {
+          "src": "/assets/films/laurels/couch-mystery.png",
+          "sha256": "f30d77460584774dc4aa12aa17dc721d4c1847334e8025d5e8a8a641877908d0"
+        }
+      ]
+    },
+    {
+      "film": "Murder of Minus",
+      "purpose": "Original festival artwork",
+      "source": "https://willchai.com/wp-content/uploads/2024/11/FINALIST-KitchenerWaterlooInternationalFilmFestivalKWIFF-2025.png",
+      "original_sha256": "ea2db6cf43c07ad590342fc738fcf01fff22902c9956b0115d99c93f1bf17251",
+      "processing": "Original alpha bounds preserved with 16 pixels of transparent padding. Resized to 800 pixels before padding.",
+      "derivatives": [
+        {
+          "src": "/assets/films/laurels/kwiff-finalist-2025.png",
+          "sha256": "aad99de770d8593eef5439eb880dc573dbf52a41d63fe1c1ac900d11f6f7e1ab"
+        }
+      ]
+    },
+    {
+      "film": "Murder of Minus",
+      "purpose": "Original festival artwork",
+      "source": "https://willchai.com/wp-content/uploads/2024/11/Cine-Paris-Film-Festival-Award-Winner-2025-1.png",
+      "original_sha256": "c142354a619560ec869a25b53fc0b86d6944b0006ad6f3db9324bf07f1c9c7ff",
+      "processing": "Original alpha bounds preserved with 16 pixels of transparent padding. Resized to 800 pixels before padding.",
+      "derivatives": [
+        {
+          "src": "/assets/films/laurels/cine-paris-2025.png",
+          "sha256": "419e2ba179f955e33aa01221dfc095c179fce762d28daa4d126d3a758f9714ae"
+        }
+      ]
+    },
+    {
+      "film": "Murder of Minus",
+      "purpose": "Original festival artwork",
+      "source": "https://willchai.com/wp-content/uploads/2024/11/Toronto-Independent-Film-Festival-Award-Winner-2025.png",
+      "original_sha256": "eb4d3b34a7ab5c714c9f320f26e551e830abcdb1870fa4d89cdaca60c7c8e15e",
+      "processing": "Original alpha bounds preserved with 16 pixels of transparent padding. Resized to 800 pixels before padding.",
+      "derivatives": [
+        {
+          "src": "/assets/films/laurels/cift-2025.png",
+          "sha256": "f8bb99e3b2b5af7d4dd4e56401d6493305933adcc64b0f32767bdc09ce60495d"
+        }
+      ]
+    },
+    {
+      "film": "Murder of Minus",
+      "purpose": "Detail page portrait",
+      "source": "https://drive.google.com/uc?export=download&id=1eUuiVCO_lucHBRErSd1RDhLzOVlGYbq5",
+      "page": "https://drive.google.com/drive/folders/19vEy-HytfsAgTOkWOYJHzcFtRNEFw53b",
+      "original_sha256": "fa702dde4ef9e1ee6f887de3469313c7d8c96ed2aa65443e05c490411f1df6b0",
+      "derivatives": [
+        {
+          "src": "/assets/films/murder-of-minus/detail-portrait-640.avif",
+          "width": 640,
+          "height": 427,
+          "bytes": 5985
+        },
+        {
+          "src": "/assets/films/murder-of-minus/detail-portrait-1280.avif",
+          "width": 1280,
+          "height": 853,
+          "bytes": 15772
+        },
+        {
+          "src": "/assets/films/murder-of-minus/detail-portrait-1920.avif",
+          "width": 1920,
+          "height": 1280,
+          "bytes": 31197
+        }
+      ]
+    },
+    {
+      "film": "Murder of Minus",
+      "purpose": "Detail page directors",
+      "source": "https://drive.google.com/uc?export=download&id=1v8mmacnfwoJ92m97GHPOp678a1B8oRuF",
+      "page": "https://drive.google.com/drive/folders/19vEy-HytfsAgTOkWOYJHzcFtRNEFw53b",
+      "original_sha256": "134aeb735e45b8e26402d96bd74d7ce03eeee854b92abb62b21d1abdb6ce439e",
+      "derivatives": [
+        {
+          "src": "/assets/films/murder-of-minus/detail-directors-640.avif",
+          "width": 640,
+          "height": 960,
+          "bytes": 17860
+        },
+        {
+          "src": "/assets/films/murder-of-minus/detail-directors-1280.avif",
+          "width": 1280,
+          "height": 1920,
+          "bytes": 65619
+        },
+        {
+          "src": "/assets/films/murder-of-minus/detail-directors-1920.avif",
+          "width": 1920,
+          "height": 2880,
+          "bytes": 200097
+        }
+      ]
+    },
+    {
+      "film": "Murder of Minus",
+      "purpose": "Detail page camera",
+      "source": "https://drive.google.com/uc?export=download&id=1VErYFXS40voyqiMFwKLvI3s7_-X9VrNq",
+      "page": "https://drive.google.com/drive/folders/19vEy-HytfsAgTOkWOYJHzcFtRNEFw53b",
+      "original_sha256": "f0892f6d59891e916de2ebf33d40a6463726e6c1d0e72eff809721d5d2286d2f",
+      "derivatives": [
+        {
+          "src": "/assets/films/murder-of-minus/detail-camera-640.avif",
+          "width": 640,
+          "height": 960,
+          "bytes": 39406
+        },
+        {
+          "src": "/assets/films/murder-of-minus/detail-camera-1280.avif",
+          "width": 1280,
+          "height": 1920,
+          "bytes": 108279
+        },
+        {
+          "src": "/assets/films/murder-of-minus/detail-camera-1920.avif",
+          "width": 1920,
+          "height": 2880,
+          "bytes": 186022
+        }
+      ]
+    },
+    {
+      "film": "Murder of Minus",
+      "purpose": "Detail page business-card",
+      "source": "https://willchai.com/wp-content/uploads/2024/11/MoM_stills_2.jpg",
+      "page": "https://willchai.com/murder-of-minus-a-sci-fi-thriller/",
+      "original_sha256": "acb2899e01d84f19ce5c0348cdcd213e1f7cfdc9a35e8213c06d509c620c6c39",
+      "derivatives": [
+        {
+          "src": "/assets/films/murder-of-minus/detail-business-card-640.avif",
+          "width": 640,
+          "height": 347,
+          "bytes": 6442
+        },
+        {
+          "src": "/assets/films/murder-of-minus/detail-business-card-1280.avif",
+          "width": 1280,
+          "height": 693,
+          "bytes": 17040
+        },
+        {
+          "src": "/assets/films/murder-of-minus/detail-business-card-1920.avif",
+          "width": 1920,
+          "height": 1040,
+          "bytes": 30763
+        }
+      ]
+    },
+    {
+      "film": "Wattleseed",
+      "purpose": "Detail page incident",
+      "source": "https://willchai.com/wp-content/uploads/2026/02/Wattleseed-Still-9.jpg",
+      "page": "https://willchai.com/wattleseed/",
+      "original_sha256": "0dd51bb73be6df84bbc5548a907d3038f548474d5b8c3740869f4188fe2685ce",
+      "derivatives": [
+        {
+          "src": "/assets/films/wattleseed/detail-incident-640.avif",
+          "width": 640,
+          "height": 346,
+          "bytes": 4452
+        },
+        {
+          "src": "/assets/films/wattleseed/detail-incident-1280.avif",
+          "width": 1280,
+          "height": 692,
+          "bytes": 11347
+        },
+        {
+          "src": "/assets/films/wattleseed/detail-incident-1920.avif",
+          "width": 1920,
+          "height": 1038,
+          "bytes": 26089
+        }
+      ]
+    },
+    {
+      "film": "Wattleseed",
+      "purpose": "Detail page researchers",
+      "source": "https://willchai.com/wp-content/uploads/2026/02/Wattleseed-Still-6.jpg",
+      "page": "https://willchai.com/wattleseed/",
+      "original_sha256": "3c22d6ce14118fa21c1b814f59e9ab8d693e7a6d4df64501895d50889dd3ad79",
+      "derivatives": [
+        {
+          "src": "/assets/films/wattleseed/detail-researchers-640.avif",
+          "width": 640,
+          "height": 346,
+          "bytes": 5688
+        },
+        {
+          "src": "/assets/films/wattleseed/detail-researchers-1280.avif",
+          "width": 1280,
+          "height": 692,
+          "bytes": 11872
+        },
+        {
+          "src": "/assets/films/wattleseed/detail-researchers-1920.avif",
+          "width": 1920,
+          "height": 1038,
+          "bytes": 19654
+        }
+      ]
+    }
+  ],
+  "recognitionEvidence": [
+    {
+      "film": "Wattleseed",
+      "source": "SCR-20260913-niwj.png",
+      "kind": "Owner supplied FilmFreeway judging record",
+      "received": "2026-09-13",
+      "notes": "Seven successful festival outcomes. Notification dates are not treated as festival screening dates. Award categories remain unspecified where the record omits them."
+    },
+    {
+      "film": "Murder of Minus",
+      "source": "SCR-20260913-njdj.png",
+      "kind": "Owner supplied FilmFreeway judging record",
+      "received": "2026-09-13",
+      "notes": "Ten successful festival outcomes, including five Lift Off city selections. Existing verified individual categories are preserved."
+    }
+  ],
+  "festivalDestinationAudit": {
+    "checked": "2026-09-13",
+    "destinations": [
+      {
+        "film": "Wattleseed",
+        "festival": "Cine Paris Film Festival",
+        "destination": "https://www.cineparisfilmfestival.com/index.html#winners",
+        "kind": "official results",
+        "verification": "February 2026 section names Wattleseed for Best Original Score."
+      },
+      {
+        "film": "Wattleseed",
+        "festival": "Rome Prisma Independent Film Awards",
+        "destination": "https://www.romeprismafilmawards.com/february-2026-nominees/",
+        "kind": "official results",
+        "verification": "Best Trailer nominees includes Wattleseed by William Chai.",
+        "secondaryDestination": "https://www.romeprismafilmawards.com/february-2026-monthly-picks/"
+      },
+      {
+        "film": "Wattleseed",
+        "festival": "Toronto Shorts International Film Festival",
+        "destination": "https://www.torontoshorts.com/program-5",
+        "kind": "official programme",
+        "verification": "Programme 5 lists Wattleseed and its director, writer, producers, cast and synopsis."
+      },
+      {
+        "film": "Wattleseed",
+        "festival": "Toronto Arts & Entertainment Film Festival",
+        "destination": "https://torontoartfilmfestival.com/award-winners-taeff-2026/",
+        "kind": "official results",
+        "verification": "2026 winners table lists Wattleseed in Student Film."
+      },
+      {
+        "film": "Wattleseed",
+        "festival": "Oakville Film Festival",
+        "destination": "https://offa.ca/wp-content/uploads/2026/06/OFFA-Festival2026-Guide-WEB.pdf#page=18",
+        "kind": "official programme",
+        "verification": "Original PDF fetched successfully and page 18 includes Wattleseed, directed by William Chai."
+      },
+      {
+        "film": "Wattleseed",
+        "festival": "Kitchener Waterloo International Film Festival",
+        "destination": "https://www.kwiffestival.com/nominees",
+        "kind": "official nominations",
+        "verification": "Full current HTML contains all nine existing nomination categories. Aggregate award winner outcome comes from the owner record."
+      },
+      {
+        "film": "Wattleseed",
+        "festival": "Alternative Film Festival",
+        "destination": "https://altff.org/",
+        "kind": "official festival website",
+        "verification": "Festival identity and official winners links verified. Keep owner supplied nominee outcome and unspecified category."
+      },
+      {
+        "film": "Murder of Minus",
+        "festival": "Cine Paris Film Festival",
+        "destination": "https://www.cineparisfilmfestival.com/winners-2025.html",
+        "kind": "official results",
+        "verification": "January 2025 section names Murder of Minus for Best Student Film."
+      },
+      {
+        "film": "Murder of Minus",
+        "festival": "Toronto Independent Festival of CIFT",
+        "destination": "https://cyrusmonthlyfestival.com/winners-april-2025/",
+        "kind": "official results",
+        "verification": "April 2025 winners page names Murder of Minus for Best Student Short Film."
+      },
+      {
+        "film": "Murder of Minus",
+        "festival": "Couch Film Festival",
+        "destination": "https://couchff.weebly.com/uploads/1/2/0/3/120372188/spring_25_couch.pdf#page=9",
+        "kind": "official results",
+        "verification": "Page 9 lists Murder of Minus under Best Mystery/Suspense/Thriller in red. The document identifies winners with red text. RGB verified as (1,0,0).",
+        "festivalWebsite": "https://couchff.weebly.com/"
+      },
+      {
+        "film": "Murder of Minus",
+        "festival": "Alternative Film Festival",
+        "destination": "https://altff.org/onewebmedia/MASTER%20AltFF%20Spr25.pdf#page=11",
+        "kind": "official results",
+        "verification": "Page 11 lists William Chai for Murder of Minus in red under Best Actor. It also lists Murder of Minus in black under Best Student Film. RGB text colors verified.",
+        "festivalWebsite": "https://altff.org/winners/previouswinners2024"
+      },
+      {
+        "film": "Murder of Minus",
+        "festival": "Kitchener Waterloo International Film Festival",
+        "destination": "https://www.kwiffestival.com/kwiff2025nomination",
+        "kind": "official nominations",
+        "verification": "2025 official page names Murder of Minus in all three existing nomination categories. Aggregate finalist outcome comes from the owner record."
+      },
+      {
+        "film": "Murder of Minus",
+        "festival": "London Lift Off Film Festival",
+        "destination": "https://liftoff.network/london-lift-off-film-festival/",
+        "kind": "official festival website",
+        "verification": "Official city festival identity and 2025 edition link verified. The film selection remains supported by the owner judging record.",
+        "editionPage": "https://liftoff.network/london-lift-off-film-festival-2025/"
+      },
+      {
+        "film": "Murder of Minus",
+        "festival": "Los Angeles Lift Off Film Festival",
+        "destination": "https://liftoff.network/los-angeles-lift-off-film-festival/",
+        "kind": "official festival website",
+        "verification": "Official city festival identity and 2025 edition link verified. The film selection remains supported by the owner judging record.",
+        "editionPage": "https://liftoff.network/los-angeles-lift-off-film-festival-2025/"
+      },
+      {
+        "film": "Murder of Minus",
+        "festival": "New York Lift Off Film Festival",
+        "destination": "https://liftoff.network/new-york-lift-off-film-festival/",
+        "kind": "official festival website",
+        "verification": "Official city festival identity and 2025 edition link verified. The film selection remains supported by the owner judging record.",
+        "editionPage": "https://liftoff.network/new-york-lift-off-film-festival-2025/"
+      },
+      {
+        "film": "Murder of Minus",
+        "festival": "Toronto Lift Off Film Festival",
+        "destination": "https://liftoff.network/toronto-lift-off-film-festival/",
+        "kind": "official festival website",
+        "verification": "Official city festival identity and 2025 edition link verified. The film selection remains supported by the owner judging record.",
+        "editionPage": "https://liftoff.network/toronto-lift-off-film-festival-2025/"
+      },
+      {
+        "film": "Murder of Minus",
+        "festival": "Austin Lift Off Film Festival",
+        "destination": "https://liftoff.network/austin-lift-off-film-festival/",
+        "kind": "official festival website",
+        "verification": "Official city festival identity and 2025 edition link verified. The film selection remains supported by the owner judging record.",
+        "editionPage": "https://liftoff.network/austin-lift-off-film-festival-2025/"
+      }
+    ],
+    "kwiffWattleseedVerification": {
+      "source": "https://www.kwiffestival.com/nominees",
+      "status": 200,
+      "matchCount": 9,
+      "categories": [
+        {
+          "sourceCategory": "BEST SHORT FILM",
+          "filmText": "WATTLESEED — Canada"
+        },
+        {
+          "sourceCategory": "BEST CANADIAN SHORT FILM",
+          "filmText": "Wattleseed — Canada"
+        },
+        {
+          "sourceCategory": "BEST FILM (THRILLER HORROR)",
+          "filmText": "WATTLESEED - Canada"
+        },
+        {
+          "sourceCategory": "BEST STUDENT FILM",
+          "filmText": "WATTLESEED — Canada"
+        },
+        {
+          "sourceCategory": "BEST TRAILERS",
+          "filmText": "Wattleseed — Canada"
+        },
+        {
+          "sourceCategory": "BEST EDITING",
+          "filmText": "WATTLESEED — Canada"
+        },
+        {
+          "sourceCategory": "BEST EXPERIEMENTAL FILM",
+          "filmText": "WATTLESEED — Canada"
+        },
+        {
+          "sourceCategory": "BEST ANIMATED / SCI-FI FILM",
+          "filmText": "WATTLESEED - Canada"
+        },
+        {
+          "sourceCategory": "BEST CINEMATOGRAPHY",
+          "filmText": "WATTLESEED — Canada"
+        }
+      ],
+      "htmlSha256": "49cf85b2805e0224851f9b659762db900a976e220309b2c3001ed66c4b474085"
+    }
+  }
+}

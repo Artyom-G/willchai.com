@@ -1,0 +1,84 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+  image?: string;
+  imageAlt?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+  imageType?: string;
+  ogType?: "website" | "article";
+  robots?: string;
+  structuredData?: Record<string, unknown> | Record<string, unknown>[];
+  pageClass?: string;
+}
+
+const {
+  title,
+  description,
+  path,
+  image,
+  imageAlt = "Will Chai, student, maker, and storyteller",
+  imageWidth,
+  imageHeight,
+  imageType,
+  ogType = "website",
+  robots,
+  structuredData,
+  pageClass = "",
+} = Astro.props;
+
+const canonical = new URL(path, Astro.site);
+const socialImage = image ? new URL(image, Astro.site) : undefined;
+const jsonLd = structuredData
+  ? JSON.stringify(structuredData).replace(/</g, "\\u003c")
+  : undefined;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    {robots && <meta name="robots" content={robots} />}
+    <meta name="theme-color" content="#eef0f2" />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" type="application/rss+xml" title="Will Chai Blog" href={new URL("/rss.xml", Astro.site)} />
+    <link rel="icon" href="/assets/willchai-mark.png" type="image/png" />
+    <link rel="icon" href="/assets/willchai-mark.avif" type="image/avif" />
+    <link
+      rel="preload"
+      href="/assets/funnel-sans-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <title>{title}</title>
+    <meta property="og:type" content={ogType} />
+    <meta property="og:locale" content="en_CA" />
+    <meta property="og:site_name" content="willchai.com" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    {socialImage && <meta property="og:image" content={socialImage} />}
+    {socialImage && <meta property="og:image:alt" content={imageAlt} />}
+    {socialImage && imageWidth && <meta property="og:image:width" content={String(imageWidth)} />}
+    {socialImage && imageHeight && <meta property="og:image:height" content={String(imageHeight)} />}
+    {socialImage && imageType && <meta property="og:image:type" content={imageType} />}
+    <meta name="twitter:card" content={socialImage ? "summary_large_image" : "summary"} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {socialImage && <meta name="twitter:image" content={socialImage} />}
+    {socialImage && <meta name="twitter:image:alt" content={imageAlt} />}
+    {jsonLd && <script is:inline type="application/ld+json" set:html={jsonLd} />}
+    <slot name="head" />
+  </head>
+  <body class={pageClass}>
+    <a class="skipLink" href="#main">Skip to content</a>
+    <slot />
+  </body>
+</html>

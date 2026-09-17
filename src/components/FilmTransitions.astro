@@ -1,0 +1,10 @@
+<script is:inline>
+  (() => {
+    const handleTransition = (event) => {
+      // A skipped visual transition retains ordinary page navigation.
+      event.viewTransition?.ready.catch(() => {});
+    };
+    addEventListener('pageswap', handleTransition);
+    addEventListener('pagereveal', handleTransition);
+  })();
+</script>

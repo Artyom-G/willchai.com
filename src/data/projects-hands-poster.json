@@ -1,0 +1,20 @@
+{
+  "height": 400,
+  "platform": "mac",
+  "rigRevision": "dea2e9e",
+  "support": {
+    "x": 145.54216867469876,
+    "y": 191.9138780117839
+  },
+  "width": 800,
+  "mobile": {
+    "height": 222,
+    "platform": "mac",
+    "rigRevision": "dea2e9e",
+    "support": {
+      "x": 40.90588235294118,
+      "y": 27.811751938473208
+    },
+    "width": 366
+  }
+}

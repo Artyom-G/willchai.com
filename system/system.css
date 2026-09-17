@@ -1,6 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Funnel+Sans:wght@400;500;600&family=Unbounded:wght@400&display=swap");
 @import url("./tokens.css");
 
+@font-face {
+  font-family: "Project Searing";
+  src: url("../public/assets/projects-v5/searing-trattatello.woff2") format("woff2");
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -1247,3 +1253,70 @@ img {
     --ticket-scale: 1 !important;
   }
 }
+
+.film-cinema-demo { padding: 0; background: var(--wc-film-surface); color: var(--wc-white); }
+.film-cinema-demo a { color: inherit; text-underline-offset: .2em; }
+.film-cinema-demo__frame { position: relative; aspect-ratio: 1.6; overflow: hidden; }
+.film-cinema-demo__frame>img { position: absolute; width: 100%; height: auto; transform: translateY(-38.4375%); }
+.film-cinema-demo__title { position: absolute; bottom: 18%; left: 8%; width: 84%; }
+.film-cinema-demo__title>svg { display: block; width: 100%; height: auto; }
+.film-cinema-demo__body { padding: var(--wc-space-6); }
+.film-cinema-demo__spread { display: grid; grid-template-columns: repeat(12,minmax(0,1fr)); gap: var(--wc-space-6) var(--wc-space-3); margin-top: var(--wc-space-8); }
+.film-cinema-demo__spread>p { grid-column: 1/7; grid-row: 1; margin: 0; font-size: 1.25rem; line-height: 1.35; }
+.film-cinema-demo__profile { grid-column: 8/13; grid-row: 1; margin-top: var(--wc-space-8); }
+.film-cinema-demo__lead { grid-column: 1/12; grid-row: 2; }
+.film-cinema-demo__spread>img { width: 100%; height: auto; }
+.film-cinema-demo__year { position: absolute; top: 6%; left: 4%; font-size: var(--wc-font-small); text-shadow: var(--wc-film-text-shadow); }
+.film-cinema-demo__credits { position: absolute; bottom: 4%; left: 8%; right: 8%; display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--wc-space-3); font-size: var(--wc-font-small); text-shadow: var(--wc-film-text-shadow); }
+.film-cinema-demo__featured { display: grid; grid-template-columns: 1fr 1fr; gap: var(--wc-space-4); margin-top: var(--wc-space-6); align-items: start; }
+.film-cinema-demo__laurel { display: flex; flex-direction: column; gap: .5rem; font-size: var(--wc-font-small); line-height: 1.4; }
+.film-cinema-demo__laurel>img { height: var(--wc-film-laurel-feature); width: 100%; padding: .2rem; object-fit: contain; object-position: left; margin-bottom: var(--wc-space-2); }
+.film-cinema-demo__support>img { height: var(--wc-film-laurel-support); }
+.film-cinema-demo__cities { align-self: center; font-size: var(--wc-font-small); }
+.film-cinema-demo__cities>p { font-size: 1.25rem; margin: 0 0 .5rem; }
+.film-cinema-demo__cities>div { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; }
+.film-cinema-demo__button { display: inline-flex; align-items: center; justify-content: center; min-height: 3rem; border: 1px solid var(--wc-film-muted); border-radius: 3px; padding: .7rem 1.4rem; margin-top: var(--wc-space-8); text-decoration: none; font-size: var(--wc-font-small); }
+@media(max-width:40rem) {
+  .film-cinema-demo__spread { display: flex; flex-direction: column; }
+  .film-cinema-demo__profile { width: 85% !important; margin-top: 0; align-self: end; }
+  .film-cinema-demo__frame { aspect-ratio: auto; padding-top: 90%; }
+  .film-cinema-demo__frame>img { top: 0; }
+  .film-cinema-demo__credits { position: relative; inset: auto; padding: 0 1rem 1rem; }
+  .film-cinema-demo__title { bottom: 30%; }
+  .film-cinema-demo__featured { grid-template-columns: 1fr; }
+}
+
+.film-detail-demo { padding-top:var(--wc-space-12); margin-top:var(--wc-space-8); border-top:1px solid var(--wc-film-line); }
+.film-detail-demo>div { display:grid; grid-template-columns:1fr 1fr; gap:var(--wc-space-8); margin-top:var(--wc-space-12); align-items:center; }
+.film-detail-demo img { width:100%; height:auto; }
+.film-detail-demo p { font-size:1.0625rem; line-height:1.6; }
+.film-detail-demo>p { font-size:1.5rem; }
+@media(max-width:760px){.film-detail-demo>div{grid-template-columns:1fr;}}
+.film-detail-demo>.film-cinema-demo__button { color:var(--wc-ink); background:var(--wc-white); min-height:4.5rem; font-size:1.125rem; }
+.film-detail-demo p { font-weight:400; }
+
+/* Projects scene reference. */
+@font-face{font-family:MedTerms Serif;src:url('../public/assets/projects-v3/eb-garamond.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:MedTerms Hand;src:url('../public/assets/projects-v3/patrick-hand.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:Tachyboard Serif;src:url('../public/assets/projects-v4/instrument-serif-regular.woff2') format('woff2');font-weight:400;font-display:swap}
+.showtellReference{position:relative;display:block;padding:0;background:var(--wc-white)}
+.showtellReferenceCatalogue{padding:24px;background:var(--wc-project-medterms-paper);color:var(--wc-project-medterms-ink)}
+.showtellReferenceCatalogue h4{font:700 44px/1.1 'MedTerms Serif',serif;margin:0 0 16px}
+.showtellReferenceCatalogue h4 span{font:400 28px 'MedTerms Hand',cursive}
+.showtellReferenceCatalogue p{font-size:15px;line-height:1.5;margin:0}
+.showtellReferenceGreeting{height:130px;position:relative}
+.showtellReferenceWill{position:absolute;bottom:-24px;left:8px;width:192px;height:192px;background:url('../public/assets/projects-v3/will-host.png') 0 0 / 1800% 100% no-repeat;image-rendering:pixelated}
+.showtellReferenceCatalogue ul{display:grid;grid-template-columns:1fr 1fr;gap:12px;list-style:none;margin:0;padding:0}
+.showtellReferenceCatalogue li{border-radius:10px;overflow:hidden;background:var(--wc-white);border:2px solid var(--game-colour)}
+.showtellReferenceCatalogue li a{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--wc-project-medterms-ink);font:700 22px 'MedTerms Serif',serif;padding:10px}
+.showtellReferenceCatalogue li img{background:var(--game-colour);border-radius:6px;flex:none}
+.referenceCatalogueAction{display:inline-block;margin-top:24px;padding:12px 18px;background:var(--wc-project-cipher);color:var(--wc-white);border-radius:8px;font-size:15px;text-decoration:none}
+.showtellReferenceMedia{display:grid;gap:24px;margin-top:24px}.showtellReferenceMedia figure{margin:0;background:var(--wc-white);color:var(--wc-ink)}
+.showtellReferenceMedia img{display:block;width:100%;height:auto}.showtellReferenceMedia figcaption{padding:16px;font-size:15px;line-height:1.5}
+.showtellReferenceTyping h4{font:400 clamp(32px,4vw,56px)/1 'Tachyboard Serif',serif;letter-spacing:-.03em;margin:24px 24px 16px}.showtellReferenceTyping p{margin:0 24px;font-size:15px}
+.showtellReferenceDinner .showtellReferenceMasthead{display:flex;flex-direction:column;width:88%;margin:24px auto;font:400 clamp(32px,7vw,82px)/.72 "Project Searing",cursive}
+@media(max-width:480px){.showtellReferenceCatalogue{padding:16px}.showtellReferenceCatalogue li a{display:block;font-size:22px}.showtellReferenceCatalogue li img{margin-bottom:10px}}
+
+.showtellReferenceTyping h4 a{color:inherit;text-decoration:none}.showtellReferenceTyping .referencePractice{font:22px/1.6 var(--wc-project-typing-font);color:var(--wc-project-typing-untyped)}
+.referenceDinnerHero,.referenceSeaHero{position:relative;display:block}.referenceDinnerHero .showtellReferenceMasthead{position:absolute;left:6%;top:28%;width:88%;margin:0;color:#fff;text-shadow:0 2px 4px #0007}.referenceDinnerHero .showtellReferenceMasthead span+span{margin-left:clamp(22px,8vw,100px)}.showtellReferenceMedia .showtellReferenceDinner{background:var(--wc-project-searing-rust);color:#fff}.showtellReferenceMedia .showtellReferenceSea{background:var(--wc-project-sea-panel);color:#fff}.referenceSeaHero .referenceSeaLogo{position:absolute;left:18%;top:18%;width:64%;filter:invert(1)}
+.referenceSeaPackages{position:absolute;right:5%;bottom:3%;width:47%;height:46%;display:block}.referenceSeaPackages img:first-child{position:absolute;left:0;bottom:0;width:83%;filter:drop-shadow(0 10px 10px #0009)}.referenceSeaPackages img:last-child{position:absolute;right:0;bottom:-3%;width:31%;filter:drop-shadow(0 8px 8px #0009)}

@@ -1,0 +1,9 @@
+---
+import type { Film } from '../data/films';
+interface Props { film: Film; }
+const {film} = Astro.props;
+---
+<section class="filmChapterEnd" aria-label={`${film.title}, further reading`}>
+  <div><p>{film.title}</p><span>{film.slug === 'wattleseed' ? 'The researchers, the apparatus, and making the film.' : 'The story, the cast, and three years of production.'}</span></div>
+  <a class="filmButton filmReadMore" href={`/films/${film.slug}/`} aria-label={`Read more about the film: ${film.title}`}>Read more about the film</a>
+</section>

@@ -19,7 +19,7 @@ a costume or nostalgic UI metaphor.
 
 ## Locked decisions
 
-- The default and only colour mode is light.
+The shared interface uses a light canvas. Films and its detail pages use Ink.
 - The homepage uses orderly boxes on a disciplined grid.
 - The right side is a vertical stream of self-contained panels, not a dashboard
   grid and not a hero-led landing page.
@@ -108,8 +108,7 @@ The current public structure contains Home, Photography, `/hey/`, Films, and
 Projects with their detail pages. Photography carries its own inquiry area,
 and the homepage carries the main contact invitation. `/hey/` remains a
 branded utility page outside the primary navigation and links to Home,
-Photography, LinkedIn, and email. Résumé remains in source during continued
-review.
+Photography, LinkedIn, and email. Résumé is approved for the production release.
 
 ## Module grammar
 
@@ -411,19 +410,57 @@ pages share the interface system while allowing crop, media sequence, title
 placement, and internal composition to respond to each work. Shared
 navigation, typography, and contact endings keep the pages related.
 
-The Films chooser follows one reading column. Two substantial stills lead their
-entries, with each original poster placed upright beside its still. Titles and
-director credits sit beneath each image group. A shared image transition
-connects a selected entry to its film page. Trailers open in a white dialog
-through a brief masked expansion. These movements follow visitor actions.
-Reduced motion presents each destination directly. All dimensions, typography,
-colour and timing derive from the shared token system.
+Projects uses four scenes in the order Medical Terminology Games, Tachyboard, Searing Stories and ConspiraSea. The opening places Will on the Projects title. The six game catalogue uses original illustrations, colours, player counts and links to each game’s rules. Phones retain two catalogue columns. Tachyboard presents an automatic practice passage with its corrected hands, keyboard, progress strip and session controls. Searing Stories pairs the landing photograph with its hosts portrait and rust surface. ConspiraSea uses the original underwater background, logo and tutorial card materials. Captain, Jester and Scylla explain secret roles, faction motives and player interactions.
 
-Film detail pages retain the leading image, synopsis, production account,
-original poster, two supporting stills, principal credits and festival record.
-Press kits and screening inquiries appear alongside viewing actions. A compact
-link to the other film follows the record. The shared ending uses the existing
-contact invitation and email address.
+Shared prose and interface text use Funnel Sans. Selected display titles use Unbounded. EB Garamond and Patrick Hand belong to Medical Terminology Games. Instrument Serif belongs to Tachyboard’s title, session details and controls. Its practice passage uses the product’s system monospace stack. Pirata One and Montserrat Alternates belong to ConspiraSea. The publication masthead and game logo appear as original artwork. Live text starts at 14 pixels. Smaller keyboard previews use live labels at this size. Each project has its own control treatment and a canonical primary destination in project data.
+
+The eighteen frame character atlas uses native 32 by 32 cells, binary transparency and the original palette. Integer display sizes are 192, 160 and 128 pixels. Supports come from the title, catalogue card edge, projected keyboard casing, hosts portrait frame, crew card edges and stationary ticket stage. Frame metadata supplies foot positions, hand positions and prop grips. Travel lasts 780 milliseconds. Scene entrances take about two seconds, with ConspiraSea using up to four seconds. An idle gesture runs every eight seconds while the scene is visible. Hover and keyboard focus direct a gesture toward the primary control.
+
+Ordinary document scrolling selects the active scene. Cancellation restores the completed arrangement. Resizing, text zoom, section links and browser history recalculate the support position. Reduced motion uses completed arrangements and immediate state changes. The guide toggle preserves the automatic demonstration, character inspection and project destinations. Tachyboard demonstrates letters, punctuation, capitals, numbers, spaces, Delete and Enter. Pause and Restart provide control over playback. The hand renderer loads near the scene, receives the latest demonstration target and rests between movements. Its poster comes from the same corrected rig. Selecting Will in ConspiraSea triggers a supported jump through a native button; reduced motion uses a brief stationary gesture. Project titles and primary descriptive text share the main destination.
+
+Home and Projects share the contact component, styles and controller. The ticket retains its perforations, foil, copy action and separate native email link. The W texture and rasterized noise are prepared before interaction. A finite animation supplies the click flash. The shared footer carries its copyright line.
+
+Films opens with the original red Murder of Minus portrait. The face, raised
+hand and component remain in frame. Wattleseed follows with its library image.
+Original title artwork links to the individual film page. Year, runtime,
+director and Trailer form the remaining opening content beneath the shared
+header. Each synopsis has its own place in the image sequence.
+
+Each chapter uses a short native scroll passage in wide viewports from 44rem wide and 38rem high
+when its title content fits. A central mask reveals one original still. The
+same image element appears in ordinary flow on compact screens and with
+reduced motion. Each index still appears once. Supporting images retain their
+position under the pointer. A native viewer shows full framing, accessible
+image descriptions and a Close button. Visible image captions are optional
+and require meaningful verified context.
+
+The index sequence uses additional original colour portraits, the auditorium,
+and the overhead frame for Murder of Minus. Wattleseed uses the night frame,
+apparatus controls, library conversation and a close character study. Different
+image scales and a small overlap connect adjacent frames. Phone layouts keep
+the order and complete subjects. Production accounts remain on detail pages.
+
+Shared film surface, muted text, line, sequence spacing and text shadow tokens
+control the composition. Funnel Sans carries live text. Original film lettering
+is artwork. Unbounded retains its selected display roles elsewhere. The chapter
+height token sets the scroll passage length. Idle and hidden pages stop rendering.
+
+Festival spreads use one twelve column grid. Featured records occupy four
+columns each with artwork up to the shared feature height. Supporting records
+occupy three columns with smaller artwork. The Lift Off cities occupy one
+integrated group. On phones, original artwork sits beside each festival record.
+Original transparent leaf margins remain complete. Festivals with pending art
+use a text composition. Festival titles and sourced categories have persistent
+underlines. Outcomes and years group related categories into readable passages.
+All records come from the same collection on the index and detail pages.
+
+Press kit uses a bordered button below each index spread and beside the original
+poster on detail pages. Trailer players load on activation. Both media dialogs
+support Escape, backdrop dismissal and focus restoration. Original posters,
+linked film titles and Film enquiries form the ending. The detail pages use the independent reading sequence described below.
+
+
+The opening places the name, résumé title, professional introduction and contact links beside a compact PDF preview with view and download actions. A desktop section index remains in view while the record scrolls. Its active link follows the reading position. Phones use ordinary wrapping section links above the record. Education and research precede experience, projects, awards, credentials and volunteering. Consecutive positions at one organization share a heading, with every role and date visible. Section headings use Funnel Sans. Both editions read from the same content record.
 
 The Résumé uses the same reading system with restrained formatting suited to a
 professional record. The PDF appears first through view and download actions,
@@ -433,7 +470,6 @@ while preserving type, colour, focus, and spacing rules.
 
 ## Explicitly avoid
 
-- Dark cinematic archive styling
 - Vintage paperwork, specimen labels, or clinical imagery
 - High-fashion collage for its own sake
 - Faux operating-system windows or literal desktop chrome
@@ -454,3 +490,33 @@ while preserving type, colour, focus, and spacing rules.
   decorative effects; borrow the conviction, not the literal style.
 - **Maria Vasilyeva:** interaction can reveal a body of work as a system; keep
   our geometry orderly rather than spatial and freeform.
+
+## Blog reading surface
+
+Blog articles use the shared header and footer, a White reading surface, Funnel Sans prose and an Unbounded title. The opening carries a category, title, publication date, draft status during review and a short overview. Prose uses a 64ch maximum measure. On desktop, section links occupy a left column and a matching right column keeps the prose centred in the viewport. The active section link changes from Slate to Ink while a reader scrolls. Section links flow above the article on compact screens. Source figures retain their complete proportions, with 15px captions and full size image links. Supporting documents use first page preview cards with direct PDF links. `src/styles/blog.css` uses the existing token palette and spacing scale.
+
+## Film detail reading sequence
+
+Each index chapter ends with its film title and a prominent filled control labelled
+“Read more about the film”. The boundary separates consecutive films and provides
+a visible destination after the festival composition.
+
+Detail pages use an independent opening with original title artwork, a selected
+production image, a premise and Trailer. The reading sequence includes the story,
+cast, director perspectives, production history, material and technical process,
+specifications, full credits, festivals and original press kit. Murder of Minus
+uses the monochrome chip portrait and original production photographs. Wattleseed
+uses apparatus and researcher frames reserved for this route. Every image opens
+in the native viewer. Supporting images remain stationary under the pointer.
+
+`src/data/film-essays.ts` records the expanded copy with source PDF page references.
+`src/data/film-detail-images.json` records the selected images. The media manifest
+preserves original URLs, hashes and derivative dimensions. Personal statements
+are editorial paraphrases of the published accounts. All content follows normal
+vertical flow, with a single column on phones and shared type and spacing tokens.
+
+
+Festival artwork uses the original graphic for its recorded edition and outcome.
+Full leaf boundaries remain visible within the image frame. Supporting groups
+share a compact vertical gap. Each artwork source and pending retrieval belongs
+in the festival record or artwork audit.

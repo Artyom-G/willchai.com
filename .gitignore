@@ -10,6 +10,12 @@
 
 # production
 /build
+/dist
+/.astro
+
+# local verification and generated artifacts
+/tmp
+/output
 
 # misc
 .DS_Store
@@ -25,3 +31,7 @@ yarn-error.log*
 # Local source media and experiments belong outside the active repository.
 /media-originals/
 /scratch/
+
+# Private article drafts and supporting application material.
+/src/content/blog/what-i-learned-running-for-msu-office.md
+/src/content/blog-media/what-i-learned-running-for-msu-office/

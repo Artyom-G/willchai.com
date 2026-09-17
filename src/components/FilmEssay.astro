@@ -1,0 +1,49 @@
+---
+import type { Film } from '../data/films';
+import { filmEssays } from '../data/film-essays';
+import images from '../data/film-detail-images.json';
+import FilmTitle from './FilmTitle.astro';
+import FilmImage from './FilmImage.astro';
+interface Props { film: Film; }
+const {film} = Astro.props;
+const essay = filmEssays[film.slug];
+const minus = film.slug === 'murder-of-minus';
+---
+<article class:list={['filmEssay', {filmEssayMinus: minus}]}>
+  <header class="filmEssayOpening">
+    <a class="filmBack" href="/films/">All films</a>
+    <div class="filmEssayIdentity">
+      <h1 class="visuallyHidden">{film.title}</h1>
+      <div class="filmEssayWordmark"><FilmTitle slug={film.slug}/></div>
+      <p>{film.year} / {film.runtime}<br />{film.directorLine}</p>
+    </div>
+    <div class="filmEssayLead">
+      <FilmImage image={essay.opening} class="filmEssayCover" sizes="(max-width: 760px) 100vw, 65vw" loading="eager" />
+      <div class="filmEssayPremise"><p>{essay.premise}</p><a class="filmButton" href={film.links[0].href} data-trailer={film.slug}>Trailer</a></div>
+    </div>
+  </header>
+  <section class="filmEssayStory" aria-labelledby="story-title">
+    <h2 id="story-title">The story</h2>
+    <div>{essay.story.map(text => <p>{text}</p>)}</div>
+    <dl class="filmEssayCast">{essay.cast.map(person => <div><dt>{person.character}</dt><dd>{person.performer}</dd></div>)}</dl>
+  </section>
+  <section class="filmEssayPerspective" aria-labelledby="perspective-title">
+    <div class="filmEssayPerspectiveTitle"><span>Director’s notes</span><h2 id="perspective-title">{essay.perspectiveTitle}</h2></div>
+    <div class="filmEssayPerspectives">{essay.perspectives.map(person => <div><h3>{person.name}</h3><p>{person.text}</p></div>)}</div>
+    {minus ? <FilmImage image={images['business-card']} class="filmEssayObject" sizes="(max-width: 760px) 100vw, 50vw" /> : <FilmImage image={images.researchers} class="filmEssayObject" sizes="(max-width: 760px) 100vw, 50vw" />}
+  </section>
+  <section class="filmEssayMaking" aria-labelledby="making-title">
+    <header><span>Production</span><h2 id="making-title">{essay.productionTitle}</h2></header>
+    <div class="filmEssayProductionCopy">{essay.production.map(text => <p>{text}</p>)}</div>
+    {minus ? <FilmImage image={images.directors} class="filmEssayProductionPhoto" sizes="(max-width: 760px) 100vw, 45vw" /> : <FilmImage image={{...film.gallery![1],alt:"Leo, played by Titus Tan, in the Mueller History of Health and Medicine Room."}} class="filmEssayProductionPhoto" sizes="(max-width: 760px) 100vw, 45vw" />}
+    <dl class="filmEssayMilestones">{essay.milestones.map(item => <div><dt>{item.label}</dt><dd>{item.value}</dd></div>)}</dl>
+  </section>
+  <section class="filmEssayCraft" aria-labelledby="craft-title">
+    <h2 id="craft-title">{essay.craftTitle}</h2>
+    <div class="filmEssayCraftBody">
+      {minus ? <FilmImage image={images.camera} class="filmEssayCraftPhoto" sizes="(max-width: 760px) 100vw, 40vw" /> : <FilmImage image={images.incident} class="filmEssayCraftPhoto" sizes="(max-width: 760px) 100vw, 50vw" />}
+      <div>{essay.craft.map(item => <section><h3>{item.title}</h3><p>{item.text}</p></section>)}</div>
+    </div>
+  </section>
+  <section class="filmEssaySpecs" aria-label="Film specifications"><dl>{essay.specifications.map(item => <div><dt>{item.label}</dt><dd>{item.value}</dd></div>)}</dl></section>
+</article>

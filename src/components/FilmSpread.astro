@@ -1,0 +1,21 @@
+---
+import type { Film } from '../data/films';
+import FilmImage from './FilmImage.astro';
+interface Props { film: Film; detail?: boolean; }
+const { film, detail = false } = Astro.props;
+const wattle = film.slug === 'wattleseed';
+const gallery = film.gallery || [];
+---
+<section class:list={['filmSpread', { filmSpreadMinus: !wattle, filmSpreadDetail: detail }]} id={detail ? 'about' : `about-${film.slug}`} aria-label={`${film.title} images and synopsis`}>
+  <div class="filmSpreadCopy">
+    <p class="filmSynopsis">{detail ? film.introduction : film.summary}</p>
+
+  </div>
+  {gallery[1] && <FilmImage image={gallery[1]} class="filmSpreadSecond" sizes={wattle ? '(max-width: 703px) 85vw, 42vw' : '100vw'} />}
+  <div class="filmSpreadNote">
+    <p>{film.story[0]}</p>
+    {!wattle && <p class="filmPrincipalCredit">Written and directed by<br />Will Chai and Artyom Gabtraupov</p>}
+  </div>
+  {!wattle && <FilmImage image={{src:film.still,srcSet:film.stillSrcSet,width:film.stillWidth,height:film.stillHeight,alt:film.stillAlt}} class="filmSpreadDaylight" sizes="(max-width: 703px) 80vw, 42vw" />}
+  {detail && <div class="filmProduction"><h2>Production</h2>{film.story.slice(1).map(paragraph => <p>{paragraph}</p>)}</div>}
+</section>

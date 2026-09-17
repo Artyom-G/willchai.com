@@ -6,7 +6,7 @@ import ContactEnding from "../../components/ContactEnding.astro";
 import { projects, type Project } from "../../data/projects";
 
 export function getStaticPaths() {
-  return projects.map((project) => ({
+  return projects.filter(project => !["medterms", "tachyboard"].includes(project.slug)).map((project) => ({
     params: { slug: project.slug },
     props: { project },
   }));
@@ -60,7 +60,7 @@ const otherProjects = projects.filter((item) => item.slug !== project.slug);
         <aside class="detailRail">
           <p class="detailMetaLabel">Also in projects</p>
           <nav aria-label="Other projects">
-            {otherProjects.map((item) => <a href={item.slug === "searing-stories" ? "https://searingstories.com" : `/projects/${item.slug}/`} rel={item.slug === "searing-stories" ? "external" : undefined} aria-label={item.slug === "searing-stories" ? "Searing Stories, external site" : undefined}>{item.title}</a>)}
+            {otherProjects.map((item) => <a href={item.primaryHref} rel="external">{item.title}</a>)}
           </nav>
         </aside>
 
@@ -124,7 +124,7 @@ const otherProjects = projects.filter((item) => item.slug !== project.slug);
                   target={link.href.startsWith("http") ? "_blank" : undefined}
                   rel={link.href.startsWith("http") ? "noreferrer" : undefined}
                 >
-                  {link.label} <span aria-hidden="true">↗</span>
+                  {link.label}
                 </a>
               ))
             }

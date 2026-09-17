@@ -47,18 +47,20 @@ The shoot builder comes next, then a caption free shuffle carries the wider
 body of work into the complete service footer. The current public release
 exposes Home, Photography, `/hey/`, Films, and Projects with their detail
 pages. The utility page links to Home, Photography, LinkedIn, and email.
-Résumé remains in source during continued review and stays outside current
+Résumé is approved for the production release and joins current
 visitor discovery. Films and Projects serve as destinations for individual
 work. Sharing Stories continues as the idea connecting the practice. The whole site uses the
 broad invitation “Let’s do something together,” while Photography provides a
 more specific inquiry route.
 
-Films uses original stills and upright poster artwork on the shared white
-canvas. The chooser follows one calm reading column, with each still carrying
-the visual lead. Titles, director credits, and viewing actions stay together.
-Motion follows the choice to explore a film or watch its trailer. Personal
-production accounts carry the collaborative character of the work into the
-detail pages.
+Films uses the Ink canvas with full width original stills, compact title groups,
+direct Trailer actions and visible festival laurels. The introduction reads
+“I am a filmmaker.” A short sequence follows ordinary scrolling on spacious
+desktop screens. Phone layouts present the same content in a natural vertical
+sequence. Categories, festivals, outcomes and years remain readable live text.
+Production accounts name the work and collaborators directly. The dark canvas
+is specific to Films and its detail pages.
+
 
 The Résumé is a professional record with matching PDF and HTML versions. It may
 link to a film or project when the connection is useful. `/hey/` is a compact utility page for quick links and QR
@@ -408,3 +410,11 @@ remain open. The compact W mark is available, while the final production
 wordmark asset should preserve the existing Plantagenet Cherokee lettering as
 vector outlines. These remaining choices should be decided with real copy and
 working browser specimens rather than generated lettering.
+
+## Projects character direction
+
+Projects uses four scenes drawn from the projects themselves. Medical Terminology Games supplies its six game catalogue, paper, colours and original illustrations. Tachyboard supplies its practice screen, session typography, keyboard and corrected hand rig. Searing Stories supplies its landing photograph, hosts portrait, outlined masthead and deep rust surface. ConspiraSea supplies its painted underwater background, original logo and tutorial card treatment. The homepage keeps its established media panels.
+
+Funnel Sans and Unbounded remain the shared text families. Medical Terminology Games has a bounded typography exception for EB Garamond at weight 700 and Patrick Hand at weight 400. Tachyboard uses Instrument Serif at weight 400 for its title, session details and controls. Its automatic practice passage uses the product’s system monospace stack. ConspiraSea uses Pirata One at weight 400 and Montserrat Alternates at weights 400 and 600. The bundled font files carry the SIL Open Font License. Searing Stories uses its original masthead as outlined artwork. Each project control takes its material and colour from its scene. The foil treatment belongs to the shared contact ticket.
+
+Will retains the original Photography face, hair, palette and native 32 by 32 construction. The atlas contains eighteen poses. Desktop, tablet and phone presentation uses 192, 160 and 128 pixels respectively. Every resting pose meets a visible support. Frame metadata records feet, hands and prop grips. Short complete sentences appear in Funnel Sans. The visible guide toggle keeps the project objects and controls available in either state. The shared footer carries its copyright line.

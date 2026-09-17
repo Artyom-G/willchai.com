@@ -1,0 +1,32 @@
+---
+import type { Film } from '../data/films';
+import FilmTitle from './FilmTitle.astro';
+import FilmImage from './FilmImage.astro';
+interface Props { film: Film; first?: boolean; detail?: boolean; }
+const { film, first = false, detail = false } = Astro.props;
+const Heading = detail ? 'h1' : 'h2';
+const wattle = film.slug === 'wattleseed';
+const nextFrame = detail ? film.gallery?.[0] : film.transition || film.gallery?.[0];
+---
+<section class:list={['filmChapter', { filmChapterMinus: !wattle, filmChapterFirst: first }]} id={film.slug} data-film-chapter aria-labelledby={`title-${film.slug}`}>
+  <div class="filmStage">
+    <div class="filmCover">
+      <div class="filmFrame">
+        {wattle ? <img class="filmFirstFrame" src={film.still} srcset={film.stillSrcSet} sizes="100vw" alt={film.stillAlt} width={film.stillWidth} height={film.stillHeight} loading={first ? 'eager' : 'lazy'} fetchpriority={first ? 'high' : 'auto'} /> : <div class="filmPortraitCrop"><img class="filmPortrait" src="/assets/films/minus-portrait.avif" width="1920" height="2560" alt="Murder of Minus poster portrait. Quinten holds a small component in his raised hand." loading={first ? 'eager' : 'lazy'} /></div>}
+        <div class="filmImageShade"></div>
+      </div>
+      <div class="filmHeroTop"><span>{film.year} / {film.runtime}</span></div>
+      <div class="filmHeroContent">
+        <Heading class="visuallyHidden" id={`title-${film.slug}`}>{film.title}</Heading>
+        {detail ? <div class="filmTitleArtwork"><FilmTitle slug={film.slug} /></div> : <a class="filmTitleArtwork filmTitleLink" href={`/films/${film.slug}/`} aria-label={film.title}><FilmTitle slug={film.slug} /></a>}
+        <div class="filmHeroBottom">
+          <p>{film.directorLine}</p>
+          <div class="filmActions">
+            <a class="filmPlay" href={film.links[0].href} data-trailer={film.slug}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 4 12 8-12 8z" /></svg>Trailer</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {nextFrame && <div class="filmAperture"><FilmImage image={nextFrame} sizes="100vw" loading="eager" /></div>}
+  </div>
+</section>

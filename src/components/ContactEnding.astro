@@ -1,0 +1,23 @@
+---
+interface Props {
+  photography?: boolean;
+}
+
+const { photography = false } = Astro.props;
+---
+
+<section class:list={["contactEnding", { contactEndingPhotography: photography }]} aria-labelledby="contactEndingTitle">
+  <div>
+    <h2 id="contactEndingTitle">
+      {photography ? "Tell me about the photographs you need." : "Let’s go do something."}
+    </h2>
+    {
+      photography ? (
+        <p>Share the date, place, people, and intended use. I’ll reply with a practical next step.</p>
+      ) : (
+        <p>I’m open to films, useful tools, curious collaborations, and work with a good story inside it.</p>
+      )
+    }
+  </div>
+  <a class="contactAction" href="mailto:me@willchai.com">me@willchai.com</a>
+</section>

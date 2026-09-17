@@ -1,0 +1,44 @@
+{
+  "portrait": {
+    "src": "/assets/films/murder-of-minus/detail-portrait-1920.avif",
+    "width": 1920,
+    "height": 1280,
+    "srcSet": "/assets/films/murder-of-minus/detail-portrait-640.avif 640w, /assets/films/murder-of-minus/detail-portrait-1280.avif 1280w, /assets/films/murder-of-minus/detail-portrait-1920.avif 1920w",
+    "alt": "William Chai as Quinten holds a chip in a monochrome portrait."
+  },
+  "directors": {
+    "src": "/assets/films/murder-of-minus/detail-directors-1920.avif",
+    "width": 1920,
+    "height": 2880,
+    "srcSet": "/assets/films/murder-of-minus/detail-directors-640.avif 640w, /assets/films/murder-of-minus/detail-directors-1280.avif 1280w, /assets/films/murder-of-minus/detail-directors-1920.avif 1920w",
+    "alt": "Two filmmakers stand together outdoors in a monochrome photograph."
+  },
+  "camera": {
+    "src": "/assets/films/murder-of-minus/detail-camera-1920.avif",
+    "width": 1920,
+    "height": 2880,
+    "srcSet": "/assets/films/murder-of-minus/detail-camera-640.avif 640w, /assets/films/murder-of-minus/detail-camera-1280.avif 1280w, /assets/films/murder-of-minus/detail-camera-1920.avif 1920w",
+    "alt": "William Chai stands on a train platform wearing a visor and carrying camera equipment."
+  },
+  "business-card": {
+    "src": "/assets/films/murder-of-minus/detail-business-card-1920.avif",
+    "width": 1920,
+    "height": 1040,
+    "srcSet": "/assets/films/murder-of-minus/detail-business-card-640.avif 640w, /assets/films/murder-of-minus/detail-business-card-1280.avif 1280w, /assets/films/murder-of-minus/detail-business-card-1920.avif 1920w",
+    "alt": "Business card on a desk with the printed name Cinco E. Owens."
+  },
+  "incident": {
+    "src": "/assets/films/wattleseed/detail-incident-1920.avif",
+    "width": 1920,
+    "height": 1038,
+    "srcSet": "/assets/films/wattleseed/detail-incident-640.avif 640w, /assets/films/wattleseed/detail-incident-1280.avif 1280w, /assets/films/wattleseed/detail-incident-1920.avif 1920w",
+    "alt": "A gloved hand grips a dark handle amid pale flecks."
+  },
+  "researchers": {
+    "src": "/assets/films/wattleseed/detail-researchers-1920.avif",
+    "width": 1920,
+    "height": 1038,
+    "srcSet": "/assets/films/wattleseed/detail-researchers-640.avif 640w, /assets/films/wattleseed/detail-researchers-1280.avif 1280w, /assets/films/wattleseed/detail-researchers-1920.avif 1920w",
+    "alt": "A seated researcher behind an open case and a foreground arm in a library."
+  }
+}

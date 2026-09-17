@@ -1,5 +1,6 @@
 ---
 import "../styles/home.css";
+import ContactTicket from "../components/ContactTicket.astro";
 ---
 
 <!doctype html>
@@ -117,6 +118,7 @@ import "../styles/home.css";
           <a href="/photography/">Photography</a>
           <a href="/films/">Films</a>
           <a href="/projects/">Projects</a>
+          <a href="/resume/">Résumé</a>
           <a href="https://www.linkedin.com/in/willchai/">LinkedIn</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -215,26 +217,7 @@ import "../styles/home.css";
           </a>
         </article>
 
-        <section class="contact-section" id="contact" aria-labelledby="contact-heading">
-          <div class="contact-copy">
-            <h2 id="contact-heading">Let’s go do something.</h2>
-            <a class="photography-inquiry" href="mailto:me@willchai.com">Contact me</a>
-          </div>
-
-          <div class="ticket-stage">
-            <button
-              class="contact-ticket"
-              type="button"
-              data-contact-ticket
-              aria-label="Copy me@willchai.com to the clipboard"
-            >
-              <span class="contact-ticket__surface">
-                <span class="contact-ticket__email">me<span aria-hidden="true">@</span>willchai.com</span>
-                <span class="contact-ticket__status" data-ticket-status aria-live="polite">say hello</span>
-              </span>
-            </button>
-          </div>
-        </section>
+        <ContactTicket />
 
         <footer class="site-footer">
           <span>willchai.com</span>

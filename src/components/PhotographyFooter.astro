@@ -1,0 +1,26 @@
+---
+import PhotographyTicket from "./PhotographyTicket.astro";
+---
+<footer class="photographyFooter" aria-labelledby="photographyFooterTitle">
+  <div class="photographyPolicy">
+    <a href="/photography/services-policy.pdf">Photography services policy</a>
+  </div>
+
+  <section class="photographyFooterContact" id="photography-contact" tabindex="-1">
+    <div class="photographyFooterCopy">
+      <h2 id="photographyFooterTitle">Tell me about your shoot.</h2>
+      <a class="photographyEmailLink" href="mailto:me@willchai.com?subject=Photography%20inquiry">Send me an email<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" /></svg></a>
+    </div>
+    <div class="photographyTicketStage">
+      <PhotographyTicket />
+    </div>
+  </section>
+
+  <div class="photographyFooterBase">
+    <a class="photographyFooterBrand" href="/" aria-label="Will Chai, home">
+      <img src="/assets/willchai-mark.avif" alt="" width="48" height="48" />
+      <span>willchai.com</span>
+    </a>
+    <p>© 2026 William Chai. All rights reserved.</p>
+  </div>
+</footer>

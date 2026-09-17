@@ -1,0 +1,52 @@
+<section class="shootArcade" id="pricing" aria-labelledby="arcadeTitle" data-shoot-arcade>
+  <div class="arcadeStageStack">
+    <div class="arcadeCabinet">
+      <div class="arcadeInterior">
+      <header class="arcadeWelcome"><h2 id="arcadeTitle">Build your shoot.</h2></header>
+      <form class="shootBuilder" data-shoot-builder>
+        <div class="shootInputs">
+          <label class="visuallyHidden" for="shoot-name">Event name</label>
+          <textarea id="shoot-name" class="shootName" name="title" rows="1" maxlength="80" placeholder="Event name" autocomplete="off" spellcheck="true"></textarea>
+          <div class="shootSteps" data-shoot-steps>
+            <section class="shootStep" data-shoot-step="0" aria-label="Your plans">
+              <div class="shootFields">
+                <label for="shoot-location">Where?<input id="shoot-location" type="text" name="location" placeholder="City or venue" maxlength="160" autocomplete="off" /></label>
+                <label for="shoot-date">When?<input id="shoot-date" type="text" name="date" placeholder="e.g. Sometime in August" maxlength="120" autocomplete="off" /></label>
+              </div>
+              <span class="shootGrip" data-step-grip aria-hidden="true"></span>
+            </section>
+            <section class="shootStep" data-shoot-step="1" aria-label="Optional details" hidden>
+              <div class="shootFields">
+                <div class="shootBudget"><label for="shoot-budget">Your budget <span>(optional)</span></label><div class="shootBudgetInput"><input id="shoot-budget" type="text" name="budget" maxlength="64" placeholder="e.g. $600" autocomplete="off" aria-describedby="shoot-currency shoot-budget-guide" /><span id="shoot-currency">CAD</span></div><p id="shoot-budget-guide" class="shootBudgetGuide">Every quote responds to the time, locations, editing, travel, and delivery involved. More room can support longer coverage and a wider final gallery.</p><label class="shootGuidance"><input type="checkbox" name="guidance" value="yes" /><span>Help me shape a budget</span></label></div>
+                <label for="shoot-idea">Anything else? <span>(optional)</span><textarea id="shoot-idea" name="idea" rows="3" maxlength="1500" placeholder="The people, the occasion, what you’re imagining…"></textarea></label>
+              </div>
+              <span class="shootGrip" data-step-grip aria-hidden="true"></span>
+            </section>
+            <section class="shootStep inquiryLetter" data-shoot-step="2" aria-label="Your inquiry" hidden>
+              <p class="inquirySubject"><span>To me@willchai.com</span><strong data-inquiry-subject>Photography inquiry</strong></p>
+              <label class="visuallyHidden" for="inquiry-message">Your inquiry message</label>
+              <textarea id="inquiry-message" data-inquiry-message rows="8" readonly></textarea>
+              <div class="inquiryActions"><button class="shootCopy" type="button" data-copy-inquiry>Copy text<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="1" /><path d="M15 4H4v11" /></svg></button></div>
+              <span class="shootGrip" data-step-grip aria-hidden="true"></span>
+            </section>
+          </div>
+          <div class="shootProgress"><button class="shootBack" type="button" data-shoot-back hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7 7-7-7 7-7" /></svg>Back</button><button class="shootNext" type="submit" data-shoot-next><span data-next-label>Next</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" /></svg><img class="arcadePointer" data-builder-pointer src="/assets/pixel-cursor.svg" alt="" width="92" height="112" aria-hidden="true" /></button><a class="shootNext isEmail" href="mailto:me@willchai.com?subject=Photography%20inquiry" data-shoot-email hidden><span data-email-label>Open email</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" /></svg><img class="arcadePointer" src="/assets/pixel-cursor.svg" alt="" width="92" height="112" aria-hidden="true" /></a></div>
+          <p class="inquiryStatus" data-inquiry-status role="status"></p>
+        </div>
+        <aside class="shootReceipt" aria-labelledby="shootSummaryTitle">
+          <div class="shootReceiptPhoto"><img data-shoot-image src="/photography/portrait-lakeshore.webp" alt="Lakeshore portrait" width="1707" height="2560" loading="lazy" decoding="async" /></div>
+          <div class="shootReceiptCopy"><h3 id="shootSummaryTitle" data-shoot-summary-title>Your shoot</h3><p class="shootSelection" data-shoot-summary hidden></p><p class="shootBudgetSummary" data-budget-summary hidden></p></div>
+          <div class="shootReferences" data-shoot-references hidden><p data-reference-heading></p><div class="shootReferenceImages" data-reference-images></div></div>
+        </aside>
+      </form>
+      <noscript><p class="arcadeFallback">Send your plans to <a href="mailto:me@willchai.com?subject=Photography%20inquiry">me@willchai.com</a> for a personal quote.</p><style>.shootBuilder,.arcadePointer{display:none}</style></noscript>
+      </div>
+    </div>
+    <div class="goldScene" data-gold-scene aria-hidden="true" inert>
+      <div class="goldBackdrop"></div>
+      <div class="goldPlan"><div class="goldPlanHeading">Super Generic Package</div><p class="goldPrice">$600</p></div>
+      <div class="willStage"><div class="pushingWill"><span class="pushingWillSprite"></span></div></div>
+    </div>
+  </div>
+  <div class="arcadeBelow"><a href="/photography/services-policy.pdf">Service policy</a><button class="sceneReplay" type="button" data-replay-scene hidden>Replay the shove<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5M19 12a7 7 0 1 0-2 5M20 12a7 7 0 0 0-2-5" /></svg></button></div>
+</section>

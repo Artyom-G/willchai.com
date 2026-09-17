@@ -1,0 +1,79 @@
+---
+import "../../styles/hey.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Quick links to Will Chai’s home, photography, LinkedIn, and email."
+    />
+    <meta name="theme-color" content="#eff0f2" />
+    <link rel="canonical" href="https://willchai.com/hey/" />
+    <title>Hey · Will Chai</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="willchai.com" />
+    <meta property="og:title" content="Hey · Will Chai" />
+    <meta property="og:description" content="Quick links to Will Chai’s current work and contact details." />
+    <meta property="og:url" content="https://willchai.com/hey/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Hey · Will Chai" />
+    <meta name="twitter:description" content="Quick links to Will Chai’s current work and contact details." />
+    <link rel="preload" href="/assets/funnel-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/unbounded-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/will-portrait.avif" as="image" />
+    <link rel="icon" href="/assets/willchai-mark.png" type="image/png" />
+    <link rel="icon" href="/assets/willchai-mark.avif" type="image/avif" />
+  </head>
+  <body>
+    <svg class="icon-sprite" aria-hidden="true">
+      <symbol id="arrow-up-right" viewBox="0 0 24 24">
+        <path d="M7 17 17 7M7 7h10v10"></path>
+      </symbol>
+    </svg>
+
+    <main class="hey-page">
+      <div class="hey-shell">
+        <a class="masthead" href="/" aria-label="Visit the willchai.com home page">
+          <img src="/assets/willchai-mark.avif" alt="" width="42" height="42" />
+          <span class="wordmark">willchai.com</span>
+          <span class="route-mark">/hey</span>
+        </a>
+
+        <section class="identity" aria-labelledby="hey-title">
+          <div class="portrait-stage">
+            <img src="/assets/will-portrait.avif" alt="Will Chai" width="176" height="176" />
+          </div>
+          <div class="identity-copy">
+            <h1 id="hey-title">Hey, I’m Will.</h1>
+            <p>I’m a student, a maker, and a storyteller.</p>
+          </div>
+        </section>
+
+        <nav class="link-grid" aria-label="Will Chai links">
+          <a class="link-panel link-panel--photography" href="/photography/">
+            <span><strong>Photography</strong><small>Portraits, events, performances, and creative work</small></span>
+            <svg class="link-icon" aria-hidden="true"><use href="#arrow-up-right"></use></svg>
+          </a>
+          <a class="link-panel link-panel--home" href="/">
+            <span><strong>Home</strong><small>Will Chai’s current work and contact</small></span>
+            <svg class="link-icon" aria-hidden="true"><use href="#arrow-up-right"></use></svg>
+          </a>
+          <a class="link-panel link-panel--linkedin" href="https://www.linkedin.com/in/willchai/">
+            <span><strong>LinkedIn</strong><small>Professional work and activity</small></span>
+            <svg class="link-icon" aria-hidden="true"><use href="#arrow-up-right"></use></svg>
+          </a>
+          <a class="link-panel link-panel--email" href="mailto:me@willchai.com">
+            <span><strong>Email me</strong><small>me@willchai.com</small></span>
+            <svg class="link-icon" aria-hidden="true"><use href="#arrow-up-right"></use></svg>
+          </a>
+        </nav>
+
+        <footer><span>Hamilton · Toronto</span><span>© 2026 William Chai</span></footer>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /resume/
-Disallow: /resume.pdf
 
 Sitemap: https://willchai.com/sitemap.xml

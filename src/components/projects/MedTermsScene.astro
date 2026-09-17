@@ -1,0 +1,57 @@
+---
+import { getProject } from "../../data/projects";
+const project = getProject("medterms")!;
+const games = [
+  { name: "Splice", slug: "splice", colour: "var(--wc-project-splice)", players: "2 to 5 players", text: "Connect word parts into a chain of medical terms." },
+  { name: "One", slug: "one", colour: "var(--wc-project-one)", players: "2 to 6 players", text: "Match colours and build medical words around a shared table." },
+  { name: "Meds Up", slug: "medsup", colour: "var(--wc-project-medsup)", players: "3+ players", text: "Ask questions to identify a hidden medical term." },
+  { name: "Cipher", slug: "cipher", colour: "var(--wc-project-cipher)", players: "4+ players", text: "Give cryptic clues and intercept the other team’s code." },
+  { name: "Ideosis", slug: "ideosis", colour: "var(--wc-project-ideosis)", players: "2+ players", text: "Guide a partner to the right words with a single clue." },
+  { name: "Those Who Know", slug: "twk", colour: "var(--wc-project-twk)", players: "3 to 12 players", text: "Trade clues and work out who is bluffing about the term." },
+];
+---
+<section id="medterms" class="projectScene medtermsScene" data-scene="medterms" data-speech="There’s a whole collection here." data-entrance={JSON.stringify([{pose:"look",duration:500},{pose:"present",duration:800},{pose:"wave",duration:400}])} aria-labelledby="medterms-title">
+  <div class="catalogueIntroduction">
+    <h2 id="medterms-title"><a class="projectTitleLink" href={project.primaryHref} aria-label="Medical Terminology Games"><span>Med<wbr />Terms</span><span class="medtermsUnderline" aria-hidden="true"></span><span class="gamesLettering">Games</span></a></h2>
+    <p class="cataloguePremise"><a class="projectTextLink" href={project.primaryHref}>A catalogue of six games for learning how medical words fit together.</a></p>
+    <p class="catalogueCredit">Created with Dr. Stephen Russell.</p>
+    <a class="catalogueAction" data-primary href={project.primaryHref}>Explore the games</a>
+    <p class="catalogueModes">Play online with friends or gather around a table.</p>
+  </div>
+  <div class="catalogueShelf" data-scene-object>
+    <span class="support" data-support data-x="0.15" data-mobile-x="0.22" data-y="0"></span>
+    <ul class="gameCatalogue" aria-label="The six games">
+      {games.map(game => <li style={`--game-colour:${game.colour}`}>
+        <a class="catalogueGame" href={`https://medterms.willchai.com/rules/${game.slug}`} aria-label={`How to play ${game.name}`}>
+          <div class="gameArtwork"><img src={`/assets/projects-v4/medterms-${game.slug}.svg`} width="42" height="42" alt="" /><span>{game.players}</span></div>
+          <div class="gameDescription"><h3>{game.name}</h3><p>{game.text}</p><span class="gameRuleLink">How to play</span></div>
+        </a>
+      </li>)}
+    </ul>
+  </div>
+</section>
+<style>
+  .medtermsScene{display:grid;grid-template-columns:minmax(250px,.8fr) minmax(0,1.7fr);gap:clamp(32px,5vw,80px);align-items:center;background-color:var(--wc-project-medterms-paper);background-image:repeating-linear-gradient(0deg,transparent,transparent 31px,#8f897c12 31px,#8f897c12 32px);color:var(--wc-project-medterms-ink);padding-block:64px 56px;}
+  .catalogueIntroduction h2{position:relative;margin:0;display:block;width:fit-content;max-width:100%;font:700 clamp(44px,4.7vw,72px)/.95 "Project Garamond",Georgia,serif;letter-spacing:-.035em;}
+  .gamesLettering{display:block;font:400 36px/1.15 "Project Hand",sans-serif;color:#726961;letter-spacing:-.035em;margin:12px 0 0 32%;}
+  .medtermsUnderline{display:block;width:48%;height:6px;background:#dca637;clip-path:polygon(0 60%,22% 10%,48% 36%,70% 0,100% 30%,100% 70%,68% 48%,45% 90%,20% 54%,0 100%);margin:10px 0 0 31%;}
+  .cataloguePremise{font-size:clamp(18px,1.5vw,21px);line-height:1.5;max-width:27ch;margin:32px 0 12px;}
+  .catalogueCredit{font-size:15px;line-height:1.5;color:#655e55;margin:0;}
+  .catalogueAction{display:table;margin:32px 0 0;padding:13px 20px;border:2px solid var(--wc-project-cipher);border-radius:10px;color:#fff;background:#292622;text-decoration:none;font-size:17px;transition:background 160ms,transform 160ms;box-shadow:3px 3px 0 #918679;}
+  .catalogueAction span{margin-left:20px;}.catalogueAction:hover{background:#474039;transform:translateY(-2px);}
+  .catalogueModes{max-width:25ch;font:400 18px/1.4 "Project Hand",sans-serif;color:#655e55;margin:24px 0 0;}
+  .catalogueShelf{position:relative;margin-top:100px;}
+  .gameCatalogue{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;padding:0;margin:0;}
+  .gameCatalogue li{display:flex;min-width:0;}
+  .catalogueGame{display:flex;flex-direction:column;width:100%;border:2px solid color-mix(in srgb,var(--game-colour),white 55%);border-radius:16px;background:#fff;overflow:hidden;color:#423e37;text-decoration:none;box-shadow:3px 3px 0 color-mix(in srgb,var(--game-colour),transparent 77%);transition:transform 180ms,border-color 180ms;}
+  .catalogueGame:hover{border-color:var(--game-colour);background:#fffdf9;}
+  .gameArtwork{min-height:62px;display:flex;align-items:center;justify-content:space-between;gap:6px;background:var(--game-colour);padding:12px 14px;}
+  .gameArtwork img{width:38px;height:38px;}.gameArtwork>span{font:400 15px/1.2 "Project Hand",sans-serif;color:#fff;text-align:right;max-width:7ch;text-shadow:0 1px 2px rgb(0 0 0 / .42);}
+  li:nth-child(4) .gameArtwork>span,li:nth-child(6) .gameArtwork>span{color:#fff;}
+  .gameDescription{display:flex;flex:1;flex-direction:column;padding:18px 16px 16px;}
+  .gameDescription h3{font:700 28px/1.05 "Project Garamond",Georgia,serif;margin:0 0 10px;}
+  .gameDescription p{font:400 15px/1.45 var(--wc-font-sans);margin:0 0 18px;}
+  .gameRuleLink{margin-top:auto;font-size:14px;color:#625c54;display:flex;justify-content:space-between;gap:8px;}
+  @media(max-width:1100px){.medtermsScene{grid-template-columns:1fr;padding-top:44px;gap:0;}.catalogueIntroduction{display:grid;grid-template-columns:1fr 1fr;column-gap:40px;align-items:start;}.catalogueIntroduction h2{grid-row:1/4;font-size:66px;align-self:center;}.cataloguePremise{margin-top:0;}.catalogueAction{margin-top:22px;}.catalogueModes{grid-column:2;margin-top:16px;}.catalogueShelf{margin-top:120px;}.gameDescription h3{font-size:30px;}}
+  @media(max-width:600px){.medtermsScene{padding:36px 20px 32px;}.catalogueIntroduction{display:block;}.catalogueIntroduction h2{font-size:clamp(45px,14vw,62px);}.gamesLettering{font-size:30px;}.cataloguePremise{font-size:18px;margin-top:24px;max-width:27ch;}.catalogueCredit{font-size:14px;}.catalogueAction{margin-top:24px;font-size:16px;}.catalogueModes{font-size:17px;margin-top:18px;max-width:28ch;}.catalogueShelf{margin-top:120px;}.gameCatalogue{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}.gameArtwork{padding:10px;min-height:54px;}.gameArtwork img{width:30px;height:30px;}.gameArtwork>span{font-size:14px;}.gameDescription{padding:14px 10px;}.gameDescription h3{font-size:25px;}.gameDescription p{font-size:14px;line-height:1.45;}.gameRuleLink{font-size:14px;}}
+</style>

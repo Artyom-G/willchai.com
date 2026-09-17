@@ -311,35 +311,42 @@ project panels do not receive the treatment by default.
 
 ### Films programme and player
 
-The Films chooser introduces two films through authentic stills and their
-original posters. Each entry requires an exact title, year, runtime, director
-credit, premise, detail link and trailer link. Desktop and phone layouts use a
-single reading column. Upright poster artwork sits beside the still and remains clear of
-the title. Detail pages preserve the synopsis, production context, credits,
-festival record, supporting images, press kit and screening contact.
+The Films opening combines the original Murder of Minus portrait, linked title
+lettering and compact year, runtime, director and Trailer content. Wattleseed
+follows with the library frame. The shared header retains Contact. Each synopsis
+stands alone beside a selected original still. New colour portraits and the
+auditorium extend Murder of Minus. Apparatus controls and library scenes extend
+Wattleseed. A small overlap links two adjacent stills. The original framing is
+available through an image viewer. Every index still appears once.
 
-A native view transition carries the chosen still into the detail page when
-the browser supports cross document transitions. The transition takes its
-duration and easing from shared tokens. Browsers with reduced motion use
-immediate navigation. Hover and keyboard focus settle the small poster beside
-its still. The original image proportions remain stable at rest.
+In wide viewports from 44rem wide and 38rem high, each chapter occupies one and a half viewport
+heights when its text fits. Native vertical scrolling expands a central image
+mask. The same image element enters ordinary flow on compact viewports and with
+reduced motion. Supporting photographs remain fixed under the pointer and
+arrive through ordinary scrolling. Image controls use a zoom cursor and visible
+keyboard focus. The viewer presents the full image with a Close button.
 
-Transition lifecycle handlers register in the document head before rendering.
-They consume the rejected readiness promise when the browser skips a visual
-transition, preserving ordinary navigation during quick successive visits.
+Festival spreads place featured original artwork in a compact three column tier
+and supporting artwork in a smaller four column tier. Transparent margins stay
+complete. Pending artwork uses a text composition. Lift Off cities share one
+compact group beneath the artwork tiers. On phones, artwork sits beside the record.
+Portrait tablets use two columns to keep the festival spread compact.
+Festival titles and sourced result categories have persistent underlines.
+Related categories share an outcome and year label. All confirmed records stay
+in ordinary page flow. A bordered Press kit control closes each index spread.
+The detail pages expand the production material through the film reading sequence below.
 
-The trailer opens in a native dialog. A brief masked expansion connects the
-action to the viewing surface. The iframe loads after a visitor chooses a
-trailer. Closing the dialog, pressing Escape or clicking its backdrop stops
-playback and restores focus and scrolling. A direct YouTube link accompanies
-the player. Automatic English caption availability is stated beneath it.
-The original anchor remains a working trailer link when JavaScript is disabled.
+Trailers open in an Ink native dialog. The iframe loads after activation.
+Closing, Escape and the backdrop stop playback and restore focus and scrolling.
+A direct YouTube link and caption information accompany the player. The image
+viewer follows the same dismissal and focus behavior.
 
-Responsive AVIF stills reserve width and height. The two film entries together
-use approximately 489 KB of image derivatives across every published size.
-Press kits retain the original PDFs and load on request. The source manifest
-records their provenance. The system page carries a film entry example and
-links to the complete public Films pages.
+Responsive AVIF stills reserve their dimensions. Press kits load on request.
+The source manifest records original media and title extraction. Film colors
+and motion timings come from `tokens.css`. The system example uses the original
+Murder of Minus lettering, portrait, additional colour stills and compact
+festival artwork. It demonstrates linked titles, underlined results and the
+bordered Press kit action.
 
 The system stays consistent across forms, but the evidence each form needs is
 different. Photography leads with image sequences and honest captions; it
@@ -355,3 +362,62 @@ that do not exist. Objects and watchmaking record material, scale, process, and
 provenance where relevant. Research or academic work may appear when it helps
 explain the practice, but it belongs in project context or the archive rather
 than turning the identity rail into a student profile.
+
+## Blog article
+
+A blog article requires a category, title, author, publication date, overview, body and draft status. Reuse the shared site header and footer. The visible opening carries the category, title, publication date and overview. A contents navigation links to its second level headings. On desktop, a left contents column and a matching right column keep the prose centred in the viewport. The current section link uses Ink and a heavier weight while a reader scrolls. The contents become an ordinary section above the prose on phones. Keep native document scrolling, visible keyboard focus and a reading measure up to 64ch. Evidence images retain their complete proportions and descriptive captions linking to the source. Supporting PDFs use first page preview cards with direct document links. Full size image links and PDF downloads work without JavaScript. Draft articles and associated media endpoints appear in development only. The reference example lives in `index.html#blog-reading`.
+
+## Projects show and tell
+
+Each scene supplies its own composition, primary destination, support points and entrance sequence. Medical Terminology Games, Tachyboard, Searing Stories and ConspiraSea appear in this order. Shared navigation, spacing and document scrolling connect the scenes. The contact ending reuses the homepage ticket.
+
+Medical Terminology Games presents all six games using the catalogue’s original SVG illustrations and colours. Each card has a premise, player count and direct rules link. The collection title, credit and primary action remain outside the grid. Its paper and ink tokens belong to this scene. EB Garamond and Patrick Hand load from local licensed files. Phones use two catalogue columns. Shared text uses Funnel Sans and selected display roles use Unbounded. Tachyboard’s bounded Instrument Serif family supplies its title, session details and controls. Its practice passage uses the product’s system monospace stack. ConspiraSea uses licensed Pirata One and Montserrat Alternates within its scene.
+
+The guide uses eighteen native 32 by 32 frames at integer display sizes of 192, 160 and 128 pixels. Every resting frame meets a support on a visible object. The title letter, first catalogue card edge, projected keyboard casing, hosts portrait frame, crew card edges and ticket stage supply those supports. Frame metadata records feet, hands and prop grip points. Held illustrations follow the current grip. Released illustrations move into the foreground arrangement.
+
+A single controller owns active scene selection, 780 millisecond travel, gestures, idle scheduling and cancellation. Entrances run once per page visit. Returning to a scene restores the completed arrangement. Resize, text zoom, section links and browser history recompute positions. Reduced motion uses completed scenes and immediate state changes. Will responds to hover, focus and direct selection in every scene. A direct guide jump waits for an active entrance, resolves the current viewport scene before travel, and returns to its visible support. The guide can be hidden while demonstration playback, inspection, character return and destinations remain usable.
+
+Tachyboard uses the corrected source rig including the thumb axes from revision 4513723 and the resting position and single thumb Space press from revision dea2e9e. It retains the original licensed GLB models. The right thumb presses Space while the palms preserve their current position. Platform labels follow the keyboard source. The scene introduces adaptive Endless practice, Coach, timed sessions and custom drills before the active typing view with an Endless session header, slim progress line, system monospace passage, persistent Finger guide indicator, keyboard and hands. A 95 WPM automatic passage demonstrates letters, punctuation, capitals, numbers, spaces, a correction with Delete and Enter. Each scheduled keystroke drives the hands and key highlights. The caret follows the product cursor rules. Its position and line flow use critically damped springs, horizontal travel stretches the 3 pixel caret, and a 530 millisecond pause begins the idle blink. Selecting the keyboard focuses a text field. Visitor keystrokes update the field and drive the same hands and key states. The external destination remains the sole visible control. The renderer loads near visibility, receives the latest target and stops between movements, outside the viewport and on hidden tabs. The static poster comes from the same rig. The poster, camera and support edge share the 600 pixel viewport breakpoint. Camera resize completion triggers a guide position update. At smaller sizes, live key labels retain a 14 pixel minimum. The demonstration runs only while visible. Reduced motion presents a static passage and resting hands.
+
+Searing Stories uses the actual landing photograph beneath the published Trattatello title face. The title retains the source’s large two line composition, with the font loading as the scene approaches. A deep rust lower area places the hosts portrait beside its introduction and white destination control. Will rests on the visible portrait frame. ConspiraSea uses its original painted underwater background, white logo, physical base game and Hadal expansion package artwork, and three original role cards. Its description introduces secret roles, partial information and group voting before the destination. Who can you trust? remains central to its crew interaction. The initial deal begins with empty cards as Will carries each illustration into place. The role deck deals three roles from the complete available set before repeating a role. After placing the final card, Will remains on its visible upper edge. Hovering, focusing or selecting a card schedules its presentation after an active entrance or hop completes. Will remains on the chosen card edge until a later selection. The native button supports pointer, Enter and Space. Reduced motion uses a stationary gesture. Project titles and primary descriptive text link directly to the corresponding main destination. The destination reads Play ConspiraSea Online. The contact ticket uses a stationary stage support, its existing four second foil interval, click to copy and a separate native email link.
+
+The scene contents and ticket surface grow with enlarged text. Scene titles and catalogue descriptions wrap within their available width. Supports follow the resulting object geometry.
+
+The canonical asset record is `src/data/projects-showtell-sources.json`. It records sources, derivatives, dimensions, hashes, licences and native sprite metadata. The rendered reference is `index.html#projects-sequence`. The current review evidence and performance measurements accompany the local implementation in `artifacts/projects-revision-2/`. Earlier review records remain in their original artifact directories.
+
+## Shared footer
+
+The shared footer displays the rights line. The separate utility page remains
+available for profile links and QR codes. Page specific contact invitations
+and Photography’s service information retain their own roles.
+
+## Film detail reading sequence
+
+Each index chapter ends with its film title and a prominent filled control labelled
+“Read more about the film”. The boundary separates consecutive films and provides
+a visible destination after the festival composition.
+
+Detail pages use an independent opening with original title artwork, a selected
+production image, a premise and Trailer. The reading sequence includes the story,
+cast, director perspectives, production history, material and technical process,
+specifications, full credits, festivals and original press kit. Murder of Minus
+uses the monochrome chip portrait and original production photographs. Wattleseed
+uses apparatus and researcher frames reserved for this route. Every image opens
+in the native viewer. Supporting images remain stationary under the pointer.
+
+`src/data/film-essays.ts` records the expanded copy with source PDF page references.
+`src/data/film-detail-images.json` records the selected images. The media manifest
+preserves original URLs, hashes and derivative dimensions. Personal statements
+are editorial paraphrases of the published accounts. All content follows normal
+vertical flow, with a single column on phones and shared type and spacing tokens.
+
+
+Festival artwork uses the original graphic for its recorded edition and outcome.
+Full leaf boundaries remain visible within the image frame. Featured and supporting
+tiers use tight internal spacing without shared row height gaps. Each artwork source
+and pending retrieval belongs in the festival record or artwork audit.
+
+
+## Résumé record
+
+The opening places the name, résumé title, professional introduction and contact links beside a compact PDF preview with view and download actions. A desktop section index remains in view while the record scrolls. Its active link follows the reading position. Phones use ordinary wrapping section links above the record. Education and research precede experience, projects, awards, credentials and volunteering. Consecutive positions at one organization share a heading, with every role and date visible. Section headings use Funnel Sans. Both editions read from the same content record. The rendered reference lives in `index.html#resume-record`.

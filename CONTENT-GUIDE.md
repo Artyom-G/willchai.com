@@ -92,9 +92,11 @@ PDFs. `src/data/film-media-sources.json` records source URLs and file hashes.
 Trailer actions identify the trailer explicitly. The full films are available
 through a screening inquiry. The YouTube players offer automatic English
 captions, which the dialog identifies as automatic. Media loads from YouTube
-after a visitor chooses Watch trailer. Direct YouTube links remain available.
+after a visitor chooses Trailer. Direct YouTube links remain available.
 
 ## Résumé and utility content
+
+The opening places the name, résumé title, professional introduction and contact links beside a compact PDF preview with view and download actions. A desktop section index remains in view while the record scrolls. Its active link follows the reading position. Phones use ordinary wrapping section links above the record. Education and research precede experience, projects, awards, credentials and volunteering. Consecutive positions at one organization share a heading, with every role and date visible. Section headings use Funnel Sans. Both editions read from the same content record.
 
 The Résumé is a professional record with a current PDF at the top and a
 scrollable HTML version below. View and download actions stay easy to find, and
@@ -106,8 +108,7 @@ Film and Project pages.
 stays outside the primary navigation architecture. It links to Home,
 Photography, LinkedIn, and email. Contact appears within the homepage and the
 Photography inquiry area. Film and Project routes appear in the sitemap and
-support crawler discovery. Résumé stays outside the sitemap and crawler
-discovery during continued review.
+support crawler discovery. Résumé is approved for inclusion in the sitemap and crawler discovery.
 
 ## Project entry checklist
 
@@ -170,3 +171,29 @@ Review older work individually. A useful project may remain as a compact item
 on Projects, move to a stronger replacement, or leave the public site with an
 appropriate redirect. Preserve accurate credit and project history wherever
 the selected destination benefits from it.
+
+## Films recognition and labels
+
+Films opens with Murder of Minus, followed by Wattleseed. Original title artwork links to the corresponding film page. Viewing actions read Trailer.
+Film details, About, Screener, Press kit and Screening enquiry identify their
+destinations directly. Each laurel records its exact category, festival,
+outcome and year in `src/data/films.ts`, with a supporting source URL.
+The original wreath branches provide the surrounding artwork. Award winners,
+nominees and selections retain their respective descriptions. The full record
+remains available within each film page.
+
+## Blog drafts
+
+Blog articles live in `src/content/blog/` as Markdown with a title, description, overview, author, category, publication date and draft flag. Their filenames supply the `/blog/{title}/` slug. Keep approved wording intact when preparing a page. `BlogLayout.astro` supplies the shared header, overview, contents links and reading surface. The contents links track the current second level section while a reader scrolls.
+
+Optional search fields include `seoTitle`, `modified`, `socialImage`, `socialImageAlt` and `keywords`. Published entries appear automatically in the Blog index, XML sitemap and RSS feed. The article template supplies canonical metadata, large social previews, publication metadata and JSON LD for the website, author, blog article and breadcrumb trail. Keep the search title concise and accurate while preserving the approved visible title.
+
+Set `draft: true` during review. Draft articles and their media endpoints render in the development preview and are excluded from production builds. Store supporting images and PDFs in `src/content/blog-media/{slug}/`. Link figures to their full size image and include source captions. When an article includes several supporting PDFs, show a legible first page preview and a direct PDF link for each document. Publication requires a separate review of wording, evidence and the intended release. Add the approved article to the sitemap and visitor discovery as part of publication.
+
+## Projects guide copy
+
+The four project scenes carry a concise factual premise and a direct destination. Guide speech appears as a complete short sentence and closes after its introduction. The project name, premise and destination remain in the document. Character inspection uses Captain, Jester or Scylla as its caption. The introduction and controls support brief visits.
+
+Medical Terminology Games introduces a catalogue of six games and credits Dr. Stephen Russell. Each game carries a short premise, player count and direct rules link. Tachyboard is a typing analysis and practice product. The scene shows a labelled automatic typing demonstration with a fixed passage and scheduled keystroke timings. Searing Stories uses the site’s dinner photograph, hosts portrait and their names. ConspiraSea explains secret role assignment and differing faction goals. Selecting an illustration reveals its role, ability and a consequence for play. The chooser contains these four projects. Blog publication continues through its own collection and review process.
+
+“Explore the games” opens the Medical Terminology Games landing page at https://medterms.willchai.com/. “Open Tachyboard”, “Read Searing Stories” and “Play ConspiraSea” open their respective websites. The existing ConspiraSea story address remains available. The contact ending uses “Let’s go do something.”, the ticket copy action and the separate “Contact me” email link.

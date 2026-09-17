@@ -1,0 +1,22 @@
+---
+import BlogLayout from "../../../layouts/BlogLayout.astro";
+import { getBlogPosts } from "../../../data/blog";
+
+export function getStaticPaths() {
+  return getBlogPosts().map(({ slug, entry }) => ({
+    params: { slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content, frontmatter, getHeadings } = entry;
+---
+
+<BlogLayout
+  {...frontmatter}
+  path={`/blog/${Astro.params.slug}/`}
+  headings={getHeadings().filter((heading) => heading.depth === 2)}
+>
+  <Content />
+</BlogLayout>

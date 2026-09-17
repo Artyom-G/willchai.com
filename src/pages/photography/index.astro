@@ -1,0 +1,134 @@
+---
+import "../../styles/photography.css";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import PhotographyFooter from "../../components/PhotographyFooter.astro";
+import PhotographyCollection from "../../components/PhotographyCollection.astro";
+import PhotographyLightbox from "../../components/PhotographyLightbox.astro";
+import PhotographyArcade from "../../components/PhotographyArcade.astro";
+import shuffleManifest from "../../data/photographyShuffle.json";
+
+const featuredPhotographs = [
+  { src: "/photography/portrait-lakeshore.webp", alt: "A person wearing black and white standing beside rocks at the water's edge", width: 1707, height: 2560 },
+  { src: "/photography/portrait-formal-group.webp", alt: "Two people in formalwear standing together on a wooden bridge by a pond", width: 1920, height: 1280 },
+  { src: "/photography/portrait-frost.webp", alt: "A person wrapped in a blanket facing a distant horizon across frosted ground", width: 1920, height: 2400 },
+  { src: "/photography/product-eyewear.webp", alt: "Black Prada sunglasses photographed on a white surface", width: 1920, height: 2333 },
+  { src: "/photography/portrait-formal.webp", alt: "Close portrait of a person in a navy suit holding a pair of glasses", width: 1707, height: 2560 },
+  { src: "/photography/concert-mcmaster.avif", alt: "A vocalist in a McMaster University hoodie performing beneath warm stage lights", width: 1920, height: 2400 },
+  { src: "/photography/portrait-couple.webp", alt: "A couple in formal clothes holding each other indoors", width: 1722, height: 2560 },
+  { src: "/photography/concept-time.webp", alt: "Black and white conceptual photograph of marked hands holding an open pocket watch", width: 1920, height: 1920 },
+  { src: "/photography/product-beverage.webp", alt: "Cotton candy soda bottle photographed against a bright blue background", width: 1920, height: 2560 },
+];
+
+const supportingClients = [
+  { name: "Foxwood Homes", detail: "Residential projects", logo: "/photography/clients/foxwood-homes.png", width: 213, height: 141, treatment: "foxwood" },
+  { name: "Platinum Moon", detail: "Band photography and live performance", logo: "/photography/clients/platinum-moon.avif", width: 500, height: 500, treatment: "platinum" },
+];
+
+const shufflePhotographs = shuffleManifest.images;
+const shuffleBatchSize = 36;
+---
+
+<BaseLayout
+  title="Photography | Will Chai"
+  description="Portrait and event photography by Will Chai in Hamilton and across Ontario. Explore featured photographs and plan a shoot together."
+  path="/photography/"
+  pageClass="photographyPage"
+>
+  <link slot="head" rel="preload" as="image" href="/photography/pixel-photographer.png" />
+  <script slot="head" is:inline src="/scripts/photography.js" defer></script>
+  <script slot="head" is:inline src="/scripts/photography-opening.js" defer></script>
+  <script slot="head" is:inline src="/scripts/photography-orbit.js" defer></script>
+  <script slot="head" is:inline src="/scripts/photography-clients.js" defer></script>
+  <script slot="head" is:inline src="/scripts/photography-collection.js" defer></script>
+  <script slot="head" is:inline src="/scripts/photography-arcade.js" defer></script>
+  <div class="pageShell">
+    <SiteHeader current="photography" showPrimaryNavigation={false} />
+    <main id="main" class="pageMain">
+      <header class="photographyOpening">
+        <h1>Photography.</h1>
+        <div class="photographyIntroduction"><p class="photographyLocation">Portraits and events, in Hamilton and across Ontario.</p></div>
+      </header>
+      <PhotographyCollection photographs={featuredPhotographs} />
+
+      <section class="clientProof" data-client-proof aria-labelledby="clientProofTitle">
+        <header class="clientProofHeader">
+          <h2 id="clientProofTitle">
+            <span aria-hidden="true">Will Chai <span class="clientProofMultiply">×</span></span>
+            <span class="visuallyHidden">Organizations Will Chai has photographed for</span>
+          </h2>
+        </header>
+        <div class="clientProofComposition">
+          <article class="clientFeature">
+            <img
+              class="clientFeaturePhoto"
+              src="/photography/concert-mcmaster.avif"
+              alt="A vocalist in a McMaster University hoodie performing beneath warm stage lights"
+              width="1920"
+              height="2400"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="clientFeatureCopy">
+              <img src="/photography/clients/mcmaster.avif" alt="" width="500" height="500" loading="lazy" decoding="async" />
+              <div>
+                <h3>McMaster University</h3>
+              </div>
+            </div>
+          </article>
+          <div class="clientSupport">
+            {
+              supportingClients.map((client) => (
+                <article class={`clientSupportItem clientSupportItem-${client.treatment}`}>
+                  <img
+                    src={client.logo}
+                    alt=""
+                    width={client.width}
+                    height={client.height}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div class="clientSupportCopy">
+                    <h3>{client.name}</h3>
+                    <p>{client.detail}</p>
+                  </div>
+                </article>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      <PhotographyArcade />
+
+      <section class="shuffleSection" aria-labelledby="shuffleTitle">
+        <header class="shuffleHeader">
+          <h2 id="shuffleTitle">A shuffle</h2>
+          <div class="shuffleNavigation">
+            <a href="#pricing" data-reference-return hidden></a>
+            <button type="button" data-shuffle-reset aria-label="Shuffle the photographs">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h3c4 0 8 12 12 12h3M17 14l4 4-4 4M3 18h3c1.5 0 3-1.7 4.5-4M13.5 10C15 7.7 16.5 6 18 6h3M17 2l4 4-4 4" /></svg>
+              Shuffle
+            </button>
+          </div>
+        </header>
+        <div class="shuffleGallery" data-shuffle-gallery>
+          {shufflePhotographs.map((photograph, index) => (
+            <figure class="shuffleItem" data-shuffle-item hidden={index >= shuffleBatchSize}>
+              <a href={photograph.src} data-photo-open data-photo-group="shuffle" aria-label={`Open portfolio photograph ${index + 1}`}>
+                <img src={index < shuffleBatchSize ? photograph.src : undefined} data-src={index >= shuffleBatchSize ? photograph.src : undefined} alt={`Portfolio photograph ${index + 1}`} width={photograph.width} height={photograph.height} loading="lazy" decoding="async" />
+              </a>
+            </figure>
+          ))}
+        </div>
+        <div class="shuffleControls">
+          <button type="button" data-shuffle-more>Load more photographs</button>
+          <p class="visuallyHidden" data-shuffle-status aria-live="polite">{shuffleBatchSize} photographs shown</p>
+        </div>
+        <noscript><style>[data-shuffle-more], [data-shuffle-reset] { display: none; }</style></noscript>
+      </section>
+    </main>
+    <PhotographyFooter />
+    <PhotographyLightbox />
+  </div>
+</BaseLayout>
