@@ -4,12 +4,16 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "npm run photos:check && astro build",
+    "build": "npm run photos:check && astro build && npm run site:check",
     "check": "astro check",
     "preview": "astro preview",
     "photos:sync": "node scripts/sync-photography.mjs",
     "photos:check": "node scripts/sync-photography.mjs --check",
-    "test:photos": "node --test scripts/sync-photography.test.mjs"
+    "social:sync": "node scripts/generate-social-images.mjs",
+    "test:photos": "node --test scripts/sync-photography.test.mjs",
+    "site:check": "node scripts/check-site-integrity.mjs",
+    "test:site": "node --test scripts/check-site-integrity.test.mjs",
+    "photos:featured": "node scripts/prepare-photography-featured.mjs"
   },
   "dependencies": {
     "astro": "7.3.2",

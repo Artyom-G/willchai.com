@@ -23,6 +23,7 @@ const nextFrame = detail ? film.gallery?.[0] : film.transition || film.gallery?.
           <p>{film.directorLine}</p>
           <div class="filmActions">
             <a class="filmPlay" href={film.links[0].href} data-trailer={film.slug}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 4 12 8-12 8z" /></svg>Trailer</a>
+            {film.links.filter(link => link.label === "IMDb").map(link => <a class="filmButton" href={link.href} aria-label={`${film.title} on IMDb`}>IMDb</a>)}
           </div>
         </div>
       </div>

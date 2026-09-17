@@ -9,8 +9,13 @@ const basePaths = [
   "/films/murder-of-minus/",
   "/projects/",
   "/resume/",
-  "/projects/searing-stories/",
-  "/projects/conspirasea/",
+  "/waterbear/",
+  "/msu/",
+  "/sesr/",
+  "/inqling-a-collaborative-card-game-in-education/",
+  "/transit-a-cars-endurance-training-tool/",
+  "/lockedin-gpt-powered-linkedin-profile-optimizer/",
+
 ];
 
 export function GET({ site }: { site: URL }) {

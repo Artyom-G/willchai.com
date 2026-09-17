@@ -356,8 +356,7 @@ The footer retains the original contact ticket, policy, rights and homepage
 return. Reduced motion presents the static featured grid, direct image changes
 and usable builder. Final quotes remain personal to each assignment.
 
-The Photography header uses the shared identity mark and Contact action in a
-compact arrangement. Its primary destination labels are omitted on this page.
+The Photography header uses the shared identity mark, primary destination labels and Contact action.
 
 Photography shares one responsive outer gutter across its header, opening,
 client composition, inquiry and shuffle. The featured viewport fits beneath
@@ -520,3 +519,7 @@ Festival artwork uses the original graphic for its recorded edition and outcome.
 Full leaf boundaries remain visible within the image frame. Supporting groups
 share a compact vertical gap. Each artwork source and pending retrieval belongs
 in the festival record or artwork audit.
+
+## Repair alignment
+
+Primary headers share the full destination set, including Photography. Narrow labels wrap with a 12 pixel column gap. Homepage media retains its resting crop, poster rotation and shading while the lens moves. Film detail contents links wrap into ordinary page flow. The résumé PDF provides organization grouping and section bookmarks.

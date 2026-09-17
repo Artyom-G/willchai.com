@@ -1,7 +1,17 @@
 {
   "version": 5,
   "date": "2026-09-15",
-  "status": "Local source fidelity revision reviewed independently at 92 of 100. Publication remains pending.",
+  "status": "Site published historical record verified on 2026-09-17. Selected source generations remain recorded below.",
+  "publication": {
+    "state": "site-published",
+    "verifiedAt": "2026-09-17",
+    "activeGenerations": ["projects-v3", "projects-v4", "projects-v5", "projects-v6"],
+    "activeReferences": [
+      "https://willchai.com/projects/",
+      "https://willchai.com/projects/conspirasea/",
+      "https://willchai.com/projects/searing-stories/"
+    ]
+  },
   "preview": "http://127.0.0.1:4368/projects/",
   "referencePreview": "http://127.0.0.1:4349/projects/",
   "assets": [

@@ -5,7 +5,7 @@ The repository contains only the active rebuild and its design sources. Keep rou
 ## Active surfaces
 
 The Astro application at the repository root is the active launch
-implementation. `src/pages/` owns the twelve public pages, `src/components/`
+implementation. `src/pages/` owns the public page routes, `src/components/`
 owns shared page structures, and `public/` contains published resources such
 as the résumé PDF, media, redirects, `robots.txt`, and sitemap output.
 

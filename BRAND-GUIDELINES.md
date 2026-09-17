@@ -418,3 +418,7 @@ Projects uses four scenes drawn from the projects themselves. Medical Terminolog
 Funnel Sans and Unbounded remain the shared text families. Medical Terminology Games has a bounded typography exception for EB Garamond at weight 700 and Patrick Hand at weight 400. Tachyboard uses Instrument Serif at weight 400 for its title, session details and controls. Its automatic practice passage uses the product’s system monospace stack. ConspiraSea uses Pirata One at weight 400 and Montserrat Alternates at weights 400 and 600. The bundled font files carry the SIL Open Font License. Searing Stories uses its original masthead as outlined artwork. Each project control takes its material and colour from its scene. The foil treatment belongs to the shared contact ticket.
 
 Will retains the original Photography face, hair, palette and native 32 by 32 construction. The atlas contains eighteen poses. Desktop, tablet and phone presentation uses 192, 160 and 128 pixels respectively. Every resting pose meets a visible support. Frame metadata records feet, hands and prop grips. Short complete sentences appear in Funnel Sans. The visible guide toggle keeps the project objects and controls available in either state. The shared footer carries its copyright line.
+
+## Navigation refinement
+
+Photography shares the same primary destination labels as Films, Projects and Résumé. The homepage retains its identity rail. Narrow page headers allow ordinary wrapping so every destination remains visible.

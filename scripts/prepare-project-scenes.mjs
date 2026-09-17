@@ -3,7 +3,33 @@ import path from "node:path";
 import crypto from "node:crypto";
 import sharp from "sharp";
 
-const directory = "public/assets/projects-v3";
+const args = new Map();
+for (let index = 2; index < process.argv.length; index += 1) {
+  const match = process.argv[index].match(/^--([^=]+)=(.*)$/);
+  if (match) args.set(match[1], match[2]);
+}
+const directory = args.get("output") || "public/assets/projects-v3";
+const sea = args.get("sea-root") || "/Users/wchai/Documents/Vault/WillChai Company/ConspiraSea";
+const publication = args.get("searing-root") || "/Users/wchai/Documents/Vault/WillChai Company/Searing Stories/site/public/images/hoffa";
+const artifact = args.get("artifact") || "artifacts/projects-review/scene-exports.json";
+
+async function requireFile(file, label) {
+  try {
+    await fs.access(file);
+  } catch {
+    throw new Error(`Missing ${label}: ${file}. Supply the source root with --${label === "ConspiraSea source" ? "sea-root" : "searing-root"}=...`);
+  }
+}
+
+for (const [file, label] of [
+  [`${sea}/ConspiraSea box and expansion pack.png`, "ConspiraSea source"],
+  [`${sea}/conspirasea-deploy/public/headshots/Captain.PNG`, "ConspiraSea headshots"],
+  [`${sea}/conspirasea-deploy/public/headshots/Jester.PNG`, "ConspiraSea headshots"],
+  [`${sea}/conspirasea-deploy/public/headshots/Scylla.PNG`, "ConspiraSea headshots"],
+  [`${publication}/main-course-table-1600.webp`, "Searing Stories source"],
+  [`${publication}/portrait-window-1600.webp`, "Searing Stories source"],
+]) await requireFile(file, label);
+
 await fs.mkdir(directory, { recursive: true });
 const records = [];
 async function record(source, output, treatment) {
@@ -22,7 +48,6 @@ async function record(source, output, treatment) {
     treatment,
   });
 }
-const sea = "/Users/wchai/Documents/Vault/WillChai Company/ConspiraSea";
 const box = `${sea}/ConspiraSea box and expansion pack.png`;
 // Production masks retain the original package pixels and printed lettering.
 for (const [name, points, crop] of [
@@ -103,8 +128,6 @@ for (const name of ["Captain", "Jester", "Scylla"]) {
     "Border connected canvas removal; coloured brush outlines and enclosed paint retained.",
   );
 }
-const publication =
-  "/Users/wchai/Documents/Vault/WillChai Company/Searing Stories/site/public/images/hoffa";
 for (const [sourceName, name, width, quality] of [
   ["main-course-table-1600.webp", "dinner", 1440, 78],
   ["portrait-window-1600.webp", "felipe", 650, 85],
@@ -132,9 +155,9 @@ records.push({
     .update(await fs.readFile(`${directory}/ticket-noise.webp`))
     .digest("hex"),
 });
-await fs.mkdir("artifacts/projects-review", { recursive: true });
+await fs.mkdir(path.dirname(artifact), { recursive: true });
 await fs.writeFile(
-  "artifacts/projects-review/scene-exports.json",
+  artifact,
   JSON.stringify({ version: 3, records }, null, 2) + "\n",
 );
 console.log(

@@ -62,11 +62,7 @@ In order:
 
 ## Information architecture
 
-The complete source architecture is shallow and substantial. It contains
-twelve page routes. The current public release exposes Home, Photography,
-`/hey/`, Films, and Projects with their detail pages. LinkedIn, email, and
-Searing Stories are external destinations. Résumé is approved for the production release, with primary navigation access and crawler discovery. The homepage panels link directly to their current
-destinations.
+The public architecture includes Home, Photography, Hey, Films and its two film details, Projects, and Résumé. Blog remains a private publication workflow with an empty public index. ConspiraSea and Searing Stories live in sections of Projects. Their retired detail addresses forward to those sections. MedTerms and Tachyboard have separate websites. Historical records for Waterbear, MSU Index and SESR preserve context for older incoming links.
 
 The homepage is a curated introduction to Will and selected work. `/hey/` is a
 utility destination for quick links and QR codes. It links to Home,
@@ -78,8 +74,7 @@ complete service footer.
 Films and Projects provide the two branch points. `/films/` introduces the film
 practice and leads to the Wattleseed and Murder of Minus pages. `/projects/`
 helps visitors choose among Medical Terminology Games, Tachyboard, Searing
-Stories, and ConspiraSea. Each film and project page is the canonical home for
-its work.
+Stories, and ConspiraSea. Each film page is the canonical portfolio destination for its film. Projects is the canonical portfolio destination for the current projects.
 
 The résumé page presents the current PDF first, with view and download actions,
 followed by an accessible HTML record carrying the same facts. Its content
@@ -91,20 +86,7 @@ Its expression lives in page copy and project context. Older work receives a
 public mention when curation supports it. A small item on `/projects/` can carry
 a useful older project in compact form.
 
-The complete source page map is:
-
-1. `/`
-2. `/hey/`
-3. `/photography/`
-4. `/films/`
-5. `/films/wattleseed/`
-6. `/films/murder-of-minus/`
-7. `/projects/`
-8. `/projects/medterms/`
-9. `/projects/tachyboard/`
-10. `/projects/searing-stories/`
-11. `/projects/conspirasea/`
-12. `/resume/`
+The current content routes are Home, Hey, Photography, Films, Wattleseed, Murder of Minus, Projects, Résumé, Blog, Waterbear, MSU Index and SESR. The 404 page handles unknown addresses. Forwarding routes preserve former project and film addresses. The sitemap includes indexable content destinations.
 
 Published resources include sitemap output, `robots.txt`, a useful 404 page,
 and permanent redirects for meaningful legacy URLs. `/resume.pdf` accompanies the approved Résumé page. Future growth
@@ -417,3 +399,15 @@ The published ChatGPT site version 35 supplies the authoritative Films compositi
 Tachyboard now follows the actual practice screen at its /type address. An automatic passage uses the product’s session typography, progress strip, corrected hands and keyboard. The demonstration includes capitals, punctuation, numbers, Space, Delete and Enter, with Pause and Restart controls. Its playback stops outside the visible scene and follows reduced motion preferences. The practice passage has a bounded system monospace exception.
 
 Medical Terminology Games retains its six game composition and links to the landing page. Searing Stories uses the actual landing photograph, hosts portrait, white outlined masthead and deep rust surface. ConspiraSea uses the original game background, white logo, Pirata One and Montserrat Alternates, plus its tutorial card treatment. Will’s crew presentation continues, and his native button triggers an additional supported jump. Project titles and primary descriptive text share the main project destination. The current scene reference and asset record describe this revision. Publication remains a separate action.
+
+## 17 September 2026 repair pass
+
+Primary page headers expose Photography, Films, Projects and Résumé, including on Photography. Contact retains the shared email action; Home retains its contact section. Narrow navigation wraps within the available width. Homepage imagery and shading stay stationary during the gravitational lens interaction so the sampled scene and visible media keep the same geometry. Film detail pages offer section links, opening resource actions and a repeated Trailer action beside the ending resources. The PDF groups consecutive organization roles and includes section bookmarks. The published HTML remains the structured résumé record.
+
+## Project consolidation, September 17, 2026
+
+Projects is the portfolio destination for ConspiraSea and Searing Stories. Their former detail addresses forward to the corresponding sections. Search discovery uses the substantive project content and canonical Projects URL. Film pages retain individual destinations. Legacy document URLs remain available through redirects and static document copies.
+
+## Search continuity, September 17, 2026
+
+Discoverability takes priority in release review. Every indexable page needs a unique descriptive title, useful summary, canonical destination, crawlable incoming links and accurate structured data. Preserve useful historical destinations with substantive archive records or relevant permanent redirects. The URL inventory records evidence and unresolved source recovery. Keep private drafts outside production. Search Console processing and live HTTP verification form part of release validation. Inqling, Transit and LockedIn retain their historical article addresses.

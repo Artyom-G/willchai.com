@@ -8,21 +8,21 @@ const passage = "Almost around below treks crank high dried curbs. Then quiet wa
   <div class="practiceDemonstration" data-typing-demo data-passage={passage}>
     <header class="sessionHeader">
       <p><span>Endless</span><i aria-hidden="true">·</i><strong>Fresh words</strong><i aria-hidden="true">·</i><span data-demo-state>0 segments</span></p>
-      <div class="sessionProgress" aria-label="Run progress"><i data-demo-progress></i></div>
+      <div class="sessionProgress" role="progressbar" aria-label="Run progress" aria-valuemin="0" aria-valuemax={passage.length} aria-valuenow="0" aria-valuetext="0 characters"><i data-demo-progress></i></div>
     </header>
     <div class="typingIntroduction">
       <p>Tachyboard is a typing practice site built around the motion behind every key. The Finger guide connects your own keyboard to a visual hand position as you type.</p>
       <p>Start with Endless for adaptive practice, then use Coach, timed sessions or custom drills to focus on the patterns you want to improve.</p>
     </div>
-    <div class="passageWindow" data-demo-field>
+    <div class="passageWindow" data-demo-field role="group" aria-label="Tachyboard typing sample">
       <div class="passageFlow" data-demo-flow aria-hidden="true">{[...passage].map(char => <span class="demoChar">{char}</span>)}</div>
       <div class="manualFlow" data-demo-manual aria-hidden="true"></div>
       <i class="demoCursor" data-demo-cursor aria-hidden="true"></i>
-      <input class="demoInput" data-demo-input type="text" aria-label="Type a short Tachyboard sample" autocomplete="off" autocapitalize="sentences" spellcheck="false" />
+      <input class="demoInput" data-demo-input type="text" aria-label="Type a short Tachyboard sample" aria-describedby="typingLayoutNote" autocomplete="off" autocapitalize="sentences" spellcheck="false" />
     </div>
-    <p class="demoAccessible">An automatic typing demonstration: {passage} It includes numbers, Shift, a correction with Delete, and Enter.</p>
+    <p id="typingLayoutNote" class="demoAccessible">The hand guide uses a QWERTY keyboard. An automatic typing demonstration: {passage} It includes numbers, Shift, a correction with Delete, and Enter.</p>
     <p class="fingerGuideStatus"><span aria-hidden="true"></span>Finger guide</p>
-    <div class="keyboardStage" data-demo-keyboard>
+    <div class="keyboardStage" data-demo-keyboard role="button" aria-label="Start typing in the Tachyboard sample">
       <div class="handsHost" data-hands role="img" aria-label="Tachyboard hands and keyboard following the active key"><picture><source srcset="/assets/projects-v5/hands-poster-mobile.webp" media="(max-width:600px)" /><img class="handsPoster" src="/assets/projects-v5/hands-poster-desktop.webp" alt="" width="800" height="400" loading="lazy" /></picture></div>
       <span class="support keyboardSupport" data-support data-x="0.17" data-y="0.49"></span>
     </div>

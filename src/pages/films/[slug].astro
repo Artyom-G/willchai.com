@@ -10,8 +10,17 @@ import '../../styles/films.css';
 export function getStaticPaths() { return films.map(film => ({ params:{slug:film.slug},props:{film} })); }
 interface Props { film: Film; }
 const {film} = Astro.props;
+const movieSchema = {
+  "@context": "https://schema.org", "@type": "Movie",
+  "@id": `https://willchai.com/films/${film.slug}/#film`, name: film.title,
+  url: `https://willchai.com/films/${film.slug}/`, description: film.summary,
+  image: new URL(film.poster, "https://willchai.com").href,
+  duration: `PT${parseInt(film.runtime)}M`, inLanguage: "en",
+  director: film.slug === "murder-of-minus" ? [{ "@type": "Person", name: "William Chai", "@id": "https://willchai.com/#person" }, { "@type": "Person", name: "Artyom Gabtraupov" }] : { "@type": "Person", name: "William Chai", "@id": "https://willchai.com/#person" },
+  sameAs: film.links.filter(link => link.label === "IMDb").map(link => link.href),
+};
 ---
-<BaseLayout title={`${film.title} | Will Chai`} description={film.summary} path={`/films/${film.slug}/`} image={film.still} imageAlt={film.stillAlt} pageClass="filmDetailPage filmCinema">
+<BaseLayout title={`${film.title} (${film.year}) | A Film by William Chai`} description={`${film.title} is a ${film.runtime} film. ${film.summary} Explore the trailer, credits and festival recognition.`} path={`/films/${film.slug}/`} image={film.still} imageAlt={film.stillAlt} structuredData={movieSchema} pageClass="filmDetailPage filmCinema">
   <div class="filmSiteHeader"><SiteHeader current="films" /></div>
   <main id="main">
     <FilmEssay film={film} />
@@ -19,7 +28,7 @@ const {film} = Astro.props;
     <FilmRecognition film={film} detail />
     <section class="filmEssayResources" aria-labelledby="resources-title">
       <a href={film.poster} data-film-image aria-label={`View ${film.title} poster`}><img src={film.poster} alt={`${film.title} original poster`} width={film.posterWidth} height={film.posterHeight} loading="lazy" /></a>
-      <div><h2 id="resources-title">Watch and read</h2><p>The original press kit includes the director’s statement, production information, and film assets. For a full screening, get in touch.</p><div class="filmEssayResourceActions"><a class="filmButton" href={film.links.find(link => link.label === 'Press kit')?.href}>Press kit</a><a class="filmButton" href={`mailto:me@willchai.com?subject=${encodeURIComponent(film.title + ' screening enquiry')}`}>Request a screening</a></div></div>
+      <div><h2 id="resources-title">Watch and read</h2><p>The original press kit includes the director’s statement, production information, and film assets. The full film is available through a screening inquiry.</p><div class="filmEssayResourceActions"><a class="filmButton" href={film.links[0].href} data-trailer={film.slug}>Trailer</a><a class="filmButton" href={film.links.find(link => link.label === 'Press kit')?.href}>Press kit</a><a class="filmButton" href={`mailto:me@willchai.com?subject=${encodeURIComponent(film.title + ' screening enquiry')}`}>Request a screening</a>{film.links.filter(link => link.label === "IMDb").map(link => <a class="filmButton" href={link.href}>IMDb</a>)}</div></div>
     </section>
     <footer class="filmEssayFooter"><a href="/films/">All films</a><a href={`/films/${film.slug === 'wattleseed' ? 'murder-of-minus' : 'wattleseed'}/`}>{film.slug === 'wattleseed' ? 'Murder of Minus' : 'Wattleseed'}</a><a href="mailto:me@willchai.com">me@willchai.com</a></footer>
   </main>

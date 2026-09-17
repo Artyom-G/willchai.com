@@ -340,6 +340,10 @@ export const films: Film[] = [
       {
         "label": "Press kit",
         "href": "/assets/films/wattleseed/press-kit.pdf"
+      },
+      {
+        "label": "IMDb",
+        "href": "https://www.imdb.com/title/tt42212597/"
       }
     ],
     "sequence": [
@@ -672,6 +676,10 @@ export const films: Film[] = [
       {
         "label": "Press kit",
         "href": "/assets/films/murder-of-minus/press-kit.pdf"
+      },
+      {
+        "label": "IMDb",
+        "href": "https://www.imdb.com/title/tt36950342/"
       }
     ],
     "sequence": [

@@ -133,6 +133,7 @@ html:has(.photographyPage) { scroll-behavior:auto; scrollbar-gutter:stable; }
 .shootReceipt h3 { margin:0; font-family:var(--wc-font-display); font-size:clamp(1.25rem,1.8vw,1.8rem); line-height:1.3; font-weight:400; letter-spacing:-.025em; overflow-wrap:anywhere; }
 .shootSelection { margin:var(--wc-space-3) 0 0; font-size:1rem; overflow-wrap:anywhere; }
 .shootBudgetSummary { margin:var(--wc-space-3) 0 0; font-size:1rem; overflow-wrap:anywhere; }
+.shootStepIntro { margin:0 0 var(--wc-space-4); max-width:42rem; font-size:1rem; line-height:1.5; }
 .shootQuote { margin:var(--wc-space-6) 0 var(--wc-space-2); font-weight:500; }
 .shootReferences { padding:0 0 var(--wc-space-6); }
 .shootReferences > p { margin:0 0 var(--wc-space-3); font-size:var(--wc-font-small); }
@@ -146,6 +147,7 @@ html:has(.photographyPage) { scroll-behavior:auto; scrollbar-gutter:stable; }
 .inquiryLetter textarea { display:block; width:100%; min-height:11rem; height:11rem; padding:var(--wc-space-3); resize:vertical; border:1px solid var(--wc-hairline); border-radius:0; background:var(--wc-white); color:var(--wc-ink); font-size:1rem; line-height:1.5; }
 .inquiryActions { display:flex; gap:var(--wc-space-3); margin-top:var(--wc-space-4); }
 .inquiryActions > * { flex:1; }
+.inquiryFallback { margin:var(--wc-space-3) 0 0; color:var(--wc-slate); font-size:var(--wc-font-small); line-height:1.5; }
 .inquiryStatus { margin:var(--wc-space-3) 0 0; color:var(--wc-blue); font-size:var(--wc-font-small); }
 .inquiryStatus:empty { margin:0; }
 .arcadeBelow { display:flex; flex-wrap:wrap; align-items:center; gap:var(--wc-space-2) var(--wc-space-8); justify-content:space-between; padding:var(--wc-space-3) var(--wc-space-2); font-size:var(--wc-font-small); }

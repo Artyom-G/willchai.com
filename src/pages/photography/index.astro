@@ -9,16 +9,16 @@ import PhotographyArcade from "../../components/PhotographyArcade.astro";
 import shuffleManifest from "../../data/photographyShuffle.json";
 
 const featuredPhotographs = [
-  { src: "/photography/portrait-lakeshore.webp", alt: "A person wearing black and white standing beside rocks at the water's edge", width: 1707, height: 2560 },
-  { src: "/photography/portrait-formal-group.webp", alt: "Two people in formalwear standing together on a wooden bridge by a pond", width: 1920, height: 1280 },
-  { src: "/photography/portrait-frost.webp", alt: "A person wrapped in a blanket facing a distant horizon across frosted ground", width: 1920, height: 2400 },
-  { src: "/photography/product-eyewear.webp", alt: "Black Prada sunglasses photographed on a white surface", width: 1920, height: 2333 },
-  { src: "/photography/portrait-formal.webp", alt: "Close portrait of a person in a navy suit holding a pair of glasses", width: 1707, height: 2560 },
-  { src: "/photography/concert-mcmaster.avif", alt: "A vocalist in a McMaster University hoodie performing beneath warm stage lights", width: 1920, height: 2400 },
-  { src: "/photography/portrait-couple.webp", alt: "A couple in formal clothes holding each other indoors", width: 1722, height: 2560 },
-  { src: "/photography/concept-time.webp", alt: "Black and white conceptual photograph of marked hands holding an open pocket watch", width: 1920, height: 1920 },
-  { src: "/photography/product-beverage.webp", alt: "Cotton candy soda bottle photographed against a bright blue background", width: 1920, height: 2560 },
-];
+  { src: "/photography/portrait-lakeshore.webp", srcset: "/photography/featured/portrait-lakeshore-640.webp 640w, /photography/featured/portrait-lakeshore-1280.webp 1280w", sizes: "(max-width: 720px) 86vw, 68vw", alt: "A person wearing black and white standing beside rocks at the water's edge", width: 1707, height: 2560 },
+  { src: "/photography/portrait-formal-group.webp", srcset: "/photography/featured/portrait-formal-group-640.webp 640w, /photography/featured/portrait-formal-group-1280.webp 1280w", sizes: "(max-width: 720px) 86vw, 68vw", alt: "Two people in formalwear standing together on a wooden bridge by a pond", width: 1920, height: 1280 },
+  { src: "/photography/portrait-frost.webp", srcset: "/photography/featured/portrait-frost-640.webp 640w, /photography/featured/portrait-frost-1280.webp 1280w", sizes: "(max-width: 720px) 86vw, 68vw", alt: "A person wrapped in a blanket facing a distant horizon across frosted ground", width: 1920, height: 2400 },
+  { src: "/photography/product-eyewear.webp", srcset: "/photography/featured/product-eyewear-640.webp 640w, /photography/featured/product-eyewear-1280.webp 1280w", sizes: "(max-width: 720px) 86vw, 68vw", alt: "Black Prada sunglasses photographed on a white surface", width: 1920, height: 2333 },
+  { src: "/photography/portrait-formal.webp", srcset: "/photography/featured/portrait-formal-640.webp 640w, /photography/featured/portrait-formal-1280.webp 1280w", sizes: "(max-width: 720px) 86vw, 68vw", alt: "Close portrait of a person in a navy suit holding a pair of glasses", width: 1707, height: 2560 },
+  { src: "/photography/concert-mcmaster.avif", srcset: "/photography/featured/concert-mcmaster-640.avif 640w, /photography/featured/concert-mcmaster-1280.avif 1280w", sizes: "(max-width: 720px) 86vw, 68vw", alt: "A vocalist in a McMaster University hoodie performing beneath warm stage lights", width: 1920, height: 2400 },
+  { src: "/photography/portrait-couple.webp", srcset: "/photography/featured/portrait-couple-640.webp 640w, /photography/featured/portrait-couple-1280.webp 1280w", sizes: "(max-width: 720px) 86vw, 68vw", alt: "A couple in formal clothes holding each other indoors", width: 1722, height: 2560 },
+  { src: "/photography/concept-time.webp", srcset: "/photography/featured/concept-time-640.webp 640w, /photography/featured/concept-time-1280.webp 1280w", sizes: "(max-width: 720px) 86vw, 68vw", alt: "Black and white conceptual photograph of marked hands holding an open pocket watch", width: 1920, height: 1920 },
+  { src: "/photography/product-beverage.webp", srcset: "/photography/featured/product-beverage-640.webp 640w, /photography/featured/product-beverage-1280.webp 1280w", sizes: "(max-width: 720px) 86vw, 68vw", alt: "Cotton candy soda bottle photographed against a bright blue background", width: 1920, height: 2560 },
+].map((photo) => ({ ...photo, srcset: `${photo.srcset}, ${photo.src} ${photo.width}w` }));
 
 const supportingClients = [
   { name: "Foxwood Homes", detail: "Residential projects", logo: "/photography/clients/foxwood-homes.png", width: 213, height: 141, treatment: "foxwood" },
@@ -30,9 +30,14 @@ const shuffleBatchSize = 36;
 ---
 
 <BaseLayout
-  title="Photography | Will Chai"
+  title="Hamilton Portrait & Event Photographer | Will Chai"
   description="Portrait and event photography by Will Chai in Hamilton and across Ontario. Explore featured photographs and plan a shoot together."
   path="/photography/"
+  image="/assets/social/photography.jpg"
+  imageAlt="A contact sheet of portraits, performances, events, and creative photography by Will Chai"
+  imageWidth={1200}
+  imageHeight={630}
+  imageType="image/jpeg"
   pageClass="photographyPage"
 >
   <link slot="head" rel="preload" as="image" href="/photography/pixel-photographer.png" />
@@ -43,7 +48,7 @@ const shuffleBatchSize = 36;
   <script slot="head" is:inline src="/scripts/photography-collection.js" defer></script>
   <script slot="head" is:inline src="/scripts/photography-arcade.js" defer></script>
   <div class="pageShell">
-    <SiteHeader current="photography" showPrimaryNavigation={false} />
+    <SiteHeader current="photography" />
     <main id="main" class="pageMain">
       <header class="photographyOpening">
         <h1>Photography.</h1>

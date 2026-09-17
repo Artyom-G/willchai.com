@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+---
+<BaseLayout title="SESR: Structured Reasoning Experiment | Will Chai" description="An archived student experiment with ChatGPT custom instructions, January 2025." path="/sesr/"><div class="pageShell"><SiteHeader current="projects" /><main id="main" class="pageMain"><article class="archiveRecord"><p>Project archive</p><h1>SESR: Structured Reasoning Experiment</h1><p>In January 2025, William Chai explored structured custom instructions for ChatGPT in an independent student experiment called SESR. The instructions asked the model to organize its approach before answering.</p><p>The experiment used one question from SimpleBench with ten trials in each of three conditions. The original report recorded zero correct responses for GPT 4o, five for GPT 4o with SESR, and ten for o1. These observations describe this small historical experiment. A wider evaluation would be needed to assess performance across other tasks.</p><p>This archive summarizes the topic and reported scope of the January 2025 article.</p><p><a href="/projects/">Explore current projects</a></p></article></main><SiteFooter /></div></BaseLayout>
+<style>
+.archiveRecord{max-width:760px;margin:clamp(24px,5vw,72px) auto;padding:0 24px;font-size:18px;line-height:1.65}.archiveRecord h1{font-size:clamp(30px,5vw,54px);line-height:1.15;overflow-wrap:anywhere}.archiveRecord h2{font-size:25px}.archiveRecord img{display:block;max-width:100%;height:auto;margin:32px 0}.archiveRecord a{text-underline-offset:.2em}
+</style>

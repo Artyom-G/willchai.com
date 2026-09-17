@@ -51,6 +51,7 @@ const formatDate = (date: string) => new Intl.DateTimeFormat("en-CA", {
         <p>Blog</p>
         <h1>Things I wanted to write down.</h1>
       </header>
+      {posts.length === 0 && <p>Future articles will appear here. In the meantime, explore my <a href="/projects/">projects</a> and <a href="/films/">films</a>.</p>}
       <div class="blogIndexEntries">
         {posts.map(({ slug, entry }) => (
           <article class="blogIndexEntry">

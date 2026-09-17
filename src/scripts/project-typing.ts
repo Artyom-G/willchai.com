@@ -14,6 +14,7 @@ if (demo) {
   const chars = [...flow.querySelectorAll<HTMLElement>(".demoChar")];
   const passage = [...(demo.dataset.passage || "")];
   const progress = demo.querySelector<HTMLElement>("[data-demo-progress]")!;
+  const progressControl = progress.parentElement!;
   const cue = demo.querySelector<HTMLElement>("[data-demo-cue]")!;
   const state = demo.querySelector<HTMLElement>("[data-demo-state]")!;
   const reduced = matchMedia("(prefers-reduced-motion: reduce)");
@@ -139,7 +140,10 @@ if (demo) {
       char.toggleAttribute("data-error", failed && index === completed);
       if (failed && index === completed) char.textContent = "z";
     });
-    progress.style.width = `${(completed / passage.length) * 100}%`;
+    const value = Math.min(completed, passage.length);
+    progress.style.width = `${(value / passage.length) * 100}%`;
+    progressControl.setAttribute("aria-valuenow", String(value));
+    progressControl.setAttribute("aria-valuetext", `${value} of ${passage.length} characters`);
     demo!.dataset.demoStep = String(step);
     positionCursor(immediate);
   }
@@ -150,6 +154,8 @@ if (demo) {
     demo!.dataset.manual = "true";
     state.textContent = "Live practice";
     progress.style.width = "0";
+    progressControl.setAttribute("aria-valuenow", "0");
+    progressControl.setAttribute("aria-valuetext", "Live practice");
   }
 
   function clear() {
@@ -217,7 +223,8 @@ if (demo) {
   }
 
   keyboard.tabIndex = 0;
-  keyboard.setAttribute("aria-label", "Focus Tachyboard typing sample");
+  keyboard.setAttribute("aria-label", "Start typing in the Tachyboard sample");
+  field.addEventListener("click", () => input.focus());
   keyboard.addEventListener("click", () => input.focus());
   keyboard.addEventListener("keydown", (event) => {
     if (event.key === "Enter" || event.key === " ") {

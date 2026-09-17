@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import { pageSchema } from "../data/seo";
 
 interface Props {
   title: string;
@@ -26,15 +27,16 @@ const {
   imageHeight,
   imageType,
   ogType = "website",
-  robots,
+  robots = "index, follow, max-image-preview:large",
   structuredData,
   pageClass = "",
 } = Astro.props;
 
 const canonical = new URL(path, Astro.site);
 const socialImage = image ? new URL(image, Astro.site) : undefined;
-const jsonLd = structuredData
-  ? JSON.stringify(structuredData).replace(/</g, "\\u003c")
+const resolvedData = structuredData ?? (robots.includes("noindex") || path === "/404/" ? undefined : pageSchema(path, title, description, image));
+const jsonLd = resolvedData
+  ? JSON.stringify(resolvedData).replace(/</g, "\\u003c")
   : undefined;
 ---
 
@@ -74,6 +76,8 @@ const jsonLd = structuredData
     <meta name="twitter:description" content={description} />
     {socialImage && <meta name="twitter:image" content={socialImage} />}
     {socialImage && <meta name="twitter:image:alt" content={imageAlt} />}
+    {socialImage && imageWidth && <meta name="twitter:image:width" content={String(imageWidth)} />}
+    {socialImage && imageHeight && <meta name="twitter:image:height" content={String(imageHeight)} />}
     {jsonLd && <script is:inline type="application/ld+json" set:html={jsonLd} />}
     <slot name="head" />
   </head>

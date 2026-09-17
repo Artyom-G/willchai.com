@@ -618,14 +618,14 @@ img {
   background:
     radial-gradient(ellipse at var(--mouse-x) var(--mouse-y), #a9a2f5 0%, transparent 48%),
     repeating-conic-gradient(from 160deg at 50% 50%, #1d1a9c 0%, var(--wc-blue) 15%, transparent 35%, var(--wc-blue) 45%, #1d1a9c 50%),
-    url("../src/assets/noise.png");
+    url("../public/assets/projects-v3/ticket-noise.webp");
   background-blend-mode: soft-light, soft-light, normal;
 }
 
 .contact-ticket::after {
   z-index: 2;
   inset: -50%;
-  background-image: url("./assets/willchai-mark.png");
+  background-image: url("./assets/willchai-mark.avif");
   background-position: center;
   background-repeat: repeat;
   background-size: 38px 38px;

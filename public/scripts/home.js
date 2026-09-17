@@ -143,19 +143,59 @@ const waitForImage = async (image) => {
   }
 };
 
-const drawCoverImage = (context, image, width, height) => {
+const drawCoverImage = (context, image, width, height, imageScale = 1) => {
   if (!image.naturalWidth || !image.naturalHeight) return;
 
   const scale = Math.max(width / image.naturalWidth, height / image.naturalHeight);
   const renderedWidth = image.naturalWidth * scale;
   const renderedHeight = image.naturalHeight * scale;
   const objectPosition = window.getComputedStyle(image).objectPosition.split(" ");
-  const positionX = Number.parseFloat(objectPosition[0]) / 100 || 0.5;
-  const positionY = Number.parseFloat(objectPosition[1] || objectPosition[0]) / 100 || 0.5;
-  const x = (width - renderedWidth) * positionX;
-  const y = (height - renderedHeight) * positionY;
+  const positionX = Number.isFinite(Number.parseFloat(objectPosition[0])) ? Number.parseFloat(objectPosition[0]) / 100 : 0.5;
+  const positionY = Number.isFinite(Number.parseFloat(objectPosition[1])) ? Number.parseFloat(objectPosition[1]) / 100 : 0.5;
+  const baseX = (width - renderedWidth) * positionX;
+  const baseY = (height - renderedHeight) * positionY;
+  const scaledWidth = renderedWidth * imageScale;
+  const scaledHeight = renderedHeight * imageScale;
+  const x = width / 2 + (baseX - width / 2) * imageScale;
+  const y = height / 2 + (baseY - height / 2) * imageScale;
 
-  context.drawImage(image, x, y, renderedWidth, renderedHeight);
+  context.drawImage(image, x, y, scaledWidth, scaledHeight);
+};
+
+const drawPanelShade = (context, projectLink, width, height) => {
+  const shade = projectLink.querySelector(".panel-shade");
+  if (!shade) return;
+
+  const panel = projectLink.closest(".project-panel");
+  if (panel?.classList.contains("photography-panel")) {
+    const side = context.createLinearGradient(0, 0, width, 0);
+    side.addColorStop(0, "rgba(0, 0, 0, 0.2)");
+    side.addColorStop(0.58, "rgba(0, 0, 0, 0.04)");
+    side.addColorStop(0.78, "transparent");
+    const lower = context.createLinearGradient(0, 0, 0, height);
+    lower.addColorStop(0, "transparent");
+    lower.addColorStop(0.32, "transparent");
+    lower.addColorStop(1, "rgba(0, 0, 0, 0.48)");
+    context.fillStyle = side;
+    context.fillRect(0, 0, width, height);
+    context.fillStyle = lower;
+    context.fillRect(0, 0, width, height);
+    return;
+  }
+
+  if (shade.classList.contains("panel-shade--projects")) {
+    const gradient = context.createLinearGradient(0, height, 0, 0);
+    gradient.addColorStop(0, "rgba(10, 8, 75, 0.58)");
+    gradient.addColorStop(0.75, "transparent");
+    context.fillStyle = gradient;
+    context.fillRect(0, 0, width, height);
+    return;
+  }
+
+  context.fillStyle = shade.classList.contains("panel-shade--warm")
+    ? "rgba(17, 5, 0, 0.3)"
+    : "rgba(0, 0, 0, 0.16)";
+  context.fillRect(0, 0, width, height);
 };
 
 const makePanelSnapshot = async (projectLink, bounds, renderScale) => {
@@ -177,25 +217,51 @@ const makePanelSnapshot = async (projectLink, bounds, renderScale) => {
   context.fillRect(0, 0, bounds.width, bounds.height);
 
   const coverImage = projectLink.querySelector(".panel-image");
-  if (coverImage) drawCoverImage(context, coverImage, bounds.width, bounds.height);
+  if (coverImage) drawCoverImage(context, coverImage, bounds.width, bounds.height, 1);
+
+  // Reproduce the decorative scene in CSS stacking order, including poster rotation.
+  projectLink.querySelectorAll(".projects-field > span, .films-marquee").forEach((label) => {
+    const style = getComputedStyle(label);
+    const rect = label.getBoundingClientRect();
+    const x = rect.left - bounds.left;
+    const y = rect.top - bounds.top;
+    context.save();
+    const border = parseFloat(style.borderTopWidth) || 0;
+    if (border) {
+      context.lineWidth = border;
+      context.strokeStyle = style.borderTopColor;
+      context.strokeRect(x + border / 2, y + border / 2, rect.width - border, rect.height - border);
+    }
+    context.font = `${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
+    context.letterSpacing = style.letterSpacing === "normal" ? "0px" : style.letterSpacing;
+    context.fillStyle = style.color;
+    context.textBaseline = "middle";
+    const right = style.textAlign === "right";
+    context.textAlign = right ? "right" : "left";
+    const textX = right ? x + rect.width - parseFloat(style.paddingRight) - border : x + parseFloat(style.paddingLeft) + border;
+    const lineHeight = parseFloat(style.lineHeight);
+    const textY = style.alignItems === "flex-end"
+      ? y + rect.height - parseFloat(style.paddingBottom) - border - lineHeight / 2
+      : y + parseFloat(style.paddingTop) + border + lineHeight / 2;
+    context.fillText(label.textContent.trim(), textX, textY);
+    context.restore();
+  });
+
+  // The shade sits above the scene and field, while film posters sit above the
+  // shade in the live CSS stacking order.
+  drawPanelShade(context, projectLink, bounds.width, bounds.height);
 
   projectLink.querySelectorAll(".film-poster").forEach((poster) => {
     if (!poster.naturalWidth) return;
-    const posterBounds = poster.getBoundingClientRect();
-    context.drawImage(
-      poster,
-      posterBounds.left - bounds.left,
-      posterBounds.top - bounds.top,
-      posterBounds.width,
-      posterBounds.height,
-    );
+    const style = getComputedStyle(poster);
+    const matrix = new DOMMatrix(style.transform === "none" ? undefined : style.transform);
+    const [originX, originY] = style.transformOrigin.split(" ").map(parseFloat);
+    context.save();
+    context.translate(poster.offsetLeft + originX, poster.offsetTop + originY);
+    context.transform(matrix.a, matrix.b, matrix.c, matrix.d, matrix.e, matrix.f);
+    context.drawImage(poster, -originX, -originY, poster.offsetWidth, poster.offsetHeight);
+    context.restore();
   });
-
-  const shade = projectLink.querySelector(".panel-shade");
-  if (shade) {
-    context.fillStyle = window.getComputedStyle(shade).backgroundColor;
-    context.fillRect(0, 0, bounds.width, bounds.height);
-  }
 
   snapshotCache.set(projectLink, { key: cacheKey, canvas: snapshot });
   return snapshot;
@@ -357,24 +423,32 @@ class BlackHoleRenderer {
     projectLink.append(this.canvas);
     this.resize(bounds);
 
-    const snapshot = await makePanelSnapshot(projectLink, bounds, this.renderScale);
-    if (token !== this.sceneToken || !this.available) return false;
+    try {
+      const snapshot = await makePanelSnapshot(projectLink, bounds, this.renderScale);
+      if (token !== this.sceneToken || !this.available) return false;
 
-    this.gl.activeTexture(this.gl.TEXTURE0);
-    this.gl.bindTexture(this.gl.TEXTURE_2D, this.sceneTexture);
-    this.gl.pixelStorei(this.gl.UNPACK_FLIP_Y_WEBGL, true);
-    this.gl.texImage2D(
-      this.gl.TEXTURE_2D,
-      0,
-      this.gl.RGBA,
-      this.gl.RGBA,
-      this.gl.UNSIGNED_BYTE,
-      snapshot,
-    );
+      this.gl.activeTexture(this.gl.TEXTURE0);
+      this.gl.bindTexture(this.gl.TEXTURE_2D, this.sceneTexture);
+      this.gl.pixelStorei(this.gl.UNPACK_FLIP_Y_WEBGL, true);
+      this.gl.texImage2D(
+        this.gl.TEXTURE_2D,
+        0,
+        this.gl.RGBA,
+        this.gl.RGBA,
+        this.gl.UNSIGNED_BYTE,
+        snapshot,
+      );
 
-    this.ready = true;
-    projectLink.classList.add("is-black-hole-ready");
-    return true;
+      this.ready = true;
+      projectLink.classList.add("is-black-hole-ready");
+      return true;
+    } catch {
+      // Canvas snapshots are decorative. Keep the semantic link usable if a
+      // browser rejects an image or WebGL texture upload.
+      this.ready = false;
+      projectLink.classList.remove("is-black-hole-ready");
+      return false;
+    }
   }
 
   render(x, y, tilt, reveal) {
@@ -404,6 +478,7 @@ let activeProjectLink;
 let activeBounds;
 let animationFrame = 0;
 let layoutFrame = 0;
+let navigationTimer = 0;
 let lastFrameTime = 0;
 let lastPointer;
 let keyboardNavigation = false;
@@ -420,6 +495,15 @@ const motion = {
   tiltVelocity: 0,
   reveal: 0,
   targetReveal: 0,
+};
+
+const clearEnteringState = () => {
+  if (navigationTimer) {
+    window.clearTimeout(navigationTimer);
+    navigationTimer = 0;
+  }
+  projectLinks.forEach((projectLink) => projectLink.classList.remove("is-entering"));
+  if (activeProjectLink) hideBlackHole(activeProjectLink);
 };
 
 const requestGravityFrame = () => {
@@ -453,8 +537,12 @@ const activateBlackHole = (projectLink, clientX, clientY) => {
   }
 
   const isNewPanel = activeProjectLink !== projectLink;
+  const nextBounds = projectLink.getBoundingClientRect();
+  const needsScene = isNewPanel || !renderer.ready || !renderer.bounds ||
+    Math.abs(nextBounds.width - renderer.bounds.width) > 1 ||
+    Math.abs(nextBounds.height - renderer.bounds.height) > 1;
   activeProjectLink = projectLink;
-  activeBounds = projectLink.getBoundingClientRect();
+  activeBounds = nextBounds;
   lastPointer = { x: clientX, y: clientY };
   setGravityTarget(clientX, clientY);
 
@@ -466,6 +554,8 @@ const activateBlackHole = (projectLink, clientX, clientY) => {
     motion.tilt = 0;
     motion.tiltVelocity = 0;
     motion.reveal = 0;
+  }
+  if (needsScene) {
     renderer.setScene(projectLink, activeBounds).then((ready) => {
       if (ready && activeProjectLink === projectLink) requestGravityFrame();
     });
@@ -564,7 +654,7 @@ projectLinks.forEach((projectLink) => {
   projectLink.addEventListener("pointermove", (event) => {
     if (!hasFinePointer.matches || event.pointerType === "touch" || reducedMotion.matches) return;
     lastPointer = { x: event.clientX, y: event.clientY };
-    if (activeProjectLink !== projectLink) {
+    if (activeProjectLink !== projectLink || motion.targetReveal === 0) {
       activateBlackHole(projectLink, event.clientX, event.clientY);
       return;
     }
@@ -586,8 +676,15 @@ projectLinks.forEach((projectLink) => {
   projectLink.addEventListener("blur", () => hideBlackHole(projectLink));
 
   projectLink.addEventListener("click", (event) => {
+    const touchActivation = event.pointerType === "touch";
     if (
-      hasFinePointer.matches ||
+      event.defaultPrevented ||
+      event.button !== 0 ||
+      event.metaKey ||
+      event.ctrlKey ||
+      event.shiftKey ||
+      event.altKey ||
+      (!touchActivation && hasFinePointer.matches) ||
       reducedMotion.matches ||
       slowUpdate.matches ||
       projectLink.classList.contains("is-entering")
@@ -603,7 +700,10 @@ projectLinks.forEach((projectLink) => {
     }
 
     projectLink.classList.add("is-entering");
-    window.setTimeout(() => window.location.assign(projectLink.href), 760);
+    navigationTimer = window.setTimeout(() => {
+      navigationTimer = 0;
+      window.location.assign(projectLink.href);
+    }, 760);
   });
 });
 
@@ -627,5 +727,11 @@ document.addEventListener("visibilitychange", () => {
   }
 });
 
-document.fonts?.ready.then(() => blackHoleRenderer?.updateLabelTexture());
+window.addEventListener("pageshow", clearEnteringState);
+window.addEventListener("pagehide", clearEnteringState);
 
+document.fonts?.ready.then(() => {
+  projectLinks.forEach((link) => snapshotCache.delete(link));
+  blackHoleRenderer?.updateLabelTexture();
+  if (activeProjectLink && activeBounds) blackHoleRenderer?.setScene(activeProjectLink, activeBounds).then(() => requestGravityFrame());
+});

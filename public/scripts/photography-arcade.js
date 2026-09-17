@@ -27,6 +27,10 @@
   };
   const ease = getComputedStyle(document.documentElement).getPropertyValue('--wc-ease-settle').trim();
   const tidy = value => String(value || '').replace(/[\r\n\t]+/g,' ').trim();
+  const formatBudget = value => {
+    const cleaned = tidy(value).replace(/^(?:CA\$|C\$|\$)\s*/i,'').replace(/\s*(?:CAD|CA\$|C\$|\$)$/i,'').trim();
+    return cleaned ? `${cleaned} CAD` : '';
+  };
   let step = 0;
   let changing = false;
   let transitions = [];
@@ -86,7 +90,7 @@
     const title=tidy(data.title);
     const place=tidy(data.location);
     const date=tidy(data.date);
-    const budget=guidance.checked?'':tidy(data.budget);
+    const budget=guidance.checked?'':formatBudget(data.budget);
     const notes=String(data.idea||'').trim();
     arcade.querySelector('[data-shoot-summary-title]').textContent=title||'Your shoot';
     const summary=arcade.querySelector('[data-shoot-summary]');
@@ -94,14 +98,14 @@
     summary.hidden=!summary.textContent;
     const budgetSummary=arcade.querySelector('[data-budget-summary]');
     budgetSummary.hidden=!(budget||guidance.checked);
-    budgetSummary.textContent=budget?'Your budget: '+budget+' CAD':'I’d like guidance on the budget.';
+    budgetSummary.textContent=budget?'Your budget: '+budget:'I’d like guidance on the budget.';
     subject.textContent=(title||'Photography inquiry')+(title?' | Photography inquiry':'');
     const details=[place?'Place: '+place:'',date?'Date: '+date:''].filter(Boolean);
     inquiryBody=[
       'Hi Will,','',
       title?'I’m planning '+title+' and would like to talk about photography.':'I’d like to talk about a photography shoot.',
       ...(details.length?['',...details]:[]),
-      '',budget?'My photography budget is '+budget+' CAD.':'I’d appreciate your guidance on the budget.',
+      '',budget?'My photography budget is '+budget+'.':'I’d appreciate your guidance on the budget.',
       ...(notes?['',notes]:[]),
       ...(references.length?['','Photographs I have in mind:',...references.map((ref,index)=>(index+1)+'. '+ref.caption+'\n'+ref.url)]:[]),
       '','Could you suggest an approach and put together a quote?',''

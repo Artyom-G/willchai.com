@@ -17,7 +17,7 @@ from reportlab.lib.styles import ParagraphStyle
 from reportlab.lib.pagesizes import A4
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, KeepTogether
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, KeepTogether, Flowable
 
 ROOT = Path(__file__).resolve().parents[1]
 data = json.loads((ROOT / 'src/data/resume.json').read_text())
@@ -61,28 +61,56 @@ with TemporaryDirectory() as temp:
         'meta': ParagraphStyle('meta', fontName='Funnel', fontSize=10.5, leading=14, textColor=slate, spaceAfter=4),
     }
 
+    class SectionBookmark(Flowable):
+        """Zero size flowable used to add a named section destination."""
+        def __init__(self, title, key):
+            super().__init__()
+            self.title = title
+            self.key = key
+
+        def wrap(self, available_width, available_height):
+            return 0, 0
+
+        def draw(self):
+            self.canv.bookmarkPage(self.key)
+            self.canv.addOutlineEntry(self.title, self.key, level=0, closed=False)
+
     def paragraph(text, style='body'):
         return Paragraph(escape(text), styles[style])
 
     story = [paragraph(profile['name'], 'name'), paragraph(profile['headline']),
              paragraph(profile['location'], 'meta'),
              paragraph(' | '.join([profile['email'], profile['website'], profile['linkedin']]), 'meta')]
-    for section in data['sections']:
-        for index, item in enumerate(section['items']):
-            parts = [paragraph(section['title'], 'section')] if index == 0 else []
-            title = paragraph(item['title'], 'title')
-            if item.get('href'):
-                href = item['href']
+    for section_index, section in enumerate(data['sections']):
+        # Match the HTML record: adjacent roles at the same organization share
+        # one heading while each role retains its own dates and detail.
+        groups = []
+        for item in section['items']:
+            if groups and groups[-1]['title'] == item['title']:
+                groups[-1]['items'].append(item)
+            else:
+                groups.append({'title': item['title'], 'items': [item]})
+
+        section_key = 'resume-section-' + str(section_index + 1)
+        story.extend([SectionBookmark(section['title'], section_key), paragraph(section['title'], 'section')])
+        for group in groups:
+            group_parts = []
+            first = group['items'][0]
+            title = paragraph(group['title'], 'title')
+            if first.get('href'):
+                href = first['href']
                 if href.startswith('/'):
                     href = 'https://willchai.com' + href
-                title = Paragraph('<link href="' + escape(href, {'"': '&quot;'}) + '" color="' + color_token('blue') + '">' + escape(item['title']) + '</link>', styles['title'])
-            parts.extend([title, paragraph(item['role'])])
-            if item.get('date'):
-                parts.append(paragraph(item['date'], 'meta'))
-            if item.get('detail'):
-                parts.append(paragraph(item['detail']))
-            parts.append(Spacer(1, 9))
-            story.append(KeepTogether(parts))
+                title = Paragraph('<link href="' + escape(href, {'"': '&quot;'}) + '" color="' + color_token('blue') + '">' + escape(group['title']) + '</link>', styles['title'])
+            group_parts.append(title)
+            for item in group['items']:
+                group_parts.append(paragraph(item['role']))
+                if item.get('date'):
+                    group_parts.append(paragraph(item['date'], 'meta'))
+                if item.get('detail'):
+                    group_parts.append(paragraph(item['detail']))
+                group_parts.append(Spacer(1, 5 if len(group['items']) > 1 else 9))
+            story.append(KeepTogether(group_parts))
     story.extend([Spacer(1, 15), paragraph(profile['sourceNote'], 'meta')])
     output = ROOT / 'public/resume.pdf'
     doc = SimpleDocTemplate(str(output), pagesize=A4, rightMargin=42, leftMargin=42,

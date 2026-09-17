@@ -10,11 +10,12 @@ import ContactTicket from "../components/ContactTicket.astro";
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Will Chai is a student, maker, and storyteller. Explore photography, films, and projects."
+      content="William Chai, also known as Will Chai, shares photography, films, games and creative projects."
     />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="theme-color" content="#eef0f2" />
     <link rel="canonical" href="https://willchai.com/" />
-    <title>Will Chai · Sharing Stories</title>
+    <title>William Chai | Photography, Films & Games</title>
     <link
       rel="preload"
       href="/assets/funnel-sans-latin.woff2"
@@ -27,13 +28,31 @@ import ContactTicket from "../components/ContactTicket.astro";
     <link rel="icon" href="/assets/willchai-mark.avif" type="image/avif" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="willchai.com" />
-    <meta property="og:title" content="Will Chai · Sharing Stories" />
+    <meta property="og:title" content="William Chai | Photography, Films & Games" />
     <meta
       property="og:description"
       content="Photography, films, and projects by Will Chai."
     />
     <meta property="og:url" content="https://willchai.com/" />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content="https://willchai.com/assets/social/home.jpg" />
+    <meta property="og:image:alt" content="Portrait of Will Chai wearing a dark suit" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="William Chai | Photography, Films & Games" />
+    <meta name="twitter:description" content="Photography, films, and projects by Will Chai." />
+    <meta name="twitter:image" content="https://willchai.com/assets/social/home.jpg" />
+    <meta name="twitter:image:alt" content="Portrait of Will Chai wearing a dark suit" />
+    <meta name="twitter:image:width" content="1200" />
+    <meta name="twitter:image:height" content="630" />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        { "@type": "Person", "@id": "https://willchai.com/#person", "name": "William Chai", "alternateName": "Will Chai", "url": "https://willchai.com/", "sameAs": ["https://www.linkedin.com/in/willchai/"] },
+        { "@type": "WebSite", "@id": "https://willchai.com/#website", "url": "https://willchai.com/", "name": "willchai.com", "publisher": { "@id": "https://willchai.com/#person" } }
+      ]
+    }).replace(/</g, "\\u003c")} />
     <script is:inline>
       const legacyPage = new URLSearchParams(window.location.search).get("page_id");
       if (legacyPage === "275") window.location.replace("/photography/");
@@ -66,6 +85,7 @@ import ContactTicket from "../components/ContactTicket.astro";
               alt="Portrait of Will Chai wearing a dark suit"
               width="300"
               height="300"
+              draggable="false"
               data-portrait
             />
             <img
@@ -76,6 +96,7 @@ import ContactTicket from "../components/ContactTicket.astro";
               height="1067"
               decoding="async"
               fetchpriority="low"
+              draggable="false"
               data-portrait
             />
             <img
@@ -86,6 +107,7 @@ import ContactTicket from "../components/ContactTicket.astro";
               height="800"
               decoding="async"
               fetchpriority="low"
+              draggable="false"
               data-portrait
             />
             <img
@@ -96,6 +118,7 @@ import ContactTicket from "../components/ContactTicket.astro";
               height="901"
               decoding="async"
               fetchpriority="low"
+              draggable="false"
               data-portrait
             />
             <img
@@ -154,10 +177,10 @@ import ContactTicket from "../components/ContactTicket.astro";
             />
             <img
               class="film-poster film-poster--minus"
-              src="/assets/murder-of-minus-poster.avif"
+              src="/assets/films/murder-of-minus/poster-800.avif"
               alt="Murder of Minus film poster"
-              width="225"
-              height="300"
+              width="800"
+              height="1067"
               loading="lazy"
             />
             <span class="films-marquee" aria-hidden="true">MOVING PICTURES</span>

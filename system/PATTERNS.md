@@ -144,7 +144,7 @@ service footer. Photographs remain the primary visual material, the inquiry
 action stays outside any lightbox, and client privacy or publication
 permission must be confirmed before use.
 
-Photography uses a compact site header with the shared identity mark and Contact,
+Photography uses the shared site header with primary destinations and Contact,
 the Photography title, and a short
 portrait and event description. Nine featured photographs move through a sticky
 viewport while ordinary vertical scrolling advances the sequence. Cards enter
@@ -421,3 +421,15 @@ and pending retrieval belongs in the festival record or artwork audit.
 ## Résumé record
 
 The opening places the name, résumé title, professional introduction and contact links beside a compact PDF preview with view and download actions. A desktop section index remains in view while the record scrolls. Its active link follows the reading position. Phones use ordinary wrapping section links above the record. Education and research precede experience, projects, awards, credentials and volunteering. Consecutive positions at one organization share a heading, with every role and date visible. Section headings use Funnel Sans. Both editions read from the same content record. The rendered reference lives in `index.html#resume-record`.
+
+## Repair refinements
+
+The portrait control disables native image dragging. The homepage footer separates identity and copyright with explicit spacing and permits wrapping. The gravitational lens samples stationary imagery with the same cover crop, poster transforms, decorative field and shading as the visible panel. The shared header includes all primary destinations on Photography and wraps labels at narrow widths. Film details include a wrapping contents row and direct viewing resources at the opening and ending. The typing passage and keyboard focus the same input. Its progress state belongs to the progress control. ConspiraSea artwork is visible in static HTML and becomes temporarily hidden during an active deal.
+
+## Consolidated project destinations
+
+ConspiraSea and Searing Stories use sections within Projects. Retired project addresses forward to the relevant section. Internal portfolio links point directly to these sections.
+
+## Search continuity
+
+Shared page metadata describes the subject and author. Film details carry Movie data. Historical project records preserve the original topic and distinguish the recorded project from current services. Footer quick links give the Hey utility page a crawlable incoming link.

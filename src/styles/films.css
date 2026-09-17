@@ -284,10 +284,14 @@ body.filmCinema { min-width: 0; background: var(--wc-film-surface); color: var(-
 .filmEssayIdentity { display: grid; grid-template-columns: minmax(0,2fr) minmax(0,1fr); gap: var(--wc-space-12); align-items: end; padding: var(--wc-space-8) 0 var(--wc-space-12); }
 .filmEssayWordmark { max-width: 48rem; }
 .filmEssayIdentity>p { font-size: var(--wc-font-small); color: var(--wc-film-muted); line-height: 1.6; margin: 0; padding-bottom: var(--wc-space-2); }
+.filmEssayContents { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem 1rem; border-block: 1px solid var(--wc-film-line); padding: .8rem 0; font-size: var(--wc-font-small); }
+.filmEssayContents span { color: var(--wc-film-muted); margin-right: .4rem; }
+.filmEssayContents a { min-height: 2.75rem; display: inline-flex; align-items: center; text-underline-offset: .3em; }
 .filmEssayLead { display: grid; grid-template-columns: minmax(0,2fr) minmax(0,1fr); gap: var(--wc-space-12); align-items: end; }
 .filmEssayCover { margin-left: calc(-1 * var(--film-gutter)); }
 .filmEssayPremise { padding-bottom: var(--wc-space-8); }
 .filmEssayPremise>p { font-size: clamp(1.6rem,2.4vw,2.65rem); line-height: 1.25; letter-spacing: -.02em; }
+.filmEssayQuickActions { display: flex; flex-wrap: wrap; gap: var(--wc-space-3); }
 .filmEssayStory { padding: var(--wc-space-24) var(--film-gutter); display: grid; grid-template-columns: minmax(0,1fr) minmax(0,2fr); gap: var(--wc-space-12); }
 .filmEssayStory>div { max-width: 58ch; }
 .filmEssayCast { grid-column: 2; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: var(--wc-space-6); margin: 0; border-top: 1px solid var(--wc-film-line); padding-top: var(--wc-space-8); }
@@ -336,6 +340,9 @@ body.filmCinema { min-width: 0; background: var(--wc-film-surface); color: var(-
  .filmEssayCover { margin-right: calc(-1 * var(--film-gutter)); }
  .filmEssayPremise { padding: 0; }
  .filmEssayPremise>p { max-width: 30ch; }
+ .filmEssayContents { align-items: start; gap: .15rem .85rem; }
+ .filmEssayContents span { flex-basis: 100%; margin: 0; }
+ .filmEssayQuickActions { gap: var(--wc-space-3); }
  .filmEssayStory,.filmEssayPerspective,.filmEssayMaking,.filmEssayCraft,.filmEssaySpecs { padding-block: var(--wc-space-12); }
  .filmEssayStory { gap: var(--wc-space-6); }
  .filmEssayCast { grid-column: 1; }

@@ -113,7 +113,7 @@ two competing versions.
 
 ## Photography motion and pricing
 
-Photography uses a compact site header with the shared identity and Contact,
+Photography uses the shared site header with primary destinations and Contact,
 the Photography title, and a short
 portrait and event description. Nine approved photographs move through a sticky
 viewport while ordinary vertical scrolling advances the sequence. Cards enter
@@ -179,3 +179,7 @@ preserve keyboard operation. See `PATTERNS.md` for the complete contract.
 ## Projects show and tell reference
 
 `index.html#projects-sequence` presents the six game catalogue, Tachyboard’s active session view and corrected hands, Searing Stories’ landing and hosts photographs, and ConspiraSea’s underwater setting, physical game packages and role card deck. `PATTERNS.md` records the four scene compositions, bounded typography, physical supports, input behaviour and motion rules. The native sprite exporter preserves the original face and palette. Asset sources, dimensions, hashes and licences are recorded in `src/data/projects-showtell-sources.json` and `artifacts/projects-polish/conspirasea-role-cards.json`. The Searing title uses the published Trattatello face as its scene approaches. The contact component is shared by Home and Projects.
+
+## September repair reference
+
+The shared navigation reference appears at `index.html#navigation-repair`. Photography now includes all primary destinations. The responsive menu wraps within its available width. Film details have section links and direct opening resource actions. The PDF preview reflects grouped organization roles and section bookmarks.

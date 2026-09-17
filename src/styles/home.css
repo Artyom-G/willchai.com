@@ -155,6 +155,8 @@ img {
   inset: 0;
   width: 100%;
   height: 100%;
+  user-select: none;
+  -webkit-user-drag: none;
   object-fit: cover;
   opacity: 0;
   transform: rotate(-2deg) scale(0.96);
@@ -329,11 +331,7 @@ img {
   transition: transform 900ms var(--ease-out), filter 500ms ease;
 }
 
-.panel-link:hover .panel-image,
-.panel-link:focus-visible .panel-image,
-.panel-link.is-entering .panel-image {
-  transform: scale(1.025);
-}
+
 
 .panel-shade {
   position: absolute;
@@ -347,11 +345,7 @@ img {
   background: rgba(17, 5, 0, 0.3);
 }
 
-.panel-link:hover .panel-shade,
-.panel-link:focus-visible .panel-shade,
-.panel-link.is-entering .panel-shade {
-  background: rgba(0, 0, 0, 0.08);
-}
+
 
 .panel-copy {
   position: absolute;
@@ -396,13 +390,7 @@ img {
   font-size: clamp(16px, 1.45vw, 20px);
 }
 
-.photography-panel .panel-link:hover .panel-shade,
-.photography-panel .panel-link:focus-visible .panel-shade,
-.photography-panel .panel-link.is-entering .panel-shade {
-  background:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.12), transparent 68%),
-    linear-gradient(180deg, transparent 42%, rgba(0, 0, 0, 0.35));
-}
+.photography-panel
 
 .films-panel {
   background: #080909;
@@ -499,22 +487,11 @@ img {
   text-align: right;
 }
 
-.projects-panel .panel-link:hover .projects-field > span,
-.projects-panel .panel-link:focus-visible .projects-field > span,
-.projects-panel .panel-link.is-entering .projects-field > span {
-  color: rgba(255, 255, 255, 0.75);
-  border-color: rgba(255, 255, 255, 0.58);
-}
 
-.projects-panel .panel-link:hover .projects-field > span:nth-child(1),
-.projects-panel .panel-link:focus-visible .projects-field > span:nth-child(1) {
-  transform: translate(-0.2rem, -0.2rem);
-}
 
-.projects-panel .panel-link:hover .projects-field > span:nth-child(4),
-.projects-panel .panel-link:focus-visible .projects-field > span:nth-child(4) {
-  transform: translate(0.2rem, 0.2rem);
-}
+
+
+
 
 .panel-shade--projects {
   background: linear-gradient(0deg, rgba(10, 8, 75, 0.58), transparent 75%);
@@ -570,9 +547,10 @@ img {
 .site-footer {
   display: flex;
   min-height: 5rem;
-  padding: 1.5rem 0.4rem 0.25rem;
+  padding: 1.5rem 0.4rem 1rem;
   align-items: flex-start;
   justify-content: flex-start;
+  gap: 1rem;
   color: var(--cloud);
   font-size: 14px;
 }
@@ -674,21 +652,15 @@ img {
     transform: translate(3%, -54%) rotate(5deg);
   }
 
-  .films-panel .panel-link:hover .film-poster--wattleseed,
-  .films-panel .panel-link:focus-visible .film-poster--wattleseed,
-  .films-panel .panel-link.is-entering .film-poster--wattleseed {
-    transform: translate(-74%, -41%) rotate(-8deg) scale(1.03);
-  }
 
-  .films-panel .panel-link:hover .film-poster--minus,
-  .films-panel .panel-link:focus-visible .film-poster--minus,
-  .films-panel .panel-link.is-entering .film-poster--minus {
-    transform: translate(7%, -54%) rotate(8deg) scale(1.03);
-  }
+
+
 
   .panel-copy--films {
     top: 1.25rem;
-    max-width: 72%;
+    max-width: 68%;
+    padding: 0.5rem 0.6rem 0.65rem;
+    background: rgba(8, 9, 9, 0.68);
   }
 
   .films-recognition {
@@ -709,7 +681,8 @@ img {
 
 
   .site-footer {
-    padding-bottom: 1rem;
+    padding-bottom: 1.25rem;
+    flex-wrap: wrap;
   }
 }
 
