@@ -47,7 +47,7 @@ a selective signature, not the default border around every module.
 The complete source architecture contains twelve page routes. The current
 public release exposes Home, Photography, `/hey/`, Films, and Projects with
 their detail pages. The utility page links to Home, Photography, LinkedIn, and
-email. Résumé remains in source during continued review. Contact invitations
+email. Résumé is approved for the production release. Contact invitations
 live within Home, Photography, Films, and Projects.
 
 The system also records the need for an authentic exception layer so the final
@@ -166,13 +166,16 @@ builder. Final quotes remain personal to each assignment.
 
 ## Films cinema canvas
 
-Films and both detail pages use the Ink canvas and original film material.
-The system page presents Murder of Minus first, linked title artwork, compact
-credits, additional original stills and a synopsis with its own reading space.
-The festival example uses complete transparent artwork and underlined links.
-The production sequence uses native scrolling with one appearance of each
-index still. Compact layouts and reduced motion use ordinary vertical flow.
-Supporting photographs remain still under the pointer. Media dialogs restore
-focus on close. See `PATTERNS.md` for the complete contract.
+Films and both detail pages use the Ink canvas, original stills and readable
+festival laurels. The system page presents the title and laurel composition.
+The production sequence uses native scrolling, with static compact layouts
+and reduced motion support. Trailer, credits and festival record controls
+preserve keyboard operation. See `PATTERNS.md` for the complete contract.
 
-The Films reference also demonstrates the chapter ending and the detail reading sequence. Film detail content comes from the original press kits, with source pages recorded in `src/data/film-essays.ts`.
+## Blog reading reference
+
+`index.html#blog-reading` demonstrates the article opening and source caption pattern using `src/styles/blog.css`. Blog draft workflow and file locations are documented in `CONTENT-GUIDE.md`.
+
+## Projects show and tell reference
+
+`index.html#projects-sequence` presents the six game catalogue, Tachyboard’s active session view and corrected hands, Searing Stories’ landing and hosts photographs, and ConspiraSea’s underwater setting, physical game packages and role card deck. `PATTERNS.md` records the four scene compositions, bounded typography, physical supports, input behaviour and motion rules. The native sprite exporter preserves the original face and palette. Asset sources, dimensions, hashes and licences are recorded in `src/data/projects-showtell-sources.json` and `artifacts/projects-polish/conspirasea-role-cards.json`. The Searing title uses the published Trattatello face as its scene approaches. The contact component is shared by Home and Projects.

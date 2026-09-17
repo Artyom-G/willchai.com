@@ -1,0 +1,72 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import { getBlogPosts } from "../../data/blog";
+import "../../styles/blog.css";
+
+const posts = getBlogPosts().sort((a, b) =>
+  b.entry.frontmatter.date.localeCompare(a.entry.frontmatter.date),
+);
+const hasPublishedPosts = posts.some(({ entry }) => !entry.frontmatter.draft);
+const canonical = new URL("/blog/", Astro.site).href;
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": canonical,
+  url: canonical,
+  name: "Blog | Will Chai",
+  description: "Articles by Will Chai about creative work, research, and student life.",
+  inLanguage: "en-CA",
+  mainEntity: {
+    "@type": "ItemList",
+    itemListElement: posts.map(({ slug, entry }, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: new URL(`/blog/${slug}/`, Astro.site).href,
+      name: entry.frontmatter.title,
+    })),
+  },
+};
+const formatDate = (date: string) => new Intl.DateTimeFormat("en-CA", {
+  month: "long",
+  day: "numeric",
+  year: "numeric",
+  timeZone: "UTC",
+}).format(new Date(`${date}T00:00:00Z`));
+---
+
+<BaseLayout
+  title="Blog | Will Chai"
+  description="Articles by Will Chai about creative work, research, and student life."
+  path="/blog/"
+  robots={hasPublishedPosts ? "index, follow" : "noindex, follow"}
+  structuredData={structuredData}
+  pageClass="blogIndexPage"
+>
+  <div class="pageShell">
+    <SiteHeader current="blog" />
+    <main id="main" class="blogIndex">
+      <header class="blogIndexOpening">
+        <p>Blog</p>
+        <h1>Things I wanted to write down.</h1>
+      </header>
+      <div class="blogIndexEntries">
+        {posts.map(({ slug, entry }) => (
+          <article class="blogIndexEntry">
+            <a href={`/blog/${slug}/`}>
+              <p class="blogIndexMeta">
+                <span>{entry.frontmatter.category}</span>
+                <time datetime={entry.frontmatter.date}>{formatDate(entry.frontmatter.date)}</time>
+                {entry.frontmatter.draft && <span>Draft</span>}
+              </p>
+              <h2>{entry.frontmatter.title}</h2>
+              <p>{entry.frontmatter.description}</p>
+            </a>
+          </article>
+        ))}
+      </div>
+    </main>
+    <SiteFooter />
+  </div>
+</BaseLayout>

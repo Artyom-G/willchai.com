@@ -1,14 +1,16 @@
 ---
 interface Props {
-  current?: "photography" | "films" | "projects" | "resume" | "hey";
+  current?: "photography" | "films" | "projects" | "blog" | "resume" | "hey";
   showPrimaryNavigation?: boolean;
+  showResume?: boolean;
 }
 
-const { current, showPrimaryNavigation = true } = Astro.props;
+const { current, showPrimaryNavigation = true, showResume = true } = Astro.props;
 const links = [
   { key: "photography", label: "Photography", href: "/photography/" },
   { key: "films", label: "Films", href: "/films/" },
   { key: "projects", label: "Projects", href: "/projects/" },
+  { key: "resume", label: "Résumé", href: "/resume/" },
 ];
 ---
 
@@ -20,7 +22,7 @@ const links = [
   {
     showPrimaryNavigation && (
       <nav class="siteNav" aria-label="Primary navigation">
-        {links.map((link) => (
+        {links.filter((link) => showResume || link.key !== "resume").map((link) => (
           <a href={link.href} aria-current={current === link.key ? "page" : undefined}>
             {link.label}
           </a>

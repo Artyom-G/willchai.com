@@ -6,57 +6,295 @@
     "email": "me@willchai.com",
     "website": "willchai.com",
     "linkedin": "linkedin.com/in/willchai",
-    "checked": "September 2026"
+    "checked": "September 2026",
+    "sourceNote": "Updated September 2026. Compiled from LinkedIn, application records and project documentation."
   },
   "sections": [
     {
-      "title": "Experience",
-      "items": [
-        { "title": "McMaster Bachelor of Health Sciences Program", "role": "Director of Photography", "date": "September 2026 to present" },
-        { "title": "McMaster Bachelor of Health Sciences Program", "role": "Vice President, Media and Promotion External Committee", "date": "September 2023 to present" },
-        { "title": "McMaster Bachelor of Health Sciences Program", "role": "Photographer", "date": "January 2024 to August 2026" },
-        { "title": "McMaster Bachelor of Health Sciences Program", "role": "Elections Committee Member", "date": "December 2024 to June 2025" },
-        { "title": "WillChai.com", "role": "Founder and Lead Photographer", "date": "April 2021 to present" },
-        { "title": "WillChai.com", "role": "Watchmaker", "date": "August 2025 to present" },
-        { "title": "McMaster Film Production Club", "role": "Co President", "date": "April 2025 to present" },
-        { "title": "McMaster Film Production Club", "role": "Vice President of Cinematography", "date": "April 2024 to present" },
-        { "title": "McMaster Film Production Club", "role": "Cinematography Member", "date": "September 2023 to April 2024" },
-        { "title": "Health Sciences Musical", "role": "Videographer", "date": "March 2024 to present" },
-        { "title": "Health Sciences Musical", "role": "Head of Videography", "date": "June 2024 to August 2025" },
-        { "title": "McMaster AI Society", "role": "Photographer", "date": "September 2025 to present" },
-        { "title": "Ticket Stub Talks, 93.3 CFMU", "role": "Radio Host", "date": "October 2025 to April 2026" },
-        { "title": "Murder of Minus, WillChai Productions", "role": "Director and Lead Actor", "date": "November 2021 to January 2025", "href": "/films/murder-of-minus/" },
-        { "title": "Foxwood Homes", "role": "Warranty Coordinator", "date": "May 2024 to August 2024" }
-      ]
-    },
-    {
       "title": "Education",
       "items": [
-        { "title": "McMaster University", "role": "Honours Health Sciences, Bachelor of Health Sciences, Level 4", "date": "2023 to 2027", "detail": "Dean’s Honour List, 2023 to present." },
-        { "title": "St. John’s Kilmarnock School", "role": "International Baccalaureate Diploma Programme", "date": "2019 to 2023", "detail": "Student Council, 2020 to 2023. Alumni representative." }
+        {
+          "title": "McMaster University",
+          "role": "Honours Health Sciences, Bachelor of Health Sciences, Level 4",
+          "date": "2023 to 2027 (expected)",
+          "detail": "Dean’s Honour List, 2024."
+        },
+        {
+          "title": "St. John’s Kilmarnock School",
+          "role": "International Baccalaureate Diploma Programme",
+          "date": "2019 to 2023",
+          "detail": "Student Council, 2020 to 2023. Alumni representative."
+        }
       ]
     },
     {
-      "title": "Selected projects",
+      "title": "Research and educational design",
       "items": [
-        { "title": "ConspiraSea Online", "role": "Creator, artist, and developer", "date": "March 2024 to present", "href": "/projects/conspirasea/" },
-        { "title": "Wattleseed", "role": "Short film", "date": "October 2025 to March 2026", "href": "/films/wattleseed/" },
-        { "title": "Inqling", "role": "Project", "date": "November 2023 to January 2026" },
-        { "title": "Murder of Minus", "role": "Short film", "date": "November 2021 to August 2025", "href": "/films/murder-of-minus/" }
+        {
+          "title": "The Appearance of Greek and Roman Mythology in Medical Language",
+          "role": "Undergraduate thesis researcher, McMaster University",
+          "date": "September 2026 to present",
+          "detail": "Studies mythology in medical language through historical and literary analysis under Dr. Stephen Russell. Nine unit undergraduate thesis, HTHSCI 4A09 A/B."
+        },
+        {
+          "title": "Anatomical Terminology Research and Conference Abstracts",
+          "role": "Research collaborator with Dr. Stephen Russell, McMaster University",
+          "date": "2025 to 2026",
+          "detail": "Researched anatomical terminology, developed teaching games and lecture material, and coauthored a Vienna conference presentation and two ICAM 2027 abstract drafts. The work combined HTHSCI 3H06 with its HTHSCI 4D03 continuation.",
+          "href": "https://medterms.willchai.com/"
+        },
+        {
+          "title": "Medical Terminology Games",
+          "role": "Game designer and developer",
+          "date": "February 2025 to July 2026",
+          "detail": "Developed and tested educational games for medical terminology and anatomical Latin with Dr. Stephen Russell, including rules, learning materials and digital editions. This work forms part of the anatomical terminology research project.",
+          "href": "https://medterms.willchai.com/"
+        }
+      ]
+    },
+    {
+      "title": "Experience",
+      "items": [
+        {
+          "title": "McMaster Bachelor of Health Sciences Society (BHSS)",
+          "role": "Director of Photography",
+          "date": "September 2026 to present"
+        },
+        {
+          "title": "McMaster Bachelor of Health Sciences Society (BHSS)",
+          "role": "Vice President of Media and Promotion (External Committee)",
+          "date": "September 2023 to present"
+        },
+        {
+          "title": "McMaster Bachelor of Health Sciences Society (BHSS)",
+          "role": "Photographer",
+          "date": "January 2024 to August 2026"
+        },
+        {
+          "title": "McMaster Bachelor of Health Sciences Society (BHSS)",
+          "role": "Elections Committee Member",
+          "date": "December 2024 to June 2025"
+        },
+        {
+          "title": "WillChai.com",
+          "role": "Founder and Lead Photographer",
+          "date": "April 2021 to present",
+          "detail": "Plans and photographs portrait, event, product and commercial assignments, with editing and client delivery."
+        },
+        {
+          "title": "WillChai.com",
+          "role": "Watchmaker",
+          "date": "August 2025 to present",
+          "detail": "Designs and assembles WillChai watches, including the Waterbear automatic watch. Independent restoration practice began in November 2024."
+        },
+        {
+          "title": "McMaster Film Production Club",
+          "role": "Co President",
+          "date": "April 2025 to present"
+        },
+        {
+          "title": "McMaster Film Production Club",
+          "role": "Vice President of Cinematography",
+          "date": "April 2024 to April 2025"
+        },
+        {
+          "title": "McMaster Film Production Club",
+          "role": "Cinematography Member",
+          "date": "September 2023 to April 2024"
+        },
+        {
+          "title": "Health Sciences Musical",
+          "role": "Videographer",
+          "date": "March 2024 to present"
+        },
+        {
+          "title": "Health Sciences Musical",
+          "role": "Head of Videography",
+          "date": "June 2024 to August 2025"
+        },
+        {
+          "title": "McMaster Artificial Intelligence Society",
+          "role": "Photographer",
+          "date": "September 2025 to present"
+        },
+        {
+          "title": "Ticket Stub Talks, 93.3 CFMU",
+          "role": "Radio Host",
+          "date": "October 2025 to April 2026",
+          "detail": "Hosted and produced a weekly film and filmmaking radio program with the McMaster Film Production Club."
+        },
+        {
+          "title": "Murder of Minus, WillChai Productions",
+          "role": "Director and Lead Actor",
+          "date": "November 2021 to January 2025",
+          "href": "/films/murder-of-minus/"
+        },
+        {
+          "title": "Foxwood Homes",
+          "role": "Warranty Coordinator",
+          "date": "May 2024 to August 2024",
+          "detail": "Coordinated homeowner warranty documentation, inspections, repairs and trades scheduling."
+        },
+        {
+          "title": "McMaster Students Union",
+          "role": "Vice President Administration candidate and MSU Index collaborator",
+          "date": "March 2026",
+          "detail": "Researched union operations, developed a campaign platform and built an MSU Index prototype for governance records."
+        }
+      ]
+    },
+    {
+      "title": "Projects",
+      "items": [
+        {
+          "title": "Tachyboard",
+          "role": "Designer and developer",
+          "date": "July 2026 to present",
+          "detail": "Built a typing analysis and practice tool with personalized drills based on recurring typing errors.",
+          "href": "https://tachyboard.willchai.com/"
+        },
+        {
+          "title": "Searing Stories",
+          "role": "Co host, photographer and web designer",
+          "date": "November 2025 to present",
+          "detail": "Organizes dinner interviews, guest outreach, photography and editorial features with Edward Gao. Builds the publication’s website and visual presentation.",
+          "href": "https://searingstories.com/"
+        },
+        {
+          "title": "ConspiraSea Online",
+          "role": "Creator, artist, and developer",
+          "date": "March 2024 to present",
+          "href": "/projects/conspirasea/",
+          "detail": "Designed the tabletop social deduction game, original roles and artwork, then developed a multiplayer online edition."
+        },
+        {
+          "title": "Wattleseed",
+          "role": "Cowriter, director and producer",
+          "date": "October 2025 to March 2026",
+          "href": "/films/wattleseed/",
+          "detail": "Developed and produced a short film about two researchers, an artificial intelligence and their response to institutional delay."
+        },
+        {
+          "title": "Waterbear and watch restoration",
+          "role": "Watch designer and maker",
+          "date": "November 2024 to present",
+          "detail": "Developed an automatic watch and practiced assembly, restoration and quality assessment. The commercial watchmaking role began in August 2025."
+        },
+        {
+          "title": "Inqling",
+          "role": "Co creator, collaborative card game and curriculum",
+          "date": "November 2023 to January 2026",
+          "detail": "Co designed a classroom card game with students and faculty to support dialogue and belonging. Presented the learning design at McMaster’s Innovations in Education Conference in 2024."
+        },
+        {
+          "title": "Murder of Minus",
+          "role": "Short film",
+          "date": "November 2021 to August 2025",
+          "href": "/films/murder-of-minus/",
+          "detail": "Co wrote and co directed the film with Artyom Gabtraupov and performed the roles of Quinten and Minus. Production concluded in January 2025, followed by festival distribution."
+        },
+        {
+          "title": "Transit",
+          "role": "Developer",
+          "date": "2025",
+          "detail": "Developed a CARS reading practice prototype which generates passages for reading endurance and comprehension."
+        },
+        {
+          "title": "Full House",
+          "role": "Game designer and illustrator",
+          "date": "June 2023 to January 2024",
+          "detail": "Designed, illustrated and playtested an asymmetrical strategy game for two to nine players, with nine factions, alliances and custom components."
+        },
+        {
+          "title": "willchai.com",
+          "role": "Web designer and developer",
+          "date": "2023 to present",
+          "detail": "Builds and maintains a personal website for photography, film, games and other projects.",
+          "href": "/"
+        }
+      ]
+    },
+    {
+      "title": "Awards and presentations",
+      "items": [
+        {
+          "title": "HTHSCI 3DM3 Finale Championship",
+          "role": "First place, team educational video",
+          "date": "December 2025",
+          "detail": "The team’s medical science communication video received first place in the course finale at McMaster University."
+        },
+        {
+          "title": "Alternative Film Festival",
+          "role": "Best Actor, Murder of Minus",
+          "date": "March 2025",
+          "detail": "Recognized for a lead performance in Murder of Minus.",
+          "href": "/films/murder-of-minus/"
+        },
+        {
+          "title": "Murder of Minus festival awards",
+          "role": "Film recognition",
+          "date": "2025",
+          "detail": "Received Best Student Film, Best Mystery / Suspense / Thriller and Best Student Short Film awards. Individual festival outcomes appear in the film record.",
+          "href": "/films/murder-of-minus/"
+        },
+        {
+          "title": "Wattleseed festival awards",
+          "role": "Film recognition",
+          "date": "2026",
+          "detail": "The film received Best Original Score at Cine Paris Film Festival and the Student Film award at Toronto Arts and Entertainment Film Festival.",
+          "href": "/films/wattleseed/"
+        },
+        {
+          "title": "International Baccalaureate academic distinctions",
+          "role": "Spanish Award and Theory of Knowledge Award",
+          "date": "2023",
+          "detail": "Received at St. John’s Kilmarnock School."
+        },
+        {
+          "title": "Innovations in Education Conference",
+          "role": "Presenter, Inqling",
+          "date": "2024",
+          "detail": "Presented the collaborative card game and its learning design at McMaster University."
+        },
+        {
+          "title": "17th International Symposium of Clinical and Applied Anatomy",
+          "role": "Coauthor, anatomical terminology presentation",
+          "date": "",
+          "detail": "Contributed research and lecture material to a presentation at the Medical University of Vienna."
+        }
       ]
     },
     {
       "title": "Credentials",
       "items": [
-        { "title": "Transport Canada", "role": "Pilot Certificate, Small Remotely Piloted Aircraft System, Visual Line of Sight", "date": "Issued October 2024", "detail": "Credential 2429560517." },
-        { "title": "Pfizer UK through Forage", "role": "Molecule to Market Job Simulation", "date": "Issued June 2024", "detail": "Credential aKcvJ4LfSj82s6Pei." }
+        {
+          "title": "Transport Canada",
+          "role": "Pilot Certificate, Small Remotely Piloted Aircraft System, Visual Line of Sight",
+          "date": "Issued October 2024",
+          "detail": "Credential 2429560517."
+        },
+        {
+          "title": "Pfizer UK through Forage",
+          "role": "Molecule to Market Job Simulation",
+          "date": "Issued June 2024",
+          "detail": "Credential aKcvJ4LfSj82s6Pei."
+        }
       ]
     },
     {
       "title": "Volunteering",
       "items": [
-        { "title": "Be My Eyes", "role": "Virtual Support Assistant Volunteer", "date": "November 2025 to present" },
-        { "title": "Perplexity", "role": "Campus Partner", "date": "September 2025 to January 2026" }
+        {
+          "title": "Be My Eyes",
+          "role": "Registered volunteer",
+          "date": "November 2025 to present",
+          "detail": "Registered for the virtual assistance service."
+        },
+        {
+          "title": "Perplexity",
+          "role": "Campus Partner",
+          "date": "September 2025 to January 2026"
+        }
       ]
     }
   ]

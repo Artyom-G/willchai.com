@@ -1,0 +1,289 @@
+@import "../../system/tokens.css";
+.contact-section {
+  display: grid;
+  min-height: clamp(34rem, 72svh, 48rem);
+  padding: clamp(2rem, 5vw, 5.5rem);
+  grid-template-columns: minmax(min-content, 0.85fr) minmax(20rem, 1.15fr);
+  align-items: center;
+  gap: clamp(2rem, 6vw, 7rem);
+  background: var(--wc-contact-field);
+}
+
+.contact-copy h2 {
+  max-width: 12ch;
+  margin: 0;
+  font-family: "Unbounded", Arial, sans-serif;
+  font-size: clamp(2rem, 4.2vw, 4.6rem);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 1.02;
+}
+
+.photography-inquiry {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding-bottom: 0.18rem;
+  border-bottom: 2px solid var(--wc-ink);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.photography-inquiry:hover,
+.photography-inquiry:focus-visible {
+  color: var(--wc-blue);
+  border-color: var(--wc-blue);
+}
+
+.ticket-stage {
+  display: grid;
+  min-height: 24rem;
+  place-items: center;
+  align-content: center;
+  background: var(--wc-ticket-stage);
+  clip-path: polygon(5% 0, 96% 3%, 100% 42%, 96% 96%, 3% 100%, 0 36%);
+}
+
+.contact-ticket {
+  --gradient-angle: 180deg;
+  --gradient-angle-inv: -180deg;
+  --mouse-x: 50%;
+  border: 0;
+  font-family: var(--wc-font-sans);
+  --mouse-y: 50%;
+  position: relative;
+  z-index: 3;
+  width: 300px;
+  min-height: 120px;
+  height: auto;
+  padding: 0;
+  overflow: visible;
+  color: #000000;
+  background: transparent;
+  cursor: pointer;
+  filter: drop-shadow(0 12px 12px rgba(17, 19, 23, 0.01));
+  transform-style: preserve-3d;
+  transition: filter 420ms ease;
+  user-select: none;
+}
+
+.contact-ticket.is-moving {
+  will-change: transform, filter;
+}
+
+.contact-ticket:hover,
+.contact-ticket:focus-visible {
+  filter: drop-shadow(0 12px 12px rgba(17, 19, 23, 0.18));
+}
+
+.contact-ticket * {
+  user-select: none;
+}
+
+.contact-ticket__surface {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: inherit;
+  height: auto;
+  padding: 1rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #ffffff;
+  transform-style: preserve-3d;
+  transition:
+    background-color 0.5s ease-out,
+    box-shadow 0.5s ease-out;
+}
+
+.contact-ticket:hover .contact-ticket__surface {
+  background-color: #f0f0f0;
+  transition: background-color 0.2s;
+}
+
+.contact-ticket__surface::before {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.8s ease-out;
+  background:
+    radial-gradient(
+      ellipse at var(--mouse-x) var(--mouse-y),
+      #a9a2f5 0%,
+      transparent 50%
+    ),
+    repeating-conic-gradient(
+      from var(--gradient-angle-inv) at 50% 50%,
+      #1d1a9c 0%,
+      #2d29f4 15%,
+      transparent 35%,
+      #2d29f4 45%,
+      #1d1a9c 50%
+    ),
+    repeating-conic-gradient(
+      from var(--gradient-angle) at 50% 50%,
+      #1d1a9c,
+      #2d29f4 90deg,
+      #1d1a9c 180deg
+    ),
+    url("/assets/projects-v3/ticket-noise.webp");
+  background-blend-mode: soft-light, soft-light, soft-light, normal;
+}
+
+.contact-ticket__surface::after {
+  --logo-w: 37.5px;
+  --logo-h: calc(var(--logo-w) * 0.755);
+  --tile-w: calc(var(--logo-w) * 1.1);
+  --tile-h: calc(var(--logo-h) * 1.15);
+  position: absolute;
+  z-index: 2;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  content: "";
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.8s ease-out;
+  background-image: url("/assets/willchai-mark.avif");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: var(--logo-w) var(--logo-h);
+  mix-blend-mode: soft-light;
+  transform: rotateX(var(--holo-rot-x, 0deg)) rotateY(var(--holo-rot-y, 0deg))
+    rotate(45deg) translateZ(-120px) scale(1.4);
+  transform-style: preserve-3d;
+}
+
+.contact-ticket.is-holographic .contact-ticket__surface::before,
+.contact-ticket.is-holographic .contact-ticket__surface::after {
+  opacity: 1;
+  transition: opacity 0.1s;
+}
+
+.contact-ticket.is-holographic .contact-ticket__surface::after {
+  opacity: 0.5;
+}
+
+.contact-ticket.is-flashing .contact-ticket__surface {
+  background-color: color(display-p3 1.5 1.5 1.5) !important;
+  box-shadow: 0 0 50px 25px rgba(255, 255, 255, 0.8) !important;
+}
+
+.contact-ticket:focus-visible {
+  outline: 4px solid var(--wc-vermilion);
+  outline-offset: 7px;
+}
+
+.contact-ticket__email,
+.contact-ticket__status {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  text-align: center;
+  position: relative;
+  z-index: 4;
+  pointer-events: none;
+  transform: translateZ(30px);
+  transition:
+    color 0.5s ease-out,
+    text-shadow 0.5s ease-out;
+}
+
+.contact-ticket__email {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.contact-ticket__email span,
+.contact-ticket__status {
+  font-style: italic;
+}
+
+.contact-ticket__status {
+  margin-top: 8px;
+  color: #000000;
+  font-family: "Funnel Sans", Arial, sans-serif;
+  font-size: 14px;
+}
+
+.contact-ticket.is-holographic .contact-ticket__email,
+.contact-ticket.is-holographic .contact-ticket__status {
+  color: var(--wc-white);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.contact-section {
+  position: relative;
+  color: var(--wc-ink);
+}
+.ticket-stage {
+  position: relative;
+}
+.contact-ticket__surface {
+  clip-path: url(#contact-ticket-clip);
+}
+.contact-ticket__surface::before,
+.contact-ticket__surface::after {
+  opacity: 0.01;
+}
+@media (max-width: 1100px) {
+  .contact-section {
+    grid-template-columns: 1fr;
+  }
+  .ticket-stage {
+    min-height: 21rem;
+  }
+}
+@media (max-width: 600px) {
+  .contact-section {
+    padding: 2rem 1rem;
+  }
+  .ticket-stage {
+    min-height: 18rem;
+  }
+  .contact-ticket {
+    width: min(280px, calc(100% - 32px));
+    min-height: 0;
+    height: auto;
+  }
+  .contact-ticket__surface {
+    aspect-ratio: 28/11;
+    clip-path: url(#contact-ticket-clip);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .contact-ticket,
+  .contact-ticket * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .contact-copy h2 {
+    font-size: clamp(2rem, 9vw, 3.6rem);
+  }
+}
+@media (max-width: 480px) {
+  .contact-ticket__email {
+    font-size: 18px;
+  }
+  .contact-ticket__status {
+    font-size: 14px;
+  }
+  .contact-ticket__surface::after {
+    --logo-w: 30px;
+  }
+}
+
+.contact-ticket {
+  font-family: var(--wc-font-sans);
+  font-size: 15px;
+}

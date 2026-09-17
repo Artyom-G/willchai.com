@@ -96,6 +96,8 @@ after a visitor chooses Trailer. Direct YouTube links remain available.
 
 ## Résumé and utility content
 
+The opening places the name, résumé title, professional introduction and contact links beside a compact PDF preview with view and download actions. A desktop section index remains in view while the record scrolls. Its active link follows the reading position. Phones use ordinary wrapping section links above the record. Education and research precede experience, projects, awards, credentials and volunteering. Consecutive positions at one organization share a heading, with every role and date visible. Section headings use Funnel Sans. Both editions read from the same content record.
+
 The Résumé is a professional record with a current PDF at the top and a
 scrollable HTML version below. View and download actions stay easy to find, and
 both formats carry the same verified facts. Links to Films and Projects may
@@ -106,8 +108,7 @@ Film and Project pages.
 stays outside the primary navigation architecture. It links to Home,
 Photography, LinkedIn, and email. Contact appears within the homepage and the
 Photography inquiry area. Film and Project routes appear in the sitemap and
-support crawler discovery. Résumé stays outside the sitemap and crawler
-discovery during continued review.
+support crawler discovery. Résumé is approved for inclusion in the sitemap and crawler discovery.
 
 ## Project entry checklist
 
@@ -173,50 +174,26 @@ the selected destination benefits from it.
 
 ## Films recognition and labels
 
-Films opens directly with Murder of Minus and its original title artwork.
-Titles link to the individual film pages. Viewing actions read Trailer. The
-synopsis occupies its own reading space. Press kit uses a bordered control
-below each festival spread. Film enquiries identifies the contact destination.
-Festival records live in `src/data/films.ts`, with category, festival, outcome,
-year, supporting source, official destination, owner evidence and optional
-original artwork. The index and detail pages render the same collection.
-Festivals and sourced categories have persistent underlines. Winners, nominees,
-finalists and selections retain their recorded status.
+Films opens with Murder of Minus, followed by Wattleseed. Original title artwork links to the corresponding film page. Viewing actions read Trailer.
+Film details, About, Screener, Press kit and Screening enquiry identify their
+destinations directly. Each laurel records its exact category, festival,
+outcome and year in `src/data/films.ts`, with a supporting source URL.
+The original wreath branches provide the surrounding artwork. Award winners,
+nominees and selections retain their respective descriptions. The full record
+remains available within each film page.
 
-Original title lettering is extracted from the original posters. Film stills
-retain their original subjects and provide a viewer with the original framing.
-The source manifest records each asset and its processing. Owner supplied judging records confirm successful results across seven
-Wattleseed festivals and ten Murder of Minus festivals. Public sources supply
-the individual categories and screening programme names. Kitchener Waterloo
-provides nine Wattleseed nomination categories. Its winning category remains unspecified, with Award Winner and 2026 displayed
-as approved by Will. The Alternative Film Festival Spring 2026 result is a
-nomination for Best Sci Fi/Fantasy/Supernatural, confirmed on page three of the
-official results PDF. Notification dates remain
-submission metadata. Public source links appear where a supporting page exists.
-The source manifest records owner evidence without publishing the screenshots.
+## Blog drafts
 
-The index pairs a short synopsis with original stills. Production accounts and
-complete credits belong to the detail pages. The image viewer uses accessible
-alt text and a Close control. Any future visible captions require verified
-character, performer or production context.
+Blog articles live in `src/content/blog/` as Markdown with a title, description, overview, author, category, publication date and draft flag. Their filenames supply the `/blog/{title}/` slug. Keep approved wording intact when preparing a page. `BlogLayout.astro` supplies the shared header, overview, contents links and reading surface. The contents links track the current second level section while a reader scrolls.
 
+Optional search fields include `seoTitle`, `modified`, `socialImage`, `socialImageAlt` and `keywords`. Published entries appear automatically in the Blog index, XML sitemap and RSS feed. The article template supplies canonical metadata, large social previews, publication metadata and JSON LD for the website, author, blog article and breadcrumb trail. Keep the search title concise and accurate while preserving the approved visible title.
 
-## Film detail reading sequence
+Set `draft: true` during review. Draft articles and their media endpoints render in the development preview and are excluded from production builds. Store supporting images and PDFs in `src/content/blog-media/{slug}/`. Link figures to their full size image and include source captions. When an article includes several supporting PDFs, show a legible first page preview and a direct PDF link for each document. Publication requires a separate review of wording, evidence and the intended release. Add the approved article to the sitemap and visitor discovery as part of publication.
 
-Each index chapter ends with its film title and a prominent filled control labelled
-“Read more about the film”. The boundary separates consecutive films and provides
-a visible destination after the festival composition.
+## Projects guide copy
 
-Detail pages use an independent opening with original title artwork, a selected
-production image, a premise and Trailer. The reading sequence includes the story,
-cast, director perspectives, production history, material and technical process,
-specifications, full credits, festivals and original press kit. Murder of Minus
-uses the monochrome chip portrait and original production photographs. Wattleseed
-uses apparatus and researcher frames reserved for this route. Every image opens
-in the native viewer. Supporting images remain stationary under the pointer.
+The four project scenes carry a concise factual premise and a direct destination. Guide speech appears as a complete short sentence and closes after its introduction. The project name, premise and destination remain in the document. Character inspection uses Captain, Jester or Scylla as its caption. The introduction and controls support brief visits.
 
-`src/data/film-essays.ts` records the expanded copy with source PDF page references.
-`src/data/film-detail-images.json` records the selected images. The media manifest
-preserves original URLs, hashes and derivative dimensions. Personal statements
-are editorial paraphrases of the published accounts. All content follows normal
-vertical flow, with a single column on phones and shared type and spacing tokens.
+Medical Terminology Games introduces a catalogue of six games and credits Dr. Stephen Russell. Each game carries a short premise, player count and direct rules link. Tachyboard is a typing analysis and practice product. The scene shows a labelled automatic typing demonstration with a fixed passage and scheduled keystroke timings. Searing Stories uses the site’s dinner photograph, hosts portrait and their names. ConspiraSea explains secret role assignment and differing faction goals. Selecting an illustration reveals its role, ability and a consequence for play. The chooser contains these four projects. Blog publication continues through its own collection and review process.
+
+“Explore the games” opens the Medical Terminology Games landing page at https://medterms.willchai.com/. “Open Tachyboard”, “Read Searing Stories” and “Play ConspiraSea” open their respective websites. The existing ConspiraSea story address remains available. The contact ending uses “Let’s go do something.”, the ticket copy action and the separate “Contact me” email link.

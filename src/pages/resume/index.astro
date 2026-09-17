@@ -2,83 +2,192 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
-import ContactEnding from "../../components/ContactEnding.astro";
-import { resumeProfile, resumeSections } from "../../data/resume";
+import { resumeProfile, resumeSections, type ResumeItem } from "../../data/resume";
+const sectionId = (title: string) => `resume${title.replace(/\s/g, "")}`;
+const groupedSections = resumeSections.map(section => {
+  const groups: { title: string; items: ResumeItem[] }[] = [];
+  for (const item of section.items) {
+    const previous = groups[groups.length - 1];
+    if (previous?.title === item.title) previous.items.push(item);
+    else groups.push({ title: item.title, items: [item] });
+  }
+  return { ...section, groups };
+});
 ---
 
-<BaseLayout
-  title="Résumé | Will Chai"
-  description="The current professional record for Will Chai, with a PDF and an accessible web edition."
-  path="/resume/"
-  pageClass="resumePage"
->
-  <meta slot="head" name="robots" content="noindex, nofollow" />
+<BaseLayout title="Résumé | Will Chai" description="William Chai’s education, research, photography, film and independent projects. Read the full record or download the PDF." path="/resume/" pageClass="resumePage">
   <div class="pageShell">
     <SiteHeader current="resume" />
-    <main id="main" class="pageMain">
-      <section class="resumeIntro" aria-labelledby="resumePageTitle">
-        <div class="resumeIntroCopy">
-          <p class="sectionMarker">Professional record</p>
-          <h1 id="resumePageTitle" class="pageTitle">Résumé</h1>
-          <p>View the PDF here or continue to the accessible web edition below.</p>
-        </div>
-        <div class="resumeActions">
-          <a class="resumeAction resumeActionPrimary" href="/resume.pdf" target="_blank" rel="noreferrer">
-            View PDF <span aria-hidden="true">↗</span>
-          </a>
-          <a class="resumeAction" href="/resume.pdf" download>Download PDF</a>
-        </div>
-      </section>
-
-      <section class="resumePreview" aria-labelledby="resumePreviewTitle">
-        <div class="resumePreviewHeader">
-          <h2 id="resumePreviewTitle">PDF edition</h2>
-          <p>Two pages, prepared for printing and sharing.</p>
-        </div>
-        <iframe src="/resume.pdf#view=FitH" title="Will Chai résumé PDF"></iframe>
-      </section>
-
-      <article class="resumeDocument" aria-labelledby="resumeDocumentTitle">
-        <header class="resumeHeader">
-          <div>
-            <h2 id="resumeDocumentTitle">{resumeProfile.name}</h2>
-            <p>{resumeProfile.headline}</p>
-          </div>
-          <div class="resumeContact">
+    <main id="main">
+      <header class="cvOpening">
+        <div class="cvIntroduction">
+          <p class="cvEyebrow">William Chai</p>
+          <h1>Résumé</h1>
+          <p class="cvPremise">{resumeProfile.headline}</p>
+          <div class="cvContact">
             <span>{resumeProfile.location}</span>
             <a href={`mailto:${resumeProfile.email}`}>{resumeProfile.email}</a>
-            <a href={`https://www.${resumeProfile.linkedin}`}>LinkedIn</a>
-            <a href="/">{resumeProfile.website}</a>
+            <a href={`https://www.${resumeProfile.linkedin}`}>LinkedIn <span aria-hidden="true">↗</span></a>
           </div>
-        </header>
+        </div>
+        <aside class="cvPdf" aria-label="PDF résumé">
+          <a class="cvPdfImage" href="/resume.pdf" aria-label="View William Chai’s complete résumé PDF">
+            <img src="/assets/resume-preview.webp" width="849" height="1200" alt="First page of the résumé, with education and research experience." />
+          </a>
+          <div class="cvPdfInfo">
+            <p>PDF edition</p>
+            <span>Updated {resumeProfile.checked}</span>
+            <a class="cvDownload" href="/resume.pdf" download>Download PDF <span aria-hidden="true">↓</span></a>
+            <a class="cvView" href="/resume.pdf">View PDF <span aria-hidden="true">↗</span></a>
+          </div>
+        </aside>
+      </header>
 
-        {
-          resumeSections.map((section) => (
-            <section class="resumeSection" aria-labelledby={`resume${section.title.replace(/\s/g, "")}`}>
-              <h3 id={`resume${section.title.replace(/\s/g, "")}`}>{section.title}</h3>
-              <div class="resumeList">
-                {section.items.map((item) => (
-                  <div class="resumeItem">
-                    <h3>
-                      {item.href ? <a href={item.href}>{item.title}</a> : item.title}
-                    </h3>
-                    <p class="resumeRole">{item.role}</p>
-                    <p class="resumeDate">{item.date}</p>
-                    {item.detail && <p>{item.detail}</p>}
-                  </div>
-                ))}
-              </div>
+      <div class="cvBody">
+        <aside class="cvIndex">
+          <nav aria-label="Résumé sections">
+            {resumeSections.map((section, index) => <a href={`#${sectionId(section.title)}`} data-cv-link>
+              <span class="cvIndexNumber" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span><span>{section.title}</span>
+            </a>)}
+          </nav>
+          <a class="cvReturn" href="#main">Back to top <span aria-hidden="true">↑</span></a>
+        </aside>
+        <div class="cvRecord">
+          {groupedSections.map((section, index) => (
+            <section class="cvSection" id={sectionId(section.title)} aria-labelledby={`${sectionId(section.title)}Title`}>
+              <header class="cvSectionHeading">
+                <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                <h2 id={`${sectionId(section.title)}Title`}>{section.title}</h2>
+              </header>
+              {section.groups.map(group => (
+                <div class:list={["cvGroup", { cvGrouped: group.items.length > 1 }]}>
+                  <h3>{group.items[0].href ? <a href={group.items[0].href}>{group.title}<span class="cvLinkArrow" aria-hidden="true">↗</span></a> : group.title}</h3>
+                  {group.items.map(item => (
+                    <div class="cvEntry">
+                      <div class="cvEntryMeta">
+                        {group.items.length > 1 ? <h4>{item.role}</h4> : <p class="cvRole">{item.role}</p>}
+                        {item.date && <p class="cvDate">{item.date}</p>}
+                      </div>
+                      {item.detail && <p class="cvDetail">{item.detail}</p>}
+                    </div>
+                  ))}
+                </div>
+              ))}
             </section>
-          ))
-        }
-
-        <p class="resumeSource">
-          Professional dates and titles were checked against Will’s LinkedIn record in {resumeProfile.checked}.
-        </p>
-      </article>
-
-      <ContactEnding />
+          ))}
+          <p class="cvUpdated">Updated {resumeProfile.checked}.</p>
+          <section class="cvEnding" aria-labelledby="cvContactTitle">
+            <h2 id="cvContactTitle">Let’s do something together.</h2>
+            <a href={`mailto:${resumeProfile.email}`}>{resumeProfile.email} <span aria-hidden="true">↗</span></a>
+          </section>
+        </div>
+      </div>
     </main>
     <SiteFooter />
   </div>
 </BaseLayout>
+
+<style>
+  main { background: var(--wc-white); }
+  .cvOpening { display: grid; grid-template-columns: minmax(0, 1fr) minmax(21rem, .65fr); align-items: center; gap: var(--wc-space-16); padding: clamp(3rem, 6vw, 6rem) clamp(1.5rem, 5vw, 5rem); border-bottom: 1px solid var(--wc-hairline); }
+  .cvEyebrow { margin: 0 0 var(--wc-space-4); font-size: 1.125rem; }
+  .cvIntroduction h1 { margin: 0; font-family: var(--wc-font-display); font-weight: 400; font-size: clamp(3rem, 6.5vw, 6.5rem); line-height: 1.1; letter-spacing: -.065em; }
+  .cvPremise { max-width: 35ch; margin: var(--wc-space-6) 0; font-size: clamp(1.125rem, 1.6vw, 1.4rem); line-height: 1.55; }
+  .cvContact { display: flex; flex-wrap: wrap; gap: var(--wc-space-2) var(--wc-space-6); font-size: var(--wc-font-small); }
+  .cvContact > span { flex-basis: 100%; color: var(--wc-slate); }
+  .cvPdf { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1fr); align-items: center; gap: var(--wc-space-6); padding: var(--wc-space-6); background: var(--wc-cloud); }
+  .cvPdfImage { display: block; border: 1px solid var(--wc-hairline); }
+  .cvPdfImage img { width: 100%; height: auto; }
+  .cvPdfInfo > p { font-weight: 600; margin: 0 0 var(--wc-space-2); }
+  .cvPdfInfo > span { display: block; color: var(--wc-slate); font-size: var(--wc-font-small); }
+  .cvDownload { display: flex; align-items: center; justify-content: space-between; gap: var(--wc-space-3); margin-top: var(--wc-space-6); padding: var(--wc-space-3); color: var(--wc-white); background: var(--wc-blue); text-decoration: none; font-size: var(--wc-font-small); font-weight: 600; }
+  .cvDownload:hover { background: var(--wc-ink); }
+  .cvView { display: inline-block; padding-block: var(--wc-space-3); font-size: var(--wc-font-small); }
+  .cvBody { display: grid; grid-template-columns: minmax(12rem, .3fr) minmax(0, 1fr); gap: clamp(2rem, 6vw, 6rem); padding: 0 clamp(1.5rem, 5vw, 5rem); }
+  .cvIndex { position: sticky; top: var(--wc-space-8); align-self: start; padding-top: var(--wc-space-12); padding-bottom: var(--wc-space-8); }
+  .cvIndex nav { display: grid; gap: var(--wc-space-1); }
+  .cvIndex nav a { display: flex; gap: var(--wc-space-3); padding: var(--wc-space-2) 0; text-decoration: none; color: var(--wc-slate); font-size: var(--wc-font-small); }
+  .cvIndex nav a:hover, .cvIndex nav a[aria-current="location"] { color: var(--wc-blue); }
+  .cvIndex nav a[aria-current="location"] { font-weight: 600; }
+  .cvIndexNumber { font-variant-numeric: tabular-nums; }
+  .cvReturn { display: inline-block; margin-top: var(--wc-space-8); font-size: var(--wc-font-small); }
+  .cvSection { padding: var(--wc-space-12) 0; border-bottom: 1px solid var(--wc-hairline); scroll-margin-top: var(--wc-space-6); }
+  .cvSectionHeading { display: flex; align-items: baseline; gap: var(--wc-space-4); margin-bottom: var(--wc-space-8); }
+  .cvSectionHeading > span { color: var(--wc-blue); font-size: var(--wc-font-small); font-variant-numeric: tabular-nums; }
+  .cvSectionHeading h2 { margin: 0; font-family: var(--wc-font-sans); font-weight: 600; font-size: clamp(1.5rem, 2.5vw, 2rem); line-height: 1.25; letter-spacing: -.025em; }
+  .cvGroup + .cvGroup { margin-top: var(--wc-space-8); }
+  .cvGroup h3 { margin: 0 0 var(--wc-space-2); font-size: 1.2rem; line-height: 1.4; font-weight: 600; }
+  .cvGroup h3 a { text-decoration-color: var(--wc-hairline); }
+  .cvGroup h3 a:hover { color: var(--wc-blue); }
+  .cvLinkArrow { display: inline-block; margin-left: var(--wc-space-2); color: var(--wc-blue); font-family: var(--wc-font-sans); }
+  .cvEntryMeta { display: grid; grid-template-columns: minmax(0, 1fr) minmax(8rem, auto); gap: var(--wc-space-2) var(--wc-space-6); align-items: baseline; }
+  .cvEntry h4, .cvRole { margin: 0; font-size: 1.0625rem; font-weight: 400; line-height: 1.5; }
+  .cvDate { margin: 0; max-width: 12rem; text-align: right; font-size: var(--wc-font-small); color: var(--wc-slate); }
+  .cvDetail { max-width: 66ch; margin: var(--wc-space-3) 0 0; line-height: 1.65; }
+  .cvGrouped .cvEntry { border-left: 1px solid var(--wc-hairline); padding-left: var(--wc-space-4); margin-top: var(--wc-space-4); }
+  .cvUpdated { margin: var(--wc-space-6) 0; color: var(--wc-slate); font-size: var(--wc-font-small); }
+  .cvEnding { padding: var(--wc-space-12) 0 var(--wc-space-16); }
+  .cvEnding h2 { max-width: 20ch; margin: 0 0 var(--wc-space-6); font-family: var(--wc-font-display); font-size: clamp(1.5rem, 3vw, 2.5rem); font-weight: 400; line-height: 1.3; letter-spacing: -.04em; }
+  .cvEnding a { color: var(--wc-blue); }
+  @media (max-width: 1000px) {
+    .cvOpening { gap: var(--wc-space-8); grid-template-columns: minmax(0, 1fr) minmax(19rem, .8fr); }
+    .cvPdf { padding: var(--wc-space-4); gap: var(--wc-space-4); }
+    .cvBody { gap: var(--wc-space-8); grid-template-columns: 11rem minmax(0, 1fr); }
+    .cvEntryMeta { grid-template-columns: 1fr; }
+    .cvDate { text-align: left; max-width: none; }
+  }
+  @media (max-width: 760px) {
+    .cvOpening, .cvBody { grid-template-columns: 1fr; }
+    .cvOpening { padding-block: var(--wc-space-12); }
+    .cvPdf { max-width: 32rem; grid-template-columns: 6rem minmax(0, 1fr); }
+    .cvPdfInfo { display: block; }
+    .cvPdfInfo > p, .cvPdfInfo > span { grid-column: 1 / -1; margin: 0; }
+    .cvDownload { margin-top: var(--wc-space-3); }
+    .cvView { padding-block: var(--wc-space-3); }
+    .cvBody { gap: 0; }
+    .cvIndex { position: static; padding-block: var(--wc-space-6); border-bottom: 1px solid var(--wc-hairline); }
+    .cvIndex nav { display: flex; flex-wrap: wrap; gap: var(--wc-space-1) var(--wc-space-6); }
+    .cvIndexNumber, .cvReturn { display: none; }
+    .cvIndex nav a { color: var(--wc-ink); text-decoration: underline; }
+    .cvSection { padding-block: var(--wc-space-8); }
+  }
+  @media (max-width: 380px) {
+    :global(.resumePage .siteNav) { flex-wrap: wrap; overflow: visible; gap: var(--wc-space-3) var(--wc-space-4); }
+    .cvPdf { grid-template-columns: 4rem minmax(0, 1fr); padding: var(--wc-space-3); gap: var(--wc-space-3); }
+    .cvDownload { padding: var(--wc-space-2); gap: var(--wc-space-2); }
+    .cvPdfInfo { display: block; }
+    .cvDownload { margin-top: var(--wc-space-3); }
+  }
+  @media print {
+    .cvPdf, .cvIndex, .cvEnding { display: none; }
+    .cvOpening, .cvBody { display: block; padding: 0; }
+    .cvOpening { padding-bottom: var(--wc-space-6); }
+    .cvIntroduction h1 { font-size: 2rem; }
+    .cvSection { padding-block: var(--wc-space-6); }
+    .cvEntry, .cvGroup { break-inside: avoid; }
+    .cvSectionHeading { break-after: avoid; }
+  }
+</style>
+
+<script>
+  const links = [...document.querySelectorAll<HTMLAnchorElement>('[data-cv-link]')];
+  const sections = links.map(link => document.getElementById(link.hash.slice(1))).filter((section): section is HTMLElement => !!section);
+  let queued = false;
+  function updateSection() {
+    queued = false;
+    let current = sections[0];
+    for (const section of sections) {
+      if (section.getBoundingClientRect().top <= window.innerHeight * .3) current = section;
+    }
+    for (const link of links) {
+      if (link.hash === `#${current?.id}`) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    }
+  }
+  function queueUpdate() {
+    if (!queued) { queued = true; requestAnimationFrame(updateSection); }
+  }
+  window.addEventListener('scroll', queueUpdate, { passive: true });
+  window.addEventListener('resize', queueUpdate, { passive: true });
+  updateSection();
+</script>

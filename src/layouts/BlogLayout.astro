@@ -1,0 +1,192 @@
+---
+import type { MarkdownHeading } from "astro";
+import type { BlogFrontmatter } from "../data/blog";
+import BaseLayout from "./BaseLayout.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import "../styles/blog.css";
+
+interface Props extends BlogFrontmatter {
+  path: string;
+  headings: MarkdownHeading[];
+}
+
+const {
+  title,
+  seoTitle,
+  description,
+  overview,
+  author,
+  category,
+  date,
+  modified,
+  socialImage,
+  socialImageAlt,
+  keywords = [],
+  draft,
+  path,
+  headings,
+} = Astro.props;
+const formattedDate = new Intl.DateTimeFormat("en-CA", {
+  month: "long",
+  day: "numeric",
+  year: "numeric",
+  timeZone: "UTC",
+}).format(new Date(`${date}T00:00:00Z`));
+const canonical = new URL(path, Astro.site).href;
+const authorUrl = new URL("/", Astro.site).href;
+const blogUrl = new URL("/blog/", Astro.site).href;
+const websiteId = `${authorUrl}#website`;
+const authorId = `${authorUrl}#will-chai`;
+const socialImageUrl = socialImage ? new URL(socialImage, Astro.site).href : undefined;
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": websiteId,
+      url: authorUrl,
+      name: "Will Chai",
+      alternateName: "willchai.com",
+      inLanguage: "en-CA",
+    },
+    {
+      "@type": "Person",
+      "@id": authorId,
+      name: author,
+      url: authorUrl,
+      sameAs: ["https://www.linkedin.com/in/willchai/"],
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": `${canonical}#article`,
+      url: canonical,
+      mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+      headline: title,
+      description,
+      ...(socialImageUrl
+        ? {
+            image: {
+              "@type": "ImageObject",
+              url: socialImageUrl,
+              width: 1200,
+              height: 630,
+            },
+          }
+        : {}),
+      datePublished: date,
+      dateModified: modified ?? date,
+      author: { "@id": authorId },
+      publisher: { "@id": authorId },
+      isPartOf: {
+        "@type": "Blog",
+        "@id": blogUrl,
+        url: blogUrl,
+        name: "Will Chai Blog",
+      },
+      articleSection: category,
+      ...(keywords.length > 0 ? { keywords } : {}),
+      isAccessibleForFree: true,
+      inLanguage: "en-CA",
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Will Chai", item: authorUrl },
+        { "@type": "ListItem", position: 2, name: "Blog", item: blogUrl },
+        { "@type": "ListItem", position: 3, name: title, item: canonical },
+      ],
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={`${seoTitle ?? title} | Will Chai`}
+  description={description}
+  path={path}
+  image={socialImage}
+  imageAlt={socialImageAlt}
+  imageWidth={socialImage ? 1200 : undefined}
+  imageHeight={socialImage ? 630 : undefined}
+  imageType={socialImage ? "image/png" : undefined}
+  ogType="article"
+  robots={draft ? "noindex, nofollow" : "index, follow, max-image-preview:large"}
+  structuredData={structuredData}
+  pageClass="blogPage"
+>
+  <meta slot="head" name="author" content={author} />
+  <meta slot="head" property="article:published_time" content={date} />
+  <meta slot="head" property="article:modified_time" content={modified ?? date} />
+  <meta slot="head" property="article:section" content={category} />
+  <meta slot="head" property="article:author" content={authorUrl} />
+  {keywords.map((keyword) => <meta slot="head" property="article:tag" content={keyword} />)}
+  <div class="pageShell">
+    <SiteHeader current="blog" />
+    <main id="main" class="pageMain">
+      <article class="blogArticle" aria-labelledby="articleTitle">
+        <header class="blogOpening">
+          <p class="blogCategory"><a href="/blog/">{category}</a>{draft && <><span aria-hidden="true"> · </span>Draft</>}</p>
+          <h1 id="articleTitle">{title}</h1>
+          <p class="blogMeta"><time datetime={date}>{formattedDate}</time></p>
+          <p class="blogOverview">{overview}</p>
+        </header>
+        <div class="blogReading">
+          <aside class="blogContents">
+            <nav aria-label="In this article">
+              <p>In this article</p>
+              {headings.map(({ slug, text }) => <a href={`#${slug}`}>{text}</a>)}
+            </nav>
+          </aside>
+          <div class="blogProse"><slot /></div>
+        </div>
+      </article>
+    </main>
+    <SiteFooter />
+  </div>
+</BaseLayout>
+
+<script>
+  const contentsLinks = Array.from(
+    document.querySelectorAll<HTMLAnchorElement>('.blogContents a[href^="#"]'),
+  );
+  const sections = contentsLinks
+    .map((link) => document.getElementById(link.hash.slice(1)))
+    .filter((section): section is HTMLElement => section instanceof HTMLElement);
+
+  const setActiveSection = (activeId?: string) => {
+    contentsLinks.forEach((link) => {
+      const isActive = link.hash === `#${activeId}`;
+      link.classList.toggle("isActive", isActive);
+      if (isActive) link.setAttribute("aria-current", "location");
+      else link.removeAttribute("aria-current");
+    });
+  };
+
+  const updateActiveSection = () => {
+    if (sections.length === 0) return;
+    const readingLine = window.innerHeight * 0.3;
+    let activeSection: HTMLElement | undefined;
+
+    sections.forEach((section) => {
+      if (section.getBoundingClientRect().top <= readingLine) activeSection = section;
+    });
+
+    setActiveSection(activeSection?.id);
+  };
+
+  let updateScheduled = false;
+  const scheduleActiveSectionUpdate = () => {
+    if (updateScheduled) return;
+    updateScheduled = true;
+    window.requestAnimationFrame(() => {
+      updateScheduled = false;
+      updateActiveSection();
+    });
+  };
+
+  window.addEventListener("scroll", scheduleActiveSectionUpdate, { passive: true });
+  window.addEventListener("resize", scheduleActiveSectionUpdate);
+  window.addEventListener("hashchange", scheduleActiveSectionUpdate);
+  updateActiveSection();
+</script>

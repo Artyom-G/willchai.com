@@ -1,0 +1,875 @@
+{
+  "version": 5,
+  "date": "2026-09-15",
+  "status": "Local source fidelity revision reviewed independently at 92 of 100. Publication remains pending.",
+  "preview": "http://127.0.0.1:4368/projects/",
+  "referencePreview": "http://127.0.0.1:4349/projects/",
+  "assets": [
+    {
+      "file": "public/assets/projects-v3/box.webp",
+      "source": "/Users/wchai/Documents/Vault/WillChai Company/ConspiraSea/ConspiraSea box and expansion pack.png",
+      "treatment": "Original pixels with a package silhouette mask.",
+      "bytes": 68498,
+      "sha256": "801d992253f1520d3c4cf31bf4a6ba426a1a947a3d09b58094b10da94e69ad0d",
+      "width": 724,
+      "height": 572,
+      "alpha": true,
+      "sourceSha256": "3458df6d96b672013a8ce1aff61ff0e781362403c145a83b9efc76095e9a70e0",
+      "status": "retained source from earlier study"
+    },
+    {
+      "file": "public/assets/projects-v3/hadal.webp",
+      "source": "/Users/wchai/Documents/Vault/WillChai Company/ConspiraSea/ConspiraSea box and expansion pack.png",
+      "treatment": "Original pixels with a package silhouette mask.",
+      "bytes": 28290,
+      "sha256": "c1827579a60581793162934739e0019fa5530aed12c3a67f6ebc42e00444a9c2",
+      "width": 276,
+      "height": 443,
+      "alpha": true,
+      "sourceSha256": "3458df6d96b672013a8ce1aff61ff0e781362403c145a83b9efc76095e9a70e0",
+      "status": "retained source from earlier study"
+    },
+    {
+      "file": "public/assets/projects-v3/captain.webp",
+      "source": "/Users/wchai/Documents/Vault/WillChai Company/ConspiraSea/conspirasea-deploy/public/headshots/Captain.PNG",
+      "treatment": "Border connected canvas removal; coloured brush outlines and enclosed paint retained.",
+      "bytes": 46062,
+      "sha256": "dacfbf257da59ada441a6565f12e97b8db55ed4a67546cd76577a4e6503ede98",
+      "width": 397,
+      "height": 420,
+      "alpha": true,
+      "sourceSha256": "60285a571174fc1992430d9307659c9783df2a5021294d8a44c267f548674131",
+      "status": "current"
+    },
+    {
+      "file": "public/assets/projects-v3/jester.webp",
+      "source": "/Users/wchai/Documents/Vault/WillChai Company/ConspiraSea/conspirasea-deploy/public/headshots/Jester.PNG",
+      "treatment": "Border connected canvas removal; coloured brush outlines and enclosed paint retained.",
+      "bytes": 41612,
+      "sha256": "b7b69acd792a05af8d2853bcb694e447d6e3ac9376731958a6711140d68b4e97",
+      "width": 366,
+      "height": 420,
+      "alpha": true,
+      "sourceSha256": "a605bed9ec5971f2f77452232f1d9f7379887044296c9abe6717daecbac26a70",
+      "status": "current"
+    },
+    {
+      "file": "public/assets/projects-v3/scylla.webp",
+      "source": "/Users/wchai/Documents/Vault/WillChai Company/ConspiraSea/conspirasea-deploy/public/headshots/Scylla.PNG",
+      "treatment": "Border connected canvas removal; coloured brush outlines and enclosed paint retained.",
+      "bytes": 51828,
+      "sha256": "05788e52e6dcfccd408249da1cf31ce757abdba1abaf89107f613e31549e9ca3",
+      "width": 409,
+      "height": 420,
+      "alpha": true,
+      "sourceSha256": "1094be4d21cc6a80b156b4e139a6e4285a304d0438d93bbff6e3e80fd69dddea",
+      "status": "current"
+    },
+    {
+      "file": "public/assets/projects-v3/dinner.webp",
+      "source": "/Users/wchai/Documents/Vault/WillChai Company/Searing Stories/site/public/images/hoffa/main-course-table-1600.webp",
+      "treatment": "Resized from published issue photography.",
+      "bytes": 38330,
+      "sha256": "9bef119906e614c094158a7ff1a5d8cce854d31d30cfdf4c8384655b390ee9e0",
+      "width": 1440,
+      "height": 960,
+      "alpha": false,
+      "sourceSha256": "7978bcd9f397efff0927952ef9af913676c945ab2d9c6ce4353591348eb59f84",
+      "status": "retained source from earlier study"
+    },
+    {
+      "file": "public/assets/projects-v3/felipe.webp",
+      "source": "/Users/wchai/Documents/Vault/WillChai Company/Searing Stories/site/public/images/hoffa/portrait-window-1600.webp",
+      "treatment": "Resized from published issue photography.",
+      "bytes": 23334,
+      "sha256": "d8c5ca4d776bb52d084a29840c47bb50e9bca4323529de52eb380a3903b583bb",
+      "width": 650,
+      "height": 650,
+      "alpha": false,
+      "sourceSha256": "78f7d2855273dd3e4039903f06c37e62a388ffe85ff570d306afad1bbf13cee8",
+      "status": "retained source from earlier study"
+    },
+    {
+      "file": "public/assets/projects-v3/ticket-noise.webp",
+      "source": "Homepage ticket inline SVG feTurbulence",
+      "treatment": "Rasterized once with the original procedural parameters.",
+      "bytes": 98852,
+      "sha256": "dfed5986b52009f95c7d6e64eada8372f5988ab53592e5cd5fe93fd80c4723ea",
+      "width": 300,
+      "height": 300,
+      "alpha": true,
+      "status": "current"
+    },
+    {
+      "file": "public/assets/projects-v3/eb-garamond.woff2",
+      "source": "https://fonts.gstatic.com/s/ebgaramond/v33/SlGDmQSNjdsmc35JDF1K5E55YMjF_7DPuGi-DPNUAw.ttf",
+      "treatment": "Latin WOFF2 export scoped to the MedTerms catalogue.",
+      "bytes": 25228,
+      "sha256": "63cae00d50981830c35acfa12ea5499306565ef426705a47d97d8b59b9628818",
+      "licence": "public/assets/projects-v3/eb-garamond-OFL.txt",
+      "weight": 700,
+      "status": "current"
+    },
+    {
+      "file": "public/assets/projects-v3/eb-garamond-OFL.txt",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/ebgaramond/OFL.txt",
+      "treatment": "SIL Open Font License retained.",
+      "bytes": 4398,
+      "sha256": "0985066662eb755ed3683ae5482a81a9195b49ce3f7e165cc2388b3dbece7dd7",
+      "status": "current"
+    },
+    {
+      "file": "public/assets/projects-v3/patrick-hand.woff2",
+      "source": "https://fonts.gstatic.com/s/patrickhand/v25/LDI1apSQOAYtSuYWp8ZhfYeMWQ.ttf",
+      "treatment": "Latin WOFF2 export scoped to the MedTerms catalogue.",
+      "bytes": 30172,
+      "sha256": "a22486de5ef015db6c5655e5b9ba406e2090063ac193ddf45875a17dab49beac",
+      "licence": "public/assets/projects-v3/patrick-hand-OFL.txt",
+      "weight": 400,
+      "status": "current"
+    },
+    {
+      "file": "public/assets/projects-v3/patrick-hand-OFL.txt",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/patrickhand/OFL.txt",
+      "treatment": "SIL Open Font License retained.",
+      "bytes": 4376,
+      "sha256": "377f4f9c19e935228552478eb68cc2ed82910988a60ba60e2ac73b09f32d02d1",
+      "status": "current"
+    },
+    {
+      "file": "public/assets/projects-v3/searing-masthead.svg",
+      "source": "https://searingstories.com/fonts/Trattatello.woff2",
+      "treatment": "Original Searing Stories masthead converted to outlined artwork. The font is omitted from the site.",
+      "bytes": 20453,
+      "sha256": "e77344e00d3f7608f256066dd862f9da564e842fdc749208ca0ec4ab3a8f92b6",
+      "width": 4980,
+      "height": 1150,
+      "alpha": true,
+      "status": "current"
+    },
+    {
+      "file": "public/photography/pixel-photographer.png",
+      "source": "Approved Photography atlas",
+      "treatment": "Canonical face, hair and palette.",
+      "bytes": 547,
+      "sha256": "ff19a333f67bd2d0f2d86c35793262eb613fdf47666fafa61eba8a704061b78c",
+      "width": 128,
+      "height": 32,
+      "alpha": true,
+      "status": "current"
+    },
+    {
+      "file": "public/assets/projects-v3/will-host.png",
+      "source": "scripts/build-projects-sprite.mjs",
+      "treatment": "Eighteen native RGBA frames.",
+      "bytes": 1475,
+      "sha256": "090e0491e5f84982b31e8f02181594e12951e07922ca9cb861d18b6be8424018",
+      "width": 576,
+      "height": 32,
+      "alpha": true,
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frames": 18,
+      "status": "current"
+    },
+    {
+      "file": "public/assets/projects-v3/will-frames.json",
+      "source": "scripts/build-projects-sprite.mjs",
+      "treatment": "Foot, hand and prop attachment coordinates.",
+      "bytes": 6360,
+      "sha256": "4afc6404776009483d6ee4e9fadeaaf7082628d7f250d05556668e20de5b074b",
+      "status": "current"
+    },
+    {
+      "file": "public/assets/projects-v3/poses/air.png",
+      "source": "scripts/build-projects-sprite.mjs",
+      "treatment": "Native pose with canonical palette and binary alpha.",
+      "bytes": 266,
+      "sha256": "64dabd6fcf0f1e57519c4fe9d2500dc77157a3aed957f027da7f84b403e6e836",
+      "width": 32,
+      "height": 32,
+      "alpha": true,
+      "status": "current"
+    },
+    {
+      "file": "public/assets/projects-v3/poses/blink.png",
+      "source": "scripts/build-projects-sprite.mjs",
+      "treatment": "Native pose with canonical palette and binary alpha.",
+      "bytes": 253,
+      "sha256": "2bd5ae7401fb1ccdf7363ef225d3684dab59e1177dd871a181c198ef4d8fbbf3",
+      "width": 32,
+      "height": 32,
+      "alpha": true,
+      "status": "current"
+    },
+    {
+      "file": "public/assets/projects-v3/poses/crouch.png",
+      "source": "scripts/build-projects-sprite.mjs",
+      "treatment": "Native pose with canonical palette and binary alpha.",
+      "bytes": 253,
+      "sha256": "e0147f49f1333ce83fac358830106bf92613a5a5bdc8eb042c0251c640a6ced8",
+      "width": 32,
+      "height": 32,
+      "alpha": true,
+      "status": "current"
+    },
+    {
+      "file": "public/assets/projects-v3/poses/hold.png",
+      "source": "scripts/build-projects-sprite.mjs",
+      "treatment": "Native pose with canonical palette and binary alpha.",
+      "bytes": 261,
+      "sha256": "cfd885d88910c4f27905543c8e06803f573ba56c10db9e086df16959ba5b50e0",
+      "width": 32,
+      "height": 32,
+      "alpha": true,
+      "status": "current"
+    },
+    {
+      "file": "public/assets/projects-v3/poses/land.png",
+      "source": "scripts/build-projects-sprite.mjs",
+      "treatment": "Native pose with canonical palette and binary alpha.",
+      "bytes": 272,
+      "sha256": "4d2d213db65ccd305474292c73a1fb4a8b6ed0e06c26e192bedee0b0efef1183",
+      "width": 32,
+      "height": 32,
+      "alpha": true,
+      "status": "current"
+    },
+    {
+      "file": "public/assets/projects-v3/poses/launch.png",
+      "source": "scripts/build-projects-sprite.mjs",
+      "treatment": "Native pose with canonical palette and binary alpha.",
+      "bytes": 270,
+      "sha256": "4cc575f8bc86576f02d003e724d0686d404f82cfb7ba0036da305b933da382ef",
+      "width": 32,
+      "height": 32,
+      "alpha": true,
+      "status": "current"
+    },
+    {
+      "file": "public/assets/projects-v3/poses/lift.png",
+      "source": "scripts/build-projects-sprite.mjs",
+      "treatment": "Native pose with canonical palette and binary alpha.",
+      "bytes": 285,
+      "sha256": "cf5229c8cbdaf734b029f3e546e0caf58941098eac9ba00a7bf6e3193f964be8",
+      "width": 32,
+      "height": 32,
+      "alpha": true,
+      "status": "current"
+    },
+    {
+      "file": "public/assets/projects-v3/poses/look.png",
+      "source": "scripts/build-projects-sprite.mjs",
+      "treatment": "Native pose with canonical palette and binary alpha.",
+      "bytes": 263,
+      "sha256": "380de1b935c2b3b434fe4dc13390b88a0ee5c3ac8d23f460723796b2f414cd5d",
+      "width": 32,
+      "height": 32,
+      "alpha": true,
+      "status": "current"
+    },
+    {
+      "file": "public/assets/projects-v3/poses/place.png",
+      "source": "scripts/build-projects-sprite.mjs",
+      "treatment": "Native pose with canonical palette and binary alpha.",
+      "bytes": 274,
+      "sha256": "0340502e26fccdac1c8e68456f872674f103798e3bb9d9d507ff8258d858d165",
+      "width": 32,
+      "height": 32,
+      "alpha": true,
+      "status": "current"
+    },
+    {
+      "file": "public/assets/projects-v3/poses/point.png",
+      "source": "scripts/build-projects-sprite.mjs",
+      "treatment": "Native pose with canonical palette and binary alpha.",
+      "bytes": 272,
+      "sha256": "c535e68e22b52c90f24bce1688d5b5dd3e0e8d0d11394933f860e824587e4a4a",
+      "width": 32,
+      "height": 32,
+      "alpha": true,
+      "status": "current"
+    },
+    {
+      "file": "public/assets/projects-v3/poses/point_down.png",
+      "source": "scripts/build-projects-sprite.mjs",
+      "treatment": "Native pose with canonical palette and binary alpha.",
+      "bytes": 276,
+      "sha256": "ce1f16ca359713b87d051091f445ffb72fcc6a8f65bb5378e3c3c5af3d578afd",
+      "width": 32,
+      "height": 32,
+      "alpha": true,
+      "status": "current"
+    },
+    {
+      "file": "public/assets/projects-v3/poses/present.png",
+      "source": "scripts/build-projects-sprite.mjs",
+      "treatment": "Native pose with canonical palette and binary alpha.",
+      "bytes": 268,
+      "sha256": "e85b19c5d7f0038752d1903556068347286296b40fc745fd78279456bc5e4441",
+      "width": 32,
+      "height": 32,
+      "alpha": true,
+      "status": "current"
+    },
+    {
+      "file": "public/assets/projects-v3/poses/reach.png",
+      "source": "scripts/build-projects-sprite.mjs",
+      "treatment": "Native pose with canonical palette and binary alpha.",
+      "bytes": 277,
+      "sha256": "df3cbf36a1c546ca8d4babfbccb62c50d7e44dbc7a48f52adf1013ac003bea33",
+      "width": 32,
+      "height": 32,
+      "alpha": true,
+      "status": "current"
+    },
+    {
+      "file": "public/assets/projects-v3/poses/rest.png",
+      "source": "scripts/build-projects-sprite.mjs",
+      "treatment": "Native pose with canonical palette and binary alpha.",
+      "bytes": 253,
+      "sha256": "371b869bae6e9ada5ca2e052f536afb1f5f864e5355a2ad2395999c213cede71",
+      "width": 32,
+      "height": 32,
+      "alpha": true,
+      "status": "current"
+    },
+    {
+      "file": "public/assets/projects-v3/poses/shift.png",
+      "source": "scripts/build-projects-sprite.mjs",
+      "treatment": "Native pose with canonical palette and binary alpha.",
+      "bytes": 253,
+      "sha256": "896b8272801e1571047355ecb9a312505ffe15f429060398d3dc6ae425741868",
+      "width": 32,
+      "height": 32,
+      "alpha": true,
+      "status": "current"
+    },
+    {
+      "file": "public/assets/projects-v3/poses/strain.png",
+      "source": "scripts/build-projects-sprite.mjs",
+      "treatment": "Native pose with canonical palette and binary alpha.",
+      "bytes": 281,
+      "sha256": "dbc269ea0ffb32666e55d3777a5d1ae242b59277c20ece7b1782d1953939f760",
+      "width": 32,
+      "height": 32,
+      "alpha": true,
+      "status": "current"
+    },
+    {
+      "file": "public/assets/projects-v3/poses/turn.png",
+      "source": "scripts/build-projects-sprite.mjs",
+      "treatment": "Native pose with canonical palette and binary alpha.",
+      "bytes": 285,
+      "sha256": "24bbb1b564f500510f15729e79c58330e5b87e7d0a8ebfd5334604ebeb920c64",
+      "width": 32,
+      "height": 32,
+      "alpha": true,
+      "status": "current"
+    },
+    {
+      "file": "public/assets/projects-v3/poses/wave.png",
+      "source": "scripts/build-projects-sprite.mjs",
+      "treatment": "Native pose with canonical palette and binary alpha.",
+      "bytes": 265,
+      "sha256": "79dca96cb94752da5386b316864149c5c69e0aa9410937c643d517185d20bd0c",
+      "width": 32,
+      "height": 32,
+      "alpha": true,
+      "status": "current"
+    },
+    {
+      "file": "public/assets/projects-v3/hands-poster.webp",
+      "source": "src/scripts/project-hands/scene.ts",
+      "treatment": "Transparent still rendered using the current corrected rig.",
+      "bytes": 25044,
+      "sha256": "c8617572614e9aaedbb669cebd269d587180357177930dfb2a0470501c83f0ea",
+      "width": 1000,
+      "height": 500,
+      "alpha": true,
+      "rigRevision": "4513723",
+      "status": "retained source from earlier study"
+    },
+    {
+      "file": "public/assets/projects-v3/hands-poster.json",
+      "source": "src/scripts/project-hands/scene.ts",
+      "treatment": "Projected keyboard support for the static poster.",
+      "bytes": 141,
+      "sha256": "cf09885aeb9df44bda791098838baadce321f0ee3d5589c7239975951d909b3b",
+      "status": "retained source from earlier study"
+    },
+    {
+      "file": "public/assets/projects-showtell/hands/left.glb",
+      "source": "/Users/Shared/tachyboard/public/models/finger-guide/left.glb",
+      "treatment": "Existing hand model and provenance retained.",
+      "bytes": 94572,
+      "sha256": "bc67783144944ea1cda54d9247885825ea5fb9d4651469fe7d00be517a5c2b87",
+      "status": "current"
+    },
+    {
+      "file": "public/assets/projects-showtell/hands/right.glb",
+      "source": "/Users/Shared/tachyboard/public/models/finger-guide/right.glb",
+      "treatment": "Existing hand model and provenance retained.",
+      "bytes": 94004,
+      "sha256": "291790c14f7f88a7f9bd35330c47392ed8e8d395ae6728f4bb7089f1bc1f2b96",
+      "status": "current"
+    },
+    {
+      "file": "public/assets/projects-showtell/hands/LICENSE.txt",
+      "source": "/Users/Shared/tachyboard/public/models/finger-guide/LICENSE.txt",
+      "treatment": "Existing hand model and provenance retained.",
+      "bytes": 1094,
+      "sha256": "0ef0c87e8ffdd0681f332dc3b39f284dee2166d1f853fabc3853884fe81a6f30",
+      "status": "current"
+    },
+    {
+      "file": "public/assets/projects-showtell/hands/PROVENANCE.md",
+      "source": "/Users/Shared/tachyboard/public/models/finger-guide/PROVENANCE.md",
+      "treatment": "Existing hand model and provenance retained.",
+      "bytes": 729,
+      "sha256": "5ae1b4fea35185bf7475ad4159165e0faa172292520354584cf7b0cd296445ab",
+      "status": "current"
+    },
+    {
+      "file": "public/assets/projects-showtell/hands/THREE-LICENSE.txt",
+      "source": "/Users/Shared/tachyboard/public/models/finger-guide/THREE-LICENSE.txt",
+      "treatment": "Existing hand model and provenance retained.",
+      "bytes": 1081,
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+      "status": "current"
+    },
+    {
+      "file": "src/scripts/project-hands/fingerGuideRig.ts",
+      "source": "/Users/Shared/tachyboard/lib/fingerGuideRig.ts",
+      "treatment": "Current corrected rig copied verbatim.",
+      "bytes": 11286,
+      "sha256": "bc2c6e900cff44926335bafbbee95227213d6454d105ec8e35f3cec848ec054e",
+      "revision": "dea2e9e",
+      "status": "current",
+      "sourceSha256": "bc2c6e900cff44926335bafbbee95227213d6454d105ec8e35f3cec848ec054e",
+      "rigRevision": "dea2e9e",
+      "baseRevision": "4513723"
+    },
+    {
+      "file": "src/scripts/project-hands/fingerGuide.ts",
+      "source": "/Users/Shared/tachyboard/lib/fingerGuide.ts",
+      "treatment": "Keyboard geometry and finger target mapping.",
+      "bytes": 2602,
+      "sha256": "f850c57dc2f8fdcaabfb650323f89a41da1b7b9a41d7d454335c861c6a09d196",
+      "status": "current",
+      "sourceSha256": "f850c57dc2f8fdcaabfb650323f89a41da1b7b9a41d7d454335c861c6a09d196",
+      "rigRevision": "dea2e9e"
+    },
+    {
+      "file": "artifacts/projects-review/studies/box-study.png",
+      "source": "Built in image generation tool, September 14, 2026",
+      "treatment": "Extraction study used during preparation. Final derivatives preserve original pixels.",
+      "bytes": 1437278,
+      "sha256": "2ee402a97e66412e04baa5e666949427a1144a8cdc0217c20ca691248461c00b",
+      "width": 1448,
+      "height": 1086,
+      "alpha": true,
+      "status": "retained source from earlier study"
+    },
+    {
+      "file": "artifacts/projects-review/studies/crew-study.png",
+      "source": "Built in image generation tool, September 14, 2026",
+      "treatment": "Extraction study used during preparation. Final derivatives preserve original pixels.",
+      "bytes": 1453242,
+      "sha256": "9a4e1dc180d85d384de1a5dee4315fa79489c33787c9115b06df8ffaea02a180",
+      "width": 2172,
+      "height": 724,
+      "alpha": true,
+      "status": "retained source from earlier study"
+    },
+    {
+      "file": "public/assets/projects-v4/art-machine.svg",
+      "source": "/Users/wchai/Documents/Vault/WillChai Company/Searing Stories/site/public/fonts/Trattatello.woff2",
+      "treatment": "Published issue opening lettering exported as outlined artwork.",
+      "status": "current",
+      "bytes": 16100,
+      "sha256": "f37b2e8581c67d409d4c10ad0abf6cf24e829c44ce37363b55d8d8ae729b60ea",
+      "sourceSha256": "f70c629f7acc6c83c525bacc9114c1f599e28e672d574f5e93b3cec3e2f8aa07",
+      "width": 4162,
+      "height": 978,
+      "alpha": true
+    },
+    {
+      "file": "public/assets/projects-v4/conspirasea-lettering.webp",
+      "source": "/Users/wchai/Documents/Vault/WillChai Company/willchai.com/public/assets/conspirasea-logo.jpg",
+      "treatment": "Original title artwork resized with its white ground.",
+      "status": "current",
+      "bytes": 21664,
+      "sha256": "e58897f5a196740a3f124bd9c2238060a3bf605b52325d4b7bf51eb6bd63f064",
+      "sourceSha256": "f0f810879fd4151f04acdd3328cae3d2ecd5c40810fb541ea91c04e190f48a09",
+      "width": 900,
+      "height": 289,
+      "alpha": false
+    },
+    {
+      "file": "public/assets/projects-v4/conspirasea-packages.webp",
+      "source": "/Users/wchai/Documents/Vault/WillChai Company/ConspiraSea/ConspiraSea box and expansion pack.png",
+      "treatment": "Whole supplied photograph retains its white ground, package artwork and shadows.",
+      "status": "retained source from earlier study",
+      "bytes": 80660,
+      "sha256": "ab60b6ef5d42aade0d48371e53734ac3242dbf2c0ee0bfc8dbf18b367da4181f",
+      "sourceSha256": "3458df6d96b672013a8ce1aff61ff0e781362403c145a83b9efc76095e9a70e0",
+      "width": 1080,
+      "height": 810,
+      "alpha": false
+    },
+    {
+      "file": "public/assets/projects-v4/dinner-table.webp",
+      "source": "/Users/wchai/Documents/Vault/WillChai Company/Searing Stories/site/public/images/hoffa/main-course-table-1600.webp",
+      "treatment": "Published main course photograph resized with its complete composition.",
+      "status": "retained source from earlier study",
+      "bytes": 50506,
+      "sha256": "6a93717cf136e57e56abd60702f989b39da30eb1fa6561fc18432d3b13efb971",
+      "sourceSha256": "7978bcd9f397efff0927952ef9af913676c945ab2d9c6ce4353591348eb59f84",
+      "width": 1440,
+      "height": 960,
+      "alpha": false
+    },
+    {
+      "file": "public/assets/projects-v4/felipe-at-table.webp",
+      "source": "/Users/wchai/Documents/Vault/WillChai Company/Searing Stories/site/public/images/hoffa/portrait-table-1600.webp",
+      "treatment": "Published Felipe Hoffa table portrait, resized with its original proportions.",
+      "status": "retained source from earlier study",
+      "bytes": 103640,
+      "sha256": "694e8701d0be9a994c97d210248bc22b94846b6be90388e1ab9c05c9d5874b7f",
+      "sourceSha256": "495ffde8f1b580f9b9727bd628565bc66a4e634d508b2ba21942505f6150f198",
+      "width": 800,
+      "height": 1200,
+      "alpha": false
+    },
+    {
+      "file": "public/assets/projects-v4/hands-poster-desktop.json",
+      "source": "artifacts/projects-director-review/export-corrected-posters.mjs",
+      "treatment": "Desktop poster dimensions and projected physical support.",
+      "status": "retained source from earlier study",
+      "bytes": 159,
+      "sha256": "7f92f2774a9f62a4c9445660d1f2feb2de617ae540f99a24d6dc0742d5782ad4",
+      "rigRevision": "dea2e9e"
+    },
+    {
+      "file": "public/assets/projects-v4/hands-poster-desktop.webp",
+      "source": "src/scripts/project-hands/scene.ts",
+      "treatment": "Static export of the corrected live rig at the desktop camera angle.",
+      "status": "retained source from earlier study",
+      "bytes": 14700,
+      "sha256": "fb337988654bcf48aca26c69f943c38fe9f8ad5e175a5fc75982eef937abb20f",
+      "width": 980,
+      "height": 490,
+      "alpha": false,
+      "rigRevision": "dea2e9e"
+    },
+    {
+      "file": "public/assets/projects-v4/hands-poster-mobile.json",
+      "source": "artifacts/projects-director-review/export-corrected-posters.mjs",
+      "treatment": "Phone poster dimensions and projected physical support.",
+      "status": "retained source from earlier study",
+      "bytes": 161,
+      "sha256": "719100e31a99f7c3c673214cfacd3b7dab890e666ee02041aab0247e5b57ebb0",
+      "rigRevision": "dea2e9e"
+    },
+    {
+      "file": "public/assets/projects-v4/hands-poster-mobile.webp",
+      "source": "src/scripts/project-hands/scene.ts",
+      "treatment": "Static export of the corrected live rig and DOM keyboard labels at the phone camera angle.",
+      "status": "retained source from earlier study",
+      "bytes": 8592,
+      "sha256": "366903ce92f96276e6470bc251d480e01d149f0f2beaabf27e5844ab1ca9055f",
+      "width": 366,
+      "height": 222,
+      "alpha": false,
+      "rigRevision": "dea2e9e"
+    },
+    {
+      "file": "public/assets/projects-v4/instrument-serif-OFL.txt",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/instrumentserif/OFL.txt",
+      "treatment": "SIL Open Font License retained.",
+      "status": "current",
+      "bytes": 4405,
+      "sha256": "129ed7618959716959f2941fdd5b49e0ad6e6c1d78726761786a00253d865521"
+    },
+    {
+      "file": "public/assets/projects-v4/instrument-serif-italic.woff2",
+      "source": "/Users/wchai/Documents/Vault/WillChai Company/willchai.com/artifacts/projects-director-review/sources/instrument-serif-italic.ttf",
+      "treatment": "Original Tachyboard italic typeface converted to WOFF2.",
+      "status": "current",
+      "bytes": 26380,
+      "sha256": "37bb8a4fdf42469c3db8850571c257633401317e0afe661f4852182313238e66",
+      "sourceSha256": "fecf4861d5202405b8bd45c683858b6870642a026784fe0dbf88ff55dedee8a0",
+      "licence": "public/assets/projects-v4/instrument-serif-OFL.txt"
+    },
+    {
+      "file": "public/assets/projects-v4/instrument-serif-regular.woff2",
+      "source": "/Users/wchai/Documents/Vault/WillChai Company/willchai.com/artifacts/projects-director-review/sources/instrument-serif-regular.ttf",
+      "treatment": "Original Tachyboard typeface converted to WOFF2.",
+      "status": "current",
+      "bytes": 25208,
+      "sha256": "a876a7ad4017a64efbdb937fd8b0ca50c38e8c9484ba79fbdcd31c0ba4cfd6d0",
+      "sourceSha256": "a99e3db50076202713812ed541feeb23ffeebb61db1fa6b1cf48fe590d37ef18",
+      "licence": "public/assets/projects-v4/instrument-serif-OFL.txt"
+    },
+    {
+      "file": "public/assets/projects-v4/medterms-cipher.svg",
+      "source": "https://medterms.willchai.com/",
+      "treatment": "Original catalogue SVG captured from the public website DOM.",
+      "status": "current",
+      "bytes": 630,
+      "sha256": "27237c58091258e95285660bc46470dc7d5e634abdbc5dbffad1e18d548b3005",
+      "width": 42,
+      "height": 42,
+      "alpha": true
+    },
+    {
+      "file": "public/assets/projects-v4/medterms-ideosis.svg",
+      "source": "https://medterms.willchai.com/",
+      "treatment": "Original catalogue SVG captured from the public website DOM.",
+      "status": "current",
+      "bytes": 853,
+      "sha256": "f2df2531a3825daa8c018a04f052cb069ab6a1e70eb4075cd8aca4c941dd7bf3",
+      "width": 42,
+      "height": 42,
+      "alpha": true
+    },
+    {
+      "file": "public/assets/projects-v4/medterms-medsup.svg",
+      "source": "https://medterms.willchai.com/",
+      "treatment": "Original catalogue SVG captured from the public website DOM.",
+      "status": "current",
+      "bytes": 1091,
+      "sha256": "e578531b6c9a5914c2bab639be60cb4dbe86e47235ea17299cbbdc1e018bfa3f",
+      "width": 42,
+      "height": 42,
+      "alpha": true
+    },
+    {
+      "file": "public/assets/projects-v4/medterms-one.svg",
+      "source": "https://medterms.willchai.com/",
+      "treatment": "Original catalogue SVG captured from the public website DOM.",
+      "status": "current",
+      "bytes": 535,
+      "sha256": "1565493a835bd9963aba6677bdf6b8b9a35eacd87eb9b7c6520a8e098053cbae",
+      "width": 42,
+      "height": 42,
+      "alpha": true
+    },
+    {
+      "file": "public/assets/projects-v4/medterms-splice.svg",
+      "source": "https://medterms.willchai.com/",
+      "treatment": "Original catalogue SVG captured from the public website DOM.",
+      "status": "current",
+      "bytes": 604,
+      "sha256": "6c3080020dbb6a4a66172ff38949bce7b8b70ceec90d2e3248510b9fe7c6eb3e",
+      "width": 42,
+      "height": 42,
+      "alpha": true
+    },
+    {
+      "file": "public/assets/projects-v4/medterms-twk.svg",
+      "source": "https://medterms.willchai.com/",
+      "treatment": "Original catalogue SVG captured from the public website DOM.",
+      "status": "current",
+      "bytes": 1240,
+      "sha256": "b6e4a6d9d2b8daa19560fbc46d6b2968db80246a2b9cb2af573ff2863ba02ade",
+      "width": 42,
+      "height": 42,
+      "alpha": true
+    },
+    {
+      "file": "public/assets/projects-v4/searing-masthead-black.svg",
+      "source": "/Users/wchai/Documents/Vault/WillChai Company/Searing Stories/site/public/fonts/Trattatello.woff2",
+      "treatment": "Original publication masthead exported as outlined artwork.",
+      "status": "retained source from earlier study",
+      "bytes": 20451,
+      "sha256": "d87bacd3418476efc9718abb2126bf2d1ee528d130a99f8bc617ecaec94e9b34",
+      "sourceSha256": "f70c629f7acc6c83c525bacc9114c1f599e28e672d574f5e93b3cec3e2f8aa07",
+      "width": 5058,
+      "height": 1209,
+      "alpha": true
+    },
+    {
+      "file": "public/assets/projects-v5/OFL-montserrat-alternates.txt",
+      "bytes": 4392,
+      "sha256": "41f82bb4d24b304f30f7136bc47abdd083782e4265c984160f5649d1e78ea49c",
+      "status": "current",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/montserratalternates/OFL.txt",
+      "treatment": "SIL Open Font License retained."
+    },
+    {
+      "file": "public/assets/projects-v5/OFL-pirata-one.txt",
+      "bytes": 4427,
+      "sha256": "e8ad3f3de5baeff6bac6e711d8c406e0a6b8a61d2944741532d8965d893a2681",
+      "status": "current",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/pirataone/OFL.txt",
+      "treatment": "SIL Open Font License retained."
+    },
+    {
+      "file": "public/assets/projects-v5/hands-poster-desktop.json",
+      "bytes": 161,
+      "sha256": "95ed40b09e25d1e0a64be19bbd3561ed5fb8c18474c71bd9078fe37c196a8c43",
+      "status": "current",
+      "source": "src/scripts/project-hands/scene.ts",
+      "treatment": "Projected keyboard support from the current poster export.",
+      "rigRevision": "dea2e9e"
+    },
+    {
+      "file": "public/assets/projects-v5/hands-poster-desktop.webp",
+      "bytes": 12338,
+      "sha256": "9366480cfd8a17193ecfa9f056332b217fa18540f42ff128f8e8c2ae3e4e4b48",
+      "status": "current",
+      "source": "src/scripts/project-hands/scene.ts",
+      "treatment": "Rendered still from the current corrected rig, practice colours and live labels.",
+      "rigRevision": "dea2e9e",
+      "width": 800,
+      "height": 400,
+      "alpha": false
+    },
+    {
+      "file": "public/assets/projects-v5/hands-poster-mobile.json",
+      "bytes": 161,
+      "sha256": "719100e31a99f7c3c673214cfacd3b7dab890e666ee02041aab0247e5b57ebb0",
+      "status": "current",
+      "source": "src/scripts/project-hands/scene.ts",
+      "treatment": "Projected keyboard support from the current poster export.",
+      "rigRevision": "dea2e9e"
+    },
+    {
+      "file": "public/assets/projects-v5/hands-poster-mobile.webp",
+      "bytes": 9508,
+      "sha256": "2f21ebb350effc0e4e6619b60f4893e2639455937611b1f4939ae4985606c160",
+      "status": "current",
+      "source": "src/scripts/project-hands/scene.ts",
+      "treatment": "Rendered still from the current corrected rig, practice colours and live labels.",
+      "rigRevision": "dea2e9e",
+      "width": 366,
+      "height": 222,
+      "alpha": false
+    },
+    {
+      "file": "public/assets/projects-v5/montserrat-alternates-semibold.woff2",
+      "bytes": 15700,
+      "sha256": "755909a880f00f84e488110da1f848b562862ac9607a27cf3e9ea8fd27873edf",
+      "status": "current",
+      "source": "https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;600&family=Pirata+One&display=swap",
+      "treatment": "Original Latin WOFF2 response for the project typeface, served locally.",
+      "licence": "public/assets/projects-v5/OFL-montserrat-alternates.txt"
+    },
+    {
+      "file": "public/assets/projects-v5/montserrat-alternates.woff2",
+      "bytes": 15872,
+      "sha256": "77f3aa8d07edcc78ee1a8c453792fa6e7d0c88fa3691264bfb2e4c28069bc72a",
+      "status": "current",
+      "source": "https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;600&family=Pirata+One&display=swap",
+      "treatment": "Original Latin WOFF2 response for the project typeface, served locally.",
+      "licence": "public/assets/projects-v5/OFL-montserrat-alternates.txt"
+    },
+    {
+      "file": "public/assets/projects-v5/pirata-one.woff2",
+      "bytes": 8824,
+      "sha256": "37d289e4600f084545a6def9ca145a547fff4ce7ceca7847a08d598a23c8d6cb",
+      "status": "current",
+      "source": "https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;600&family=Pirata+One&display=swap",
+      "treatment": "Original Latin WOFF2 response for the project typeface, served locally.",
+      "licence": "public/assets/projects-v5/OFL-pirata-one.txt"
+    },
+    {
+      "file": "public/assets/projects-v5/sea-background.jpg",
+      "bytes": 351849,
+      "sha256": "52fe871cc5d6d249ad39535abb2d9b1dfad87f3f82f03d3437baa90014d753ee",
+      "status": "current",
+      "source": "/Users/wchai/Documents/Vault/WillChai Company/ConspiraSea/conspirasea-deploy/public/assets/ConspiraSea game background oil paint.jpeg",
+      "sourceSha256": "52fe871cc5d6d249ad39535abb2d9b1dfad87f3f82f03d3437baa90014d753ee",
+      "treatment": "Original published image copied intact.",
+      "width": 2752,
+      "height": 1536,
+      "alpha": false
+    },
+    {
+      "file": "public/assets/projects-v5/sea-logo.png",
+      "bytes": 93200,
+      "sha256": "d3e94fedd36859bd1b055cde2c8fc8a9d754bbf0ced3cc5ce8244900374dee99",
+      "status": "current",
+      "source": "/Users/wchai/Documents/Vault/WillChai Company/ConspiraSea/conspirasea-deploy/public/assets/ConspiraSea logo.png",
+      "sourceSha256": "d3e94fedd36859bd1b055cde2c8fc8a9d754bbf0ced3cc5ce8244900374dee99",
+      "treatment": "Original logo pixels. A scoped CSS inversion follows the game’s white display.",
+      "width": 1000,
+      "height": 322,
+      "alpha": true
+    },
+    {
+      "file": "public/assets/projects-v5/searing-hosts.avif",
+      "bytes": 37147,
+      "sha256": "be211b48e3ea382fb10b5c66e0a107a29ebf8e47065aa365ece5864aaac25ccd",
+      "status": "current",
+      "source": "/Users/wchai/Documents/Vault/WillChai Company/Searing Stories/site/public/images/hosts.avif",
+      "sourceSha256": "be211b48e3ea382fb10b5c66e0a107a29ebf8e47065aa365ece5864aaac25ccd",
+      "treatment": "Original published image copied intact.",
+      "width": 800,
+      "height": 600,
+      "alpha": false
+    },
+    {
+      "file": "public/assets/projects-v5/searing-landing.avif",
+      "bytes": 24739,
+      "sha256": "27149a909bf55eca302e236446498fd5aa00a5c2957df92423e2d8aedb375290",
+      "status": "current",
+      "source": "/Users/wchai/Documents/Vault/WillChai Company/Searing Stories/site/public/images/landing.avif",
+      "sourceSha256": "27149a909bf55eca302e236446498fd5aa00a5c2957df92423e2d8aedb375290",
+      "treatment": "Original published image copied intact.",
+      "width": 1024,
+      "height": 712,
+      "alpha": false
+    },
+    {
+      "file": "public/assets/projects-v5/searing-trattatello.woff2",
+      "bytes": 223280,
+      "sha256": "f70c629f7acc6c83c525bacc9114c1f599e28e672d574f5e93b3cec3e2f8aa07",
+      "status": "current",
+      "source": "/Users/wchai/Documents/Vault/WillChai Company/Searing Stories/site/public/fonts/Trattatello.woff2",
+      "sourceSha256": "f70c629f7acc6c83c525bacc9114c1f599e28e672d574f5e93b3cec3e2f8aa07",
+      "treatment": "Published title face loaded only as the Searing scene approaches. The scene retains the source’s two line masthead composition.",
+      "format": "WOFF2"
+    }
+  ],
+  "spriteProcess": "src/data/projects-showtell-sprite.md",
+  "verification": "artifacts/projects-revision-2/VERIFICATION.md",
+  "references": [
+    {
+      "url": "https://medterms.willchai.com/",
+      "role": "Landing catalogue"
+    },
+    {
+      "url": "https://tachyboard.willchai.com/type",
+      "role": "Actual guest practice session with Finger guide enabled"
+    },
+    {
+      "url": "https://searingstories.com/",
+      "role": "Landing photograph, hosts portrait, masthead and rust surface"
+    },
+    {
+      "url": "https://www.conspirasea.top/",
+      "role": "Landing artwork and tutorial cards"
+    }
+  ],
+  "motion": {
+    "frameSize": [
+      32,
+      32
+    ],
+    "frames": 18,
+    "displaySizes": [
+      192,
+      160,
+      128
+    ],
+    "paletteEntriesIncludingTransparency": 6,
+    "approvedPaletteEntriesIncludingTransparency": 7,
+    "rigRevision": "dea2e9e",
+    "hopMilliseconds": 780,
+    "rigSha256": "bc2c6e900cff44926335bafbbee95227213d6454d105ec8e35f3cec848ec054e"
+  },
+  "independentReview": "artifacts/projects-revision-2/independent/REVIEW.md"
+}

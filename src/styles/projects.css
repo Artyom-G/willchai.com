@@ -1,367 +1,231 @@
-.projectsMain { background: var(--wc-white); }
-
-.projectsHero {
-  display: grid;
-  min-height: min(48rem, 84svh);
-  grid-template-columns: minmax(0, 1.16fr) minmax(22rem, 0.84fr);
-  border-bottom: 1px solid var(--wc-hairline);
+@import "../../system/tokens.css";
+@font-face{font-family:"Project Garamond";src:url("/assets/projects-v3/eb-garamond.woff2") format("woff2");font-style:normal;font-weight:700;font-display:swap;}
+@font-face{font-family:"Project Hand";src:url("/assets/projects-v3/patrick-hand.woff2") format("woff2");font-style:normal;font-weight:400;font-display:swap;}
+@font-face{font-family:"Project Instrument";src:url("/assets/projects-v4/instrument-serif-regular.woff2") format("woff2");font-style:normal;font-weight:400;font-display:swap;}
+@font-face{font-family:"Project Instrument";src:url("/assets/projects-v4/instrument-serif-italic.woff2") format("woff2");font-style:italic;font-weight:400;font-display:swap;}
+.projectsPage .pageShell {
+  max-width: 1600px;
+  padding-inline: var(--wc-gutter-desktop);
 }
-
-.projectsHeroCopy {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: clamp(3rem, 7vw, 7rem) clamp(2rem, 7vw, 7rem);
-}
-
-.projectsKicker,
-.projectMeta,
-.projectNumber {
-  margin: 0;
-  color: var(--wc-slate);
-  font-size: var(--wc-font-small);
-  font-weight: 500;
-  letter-spacing: 0.035em;
-}
-
-.projectsHero h1 {
-  margin: auto 0 0;
-  font-family: var(--wc-font-display);
-  font-size: clamp(4rem, 11vw, 10.5rem);
-  font-weight: 400;
-  letter-spacing: -0.075em;
-  line-height: 0.82;
-}
-
-.projectsLead {
-  max-width: 28rem;
-  margin: clamp(2.5rem, 7vw, 6rem) 0 0;
-  font-size: clamp(1.35rem, 2.5vw, 2.15rem);
-  letter-spacing: -0.03em;
-  line-height: 1.15;
-}
-
-.projectsIndex {
-  display: grid;
-  grid-template-rows: repeat(4, 1fr);
-  border-left: 1px solid var(--wc-hairline);
-}
-
-.projectsIndex a {
-  display: grid;
-  grid-template-columns: 2.5rem 1fr;
-  align-content: center;
-  gap: 0.25rem var(--wc-space-5);
-  padding: clamp(1.5rem, 4vw, 3rem);
-  border-bottom: 1px solid var(--wc-hairline);
-  text-decoration: none;
-}
-
-.projectsIndex a:last-child { border-bottom: 0; }
-.projectsIndex span { grid-row: 1 / 3; color: var(--wc-blue); font-size: var(--wc-font-small); }
-.projectsIndex strong { font-size: clamp(1.1rem, 1.8vw, 1.45rem); font-weight: 500; letter-spacing: -0.02em; line-height: 1.1; }
-.projectsIndex small { color: var(--wc-slate); font-size: 0.9375rem; }
-.projectsIndex a:hover,
-.projectsIndex a:focus-visible { background: var(--wc-cloud); }
-
-.projectChapter {
+.showtell {
   position: relative;
-  min-height: 52rem;
-  overflow: hidden;
-  border-bottom: 1px solid var(--wc-hairline);
+  margin-top: 0;
 }
-
-.projectChapterHeader {
+.showOpening {
+  position: relative;
+  padding: 116px clamp(1rem, 4vw, 4rem) 2rem;
+}
+.showOpening h1 {
+  margin: 0;
+  font: 400 clamp(3.2rem, 9.5vw, 9rem)/1.04 var(--wc-font-display);
+  letter-spacing: -0.065em;
+}
+.showOpening h1{display:flex;align-items:baseline;gap:0;}
+.titleLetter {
+  display: inline-block;
+  position: relative;
+}
+.showOpening p {
+  font-size: 17px;
+  margin: 1.2rem 0 0;
+}
+.guideToggle {
+  position: absolute;
+  right: clamp(1rem, 4vw, 4rem);
+  bottom: 2.5rem;
+  background: transparent;
+  color: var(--wc-slate);
+  border: 1px solid var(--wc-hairline);
+  border-radius: 999px;
+  font: 500 15px var(--wc-font-sans);
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+}
+.projectScene {
+  position: relative;
+  margin-bottom: 16px;
+  padding: clamp(1.5rem, 4vw, 4rem);
+  scroll-margin-top: 16px;
+  isolation: isolate;
+}
+.sceneHeading {
   position: relative;
   z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--wc-space-6);
-  padding: var(--wc-space-5) clamp(1.5rem, 4vw, 4rem);
-  border-bottom: 1px solid currentColor;
 }
-
-.projectNumber { color: inherit; }
-
-.projectChapter h2 {
-  margin: 0;
-  font-family: var(--wc-font-display);
-  font-size: clamp(2.8rem, 7vw, 7.5rem);
-  font-weight: 400;
-  letter-spacing: -0.065em;
-  line-height: 0.92;
+.sceneHeading h2 {
   overflow-wrap: anywhere;
-}
-
-.projectChapter p { margin-block: 0; }
-
-.projectAction {
-  display: inline-flex;
-  width: fit-content;
-  min-height: 3.25rem;
-  align-items: center;
-  justify-content: center;
-  padding: 0.75rem 1.15rem;
-  border: 1.5px solid currentColor;
-  color: var(--wc-ink);
-  background: transparent;
-  font-size: var(--wc-font-small);
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.projectAction:hover,
-.projectAction:focus-visible { color: var(--wc-white); background: var(--wc-ink); }
-.projectActionLight { color: var(--wc-white); }
-.projectActionLight:hover,
-.projectActionLight:focus-visible { color: var(--wc-ink); background: var(--wc-white); }
-
-.projectChapterMedterms {
-  display: grid;
-  min-height: 62rem;
-  grid-template-columns: minmax(19rem, 0.7fr) minmax(0, 1.3fr);
-  background: var(--wc-cloud);
-}
-
-.projectChapterMedterms .projectChapterHeader { grid-column: 1 / -1; }
-
-.medtermsTitleGroup {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  gap: var(--wc-space-8);
-  padding: clamp(3rem, 6vw, 6rem) clamp(2rem, 5vw, 5rem);
-}
-
-.medtermsTitleGroup h2 {
-  max-width: 12ch;
-  font-size: clamp(2.8rem, 4.5vw, 5.2rem);
-  overflow-wrap: normal;
-}
-.medtermsTitleGroup > p { max-width: 28rem; font-size: clamp(1.15rem, 1.8vw, 1.45rem); line-height: 1.35; }
-
-.medtermsComposition {
-  position: relative;
-  min-height: 48rem;
-  border-left: 1px solid var(--wc-hairline);
-}
-
-.medtermsCreators { position: absolute; right: 3%; bottom: 0; width: min(78%, 50rem); margin: 0; }
-.medtermsCreators img { width: 100%; height: auto; }
-
-.medtermsIdeosis {
-  position: absolute;
-  top: clamp(2rem, 5vw, 5rem);
-  right: clamp(1rem, 4vw, 4rem);
-  width: clamp(8rem, 14vw, 13rem);
+  font: 400 clamp(1.8rem, 3.1vw, 3rem)/1.14 var(--wc-font-display);
+  letter-spacing: -0.05em;
   margin: 0;
-  box-shadow: 0 1.5rem 4rem rgba(16, 16, 19, 0.16);
+  max-width: 24ch;
 }
-
-.medtermsIdeosis img { width: 100%; height: auto; }
-
-.medtermsCount {
+.sceneHeading p {
+  font: 400 17px/1.5 var(--wc-font-sans);
+  max-width: 42ch;
+  margin: 1rem 0 0;
+}
+.support {
   position: absolute;
-  z-index: 1;
-  top: clamp(2rem, 4vw, 4rem);
-  left: clamp(1.5rem, 4vw, 4rem);
-  display: flex;
-  align-items: baseline;
-  gap: var(--wc-space-4);
+  width: 0;
+  height: 0;
+  pointer-events: none;
 }
-
-.medtermsCount strong {
-  color: var(--wc-blue);
-  font-family: var(--wc-font-display);
-  font-size: clamp(5rem, 13vw, 12rem);
-  font-weight: 400;
-  letter-spacing: -0.09em;
-  line-height: 0.75;
+.showGuide {
+  position: absolute;
+  z-index: 5;
+  left: 0;
+  top: 0;
+  width: 192px;
+  height: 192px;
+  pointer-events: none;
+  contain: layout style;
+  --sprite-size: 192px;
+  --frame: 0;
 }
-
-.medtermsCount span { max-width: 7rem; font-size: var(--wc-font-small); font-weight: 600; line-height: 1.15; }
-
-.projectChapterFooter {
-  display: grid;
-  grid-column: 1 / -1;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: center;
-  gap: var(--wc-space-8);
-  padding: clamp(1.5rem, 4vw, 3rem) clamp(2rem, 5vw, 5rem);
-  border-top: 1px solid var(--wc-hairline);
+.guideSprite {
+  width: 100%;
+  height: 100%;
+  background-image: url("/assets/projects-v3/will-host.png");
+  background-repeat: no-repeat;
+  background-size: 1800% 100%;
+  background-position: calc(var(--frame) * 100% / 17) 0;
+  image-rendering: pixelated;
+}
+.guideProp {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  transform: translate(-50%, -100%);
+  filter: drop-shadow(0 4px 2px #0004);
+}
+.guideBubble {
+  position: absolute;
+  top: 10%;
+  left: 70%;
+  width: max-content;
+  max-width: min(14em, calc(100vw - 24px));
+  padding: 0.8rem 1rem;
   background: var(--wc-white);
+  color: var(--wc-ink);
+  border: 3px solid var(--wc-ink);
+  box-shadow: 4px 4px var(--wc-ink);
+  font: 400 15px/1.4 var(--wc-font-sans);
 }
-
-.projectChapterFooter p { max-width: 44rem; font-size: clamp(1.05rem, 1.6vw, 1.3rem); }
-
-.projectChapterTachyboard {
-  min-height: min(58rem, 90svh);
-  color: var(--wc-white);
-  background: var(--wc-ink);
+.guideBubble p {
+  margin: 0;
 }
-
-.projectChapterTachyboard .projectChapterHeader { border-color: rgba(255, 255, 255, 0.34); }
-.projectChapterTachyboard .projectMeta { color: rgba(255, 255, 255, 0.68); }
-.tachyboardField { position: absolute; inset: 0; }
-
-.tachyboardField::after {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(16, 16, 19, 0.96) 0%, rgba(16, 16, 19, 0.56) 54%, rgba(16, 16, 19, 0.2) 100%);
+.guideBubble::after {
   content: "";
-}
-
-.tachyboardField img { width: 100%; height: 100%; object-fit: cover; opacity: 0.92; }
-
-.tachyboardCopy {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  max-width: 44rem;
-  min-height: 44rem;
-  flex-direction: column;
-  justify-content: center;
-  gap: var(--wc-space-8);
-  padding: clamp(3rem, 8vw, 8rem) clamp(2rem, 7vw, 7rem);
-}
-
-.tachyboardCopy p { max-width: 31rem; font-size: clamp(1.2rem, 2vw, 1.6rem); line-height: 1.35; }
-
-.tachyboardMeasure {
   position: absolute;
-  right: clamp(2rem, 5vw, 5rem);
-  bottom: clamp(2rem, 5vw, 5rem);
-  color: rgba(255, 255, 255, 0.68);
-  font-family: var(--wc-font-display);
-  font-size: clamp(1rem, 1.8vw, 1.6rem);
-  letter-spacing: 0.08em;
-  line-height: 1.25;
-  text-align: right;
+  bottom: -12px;
+  left: var(--tail-left, 14px);
+  width: 10px;
+  height: 10px;
+  border-left: 3px solid var(--wc-ink);
+  background: white;
 }
-
-.projectChapterSearing { color: var(--wc-ink); background: var(--wc-white); }
-
-.searingOpening {
-  display: grid;
-  grid-template-columns: minmax(20rem, 0.72fr) minmax(0, 1.28fr);
-  min-height: 43rem;
+.guideBubble[data-side="left"] {
+  left: auto;
+  right: 65%;
 }
-
-.searingTitleGroup {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: var(--wc-space-8);
-  padding: clamp(3rem, 6vw, 6rem) clamp(2rem, 5vw, 5rem);
+.showtell [hidden] {
+  display: none !important;
 }
-
-.searingTitleGroup h2 { max-width: 7ch; }
-.searingTitleGroup p { max-width: 26rem; font-size: clamp(1.2rem, 2vw, 1.55rem); line-height: 1.35; }
-
-.searingMeal { min-height: 43rem; margin: 0; overflow: hidden; }
-.searingMeal img { width: 100%; height: 100%; object-fit: cover; }
-
-.searingLower {
-  display: grid;
-  grid-template-columns: minmax(0, 1.18fr) minmax(20rem, 0.82fr);
-  border-top: 1px solid rgba(16, 16, 19, 0.18);
+.showtell :is(a, button, textarea):focus-visible {
+  outline: 3px solid var(--wc-vermilion);
+  outline-offset: 6px;
 }
-
-.searingHosts { max-width: 48rem; margin: 0; padding: clamp(2rem, 5vw, 5rem); }
-.searingHosts img { width: 100%; height: auto; }
-
-.searingCopy {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: var(--wc-space-8);
-  padding: clamp(2rem, 5vw, 5rem);
-  border-left: 1px solid rgba(16, 16, 19, 0.18);
+.showtell button {
+  font-family: var(--wc-font-sans);
+  font-size: 15px;
 }
-
-.searingCopy p { max-width: 31rem; font-size: clamp(1.2rem, 2vw, 1.65rem); line-height: 1.35; }
-
-.projectChapterConspirasea { min-height: 0; color: var(--wc-white); background: #080b12; }
-.projectChapterConspirasea .projectChapterHeader { border-color: rgba(255, 255, 255, 0.28); }
-.projectChapterConspirasea .projectMeta { color: rgba(255, 255, 255, 0.68); }
-.conspiraseaArtwork { margin: 0; background: #000; }
-.conspiraseaArtwork img { width: 100%; height: auto; }
-
-.conspiraseaClosing {
-  display: grid;
-  grid-template-columns: minmax(18rem, 1fr) minmax(20rem, 0.75fr) auto;
-  align-items: end;
-  gap: clamp(2rem, 5vw, 5rem);
-  padding: clamp(3rem, 7vw, 7rem) clamp(2rem, 5vw, 5rem);
+.showtell a,
+.showtell button {
+  -webkit-tap-highlight-color: transparent;
 }
-
-.conspiraseaClosing h2 { margin-bottom: var(--wc-space-6); }
-.conspiraseaClosing p { max-width: 30rem; color: rgba(255, 255, 255, 0.76); font-size: clamp(1.1rem, 1.6vw, 1.35rem); }
-.conspiraseaClosing dl { display: grid; gap: var(--wc-space-4); margin: 0; }
-
-.conspiraseaClosing dl div {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: var(--wc-space-8);
-  padding-bottom: var(--wc-space-3);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+.showtell .contact-section {
+  margin-top: 16px;
 }
-
-.conspiraseaClosing dt,
-.conspiraseaClosing dd { margin: 0; font-size: var(--wc-font-small); }
-.conspiraseaClosing dt { color: rgba(255, 255, 255, 0.64); }
-
-@media (max-width: 62rem) {
-  .projectsHero { min-height: 0; grid-template-columns: minmax(0, 1fr); }
-  .projectsHero > * { min-width: 0; }
-  .projectsHeroCopy { min-height: 31rem; }
-  .projectsHero h1 { font-size: clamp(4rem, 18vw, 8rem); }
-  .projectsIndex { border-top: 1px solid var(--wc-hairline); border-left: 0; }
-  .projectChapterMedterms,
-  .searingOpening,
-  .searingLower,
-  .conspiraseaClosing { grid-template-columns: minmax(0, 1fr); }
-  .projectChapterMedterms > *,
-  .searingOpening > *,
-  .searingLower > *,
-  .conspiraseaClosing > * { min-width: 0; }
-  .medtermsComposition { min-height: 38rem; border-top: 1px solid var(--wc-hairline); border-left: 0; }
-  .medtermsCreators { right: 0; width: min(84%, 39rem); }
-  .projectChapterFooter { grid-template-columns: 1fr; }
-  .searingMeal { min-height: 32rem; }
-  .searingCopy { border-top: 1px solid rgba(16, 16, 19, 0.18); border-left: 0; }
-  .conspiraseaClosing { align-items: start; }
+.showtell[data-guide-hidden="true"] [data-character][aria-pressed="true"] {
+  transform: translateY(-12px) scale(1.15);
 }
-
-@media (max-width: 42rem) {
-  .projectsHeroCopy { min-height: 27rem; padding: 2.5rem 1.5rem; }
-  .projectsHero h1 { font-size: clamp(3.6rem, 19vw, 5.5rem); }
-  .projectsIndex a { grid-template-columns: 2rem 1fr; padding: 1.25rem 1.5rem; }
-  .projectChapter { min-height: 0; }
-  .projectChapter h2 { font-size: clamp(2rem, 11vw, 3rem); }
-  .projectChapterHeader { align-items: flex-start; padding: 1rem 1.5rem; }
-  .projectMeta { max-width: 16rem; text-align: right; }
-  .medtermsTitleGroup,
-  .tachyboardCopy,
-  .searingTitleGroup,
-  .searingCopy,
-  .conspiraseaClosing { padding: 3rem 1.5rem; }
-  .medtermsComposition { min-height: 29rem; }
-  .medtermsCount { top: 1.5rem; left: 1.5rem; }
-  .medtermsIdeosis { top: 1.5rem; right: 1.5rem; width: 8rem; }
-  .projectChapterFooter { padding: 1.5rem; }
-  .projectAction { width: 100%; }
-  .projectChapterTachyboard { min-height: 42rem; }
-  .tachyboardField::after { background: rgba(16, 16, 19, 0.72); }
-  .tachyboardCopy { min-height: 34rem; justify-content: flex-end; }
-  .tachyboardMeasure { top: 5.75rem; right: 1.5rem; bottom: auto; }
-  .searingMeal { min-height: 23rem; }
-  .searingHosts { padding: 1.5rem; }
-  .conspiraseaArtwork img { min-height: 20rem; object-fit: cover; object-position: center; }
+.showtell[data-guide-hidden="true"] [data-character][aria-pressed="true"] img {
+  opacity: 1;
 }
-
+@media (max-width: 1100px) {
+  .showGuide {
+    width: 160px;
+    height: 160px;
+    --sprite-size: 160px;
+  }
+  .guideProp {
+    width: 100px;
+    height: 100px;
+  }
+  .showOpening {
+    padding-top: 100px;
+  }
+}
+@media (max-width: 600px) {
+  .projectsPage .pageShell {
+    padding-inline: var(--wc-gutter-mobile);
+  }
+  .showOpening {
+    padding: 90px 0.5rem 5.5rem;
+  }
+  .showOpening p {
+    font-size: 15px;
+    max-width: 22ch;
+  }
+  .guideToggle {
+    bottom: 1rem;
+    right: 0.5rem;
+  }
+  .showGuide {
+    width: 128px;
+    height: 128px;
+    --sprite-size: 128px;
+  }
+  .guideProp {
+    width: 80px;
+    height: 80px;
+  }
+  .guideBubble {
+    max-width: min(12.15em, calc(100vw - 24px));
+    left: 55%;
+    font-size: 14px;
+    padding: 0.6rem;
+  }
+  .projectScene {
+    padding: 1.5rem 1rem;
+  }
+  .sceneHeading p {
+    font-size: 15px;
+  }
+  .sceneHeading h2 {
+    font-size: 1.7rem;
+  }
+  .showtell .contact-section {
+    padding: 2rem 1rem;
+  }
+  .showtell .ticket-stage {
+    margin-top: 3rem;
+  }
+}
 @media (prefers-reduced-motion: reduce) {
-  .projectsIndex a,
-  .projectAction { transition: none; }
+  .showtell *,
+  .showtell *::before,
+  .showtell *::after {
+    animation-duration: 0s !important;
+    transition-duration: 0s !important;
+    scroll-behavior: auto !important;
+  }
 }
+
+@font-face{font-family:"Project Montserrat";src:url("/assets/projects-v5/montserrat-alternates.woff2") format("woff2");font-weight:400;font-display:swap;}
+@font-face{font-family:"Project Montserrat";src:url("/assets/projects-v5/montserrat-alternates-semibold.woff2") format("woff2");font-weight:600;font-display:swap;}
+@font-face{font-family:"Project Pirata";src:url("/assets/projects-v5/pirata-one.woff2") format("woff2");font-weight:400;font-display:swap;}
+.projectTitleLink,.projectTextLink{color:inherit;text-decoration:none;}.projectTitleLink{display:block;}.projectTitleLink:hover,.projectTextLink:hover{opacity:.8;}
+.guideJump{position:absolute;left:28%;top:14%;width:46%;height:83%;padding:0;border:0;background:transparent;pointer-events:auto;cursor:pointer;}
+.showGuide:has(.guideJump:hover) .guideSprite{filter:brightness(1.08) saturate(1.1);}

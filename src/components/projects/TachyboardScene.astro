@@ -1,0 +1,46 @@
+---
+import { getProject } from "../../data/projects";
+const project = getProject("tachyboard")!;
+const passage = "Almost around below treks crank high dried curbs. Then quiet waves drift by at 9:45.\nBright foxes jump.";
+---
+<section id="tachyboard" class="projectScene typingScene" data-scene="tachyboard" data-speech="This got me to 100 WPM!" data-entrance={JSON.stringify([{pose:"look",duration:500},{pose:"point",duration:650}])} aria-labelledby="tachyboard-title">
+  <h2 id="tachyboard-title" class="sceneOnlyTitle">Tachyboard</h2>
+  <div class="practiceDemonstration" data-typing-demo data-passage={passage}>
+    <header class="sessionHeader">
+      <p><span>Endless</span><i aria-hidden="true">·</i><strong>Fresh words</strong><i aria-hidden="true">·</i><span data-demo-state>0 segments</span></p>
+      <div class="sessionProgress" aria-label="Run progress"><i data-demo-progress></i></div>
+    </header>
+    <div class="typingIntroduction">
+      <p>Tachyboard is a typing practice site built around the motion behind every key. The Finger guide connects your own keyboard to a visual hand position as you type.</p>
+      <p>Start with Endless for adaptive practice, then use Coach, timed sessions or custom drills to focus on the patterns you want to improve.</p>
+    </div>
+    <div class="passageWindow" data-demo-field>
+      <div class="passageFlow" data-demo-flow aria-hidden="true">{[...passage].map(char => <span class="demoChar">{char}</span>)}</div>
+      <div class="manualFlow" data-demo-manual aria-hidden="true"></div>
+      <i class="demoCursor" data-demo-cursor aria-hidden="true"></i>
+      <input class="demoInput" data-demo-input type="text" aria-label="Type a short Tachyboard sample" autocomplete="off" autocapitalize="sentences" spellcheck="false" />
+    </div>
+    <p class="demoAccessible">An automatic typing demonstration: {passage} It includes numbers, Shift, a correction with Delete, and Enter.</p>
+    <p class="fingerGuideStatus"><span aria-hidden="true"></span>Finger guide</p>
+    <div class="keyboardStage" data-demo-keyboard>
+      <div class="handsHost" data-hands role="img" aria-label="Tachyboard hands and keyboard following the active key"><picture><source srcset="/assets/projects-v5/hands-poster-mobile.webp" media="(max-width:600px)" /><img class="handsPoster" src="/assets/projects-v5/hands-poster-desktop.webp" alt="" width="800" height="400" loading="lazy" /></picture></div>
+      <span class="support keyboardSupport" data-support data-x="0.17" data-y="0.49"></span>
+    </div>
+    <p class="keyCue" data-demo-cue>A · Left little finger · Right Shift</p>
+    <div class="practiceControls"><a data-primary href={project.primaryHref}>Open Tachyboard</a></div>
+  </div>
+</section>
+<style>
+ .typingScene{background:var(--wc-white);color:#000;padding:34px clamp(24px,4vw,64px) 32px;}
+ .sceneOnlyTitle{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;}
+ .practiceDemonstration{max-width:1320px;margin:auto;}
+ .sessionHeader{text-align:center;font:400 18px/1.35 "Project Instrument",serif;}.sessionHeader p{margin:0;}.sessionHeader i{font-style:normal;opacity:.45;margin:0 7px;}.sessionHeader strong{font-weight:400;}.sessionProgress{height:2px;width:178px;background:#e8e8e8;margin:11px auto 0;overflow:hidden;}.sessionProgress i{display:block;height:100%;background:#111;width:0;transition:width 130ms linear;}
+ .typingIntroduction{max-width:720px;margin:27px auto 0;text-align:center;}.typingIntroduction p{font:400 18px/1.55 "Project Instrument",serif;margin:0;}.typingIntroduction p + p{margin-top:11px;color:#4b4b4b;}
+ .passageWindow{font:400 clamp(23px,2.48vw,34px)/1.46 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;height:4.4em;overflow:hidden;margin:31px auto 0;position:relative;contain:layout paint style;cursor:text;}.passageWindow:has(.demoInput:focus){outline:0;}.passageFlow{position:relative;contain:layout style;white-space:pre-wrap;overflow-wrap:break-word;will-change:transform;}.demoChar{color:#9a9583;position:relative;}.demoChar[data-done]{color:#000;}.demoChar[data-error]{color:#b3261e;text-decoration:underline;}.demoCursor{position:absolute;top:0;left:0;z-index:5;width:3px;height:1.2em;background:#000;pointer-events:none;transform-origin:top left;will-change:transform;}.demoCursor.idle{animation:cursorFlashSmooth 1s infinite;}.manualFlow{display:none;min-height:1.46em;white-space:pre-wrap;word-break:break-word;color:#000;}.practiceDemonstration[data-manual="true"] .passageFlow,.practiceDemonstration[data-manual="true"] .demoCursor{display:none;}.practiceDemonstration[data-manual="true"] .manualFlow{display:block;}.manualFlow:empty::before{content:"Click, then type";color:#9a9583;}.manualFlow::after{content:"";display:inline-block;width:2px;height:1.14em;background:#000;vertical-align:-.15em;margin-left:1px;animation:cursorBlink 1s steps(1,end) infinite;}.demoInput{position:absolute;inline-size:1px;block-size:1px;opacity:0;pointer-events:none;inset:0;}.demoAccessible{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;}
+ .fingerGuideStatus{display:flex;align-items:center;justify-content:center;gap:9px;font:400 18px/1.4 "Project Instrument",serif;margin:18px auto 0;}.fingerGuideStatus span{width:18px;height:18px;border:1px solid #000;background:#000;position:relative;}.fingerGuideStatus span::after{content:"";position:absolute;left:5px;top:1px;width:5px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg);}
+ .keyboardStage{position:relative;width:min(800px,100%);aspect-ratio:2;margin:24px auto 0;cursor:text;}.keyboardStage:focus-visible{outline:2px solid #000;outline-offset:6px;}.handsHost{display:block;position:relative;width:100%;height:100%;}.handsHost :global(canvas),.handsPoster{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;}.handsHost :global(canvas){opacity:0;}.handsHost[data-ready="true"] :global(canvas){opacity:1;}.handsHost[data-ready="true"] .handsPoster{opacity:0;}
+ .keyCue{text-align:center;font:400 18px/1.4 "Project Instrument",serif;margin:8px 0 24px;min-height:26px;}.practiceControls{display:flex;justify-content:center;}.practiceControls a{display:inline-flex;justify-content:center;align-items:center;min-height:42px;border:2px solid #000;background:#d9d9d9;color:#000;font:400 20px/1.2 "Project Instrument",serif;padding:8px 28px;text-decoration:none;}.practiceControls a:hover,.practiceControls a:focus-visible{background:#000;color:#fff;}
+ @keyframes cursorBlink{0%,52%{opacity:1}53%,100%{opacity:0}}@keyframes cursorFlashSmooth{0%,100%{opacity:0}50%{opacity:1}}
+ @media(max-width:600px){.typingScene{padding:28px 20px 26px;}.sessionHeader{font-size:17px;}.typingIntroduction{margin-top:23px;}.typingIntroduction p{font-size:17px;}.passageWindow{margin-top:28px;font-size:22px;height:4.5em;}.fingerGuideStatus{margin-top:15px;font-size:17px;}.keyboardStage{width:calc(100% + 40px);max-width:none;aspect-ratio:1.65;margin:46px -20px 0;}.keyCue{display:none;}.practiceControls a{width:100%;font-size:19px;}}
+ @media(prefers-reduced-motion:reduce){.passageFlow,.demoCursor,.sessionProgress i{transition:none;}.manualFlow::after{animation:none;}}
+</style>

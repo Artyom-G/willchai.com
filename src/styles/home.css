@@ -567,197 +567,6 @@ img {
   opacity: 1;
 }
 
-.contact-section {
-  display: grid;
-  min-height: clamp(34rem, 72svh, 48rem);
-  padding: clamp(2rem, 5vw, 5.5rem);
-  grid-template-columns: minmax(0, 0.85fr) minmax(20rem, 1.15fr);
-  align-items: center;
-  gap: clamp(2rem, 6vw, 7rem);
-  background: #d5dbe2;
-}
-
-.contact-copy h2 {
-  max-width: 12ch;
-  margin: 0;
-  font-family: "Unbounded", Arial, sans-serif;
-  font-size: clamp(2rem, 4.2vw, 4.6rem);
-  font-weight: 400;
-  letter-spacing: -0.055em;
-  line-height: 1.02;
-}
-
-.photography-inquiry {
-  display: inline-block;
-  margin-top: 1.5rem;
-  padding-bottom: 0.18rem;
-  border-bottom: 2px solid var(--ink);
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.photography-inquiry:hover,
-.photography-inquiry:focus-visible {
-  color: var(--blue);
-  border-color: var(--blue);
-}
-
-.ticket-stage {
-  display: grid;
-  min-height: 24rem;
-  place-items: center;
-  align-content: center;
-  background: #e9edf0;
-  clip-path: polygon(5% 0, 96% 3%, 100% 42%, 96% 96%, 3% 100%, 0 36%);
-}
-
-.contact-ticket {
-  --mouse-x: 50%;
-  --mouse-y: 50%;
-  position: relative;
-  z-index: 3;
-  width: 300px;
-  height: 120px;
-  padding: 0;
-  overflow: visible;
-  color: #000000;
-  background: transparent;
-  cursor: pointer;
-  filter: drop-shadow(0 0 0 rgba(17, 19, 23, 0));
-  transform-style: preserve-3d;
-  transition: filter 420ms ease;
-  user-select: none;
-}
-
-.contact-ticket.is-moving {
-  will-change: transform, filter;
-}
-
-.contact-ticket:hover,
-.contact-ticket:focus-visible {
-  filter: drop-shadow(0 12px 12px rgba(17, 19, 23, 0.18));
-}
-
-.contact-ticket * {
-  user-select: none;
-}
-
-.contact-ticket__surface {
-  position: relative;
-  display: flex;
-  width: 100%;
-  height: 100%;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background-color: #ffffff;
-  clip-path: path("M 20 0 L 280 0 A 20 20 0 0 0 300 20 L 300 25 A 3 3 0 0 0 297 28 A 3 3 0 0 0 300 31 L 300 41 A 3 3 0 0 0 297 44 A 3 3 0 0 0 300 47 L 300 57 A 3 3 0 0 0 297 60 A 3 3 0 0 0 300 63 L 300 73 A 3 3 0 0 0 297 76 A 3 3 0 0 0 300 79 L 300 89 A 3 3 0 0 0 297 92 A 3 3 0 0 0 300 95 L 300 100 A 20 20 0 0 0 280 120 L 20 120 A 20 20 0 0 0 0 100 L 0 95 A 3 3 0 0 0 3 92 A 3 3 0 0 0 0 89 L 0 79 A 3 3 0 0 0 3 76 A 3 3 0 0 0 0 73 L 0 63 A 3 3 0 0 0 3 60 A 3 3 0 0 0 0 57 L 0 47 A 3 3 0 0 0 3 44 A 3 3 0 0 0 0 41 L 0 31 A 3 3 0 0 0 3 28 A 3 3 0 0 0 0 25 L 0 20 A 20 20 0 0 0 20 0 Z");
-  transform-style: preserve-3d;
-  transition: background-color 0.5s ease-out, box-shadow 0.5s ease-out;
-}
-
-.contact-ticket:hover .contact-ticket__surface {
-  background-color: #f0f0f0;
-  transition: background-color 0.2s;
-}
-
-.contact-ticket__surface::before {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  content: "";
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.8s ease-out;
-  background:
-    radial-gradient(ellipse at var(--mouse-x) var(--mouse-y), #a9a2f5 0%, transparent 50%),
-    repeating-conic-gradient(from var(--gradient-angle-inv) at 50% 50%, #1d1a9c 0%, #2d29f4 15%, transparent 35%, #2d29f4 45%, #1d1a9c 50%),
-    repeating-conic-gradient(from var(--gradient-angle) at 50% 50%, #1d1a9c, #2d29f4 90deg, #1d1a9c 180deg),
-    url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJub2lzZSI+PGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9IjAuOCIgbnVtT2N0YXZlcz0iMyIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNub2lzZSkiLz48L3N2Zz4=");
-  background-blend-mode: soft-light, soft-light, soft-light, normal;
-}
-
-.contact-ticket__surface::after {
-  --logo-w: 37.5px;
-  --logo-h: calc(var(--logo-w) * 0.755);
-  --tile-w: calc(var(--logo-w) * 1.1);
-  --tile-h: calc(var(--logo-h) * 1.15);
-  position: absolute;
-  z-index: 2;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  content: "";
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.8s ease-out;
-  background-image: url("/assets/willchai-mark.avif");
-  background-position: center;
-  background-repeat: repeat;
-  background-size: var(--logo-w) var(--logo-h);
-  mix-blend-mode: soft-light;
-  transform: rotateX(var(--holo-rot-x, 0deg)) rotateY(var(--holo-rot-y, 0deg))
-    rotate(45deg) translateZ(-120px) scale(1.4);
-  transform-style: preserve-3d;
-}
-
-.contact-ticket.is-holographic .contact-ticket__surface::before,
-.contact-ticket.is-holographic .contact-ticket__surface::after {
-  opacity: 1;
-  transition: opacity 0.1s;
-}
-
-.contact-ticket.is-holographic .contact-ticket__surface::after {
-  opacity: 0.5;
-}
-
-.contact-ticket.is-flashing .contact-ticket__surface {
-  background-color: color(display-p3 1.5 1.5 1.5) !important;
-  box-shadow: 0 0 50px 25px rgba(255, 255, 255, 0.8) !important;
-}
-
-.contact-ticket:focus-visible {
-  outline: 4px solid var(--vermilion);
-  outline-offset: 7px;
-}
-
-.contact-ticket__email,
-.contact-ticket__status {
-  position: relative;
-  z-index: 4;
-  pointer-events: none;
-  transform: translateZ(30px);
-  transition: color 0.5s ease-out, text-shadow 0.5s ease-out;
-}
-
-.contact-ticket__email {
-  font-size: 20px;
-  font-weight: 500;
-}
-
-.contact-ticket__email span,
-.contact-ticket__status {
-  font-style: italic;
-}
-
-.contact-ticket__status {
-  margin-top: 8px;
-  color: #000000;
-  font-family: "Funnel Sans", Arial, sans-serif;
-  font-size: 14px;
-}
-
-.contact-ticket.is-holographic .contact-ticket__email,
-.contact-ticket.is-holographic .contact-ticket__status {
-  color: var(--white);
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-}
-
 .site-footer {
   display: flex;
   min-height: 5rem;
@@ -777,13 +586,7 @@ img {
     width: clamp(9.5rem, 18vw, 12rem);
   }
 
-  .contact-section {
-    grid-template-columns: 1fr;
-  }
 
-  .ticket-stage {
-    min-height: 21rem;
-  }
 }
 
 @media (max-width: 760px) {
@@ -901,18 +704,9 @@ img {
     max-width: 18rem;
   }
 
-  .contact-section {
-    min-height: auto;
-    padding: clamp(2rem, 7vw, 3.5rem) 1.25rem;
-  }
 
-  .contact-copy h2 {
-    font-size: clamp(2rem, 9vw, 3.6rem);
-  }
 
-  .ticket-stage {
-    min-height: 20rem;
-  }
+
 
   .site-footer {
     padding-bottom: 1rem;
@@ -920,26 +714,13 @@ img {
 }
 
 @media (max-width: 480px) {
-  .contact-ticket {
-    width: 280px;
-    height: 110px;
-  }
 
-  .contact-ticket__surface {
-    clip-path: path("M 16 0 L 264 0 A 16 16 0 0 0 280 16 L 280 21 A 2.5 2.5 0 0 0 277.5 23.5 A 2.5 2.5 0 0 0 280 26 L 280 34 A 2.5 2.5 0 0 0 277.5 36.5 A 2.5 2.5 0 0 0 280 39 L 280 47 A 2.5 2.5 0 0 0 277.5 49.5 A 2.5 2.5 0 0 0 280 52 L 280 60 A 2.5 2.5 0 0 0 277.5 62.5 A 2.5 2.5 0 0 0 280 65 L 280 73 A 2.5 2.5 0 0 0 277.5 75.5 A 2.5 2.5 0 0 0 280 78 L 280 86 A 2.5 2.5 0 0 0 277.5 88.5 A 2.5 2.5 0 0 0 280 91 L 280 94 A 16 16 0 0 0 264 110 L 16 110 A 16 16 0 0 0 0 94 L 0 91 A 2.5 2.5 0 0 0 2.5 88.5 A 2.5 2.5 0 0 0 0 86 L 0 78 A 2.5 2.5 0 0 0 2.5 75.5 A 2.5 2.5 0 0 0 0 73 L 0 65 A 2.5 2.5 0 0 0 2.5 62.5 A 2.5 2.5 0 0 0 0 60 L 0 52 A 2.5 2.5 0 0 0 2.5 49.5 A 2.5 2.5 0 0 0 0 47 L 0 39 A 2.5 2.5 0 0 0 2.5 36.5 A 2.5 2.5 0 0 0 0 34 L 0 26 A 2.5 2.5 0 0 0 2.5 23.5 A 2.5 2.5 0 0 0 0 21 L 0 16 A 16 16 0 0 0 16 0 Z");
-  }
 
-  .contact-ticket__email {
-    font-size: 18px;
-  }
 
-  .contact-ticket__status {
-    font-size: 14px;
-  }
 
-  .contact-ticket__surface::after {
-    --logo-w: 30px;
-  }
+
+
+
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -956,9 +737,6 @@ img {
     transition-duration: 0.01ms !important;
   }
 
-  .contact-ticket {
-    transform: none !important;
-  }
 
   .black-hole-canvas {
     display: none;

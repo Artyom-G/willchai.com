@@ -1,0 +1,64 @@
+---
+import "../styles/contact-ticket.css";
+interface Props {
+  guide?: boolean;
+}
+const { guide = false } = Astro.props;
+---
+
+<section
+  data-entrance={
+    guide
+      ? JSON.stringify([
+          { pose: "present", duration: 1200 },
+          { pose: "look", duration: 800 },
+        ])
+      : undefined
+  }
+  class="contact-section"
+  id="contact"
+  data-scene={guide ? "contact" : undefined}
+  data-speech={guide ? "Here’s my email." : undefined}
+  aria-labelledby="contact-title"
+>
+  <div class="contact-copy">
+    <h2 id="contact-title">Let’s go do something.</h2>
+    <a class="photography-inquiry" data-primary href="mailto:me@willchai.com">
+      Contact me
+    </a>
+  </div>
+  <div class="ticket-stage">
+    {guide && (
+      <span class="support" data-support data-x="0.4" data-y="0.012"></span>
+    )}
+    <button
+      class="contact-ticket"
+      type="button"
+      data-contact-ticket
+      aria-label="Copy me@willchai.com to the clipboard"
+    >
+      <span class="contact-ticket__surface">
+        <span class="contact-ticket__email">
+          me<span>@</span><wbr />willchai.com
+        </span>
+        <span
+          class="contact-ticket__status"
+          data-ticket-status
+          aria-live="polite"
+        >
+          say hello
+        </span>
+      </span>
+    </button>
+  </div>
+  <svg width="0" height="0" aria-hidden="true" style="position:absolute">
+    <defs>
+      <clipPath id="contact-ticket-clip" clipPathUnits="objectBoundingBox">
+        <path d="M.067 0H.933A.067 .167 0 0 0 1 .167V.21Q.98 .233 1 .258V.342Q.98 .366 1 .392V.475Q.98 .5 1 .525V.608Q.98 .634 1 .658V.742Q.98 .767 1 .792V.833A.067 .167 0 0 0 .933 1H.067A.067 .167 0 0 0 0 .833V.792Q.02 .767 0 .742V.658Q.02 .634 0 .608V.525Q.02 .5 0 .475V.392Q.02 .366 0 .342V.258Q.02 .233 0 .21V.167A.067 .167 0 0 0 .067 0Z" />
+      </clipPath>
+    </defs>
+  </svg>
+</section>
+<script>
+  import "../scripts/contact-ticket.js";
+</script>

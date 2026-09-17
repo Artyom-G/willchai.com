@@ -10,6 +10,7 @@ export type ProjectLink = {
 
 export type Project = {
   slug: string;
+  primaryHref: string;
   title: string;
   period: string;
   form: string;
@@ -32,6 +33,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "medterms",
+    primaryHref: "https://medterms.willchai.com/",
     title: "Medical Terminology Games",
     period: "2025 to present",
     form: "Learning game collection",
@@ -41,10 +43,10 @@ export const projects: Project[] = [
       "MedTerms Games gives classrooms, study groups, and curious learners familiar ways to practise morphemes, combining forms, and medical word building.",
     story: [
       "The collection includes Splice, One, Meds Up, Cipher, Ideosis, and Those Who Know. Each game adapts a familiar social format for medical terminology practice, with online rooms and a pass the phone mode.",
-      "The work grew through a nine unit project in McMaster University’s Honours Health Sciences Program. Will created and developed the collection with Stephen Russell, PhD, as co creator and academic collaborator.",
+      "The work grew through a nine unit project in McMaster University’s Honours Health Sciences Program. Will created and developed the collection with Dr. Stephen Russell as co creator and academic collaborator.",
     ],
     image: "/assets/medterms-creators.webp",
-    imageAlt: "An illustrated portrait of William Chai and Stephen Russell for MedTerms Games",
+    imageAlt: "An illustrated portrait of William Chai and Dr. Stephen Russell for MedTerms Games",
     facts: [
       { label: "Games", value: "Six" },
       { label: "Modes", value: "Online rooms and pass the phone" },
@@ -52,10 +54,10 @@ export const projects: Project[] = [
     ],
     credits: [
       { label: "Creator and developer", value: "William Chai" },
-      { label: "Co creator and academic collaborator", value: "Stephen Russell, PhD" },
+      { label: "Co creator and academic collaborator", value: "Dr. Stephen Russell" },
     ],
     links: [
-      { label: "Play MedTerms Games", href: "https://medterms.willchai.com/app" },
+      { label: "Play MedTerms Games", href: "https://medterms.willchai.com/" },
       { label: "Read the game rules", href: "https://medterms.willchai.com/rules/splice" },
     ],
     secondaryImage: "/assets/medterms-ideosis.avif",
@@ -65,29 +67,31 @@ export const projects: Project[] = [
   },
   {
     slug: "tachyboard",
+    primaryHref: "https://tachyboard.willchai.com/",
     title: "Tachyboard",
-    period: "In development",
-    form: "Independent project",
-    status: "Working record",
-    summary: "A dedicated public record for Tachyboard is in preparation.",
+    period: "2026 to present",
+    form: "Typing practice and analysis",
+    status: "Public release 1.1",
+    summary: "Typing practice informed by keystroke timing and recurring errors.",
     introduction:
-      "Tachyboard has a dedicated place in Will’s first public project collection while its working material is prepared.",
+      "Tachyboard analyses speed, accuracy and fluency across typing sessions, then helps each person choose focused practice.",
     story: [
-      "The current page establishes a stable address for the project. Its purpose, present form, collaborators, build details, and release path will come from Will’s working files.",
-      "The next edition will add a concise project account and authentic media once the source material is ready for publication.",
+      "Keystroke timing can reveal repeated pauses, difficult transitions and corrections. Tachyboard brings these patterns into a practice history with a skill map and personal recommendations.",
+      "Coach assembles guided practice from the available evidence. Endless adapts as someone types, while custom drills, quotes and timed sessions provide other ways to practise.",
     ],
-    image: "/assets/projects-triangle-grid.svg",
-    imageAlt: "A blue triangular grid representing Will Chai’s current project collection",
+    image: "/assets/projects-v3/hands-poster.webp",
+    imageAlt: "Tachyboard’s optional hand guide above its keyboard",
     facts: [
-      { label: "Stage", value: "Working material under review" },
-      { label: "Public record", value: "In preparation" },
-      { label: "Next addition", value: "Project account and original media" },
+      { label: "Purpose", value: "Typing practice and keystroke analysis" },
+      { label: "Practice", value: "Coach, Endless, custom drills and timed sessions" },
+      { label: "Account", value: "Optional" },
     ],
     credits: [{ label: "Created by", value: "Will Chai" }],
-    links: [{ label: "Ask about the project", href: "mailto:me@willchai.com" }],
+    links: [{ label: "Open Tachyboard", href: "https://tachyboard.willchai.com/" }],
   },
   {
     slug: "searing-stories",
+    primaryHref: "https://searingstories.com/",
     title: "Searing Stories",
     period: "2026 to present",
     form: "Magazine and web series",
@@ -97,7 +101,7 @@ export const projects: Project[] = [
       "Searing Stories brings a guest to the table for a home cooked meal, a recorded conversation, and an editorial feature shaped through writing and photography.",
     story: [
       "Each issue starts in a domestic setting. The guest arrives for dinner, the conversation unfolds around the meal, and the final feature keeps the detail and ease of an evening shared in person.",
-      "Volume one opened with Felipe Hoffa in Art Machine, a conversation about artificial intelligence, career reinvention, and sustained curiosity. Janiru Jayatunge follows in Disarray.",
+      "Volume one opened with Felipe Hoffa in Art Machine, a conversation about film, improv, technology and the judgments involved in making things.",
     ],
     image: "/assets/searing-stories.avif",
     imageAlt: "A candlelit meal being served for Searing Stories",
@@ -114,7 +118,7 @@ export const projects: Project[] = [
       { label: "Visit Searing Stories", href: "https://searingstories.com/" },
       {
         label: "Read Art Machine",
-        href: "https://searing-stories-f-hoffa.willchai.chatgpt.site/",
+        href: "https://searingstories.com/vol1/felipehoffa",
       },
     ],
     secondaryImage: "/assets/searing-hosts.avif",
@@ -124,6 +128,7 @@ export const projects: Project[] = [
   },
   {
     slug: "conspirasea",
+    primaryHref: "https://www.conspirasea.top/",
     title: "ConspiraSea",
     period: "2023 to present",
     form: "Online social deduction game",
@@ -147,7 +152,7 @@ export const projects: Project[] = [
       { label: "Role mechanics", value: "Yengkong Lynhiavu" },
       { label: "Node.js support", value: "Artyom Gabtraupov" },
     ],
-    links: [{ label: "Play ConspiraSea", href: "https://www.conspirasea.top/" }],
+    links: [{ label: "Play ConspiraSea Online", href: "https://www.conspirasea.top/" }],
     secondaryImage: "/assets/conspirasea-logo.jpg",
     secondaryImageAlt: "ConspiraSea illustrated title artwork",
     secondaryImageWidth: 1555,

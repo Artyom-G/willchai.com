@@ -72,3 +72,28 @@
     --wc-duration-fold: 0ms;
   }
 }
+
+/* Projects character movement, in milliseconds. */
+:root { --wc-duration-show-hop:780; }
+
+/* Projects materials are scoped to their source projects. */
+:root {
+  --wc-project-medterms-paper: #f0eee6;
+  --wc-project-medterms-ink: #423e37;
+  --wc-project-splice: #5b9bd5;
+  --wc-project-one: #e66e5d;
+  --wc-project-medsup: #6bb896;
+  --wc-project-cipher: #1f1c19;
+  --wc-project-ideosis: #e8a84c;
+  --wc-project-twk: #4a3f6b;
+  --wc-project-typing-font: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --wc-project-typing-untyped: #979078;
+  --wc-project-typing-button: #d9d9d9;
+  --wc-project-searing-rust: #2a0a00;
+  --wc-project-sea-night: #131720;
+  --wc-project-sea-panel: #202126;
+  --wc-project-tachyboard-ink: #000000;
+  --wc-project-tachyboard-red: #b42421;
+  --wc-project-searing-issue: #782600;
+  --wc-project-conspirasea-control: #713735;
+}

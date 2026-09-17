@@ -108,8 +108,7 @@ The current public structure contains Home, Photography, `/hey/`, Films, and
 Projects with their detail pages. Photography carries its own inquiry area,
 and the homepage carries the main contact invitation. `/hey/` remains a
 branded utility page outside the primary navigation and links to Home,
-Photography, LinkedIn, and email. Résumé remains in source during continued
-review.
+Photography, LinkedIn, and email. Résumé is approved for the production release.
 
 ## Module grammar
 
@@ -411,13 +410,15 @@ pages share the interface system while allowing crop, media sequence, title
 placement, and internal composition to respond to each work. Shared
 navigation, typography, and contact endings keep the pages related.
 
-The Projects chooser opens with a numbered index and continues as four full
-width chapters. Each chapter uses original project media, its own proportion,
-and one clear action. Medical Terminology Games combines the creator drawing
-with game artwork. Tachyboard uses its triangular field. Searing Stories pairs
-the dinner and host photographs. ConspiraSea closes with its original title
-artwork and compact game facts. Ordinary scrolling carries the sequence, and
-phone layouts retain the same order in one column.
+Projects uses four scenes in the order Medical Terminology Games, Tachyboard, Searing Stories and ConspiraSea. The opening places Will on the Projects title. The six game catalogue uses original illustrations, colours, player counts and links to each game’s rules. Phones retain two catalogue columns. Tachyboard presents an automatic practice passage with its corrected hands, keyboard, progress strip and session controls. Searing Stories pairs the landing photograph with its hosts portrait and rust surface. ConspiraSea uses the original underwater background, logo and tutorial card materials. Captain, Jester and Scylla explain secret roles, faction motives and player interactions.
+
+Shared prose and interface text use Funnel Sans. Selected display titles use Unbounded. EB Garamond and Patrick Hand belong to Medical Terminology Games. Instrument Serif belongs to Tachyboard’s title, session details and controls. Its practice passage uses the product’s system monospace stack. Pirata One and Montserrat Alternates belong to ConspiraSea. The publication masthead and game logo appear as original artwork. Live text starts at 14 pixels. Smaller keyboard previews use live labels at this size. Each project has its own control treatment and a canonical primary destination in project data.
+
+The eighteen frame character atlas uses native 32 by 32 cells, binary transparency and the original palette. Integer display sizes are 192, 160 and 128 pixels. Supports come from the title, catalogue card edge, projected keyboard casing, hosts portrait frame, crew card edges and stationary ticket stage. Frame metadata supplies foot positions, hand positions and prop grips. Travel lasts 780 milliseconds. Scene entrances take about two seconds, with ConspiraSea using up to four seconds. An idle gesture runs every eight seconds while the scene is visible. Hover and keyboard focus direct a gesture toward the primary control.
+
+Ordinary document scrolling selects the active scene. Cancellation restores the completed arrangement. Resizing, text zoom, section links and browser history recalculate the support position. Reduced motion uses completed arrangements and immediate state changes. The guide toggle preserves the automatic demonstration, character inspection and project destinations. Tachyboard demonstrates letters, punctuation, capitals, numbers, spaces, Delete and Enter. Pause and Restart provide control over playback. The hand renderer loads near the scene, receives the latest demonstration target and rests between movements. Its poster comes from the same corrected rig. Selecting Will in ConspiraSea triggers a supported jump through a native button; reduced motion uses a brief stationary gesture. Project titles and primary descriptive text share the main destination.
+
+Home and Projects share the contact component, styles and controller. The ticket retains its perforations, foil, copy action and separate native email link. The W texture and rasterized noise are prepared before interaction. A finite animation supplies the click flash. The shared footer carries its copyright line.
 
 Films opens with the original red Murder of Minus portrait. The face, raised
 hand and component remain in frame. Wattleseed follows with its library image.
@@ -459,6 +460,8 @@ support Escape, backdrop dismissal and focus restoration. Original posters,
 linked film titles and Film enquiries form the ending. The detail pages use the independent reading sequence described below.
 
 
+The opening places the name, résumé title, professional introduction and contact links beside a compact PDF preview with view and download actions. A desktop section index remains in view while the record scrolls. Its active link follows the reading position. Phones use ordinary wrapping section links above the record. Education and research precede experience, projects, awards, credentials and volunteering. Consecutive positions at one organization share a heading, with every role and date visible. Section headings use Funnel Sans. Both editions read from the same content record.
+
 The Résumé uses the same reading system with restrained formatting suited to a
 professional record. The PDF appears first through view and download actions,
 and the HTML version follows with matching facts. The `/hey/` utility page
@@ -488,6 +491,9 @@ while preserving type, colour, focus, and spacing rules.
 - **Maria Vasilyeva:** interaction can reveal a body of work as a system; keep
   our geometry orderly rather than spatial and freeform.
 
+## Blog reading surface
+
+Blog articles use the shared header and footer, a White reading surface, Funnel Sans prose and an Unbounded title. The opening carries a category, title, publication date, draft status during review and a short overview. Prose uses a 64ch maximum measure. On desktop, section links occupy a left column and a matching right column keeps the prose centred in the viewport. The active section link changes from Slate to Ink while a reader scrolls. Section links flow above the article on compact screens. Source figures retain their complete proportions, with 15px captions and full size image links. Supporting documents use first page preview cards with direct PDF links. `src/styles/blog.css` uses the existing token palette and spacing scale.
 
 ## Film detail reading sequence
 

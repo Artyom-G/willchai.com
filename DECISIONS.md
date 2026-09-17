@@ -65,9 +65,7 @@ In order:
 The complete source architecture is shallow and substantial. It contains
 twelve page routes. The current public release exposes Home, Photography,
 `/hey/`, Films, and Projects with their detail pages. LinkedIn, email, and
-Searing Stories are external destinations. Résumé remains in source during
-continued review. Its route uses `noindex`, stays outside the sitemap, and
-carries a crawler exclusion. The homepage panels link directly to their current
+Searing Stories are external destinations. Résumé is approved for the production release, with primary navigation access and crawler discovery. The homepage panels link directly to their current
 destinations.
 
 The homepage is a curated introduction to Will and selected work. `/hey/` is a
@@ -109,8 +107,7 @@ The complete source page map is:
 12. `/resume/`
 
 Published resources include sitemap output, `robots.txt`, a useful 404 page,
-and permanent redirects for meaningful legacy URLs. `/resume.pdf` follows the
-same crawler boundary as `/resume/` during the current release. Future growth
+and permanent redirects for meaningful legacy URLs. `/resume.pdf` accompanies the approved Résumé page. Future growth
 may add dedicated Photography services or substantial projects while
 preserving the same page logic.
 
@@ -365,14 +362,58 @@ choices that affect the site's direction, structure, or long-term maintenance.
 
 | 2026 09 13 | Give Films and both film pages an Ink canvas with full width stills, compact titles, direct Trailer actions and visible festival laurels. Use native scrolling for a short frame sequence and keep the photographic character vocabulary specific to its approved assets. | Will approved a dark film experience, direct language and displayed laurels, with discretion over composition and implementation. |
 
-| 2026 09 13 | Rebuild Films and both detail pages around the approved Mayda image scale and movement, with the Bugonia relationship between imagery and title artwork. Use original poster lettering, two short native scroll passages, varied still compositions and expanded festival spreads. | Will approved the complete plan and its implementation, verification and publication. All routes share sourced festival records, native media dialogs and the existing identity. |
+## Blog draft route, September 13, 2026
 
-| 2026 09 13 | Reconcile festival recognition with Will’s judging screenshots and official listings. Give Oakville, Toronto Shorts and Kitchener Waterloo larger placements for Wattleseed, with Kitchener Waterloo, Couch and Alternative Film Festival leading Murder of Minus. Use smaller supporting groups and compact Lift Off city selections. Preserve image compositions and scroll passages at medium browser widths. | Will requested the remaining successful festival records and an editorial hierarchy based on the significance of each placement. The records include all positive outcomes in the two supplied screenshots, with individual category evidence retained. |
+Will requested the MSU article at `/blog/what-i-learned-running-for-msu-office/`. Blog entries use portable Markdown and the shared reading system. Draft entries and accompanying media render in local development and remain excluded from production output. The opening carries an overview, followed by section links and the article. Source screenshots preserve their complete proportions and link to full size copies; PDFs remain downloadable.
 
-| 2026 09 13 | Give each film an eleven column lead image reaching a page edge, followed by a distinct arrangement of synopsis, supporting photographs and production text. Align compact title credits and actions with the original lettering. | Will requested a plan for the next design passes and implementation of the immediate composition pass. Festival artwork and movement have separate planned reviews. |
+## Blog discovery system, September 14, 2026
 
-| 2026 09 13 | Open Films with Murder of Minus. Link the original titles, keep Trailer beside the credit, place each Press kit in a bordered control, use additional original stills once per index chapter, and give festival records one compact composition with complete artwork margins and underlined destinations. | Will supplied specific feedback on the opening, repeated imagery, image interaction, button treatment, festival scale and Lift Off placement. Detail pages receive their own subsequent composition pass. |
+Published blog entries enter `/blog/`, `sitemap.xml` and `rss.xml` through the shared content manifest. Article metadata supports a separate search title, a large social image, author details, publication dates and keywords. `BlogLayout.astro` emits article and breadcrumb structured data alongside canonical and social metadata. Draft entries retain crawler exclusions and stay outside generated public discovery resources.
 
-| 2026 09 14 | Give each film detail page an independent opening and expanded story, production, cast and technical account sourced from the original press kit. Close each index film with a prominent “Read more about the film” control. | Will approved the index direction and requested substantial detail pages with a visible reading destination and a clear boundary between films. |
+## Projects show and tell working draft, September 14, 2026
 
-| 2026 09 14 | Match festival artwork to its edition and outcome, retain full leaf boundaries and keep supporting records compact. Use the official Oakville 2026 selection graphic. | Will approved the artwork sourcing, shared record update, layout review and publication pass. |
+Will rejected the numbered chapter revision and requested an experience led by
+his existing pixel character. The new working draft uses native scrolling,
+short character hops between project landing places, stepped speech bubbles,
+and original project artwork entering the page composition. The shared type
+families and palette remain authoritative. The four current projects provide
+the initial sequence. Blog entries can join through the existing collection;
+drafts remain specific to development. The numbered chapter entry above
+records the superseded experiment. Visual review of this new draft is pending.
+
+## Projects visual revision, September 14, 2026
+
+Will requested clearer project boundaries, stronger images, the actual
+Tachyboard hand model, direct actions and camera free character poses. The
+revision uses project colour fields, the original submarine table drawing,
+Felipe’s dinner portrait and the first course. The hand scene reuses
+Tachyboard’s meshes, keyboard layout and pose solver and loads near its section.
+The Projects host has eight native 32 by 32 frames with binary alpha and the
+original face and palette. Generated pose studies informed the gestures;
+the exported atlas uses the canonical pixel grid. The shared footer now carries
+the rights line. Visual acceptance and publication remain pending.
+
+## Projects scene build, September 14, 2026
+
+The approved build gives Medical Terminology Games, Tachyboard, Searing Stories and ConspiraSea distinct scenes connected by the larger pixel Will. Each scene uses actual project material and its own control treatment. Cipher has a bounded exception for licensed EB Garamond and Patrick Hand. The publication masthead and game packaging retain their original lettering as artwork. The chooser contains these four projects, with the homepage contact ticket as its ending.
+
+Will uses eighteen native frames, physical supports, frame attachment points and cancellable scene performances. The typing field drives the corrected Tachyboard rig, including revisions 4513723 and dea2e9e. Space uses the right thumb with a short press and release while retaining the palm position. The ConspiraSea interaction presents Captain, Jester and Scylla and provides a return action. Guide visibility and reduced motion preserve access to the scene controls.
+
+Project data supplies a canonical primary destination. Medical Terminology Games and Tachyboard use website redirects at their former detail addresses, and their former detail entries leave the sitemap. The ConspiraSea story address remains available. Home and Projects share the ticket component, styles and controller. The W texture and rasterized noise are prepared ahead of interaction, and a finite flash animation replaces the synchronous layout read. Publication remains a separate action.
+
+
+## Projects direction revision, September 15, 2026
+
+The current local revision derives each scene from the project’s public website. Medical Terminology Games presents its full catalogue with six original illustrations, individual rules links and the Dr. Stephen Russell credit. Tachyboard uses its Instrument Serif identity and explains typing analysis and focused practice. The native typing field feeds a recent interval strip and the corrected hand rig. Searing Stories gives the dinner and published Felipe Hoffa opening their own space. ConspiraSea retains the supplied package photograph on white, with its original shadows, lettering and painted crew.
+
+The crew interaction explains secret roles and differing motives. Each selection reveals a faction, ability and consequence for play while Will holds the illustration. All four primary destinations open their project websites directly. The larger pixel guide, physical supports, ordinary scrolling and shared contact ticket continue through the sequence. Local typography exceptions remain bounded to their original projects. The design reference and asset record describe the current revision. Publication remains a separate action.
+
+## Published Films source reconciliation, September 15, 2026
+
+The published ChatGPT site version 35 supplies the authoritative Films composition. Its source commit is `88ed392ff3af05618cefe7cd3f3b65f2b40038ee`. The local Films index, detail pages, original image sequences, title artwork, festival records, press kits and media dialogs have been restored from this source. Films retains the published Photography, Films, Projects and Contact navigation through the shared header. The Projects revision and existing blog infrastructure remain in the active source. A separate local build provides the review surface before publication.
+
+## Projects practice and source fidelity revision, September 15, 2026
+
+Tachyboard now follows the actual practice screen at its /type address. An automatic passage uses the product’s session typography, progress strip, corrected hands and keyboard. The demonstration includes capitals, punctuation, numbers, Space, Delete and Enter, with Pause and Restart controls. Its playback stops outside the visible scene and follows reduced motion preferences. The practice passage has a bounded system monospace exception.
+
+Medical Terminology Games retains its six game composition and links to the landing page. Searing Stories uses the actual landing photograph, hosts portrait, white outlined masthead and deep rust surface. ConspiraSea uses the original game background, white logo, Pirata One and Montserrat Alternates, plus its tutorial card treatment. Will’s crew presentation continues, and his native button triggers an additional supported jump. Project titles and primary descriptive text share the main project destination. The current scene reference and asset record describe this revision. Publication remains a separate action.

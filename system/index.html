@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="./system.css" />
+    <link rel="stylesheet" href="../src/styles/blog.css" />
     <script src="./system.js" defer></script>
   </head>
   <body>
@@ -18,7 +19,7 @@
       <aside class="system-nav">
         <div>
           <div class="system-brand">
-            <img src="./assets/willchai-mark.png" alt="Will Chai W mark" width="150" height="150" />
+            <img src="./assets/willchai-mark.avif" alt="Will Chai W mark" width="150" height="150" />
             <p class="eyebrow">willchai.com</p>
           </div>
           <h2 class="system-nav__title">The Will Chai System</h2>
@@ -32,6 +33,7 @@
           <a href="#signature-object">Contact ticket</a>
           <a href="#patterns">Patterns</a>
           <a href="#media">Media rules</a>
+          <a href="#blog-reading">Blog reading</a>
           <a href="#voice">Voice</a>
           <a href="#assets">Assets</a>
         </nav>
@@ -161,7 +163,7 @@
               <h3>Marks and minimum type</h3>
               <div class="mark-demo">
                 <div class="mark-demo__icon">
-                  <img src="./assets/willchai-mark.png" alt="Will Chai W mark" width="150" height="150" loading="lazy" decoding="async" />
+                  <img src="./assets/willchai-mark.avif" alt="Will Chai W mark" width="150" height="150" loading="lazy" decoding="async" />
                 </div>
                 <div class="mark-demo__copy">
                   <strong>Compact W</strong>
@@ -297,6 +299,19 @@
               remain related without becoming identical.
             </p>
           </header>
+          <article class="pattern-card" id="resume-record">
+            <h3>Résumé record</h3>
+            <p>The introduction and contact links share the opening with a compact PDF preview. A persistent desktop index follows the reading position. Phones use wrapping section links. Positions at one organization share a heading with every role and date visible.</p>
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:var(--wc-space-6);padding:var(--wc-space-6);background:var(--wc-cloud)">
+              <a href="../public/resume.pdf"><img src="../public/assets/resume-preview.webp" width="849" height="1200" style="width:8rem;height:auto" loading="lazy" alt="First page of William Chai’s résumé" /></a>
+              <div><p>PDF edition</p><a href="../public/resume.pdf" download>Download PDF ↓</a></div>
+            </div>
+            <h4>McMaster University</h4>
+            <p>Honours Health Sciences, Bachelor of Health Sciences, Level 4</p>
+            <p>2023 to 2027 (expected)</p>
+            <p>Dean’s Honour List, 2024.</p>
+          </article>
+
 
           <div class="pattern-list">
             <article class="pattern-entry">
@@ -363,20 +378,35 @@
 
             <article class="pattern-entry" id="projects-sequence">
               <div class="pattern-copy">
-                <h3>Projects chapter sequence</h3>
-                <p>A numbered index introduces four full width chapters. Original project media establishes a separate visual identity for each entry while one direct action keeps the route clear.</p>
+                <h3>Projects show and tell</h3>
+                <p>Four scenes use the catalogue, practice screen, dinner photographs and underwater artwork as their visual material. Will’s eighteen poses preserve his original face, hair and palette in transparent 32 × 32 cells.</p>
                 <dl class="pattern-contract">
-                  <div><dt>Required</dt><dd>Number, title, primary form, period, original media, concise premise, and one clear action.</dd></div>
-                  <div><dt>May vary</dt><dd>Image scale, composition, surface colour, supporting fact, and chapter height.</dd></div>
-                  <div><dt>Must hold</dt><dd>Native vertical scrolling, visible focus, useful alt text, and the same chapter order on phones.</dd></div>
+                  <div><dt>Material</dt><dd>The six game catalogue, Tachyboard’s actual practice screen and corrected hands, Searing Stories’ landing and hosts photographs, plus ConspiraSea’s painted setting and physical game packages.</dd></div>
+                  <div><dt>Movement</dt><dd>Native scrolling connects visible supports. Feet attach to objects; held characters follow hand coordinates. Entrances play once, with a quiet idle every eight seconds. Direct guide jumps resolve the current scene and return to its visible support.</dd></div>
+                  <div><dt>Input</dt><dd>A 95 WPM automatic passage drives the keyboard and hands. A persistent Finger guide indicator remains visible. Selecting the keyboard focuses a text field and visitor input drives the same key states. Will responds to direct selection in every scene and stays on a visible support. Titles and destination controls open each project directly.</dd></div>
+                  <div><dt>Type</dt><dd>Funnel Sans and Unbounded remain shared. EB Garamond and Patrick Hand belong to MedTerms. Instrument Serif and the practice monospace stack belong to Tachyboard. Pirata One and Montserrat Alternates belong to ConspiraSea. The published Trattatello face forms the Searing Stories title.</dd></div>
                 </dl>
+                <p>The guide toggle and reduced motion setting preserve access to the scenes and controls. Home and Projects share the contact ticket. Scene contents and the ticket surface grow with enlarged text, and supports follow the resulting geometry.</p>
               </div>
-              <div class="pattern-demo">
-                <div class="archive-demo">
-                  <a class="archive-row" href="#projects-sequence"><strong>01 Medical Terminology Games</strong><span>Learning games</span><span>2025</span></a>
-                  <a class="archive-row" href="#projects-sequence"><strong>02 Tachyboard</strong><span>Typing practice</span><span>Current</span></a>
-                  <a class="archive-row" href="#projects-sequence"><strong>03 Searing Stories</strong><span>Publishing</span><span>2026</span></a>
-                  <a class="archive-row" href="#projects-sequence"><strong>04 ConspiraSea</strong><span>Game</span><span>2023</span></a>
+              <div class="pattern-demo showtellReference">
+                <div class="showtellReferenceCatalogue">
+                  <h4>MedTerms <span>Games</span></h4>
+                  <p>A catalogue of six games. Created with Dr. Stephen Russell.</p>
+                  <div class="showtellReferenceGreeting"><span class="showtellReferenceWill" aria-hidden="true"></span></div>
+                  <ul>
+                    <li style="--game-colour:var(--wc-project-splice)"><a href="https://medterms.willchai.com/rules/splice"><img src="../public/assets/projects-v4/medterms-splice.svg" alt="" width="42" height="42" /><span>Splice</span></a></li>
+                    <li style="--game-colour:var(--wc-project-one)"><a href="https://medterms.willchai.com/rules/one"><img src="../public/assets/projects-v4/medterms-one.svg" alt="" width="42" height="42" /><span>One</span></a></li>
+                    <li style="--game-colour:var(--wc-project-medsup)"><a href="https://medterms.willchai.com/rules/medsup"><img src="../public/assets/projects-v4/medterms-medsup.svg" alt="" width="42" height="42" /><span>Meds Up</span></a></li>
+                    <li style="--game-colour:var(--wc-project-cipher)"><a href="https://medterms.willchai.com/rules/cipher"><img src="../public/assets/projects-v4/medterms-cipher.svg" alt="" width="42" height="42" /><span>Cipher</span></a></li>
+                    <li style="--game-colour:var(--wc-project-ideosis)"><a href="https://medterms.willchai.com/rules/ideosis"><img src="../public/assets/projects-v4/medterms-ideosis.svg" alt="" width="42" height="42" /><span>Ideosis</span></a></li>
+                    <li style="--game-colour:var(--wc-project-twk)"><a href="https://medterms.willchai.com/rules/twk"><img src="../public/assets/projects-v4/medterms-twk.svg" alt="" width="42" height="42" /><span>Those Who Know</span></a></li>
+                  </ul>
+                  <a class="referenceCatalogueAction" href="https://medterms.willchai.com/">Explore the games</a>
+                </div>
+                <div class="showtellReferenceMedia">
+                  <figure class="showtellReferenceTyping"><h4><a href="https://tachyboard.willchai.com/">Endless · Fresh words · 0 segments</a></h4><p class="referencePractice">Almost around below treks crank high dried curbs.</p><img src="../public/assets/projects-v5/hands-poster-desktop.webp" alt="The corrected Tachyboard hands at rest above the keyboard" width="800" height="400" loading="lazy" /><figcaption>The casing supports Will. An automatic passage includes Shift, numbers, Space, Delete and Enter. Selecting the keyboard focuses the live text field.</figcaption></figure>
+                  <figure class="showtellReferenceDinner"><a class="referenceDinnerHero" href="https://searingstories.com/"><img src="../public/assets/projects-v5/searing-landing.avif" alt="Steak, fries and a candle on the dinner table" width="768" height="534" loading="lazy" /><span class="showtellReferenceMasthead" aria-label="Searing Stories"><span aria-hidden="true">Searing</span><span aria-hidden="true">Stories</span></span></a><figcaption>The hosts portrait frame supports Will. The dinner photograph and published masthead lead into the site’s rust surface and white destination control.</figcaption></figure>
+                  <figure class="showtellReferenceSea"><a class="referenceSeaHero" href="https://www.conspirasea.top/"><img src="../public/assets/projects-v5/sea-background.jpg" alt="The painted underwater setting from ConspiraSea" width="2752" height="1536" loading="lazy" /><img class="referenceSeaLogo" src="../public/assets/projects-v5/sea-logo.png" alt="ConspiraSea" width="1000" height="322" loading="lazy" /><span class="referenceSeaPackages"><img src="../public/assets/projects-v3/box.webp" alt="ConspiraSea base game box" width="724" height="572" loading="lazy" /><img src="../public/assets/projects-v3/hadal.webp" alt="Hadal expansion package" width="276" height="443" loading="lazy" /></span></a><figcaption>The physical base game and Hadal package accompany a three role deck. Hovering, focusing or selecting a card lets Will finish his current gesture before he moves from the card edge where he stands.</figcaption></figure>
                 </div>
               </div>
             </article>
@@ -523,6 +553,34 @@
                 </a>
               </div>
             </article>
+          </div>
+        </section>
+
+        <section class="system-section" id="blog-reading">
+          <header class="section-header"><h2 class="section-heading">Blog reading</h2><p>A centred article opening, overview, reading surface and supporting document previews using the production typography.</p></header>
+          <div class="blogOpening">
+            <p class="blogCategory">Student Government · Draft</p>
+            <h1>What I Learned Running for MSU Office</h1>
+            <p class="blogMeta"><time datetime="2026-09-13">September 13, 2026</time></p>
+            <p class="blogOverview">Running for MSU Vice President of Administration gave me an opportunity to propose changes, learn about student government, and reflect on how candidates experience the election process.</p>
+          </div>
+          <div class="blogProse">
+            <h2>The changes I hope to make</h2>
+            <p>My platform had three pillars: Open Office, Cluster Meetings+, and MSU Index. Each concerned how people could reach one another or find information.</p>
+            <div class="campaignMaterials">
+              <figure class="campaignMaterial">
+                <a class="campaignMaterialPreview" href="../src/content/blog-media/what-i-learned-running-for-msu-office/Will_Chai_VPAdmin_Platform.pdf"><img src="../src/content/blog-media/what-i-learned-running-for-msu-office/platform-preview.png" alt="First page of the platform" /></a>
+                <figcaption><strong>Platform</strong><a href="../src/content/blog-media/what-i-learned-running-for-msu-office/Will_Chai_VPAdmin_Platform.pdf">Open the PDF</a></figcaption>
+              </figure>
+              <figure class="campaignMaterial">
+                <a class="campaignMaterialPreview" href="../src/content/blog-media/what-i-learned-running-for-msu-office/Will_Chai_VPAdmin_Presentation.pdf"><img src="../src/content/blog-media/what-i-learned-running-for-msu-office/presentation-preview.png" alt="First slide of the presentation" /></a>
+                <figcaption><strong>Presentation</strong><a href="../src/content/blog-media/what-i-learned-running-for-msu-office/Will_Chai_VPAdmin_Presentation.pdf">Open the PDF</a></figcaption>
+              </figure>
+              <figure class="campaignMaterial">
+                <a class="campaignMaterialPreview" href="../src/content/blog-media/what-i-learned-running-for-msu-office/Will_Chai_VPAdmin_Handout.pdf"><img src="../src/content/blog-media/what-i-learned-running-for-msu-office/handout-preview.png" alt="First page of the handout" /></a>
+                <figcaption><strong>Handout</strong><a href="../src/content/blog-media/what-i-learned-running-for-msu-office/Will_Chai_VPAdmin_Handout.pdf">Open the PDF</a></figcaption>
+              </figure>
+            </div>
           </div>
         </section>
 
